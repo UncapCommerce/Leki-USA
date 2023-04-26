@@ -112,7 +112,7 @@
   capture cart_icon
     case settings.cart_icon
       when 'bag'
-        render 'icon-shopping-bag'
+        render 'product-icon-shopping-bag'
       when 'shopping_cart'
         render 'icon-shopping-cart'
     endcase
@@ -150,7 +150,7 @@
       {%- if on_sale -%}
         <span class="product-grid-item__price__new">{{ product_price }}</span>
 
-        <s>
+        <s class="compare_price">
           {%- if currency_code_enable -%}
             {{- product.compare_at_price | money_with_currency -}}
           {%- else -%}
@@ -394,13 +394,13 @@
     <div class="product__badge__item product__badge__item--sold"><span>{{ sold_out_text }}</span></div>
   {%- endif -%}
 
-  {%- if on_sale and show_sale_badge and sold_out == false and show_saving_badge == false -%}
-    <div class="product__badge__item product__badge__item--sale"><span>{{ sale_text }}</span></div>
+  {%- if on_sale and show_sale_badge and sold_out == false and show_saving_badge -%}
+    <div class="product__badge__item product__badge__item--sale"><span>{{ sale_text }}</span><span class="product__badge__item product__badge__item--saving">{{ saving_badge_text }}</span></div>
   {%- endif -%}
 
-  {%- if show_saving_badge -%}
+  {% comment %}{%- if show_saving_badge -%}
     <div class="product__badge__item product__badge__item--saving"><span>{{ saving_badge_text }}</span></div>
-  {%- endif -%}
+  {%- endif -%}{% endcomment %}
 {%- endcapture -%}
 
 {%- unless product_badges == blank -%}
@@ -489,7 +489,7 @@
       {%- else -%}
         {% comment %} Title - Price {% endcomment %}
         <div class="product-grid-item__info-content">
-          {{ product_title }} {{ info_separator }} {{ product_info_price }}
+          {{ product_title }} {% comment %}{{ info_separator }}{% endcomment %} {{ product_info_price }}
         </div>
       {%- endunless -%}
 

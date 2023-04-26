@@ -1,6 +1,7 @@
 {%- liquid
-  assign section_width = section.settings.width
+  assign section_width = section.settings.width  
   assign bg_color_secondary = section.settings.bg_color_secondary
+  assign enable_mobile_height = section.settings.enable_mobile_height
   assign heading_size = section.settings.heading_size | times: 0.01
   assign button_style = section.settings.button_style
   assign secondary_button_style = section.settings.secondary_button_style
@@ -36,21 +37,43 @@
   case section.settings.height
     when 'fullscreen'
       assign section_height_class = 'mosaic__item--fullscreen'
-    when '750'
-      assign section_height_class = 'mosaic__item--750'
-    when '650'
-      assign section_height_class = 'mosaic__item--650'
-    when '550'
-      assign section_height_class = 'mosaic__item--550'
-    when '450'
-      assign section_height_class = 'mosaic__item--450'
-    when '350'
-      assign section_height_class = 'mosaic__item--350'
-    when '250'
-      assign section_height_class = 'mosaic__item--250'
+    when '730'
+      assign section_height_class = 'mosaic__item--730'
+    when '630'
+      assign section_height_class = 'mosaic__item--630'
+    when '530'
+      assign section_height_class = 'mosaic__item--530'
+    when '430'
+      assign section_height_class = 'mosaic__item--430'
+    when '330'
+      assign section_height_class = 'mosaic__item--330'
+    when '230'
+      assign section_height_class = 'mosaic__item--230'
     when 'auto'
       assign section_height_class = 'mosaic__item--auto'
   endcase
+
+  assign mobile_width = 767
+  if mobile_width
+  case section.settings.mobile_height
+    when 'fullscreen'
+      assign mobile_height_class = 'mosaic_mob__item--fullscreen'
+    when '720'
+      assign mobile_height_class = 'mosaic_mob__item--720'
+    when '620'
+      assign mobile_height_class = 'mosaic_mob__item--620'
+    when '520'
+      assign mobile_height_class = 'mosaic_mob__item--520'
+    when '420'
+      assign mobile_height_class = 'mosaic_mob__item--420'
+    when '320'
+      assign mobile_height_class = 'mosaic_mob__item--320'
+    when '220'
+      assign mobile_height_class = 'mosaic_mob__item--220'
+    when 'auto'
+      assign mobile_height_class = 'mosaic_mob__item--auto'
+  endcase
+  endif
 -%}
 
 {%- style -%}
@@ -189,7 +212,7 @@
 
           {%- capture item_attributes -%}
             id="{{ block_id }}"
-            class="mosaic__item mosaic__item--{{ forloop.index }} {{ text_color }}{% if has_block_link %} mosaic__item--block-link{% endif %} {{ section_height_class }}"
+            class="mosaic__item mosaic__item--{{ forloop.index }} {{ text_color }}{% if has_block_link %} mosaic__item--block-link{% endif %} {{ section_height_class }} {% if enable_mobile_height %}{{ mobile_height_class }}{% endif %}"
             data-item
             {% if animations_enabled %}
               data-aos="fade"

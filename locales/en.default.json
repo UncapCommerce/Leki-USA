@@ -477,7 +477,7 @@
       "see_all": "See All"
     },
     "product": {
-      "sold_out": "Sold Out",
+      "sold_out": "Out of Stock",
       "sale": "Sale",
       "preorder": "Pre-Order",
       "one_time_purchase": "One-time purchase",
@@ -494,7 +494,7 @@
       "remaining_no_count": "Hurry! Low inventory",
       "on_sale": "Sale",
       "save_badge_html": "Save {{ discount }}",
-      "save_badge_up_to_html": "Save up to {{ discount }}",
+      "save_badge_up_to_html": "Save {{ discount }}",
       "quick_view": "Quick buy",
       "checkout": "Checkout",
       "view_in_space": "View in Your Space",

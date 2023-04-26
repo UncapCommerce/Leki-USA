@@ -5,6 +5,7 @@
   assign heading =  section.settings.title
   assign heading_size = section.settings.heading_size | times: 0.01
   assign heading_size_mobile = heading_size
+  assign sub_heading = section.settings.subtitle
   assign text = section.settings.text
   assign text_size = section.settings.text_size | times: 0.01
   assign text_size_mobile = text_size
@@ -95,6 +96,10 @@
 
 {%- capture section_heading_content -%}
   <div class="section__header featured-collection__top__wrapper">
+    {%- if sub_heading != blank -%}
+      <span class="section__subheading">{{- sub_heading -}}</span>
+    {%- endif -%} 
+  
     {%- if heading != blank -%}
       <h2 class="section__heading h2"
       {% if animations_enabled %}
@@ -260,6 +265,7 @@
 {% schema %}
 {
   "name": "Featured collection",
+  "class":"featured-collection",
   "settings": [
     {
       "type": "collection",
@@ -304,6 +310,12 @@
         { "label": "Center", "value": "text-center" },
         { "label": "Left", "value": "text-left" }
       ]
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "SubHeading",
+      "default": "Best Sellers"
     },
     {
       "type": "text",
@@ -409,7 +421,7 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
+      "max": 120,
       "step": 2,
       "unit": "px",
       "label": "Padding top",
@@ -419,7 +431,7 @@
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
+      "max": 120,
       "step": 2,
       "unit": "px",
       "label": "Padding bottom",

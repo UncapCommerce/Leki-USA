@@ -89,11 +89,15 @@
 
 {%- style -%}
   #FeaturedVideo--{{ section.id }} { --overlay-opacity: {{ overlay_opacity }}; }
+  #FeaturedVideo--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
   #FeaturedVideo--{{ section.id }} .main-heading { --adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ heading_size }}); }
 {%- endstyle -%}
 
 <section id="FeaturedVideo--{{ unique }}"
-  class="featured-video-section {{ section_height }}"
+  class="section-padding featured-video-section {{ section_height }}"
   data-section-id="{{ unique }}"
   data-section-type="featured-video">
   <div class="video-wrapper">
@@ -308,6 +312,26 @@
         { "label": "Small secondary button", "value": "btn--secondary btn--small" },
         { "label": "Large secondary button", "value": "btn--secondary" }
       ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
     }
   ],
   "presets": [
