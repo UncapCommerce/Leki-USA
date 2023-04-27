@@ -88,6 +88,19 @@
   {{ section_selector_id }} .mosaic__item__heading {
     --adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ heading_size }});
   }
+
+  @media(min-width: 768px) and (max-width: 1023px){
+    {{ section_selector_id }} {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+    {{ section_selector_id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
 {%- endstyle -%}
 
 <section id="{{ section_id }}"

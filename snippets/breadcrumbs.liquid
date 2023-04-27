@@ -24,11 +24,13 @@
   {%- if template contains 'product' -%}
     <span class="breadcrumbs__sep">/</span>
 
+    {% comment %}
     {%- assign product_collection = collection | default: product.collections[0] -%}
     {%- if product_collection.handle != blank -%}
       {{- product_collection.title | link_to: product_collection.url | replace: '<a ', '<a class="breadcrumbs__link" '-}}
       <span class="breadcrumbs__sep">/</span>
     {%- endif -%}
+    {% endcomment %}
 
     {%- if product.handle -%}
       <span class="breadcrumbs__current">{{ product.title | strip_html | escape }}</span>
