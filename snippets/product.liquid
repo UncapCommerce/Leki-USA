@@ -1456,6 +1456,8 @@
 
                   {%- if block.settings.icon_text != blank -%}
                     <div class="product__icon__text">{{ block.settings.icon_text }}</div>
+                  {% else %}
+                    <div class="product__icon__text default">{{ block.settings.icon_text_default }}</div>
                   {%- endif -%}
                 </div>
               </div>

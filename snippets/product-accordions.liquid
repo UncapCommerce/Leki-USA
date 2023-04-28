@@ -1,4 +1,4 @@
-{%- for i in (1..5) -%}
+{% comment %}{%- for i in (1..5) -%}
   {%- assign accordion_title = 'accordion_heading_' | append: forloop.index -%}
   {%- assign accordion_title = block_settings[accordion_title] -%}
 
@@ -22,6 +22,71 @@
             {{- accordion_content -}}
           </div>
         </div>
+      </div>
+    {%- endcapture -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{{- accordions -}}
+{% endcomment %}
+
+{%- for i in (1..5) -%}
+  {%- assign accordion_title = 'accordion_heading_' | append: forloop.index -%}
+  {%- assign accordion_title = block_settings[accordion_title] -%}
+
+  {%- assign accordion_text = 'accordion_text_' | append: forloop.index -%}
+  {%- assign accordion_page = 'accordion_page_' | append: forloop.index -%}
+  {%- assign accordion_content = block_settings[accordion_page].content | default: block_settings[accordion_text] -%}
+
+  {%- assign metafield_content = 'metafield_content_' | append: forloop.index -%}
+  {%- assign metafield_description = block_settings[metafield_content] -%}
+
+  {% assign metafield_description = product.metafields.custom.highlights.value %}
+
+  {%- if accordion_title != blank and accordion_content != blank or accordion_title != blank and metafield_description != blank -%}
+    {%- capture accordions -%}
+      {{- accordions -}}
+
+      <div class="product__accordion">
+        <button class="product__accordion__title" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
+          {{- accordion_title -}}
+          {%- render 'icon-toggle-plus' -%}
+          {%- render 'icon-toggle-minus' -%}
+        </button>
+
+        <div class="product__accordion__content" id="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-container>      
+          <div class="product__accordion__inner rte" data-collapsible-content>
+          {% if metafield_description != blank %}
+            <div class="accordion_metafield-content">
+              {% for value in metafield_description %}
+                <div class="inner_accordion">
+                  {% if value.highlight_title != blank %}<span class="accordion_object-title" data-collapsible-trigger>{{ value.highlight_title }}
+                     
+                  </span>{% endif %}
+                  {% if value.content != blank or value.image != blank %}
+                    <div class="metafield-inner_content" data-collapsible-content>
+                      {% if value.image != blank %}
+                        <div class="left-image_wrap">
+                          <img class="lazyload" src="{{ value.image | img_url:'' }}" alt="{{ value.image.alt }}">
+                        </div>
+                      {% endif %}
+                      {% if value.content != blank and value.subtitle != blank %}
+                        <div class="right-content">
+                          {% if value.subtitle != blank %}<span class="subtitle">{{ value.subtitle }}</span>{% endif %}
+                          {% if value.content != blank %}<p>{{ value.content }}</p>{% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{- accordion_content -}}
+          {% endif %}
+          </div>
+        </div>
+        
       </div>
     {%- endcapture -%}
   {%- endif -%}

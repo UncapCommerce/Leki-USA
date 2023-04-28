@@ -55,12 +55,20 @@
 -%}
 
 {%- style -%}
+  
   #Accordions--{{ section.id }} {
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
     --border-opacity: {{ border_opacity }};
     --MB: {{ margin_bottom }}px;
 
+  @media(max-width: 767px){
+    #Accordions--{{ section.id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
+  
   {%- if padded -%}
     {%- unless bg_secondary != 'rgba(0,0,0,0)' -%}
       --bg-padded-line: var(--bg);
@@ -76,6 +84,7 @@
 {%- endstyle -%}
 
 {% capture section__heading %}
+  {% if product.metafields.custom.faqs.value != blank %}
   {%- unless heading == blank and subheading == blank and text == blank -%}
     <div class="accordion__header">
       <div class="{{ section_width }}">
@@ -123,7 +132,7 @@
       </div>
     </div>
   {%- endunless -%}
-
+{% endif %}
   {%- assign animation_delay_header = animation_delay -%}
   {%- assign animation_delay_mobile = animation_delay -%}
 {% endcapture %}
@@ -136,13 +145,13 @@
       <div class="accordion__column">
         <ul class="accordion__list">
   {%- endif -%}
-      {%- for block in section.blocks -%}
-        {%- assign title = block.settings.title -%}
+      {%- for faq in product.metafields.custom.faqs.value -%}
+        {% comment %}{%- assign title = block.settings.title -%}
         {%- assign block_text = pages[block.settings.raw_content].content | default: block.settings.text -%}
         {%- assign block_index = forloop.index -%}
-        {%- assign accordion_id = 'Accordion--' | append: block.id -%}
+        {%- assign accordion_id = 'Accordion--' | append: block.id -%}{% endcomment %}
 
-        {%- unless title == blank -%}
+        {%- unless faq.question == blank or faq.answer == blank -%}
           <li id="{{ accordion_id }}" class="accordion__item{% if forloop.index == 1 %} accordion__item--first{% endif %}{% if padded %} accordion__item--padded{% endif %}"
             aria-haspopup="true"
             {% if animations_enabled %}
@@ -155,7 +164,7 @@
             {% endif %}
             {{ block.shopify_attributes }}>
             <button class="accordion__item__title h5" aria-controls="Accordions-item--{{ forloop.index0 }}-{{ section.id }}" data-collapsible-trigger>
-              <span class="accordion__item__title__text">{{ title }}</span>
+              <span class="accordion__item__title__text">{{ faq.question }}</span>
 
               {%- render 'icon-toggle-plus' -%}
               {%- render 'icon-toggle-minus' -%}
@@ -163,7 +172,7 @@
 
             <div class="accordion__item__text-wrapper" id="Accordions-item--{{ forloop.index0 }}-{{ section.id }}" aria-expanded="false" data-collapsible-container>
               <div class="accordion__item__text rte" data-collapsible-content>
-                {{- block_text -}}
+                {{- faq.answer -}}
               </div>
             </div>
           </li>
@@ -188,7 +197,7 @@
   {%- endif -%}
 {% endcapture %}
 
-<section data-section-id="{{ section.id }}" id="Accordions--{{ section.id }}" data-section-type="accordions" class="section-padding accordions-section {{ text_color }}{% if bg_color_secondary %} bg-secondary{% endif %}">
+<section data-section-id="{{ section.id }}" id="Accordions--{{ section.id }}" data-section-type="accordions" class="{% if product.metafields.custom.faqs.value != blank %}section-padding{% endif %} accordions-section {{ text_color }}{% if bg_color_secondary %} bg-secondary{% endif %}">
   {{ section__heading }}
 
   {%- if block_size > 0 -%}
@@ -300,6 +309,26 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding bottom",
+      "default": 40
     }
   ],
   "blocks": [

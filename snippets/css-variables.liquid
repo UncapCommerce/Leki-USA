@@ -121,6 +121,8 @@
     assign color_body_text = 'rgba(0,0,0,1)'
   endif
 
+  assign color_black = settings.color_black
+
   assign color_accent = settings.color_accent
   assign color_accent_text = '#fff'
   assign color_accent_brightness = color_accent | color_brightness | round
@@ -405,7 +407,7 @@
   --COLOR-BG-SECONDARY-LIGHTEN-DARKEN: {{ color_body_bg_secondary_lighten_darken }};
   --COLOR-BG-SECONDARY-LIGHTEN-DARKEN-CONTRAST: {{ color_body_bg_secondary_lighten_darken_contrast }};
 
-  --COLOR-BG-ACCENT: {{ color_bg_accent }};
+  --COLOR-BG-ACCENT: {{ color_bg_accent }}; 
 
   --COLOR-INPUT-BG: {{ color_body_bg }};
 
@@ -441,7 +443,7 @@
   --COLOR-WHITE: #fff;
   --COLOR-WHITE-ALPHA-50: {{ '#ffffff' | color_modify: 'alpha', 0.50 }};
   --COLOR-WHITE-ALPHA-60: {{ '#ffffff' | color_modify: 'alpha', 0.60 }};
-  --COLOR-BLACK: #000;
+  --COLOR-BLACK: {{ color_black }};
   --COLOR-BLACK-ALPHA-20: {{ '#000000' | color_modify: 'alpha', 0.20 }};
   --COLOR-BLACK-ALPHA-50: {{ '#000000' | color_modify: 'alpha', 0.50 }};
   --COLOR-BLACK-ALPHA-60: {{ '#000000' | color_modify: 'alpha', 0.60 }};
