@@ -24,6 +24,13 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     #ProductTemplate--{{ section.id }} { background: {{ bg_color }}; }
     .shop-pay-terms { --payment-terms-background-color: {{ bg_color }} }
   {%- endif -%}
+
+  @media(max-width: 767px){
+     #ProductTemplate--{{ section.id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
 {%- endstyle -%}
 
 <section id="ProductTemplate--{{ section.id }}"
@@ -191,6 +198,26 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       "step": 2,
       "unit": "px",
       "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding bottom",
       "default": 60
     }
   ],
@@ -395,11 +422,15 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           "label": "Accordion page 1",
           "info": "Example: Size chart"
         },
-        {
-          "type": "liquid",
+       {
+          "type": "select",
           "id": "metafield_content_1",
-          "label": "Metafield Content 1",
-          "default": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>"
+          "label": "Select an Accordion 1",
+          "options": [
+            { "value": "highlights", "label": "Highlights" },
+            { "value": "specifications", "label": "Specifications" },
+            { "value": "more-info", "label": "More Info" }
+          ]
         },
         {
           "type": "text",
@@ -411,18 +442,22 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           "type": "richtext",
           "id": "accordion_text_2",
           "label": "Accordion text 2",
-            "default": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>"
+          "default": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>"
         },
         {
           "type": "page",
           "id": "accordion_page_2",
           "label": "Accordion page 2"
         },
-        {
-          "type": "liquid",
+       {
+          "type": "select",
           "id": "metafield_content_2",
-          "label": "Metafield Content 2",
-          "default": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>"
+          "label": "Select an Accordion 2",
+          "options": [
+            { "value": "highlights", "label": "Highlights" },
+            { "value": "specifications", "label": "Specifications" },
+            { "value": "more-info", "label": "More Info" }
+          ]
         },
         {
           "type": "text",
@@ -439,11 +474,15 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           "id": "accordion_page_3",
           "label": "Accordion page 3"
         },
-        {
-          "type": "liquid",
+       {
+          "type": "select",
           "id": "metafield_content_3",
-          "label": "Metafield Content 3",
-          "default": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>"
+          "label": "Select an Accordion 3",
+          "options": [
+            { "value": "highlights", "label": "Highlights" },
+            { "value": "specifications", "label": "Specifications" },
+            { "value": "more-info", "label": "More Info" }
+          ]
         },
         {
           "type": "text",
@@ -460,11 +499,15 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           "id": "accordion_page_4",
           "label": "Accordion page 4"
         },
-        {
-          "type": "liquid",
+       {
+          "type": "select",
           "id": "metafield_content_4",
-          "label": "Metafield Content 4",
-          "default": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>"
+          "label": "Select an Accordion 4",
+          "options": [
+            { "value": "highlights", "label": "Highlights" },
+            { "value": "specifications", "label": "Specifications" },
+            { "value": "more-info", "label": "More Info" }
+          ]
         },
         {
           "type": "text",
@@ -482,10 +525,14 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           "label": "Accordion page 5"
         },
         {
-          "type": "liquid",
+          "type": "select",
           "id": "metafield_content_5",
-          "label": "Metafield Content 5",
-          "default": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies</p>"
+          "label": "Select an Accordion 5",
+          "options": [
+            { "value": "highlights", "label": "Highlights" },
+            { "value": "specifications", "label": "Specifications" },
+            { "value": "more-info", "label": "More Info" }
+          ]
         },
         {
           "type": "header",

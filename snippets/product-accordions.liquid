@@ -41,13 +41,106 @@
   {%- assign metafield_content = 'metafield_content_' | append: forloop.index -%}
   {%- assign metafield_description = block_settings[metafield_content] -%}
 
-  {% assign metafield_description = product.metafields.custom.highlights.value %}
+  {% assign specification_title = '' %}
+
+  {% comment %}
+  {%- assign metainner_content = 'metainner_content_' | append: forloop.index -%}
+  {%- assign metainner_description = block_settings[metainner_content] -%}
+  
+  {% endcomment %}
+  {% case block_settings[metafield_content] %}
+    {% when 'highlights' %}
+      {% if product.metafields.custom.highlights.value != blank %}{% assign metafield_description = product.metafields.custom.highlights.value %}{% endif %}
+    {% when 'specifications' %}
+      {% if product.metafields.custom.shaft_geometry != blank %}
+        {% assign metafield_description = product.metafields.custom.shaft_geometry | metafield_tag %}
+        {% assign specification_title = specification_title | append : 'Storage Bag' %}
+      {% endif %}
+      {% if product.metafields.custom.shaft_shape != blank %}
+        {% assign metafield_description = product.metafields.custom.shaft_shape | metafield_tag | append: ',' |append: metafield_description %}
+        {% assign specification_title = specification_title | append : 'Storage Bag' %}
+      {% endif %}
+      {% if product.metafields.custom.grip != blank %}
+        {% assign metafield_description = product.metafields.custom.grip | metafield_tag | append: ',' | append: metafield_description %}
+        {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.strap != blank %}
+      {% assign metafield_description = product.metafields.custom.strap | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.grip_extension != blank %}
+      {% assign metafield_description = product.metafields.custom.grip_extension | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.shaft_material != blank %}
+      {% assign metafield_description = product.metafields.custom.shaft_material | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.shaft_upper_part != blank %}
+      {% assign metafield_description = product.metafields.custom.shaft_upper_part | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.shaft_middle_part_1_ != blank %}
+      {% assign metafield_description = product.metafields.custom.shaft_middle_part_1_ | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.shaft_middle_part_2_ != blank %}
+      {% assign metafield_description = product.metafields.custom.shaft_middle_part_2_ | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.shaft_middle_part_3_ != blank %}
+      {% assign metafield_description = product.metafields.custom.shaft_middle_part_3_ | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.shaft_lower_part != blank %}
+      {% assign metafield_description = product.metafields.custom.shaft_lower_part | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.folding_system != blank %}
+      {% assign metafield_description = product.metafields.custom.folding_system | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.locking_system != blank %}
+      {% assign metafield_description = product.metafields.custom.locking_system | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.basket != blank %}
+      {% assign metafield_description = product.metafields.custom.basket | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.suspension_system != blank %}
+      {% assign metafield_description = product.metafields.custom.suspension_system | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.tip != blank %}
+      {% assign metafield_description = product.metafields.custom.tip | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.size != blank %}
+      {% assign metafield_description = product.metafields.custom.size | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.storage_bag != blank %}
+      {% assign metafield_description = product.metafields.custom.storage_bag | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.segments_diameter != blank %}
+      {% assign metafield_description = product.metafields.custom.segments_diameter | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.weight != blank %}
+      {% assign metafield_description = product.metafields.custom.weight | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.pack_size != blank %}
+      {% assign metafield_description = product.metafields.custom.pack_size | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.construction != blank %}
+      {% assign metafield_description = product.metafields.custom.construction | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.sizerun != blank %}
+      {% assign metafield_description = product.metafields.custom.sizerun | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.gender != blank %}
+      {% assign metafield_description = product.metafields.custom.gender | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.age_group != blank %}
+      {% assign metafield_description = product.metafields.custom.age_group | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}
+      {% if product.metafields.custom.activities != blank %}
+      {% assign metafield_description = product.metafields.custom.activities | metafield_tag | append: ',' | append: metafield_description %}
+      {% assign specification_title = specification_title | append : 'Storage Bag' %}{% endif %}     
+    {% when 'more-info' %}
+      {% assign metafield_description = product.metafields.custom.more_info %}
+  {% endcase %}
 
   {%- if accordion_title != blank and accordion_content != blank or accordion_title != blank and metafield_description != blank -%}
     {%- capture accordions -%}
       {{- accordions -}}
 
-      <div class="product__accordion">
+      <div class="product__accordion" >
         <button class="product__accordion__title" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
           {{- accordion_title -}}
           {%- render 'icon-toggle-plus' -%}
@@ -56,34 +149,40 @@
 
         <div class="product__accordion__content" id="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-container>      
           <div class="product__accordion__inner rte" data-collapsible-content>
-          {% if metafield_description != blank %}
-            <div class="accordion_metafield-content">
-              {% for value in metafield_description %}
-                <div class="inner_accordion">
-                  {% if value.highlight_title != blank %}<span class="accordion_object-title" data-collapsible-trigger>{{ value.highlight_title }}
-                     
-                  </span>{% endif %}
-                  {% if value.content != blank or value.image != blank %}
-                    <div class="metafield-inner_content" data-collapsible-content>
-                      {% if value.image != blank %}
-                        <div class="left-image_wrap">
-                          <img class="lazyload" src="{{ value.image | img_url:'' }}" alt="{{ value.image.alt }}">
-                        </div>
-                      {% endif %}
-                      {% if value.content != blank and value.subtitle != blank %}
-                        <div class="right-content">
-                          {% if value.subtitle != blank %}<span class="subtitle">{{ value.subtitle }}</span>{% endif %}
-                          {% if value.content != blank %}<p>{{ value.content }}</p>{% endif %}
-                        </div>
-                      {% endif %}
-                    </div>
-                  {% endif %}
-                </div>
-              {% endfor %}
-            </div>
-          {% else %}
-            {{- accordion_content -}}
-          {% endif %}
+          {% assign accordion_title = accordion_title | handle %}
+            {% if metafield_description != blank %}
+              <div class="accordion_metafield-content">
+              {% if block_settings[metafield_content] contains 'highlights' %}
+                {% for value in metafield_description %}
+                  <div class="inner_accordion">
+                    {% if value.highlight_title != blank %}<span class="accordion_inner-title">{{ value.highlight_title }}
+                       
+                    </span>{% endif %}
+                    {% if value.content != blank or value.image != blank %}
+                      <div class="metafield-inner_content">
+                        {% if value.image != blank %}
+                          <div class="left-image_wrap">
+                            <img class="lazyload" src="{{ value.image | img_url:'' }}" alt="{{ value.image.alt }}">
+                          </div>
+                        {% endif %}
+                        
+                          {% if value.content != blank and value.subtitle != blank %}
+                            <div class="right-content">
+                              {% if value.subtitle != blank %}<span class="subtitle">{{ value.subtitle }}</span>{% endif %}
+                              {% if value.content != blank %}<p>{{ value.content }}</p>{% endif %}
+                            </div>
+                          {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+                {% else %}
+                  {{ metafield_description }}
+              {% endif %}
+              </div>
+            {% else %}
+              {{- accordion_content -}}
+            {% endif %}
           </div>
         </div>
         

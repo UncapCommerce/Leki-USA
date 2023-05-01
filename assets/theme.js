@@ -7183,7 +7183,6 @@
       this.container = container;
       this.body = document.body;
       this.sliders = this.container.querySelectorAll(selectors$o.slider);
-
       if (theme.settings.productGridHover === 'slideshow' && !window.theme.touch) {
         this.productGridSlideshow();
       }
@@ -7215,7 +7214,7 @@
               wrapAround: true,
               imagesLoaded: true,
               lazyLoad: true,
-              pageDots: false,
+              pageDots: true,
               prevNextButtons: false,
               adaptiveHeight: false,
               pauseAutoPlayOnHover: false,
@@ -13018,12 +13017,18 @@
       const slider = this.container.querySelector(selectors$V.upsellProductSlider);
       const items = this.container.querySelectorAll(selectors$V.upsellProduct);
 
-      if (items.length > 1) {
+      if (items.length > 2) {
         const flktyUpsell = new Flickity(slider, {
-          wrapAround: true,
-          pageDots: true,
+          contain : true,
+          wrapAround: false,
+          pageDots: false,
           adaptiveHeight: true,
           prevNextButtons: false,
+          lazyLoad: true,
+          freeScroll: true,
+          groupCells: 2,
+          groupCells: true,
+          infinite: false,
         });
 
         flktyUpsell.on('change', (index) => {
@@ -14742,4 +14747,5 @@
   });
 
 }(themeVendor.ScrollLock, themeVendor.Flickity, themeVendor.Sqrl, themeVendor.themeCurrency, themeVendor.ajaxinate, themeVendor.AOS));
+
 //# sourceMappingURL=theme.js.map
