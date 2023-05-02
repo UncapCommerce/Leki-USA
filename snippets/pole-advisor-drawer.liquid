@@ -1,0 +1,22 @@
+{% assign pole_button_style = settings.pole_button_style %}
+<div id="pole-adviser-drawer" class="pole-adviser-drawer" data-poleadvisor-drawer>
+  <div class="pole-close">
+    {%- render 'icon-close' -%}
+  </div>
+  <div class="pole-inner-wrap">
+    <h3>{{ settings.title }}</h3>
+    <span>{{ settings.subtitle }}</span>
+    <form id="poleSizeAdvisorForm" method="post" action="#">
+      <input type="number" class="form-control" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
+      <input type="submit" class="btn {{ pole_button_style }}" value="{{ settings.pole_button_text }}">
+      <div class="pole-warning">    
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 15.6V12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 8.40002H12.009" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>You can adjust Vario-Poles to the exact length.</span>
+      </div> 
+    </form>
+  </div>
+</div>

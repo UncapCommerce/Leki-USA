@@ -10,7 +10,7 @@
 -%}
 
 {%- style -%}
-  #RelatedProducts--{{ section.id }} {
+  #RelatedProducts--{{ section.id }} .related-products{
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
@@ -20,8 +20,15 @@
     #RelatedProducts--{{ section.id }} .product-grid-item { --bg: {{ bg_color }}; }
   {%- endif -%}
 
+  @media(max-width: 1023px){
+    #RelatedProducts--{{ section.id }} .related-products{
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  
   @media(max-width: 767px){
-    #RelatedProducts--{{ section.id }} {
+    #RelatedProducts--{{ section.id }} .related-products{
       --PT: {{ section.settings.mob_padding_top }}px;
       --PB: {{ section.settings.mob_padding_bottom }}px;
     }
@@ -149,6 +156,26 @@
       "step": 2,
       "unit": "px",
       "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Tablet Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Tablet Padding bottom",
       "default": 60
     },
     {

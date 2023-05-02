@@ -5516,7 +5516,6 @@
 
     cartEvents() {
       const cartItemRemove = document.querySelectorAll(selectors$k.cartItemRemove);
-
       if (cartItemRemove.length) {
         this.totalItems = cartItemRemove.length;
         cartItemRemove.forEach((item) => {
@@ -14749,3 +14748,12 @@
 }(themeVendor.ScrollLock, themeVendor.Flickity, themeVendor.Sqrl, themeVendor.themeCurrency, themeVendor.ajaxinate, themeVendor.AOS));
 
 //# sourceMappingURL=theme.js.map
+
+let pole_div = document.querySelector('.pole-advisor');
+pole_div.addEventListener("click", () =>{
+  document.body.classList.add('pole-drawer-active');
+});
+let close_drawer = document.querySelector('#pole-adviser-drawer .pole-close .icon.icon-close');
+close_drawer.addEventListener("click", () =>{
+  document.body.classList.remove('pole-drawer-active');
+});

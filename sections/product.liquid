@@ -99,7 +99,43 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 {%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
 </script>
 {%- endif -%}
+<script>
+if (document.querySelectorAll(".inner_accordion") != null ){
+  const accordionContent = document.querySelectorAll(".inner_accordion");
+  
+  accordionContent.forEach((item, index) => {
+    let header = item.querySelector(".accordion_inner-title");
+    header.addEventListener("click", () =>{
+      item.classList.toggle("open");
 
+      if(item.querySelector(".metafield-inner_content") != null ){
+      let description = item.querySelector(".metafield-inner_content");
+        if(item.classList.contains("open")){
+            description.style.height = `${description.scrollHeight}px`;
+            item.querySelector("svg").classList.replace("icon-arrow-up", "icon-arrow-dawn");
+        }else{
+            description.style.height = "0px";
+            item.querySelector("svg").classList.replace("icon-arrow-dawn", "icon-arrow-up");
+        }
+      }
+      removeOpen(index); //calling the funtion and also passing the index number of the clicked header
+    });
+  });
+  
+  function removeOpen(index1){
+    accordionContent.forEach((item2, index2) => {
+      if(index1 != index2){
+        item2.classList.remove("open");
+        if(item2.querySelector(".metafield-inner_content") != null ){
+          let des = item2.querySelector(".metafield-inner_content");
+          des.style.height = "0px";
+          item2.querySelector("svg").classList.replace("icon-arrow-dawn", "icon-arrow-up");
+        }
+      }
+    });
+  }
+}
+</script>
 {% schema %}
 {
   "name": "Product pages",

@@ -1068,6 +1068,54 @@
     ]
   },
   {
+    "name": "Pole Advisor Drawer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sub Title"
+      },
+      {
+        "type": "select",
+        "id": "pole_button_style",
+        "label": "Style",
+        "default": "btn--secondary btn--small",
+        "options": [
+          {
+            "label": "Text",
+            "value": "btn--text"
+          },
+          {
+            "label": "Small button",
+            "value": "btn--primary btn--small"
+          },
+          {
+            "label": "Large button",
+            "value": "btn--primary"
+          },
+          {
+            "label": "Small secondary button",
+            "value": "btn--secondary btn--small"
+          },
+          {
+            "label": "Large secondary button",
+            "value": "btn--secondary"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "pole_button_text",
+        "label": "Button text"
+      }
+    ]
+  },
+  {
     "name": "Social media",
     "settings": [
       {
