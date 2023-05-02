@@ -24086,4 +24086,10 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
   .accordion_metafield-content .table-wrapper table td {padding: 10px 0;}
   #pole-adviser-drawer .pole-inner-wrap {padding: 40px 20px 42px;}
   #pole-adviser-drawer .pole-close {margin-bottom: 18px;}
+  #pole-adviser-drawer{width: 500px;}
+  .pole-drawer-active #pole-adviser-drawer{transform: translate(calc(+1 * 500px));}
+}
+@media(max-width: 575px){
+  #pole-adviser-drawer{width: 95vw;}
+  .pole-drawer-active #pole-adviser-drawer{transform: translate(calc(+1 * 95vw));}
 }
