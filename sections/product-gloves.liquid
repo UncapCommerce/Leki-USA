@@ -47,7 +47,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
   data-sticky-enabled="{{ section.settings.product_sticky_enable }}"
   data-tall-layout="{% if section.settings.image_layout == 'carousel' %}false{% else %}true{% endif %}">
   <div class="{{ section_width }}">
-    {%- render 'product' section: section, unique: section.id -%}
+    {%- render 'product-gloves' section: section, unique: section.id -%}
   </div>
 </section>
 
@@ -108,7 +108,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 
 {% schema %}
 {
-  "name": "Product pages",
+  "name": "Product Page - Gloves",
   "class": "shopify-section--product",
   "settings": [
     {
@@ -475,7 +475,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           "id": "accordion_page_2",
           "label": "Accordion page 2"
         },
-       {
+        {
           "type": "select",
           "id": "metafield_content_2",
           "label": "Select an Accordion 2",

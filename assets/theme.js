@@ -12971,9 +12971,20 @@
           this.flktyNav = new Flickity(thumbs, {
             asNavFor: slider,
             contain: true,
-            pageDots: true,
+            pageDots: false,
             prevNextButtons: false,
             resize: true,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  asNavFor: slider,
+                  contain: true,
+                  pageDots: true,
+                  prevNextButtons: false,
+                }
+              }
+            ],
             on: {
               ready: () => {
                 thumbs.setAttribute(attributes$z.tabindex, '-1');
@@ -14743,17 +14754,72 @@
     if (!hasNativeSmoothScroll) {
       loadScript({url: theme.assets.smoothscroll});
     }
+
+    // product accordion
+    if (document.querySelectorAll(".inner_accordion") != null ){
+      const accordionContent = document.querySelectorAll(".inner_accordion");
+
+      if (document.querySelector(".accordion_inner-title") != null ){
+        accordionContent.forEach((item, index) => {
+          let header = item.querySelector(".accordion_inner-title");
+          header.addEventListener("click", () =>{
+            item.classList.toggle("open");
+      
+            if(item.querySelector(".metafield-inner_content") != null ){
+            let description = item.querySelector(".metafield-inner_content");
+              if(item.classList.contains("open")){
+                  description.style.height = `${description.scrollHeight}px`;
+                  item.querySelector("svg").classList.replace("icon-arrow-up", "icon-arrow-dawn");
+              }else{
+                  description.style.height = "0px";
+                  item.querySelector("svg").classList.replace("icon-arrow-dawn", "icon-arrow-up");
+              }
+            }
+            removeOpen(index); //calling the funtion and also passing the index number of the clicked header
+          });
+        });
+      }
+      
+      function removeOpen(index1){
+        accordionContent.forEach((item2, index2) => {
+          if(index1 != index2){
+            item2.classList.remove("open");
+            if(item2.querySelector(".metafield-inner_content") != null ){
+              let des = item2.querySelector(".metafield-inner_content");
+              des.style.height = "0px";
+              item2.querySelector("svg").classList.replace("icon-arrow-dawn", "icon-arrow-up");
+            }
+          }
+        });
+      }
+    }
+    
+    // pole advisor drawer
+    if( document.querySelector('.pole-advisor') != null ){
+      let pole_div = document.querySelector('.pole-advisor');
+      pole_div.addEventListener("click", () =>{
+        document.body.classList.add('pole-drawer-active');
+      });
+      let close_drawer = document.querySelector('#pole-adviser-drawer .pole-close .icon.icon-close');
+      close_drawer.addEventListener("click", () =>{
+        document.body.classList.remove('pole-drawer-active');
+      });
+    }
+
+    // Glove advisor drawer
+    if( document.querySelector('.glove-advisor') != null ){
+      let glove_div = document.querySelector('.glove-advisor');
+      glove_div.addEventListener("click", () =>{
+        document.body.classList.add('glove-drawer-active');
+      });
+      let hide_drawer = document.querySelector('#gloves-adviser-drawer .glove-close .icon.icon-close');
+      hide_drawer.addEventListener("click", () =>{
+        document.body.classList.remove('glove-drawer-active');
+      });
+    }
+    
   });
 
 }(themeVendor.ScrollLock, themeVendor.Flickity, themeVendor.Sqrl, themeVendor.themeCurrency, themeVendor.ajaxinate, themeVendor.AOS));
 
 //# sourceMappingURL=theme.js.map
-
-let pole_div = document.querySelector('.pole-advisor');
-pole_div.addEventListener("click", () =>{
-  document.body.classList.add('pole-drawer-active');
-});
-let close_drawer = document.querySelector('#pole-adviser-drawer .pole-close .icon.icon-close');
-close_drawer.addEventListener("click", () =>{
-  document.body.classList.remove('pole-drawer-active');
-});
