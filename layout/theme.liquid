@@ -349,7 +349,7 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
   assign challenge = 'challenge' | prepend: root
 -%}
 
-<body id="{{ page_title | handle }}" class="{{ body_class | strip_newlines | strip }}" data-animations="{{ settings.animations_enabled }}">
+<body id="{{ page_title | handle }}" class="{% if template.suffix != blank %}template--{{ product.template_suffix }}{% endif %} {{ body_class | strip_newlines | strip }}" data-animations="{{ settings.animations_enabled }}">
   {%- render 'loading' -%}
 
   <a class="in-page-link skip-link" data-skip-content href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>

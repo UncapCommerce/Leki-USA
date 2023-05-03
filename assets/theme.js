@@ -12971,7 +12971,7 @@
           this.flktyNav = new Flickity(thumbs, {
             asNavFor: slider,
             contain: true,
-            pageDots: false,
+            pageDots: true,
             prevNextButtons: false,
             resize: true,
             on: {
