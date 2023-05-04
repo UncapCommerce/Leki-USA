@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-pole-length-advisor",
+      "settings": {
+      }
+    },
+    "268ec661-852f-4a1a-8e81-42f9a305ff0a": {
+      "type": "section-collection",
+      "settings": {
+        "collection": "adventure",
+        "products_layout": "grid",
+        "number_of_products": 4,
+        "text_alignment": "text-center",
+        "subtitle": "",
+        "subtitle_color": "#27304A",
+        "title": "",
+        "heading_size": 300,
+        "text": "<p>Pole Length Advisor<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "268ec661-852f-4a1a-8e81-42f9a305ff0a"
+  ]
+}

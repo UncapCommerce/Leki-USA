@@ -5,6 +5,7 @@
   assign banner_height = section.settings.banner_height
   assign text_position = section.settings.text_position
   assign overlay_opacity = section.settings.overlay_opacity | times: 0.01
+  assign section_width = section.settings.width
   if collection.handle == 'all'
     assign banner_image = section.settings.banner_image
   endif
@@ -99,20 +100,22 @@
 {%- endif -%}
 
 <section id="ImageWithTitle--{{ section.id }}" class="banner section-padding" data-section-type="image-with-title" data-section-id="{{ section.id }}">
-  <div class="banner-inner {{ banner_height }} align--{{ text_position }}{% if bg_color_secondary %} bg-secondary{% endif %}" data-overflow-container>
-    {%- if show_banner_image -%}
-      {%- capture styles -%}
-        {%- if banner_height == 'original-height' -%}
-          padding-top: {{ 1 | divided_by: banner_image.aspect_ratio | times: 100 | round: 1 }}%;
-        {%- endif -%}
-      {%- endcapture -%}
-
-      {%- render 'image-fill', is_background: true, img_object: banner_image, classes: 'banner-img', styles: styles -%}
-
-      {{- collection_header -}}
-    {%- else -%}
-      {{- collection_header -}}
-    {%- endif -%}
+  <div class="{{ section_width }}">
+    <div class="banner-inner {{ banner_height }} align--{{ text_position }}{% if bg_color_secondary %} bg-secondary{% endif %}" data-overflow-container>
+      {%- if show_banner_image -%}
+        {%- capture styles -%}
+          {%- if banner_height == 'original-height' -%}
+            padding-top: {{ 1 | divided_by: banner_image.aspect_ratio | times: 100 | round: 1 }}%;
+          {%- endif -%}
+        {%- endcapture -%}
+  
+        {%- render 'image-fill', is_background: true, img_object: banner_image, classes: 'banner-img', styles: styles -%}
+  
+        {{- collection_header -}}
+      {%- else -%}
+        {{- collection_header -}}
+      {%- endif -%}
+    </div>
   </div>
 </section>
 
@@ -218,6 +221,17 @@
       {
         "type": "header",
         "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full", "label": "Full width" },
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" }
+        ]
       },
       {
         "type": "range",

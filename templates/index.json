@@ -32,7 +32,7 @@
       "settings": {
         "slide_height": "original-height",
         "enable_mobile_height": true,
-        "mobile_slide_height": "original-height-mobile",
+        "mobile_slide_height": "five-fifty-height-mobile",
         "show_nav_dots": true,
         "show_nav_arrows": true,
         "show_arrow_down": false,
@@ -59,7 +59,207 @@
         "heading_size": 100,
         "button_text": "",
         "button_link": "",
-        "button_style": "btn--secondary btn--small"
+        "button_style": "btn--secondary btn--small",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 0,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
+      }
+    },
+    "section-collection-0": {
+      "type": "section-collection",
+      "settings": {
+        "collection": "adventure",
+        "products_layout": "carousel",
+        "number_of_products": 4,
+        "text_alignment": "text-left",
+        "subtitle": "find the right pole",
+        "subtitle_color": "#bf0038",
+        "title": "Our Makalu Family",
+        "heading_size": 175,
+        "text": "<p>Over 50 years ago, LEKI developed the world's first adjustable trekking pole, the Makalu. In 1978 Reinhold Messner climbed Mount Everest with it and the trekking poles conquered the mountains. In the meantime, a whole family has grown up around the Makalu.<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 58,
+        "padding_bottom": 60,
+        "tab_padding_top": 48,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
+      }
+    },
+    "9c881319-66c4-4a51-a225-05b49735a0d8": {
+      "type": "section-grid",
+      "blocks": {
+        "template--18722030289190__9c881319-66c4-4a51-a225-05b49735a0d8-1682417963d47db2e7-0": {
+          "type": "image",
+          "settings": {
+            "width": "50",
+            "image": "shopify:\/\/shop_images\/banner-1.jpg",
+            "overlay_opacity": 0,
+            "text_position": "center",
+            "subheading": "",
+            "title": "Folding Poles",
+            "text": "",
+            "button_text": "To the poless",
+            "link": "#",
+            "secondary_button_text": "",
+            "secondary_button_link": "",
+            "text_color": "text-light"
+          }
+        },
+        "template--18722030289190__9c881319-66c4-4a51-a225-05b49735a0d8-1682417963d47db2e7-1": {
+          "type": "image",
+          "settings": {
+            "width": "50",
+            "image": "shopify:\/\/shop_images\/banner-2.jpg",
+            "overlay_opacity": 0,
+            "text_position": "center",
+            "subheading": "",
+            "title": "Telescopic Poles",
+            "text": "",
+            "button_text": "To the poless",
+            "link": "#",
+            "secondary_button_text": "",
+            "secondary_button_link": "",
+            "text_color": "text-light"
+          }
+        }
+      },
+      "block_order": [
+        "template--18722030289190__9c881319-66c4-4a51-a225-05b49735a0d8-1682417963d47db2e7-0",
+        "template--18722030289190__9c881319-66c4-4a51-a225-05b49735a0d8-1682417963d47db2e7-1"
+      ],
+      "settings": {
+        "height": "630",
+        "enable_mobile_height": true,
+        "mobile_height": "320",
+        "heading_size": 100,
+        "button_style": "btn--secondary btn--small",
+        "secondary_button_style": "btn--secondary btn--small",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": false,
+        "width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "section-collection-1": {
+      "type": "section-collection",
+      "settings": {
+        "collection": "adventure",
+        "products_layout": "grid",
+        "number_of_products": 4,
+        "text_alignment": "text-left",
+        "subtitle": "ALPINE SKII POLES",
+        "subtitle_color": "#27304a",
+        "title": "Popular right now",
+        "heading_size": 300,
+        "text": "",
+        "text_size": 150,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "tab_padding_top": 56,
+        "tab_padding_bottom": 56,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 18
+      }
+    },
+    "65119804-ec72-41f1-a297-a1e4279cf92d": {
+      "type": "section-grid-bottom",
+      "blocks": {
+        "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-0": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify:\/\/shop_images\/trail-running.jpg",
+            "overlay_opacity": 10,
+            "text_position": "center",
+            "subheading": "",
+            "title": "Trail Running",
+            "text": "",
+            "button_text": "",
+            "link": "",
+            "secondary_button_text": "",
+            "secondary_button_link": "",
+            "text_color": "text-light"
+          }
+        },
+        "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-1": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify:\/\/shop_images\/cross-trail.jpg",
+            "overlay_opacity": 10,
+            "text_position": "center",
+            "subheading": "",
+            "title": "Cross Trail",
+            "text": "",
+            "button_text": "",
+            "link": "",
+            "secondary_button_text": "",
+            "secondary_button_link": "",
+            "text_color": "text-light"
+          }
+        },
+        "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-2": {
+          "type": "image",
+          "settings": {
+            "width": "33.33",
+            "image": "shopify:\/\/shop_images\/four-season.jpg",
+            "overlay_opacity": 10,
+            "text_position": "center",
+            "subheading": "",
+            "title": "Four Season",
+            "text": "",
+            "button_text": "",
+            "link": "",
+            "secondary_button_text": "",
+            "secondary_button_link": "",
+            "text_color": "text-light"
+          }
+        }
+      },
+      "block_order": [
+        "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-0",
+        "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-1",
+        "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-2"
+      ],
+      "settings": {
+        "height": "330",
+        "enable_mobile_height": true,
+        "mobile_height": "320",
+        "heading_size": 100,
+        "button_style": "btn--secondary btn--small",
+        "secondary_button_style": "btn--secondary btn--small",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": false,
+        "width": "wrapper--full-padded",
+        "add_gutter": true,
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
       }
     },
     "section-marquee": {
@@ -112,103 +312,6 @@
         "text_size": 110,
         "message_spacing": 25,
         "padding_top": 0,
-        "padding_bottom": 60
-      }
-    },
-    "section-collection-0": {
-      "type": "section-collection",
-      "settings": {
-        "collection": "",
-        "products_layout": "grid",
-        "number_of_products": 4,
-        "text_alignment": "text-center",
-        "title": "Our Story",
-        "heading_size": 175,
-        "text": "<p>Use this text to share information about your collection with your customers. <\/p>",
-        "text_size": 125,
-        "button_text": "",
-        "button_style": "btn--primary",
-        "bg_color_secondary": false,
-        "enable_slider_mobile": true,
-        "columns_mobile": "2",
-        "width": "wrapper",
-        "padding_top": 20,
-        "padding_bottom": 60
-      }
-    },
-    "9c881319-66c4-4a51-a225-05b49735a0d8": {
-      "type": "section-grid",
-      "blocks": {
-        "template--18722030289190__9c881319-66c4-4a51-a225-05b49735a0d8-1682417963d47db2e7-0": {
-          "type": "image",
-          "settings": {
-            "width": "50",
-            "image": "shopify:\/\/shop_images\/banner-1.jpg",
-            "overlay_opacity": 0,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Folding Poles",
-            "text": "",
-            "button_text": "To the poless",
-            "link": "#",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "template--18722030289190__9c881319-66c4-4a51-a225-05b49735a0d8-1682417963d47db2e7-1": {
-          "type": "image",
-          "settings": {
-            "width": "50",
-            "image": "shopify:\/\/shop_images\/banner-2.jpg",
-            "overlay_opacity": 0,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Telescopic Poles",
-            "text": "",
-            "button_text": "To the poless",
-            "link": "#",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        }
-      },
-      "block_order": [
-        "template--18722030289190__9c881319-66c4-4a51-a225-05b49735a0d8-1682417963d47db2e7-0",
-        "template--18722030289190__9c881319-66c4-4a51-a225-05b49735a0d8-1682417963d47db2e7-1"
-      ],
-      "settings": {
-        "height": "350",
-        "heading_size": 100,
-        "button_style": "btn--secondary btn--small",
-        "secondary_button_style": "btn--secondary btn--small",
-        "bg_color_secondary": false,
-        "enable_slider_mobile": false,
-        "width": "wrapper--full-padded",
-        "add_gutter": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section-collection-1": {
-      "type": "section-collection",
-      "settings": {
-        "collection": "",
-        "products_layout": "grid",
-        "number_of_products": 4,
-        "text_alignment": "text-left",
-        "title": "Best Sellers",
-        "heading_size": 300,
-        "text": "<p>Use this text to share information about your collection with your customers.<\/p>",
-        "text_size": 150,
-        "button_text": "",
-        "button_style": "btn--primary",
-        "bg_color_secondary": false,
-        "enable_slider_mobile": true,
-        "columns_mobile": "2",
-        "width": "wrapper",
-        "padding_top": 60,
         "padding_bottom": 60
       }
     },
@@ -473,6 +576,8 @@
         "products_layout": "split-right",
         "number_of_products": 4,
         "text_alignment": "text-left",
+        "subtitle": "Best Sellers",
+        "subtitle_color": "#27304a",
         "title": "Best Sellers",
         "heading_size": 300,
         "text": "<p>Use this text to share information about your collection with your customers.<\/p>",
@@ -484,7 +589,11 @@
         "columns_mobile": "2",
         "width": "wrapper",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "section-promotion-row-1": {
@@ -721,6 +830,8 @@
       ],
       "settings": {
         "height": "350",
+        "enable_mobile_height": false,
+        "mobile_height": "330",
         "heading_size": 100,
         "button_style": "btn--secondary btn--small",
         "secondary_button_style": "btn--secondary btn--small",
@@ -729,7 +840,11 @@
         "width": "wrapper",
         "add_gutter": true,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "section-image-with-text": {
@@ -866,88 +981,16 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
-    },
-    "8da7aa66-dbdf-4c08-a101-8a02279ac893": {
-      "type": "section-grid",
-      "blocks": {
-        "template--18722030289190__8da7aa66-dbdf-4c08-a101-8a02279ac893-1682424269006586d9-0": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "image": "shopify:\/\/shop_images\/trail-running.jpg",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop Trending",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "template--18722030289190__8da7aa66-dbdf-4c08-a101-8a02279ac893-1682424269006586d9-1": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "image": "shopify:\/\/shop_images\/cross-trail.jpg",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop Clearance",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "template--18722030289190__8da7aa66-dbdf-4c08-a101-8a02279ac893-1682424269006586d9-2": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "image": "shopify:\/\/shop_images\/four-season.jpg",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop <br> Best Sellers",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        }
-      },
-      "block_order": [
-        "template--18722030289190__8da7aa66-dbdf-4c08-a101-8a02279ac893-1682424269006586d9-0",
-        "template--18722030289190__8da7aa66-dbdf-4c08-a101-8a02279ac893-1682424269006586d9-1",
-        "template--18722030289190__8da7aa66-dbdf-4c08-a101-8a02279ac893-1682424269006586d9-2"
-      ],
-      "settings": {
-        "height": "350",
-        "heading_size": 100,
-        "button_style": "btn--secondary btn--small",
-        "secondary_button_style": "btn--secondary btn--small",
-        "bg_color_secondary": false,
-        "enable_slider_mobile": true,
-        "width": "wrapper",
-        "add_gutter": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "section-slideshow",
     "a31d1161-7e59-421d-8104-3bbcee3ecc27",
-    "section-marquee",
     "section-collection-0",
     "9c881319-66c4-4a51-a225-05b49735a0d8",
     "section-collection-1",
+    "65119804-ec72-41f1-a297-a1e4279cf92d",
+    "section-marquee",
     "section-list-collection",
     "section-promotion-row-0",
     "section-look",
@@ -958,7 +1001,6 @@
     "section-grid",
     "section-image-with-text",
     "section-press",
-    "section-banner-text-columns",
-    "8da7aa66-dbdf-4c08-a101-8a02279ac893"
+    "section-banner-text-columns"
   ]
 }

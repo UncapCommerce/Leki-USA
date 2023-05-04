@@ -12971,20 +12971,9 @@
           this.flktyNav = new Flickity(thumbs, {
             asNavFor: slider,
             contain: true,
-            pageDots: false,
+            pageDots: true,
             prevNextButtons: false,
             resize: true,
-            responsive: [
-              {
-                breakpoint: 1024,
-                settings: {
-                  asNavFor: slider,
-                  contain: true,
-                  pageDots: true,
-                  prevNextButtons: false,
-                }
-              }
-            ],
             on: {
               ready: () => {
                 thumbs.setAttribute(attributes$z.tabindex, '-1');
