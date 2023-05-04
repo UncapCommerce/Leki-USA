@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "product",
+      "type": "product-gloves",
       "blocks": {
         "title": {
           "type": "title",
@@ -9,7 +9,7 @@
             "subheading": "breadcrumbs",
             "show_rating": true,
             "show_rating_count": false,
-            "padding_bottom": 20
+            "padding_bottom": 24
           }
         },
         "inventory_countdown": {
@@ -17,7 +17,7 @@
           "settings": {
             "max_inventory": 10,
             "hide_inventory_count": true,
-            "padding_bottom": 20
+            "padding_bottom": 24
           }
         },
         "form": {
@@ -29,18 +29,18 @@
             "show_quantity": true,
             "show_payment_button": false,
             "enable_subscriptions_selectors": true,
-            "padding_bottom": 20
+            "padding_bottom": 24
           }
         },
-        "23fcd746-33b0-4c12-b500-1df99de893fa": {
+        "12e9c31f-e646-45c3-b9aa-5050b6c7d2b3": {
           "type": "text",
           "settings": {
             "title": "<p>LEKI does not sell to customers located within the following states due to the prohibitive local tax laws - AL and LA.<\/p>",
-            "text_alignment": "left",
-            "padding_bottom": 20
+            "text_alignment": "center",
+            "padding_bottom": 24
           }
         },
-        "979e4a2c-4b2e-4f93-81bd-1d35ad36bf3c": {
+        "387c0579-b3b7-4d6e-9930-d6dbee74aae3": {
           "type": "icon",
           "settings": {
             "icon_name": "check",
@@ -53,10 +53,10 @@
             "width": "half",
             "text_alignment": "center",
             "bg_color": "",
-            "padding_bottom": 20
+            "padding_bottom": 24
           }
         },
-        "6c235bfb-7b6d-4ea2-b3c2-3334060735e0": {
+        "1e56ec34-f9bb-43ed-bf34-7a68bbec022d": {
           "type": "icon",
           "settings": {
             "icon_name": "check",
@@ -69,13 +69,13 @@
             "width": "half",
             "text_alignment": "center",
             "bg_color": "",
-            "padding_bottom": 20
+            "padding_bottom": 24
           }
         },
         "description": {
           "type": "description",
           "settings": {
-            "padding_bottom": 20
+            "padding_bottom": 24
           }
         },
         "product_accordions": {
@@ -92,7 +92,7 @@
             "accordion_heading_3": "More Info",
             "accordion_text_3": "",
             "accordion_page_3": "",
-            "metafield_content_3": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies<\/p>",
+            "metafield_content_3": "more-info",
             "accordion_heading_4": "",
             "accordion_text_4": "",
             "accordion_page_4": "",
@@ -101,14 +101,14 @@
             "accordion_text_5": "",
             "accordion_page_5": "",
             "metafield_content_5": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies<\/p>",
-            "padding_bottom": 20
+            "padding_bottom": 24
           }
         },
         "upsell": {
           "type": "upsell",
           "settings": {
             "product_list": "{{ product.metafields.custom.buy_it_with.value }}",
-            "padding_bottom": 20
+            "padding_bottom": 24
           }
         },
         "icon_row": {
@@ -149,9 +149,9 @@
         "title",
         "inventory_countdown",
         "form",
-        "23fcd746-33b0-4c12-b500-1df99de893fa",
-        "979e4a2c-4b2e-4f93-81bd-1d35ad36bf3c",
-        "6c235bfb-7b6d-4ea2-b3c2-3334060735e0",
+        "12e9c31f-e646-45c3-b9aa-5050b6c7d2b3",
+        "387c0579-b3b7-4d6e-9930-d6dbee74aae3",
+        "1e56ec34-f9bb-43ed-bf34-7a68bbec022d",
         "description",
         "product_accordions",
         "upsell",
@@ -168,28 +168,30 @@
         "width": "wrapper--full-padded",
         "padding_top": 60,
         "padding_bottom": 60,
-        "mob_padding_top": 22,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 20,
         "mob_padding_bottom": 24
       }
     },
-    "899a2903-e606-438e-b4e5-9cea55207620": {
+    "e0306b1f-d063-43d0-b124-baa3ab703a0f": {
       "type": "section-image-with-text",
       "settings": {
         "section_height": "five-fifty-height",
         "layout": "inline",
         "image_location": "left",
         "image_width": "standard",
-        "image": "shopify:\/\/shop_images\/Airgon.jpg",
+        "image": "shopify:\/\/shop_images\/gloves.jpg",
         "image_mobile": "shopify:\/\/shop_images\/grip-mobile.jpg",
         "subheading": "",
-        "title": "<p>Airgon Air Grip<\/p>",
+        "title": "<p>Alpine Skiing Gloves<\/p>",
         "heading_highlight_type": "circle",
         "heading_size": 130,
-        "text_content": "The grip is the link between the hand and the pole and is therefore one of the most important components for power transfer, safety, comfort, lightness and durability.",
+        "text_content": "Skiing is one of the most popular winter sports activities. In addition to skis and poles, the basic equipment also includes ski gloves. Our gloves ensure optimal well-being and warm hands even on icy days. Discover our wide range of gloves for women, men and children.",
         "text_alignment": "center",
-        "button_text": "",
-        "button_link": "",
-        "button_style": "btn--primary btn--small",
+        "button_text": "Show all ski gloves",
+        "button_link": "#",
+        "button_style": "btn--secondary btn--small",
         "video_link": "",
         "text_color": "text-light",
         "bg_color": "#27304a",
@@ -206,7 +208,7 @@
         "bg_color": "",
         "width": "wrapper",
         "padding_top": 80,
-        "padding_bottom": 100,
+        "padding_bottom": 80,
         "tab_padding_top": 60,
         "tab_padding_bottom": 60,
         "mob_padding_top": 40,
@@ -220,28 +222,36 @@
           "type": "text",
           "settings": {
             "title": "",
-            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.<\/p>"
+            "text": ""
           }
         },
         "acordion-1": {
           "type": "text",
           "settings": {
-            "title": "Heading",
+            "title": "",
             "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.<\/p>"
           }
         },
         "acordion-2": {
           "type": "text",
           "settings": {
-            "title": "Heading",
-            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.<\/p>"
+            "title": "",
+            "text": ""
+          }
+        },
+        "fb7f4e5a-3ae7-4ff9-ab8b-6d9baf2251be": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "text": ""
           }
         }
       },
       "block_order": [
         "acordion-0",
         "acordion-1",
-        "acordion-2"
+        "acordion-2",
+        "fb7f4e5a-3ae7-4ff9-ab8b-6d9baf2251be"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
@@ -556,7 +566,7 @@
   },
   "order": [
     "main",
-    "899a2903-e606-438e-b4e5-9cea55207620",
+    "e0306b1f-d063-43d0-b124-baa3ab703a0f",
     "related",
     "tabs",
     "overlapping-images-0",
