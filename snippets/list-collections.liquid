@@ -150,6 +150,26 @@
   }
   {%- endif %}
 
+  @media screen and (max-width: 1023px) {
+    #ListCollections--{{ section.id }} {
+      --PT: max(10px, {{ section.settings.tab_padding_top }}px);
+      {%- if text_over_image -%}
+        --PB: max(10px, {{ section.settings.tab_padding_bottom }}px);
+      {%- else -%}
+        --PB: {{ section.settings.tab_padding_bottom }}px;
+      {%- endif -%}
+    }
+  }
+  @media screen and (max-width: 767px) {
+    #ListCollections--{{ section.id }} {
+      --PT: max(10px, {{ section.settings.mob_padding_top }}px);
+      {%- if text_over_image -%}
+        --PB: max(10px, {{ section.settings.mob_padding_bottom }}px);
+      {%- else -%}
+        --PB: {{ section.settings.mob_padding_bottom }}px;
+      {%- endif -%}
+    }
+  }
   @media screen and (max-width: 479px) {
     #ListCollections--{{ section.id }} { --grid-mobile: repeat({{ columns_mobile }}, minmax(0, 1fr)); }
   }

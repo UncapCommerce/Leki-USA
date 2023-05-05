@@ -2962,6 +2962,7 @@
     originalSelectorId: '[data-product-select]',
     preOrderTag: '_preorder',
     priceWrapper: '[data-price-wrapper]',
+    skuWrapper: '[data-sku]',
     priceOffWrap: '[data-price-off]',
     priceOffType: '[data-price-off-type]',
     priceOffAmount: '[data-price-off-amount]',
@@ -3102,8 +3103,10 @@
 
     pushState(formState) {
       this.productState = this.setProductState(formState);
+      console.log('this.productState---',this.productState);
       this.updateAddToCartState(formState);
       this.updateProductPrices(formState);
+      this.updateProductSku(formState);
       this.updateSaleText(formState);
       this.updateSubscriptionText(formState);
       this.fireHookEvent(formState);
@@ -3125,6 +3128,7 @@
     updateAddToCartState(formState) {
       const variant = formState.variant;
       const priceWrapper = this.container.querySelectorAll(selectors$e.priceWrapper);
+      const skuWrappers = this.container.querySelectorAll(selectors$e.skuWrapper);
       const addToCart = this.container.querySelectorAll(selectors$e.addToCart);
       const addToCartText = this.container.querySelectorAll(selectors$e.addToCartText);
       const formWrapper = this.container.querySelectorAll(selectors$e.formWrapper);
@@ -3441,6 +3445,17 @@
       }
     }
 
+    updateProductSku(formState){
+      const variant = formState.variant;
+      const plan = formState.plan;
+      const skuWrappers = this.container.querySelectorAll(selectors$e.skuWrapper);
+      let currVar = variant.sku;
+      
+      skuWrappers.forEach((skuwrap) => {
+        skuwrap.innerHTML = currVar;
+      });
+    }
+    
     updateProductUnits(formState) {
       const variant = formState.variant;
       const plan = formState.plan;
@@ -13520,8 +13535,7 @@
   class RelatedProducts {
     constructor(container) {
       this.container = container;
-      this.relatedProducts = this.container.querySelector(selectors$X.relatedProducts);
-
+      this.relatedProducts = this.container.querySelector(selectors$X.relatedProducts);  
       this.init();
     }
 

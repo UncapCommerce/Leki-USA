@@ -4,6 +4,7 @@
   </a>
 
   {%- if template contains 'collection' -%}
+    {% comment %}
     <span class="breadcrumbs__sep">/</span>
     <a href="{{ routes.collections_url }}" class="breadcrumbs__link">
       {{- 'collections.breadcrumbs.collections' | t -}}
@@ -19,8 +20,86 @@
         {%- endif -%}
       </span>
     {%- endif -%}
-  {%- endif -%}
+  
+  {% endcomment %}
 
+  {%- assign collectionTitle = collection.title -%}
+    {% assign pageUrl = collection.handle %}
+
+    {% if current_tags %}
+    {% for tag in current_tags %}
+    	{% assign tagHandle = tag | handle %}
+    	{% assign pageUrl = pageUrl | append: '/' | append: tagHandle %}
+    {% endfor %}
+    {% endif %}
+    <span class="breadcrumbs__sep">/</span>
+    {%- for link in linklists['mega-menu'].links -%}
+      {%- assign firstLevel = link.url | remove: '/collections/' -%}
+      {%- if firstLevel == pageUrl -%}
+        {%- assign collectionTitle = link.title -%} 
+      {%- else -%}       
+        {%- for childlink in link.links -%}
+          {%- assign secondLevel = childlink.url | remove: '/collections/' -%}     
+          {%- if secondLevel == pageUrl -%}
+            {%- assign tagcoll = link.url | split:"collections/" | last   -%}
+            {%- if tagcoll contains "/" %}
+              {%- assign tagcollft = tagcoll | split:"/" | last -%}
+              {%- assign splittagcoll = "/" | append:tagcollft  -%}
+              {%- assign finaltagcoll = link.url | split:splittagcoll | first -%}
+            {% else %}
+              {%- assign finaltagcoll = link.url -%}              
+            {% endif %}
+            
+            {%- assign collectionTitle = link.title | link_to: finaltagcoll  -%}
+            
+            {%- assign secondLevelTitle = childlink.title -%}
+            {%- assign collectionTitle = collectionTitle | append: '~' | append: secondLevelTitle -%}            
+          {%- else -%}
+    		{%- for grandchildlink in childlink.links -%}
+              {% if current_tags %}
+                {%- assign thirdLevel = grandchildlink.url | remove: '/collections/' | downcase -%}
+              {% else %}
+              	{%- assign thirdLevel = grandchildlink.url | remove: '/collections/' -%}
+              {% endif %}
+
+          	  {%- if thirdLevel == pageUrl -%}    
+    			{%- assign collectionTitle = link.title | link_to: link.url -%}
+    			{%- assign secondLevelTitle = childlink.title | link_to: childlink.url -%}
+                {%- assign thirdLevelTitle = grandchildlink.title | link_to: grandchildlink.url -%}
+    			{%- assign collectionTitle = collectionTitle | append: '~' | append: secondLevelTitle -%}
+    			{%- assign collectionTitle = collectionTitle | append: '~' | append: thirdLevelTitle -%}                
+    		  {%- endif -%}
+    		{%- endfor -%}
+    	  {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {% assign collectionTitle = collectionTitle | split: '~' %}
+        
+      {% if current_tags %}        
+        {% capture url %}{{ routes.collections_url }}/{{ collection.handle }}{% endcapture %}
+        {% for title in collectionTitle %}
+        {% if forloop.last %}{{ title }}{% else %}{{ title | link_to: url }}{% endif %}
+        {% unless forloop.last %}
+          <span class="breadcrumb__divider" aria-hidden="true">
+            <span class="breadcrumbs__sep">/</span>
+          </span>
+        {% endunless %}
+        {% endfor %}
+
+      {% else %}
+        {% capture url %}{{ routes.collections_url }}/{{ collection.handle }}{% endcapture %}
+        {% for title in collectionTitle %}
+        {% if forloop.last %}{{ title }}{% else %}{{ title | link_to: url }}{% endif %}
+        {% unless forloop.last %}
+        <span class="breadcrumb__divider" aria-hidden="true">
+          <span class="breadcrumbs__sep">/</span>
+        </span>
+        {% endunless %}
+        {% endfor %}
+      {% endif %}
+{%- endif -%}
   {%- if template contains 'product' -%}
     <span class="breadcrumbs__sep">/</span>
 
