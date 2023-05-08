@@ -1,0 +1,211 @@
+{%- render 'sub-collections' -%}
+
+{% schema %}
+  {
+    "name": "SubCollection",
+    "class": "sub-collection-list",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "All collections will be shown if no blocks added"
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "carousel",
+        "options": [
+          { "value": "grid", "label": "Grid" },
+          { "value": "carousel", "label": "Carousel" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "columns",
+        "label": "Collections per row",
+        "default": 6,
+        "min": 2,
+        "max": 8,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "image_size",
+        "label": "Image size",
+        "min": 75,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "default": 90
+      },
+      {
+        "type": "select",
+        "id": "image_shape",
+        "label": "Image shape",
+        "default": "circle",
+        "options": [
+          { "label": "Circles", "value": "circle" },
+          { "label": "Squares", "value": "square" },
+          { "label": "Rectangles", "value": "rectangle" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Something for everyone"
+      },
+      {
+        "type": "range",
+        "id": "text_size",
+        "label": "Text size",
+        "default": 100,
+        "min": 75,
+        "max": 150,
+        "step": 5,
+        "unit": "%"
+      },
+      {
+        "type": "checkbox",
+        "id": "overlay_text",
+        "label": "Overlay text",
+        "info": "Text over images",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Mobile layout"
+      },
+      {
+        "type": "select",
+        "id": "layout_mobile",
+        "label": "Mobile layout",
+        "default": "carousel",
+        "options": [
+          { "value": "grid", "label": "Grid" },
+          { "value": "carousel", "label": "Carousel" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "columns_mobile",
+        "label": "Collections per row",
+        "default": "2",
+        "options": [
+          { "value": "1", "label": "1" },
+          { "value": "2", "label": "2" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "checkbox",
+        "id": "bg_color_secondary",
+        "label": "Background",
+        "info": "Use secondary background color",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text",
+        "default": "text-dark",
+        "info": "Applies to text not overlaid on images",
+        "options": [
+          { "value": "text-light", "label": "Light" },
+          { "value": "text-dark", "label": "Dark" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full", "label": "Full width" },
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+            {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ],
+    "presets":[
+      {
+       "name": "SubCollection" 
+      }      
+    ]
+  }
+{% endschema %}

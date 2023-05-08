@@ -1,7 +1,11 @@
 {% liquid
   assign show_banner_image = section.settings.show_image
   assign show_text_shadow = settings.show_text_shadow
-  assign banner_image = collection.image
+  if section.settings.banner_image != blank
+    assign banner_image = section.settings.banner_image
+  else
+    assign banner_image = collection.image
+  endif
   assign banner_height = section.settings.banner_height
   assign text_position = section.settings.text_position
   assign overlay_opacity = section.settings.overlay_opacity | times: 0.01
@@ -29,7 +33,7 @@
 %}
 
 {%- style -%}
-  #ImageWithTitle--{{ section.id }} {
+  #ImageWithTitle--{{ section.id }} ,#collection-details--{{ section.id }}{
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
@@ -61,6 +65,7 @@
       assign collection_header_class = 'collection__header collection__header--no-image ' | append: section.settings.text_color
     endif
   -%}
+  
   <div class="banner-content"{% if show_banner_image %} data-overflow-content{% endif %}>
     <header class="{{ collection_header_class }}"{% unless show_banner_image and prevent_transparent_header == false %} data-prevent-transparent-header data-overflow-content{% endunless %}>
       <div class="wrapper--narrow{% if show_text_shadow and show_banner_image %} backdrop--radial{% endif %}">
@@ -71,7 +76,7 @@
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>{{ collection.title | escape }}</h1>
+            {% endif %}>{{ section.settings.banner_title }}</h1>
 
           <div class="rte rte--header collection__description"
             {% if animations_enabled %}
@@ -98,7 +103,7 @@
                 data-aos-anchor="{{ animation_anchor }}"
                 data-aos-delay="{{ animation_delay }}"
                 {%- assign animation_delay = animation_delay | plus: 150 -%}
-              {% endif %}>{{ collection.title }}</h1>
+              {% endif %}>{{ section.settings.banner_title }}</h1>
           {%- endif -%}
         {%- endif -%}
       </div>
@@ -112,6 +117,7 @@
   {%- endstyle -%}
 {%- endif -%}
 
+{% if banner_image != blank %}
 <section id="ImageWithTitle--{{ section.id }}" class="banner section-padding" data-section-type="image-with-title" data-section-id="{{ section.id }}">
   <div class="{{ section_width }}">
     <div class="banner-inner {{ banner_height }} align--{{ text_position }}{% if bg_color_secondary %} bg-secondary{% endif %}" data-overflow-container>
@@ -131,7 +137,13 @@
     </div>
   </div>
 </section>
-
+{% endif %}
+<div id="collection-details--{{ section.id }}" class="section-padding">
+  <div class="{{ section_width }}">
+    <h2 >{{ collection.title }}</h2>
+    {{ collection.description }}
+  </div>
+</div>
 
 {% schema %}
   {
@@ -190,6 +202,11 @@
         "info": "Shows on collections/all"
       },
       {
+        "type": "text",
+        "id": "banner_title",
+        "label": "Banner Title"
+      },      
+      {
         "type": "select",
         "id": "text_color",
         "label": "Text color",
@@ -230,7 +247,7 @@
         "label": "Background",
         "info": "Use secondary background color",
         "default": false
-      },
+      },      
       {
         "type": "header",
         "content": "Section spacing"
