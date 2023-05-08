@@ -5,6 +5,7 @@
   assign heading =  section.settings.title
   assign heading_size = section.settings.heading_size | times: 0.01
   assign heading_size_mobile = heading_size
+  assign heading_weight = section.settings.heading_weight
   assign sub_heading = section.settings.subtitle
   assign text = section.settings.text
   assign text_size = section.settings.text_size | times: 0.01
@@ -116,7 +117,7 @@
     {%- endif -%} 
   
     {%- if heading != blank -%}
-      <h2 class="section__heading h2"
+      <h2 class="section__heading h2 heading-{{ heading_weight }}"
       {% if animations_enabled %}
         data-aos="fade-up"
         data-aos-delay="{{ animation_delay }}"
@@ -353,6 +354,16 @@
       "max": 350,
       "step": 5,
       "unit": "%"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading Weight",
+      "default": "bold",
+      "options": [
+        { "label": "Normal", "value": "normal" },
+        { "label": "Bold", "value": "bold" }
+      ]
     },
     {
       "type": "richtext",

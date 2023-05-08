@@ -298,9 +298,9 @@
           if current_variant.price == 0
             echo 'products.product.free' | t
           elsif currency_code_enable
-            echo current_variant.price | money
+            echo current_variant.price | money_with_currency
           else
-            echo current_variant.price | money
+            echo current_variant.price | money_without_currency
           endif
         -%}
       </span>
@@ -308,9 +308,9 @@
       <span id="ProductPrice">
         {%- liquid
           if currency_code_enable
-            echo 1999 | money
+            echo 1999 | money_with_currency
           else
-            echo 1999 | money
+            echo 1999 | money_without_currency
           endif
         -%}
       </span>
@@ -322,7 +322,7 @@
           if currency_code_enable
             echo current_variant.compare_at_price | money_with_currency
           else
-            echo current_variant.compare_at_price | money
+            echo current_variant.compare_at_price | money_without_currency
           endif
         endif
       -%}
@@ -1634,7 +1634,7 @@
           elsif currency_code_enable
             echo current_variant.price | money_with_currency
           else
-            echo current_variant.price | money
+            echo current_variant.price | money_without_currency
           endif
         -%}
       </span>
@@ -1644,7 +1644,7 @@
           if currency_code_enable
             echo 1999 | money_with_currency
           else
-            echo 1999 | money
+            echo 1999 | money_without_currency
           endif
         -%}
       </span>
@@ -1656,7 +1656,7 @@
           if currency_code_enable
             echo current_variant.compare_at_price | money_with_currency
           else
-            echo current_variant.compare_at_price | money
+            echo current_variant.compare_at_price | money_without_currency
           endif
         endif
       -%}

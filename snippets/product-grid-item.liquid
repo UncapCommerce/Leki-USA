@@ -139,8 +139,8 @@
         assign product_price = product.price | money_with_currency
         assign product_price_min = product.price_min | money_with_currency
       else
-        assign product_price = product.price | money
-        assign product_price_min = product.price_min | money
+        assign product_price = product.price | money_without_currency
+        assign product_price_min = product.price_min | money_without_currency
       endif
     -%}
 
@@ -154,7 +154,7 @@
           {%- if currency_code_enable -%}
             {{- product.compare_at_price | money_with_currency -}}
           {%- else -%}
-            {{- product.compare_at_price | money -}}
+            {{- product.compare_at_price | money_without_currency -}}
           {%- endif -%}
         </s>
       {%- else -%}
@@ -168,7 +168,7 @@
       {%- endcapture -%}
 
       <span class="product__unit-price{% if current_variant.unit_price == 0 %} hidden{% endif %}">
-        {{ current_variant.unit_price | money }}
+        {{ current_variant.unit_price | money_without_currency }}
         {{ unit_price_separator }}
         {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
           {{- current_variant.unit_price_measurement.reference_value -}}

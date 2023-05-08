@@ -1,0 +1,47 @@
+{
+    "sections": {  
+      "main": {
+        "type": "collection",
+        "blocks": {
+          "1f70d126-5c7c-402e-958c-61882397cc44": {
+            "type": "promo",
+            "settings": {
+              "collection": "outlet",
+              "position": 5,
+              "width": "half",
+              "image": "{{ collection.metafields.custom.promo_banner.value }}",
+              "text_color": "text-light",
+              "text_position": "center",
+              "layout": "stacked",
+              "overlay_opacity": 10,
+              "bg_color": "#d3d3d3",
+              "title": "<p>Shop Skiing Poles<\/p>",
+              "heading_highlight_type": "circle",
+              "heading_size": 100,
+              "content": "To be fast and safe on the slopes, you need equipment you can rely on.",
+              "text_size": 100,
+              "btn_text": "Shop More",
+              "btn_link": "#",
+              "btn_style": "btn--secondary btn--small"
+            }
+          }
+        },
+        "block_order": [
+          "1f70d126-5c7c-402e-958c-61882397cc44"
+        ],
+        "settings": {
+          "show_breadcrumbs": true,
+          "enable_sorting": true,
+          "enable_filters": true,
+          "filters_open": true,
+          "filter_mode": "default",
+          "bg_color": "",
+          "padding_top": 0,
+          "padding_bottom": 60
+        }
+      }    
+    },
+    "order": [
+      "main"
+    ]
+  }
