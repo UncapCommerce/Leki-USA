@@ -14820,6 +14820,41 @@
         document.body.classList.remove('glove-drawer-active');
       });
     }
+
+    if (document.querySelectorAll(".accordion_list-item") != null ){
+      const accordionContent = document.querySelectorAll(".accordion_list-item");
+
+      if (document.querySelector(".accordion_list-item") != null ){
+        accordionContent.forEach((hitem, hindex) => {
+          let heading = hitem.querySelector(".accordion_list-item");
+          hitem.addEventListener("click", () =>{
+            hitem.classList.toggle("open");
+
+            if(hitem.querySelector(".list-item-wrap p") != null ){
+            let description = hitem.querySelector(".list-item-wrap p");
+              if(hitem.classList.contains("open")){
+                  description.style.height = `${description.scrollHeight}px`;
+              }else{
+                  description.style.height = "0px";
+              }
+            }
+            removeOpen(hindex); //calling the funtion and also passing the index number of the clicked header
+          });
+        });
+      }
+      
+      function removeOpen(hindex1){
+        accordionContent.forEach((hitem2, hindex2) => {
+          if(hindex1 != hindex2){
+            hitem2.classList.remove("open");
+            if(hitem2.querySelector(".list-item-wrap p") != null ){
+              let desc = hitem2.querySelector(".list-item-wrap p");
+              desc.style.height = "0px";
+            }
+          }
+        });
+      }
+    }
     
   });
 
