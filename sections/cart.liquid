@@ -317,11 +317,13 @@
             </div>
           {%- endif -%}
 
+          {% comment %}
           {%- if cart_custom_message_text != blank -%}
             <div class="cart__message cart__message--custom {{ settings.cart_custom_message_color }}" data-cart-bar>
               {{ cart_custom_message_text }}
             </div>
           {%- endif -%}
+          {% endcomment %}
 
           <div class="cart__foot-inner">
             <div class="cart__buttons-wrapper">
@@ -381,7 +383,7 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
+      "max": 140,
       "step": 2,
       "unit": "px",
       "label": "Padding top",
@@ -391,7 +393,7 @@
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
+      "max": 140,
       "step": 2,
       "unit": "px",
       "label": "Padding bottom",

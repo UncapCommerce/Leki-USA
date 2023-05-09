@@ -18,6 +18,7 @@
 
 <div id="cart-drawer" class="cart-drawer" data-cart-drawer>
   <template data-cart-drawer-template>
+    {% comment %}
     {% if settings.cart_custom_message_text != blank %}
       <div class="cart__message cart__message--custom {{ settings.cart_custom_message_color }}" data-cart-bar>
         <div{% if animations_enabled %}
@@ -28,7 +29,7 @@
           {{ settings.cart_custom_message_text }}
         </div>
       </div>
-    {% endif %}
+    {% endif %}{% endcomment %}
     <div class="cart-drawer__head"
       {% if animations_enabled %}
         data-aos="fade-up"
