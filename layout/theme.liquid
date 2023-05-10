@@ -322,6 +322,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 
   <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'flickity.js' | asset_url }}" defer="defer"></script>
 
   {{ content_for_header }}
 
@@ -349,7 +350,7 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
   assign challenge = 'challenge' | prepend: root
 -%}
 
-<body id="{{ page_title | handle }}" class="{% if product.template_suffix != blank %}template--{{ product.template_suffix }}{% endif %} {% if collection.template_suffix != blank %}template--collection-{{ collection.template_suffix }}{% endif %} {{ body_class | strip_newlines | strip }}" data-animations="{{ settings.animations_enabled }}">
+<body id="{{ page_title | handle }}" class="{% if product.template_suffix != blank %}template--{{ product.template_suffix }}{% endif %} {% if collection.template_suffix != blank %}template--collection-{{ collection.template_suffix }}{% endif %} page--{{ page_title | handle }} {{ body_class | strip_newlines | strip }}" data-animations="{{ settings.animations_enabled }}">
   {%- render 'loading' -%}
 
   <a class="in-page-link skip-link" data-skip-content href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>

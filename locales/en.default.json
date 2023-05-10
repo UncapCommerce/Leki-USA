@@ -157,7 +157,7 @@
       "gift_notes_label": "Is this a gift? Add a note.",
       "gift_note_attribute": "Gift note",
       "update": "Update Cart",
-      "checkout": "Checkout",
+      "checkout": "Secure Checkout",
       "empty": "Your cart is currently empty.",
       "accept_terms": "You must accept our terms and conditions.",
       "zero_qty_error": "Quantity must be greater than 0.",

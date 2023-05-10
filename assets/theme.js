@@ -14856,6 +14856,21 @@
       }
     }
     
+    var flkty = new Flickity( '.about-content-wrap', {
+      asNavFor: ".about-image-wrap", 
+      prevNextButtons: false,
+      pageDots: true
+    });
+    
+    var flkty = new Flickity( '.about-image-wrap', {
+      sync: ".about-content-wrap",    
+      imagesLoaded: true,
+      freeScroll: true,
+      contain: true,
+      prevNextButtons: true,
+      pageDots: false
+    });
+    
   });
 
 }(themeVendor.ScrollLock, themeVendor.Flickity, themeVendor.Sqrl, themeVendor.themeCurrency, themeVendor.ajaxinate, themeVendor.AOS));

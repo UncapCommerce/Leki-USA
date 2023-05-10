@@ -1,0 +1,161 @@
+{% liquid
+  assign section_width = section.settings.section_width
+%}
+{%- style -%}
+  {{ selector_id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+
+{%- endstyle -%}
+<section id="{{ id }}"
+  class="section-padding {{ text_color }} about-image-withtext-wrapper"
+  data-section-id="{{ section.id }}"
+  data-section-type="about-image-with-text">
+  <div class="{{ section_width }}">
+    <div class="about-image-with_text">
+      <div class="about-content-wrap">
+        {% for block in section.blocks %}                  
+          <div class="content-inner">
+            
+          <div class="about-subheading-text main-subheading"
+          {% if animations_enabled %}
+            data-aos="fade-up"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-delay="{{ animation_delay }}"
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+          {% endif %}>{{ block.settings.subheading }}</div>
+            
+            <h3 class="about-image-with-text__heading h2" h2{% if has_text_highlight %} {{ text_highlight_wrapper_class }}{% endif %}"
+          {% if animations_enabled %}
+            data-aos="fade-up"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-delay="{{ animation_delay }}"
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+          {% endif %}>{{ block.settings.title }}</h3>
+          
+          <div class="about-image-with-text__text"
+          {% if animations_enabled %}
+            data-aos="fade-up"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-delay="{{ animation_delay }}"
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+          {% endif %}>{{ block.settings.text_content | newline_to_br }}</div>
+          </div>
+        
+        {% endfor %}
+      </div>
+      <div class="about-image-wrap">
+        {% for imagewrap in section.blocks %}
+          <figure>
+            <img src="{{ imagewrap.settings.image | img_url:'' }}" alt="" />
+          </figure>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "About image with Text",
+    "settings": [
+      {
+        "type": "select",
+        "id": "section_width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full", "label": "Full width" },
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      }
+    ],
+    "blocks":[
+      {
+        "type":"image-with-text",
+        "name":"Image With Text",
+        "settings":[
+          {
+            "type": "header",
+            "content": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Mobile image"
+          },
+          {
+            "type": "header",
+            "content": "Text"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Heading",
+            "default": "<p>Everything's on sale</p>",
+            "info": "Highlight one or two key words in your heading by italicizing them, then choose the highlight option below."
+          },
+          {
+            "type": "textarea",
+            "id": "text_content",
+            "label": "Text",
+            "default": "Share details about a promotion, welcome customers, describe a product, or talk about your brand."
+          },
+          {
+            "type": "select",
+            "id": "text_alignment",
+            "label": "Text justification",
+            "default": "left",
+            "options": [
+              { "value": "left", "label": "Left" },
+              { "value": "center", "label": "Center" },
+              { "value": "right", "label": "Right" }
+            ]
+          }          
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "About image with Text"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
