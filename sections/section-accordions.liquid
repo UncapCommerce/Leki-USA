@@ -203,7 +203,7 @@
     </div>
   {%- endif -%}
 {% endcapture %}
-<section data-section-id="{{ section.id }}" id="Accordions--{{ section.id }}" data-section-type="accordions" class="{% if product.metafields.custom.faqs.value != blank %}section-padding{% endif %} accordions-section {{ text_color }}{% if bg_color_secondary %} bg-secondary{% endif %}">
+<section data-section-id="{{ section.id }}" id="Accordions--{{ section.id }}" data-section-type="accordions" class="{% if product.metafields.custom.faqs.value != blank or collection.metafields.custom.faqs != blank %}section-padding{% endif %} accordions-section {{ text_color }}{% if bg_color_secondary %} bg-secondary{% endif %}">
   {{ section__heading }}
 
   {%- if accordions.size > 0 -%}

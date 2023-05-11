@@ -1,4 +1,4 @@
-{%- comment -%} /sections/collection-poles.liquid {%- endcomment -%}
+{%- comment -%} /sections/collection-gloves.liquid {%- endcomment -%}
 
 {%- liquid
   assign carousel = false
@@ -81,7 +81,10 @@
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
-
+  #collection-details--{{ section.id }}{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
     .template-collection .collection-section {
       background-color: {{ bg_color }};
@@ -91,8 +94,46 @@
       --bg: {{ bg_color }};
     }
   {%- endif -%}
+
+  @media(max-width: 1023px){
+    {{ selector_id }} {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+    {{ selector_id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
 {%- endstyle -%}
 
+{% assign collection_title = collection.title | handle %}
+{% assign thirdLevel = false %}
+{%- for link in linklists['mega-menu'].links -%}
+  {% assign menuLink = link.url | split: '/' | last %}
+  {% for childlink in link.links %}
+    {% assign secondlevelLink = childlink.url | split: '/' | last %}
+    {% assign menuLink = menuLink | append: secondlevelLink %}
+    {%- if childlink.links != blank -%}  
+    {% for grandchildlink in childlink.links %}
+      {% assign grandchild_title = grandchildlink.title | handle %}
+      {% if grandchild_title == collection_title %}
+      {% assign thirdLevel = true %}        
+      {% endif %}
+    {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% if thirdLevel %}
+  <div id="collection-details--{{ section.id }}" class="section-padding">
+    <div class="wrapper--full-padded">
+      <h2 class="collection-heading">{{ collection.title }}</h2>
+      {{ collection.description }}
+    </div>
+  </div>
+{% endif %}
 <div id="{{ id }}"
   class="{{ section_class }}"
   data-section-type="collection-template"
@@ -594,7 +635,6 @@
         assign promo_width = block.settings.width
         assign promo_width_class = 'collection-promo--two-columns'
         assign promo_order = promo_position | append: '-' | append: forloop.index
-        assign highlight_banner = block.settings.highlight_banner
 
         if promo_position < 10
           assign promo_order = promo_order | prepend: '0'
@@ -619,13 +659,6 @@
   assign heading_highlight_type = block.settings.heading_highlight_type
   assign promo_heading_size = block.settings.heading_size | times: 0.01
   assign promo_text_size = block.settings.text_size | times: 0.01
-  assign subtitle = block.settings.subtitle 
-  assign acc_title1 = block.settings.accordion_title1
-  assign acc_title2 = block.settings.accordion_title2
-  assign acc_title3 = block.settings.accordion_title3
-  assign acc_desc1 = block.settings.accordion_desc1
-  assign acc_desc2 = block.settings.accordion_desc2
-  assign acc_desc3 = block.settings.accordion_desc3         
   assign promo_content = block.settings.content | strip_html
   assign promo_layout = block.settings.layout
   assign promo_btn_text = block.settings.btn_text | strip_html
@@ -640,7 +673,6 @@
   assign block_selector_id = '#' | append: block_id
   assign animation_delay = 150
   assign animation_anchor = block_selector_id
-  assign highlight_bg_color = block.settings.h_bg_color
 
   assign block_class = block_class | append: ' ' | append: promo_text_color
 
@@ -757,15 +789,9 @@
     {%- if promo_bg_color != 'rgba(0,0,0,0)' and promo_bg_color != '' and promo_image == blank -%}
       --bg: {{ promo_bg_color }};
     {%- endif -%}
-    {% if highlight_bg_color != blank %}
-      --hbg: {{ highlight_bg_color }};
-    {% endif %}
   }
 {%- endstyle -%}
 
-{% if current_promo_width == 2 and collection.metafields.custom.highlight_banner != blank %}
-  <div class="collection-highlight-wrap">
-{% endif %}
 <div class="{{ block_class }}" {{ block.shopify_attributes }}>
   {%- if whole_link -%}
     <a class="collection-promo__link" href="{{ promo_btn_link }}">
@@ -809,15 +835,6 @@
           -%}
         </h3>
       {%- endif -%}
-      {% if subtitle != blank %}
-        <span class="collection-promo__subheading" {% if settings.animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>
-        {{ subtitle }}</span>
-      {% endif %}
 
       {%- if promo_content != blank -%}
         <div class="collection-promo__text"
@@ -830,7 +847,7 @@
           {{- promo_content -}}
         </div>
       {%- endif -%}
-      
+
       {%- if promo_btn_text != blank -%}
         <div class="collection-promo__button"
           {% if settings.animations_enabled %}
@@ -839,68 +856,17 @@
             data-aos-delay="{{ animation_delay }}"
             {%- assign animation_delay = animation_delay | plus: 150 -%}
           {% endif %}>
-          <a class="btn {{ promo_btn_style }}" href="{{ promo_btn_link }}"><span>{{ promo_btn_text }}</span>
-            {%- render 'icon-arrow-right' -%} 
+          <a class="btn {{ promo_btn_style }}" href="{{ promo_btn_link }}">{{ promo_btn_text }}
           </a>
         </div>
       {%- endif -%}
-
-      {% if acc_title1 != blank and acc_desc1 != blank %}
-        <div class="accordion_list-item" {% if settings.animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>
-          <span class="list-counter">1</span>
-          <div class="list-item-wrap">
-            <h3>{{ acc_title1 }}</h3>
-            <p>{{ acc_desc1 }}</p>
-          </div>
-        </div>
-      {% endif %}
-      {% if acc_title2 != blank and acc_desc2 != blank %}
-        <div class="accordion_list-item" {% if settings.animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>
-          <span class="list-counter">2</span>
-          <div class="list-item-wrap">
-            <h3>{{ acc_title2 }}</h3>
-            <p>{{ acc_desc2 }}</p>
-          </div>
-        </div>        
-      {% endif %}
-      {% if acc_title3 != blank and acc_desc3 != blank %}
-        <div class="accordion_list-item" {% if settings.animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>
-          <span class="list-counter">3</span>
-          <div class="list-item-wrap">
-            <h3>{{ acc_title3 }}</h3>
-            <p>{{ acc_desc3 }}</p>
-          </div>
-        </div>        
-      {% endif %}
     </div>
 
   {%- if whole_link -%}
     </a>
   {%- endif -%}
 </div>
-{% if highlight_banner != blank %}
-  <div class="collection-highlight">
-    <img src="{{ highlight_banner | img_url:'' }}" alt="{{ highlight_banner.alt }}" />
-  </div>
-{% endif %}
-{% if current_promo_width == 2 and collection.metafields.custom.highlight_banner != blank %}
-  </div>
-{% endif %}
+
     {%- endcapture -%}
 
     {%- assign promos_array = promos_array | append: promo_order | append: '#promo_position#' | append: promo_position | append: '#promo_html#' | append: current_promo | append: '#block_id#' | append: block_id | append: '#promo_collection#' | append: promo_collection | append: '#promo_width#'| append: current_promo_width | append: '#promo_width_class#'| append: promo_width_class | append: '@@' -%}
@@ -1094,7 +1060,7 @@
   {
     "name": "Collection pages",
     "class": "collection-section",
-    "settings": [
+    "settings": [      
       {
         "type": "header",
         "content": "Layout"
@@ -1172,6 +1138,46 @@
         "unit": "px",
         "label": "Padding bottom",
         "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
       }
     ],
     "blocks": [
@@ -1210,18 +1216,6 @@
             "type": "image_picker",
             "id": "image",
             "label": "Image"
-          },
-          {
-            "type": "image_picker",
-            "id": "highlight_banner",
-            "label": "Highlight Banner",
-            "info": "Comes from the metafiled"
-          },
-          {
-            "type": "color",
-            "id": "h_bg_color",
-            "label": "Highligh Background",
-            "info":"Background shows when image is .png"
           },
           {
             "type": "select",
@@ -1311,12 +1305,6 @@
             "unit": "%"
           },
           {
-            "type": "text",
-            "id": "subtitle",
-            "label": "Subtitle",
-            "default": "<p>Promotion subtitle</p>"
-          },
-          {
             "type": "textarea",
             "id": "content",
             "label": "Text",
@@ -1331,36 +1319,6 @@
             "max": 200,
             "step": 5,
             "unit": "%"
-          },
-          {
-            "type": "text",
-            "id": "accordion_title1",
-            "label": "Accordion Title1"
-          },
-          {
-            "type": "text",
-            "id": "accordion_desc1",
-            "label": "Accordion Description1"
-          },
-          {
-            "type": "text",
-            "id": "accordion_title2",
-            "label": "Accordion Title2"
-          },
-          {
-            "type": "text",
-            "id": "accordion_desc2",
-            "label": "Accordion Description2"
-          },
-                    {
-            "type": "text",
-            "id": "accordion_title3",
-            "label": "Accordion Title3"
-          },
-          {
-            "type": "text",
-            "id": "accordion_desc3",
-            "label": "Accordion Description3"
           },
           {
             "type": "text",

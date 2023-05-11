@@ -5,7 +5,6 @@
   assign section_height = section.settings.section_height
   assign section_width = section.settings.section_width
   assign image = section.settings.image
-  assign image_mobile = section.settings.image_mobile
   assign text_alignment = section.settings.text_alignment
   assign subheading = section.settings.subheading
   assign title = section.settings.title
@@ -210,9 +209,7 @@
           data-aos-delay="{{ animation_delay }}"
           {%- assign animation_delay = animation_delay | plus: 150 -%}
         {% endif %}>
-        <a class="btn {{ button_style }}" href="{{ button_link }}">{{ button_text }}
-          {% render 'icon-arrow-right' %}
-        </a>
+        <a class="btn {{ button_style }}" href="{{ button_link }}">{{ button_text }}</a>
       </div>
     </div>
   {%- endif -%}
@@ -302,25 +299,7 @@
       {%- endif -%}
 
       <div class="image-with-text__items {{ items_layout_class }}">
-        {%- if image_mobile != blank -%}
-        <div class="image-with-text__image image__container--mobile">
-          {%- assign animation_delay = 150 -%}
-
-          {%- capture image_attributes -%}
-            {% if animations_enabled %}
-              data-aos="fade"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-            {% endif %}
-          {%- endcapture -%}
-
-          {%- render 'image-fill', is_background: true, img_object: image_mobile, image_attributes: image_attributes, classes: 'image-with-text__image-bg', placeholder_svg: 'lifestyle-1' -%}
-
-          {{- video_link -}}
-        </div>
-        {%- endif -%}
-
-        <div class="image-with-text__image image__container--desktop">
+        <div class="image-with-text__image">
           {%- assign animation_delay = 150 -%}
 
           {%- capture image_attributes -%}
@@ -422,11 +401,6 @@
         "type": "image_picker",
         "id": "image",
         "label": "Image"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_mobile",
-        "label": "Mobile image"
       },
       {
         "type": "header",

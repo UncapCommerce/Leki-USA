@@ -1,64 +1,150 @@
 {% liquid
   assign section_width = section.settings.section_width
+  assign id = 'AboutImageWithText--' | append: section.id
+  assign selector_id = '#' | append: id
+  assign animation_anchor = selector_id
+  assign animations_enabled = settings.animations_enabled
+  assign animation_delay = 150
 %}
 {%- style -%}
   {{ selector_id }} {
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
-
+  @media(max-width: 1023px){
+      {{ selector_id }} {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+      {{ selector_id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
 {%- endstyle -%}
+{% for block in section.blocks %}   
+  {% liquid
+    assign text_color = block.settings.text_color
+  %}
+{% endfor %}
 <section id="{{ id }}"
-  class="section-padding {{ text_color }} about-image-withtext-wrapper"
+  class="section-padding"
   data-section-id="{{ section.id }}"
   data-section-type="about-image-with-text">
   <div class="{{ section_width }}">
     <div class="about-image-with_text">
       <div class="about-content-wrap">
-        {% for block in section.blocks %}                  
-          <div class="content-inner">
-            
-          <div class="about-subheading-text main-subheading"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>{{ block.settings.subheading }}</div>
-            
-            <h3 class="about-image-with-text__heading h2" h2{% if has_text_highlight %} {{ text_highlight_wrapper_class }}{% endif %}"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>{{ block.settings.title }}</h3>
+        {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}   
+        {% liquid
+          assign text_alignment = block.settings.text_alignment        
+          assign text_color = block.settings.text_color
+            case text_alignment
+             when 'left'
+              assign text_alignment_class = 'text-left'
+             when 'center'
+              assign text_alignment_class = 'text-center'
+             when 'right'
+              assign text_alignment_class = 'text-right'
+            endcase
           
-          <div class="about-image-with-text__text"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>{{ block.settings.text_content | newline_to_br }}</div>
+        %}
+          <div class="content-inner {{ text_alignment_class }} {{ text_color }} inner-wrap--{{ block.id }}">
+
+          {% if block.settings.subheading != blank %}
+            <div class="about-subheading-text main-subheading"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>{{ block.settings.subheading }}</div>
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <h3 class="about-image-with-text__heading h2" h2{% if has_text_highlight %} {{ text_highlight_wrapper_class }}{% endif %}"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>{{ block.settings.title }}</h3>
+          {% endif %}
+
+          {% if block.settings.text_content != blank %}
+            <div class="about-image-with-text__text"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>{{ block.settings.text_content | newline_to_br }}
+            </div>
+          {% endif %}
+          {% style %}
+           .about-content-wrap .content-inner.inner-wrap--{{ block.id }} .main-subheading{
+             color: {{ block.settings.subheading_clr }}
+           }
+          {% endstyle %}
           </div>
-        
         {% endfor %}
+        {% endif %}
       </div>
-      <div class="about-image-wrap">
+
+      <div class="about-image-wrap" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
         {% for imagewrap in section.blocks %}
-          <figure>
-            <img src="{{ imagewrap.settings.image | img_url:'' }}" alt="" />
-          </figure>
+          {% if imagewrap.settings.image != blank %}
+            <figure>
+                <img src="{{ imagewrap.settings.image | img_url:'' }}" alt="" />            
+            </figure>
+            {% else %}
+            <figure>
+              {{ 'image' | placeholder_svg_tag }}
+            </figure>
+          {% endif %}
         {% endfor %}
       </div>
+      {% if section.blocks.size > 1 %}
+      <div class="custom-naviagation">
+        <div class="slider-button-prev nav-button">
+          {% render 'icon-arrow-up' %}
+        </div>
+        <div class="slider-button-next nav-button">
+          {% render 'icon-arrow-up' %}
+        </div>          
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>
+
+<script>
+    document.getElementsByClassName("slider-button-next")[0].addEventListener("click", triggerClick);
+
+    function triggerClick() {
+      document.getElementsByClassName('next')[0].click();
+    } 
+    document.getElementsByClassName("slider-button-prev")[0].addEventListener("click", trigger);
+
+    function trigger() {
+      document.getElementsByClassName('previous')[0].click();
+    } 
+</script>
 {% schema %}
   {
     "name": "About image with Text",
     "settings": [
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
       {
         "type": "select",
         "id": "section_width",
@@ -88,6 +174,46 @@
         "step": 2,
         "unit": "px",
         "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
         "default": 60
       }
     ],
@@ -120,6 +246,11 @@
             "label": "Subheading"
           },
           {
+            "type": "color",
+            "id": "subheading_clr",
+            "label": "Subheading Color"
+          },
+          {
             "type": "richtext",
             "id": "title",
             "label": "Heading",
@@ -142,7 +273,21 @@
               { "value": "center", "label": "Center" },
               { "value": "right", "label": "Right" }
             ]
-          }          
+          },
+          {
+            "type": "header",
+            "content": "Colors"
+          },
+          {
+            "type": "select",
+            "id": "text_color",
+            "label": "Text",
+            "default": "text-dark",
+            "options": [
+              { "value": "text-light", "label": "Light" },
+              { "value": "text-dark", "label": "Dark" }
+            ]
+          }
         ]
       }
     ],

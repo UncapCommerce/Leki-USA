@@ -8,6 +8,7 @@
   endif
   assign banner_height = section.settings.banner_height
   assign text_position = section.settings.text_position
+  assign text_transform = section.settings.text_transform
   assign overlay_opacity = section.settings.overlay_opacity | times: 0.01
   assign section_width = section.settings.width
   if collection.handle == 'all'
@@ -32,7 +33,7 @@
   assign animation_delay = 150
 %}
 {%- style -%}
-  #ImageWithTitle--{{ section.id }} ,#collection-details--{{ section.id }}{
+  #ImageWithTitle--{{ section.id }} {
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
@@ -41,7 +42,12 @@
       --header-height: 0px;
     }
   {%- endif -%}
-
+  .banner-inner.text--capitalize .collection__title{
+      text-transform: capitalize;
+  }
+  .banner-inner.text--uppercase .collection__title{
+    text-transform: uppercase;
+  }
   @media(max-width: 1023px){
     #ImageWithTitle--{{ section.id }} {
       --PT: {{ section.settings.tab_padding_top }}px;
@@ -119,7 +125,7 @@
 {% if banner_image != blank %}
 <section id="ImageWithTitle--{{ section.id }}" class="banner section-padding" data-section-type="image-with-title" data-section-id="{{ section.id }}">
   <div class="{{ section_width }}">
-    <div class="banner-inner {{ banner_height }} align--{{ text_position }}{% if bg_color_secondary %} bg-secondary{% endif %}" data-overflow-container>
+    <div class="banner-inner {{ banner_height }} align--{{ text_position }} text--{{ text_transform }}{% if bg_color_secondary %} bg-secondary{% endif %}" data-overflow-container>
       {%- if show_banner_image -%}
         {%- capture styles -%}
           {%- if banner_height == 'original-height' -%}
@@ -137,12 +143,6 @@
   </div>
 </section>
 {% endif %}
-<div id="collection-details--{{ section.id }}" class="section-padding">
-  <div class="{{ section_width }}">
-    <h2 >{{ collection.title }}</h2>
-    {{ collection.description }}
-  </div>
-</div>
 
 {% schema %}
   {
@@ -182,6 +182,16 @@
           { "label": "Right", "value": "middle-right" },
           { "label": "Bottom left", "value": "bottom-left" },
           { "label": "Bottom right", "value": "bottom-right" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_transform",
+        "label": "Text Transform",
+        "default": "capitalize",
+        "options": [
+          { "label": "Uppercase", "value": "uppercase" },
+          { "label": "Capitalize", "value": "capitalize" }
         ]
       },
       {

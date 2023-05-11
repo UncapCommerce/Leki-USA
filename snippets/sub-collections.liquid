@@ -17,49 +17,12 @@
   assign animation_anchor = '#SubCollections--' | append: section.id
   assign text_over_image = section.settings.overlay_text
 
-  assign carousel = false
-  if layout == 'carousel'
-    assign carousel = true
-  endif
-
-  case columns
-    when 2
-      assign item_width = 'one-half'
-    when 3
-      assign item_width = 'one-third'
-    when 4
-      assign item_width = 'one-quarter'
-    when 5
-      assign item_width = 'one-fifth'
-    when 6
-      assign item_width = 'one-sixth'
-    when 7
-      assign item_width = 'one-seventh'
-    when 8
-      assign item_width = 'one-eighth'
-    else
-      assign item_width = 'one-whole'
-  endcase
-
-  case columns_mobile
-    when 2
-      assign item_width_mobile = 'mobile--one-half'
-    when 3
-      assign item_width_mobile = 'mobile--one-third'
-    else
-      assign item_width_mobile = 'mobile--one-whole'
-  endcase
 
   assign adjust_heading = text_size | divided_by: 100.0
 
   assign grid_class = 'grid'
   if columns > section.blocks.size and section.blocks.size > 0
     assign grid_class = 'grid--center'
-  endif
-
-  assign carousel = false
-  if layout == 'carousel'
-    assign carousel = true
   endif
 
   if image_shape != 'rectangle'
@@ -72,10 +35,6 @@
 
   if layout == 'grid'
     assign sub_collections_classes = sub_collections_classes | append: ' sub-collections-section--grid'
-  endif
-
-  if layout == 'carousel'
-    assign sub_collections_classes = sub_collections_classes | append: ' sub-collections-section--carousel'
   endif
 
   if text_over_image == false
@@ -222,12 +181,6 @@
       echo ' list-collections__item--onboarding'
     endif
 
-    if carousel
-      echo ' carousel__item'
-    else
-      echo ' grid__item'
-    endif
-
     echo ' ' | append: item_width
     echo ' ' | append: item_width_mobile
     echo ' ' | append: text_color
@@ -245,6 +198,22 @@
     endif
   endcapture
 -%}
+{% assign collection_title = collection.title | handle %}
+{% assign thirdLevel = false %}
+{%- for link in linklists['mega-menu'].links -%}
+  {% assign menuLink = link.url | split: '/' | last %}
+  {% for childlink in link.links %}
+    {%- if childlink.links != blank -%}  
+    {% for grandchildlink in childlink.links %}
+      {% assign grandchild_title = grandchildlink.title | handle %}
+      {% if grandchild_title == collection_title %}
+      {% assign thirdLevel = true %}        
+      {% endif %}
+    {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% unless thirdLevel %}
 <section id="SubCollections--{{ section.id }}"
   class="section-padding {{ sub_collections_classes }}{% if bg_color_secondary %} bg-secondary{% endif %} {{ text_color }}"
   data-section-type="sub-collections"
@@ -275,115 +244,49 @@
       </div>
     {%- endif -%}
 
-    <div class="{{ container_class }}">
-        <div class="{% if carousel %}carousel{% else %}{{ grid_class }}{% endif %} {{ mobile_class }}"
-          {% if carousel %}
-            data-slider
-            data-slider-id="slider--{{ section.id }}"
-          {% else %}
-            {% comment %} This data attribute is needed to trigger the mobile slider JS functionality {% endcomment %}
-            {% if layout_mobile == 'carousel' %}
-              data-slider
-            {% endif %}
-          {% endif %}>
-
-          {% assign pageUrl = request.host | append: request.path %}
-          {% assign finlaURL = pageUrl | split: '/' | last %}
-          
-          {%- for link in linklists['mega-menu'].links -%}
-            {% assign menuLink = link.url | split: '/' | last %}
-            {% for childlink in link.links %}
-              {% for grandchildlink in childlink.links %}                
-                {% if menuLink contains finlaURL %}                  
-                      <div class="{{ item_class }}"
-                      {% if carousel %}
-                        data-slide
-                      {% endif %}
-                      {% if block_shopify_attributes %}
-                        {{ block_shopify_attributes }}
-                      {% endif %}>
-                      <a href="{{ grandchildlink.url }}" class="list-collections__item__outer">      
-                      <div class="list-collections__item__image"
-                        data-product-media-container
-                        {% if animations_enabled %}
-                          data-aos="fade-up"
-                          data-aos-anchor="{{ animation_anchor }}"
-                          data-aos-delay="{{ animation_delay | times: 150 }}"
-                        {% endif %}>    
-                      {% if grandchildlink.object.image != blank %}
-                        <div class="background-size-cover {{ item_bg_class }}">{{- grandchildlink.object.image | img_url: "" | img_tag -}}</div>                    
-                      {% else %}
-                       {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
-                      {% endif %}
-                      </div>
-                    <div class="list-collections__item__content {{ content_position_class }}"
-                      {% if animations_enabled %}
-                        data-aos="fade-up"
-                        data-aos-anchor="{{ animation_anchor }}"
-                        data-aos-delay="{{ animation_delay | times: 150 }}"
-                      {% endif %}>
-                      <h3 class="list-collections__item__title">
-                        {{- grandchildlink.title -}}
-                      </h3>
-                    </div>
-                    </a>
+    <div class="sub-collections-wrap">
+      {% assign pageUrl = request.host | append: request.path %}
+      {% assign finlaURL = pageUrl | split: '/' | last %}
+      
+      {%- for link in linklists['mega-menu'].links -%}
+        {% assign menuLink = link.url | split: '/' | last %}
+        {% for childlink in link.links %}
+          {% assign secondlevelLink = childlink.url | split: '/' | last %}
+          {% assign menuLink = menuLink | append: secondlevelLink %}
+          {% for grandchildlink in childlink.links %}                
+            {% if menuLink contains finlaURL %}                  
+                  <div class="{{ item_class }}">
+                  <a href="{{ grandchildlink.url }}" class="list-collections__item__outer">      
+                  <div class="list-collections__item__image"
+                    data-product-media-container
+                    {% if animations_enabled %}
+                      data-aos="fade-up"
+                      data-aos-anchor="{{ animation_anchor }}"
+                      data-aos-delay="{{ animation_delay | times: 150 }}"
+                    {% endif %}>    
+                  {% if grandchildlink.object.image != blank %}
+                    <div class="background-size-cover {{ item_bg_class }}">{{- grandchildlink.object.image | img_url: "" | img_tag -}}</div>                    
+                  {% else %}
+                   {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                  {% endif %}
                   </div>
-                {% endif %}
-              {% endfor %}
-            {% endfor %}
-          {%- endfor -%}
-          
-          {%- liquid
-            if section.blocks.size > 0
-              for block in section.blocks limit: section.blocks.size
-                assign unique = block.id
-                assign collection = collections[block.settings.collection]
-                assign custom_collection_image = block.settings.custom_collection_image
-                assign custom_bg_color = block.settings.bg_color
-                assign overlay_opacity = block.settings.overlay_opacity
-
-                if text_over_image
-                  assign text_color = block.settings.text_color
-                endif
-
-                if carousel
-                  assign animation_delay = forloop.index0
-                else
-                  assign animation_delay = forloop.index0 | modulo: columns | times: 1
-                endif
-
-                capture placeholder_index
-                  cycle 1, 2, 3
-                endcapture
-
-                render 'collection-grid-item', collection: collection, item_width: item_width, item_width_mobile: item_width_mobile, custom_collection_image: custom_collection_image, overlay_opacity: overlay_opacity, custom_bg_color: custom_bg_color, animation_delay: animation_delay, animation_anchor: animation_anchor, carousel: carousel, image_shape: image_shape, block_shopify_attributes: block.shopify_attributes, placeholder_index: placeholder_index, text_over_image: text_over_image, text_color: text_color, unique: unique
-              endfor
-            elsif template.name == 'sub-collections'
-              comment
-                Show all collections if list collections template and no blocks
-              endcomment
-
-              assign index = 0
-
-              for collection in collections limit: collection_limit
-                unless collection.handle == 'frontpage'
-                  if carousel
-                    assign animation_delay = index
-                  else
-                    assign animation_delay = index | modulo: columns | times: 1
-                  endif
-
-                  capture placeholder_index
-                    cycle 1, 2, 3
-                  endcapture
-
-                  render 'collection-grid-item', collection: collection, item_width: item_width, item_width_mobile: item_width_mobile, custom_collection_image: custom_collection_image, overlay_opacity: overlay_opacity, custom_bg_color: custom_bg_color, animation_delay: animation_delay, animation_anchor: animation_anchor, carousel: carousel, image_shape: image_shape, block_shopify_attributes: block.shopify_attributes, placeholder_index: placeholder_index, text_over_image: text_over_image, text_color: text_color, unique: unique
-                  assign index = index | plus: 1
-                endunless
-              endfor
-            endif
-          -%}
-        </div>
+                <div class="list-collections__item__content {{ content_position_class }}"
+                  {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-delay="{{ animation_delay | times: 150 }}"
+                  {% endif %}>
+                  <h3 class="list-collections__item__title">
+                    {{- grandchildlink.title -}}
+                  </h3>
+                </div>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {%- endfor -%}                  
     </div>
   </div>
 </section>
+{% endunless %}

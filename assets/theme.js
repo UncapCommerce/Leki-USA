@@ -14821,48 +14821,23 @@
       });
     }
 
-    if (document.querySelectorAll(".accordion_list-item") != null ){
-      const accordionContent = document.querySelectorAll(".accordion_list-item");
-
-      if (document.querySelector(".accordion_list-item") != null ){
-        accordionContent.forEach((hitem, hindex) => {
-          let heading = hitem.querySelector(".accordion_list-item");
-          hitem.addEventListener("click", () =>{
-            hitem.classList.toggle("open");
-
-            if(hitem.querySelector(".list-item-wrap p") != null ){
-            let description = hitem.querySelector(".list-item-wrap p");
-              if(hitem.classList.contains("open")){
-                  description.style.height = `${description.scrollHeight}px`;
-              }else{
-                  description.style.height = "0px";
-              }
-            }
-            removeOpen(hindex); //calling the funtion and also passing the index number of the clicked header
-          });
-        });
-      }
-      
-      function removeOpen(hindex1){
-        accordionContent.forEach((hitem2, hindex2) => {
-          if(hindex1 != hindex2){
-            hitem2.classList.remove("open");
-            if(hitem2.querySelector(".list-item-wrap p") != null ){
-              let desc = hitem2.querySelector(".list-item-wrap p");
-              desc.style.height = "0px";
-            }
-          }
-        });
-      }
-    }
-    
-    var flkty = new Flickity( '.about-content-wrap', {
-      asNavFor: ".about-image-wrap", 
-      prevNextButtons: false,
-      pageDots: true
+    var subcollection = new Flickity( '.sub-collections-wrap', {  
+      contain : true,
+      pageDots: false, 
+      lazyLoad: true,
+      freeScroll: true,
+      prevNextButtons: true,
+      groupCells: 3,
+      groupCells: true
     });
     
-    var flkty = new Flickity( '.about-image-wrap', {
+    var aboutcontent = new Flickity( '.about-content-wrap', {
+      asNavFor: ".about-image-wrap", 
+      prevNextButtons: false,
+      pageDots: true,
+    });
+    
+    var aboutimage = new Flickity( '.about-image-wrap', {  
       sync: ".about-content-wrap",    
       imagesLoaded: true,
       freeScroll: true,
@@ -14870,7 +14845,7 @@
       prevNextButtons: true,
       pageDots: false
     });
-    
+
   });
 
 }(themeVendor.ScrollLock, themeVendor.Flickity, themeVendor.Sqrl, themeVendor.themeCurrency, themeVendor.ajaxinate, themeVendor.AOS));

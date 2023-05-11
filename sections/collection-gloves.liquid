@@ -81,7 +81,10 @@
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
-
+  #collection-details--{{ section.id }}{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
     .template-collection .collection-section {
       background-color: {{ bg_color }};
@@ -91,8 +94,47 @@
       --bg: {{ bg_color }};
     }
   {%- endif -%}
+
+  @media(max-width: 1023px){
+    {{ selector_id }} {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+    {{ selector_id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
 {%- endstyle -%}
 
+
+{% assign collection_title = collection.title | handle %}
+{% assign thirdLevel = false %}
+{%- for link in linklists['mega-menu'].links -%}
+  {% assign menuLink = link.url | split: '/' | last %}
+  {% for childlink in link.links %}
+    {% assign secondlevelLink = childlink.url | split: '/' | last %}
+    {% assign menuLink = menuLink | append: secondlevelLink %}
+    {%- if childlink.links != blank -%}  
+    {% for grandchildlink in childlink.links %}
+      {% assign grandchild_title = grandchildlink.title | handle %}
+      {% if grandchild_title == collection_title %}
+      {% assign thirdLevel = true %}        
+      {% endif %}
+    {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% if thirdLevel %}
+  <div id="collection-details--{{ section.id }}" class="section-padding">
+    <div class="wrapper--full-padded">
+      <h2 class="collection-heading">{{ collection.title }}</h2>
+      {{ collection.description }}
+    </div>
+  </div>
+{% endif %}
 <div id="{{ id }}"
   class="{{ section_class }}"
   data-section-type="collection-template"
@@ -816,7 +858,6 @@
             {%- assign animation_delay = animation_delay | plus: 150 -%}
           {% endif %}>
           <a class="btn {{ promo_btn_style }}" href="{{ promo_btn_link }}">{{ promo_btn_text }}
-            {%- render 'icon-arrow-right' -%} 
           </a>
         </div>
       {%- endif -%}
@@ -1097,6 +1138,46 @@
         "step": 2,
         "unit": "px",
         "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
         "default": 60
       }
     ],

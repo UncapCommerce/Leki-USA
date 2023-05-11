@@ -47,13 +47,13 @@
               {%- assign splittagcoll = "/" | append:tagcollft  -%}
               {%- assign finaltagcoll = link.url | split:splittagcoll | first -%}
             {% else %}
-              {%- assign finaltagcoll = link.url -%}              
+              {%- assign finaltagcoll = link.url -%}      
             {% endif %}
             
             {%- assign collectionTitle = link.title | link_to: finaltagcoll  -%}
             
             {%- assign secondLevelTitle = childlink.title -%}
-            {%- assign collectionTitle = collectionTitle | append: '~' | append: secondLevelTitle -%}            
+            {%- assign collectionTitle = collectionTitle | append: '~' | append: secondLevelTitle -%}                     
           {%- else -%}
     		{%- for grandchildlink in childlink.links -%}
               {% if current_tags %}
@@ -66,7 +66,6 @@
     			{%- assign collectionTitle = link.title | link_to: link.url -%}
     			{%- assign secondLevelTitle = childlink.title | link_to: childlink.url -%}
                 {%- assign thirdLevelTitle = grandchildlink.title | link_to: grandchildlink.url -%}
-    			{%- assign collectionTitle = collectionTitle | append: '~' | append: secondLevelTitle -%}
     			{%- assign collectionTitle = collectionTitle | append: '~' | append: thirdLevelTitle -%}                
     		  {%- endif -%}
     		{%- endfor -%}
