@@ -61,13 +61,6 @@
     --PB: {{ section.settings.padding_bottom }}px;
     --border-opacity: {{ border_opacity }};
     --MB: {{ margin_bottom }}px;
-
-  @media(max-width: 767px){
-    #Accordions--{{ section.id }} {
-      --PT: {{ section.settings.mob_padding_top }}px;
-      --PB: {{ section.settings.mob_padding_bottom }}px;
-    }
-  }
   
   {%- if padded -%}
     {%- unless bg_secondary != 'rgba(0,0,0,0)' -%}
@@ -81,6 +74,13 @@
   {%- if tabs_bg_color != 'rgba(0,0,0,0)' and tabs_bg_color != '' -%}
     #Accordions--{{ section.id }} .accordion__item { --bg: {{ tabs_bg_color }}; }
   {%- endif -%}
+
+  @media(max-width: 767px){
+    #Accordions--{{ section.id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
 {%- endstyle -%}
 
 {% if template contains 'product' %}

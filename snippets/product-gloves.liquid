@@ -1,4 +1,4 @@
-<!-- /snippets/product.liquid -->
+<!-- /snippets/product-gloves.liquid -->
 
 {%- comment -%}
     Renders product content
@@ -269,7 +269,9 @@
                 {%- for variant in product.variants -%}
                   {% assign variant_sku = current_variant.sku %}
                 {%- endfor -%}
-                <span class="product-sku">SKU {{ variant_sku }}</span>            
+                <div class="product-sku hidden">
+                {% if variant_sku != blank %}<span class="variant-sku" data-sku>SKU {{ variant_sku }}</span>{% endif %}   
+                </div>        
                 <h1 class="product__title">
                   {%- if template.name == 'product' and section_type != 'featured' -%}
                     {{- product_title -}}

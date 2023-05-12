@@ -100,6 +100,10 @@
       --PT: {{ section.settings.tab_padding_top }}px;
       --PB: {{ section.settings.tab_padding_bottom }}px;
     }
+    #collection-details--{{ section.id }}{
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
   }
   @media(max-width: 767px){
     {{ selector_id }} {
@@ -109,32 +113,31 @@
   }
 {%- endstyle -%}
 
-
-{% assign collection_title = collection.title | handle %}
-{% assign thirdLevel = false %}
+{% assign pageUrl = collection.handle %}
+{% assign thirdLevel = true %}
 {%- for link in linklists['mega-menu'].links -%}
-  {% assign menuLink = link.url | split: '/' | last %}
   {% for childlink in link.links %}
-    {% assign secondlevelLink = childlink.url | split: '/' | last %}
-    {% assign menuLink = menuLink | append: secondlevelLink %}
-    {%- if childlink.links != blank -%}  
     {% for grandchildlink in childlink.links %}
-      {% assign grandchild_title = grandchildlink.title | handle %}
-      {% if grandchild_title == collection_title %}
-      {% assign thirdLevel = true %}        
+      {% assign grandchild_title = grandchildlink.title | handle %}      
+      {% if grandchild_title == pageUrl %}
+      {% assign thirdLevel = false %}        
       {% endif %}
     {% endfor %}
-    {% endif %}
   {% endfor %}
 {% endfor %}
-{% if thirdLevel %}
-  <div id="collection-details--{{ section.id }}" class="section-padding">
+{% unless thirdLevel %}
+  <div id="collection-details--{{ section.id }}" class="section-padding" {% if animations_enabled %}
+              data-aos="fade"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
     <div class="wrapper--full-padded">
       <h2 class="collection-heading">{{ collection.title }}</h2>
       {{ collection.description }}
     </div>
   </div>
-{% endif %}
+{% endunless %}
 <div id="{{ id }}"
   class="{{ section_class }}"
   data-section-type="collection-template"
@@ -1061,7 +1064,7 @@
   {
     "name": "Collection pages",
     "class": "collection-section",
-    "settings": [
+    "settings": [      
       {
         "type": "header",
         "content": "Layout"

@@ -1,0 +1,40 @@
+{% style %}  
+  {% for block in section.blocks %}
+    {% assign colorname = block.settings.color_name | handleize %}
+      .swatch__label__{{ colorname }}{
+        background-image: url({{ block.settings.color_img | img_url:'' }}) !important;
+        background-repeat: no-repeat !important;
+      }
+  {% endfor %}
+{% endstyle %}
+{% schema %}
+  {
+    "name": "Swatch Image",
+    "settings": [
+      
+    ],
+    "blocks":[
+      {
+        "name":"colorcode",
+        "type":"colorcode",
+        "settings":[
+          {            
+            "type": "image_picker",
+            "id": "color_img",
+            "label": "Color Image"            
+          },
+          {            
+            "type": "text",
+            "id": "color_name",
+            "label": "Heading"            
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name":"Swatch Image"
+      }
+    ]
+  }
+{% endschema %}

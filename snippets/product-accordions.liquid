@@ -199,10 +199,10 @@
           <td>{{ product.metafields.custom.tip | metafield_tag }}</td>
         </tr>
         {% endif %}
-        {% if product.metafields.custom.size != blank %}
+        {% if product.metafields.custom.specification_sizes != blank %}
         <tr>
           <td class="heading">Size:</td>
-          <td>{{ product.metafields.custom.size | metafield_tag }}</td>
+          <td>{{ product.metafields.custom.specification_sizes | metafield_tag }}</td>
         </tr>
         {% endif %}
         {% if product.metafields.custom.storage_bag != blank %}

@@ -25,7 +25,6 @@
 
   {%- assign collectionTitle = collection.title -%}
     {% assign pageUrl = collection.handle %}
-
     {% if current_tags %}
     {% for tag in current_tags %}
     	{% assign tagHandle = tag | handle %}
@@ -65,7 +64,7 @@
           	  {%- if thirdLevel == pageUrl -%}    
     			{%- assign collectionTitle = link.title | link_to: link.url -%}
     			{%- assign secondLevelTitle = childlink.title | link_to: childlink.url -%}
-                {%- assign thirdLevelTitle = grandchildlink.title | link_to: grandchildlink.url -%}
+                {%- assign thirdLevelTitle = grandchildlink.title -%}
     			{%- assign collectionTitle = collectionTitle | append: '~' | append: thirdLevelTitle -%}                
     		  {%- endif -%}
     		{%- endfor -%}

@@ -3450,10 +3450,15 @@
       const plan = formState.plan;
       const skuWrappers = this.container.querySelectorAll(selectors$e.skuWrapper);
       let currVar = variant.sku;
-      
-      skuWrappers.forEach((skuwrap) => {
-        skuwrap.innerHTML = currVar;
-      });
+
+      if(currVar != null){
+        skuWrappers.forEach((skuwrap) => {
+          skuwrap.innerHTML = 'SKU ' + currVar;
+        });
+        document.querySelector('.product-sku').classList.remove('hidden');
+      }else{
+        document.querySelector('.product-sku').classList.add('hidden');
+      }   
     }
     
     updateProductUnits(formState) {
@@ -14821,30 +14826,42 @@
       });
     }
 
-    var subcollection = new Flickity( '.sub-collections-wrap', {  
-      contain : true,
-      pageDots: false, 
-      lazyLoad: true,
-      freeScroll: true,
-      prevNextButtons: true,
-      groupCells: 3,
-      groupCells: true
-    });
+    const sub_collection = document.querySelector('.sub-collections-wrap');
+    const about_content = document.querySelector('.about-content-wrap');
+    const about_image = document.querySelector('.about-image-wrap');
     
-    var aboutcontent = new Flickity( '.about-content-wrap', {
-      asNavFor: ".about-image-wrap", 
-      prevNextButtons: false,
-      pageDots: true,
-    });
-    
-    var aboutimage = new Flickity( '.about-image-wrap', {  
-      sync: ".about-content-wrap",    
-      imagesLoaded: true,
-      freeScroll: true,
-      contain: true,
-      prevNextButtons: true,
-      pageDots: false
-    });
+    if(sub_collection != null){
+      const subcollection = new Flickity(sub_collection, {  
+        contain : true,
+        pageDots: false, 
+        lazyLoad: true,
+        freeScroll: true,
+        prevNextButtons: true,
+        groupCells: 3,
+        groupCells: true
+      });
+    }
+
+    if(about_content != null){
+      var aboutcontent = new Flickity( about_content, {
+        asNavFor: ".about-image-wrap", 
+        sync: ".about-image-wrap",   
+        prevNextButtons: false,
+        pageDots: true,
+      });
+    }
+
+    if(about_image != null){
+      var aboutimage = new Flickity( about_image, {  
+        sync: ".about-content-wrap",    
+        asNavFor: ".about-content-wrap",    
+        imagesLoaded: true,
+        freeScroll: true,
+        contain: true,
+        prevNextButtons: true,
+        pageDots: false
+      });
+    }
 
   });
 
