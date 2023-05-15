@@ -26,8 +26,18 @@
             {%- assign animation_delay = animation_delay | plus: 150 -%}
           {% endif %}
           {{ block.shopify_attributes }}>
-          <h2 class="form__heading">{{ block.settings.title }}</h2>
+          <h2 class="form__heading">{{ block.settings.title }}</h2>          
         </div>
+      {%- when 'content' -%}
+      <div class="form__item form__item--content" {% if animations_enabled %}
+            data-aos="fade-up"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-delay="{{ animation_delay }}"
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+          {% endif %}
+          {{ block.shopify_attributes }}>
+          {{ block.settings.content }}
+      </div>
 
       {%- when 'email' -%}
         <div class="form__item"
@@ -185,6 +195,42 @@
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
+  .contact-form-bg {
+    background-image: url('{{ section.settings.contact_bgimg | img_url:'' }}');
+    background-repeat: no-repeat;
+  }
+  .contact-form{
+    background-color: {{ section.settings.form_bg }};
+    padding: 60px;
+    filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.07));
+  }
+  .shopify-section--contact-form .wrapper--narrow {
+    width: 960px;
+  }
+  .contact-form-wrapper {
+    padding-top: 228px;
+  }
+  .form__item.form__item--content {
+    text-align: center;
+  }
+  h2.form__heading {
+    color: var(--COLOR-BLACK);
+  }
+  .form__item.form__item--content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--COLOR-BLACK);
+  }
+  .contact-form-wrapper .form__item input {
+    padding: 12px 20px;
+    border: 1px solid #E6E6E6;
+  }
+  .contact-form-wrapper .form__item input::-webkit-input-placeholder{
+    color: var(--COLOR-BLACK);
+    font-size: 16px;
+    line-height: 24px;
+  }
 {%- endstyle -%}
 
 <section
@@ -192,8 +238,9 @@ id="ContactForm--{{ section.id }}"
 class="section-padding"
 data-section-type="contact-form"
 data-section-id="{{ section.id }}">
+  <div class="contact-form-bg">
   <div class="{{ section_width }}">
-
+    <div class="contact-form-wrapper">
     {%- form 'contact', id: 'ContactForm'  -%}
       {%- comment -%}
         Success message
@@ -258,14 +305,27 @@ data-section-id="{{ section.id }}">
       </div>
 
     {%- endform -%}
+    </div>
   </div>
+    </div>
 </section>
 
 {% schema %}
 {
   "name": "Contact form",
   "class": "shopify-section--contact-form",
-  "settings": [
+  "settings": [    
+    {
+      "type": "image_picker",
+      "id": "contact_bgimg",
+      "label": "Contact Background Image"
+    },
+    {
+      "type": "color",
+      "id": "form_bg",
+      "label": "Contact Form Background",
+      "default": "#fff"
+    },
     {
       "type": "paragraph",
       "content": "Name, Email, and Message fields are required. You can add them as blocks in order to edit or reorder."
@@ -317,6 +377,18 @@ data-section-id="{{ section.id }}">
           "id": "title",
           "label": "Form heading",
           "default": "Contact us"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Form content",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Form content"
         }
       ]
     },

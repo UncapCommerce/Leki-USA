@@ -290,7 +290,9 @@
                       data-aos-delay="{{ animation_delay }}"
                       {%- assign animation_delay = animation_delay | plus: 150 -%}
                     {% endif %}>
-                    <a class="slide__btn btn {{ block.settings.slide_btn_style }}" href="{{ btn_link }}"{% if forloop.index > 1 %} tabindex="-1"{% endif %}>{{ slide_btn_text | escape }}</a>
+                    <a class="slide__btn btn {{ block.settings.slide_btn_style }}" href="{{ btn_link }}"{% if forloop.index > 1 %} tabindex="-1"{% endif %}>{{ slide_btn_text | escape }}
+                    {% if section.settings.show_arrow %}{%- render 'icon-arrow-right' -%}{% endif %}
+                    </a>
                   </div>
                 {%- endif -%}
 
@@ -302,7 +304,9 @@
                       data-aos-delay="{{ animation_delay }}"
                       {%- assign animation_delay = animation_delay | plus: 150 -%}
                     {% endif %}>
-                    <a class="slide__btn btn {{ block.settings.slide_btn_style_2 }}" href="{{ btn_link_2 }}"{% if forloop.index > 1 %} tabindex="-1"{% endif %}>{{ slide_btn_text_2 | escape }}</a>
+                    <a class="slide__btn btn {{ block.settings.slide_btn_style_2 }}" href="{{ btn_link_2 }}"{% if forloop.index > 1 %} tabindex="-1"{% endif %}>{{ slide_btn_text_2 | escape }}
+                    {% if section.settings.show_arrow %}{%- render 'icon-arrow-right' -%}{% endif %}
+                    </a>
                   </div>
                 {%- endif -%}
               </div>
@@ -443,6 +447,12 @@
       "max": 200,
       "step": 10,
       "unit": "%"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrow",
+      "label": "Show Button Arrow",
+      "default": false
     }
   ],
   "blocks": [

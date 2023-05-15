@@ -209,7 +209,9 @@
           data-aos-delay="{{ animation_delay }}"
           {%- assign animation_delay = animation_delay | plus: 150 -%}
         {% endif %}>
-        <a class="btn {{ button_style }}" href="{{ button_link }}">{{ button_text }}</a>
+        <a class="btn {{ button_style }}" href="{{ button_link }}">{{ button_text }}
+        {%- render 'icon-arrow-right' -%}
+        </a>
       </div>
     </div>
   {%- endif -%}
