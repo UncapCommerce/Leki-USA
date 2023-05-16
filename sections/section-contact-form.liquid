@@ -136,6 +136,19 @@
           </label>
         </div>
 
+      {%- when 'data-checkbox' -%}
+      <div class="form__item form__item--checkbox"
+          {% if animations_enabled %}
+            data-aos="fade-up"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-delay="{{ animation_delay }}"
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+          {% endif %}>
+      <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
+      <input type="checkbox" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--checkbox" name="" value="" {{ required }}></input>
+      <span>{{ block.settings.title }}</span>
+      </div>
+
       {%- when 'radio' -%}
         <fieldset class="form__item form__item--radio"
           {% if animations_enabled %}
@@ -162,6 +175,7 @@
         </fieldset>
 
       {%- when 'select' -%}
+      <div class="form_address-fields">
         <fieldset class="form__item"
           {% if animations_enabled %}
             data-aos="fade-up"
@@ -174,10 +188,10 @@
             <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title }}</label>
           {%- endif -%}
           <div class="selector-wrapper">
-            <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect" name="contact[{{ block.settings.title | handleize }}]">
+            <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect" name="contact[{{ block.settings.title | handleize }}]" {{ block.settings.required1 }}>
+              <option selected disabled>{{ block.settings.default_name }}</option>
               {%- for i in (1..6) -%}
                 {%- capture index -%}label-{%- cycle 'one', 'two', 'three', 'four', 'five', 'six' -%}{%- endcapture -%}
-
                 {%- if block.settings[index] != blank -%}
                   <option value="{{ block.settings[index] }}">{{ block.settings[index] }}</option>
                 {%- endif -%}
@@ -186,6 +200,62 @@
             {%- render 'icon-select' -%}
           </div>
         </fieldset>
+        <fieldset class="form__item"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}
+            {{ block.shopify_attributes }}>
+            {%- if block.settings.title1 != blank -%}
+              <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title1 }}</label>
+            {%- endif -%}
+            <div class="selector-wrapper">
+              <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect" name="contact[{{ block.settings.title1 | handleize }}]" {{ block.settings.required2 }}>
+                <option selected disabled>{{ block.settings.default_name1 }}</option>
+                {%- for i in (1..6) -%}
+                  {%- capture index -%}label-{%- cycle 'one-1', 'two-1', 'three-1', 'four-1', 'five-1', 'six-1' -%}{%- endcapture -%}                  
+                  {%- if block.settings[index] != blank -%}
+                    <option value="{{ block.settings[index] }}">{{ block.settings[index] }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              </select>
+              {%- render 'icon-select' -%}
+            </div>
+          </fieldset>
+          <div class="form__item"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}
+            {{ block.shopify_attributes }}>
+            <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title_1 }}</label>
+            <input type="text" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[{{ block.settings.title_1 | handleize }}]" autocapitalize="words" value="" placeholder="{{ block.settings.title_1 }}" {{ required }}/>
+          </div>
+        </div>
+        {%- when 'upload-file' -%}
+        <div class="form__item"
+          {% if animations_enabled %}
+            data-aos="fade-up"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-delay="{{ animation_delay }}"
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+          {% endif %}>
+        <label for="fileupload">{{ 'contact.form.select_file' | t }}</label>
+        <div class="drop-zone">
+          <span class="drop-zone__prompt">
+          {%- render 'icon-file-upload' -%}
+          <span>Drag and Drop here</span></br><span class="drop-seperator">or</span></br><b>Browse Files</b></span>
+          <input type="file" id="fileupload" name="UploadFiles" class="drop-zone__input" multiple>
+        </div>
+        <div class="drop-info">
+          <span>Accepted file types: .jpg and .png</span>
+          <span class="secure-text">{%- render 'icon-lock' -%}Secure</span>
+        </div>
+      </div>
     {%- endcase -%}
   {%- endfor -%}
 {%- endcapture -%}
@@ -195,20 +265,26 @@
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
+  .contact-additional-info{
+    background-color: {{ section.settings.additional_info_bg }};  
+    font-size: 14px;
+    line-height: 20px;
+    padding: 20px;
+  }
   .contact-form-bg {
     background-image: url('{{ section.settings.contact_bgimg | img_url:'' }}');
     background-repeat: no-repeat;
   }
   .contact-form{
     background-color: {{ section.settings.form_bg }};
-    padding: 60px;
-    filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.07));
+    padding: 60px;    
   }
   .shopify-section--contact-form .wrapper--narrow {
     width: 960px;
   }
   .contact-form-wrapper {
     padding-top: 228px;
+    filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.07));
   }
   .form__item.form__item--content {
     text-align: center;
@@ -231,6 +307,46 @@
     font-size: 16px;
     line-height: 24px;
   }
+  .contact-additional-info p {
+    margin: 0 0 5px;
+  }
+  .contact-additional-info p:last-child {
+    margin: 0;
+  }
+  @media(max-width: 1440px){
+    .contact-form-wrapper {padding-top: 160px;}
+    .locations__info {padding-right: 120px;}
+  }
+  @media(max-width: 1299px){
+    .contact-form-wrapper {padding-top: 100px;}
+    .locations__info {padding-right: 100px;}
+  }
+  @media(max-width: 1199px){
+    .contact-form-wrapper {padding-top: 80px;}
+    .locations__info {padding-right: 80px;}
+  }
+  @media(max-width: 1023px){
+    .contact-form-wrapper {padding-top: 60px;}
+    .locations__info {padding-right: 40px;}
+  }
+  @media(max-width: 767px){
+    #ContactForm--{{ section.id }} {
+      --PT: 0px;
+      --PB: 0px;
+    }
+    .wrapper.locations__wrapper {display: flex;flex-wrap: wrap;}
+    .locations__gallery {width: 100%;margin-bottom: 40px;}
+    .contact-form-wrapper {padding-top: 0px;}
+    .contact-form-bg{background: none;}
+    .locations__info {padding-right: 0;order: 2;}
+    .contact-form{box-shadow: 0.5px -3px 5px 2.5px rgba(0, 0, 0, 0.12);padding: 40px 24px;}
+    .contact-form-wrapper{filter: none;}
+    .contact-form-bg .wrapper--narrow {padding: 0;}
+    .form__heading{width: 70%;margin: 0 auto 20px;}
+    .form_address-fields {flex-wrap: wrap;gap: 0;}
+    .form_address-fields .form__item {max-width: 100%;flex: 0 0 100%;}
+    .contact-form .field-info{text-align: center;}
+  }
 {%- endstyle -%}
 
 <section
@@ -238,6 +354,13 @@ id="ContactForm--{{ section.id }}"
 class="section-padding"
 data-section-type="contact-form"
 data-section-id="{{ section.id }}">
+  {% if section.settings.mob_image != blank %}
+    <div class="contact-mobile-image hidden-lg">
+      <figure>
+        <img src="{{ section.settings.mob_image | img_url:'' }}" alt="{{ section.settings.mob_image.alt }}">
+      </figure>
+    </div>
+  {% endif %}
   <div class="contact-form-bg">
   <div class="{{ section_width }}">
     <div class="contact-form-wrapper">
@@ -303,13 +426,89 @@ data-section-id="{{ section.id }}">
         {% endif %}>
         <button type="submit" class="btn">{{ 'contact.form.send' | t }}</button>
       </div>
+      <span class="field-info">Fields marked with asterisks (*) are required.</span>
 
     {%- endform -%}
+    <div class="contact-additional-info">
+      {{ section.settings.additional_info }}
+    </div>
     </div>
   </div>
     </div>
 </section>
 
+<script>
+  document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+  const dropZoneElement = inputElement.closest(".drop-zone");
+
+  dropZoneElement.addEventListener("click", (e) => {
+    inputElement.click();
+  });
+
+  inputElement.addEventListener("change", (e) => {
+    if (inputElement.files.length) {
+      updateThumbnail(dropZoneElement, inputElement.files[0]);
+    }
+  });
+
+  dropZoneElement.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZoneElement.classList.add("drop-zone--over");
+  });
+
+  ["dragleave", "dragend"].forEach((type) => {
+    dropZoneElement.addEventListener(type, (e) => {
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+
+  dropZoneElement.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+    }
+
+    dropZoneElement.classList.remove("drop-zone--over");
+  });
+});
+  /**
+ * Updates the thumbnail on a drop zone element.
+ *
+ * @param {HTMLElement} dropZoneElement
+ * @param {File} file
+ */
+function updateThumbnail(dropZoneElement, file) {
+  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+  // First time - remove the prompt
+  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+    dropZoneElement.querySelector(".drop-zone__prompt").remove();
+  }
+
+  // First time - there is no thumbnail element, so lets create it
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop-zone__thumb");
+    dropZoneElement.appendChild(thumbnailElement);
+  }
+
+  thumbnailElement.dataset.label = file.name;
+
+  // Show thumbnail for image files
+  if (file.type.startsWith("image/")) {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+    };
+  } else {
+    thumbnailElement.style.backgroundImage = null;
+  }
+}
+</script>
 {% schema %}
 {
   "name": "Contact form",
@@ -321,9 +520,25 @@ data-section-id="{{ section.id }}">
       "label": "Contact Background Image"
     },
     {
+      "type": "image_picker",
+      "id": "mob_image",
+      "label": "Mobile Iamge"
+    },
+    {
       "type": "color",
       "id": "form_bg",
       "label": "Contact Form Background",
+      "default": "#fff"
+    },
+    {
+      "type": "richtext",
+      "id": "additional_info",
+      "label": "Contact Additional Information"
+    },
+    {
+      "type": "color",
+      "id": "additional_info_bg",
+      "label": "Additional Information Background",
       "default": "#fff"
     },
     {
@@ -469,6 +684,11 @@ data-section-id="{{ section.id }}">
       ]
     },
     {
+      "type": "upload-file",
+      "name": "Upload File",
+      "limit": 1
+    },
+    {
       "type": "spacer",
       "name": "Spacer",
       "settings": [
@@ -500,9 +720,30 @@ data-section-id="{{ section.id }}">
       ]
     },
     {
+      "type": "data-checkbox",
+      "name": "Data Checkbox",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Label"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
       "type": "select",
       "name": "Select dropdown",
-      "settings": [
+      "settings": [        
+        {
+          "type":"header",
+          "content":"Dropdown1"
+        },
         {
           "type": "text",
           "id": "title",
@@ -514,6 +755,18 @@ data-section-id="{{ section.id }}">
           "type": "header",
           "content": "Include up to six options",
           "info":  "Leave option text blank to exclude"
+        },
+        {
+          "type": "text",
+          "id": "default_name",
+          "label": "Select Default",
+          "info":"Ex: Select Country"
+        },
+        {
+          "type": "checkbox",
+          "id": "required1",
+          "label": "Required",
+          "default": false
         },
         {
           "type": "text",
@@ -550,6 +803,87 @@ data-section-id="{{ section.id }}">
           "id": "label-six",
           "default": "Select option six",
           "label": "Option six"
+        },
+        {
+          "type":"header",
+          "content":"Dropdown2"
+        },
+        {
+          "type": "text",
+          "id": "default_name1",
+          "label": "Select Default",
+          "info":"Ex: Select Country"
+        },
+        {
+          "type": "checkbox",
+          "id": "required2",
+          "label": "Required",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "title1",
+          "label": "Heading",
+          "default": "Select an option",
+          "info": "Example: Choose a delivery location"
+        },
+        {
+          "type": "header",
+          "content": "Include up to six options",
+          "info":  "Leave option text blank to exclude"
+        },
+        {
+          "type": "text",
+          "id": "label-one-1",
+          "default": "Select option one",
+          "label": "Option one"
+        },
+        {
+          "type": "text",
+          "id": "label-two-1",
+          "default": "Select option two",
+          "label": "Option two"
+        },
+        {
+          "type": "text",
+          "id": "label-three-1",
+          "default": "Select option three",
+          "label": "Option three"
+        },
+        {
+          "type": "text",
+          "id": "label-four-1",
+          "default": "Select option four",
+          "label": "Option four"
+        },
+        {
+          "type": "text",
+          "id": "label-five-1",
+          "default": "Select option five",
+          "label": "Option five"
+        },
+        {
+          "type": "text",
+          "id": "label-six-1",
+          "default": "Select option six",
+          "label": "Option six"
+        },
+        {
+          "type":"header",
+          "content":"Text"
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "Label",
+          "default": "Name",
+          "info": "Example: Name"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
         }
       ]
     },

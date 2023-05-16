@@ -245,8 +245,9 @@
       "email": "Email",
       "phone": "Phone",
       "message": "Message",
-      "send": "Send",
-      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+      "send": "Submit Inquiry",
+      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+      "select_file": "Attach Documents"
     }
   },
   "customer": {
