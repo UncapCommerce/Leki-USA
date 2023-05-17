@@ -1,0 +1,172 @@
+{%- liquid
+  assign section_width = section.settings.width
+  assign animations_enabled = settings.animations_enabled
+  assign animation_anchor = '#Glovesize--' | append: section.id
+  assign animation_delay = 150
+-%}
+
+<style>
+  #Glovesize--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  {% if section.settings.glovesize_bgimg != blank %}
+  .Glovesize-bg {
+    background-image: url('{{ section.settings.glovesize_bgimg | img_url:'' }}');
+    background-repeat: no-repeat;
+  }{% endif %}
+  .Glovesize-form-wrapper.has-bg {
+    padding-top: 230px;
+  }
+</style>
+<section
+id="Glovesize--{{ section.id }}"
+class="section-padding"
+data-section-type="Glovesize-form"
+data-section-id="{{ section.id }}">
+  {% if section.settings.mob_image != blank %}
+    <div class="Glovesize-mobile-image hidden-lg">
+      <figure>
+        <img class="lazyload" src="{{ section.settings.mob_image | img_url:'' }}" alt="{{ section.settings.mob_image.alt }}">
+      </figure>
+    </div>
+  {% endif %}
+  <div class="Glovesize-bg">
+    <div class="{{ section_width }}">
+      <div class="Glovesize-form-wrapper {% if section.settings.glovesize_bgimg != blank %}has-bg{% endif %}">
+        <div class="gloveSizeAdvisorForm">
+          {% if section.settings.title != blank %}
+          <div class="form__item form__item--heading"
+           {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}>
+              <h2 class="form__heading h1">{{ section.settings.title }}</h2>          
+          </div>
+          {% endif %}
+          {% if section.settings.content != blank %}
+          <div class="form__item form__item--content" {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}>
+              {{ section.settings.content }}
+          </div>
+          {% endif %}
+          <div class="gloves-versionA">
+            <div class="versionA-details">
+              {% if section.settings.varsionA_title != blank %}<h2>{{ section.settings.varsionA_title }}</h2>{% endif %}
+              {% if section.settings.versionA_content != blank %}<div>{{ section.settings.versionA_content }}</div>{% endif %}
+            </div>
+            <div class="versionA-image">
+              <img class="lazyload" src="{{ section.settings.versionA_img | img_url:'' }}" alt="{{ section.settings.versionA_img.alt }}">
+            </div>
+          </div>
+          <div class="glove-size-chart">
+            <table>
+              <tr>
+                <td>{{ section.settings.size1_title }}</td>
+                <td>
+                  <ul>
+                    {% for block in section.blcks %}
+                      <li>{{ block.settings.size1_list }}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>{{ section.settings.size2_title }}</td>
+                <td>
+                  <ul>
+                    {% for block in section.blcks %}
+                      <li>{{ block.settings.size2_list }}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>{{ section.settings.size3_title }}</td>
+                <td>
+                  <ul>
+                    {% for block in section.blcks %}
+                      <li>{{ block.settings.size3_list }}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Glove Size Advisor",
+    "class":"Glovesize-advisor",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "glovesize_bgimg",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob_image",
+        "label": "Mobile Iamge"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Form heading",
+        "default": "Contact us"
+      },
+      {
+        "type": "text",
+        "id": "varsionA_title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "versionA_content",
+        "label": "content"
+      },
+      {
+        "type": "image_picker",
+        "id": "versionA_img",
+        "label": "Size Iamge"
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper--narrow",
+        "options": [
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" },
+          { "value": "wrapper--narrow", "label": "Page width narrow" }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "Glove Size Advisor"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

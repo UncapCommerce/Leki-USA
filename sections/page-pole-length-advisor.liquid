@@ -102,14 +102,15 @@ data-section-id="{{ section.id }}">
   {% if section.settings.mob_image != blank %}
     <div class="poleLenght-mobile-image hidden-lg">
       <figure>
-        <img src="{{ section.settings.mob_image | img_url:'' }}" alt="{{ section.settings.mob_image.alt }}">
+        <img class="lazyload" src="{{ section.settings.mob_image | img_url:'' }}" alt="{{ section.settings.mob_image.alt }}">
       </figure>
     </div>
   {% endif %}
   <div class="poleLenght-bg">
   <div class="{{ section_width }}">
     <div class="poleLenght-form-wrapper {% if section.settings.polelength_bgimg != blank %}has-bg{% endif %}">
-      <form method="post" action="#" id="poleSizeAdvisorForm">
+      <form method="post" action="#" id="poleSizeAdvisorForm">\
+        {% if section.settings.title != blank %}
           <div class="form__item form__item--heading"
             {% if animations_enabled %}
               data-aos="fade-up"
@@ -119,6 +120,8 @@ data-section-id="{{ section.id }}">
             {% endif %}>
             <h2 class="form__heading h1">{{ section.settings.title }}</h2>          
           </div>
+          {% endif %}
+        {% if section.settings.content != blank %}
           <div class="form__item form__item--content" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
@@ -127,6 +130,7 @@ data-section-id="{{ section.id }}">
             {% endif %}>
             {{ section.settings.content }}
         </div>
+        {% endif %}
         <div class="poleLength_calculation">
           <h4 class="title" {% if animations_enabled %}
               data-aos="fade-up"
@@ -140,6 +144,8 @@ data-section-id="{{ section.id }}">
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>For which activity do you want to calculate the optimal pole size?</p>
+          {% if section.settings.option-one != blank or section.settings.option-two != blank or section.settings.option-three or section.settings.option-four or section.settings.option-five or 
+          section.settings.option-six != blank or section.settings.option-seven != blank or section.settings.option-eight != blank or section.settings.option-nine != blank or section.settings.option-ten != blank %}
           <div class="custom-select form__item" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
@@ -147,19 +153,20 @@ data-section-id="{{ section.id }}">
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>
             <select class="form-control" name="category" id="category">
-              <option value="{{ section.settings.option-one }}">{{ section.settings.option-one }}</option>
-              <option value="{{ section.settings.option-two }}">{{ section.settings.option-two }}</option>
-              <option value="{{ section.settings.option-three }}">{{ section.settings.option-three }}</option>
-              <option value="{{ section.settings.option-four }}">{{ section.settings.option-four }}</option>
-              <option value="{{ section.settings.option-five }}">{{ section.settings.option-five }}</option>
-              <option value="{{ section.settings.option-six }}">{{ section.settings.option-six }}</option>
-              <option value="{{ section.settings.option-seven }}">{{ section.settings.option-seven }}</option>
-              <option value="{{ section.settings.option-eight }}">{{ section.settings.option-eight }}</option>
-              <option value="{{ section.settings.option-nine }}">{{ section.settings.option-nine }}</option>
-              <option value="{{ section.settings.option-ten }}">{{ section.settings.option-ten }}</option>
+              {% if section.settings.option-one != blank %}<option value="{{ section.settings.option-one }}">{{ section.settings.option-one }}</option>{% endif %}
+              {% if section.settings.option-two != blank %}<option value="{{ section.settings.option-two }}">{{ section.settings.option-two }}</option>{% endif %}
+              {% if section.settings.option-three != blank %}<option value="{{ section.settings.option-three }}">{{ section.settings.option-three }}</option>{% endif %}
+              {% if section.settings.option-four != blank %}<option value="{{ section.settings.option-four }}">{{ section.settings.option-four }}</option>{% endif %}
+              {% if section.settings.option-five != blank %}<option value="{{ section.settings.option-five }}">{{ section.settings.option-five }}</option>{% endif %}
+              {% if section.settings.option-six != blank %}<option value="{{ section.settings.option-six }}">{{ section.settings.option-six }}</option>{% endif %}
+              {% if section.settings.option-seven != blank %}<option value="{{ section.settings.option-seven }}">{{ section.settings.option-seven }}</option>{% endif %}
+              {% if section.settings.option-eight != blank %}<option value="{{ section.settings.option-eight }}">{{ section.settings.option-eight }}</option>{% endif %}
+              {% if section.settings.option-nine != blank %}<option value="{{ section.settings.option-nine }}">{{ section.settings.option-nine }}</option>{% endif %}
+              {% if section.settings.option-ten != blank %}<option value="{{ section.settings.option-ten }}">{{ section.settings.option-ten }}</option>{% endif %}
             </select>
             <div class="from-control-arrow">{%- render 'icon-arrow-up' -%}</div>
           </div>
+          {% endif %}
           <h4 class="title" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
@@ -180,6 +187,7 @@ data-section-id="{{ section.id }}">
             {% endif %}>
             <input type="number" class="form-control" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
             </div>
+          {% if settings.pole_button_text %}
             <div class="form__item" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
@@ -188,13 +196,16 @@ data-section-id="{{ section.id }}">
             {% endif %}>
             <input type="submit" class="btn {{ pole_button_style }}" value="{{ settings.pole_button_text }}">
             </div>
+          {% endif %}
         </div>
+        {% if section.settings.info_text != blank %}
         <div class="pole-information" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>{%- render 'icon-info' -%}<span>{{ section.settings.info_text }}</span></div>
+        {% endif %}
       </form>
     </div>
   </div>
