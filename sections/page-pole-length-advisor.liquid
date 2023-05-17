@@ -1,6 +1,360 @@
+{%- liquid
+  assign pole_button_style = settings.pole_button_style
+  assign section_width = section.settings.width
+  assign animations_enabled = settings.animations_enabled
+  assign animation_anchor = '#PoleLenght--' | append: section.id
+  assign animation_delay = 150
+-%}
+<style>
+  #PoleLenght--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  {% if section.settings.polelength_bgimg != blank %}
+  .poleLenght-bg {
+    background-image: url('{{ section.settings.polelength_bgimg | img_url:'' }}');
+    background-repeat: no-repeat;
+  }{% endif %}
+  .poleLenght-form-wrapper.has-bg {
+    padding-top: 230px;
+  }
+  .poleLenght-form-wrapper #poleSizeAdvisorForm {
+    background: #FFFFFF;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);
+    padding: 60px;
+  }
+  .from-control-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  @media(max-width: 1440px){
+    .poleLenght-form-wrapper.has-bg {
+      padding-top: 180px;
+    }
+  }
+  @media(max-width: 1023px){
+    .poleLenght-form-wrapper #poleSizeAdvisorForm{padding: 40px;}
+    .poleLenght-form-wrapper.has-bg {padding-top: 120px;}
+    .page--pole-length-advisor .featured-collection__top .section__heading{font-size: 36px;line-height: 48px;}
+  }
+  @media(max-width: 767px){
+    .poleLenght-form-wrapper #poleSizeAdvisorForm {
+      padding: 40px 24px;
+    }
+    #PoleLenght--{{ section.id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+    .poleLenght-form-wrapper .form__item p{font-size: 14px;line-height: 20px;}
+    .poleLength_calculation h4.title {font-size: 18px;line-height: 26px;}
+    .poleLenght-form-wrapper.has-bg {padding-top: 0;}
+    .poleLenght-bg{background: none;}
+    .poleLenght-mobile-image figure {
+      margin: 0;
+      position: relative;
+      width: 100%;
+      display: inline-block;
+      vertical-align: middle;
+      padding-bottom: 41%;
+    }
+    .poleLenght-mobile-image figure img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    .Pole-length-advisor .wrapper--narrow {padding: 0;}
+    #poleSizeAdvisorForm input.btn{margin-top: 20px;}
+    .poleLenght-form-wrapper #poleSizeAdvisorForm{box-shadow: 0.5px -3px 5px 2.5px rgba(0, 0, 0, 0.12);}
+    .page--pole-length-advisor .featured-collection__top .section__heading{font-size: 24px;line-height: 32px;}
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {   
+
+    let btn = document.querySelector('.from-control-arrow');
+
+   btn.addEventListener('click', function () {
+      alert('Mouse Clicked');
+   });
+  
+  let clickEvent = new Event('click');
+  let dropdown_wrap = document.querySelector('.form-control');
+  dropdown_wrap.dispatchEvent(clickEvent);
+    
+  });
+</script>
+<section
+id="PoleLenght--{{ section.id }}"
+class="section-padding"
+data-section-type="polelenght-form"
+data-section-id="{{ section.id }}">
+  {% if section.settings.mob_image != blank %}
+    <div class="poleLenght-mobile-image hidden-lg">
+      <figure>
+        <img src="{{ section.settings.mob_image | img_url:'' }}" alt="{{ section.settings.mob_image.alt }}">
+      </figure>
+    </div>
+  {% endif %}
+  <div class="poleLenght-bg">
+  <div class="{{ section_width }}">
+    <div class="poleLenght-form-wrapper {% if section.settings.polelength_bgimg != blank %}has-bg{% endif %}">
+      <form method="post" action="#" id="poleSizeAdvisorForm">
+          <div class="form__item form__item--heading"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
+            <h2 class="form__heading h1">{{ section.settings.title }}</h2>          
+          </div>
+          <div class="form__item form__item--content" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
+            {{ section.settings.content }}
+        </div>
+        <div class="poleLength_calculation">
+          <h4 class="title" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>Step 1: Activity </h4>
+          <p {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>For which activity do you want to calculate the optimal pole size?</p>
+          <div class="custom-select form__item" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
+            <select class="form-control" name="category" id="category">
+              <option value="{{ section.settings.option-one }}">{{ section.settings.option-one }}</option>
+              <option value="{{ section.settings.option-two }}">{{ section.settings.option-two }}</option>
+              <option value="{{ section.settings.option-three }}">{{ section.settings.option-three }}</option>
+              <option value="{{ section.settings.option-four }}">{{ section.settings.option-four }}</option>
+              <option value="{{ section.settings.option-five }}">{{ section.settings.option-five }}</option>
+              <option value="{{ section.settings.option-six }}">{{ section.settings.option-six }}</option>
+              <option value="{{ section.settings.option-seven }}">{{ section.settings.option-seven }}</option>
+              <option value="{{ section.settings.option-eight }}">{{ section.settings.option-eight }}</option>
+              <option value="{{ section.settings.option-nine }}">{{ section.settings.option-nine }}</option>
+              <option value="{{ section.settings.option-ten }}">{{ section.settings.option-ten }}</option>
+            </select>
+            <div class="from-control-arrow">{%- render 'icon-arrow-up' -%}</div>
+          </div>
+          <h4 class="title" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>Step 2: Your height</h4>
+          <p {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>Please tell us your height inclusive the used shoes.</p>
+            <div class="form__item" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
+            <input type="number" class="form-control" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
+            </div>
+            <div class="form__item" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
+            <input type="submit" class="btn {{ pole_button_style }}" value="{{ settings.pole_button_text }}">
+            </div>
+        </div>
+        <div class="pole-information" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>{%- render 'icon-info' -%}<span>{{ section.settings.info_text }}</span></div>
+      </form>
+    </div>
+  </div>
+  </div>
+</section>
 {% schema %}
   {
     "name": "Pole Length Advisor",
-    "settings": []
+    "class":"Pole-length-advisor",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "polelength_bgimg",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob_image",
+        "label": "Mobile Iamge"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Form heading",
+        "default": "Contact us"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Form content"
+      },
+      {
+        "type":"header",
+        "content":"Dropdown"
+      },
+      {
+        "type": "text",
+        "id": "option-one",
+        "default": "Select option one",
+        "label": "Option one"
+      },
+      {
+        "type": "text",
+        "id": "option-two",
+        "default": "Select option two",
+        "label": "Option two"
+      },
+      {
+        "type": "text",
+        "id": "option-three",
+        "default": "Select option three",
+        "label": "Option three"
+      },
+      {
+        "type": "text",
+        "id": "option-four",
+        "default": "Select option four",
+        "label": "Option four"
+      },
+      {
+        "type": "text",
+        "id": "option-five",
+        "default": "Select option five",
+        "label": "Option five"
+      },
+      {
+        "type": "text",
+        "id": "option-six",
+        "default": "Select option six",
+        "label": "Option six"
+      },
+      {
+        "type": "text",
+        "id": "option-seven",
+        "default": "Select option seven",
+        "label": "Option seven"
+      },
+      {
+        "type": "text",
+        "id": "option-eight",
+        "default": "Select option eight",
+        "label": "Option eight"
+      },
+      {
+        "type": "text",
+        "id": "option-nine",
+        "default": "Select option nine",
+        "label": "Option nine"
+      },
+      {
+        "type": "text",
+        "id": "option-ten",
+        "default": "Select option Ten",
+        "label": "Option Ten"
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper--narrow",
+        "options": [
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" },
+          { "value": "wrapper--narrow", "label": "Page width narrow" }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "info_text",
+        "label": "Information Text"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ],
+    "presets":[
+      {
+        "name": "Pole Length Advisor"
+      }
+    ]
   }
 {% endschema %}

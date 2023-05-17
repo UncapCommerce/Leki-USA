@@ -293,7 +293,7 @@
       "email": "Email",
       "password": "Password",
       "forgot_password": "Forgot your password?",
-      "sign_in": "Sign In",
+      "sign_in": "Login",
       "cancel": "Return to Store",
       "guest_title": "Continue as a guest",
       "guest_continue": "Continue",
@@ -345,12 +345,12 @@
       "submit": "Reset Password"
     },
     "register": {
-      "title": "Create Account",
+      "title": "Create an Account",
       "first_name": "First Name",
       "last_name": "Last Name",
       "email": "Email",
       "password": "Password",
-      "submit": "Create",
+      "submit": "Create an Account",
       "cancel": "Return to Store"
     }
   },

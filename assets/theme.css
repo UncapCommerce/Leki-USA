@@ -647,7 +647,9 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-
+input:focus {
+  border-color: var(--COLOR-BLACK);
+}
 button {
   background: none;
   border: none;
@@ -684,7 +686,7 @@ select {
   border: var(--BORDER-WIDTH) solid var(--border);
   background: var(--input-bg);
   max-width: 100%;
-  padding: 13px 20px;
+  padding: 12px 20px;
 }
 input[disabled], input.disabled,
 textarea[disabled],
@@ -728,19 +730,19 @@ select {
 }
 
 ::-webkit-input-placeholder {
-  color: var(--text);
+  color: #A5A5A5;;
 }
 
 ::-moz-placeholder {
-  color: var(--text);
+  color: #A5A5A5;;
 }
 
 :-ms-input-placeholder {
-  color: var(--text);
+  color: #A5A5A5;;
 }
 
 :-moz-placeholder {
-  color: var(--text);
+  color: #A5A5A5;;
 }
 
 optgroup {
@@ -3314,14 +3316,16 @@ h6.text-highlight-wrapper,
   max-width: 480px;
   margin: 0 auto;
   text-align: center;
+  background: #fff;
+  padding: 50px;
 }
 
 .form-vertical-wrapper p a {
   position: relative;
   display: inline-block;
-  text-decoration: none !important;
+/*   text-decoration: none !important; */
 }
-.no-touch .form-vertical-wrapper p a::before, .no-touch .form-vertical-wrapper p a::after {
+/* .no-touch .form-vertical-wrapper p a::before, .no-touch .form-vertical-wrapper p a::after {
   position: absolute;
   content: "";
   left: 0;
@@ -3339,7 +3343,7 @@ h6.text-highlight-wrapper,
 }
 .no-touch .form-vertical-wrapper p a::after {
   transform-origin: right;
-}
+} */
 .no-touch .form-vertical-wrapper p a:hover:before, .no-touch .form-vertical-wrapper p a:hover:after {
   transition: transform 1.1s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -3359,9 +3363,9 @@ h6.text-highlight-wrapper,
   width: 100%;
 }
 
-.form-vertical {
+/* .form-vertical {
   margin-bottom: calc(var(--gutter) / 2);
-}
+} */
 .form-vertical input,
 .form-vertical select,
 .form-vertical button,
@@ -3377,6 +3381,7 @@ h6.text-highlight-wrapper,
 .form__heading {
   text-align: center;
   margin-bottom: 20px;
+  color: var(--COLOR-BLACK);
 }
 
 .form__item {
@@ -16796,7 +16801,7 @@ a.navlink.navlink--child {
   line-height: 28px;
   color: var(--COLOR-BLACK);
 }
-.location__store .h4, h4 {
+.location__store .h4, .location__store h4 {
   font-size: 14px;
   line-height: 20px;
   color: var(--COLOR-BLACK);
@@ -24208,10 +24213,10 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 #pole-adviser-drawer .pole-inner-wrap h3 {font-size: 20px;line-height: 28px;margin-bottom: 8px;color: var(--COLOR-BLACK);}
 #pole-adviser-drawer .pole-inner-wrap > span {width: 100%;display: inline-block;vertical-align: middle;font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);margin-bottom: 20px;}
 #pole-adviser-drawer .pole-inner-wrap .form-control {width: 100%;margin-bottom: 20px;line-height: 24px;border: 1px solid #E6E6E6;}
-.pole-warning {display: flex;align-items: center;justify-content: center;gap: 10px;padding-top: 20px;}
-#poleSizeAdvisorForm input.btn {width: 100%;background: var(--text);padding: 12px 16px;font-size: 16px;line-height: 24px;}
+.pole-information {display: flex;align-items: center;justify-content: center;gap: 10px;padding-top: 20px;}
+#poleSizeAdvisorForm input.btn {width: 100%;background: var(--text);padding: 13px 16px;font-size: 16px;line-height: 24px;}
 #poleSizeAdvisorForm input.btn:hover{background: var(--button-secondary-bg);}
-.pole-warning span {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
+.pole-information span {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
 #pole-adviser-drawer .pole-inner-wrap .form-control::placeholder{color: #A5A5A5;}
 #pole-adviser-drawer .pole-inner-wrap .form-control:-ms-input-placeholder{color: #A5A5A5;}
 #pole-adviser-drawer .pole-inner-wrap .form-control::-ms-input-placeholder{color: #A5A5A5;}
@@ -24377,43 +24382,84 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .drop-info span svg.icon-lock {display: inline-block;vertical-align: middle;margin-right: 5px;}
 .drop-info span.secure-text {font-size: 14px;line-height: 20px;}
 .form__item p {margin: 0;}
+.form__item.form__item--checkbox.field_space {padding-top: 20px;}
 .contact-form-wrapper .form__item input[type=checkbox] {accent-color: black;height: 16px;width: 16px;margin: 0 5px 0;}
-.form__item.form__item--checkbox {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
+.form__item.form__item--checkbox {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);margin: 0;}
 .form__item--submit button.btn {width: 100%;background: var(--text);font-size: 16px;line-height: 24px;padding: 13px 22px;}
 .contact-form .field-info {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);text-align: right;width: 100%;display: inline-block;vertical-align: middle;padding-top: 20px;}
-.contact-mobile-image {
-  line-height: 0;
+.contact-mobile-image {line-height: 0;position: relative;display: inline-block;width: 100%;}
+.contact-mobile-image figure {margin: 0;position: relative;display: inline-block;vertical-align: middle;padding-bottom: 41.7%;width: 100%;}
+.contact-mobile-image figure img {object-fit: cover;position: absolute;top: 0;bottom: 0;left: 0;right: 0;height: 100%;width: 100%;}
+.form_address-fields {display: flex;flex-wrap: nowrap;gap: 20px;}
+.form_address-fields .form__item {max-width: calc(33.33% - 13px);flex: 0 0 calc(33.33% - 13px);}
+
+/* ----------- Pole Length Advisor page ------------- */
+.poleLength_calculation .custom-select {
   position: relative;
-  display: inline-block;
+}
+.poleLength_calculation .custom-select select {
   width: 100%;
+  padding: 12px 52px 12px 20px;
+  border: 1px solid #E6E6E6;
 }
-.contact-mobile-image figure {
-  margin: 0;
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  padding-bottom: 41.7%;
+.poleLength_calculation .form__item input {
   width: 100%;
+  border: 1px solid #E6E6E6;
+  padding: 12px 20px;
 }
-.contact-mobile-image figure img {
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
+.poleLenght-form-wrapper .form__item.form__item--content {
+  line-height: 24px;
+  margin-bottom: 40px;
 }
-.form_address-fields {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
+.poleLength_calculation h4.title {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--COLOR-BLACK);
 }
-.form_address-fields .form__item {
-  max-width: calc(33.33% - 13px);
-  flex: 0 0 calc(33.33% - 13px);
+.poleLength_calculation p {
+  margin: 0 0 20px;
+  color: var(--COLOR-BLACK);
 }
+.poleLenght-form-wrapper .pole-information {
+  padding: 0;
+  justify-content: flex-end;
+}
+.poleLenght-form-wrapper .form__item p {
+  text-align: center;
+  color: var(--COLOR-BLACK);
+}
+.page--pole-length-advisor .featured-collection__top .section__heading {
+  margin-bottom: 30px;
+  font-size: 50px;
+  line-height: 58px;
+  color: var(--COLOR-BLACK);
+}
+.page--pole-length-advisor .featured-collection__top {margin: 0;}
+.page--pole-length-advisor .featured-collection__container .product__media__outer{padding-top: 130.5%;}
+
+/* ------------- glove size advisor page ------------ */
+.gloveSizeAdvisorForm {background: #FFFFFF;box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);padding: 60px;}
+
+/* ---------- Account Pages ------------ */
+.form-vertical-wrapper .section__header {margin-bottom: 25px;}
+.form-vertical-wrapper .section__heading {font-size: 24px;line-height: 32px;}
+.form-vertical-wrapper input {margin-bottom: 14px;}
+.remember-login {display: flex;align-items: center;justify-content: space-between;margin-bottom: 20px;}
+.remember-text span {font-size: 14px;line-height: 20px;color: #A5A5A5;}
+.remember-login p {margin: 0;font-size: 14px;line-height: 20px;}
+.remember-login p a {color: #A5A5A5;}
+.remember-text input[type=checkbox] {accent-color: var(--COLOR-BLACK);margin: 0 6px 0 0;}
+.remember-text {display: flex;align-items: center;}
+.form-vertical .btn.login-btn {background: #BF0038;border-color: transparent;font-size: 18px;line-height: 26px;}
+.form-vertical .btn.login-btn:hover {border-color: var(--COLOR-BLACK);}
+.form-vertical .register-btn .btn {background: var(--button-secondary-bg);color: var(--button-secondary-bg-hover);font-size: 18px;line-height: 26px;}
+.form-vertical .register-btn .btn:hover:before,.form-vertical .register-btn .btn:focus::before,.form-vertical .register-btn .btn:active::before {background: var(--button-primary-bg);}
+.form-vertical .register-btn .btn:hover,.form-vertical .register-btn .btn:focus,.form-vertical .register-btn .btn:active{color: var(--button-primary-bg-hover);}
+.register-btn {border-top: 1px solid #ECECEB;padding-top: 20px;display: inline-block;vertical-align: middle;width: 100%;margin-top: 10px;}
+.login-info p {font-size: 14px;line-height: 20px;color: #494949;margin: 10px 0 0;}
+form#CreateCustomer .btn {font-size: 18px;line-height: 26px;}
+form#RecoverCustomerPassword input {padding: 16px 20px;line-height: 24px;}
+form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size: 18px;line-height: 26px}
 
 @media(min-width: 768px){
   .product-single__thumbnails .flickity-page-dots {display: none;}
@@ -24421,6 +24467,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 @media(min-width: 1024px){
   .accordion__content .wrapper--narrow {max-width: 100%;width: 920px;}  
   .template-collection .accordion__content .wrapper--narrow {max-width: 100%;width: 1140px;}
+  .Pole-length-advisor .wrapper--narrow,.Glovesize-advisor .wrapper--narrow{width: 960px;}
 }
 
 @media(max-width: 1440px){
@@ -24494,6 +24541,8 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
   .image-with-text__content{padding: 40px;}
   .template-product .image-with-text__heading{font-size: 36px;line-height: 48px;}
   .activity-landing-text .heading {font-size: 50px;line-height: 70px;margin-bottom: 25px;}
+  form#RecoverCustomerPassword .btn {padding: 13px 20px;font-size: 14px;line-height: 20px;}
+  form#RecoverCustomerPassword input {padding: 13px 20px;line-height: 20px;}
 }
 @media(max-width: 991px){  
   #gloves-adviser-drawer{width: 700px;}
@@ -24588,6 +24637,13 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
   .image-with-text__content {padding: 20px;}
   .activity-landing-text .heading {font-size: 36px;line-height: 48px;margin-bottom: 20px;}
   .activity-landing-text .content.split-content p {max-width: 100%;flex: 0 0 100%;}
+  .form-vertical-wrapper{padding: 25px;}
+  .form-vertical .btn.login-btn,.form-vertical .register-btn .btn{font-size: 14px;line-height: 20px;padding: 13px 20px;}
+  .login-info p {font-size: 12px;line-height: 16px;}
+  .form-vertical-wrapper input{padding: 13px 20px;font-size: 14px;line-height: 20px;}
+  .form-vertical-wrapper .section__heading {font-size: 20px;line-height: 28px;}
+  .remember-text span ,.remember-login p{font-size: 12px;line-height: 16px;}
+  form#CreateCustomer .btn {font-size: 16px;line-height: 22px;padding: 12px 20px;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}
@@ -24597,6 +24653,8 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
   .glove-drawer-active #gloves-adviser-drawer{transform: translate(100vw);}
   .image-with-text__heading a, .image-with-text__buttons a{padding: 12px 30px;}
   .sub-collections-wrap .list-collections__item {max-width: 183px;}
+  .drop-info span{max-width: 50%;}
+  .form__item--submit button.btn{padding: 12px 22px;}
 }
 @media(max-width: 479px){
   .image-with-text__buttons.main-buttons {flex-flow: row wrap;}
