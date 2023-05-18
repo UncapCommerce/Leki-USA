@@ -15545,6 +15545,49 @@ a.navlink.navlink--child {
   height: 100px;
 }
 
+.image-with-text.full-height {
+  min-height: var(--content-full);
+}
+
+.image-with-text.seven-fifty-height {
+  min-height: 750px;
+}
+
+.image-with-text.six-fifty-height {
+  min-height: 650px;
+}
+
+.image-with-text.five-fifty-height {
+  min-height: 550px;
+}
+
+.image-with-text.four-fifty-height {
+  min-height: 450px;
+}
+
+.image-with-text.three-fifty-height {
+  min-height: 350px;
+}
+
+.image-with-text.three-hundred-height {
+  min-height: 300px;
+}
+
+.image-with-text.two-fifty-height {
+  min-height: 250px;
+}
+
+.image-with-text.two-hundred-height {
+  min-height: 200px;
+}
+
+.image-with-text.one-fifty-height {
+  min-height: 150px;
+}
+
+.image-with-text.one-hundred-height {
+  min-height: 100px;
+}
 .image-with-text.full-height,
 .image-with-text.seven-fifty-height,
 .image-with-text.six-fifty-height,
@@ -24438,7 +24481,31 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .page--pole-length-advisor .featured-collection__container .product__media__outer{padding-top: 130.5%;}
 
 /* ------------- glove size advisor page ------------ */
-.gloveSizeAdvisorForm {background: #FFFFFF;box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);padding: 60px;}
+.gloveSizeAdvisorForm {background: #FFFFFF;box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);padding: 60px;line-height: 0;color: var(--COLOR-BLACK);}
+.gloves-versionA {display: flex;flex-wrap: nowrap;gap: 50px;margin: 60px 0 20px;align-items: center;}
+.versionA-details {max-width: 440px;}
+.gloveSizeAdvisorForm .form__item.form__item--content {margin: 0;}
+.glove-size-chart .size-chart-inner .table-wrapper table td ul {margin: 0;}
+.glove-size-chart .table-wrapper td ul li {list-style: none;display: inline-block;vertical-align: middle;width: 73px;max-width: 73px;text-transform: uppercase;}
+.gloveSizeAdvisorForm .form__item.form__item--content p {text-align: center;color: var(--COLOR-BLACK);}
+.gloves-versionA .versionA-details p {margin: 0;color: var(--COLOR-BLACK);line-height: 24px;}
+.glove-size-chart .size-chart-inner h4 {margin-bottom: 20px;color: var(--COLOR-BLACK);}
+.glove-size-chart .size-chart-inner {margin-bottom: 40px;}
+.glove-size-chart .size-chart-inner .table-wrapper table, .glove-size-chart .size-chart-inner .table-wrapper table td {border: none;}
+.glove-size-chart .size-chart-inner .table-wrapper table td {padding: 10px 0;font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
+.glove-size-chart .size-chart-inner .table-wrapper table tr {border-bottom: 1px solid #ECECEB;display: flex;flex-wrap: nowrap;align-items: center;}
+.glove-size-chart .size-chart-inner:last-child {margin: 0;}
+.gloveSizeAdvisorForm .gloves-versionB {padding-top: 60px;}
+.glove-size-chart .size-chart-inner .table-wrapper table td.title {width: 150px;max-width: 150px;margin-right: 40px;font-weight: 600;color: var(--COLOR-BLACK);}
+.versionB-details h3 ,.versionA-details h3 {color: var(--COLOR-BLACK);}
+.versionB-details p {margin: 0;font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);}
+.gloveSizeAdvisorForm .download-btn {width: 100%;background: #27304A;padding: 13px 20px;margin-top: 20px;line-height: 24px;}
+.gloveSizeAdvisorForm .download-btn svg {display: inline-block;vertical-align: middle;margin-left: 10px;}
+.download-btn:hover svg path {stroke: var(--COLOR-BLACK);}
+.page--gloves-size-advisor .featured-collection__top {margin: 0;}
+.page--gloves-size-advisor .featured-collection__top .section__heading {margin-bottom: 30px;font-size: 50px;line-height: 58px;}
+.page--gloves-size-advisor .featured-collection__container .product__media__outer{padding-top: 130.5%;}
+.gloveSizeAdvisorForm .form__item.form__item--content p{font-size: 14px;line-height: 20px;}
 
 /* ---------- Account Pages ------------ */
 .form-vertical-wrapper .section__header {margin-bottom: 25px;}
@@ -24461,6 +24528,16 @@ form#CreateCustomer .btn {font-size: 18px;line-height: 26px;}
 form#RecoverCustomerPassword input {padding: 16px 20px;line-height: 24px;}
 form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size: 18px;line-height: 26px}
 
+/* ----------- Athletes Page ---------- */
+.athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
+.athletes-inner-wrap .athletes-image {line-height: 0;}
+.athletes-inner-wrap .athletes-image img {border-radius: var(--radius);}
+.athletes-content {padding: 15px 0;}
+.athletes-content h4 {text-transform: uppercase;margin-bottom: 6px;}
+.athletes-content span {font-size: 14px;line-height: 20px;position: relative;}
+.athletes-inner-content {position: relative;}
+.athletes-inner-content .athletes-card-content-overlay {position: absolute;top: 0;bottom: 0;left: 0;right: 0;height: 100%;width: 100%;background: #373738;opacity: 0;visibility: hidden;}
+.athletes-inner-content:hover .athletes-card-content-overlay{opacity: 0.9;visibility:visible;}
 @media(min-width: 768px){
   .product-single__thumbnails .flickity-page-dots {display: none;}
 }
@@ -24539,10 +24616,11 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .collection-promo__content--stacked {padding: 68px 20px;}
   .accordions-section .section__header {margin-bottom: 36px;}
   .image-with-text__content{padding: 40px;}
-  .template-product .image-with-text__heading{font-size: 36px;line-height: 48px;}
+  .template-product .image-with-text__heading {font-size: 36px;line-height: 48px;}
   .activity-landing-text .heading {font-size: 50px;line-height: 70px;margin-bottom: 25px;}
   form#RecoverCustomerPassword .btn {padding: 13px 20px;font-size: 14px;line-height: 20px;}
   form#RecoverCustomerPassword input {padding: 13px 20px;line-height: 20px;}
+  .page--gloves-size-advisor .featured-collection__top .section__heading {font-size: 36px;line-height: 48px;}
 }
 @media(max-width: 991px){  
   #gloves-adviser-drawer{width: 700px;}
@@ -24604,12 +24682,13 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   #gloves-adviser-drawer .gloves-inner-wrap {padding: 18px 20px 86px;}
   .gloves-main-wrap h3 {font-size: 16px;line-height: 24px;margin-bottom: 8px;}
   .gloves-main-wrap .table-wrapper tr td{max-width: 100%;width: 100%;font-size: 12px;line-height: 16px;padding: 4px 0;}
-  .gloves-main-wrap .table-wrapper tr td:first-child{max-width: 100%;width: max-content;position: relative;color: #BF0038;background: #fff;padding: 0;margin-bottom: 4px;}
-  .gloves-main-wrap .table-wrapper tr td:first-child::before {position: absolute;content: '';top: auto;bottom: 0;left: 100%;right: auto;height: 1px;width: 100%;background-color: #E6E6E6;margin: auto;}
-  .gloves-main-wrap .table-wrapper tr{margin-bottom: 20px;column-gap: 0;}
+  .gloves-main-wrap .table-wrapper tr td:first-child{max-width: 100%;width: 100%;position: relative;color: #BF0038;background: #fff;padding: 0;margin-bottom: 4px;}
+  .gloves-main-wrap .table-wrapper tr td:first-child::before {position: absolute;content: '';top: auto;bottom: 0;left: 0;right: 0;height: 1px;width: 100%;background-color: #E6E6E6;}
+  .gloves-main-wrap .table-wrapper tr{margin-bottom: 20px;column-gap: 0;border: none;}
+  .gloves-main-wrap .table-wrapper tr td:first-child:empty:before {display:none;}
   .gloves-main-wrap .table-wrapper tr td ul li{margin-right: 8px;width: 39px;max-width: 39px;}
   .gloves-main-wrap .table-wrapper tr:last-child {margin: 0;}
-  .gloves-main-wrap .table-wrapper {margin-bottom: 44px;}
+  .gloves-main-wrap .table-wrapper tr td span {position: relative;text-decoration: underline;text-decoration-thickness: 2px;text-underline-offset: 3px;z-index: 2;text-decoration-color: #fff;}
   .gloves-main-wrap img {margin-left: 0;float: left !important;}
   .gloves-main-wrap .table-wrapper + div {text-align: left !important;width: 100%;display: inline-block;margin-bottom: 60px;}
   .gloves-main-wrap p {margin-bottom: 40px;}
@@ -24639,11 +24718,33 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .activity-landing-text .content.split-content p {max-width: 100%;flex: 0 0 100%;}
   .form-vertical-wrapper{padding: 25px;}
   .form-vertical .btn.login-btn,.form-vertical .register-btn .btn{font-size: 14px;line-height: 20px;padding: 13px 20px;}
-  .login-info p {font-size: 12px;line-height: 16px;}
+ .login-info p {font-size: 12px;line-height: 16px;}
   .form-vertical-wrapper input{padding: 13px 20px;font-size: 14px;line-height: 20px;}
   .form-vertical-wrapper .section__heading {font-size: 20px;line-height: 28px;}
   .remember-text span ,.remember-login p{font-size: 12px;line-height: 16px;}
   form#CreateCustomer .btn {font-size: 16px;line-height: 22px;padding: 12px 20px;}
+  .gloves-versionA .versionA-details p{font-size: 14px;line-height: 20px;}
+  .gloveSizeAdvisorForm{padding: 40px 20px;box-shadow: 0.5px -3px 5px 2.5px rgba(0, 0, 0, 0.12);margin-bottom: 5px;}
+  .Glovesize-advisor .wrapper--narrow {padding: 0;}
+  .Glovesize-mobile-image figure{margin : 0;position: relative;width: 100%;display: inline-block;vertical-align: middle;padding-bottom: 41%;}
+  .Glovesize-mobile-image figure img {position: absolute;top: 0;bottom: 0;left: 0;right: 0;height: 100%;width: 100%;object-fit: cover;}
+  .gloves-versionA{flex-wrap: wrap;gap: 20px;justify-content: center;}
+  .versionA-details {max-width: 100%;}
+  .glove-size-chart {padding-top: 20px;}
+  .page--gloves-size-advisor .featured-collection__top .section__heading {font-size: 24px;line-height: 32px;}
+  .versionA-image {width: 100%;text-align: center;}
+  .gloveSizeAdvisorForm .download-btn{margin-bottom: 80px;}
+  .glove-size-chart .size-chart-inner .table-wrapper table tr{flex-wrap: wrap;margin-bottom: 16px;}
+  .glove-size-chart .size-chart-inner .table-wrapper table tr:last-child{margin:0;}
+  .glove-size-chart .size-chart-inner .table-wrapper table td.title {width: 100%;max-width: 100%;margin-right: 0;color: #BF0038;padding: 0;margin-bottom: 4px;position: relative;}
+  .glove-size-chart .size-chart-inner .table-wrapper table td.title:empty:after{display: none}
+  .glove-size-chart .size-chart-inner .table-wrapper table tr {border-bottom: none;}
+  .glove-size-chart .size-chart-inner h4 {margin-bottom: 8px;font-size: 16px;line-height: 24px;}
+  .glove-size-chart .table-wrapper td ul li{width: 39px;max-width: 39px;margin-right: 8px;}
+  .glove-size-chart .size-chart-inner .table-wrapper table td {padding: 4px 0;font-size: 12px;line-height: 16px;}
+  .glove-size-chart .size-chart-inner .table-wrapper table td.title span {position: relative;text-decoration: underline;text-decoration-thickness: 2px;text-underline-offset: 3px;z-index: 2;text-decoration-color: #fff;}
+  .gloveSizeAdvisorForm .gloves-versionB {padding-top: 40px;}
+  .glove-size-chart .size-chart-inner .table-wrapper table td.title::after {position: absolute;content: '';width: 100%;left: 0;right: 0;bottom: 0;top: auto;height: 1px;background: #e6e6e6;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}

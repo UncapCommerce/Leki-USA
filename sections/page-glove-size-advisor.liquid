@@ -18,6 +18,26 @@
   .Glovesize-form-wrapper.has-bg {
     padding-top: 230px;
   }
+  @media(max-width: 1440px){
+    .Glovesize-form-wrapper.has-bg {
+      padding-top: 180px;
+    }
+  }
+  @media(max-width: 1023px){
+    .Glovesize-form-wrapper.has-bg {
+      padding-top: 120px;
+    }
+  }
+  @media(max-width: 767px){
+  #Glovesize--{{ section.id }} {
+    --PT: {{ section.settings.mob_padding_top }}px;
+    --PB: {{ section.settings.mob_padding_bottom }}px;
+  }
+    .Glovesize-form-wrapper.has-bg {
+      padding-top: 0;
+    }
+    .Glovesize-bg{background:none;}    
+  }
 </style>
 <section
 id="Glovesize--{{ section.id }}"
@@ -56,49 +76,200 @@ data-section-id="{{ section.id }}">
               {{ section.settings.content }}
           </div>
           {% endif %}
-          <div class="gloves-versionA">
+          <div class="gloves-versionA" {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}>
             <div class="versionA-details">
-              {% if section.settings.varsionA_title != blank %}<h2>{{ section.settings.varsionA_title }}</h2>{% endif %}
-              {% if section.settings.versionA_content != blank %}<div>{{ section.settings.versionA_content }}</div>{% endif %}
+              {% if section.settings.varsionA_title != blank %}<h3>{{ section.settings.varsionA_title }}</h3>{% endif %}
+              {% if section.settings.versionA_content != blank %}{{ section.settings.versionA_content }}{% endif %}
             </div>
-            <div class="versionA-image">
-              <img class="lazyload" src="{{ section.settings.versionA_img | img_url:'' }}" alt="{{ section.settings.versionA_img.alt }}">
-            </div>
+            {% if section.settings.versionA_img != blank or section.settings.versionA_mobimg != blank %}
+              <div class="versionA-image">
+                {% if section.settings.versionA_img != blank %}
+                  <img class="lazyload {% if section.settings.versionA_mobimg != blank %}hidden-sm{% endif %}" src="{{ section.settings.versionA_img | img_url:'' }}" alt="{{ section.settings.versionA_img.alt }}">
+                {% endif %}
+                {% if section.settings.versionA_mobimg != blank %}
+                  <img class="lazyload {% if section.settings.versionA_img != blank %}hidden-lg{% endif %}" src="{{ section.settings.versionA_mobimg | img_url:'' }}" alt="{{ section.settings.versionA_mobimg.alt }}">
+                {% endif %}
+              </div>
+            {% endif %}
           </div>
           <div class="glove-size-chart">
-            <table>
-              <tr>
-                <td>{{ section.settings.size1_title }}</td>
-                <td>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'women-size' %}
+                <div class="size-chart-inner" {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}>
+                <h4>Women Size</h4>
+                  <table>
+                   <tr>
+                    {% if block.settings.Circumference_title != blank %}<td class="title"><span>{{ block.settings.Circumference_title }}</span></td>{% endif %}
+                    <td>
+                    <ul>
+                    {% if block.settings.cm_1 != blank %}<li>{{ block.settings.cm_1 }}</li>{% endif %}              
+                    {% if block.settings.cm_2 != blank %}<li>{{ block.settings.cm_2 }}</li>{% endif %}
+                    {% if block.settings.cm_3 != blank %}<li>{{ block.settings.cm_3 }}</li>{% endif %}
+                    {% if block.settings.cm_4 != blank %}<li>{{ block.settings.cm_4 }}</li>{% endif %}
+                    {% if block.settings.cm_5 != blank %}<li>{{ block.settings.cm_5 }}</li>{% endif %}
+                    {% if block.settings.cm_6 != blank %}<li>{{ block.settings.cm_6 }}</li>{% endif %}
+                    </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    {% if block.settings.size_title != blank %}<td class="title"><span>{{ block.settings.size_title }}</td></span>{% endif %}
+                    <td>
+                    <ul>
+                    {% if block.settings.size_s != blank %}<li>{{ block.settings.size_s }}</li>{% endif %}            
+                    {% if block.settings.size_m != blank %}<li>{{ block.settings.size_m }}</li>{% endif %}
+                    {% if block.settings.size_l != blank %}<li>{{ block.settings.size_l }}</li>{% endif %}
+                    {% if block.settings.size_xl != blank %}<li>{{ block.settings.size_xl }}</li>{% endif %}
+                    {% if block.settings.size_xxl != blank %}<li>{{ block.settings.size_xxl }}</li>{% endif %}
+                    {% if block.settings.size_xxxl != blank %}<li>{{ block.settings.size_xxxl }}</li>{% endif %}
+                    </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="title"></td>
+                    <td>
+                    <ul>
+                    {% if block.settings.cm_1 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
+                    {% if block.settings.cm_2 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
+                    {% if block.settings.cm_3 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
+                    {% if block.settings.cm_4 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
+                    {% if block.settings.cm_5 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
+                    {% if block.settings.cm_6 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
+                    </ul>
+                    </td>
+                  </tr>                       
+                </table>
+                </div>
+                {% when 'unisex-size' %}
+                <div class="size-chart-inner" {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}>
+                  <h4>Unisex Size</h4>
+                    <table>
+                       <tr>
+                        {% if block.settings.Circumference_title != blank %}<td class="title"><span>{{ block.settings.Circumference_title }}</td></span>{% endif %}
+                        <td>
+                        <ul>
+                        {% if block.settings.cm_1 != blank %}<li>{{ block.settings.cm_1 }}</li>{% endif %}              
+                        {% if block.settings.cm_2 != blank %}<li>{{ block.settings.cm_2 }}</li>{% endif %}
+                        {% if block.settings.cm_3 != blank %}<li>{{ block.settings.cm_3 }}</li>{% endif %}
+                        {% if block.settings.cm_4 != blank %}<li>{{ block.settings.cm_4 }}</li>{% endif %}
+                        {% if block.settings.cm_5 != blank %}<li>{{ block.settings.cm_5 }}</li>{% endif %}
+                        {% if block.settings.cm_6 != blank %}<li>{{ block.settings.cm_6 }}</li>{% endif %}
+                      </ul>
+                      </td>
+                      </tr>
+                      <tr>
+                        {% if block.settings.size_title != blank %}<td class="title"><span>{{ block.settings.size_title }}</td></span>{% endif %}
+                        <td>
+                        <ul>
+                        {% if block.settings.size_s != blank %}<li>{{ block.settings.size_s }}</li>{% endif %}            
+                        {% if block.settings.size_m != blank %}<li>{{ block.settings.size_m }}</li>{% endif %}
+                        {% if block.settings.size_l != blank %}<li>{{ block.settings.size_l }}</li>{% endif %}
+                        {% if block.settings.size_xl != blank %}<li>{{ block.settings.size_xl }}</li>{% endif %}
+                        {% if block.settings.size_xxl != blank %}<li>{{ block.settings.size_xxl }}</li>{% endif %}
+                        {% if block.settings.size_xxxl != blank %}<li>{{ block.settings.size_xxxl }}</li>{% endif %}
+                        </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="title"></td>
+                        <td>
+                        <ul>
+                        {% if block.settings.cm_1 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
+                        {% if block.settings.cm_2 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
+                        {% if block.settings.cm_3 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
+                        {% if block.settings.cm_4 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
+                        {% if block.settings.cm_5 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
+                        {% if block.settings.cm_6 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
+                        </ul>
+                        </td>
+                      </tr>  
+                    </table>
+                  </div>
+              {% when 'kids-size' %}
+              <div class="size-chart-inner" {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}>
+                <h4>Kids/Junior Size</h4>
+                <table>
+                 <tr>
+                  {% if block.settings.Circumference_title != blank %}<td class="title"><span>{{ block.settings.Circumference_title }}</span></td>{% endif %}
+                  <td>
                   <ul>
-                    {% for block in section.blcks %}
-                      <li>{{ block.settings.size1_list }}</li>
-                    {% endfor %}
+                  {% if block.settings.cm_1 != blank %}<li>{{ block.settings.cm_1 }}</li>{% endif %}              
+                  {% if block.settings.cm_2 != blank %}<li>{{ block.settings.cm_2 }}</li>{% endif %}
+                  {% if block.settings.cm_3 != blank %}<li>{{ block.settings.cm_3 }}</li>{% endif %}
+                  {% if block.settings.cm_4 != blank %}<li>{{ block.settings.cm_4 }}</li>{% endif %}
+                  {% if block.settings.cm_5 != blank %}<li>{{ block.settings.cm_5 }}</li>{% endif %}
+                  {% if block.settings.cm_6 != blank %}<li>{{ block.settings.cm_6 }}</li>{% endif %}
                   </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>{{ section.settings.size2_title }}</td>
-                <td>
+                  </td>
+                </tr>
+                <tr>
+                  {% if block.settings.size_title != blank %}<td class="title"><span>{{ block.settings.size_title }}</td></span>{% endif %}
+                  <td>
                   <ul>
-                    {% for block in section.blcks %}
-                      <li>{{ block.settings.size2_list }}</li>
-                    {% endfor %}
+                  {% if block.settings.size_s != blank %}<li>{{ block.settings.size_s }}</li>{% endif %}            
+                  {% if block.settings.size_m != blank %}<li>{{ block.settings.size_m }}</li>{% endif %}
+                  {% if block.settings.size_l != blank %}<li>{{ block.settings.size_l }}</li>{% endif %}
+                  {% if block.settings.size_xl != blank %}<li>{{ block.settings.size_xl }}</li>{% endif %}
+                  {% if block.settings.size_xxl != blank %}<li>{{ block.settings.size_xxl }}</li>{% endif %}
+                  {% if block.settings.size_xxxl != blank %}<li>{{ block.settings.size_xxxl }}</li>{% endif %}
                   </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>{{ section.settings.size3_title }}</td>
-                <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="title"></td>
+                  <td>
                   <ul>
-                    {% for block in section.blcks %}
-                      <li>{{ block.settings.size3_list }}</li>
-                    {% endfor %}
+                  {% if block.settings.cm_1 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
+                  {% if block.settings.cm_2 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
+                  {% if block.settings.cm_3 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
+                  {% if block.settings.cm_4 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
+                  {% if block.settings.cm_5 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
+                  {% if block.settings.cm_6 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
                   </ul>
-                </td>
-              </tr>
-            </table>
+                  </td>
+                </tr>    
+              </table>
+              </div>
+            {% endcase %}
+          {% endfor %}
           </div>
+          <div class="gloves-versionB" {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}>
+            <div class="versionB-details">
+              {% if section.settings.varsionB_title != blank %}<h3>{{ section.settings.varsionB_title }}</h3>{% endif %}
+              {% if section.settings.versionB_content != blank %}{{ section.settings.versionB_content }}{% endif %}
+            </div>
+          </div>
+          <a class="btn download-btn" {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %} href="https://res.cloudinary.com/leki-lenhart-gmbh/media/b5/d7/31/1644492604/Handschuhgr%C3%B6%C3%9Fenberater.pdf" target="_blank" rel="noopener noreferrer">Download PDF file<svg width="20" height="21" viewbox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.99996 12.6836V2.68359M9.99996 12.6836L6.66663 9.35026M9.99996 12.6836L13.3333 9.35026M1.66663 14.3503L2.18413 16.4211C2.27425 16.7817 2.48231 17.1018 2.77523 17.3305C3.06816 17.5593 3.42913 17.6835 3.80079 17.6836H16.1991C16.5708 17.6835 16.9318 17.5593 17.2247 17.3305C17.5176 17.1018 17.7257 16.7817 17.8158 16.4211L18.3333 14.3503" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></a>
         </div>
       </div>
     </div>
@@ -123,23 +294,42 @@ data-section-id="{{ section.id }}">
       {
         "type": "text",
         "id": "title",
-        "label": "Form heading",
-        "default": "Contact us"
+        "label": "Form heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Form content"
       },
       {
         "type": "text",
         "id": "varsionA_title",
-        "label": "Title"
+        "label": "varsionA Title"
       },
       {
         "type": "richtext",
         "id": "versionA_content",
-        "label": "content"
+        "label": "varsionA content"
       },
       {
         "type": "image_picker",
         "id": "versionA_img",
-        "label": "Size Iamge"
+        "label": "Size Image"
+      },   
+      {
+        "type": "image_picker",
+        "id": "versionA_mobimg",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "text",
+        "id": "varsionB_title",
+        "label": "varsionB Title"
+      },
+      {
+        "type": "richtext",
+        "id": "versionB_content",
+        "label": "varsionB content"
       },
       {
         "type": "header",
@@ -155,6 +345,303 @@ data-section-id="{{ section.id }}">
           { "value": "wrapper", "label": "Page width" },
           { "value": "wrapper--narrow", "label": "Page width narrow" }
         ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ],
+    "blocks":[
+      {
+        "type":"women-size",
+        "name":"Women Size",
+        "limit":1,
+        "settings":[
+          {
+            "type": "header",
+            "content": "Circumference in cm"
+          },
+          {
+            "type": "text",
+            "id": "Circumference_title",
+            "label": "Women CM Title"
+          },
+          {
+            "type": "text",
+            "id": "cm_1",
+            "label": "Circumference in cm1"
+          },     
+          {
+            "type": "text",
+            "id": "cm_2",
+            "label": "Circumference in cm2"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_3",
+            "label": "Circumference in cm3"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_4",
+            "label": "Circumference in cm4"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_5",
+            "label": "Circumference in cm5"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_6",
+            "label": "Circumference in cm6"
+          },
+          {
+            "type": "header",
+            "content": "Women Size"
+          },
+          {
+            "type": "text",
+            "id": "size_title",
+            "label": "Women Size Title"
+          },
+          {
+            "type": "text",
+            "id": "size_s",
+            "label": "Size Small"
+          },     
+          {
+            "type": "text",
+            "id": "size_m",
+            "label": "Size Medium"
+          }, 
+          {
+            "type": "text",
+            "id": "size_l",
+            "label": "Size Large"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xl",
+            "label": "Size XL"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xxl",
+            "label": "Size XXL"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xxxl",
+            "label": "Size XXXL"
+          }
+        ]
+      },
+      {
+        "type":"unisex-size",
+        "name":"Unisex Size",
+        "limit":1,
+        "settings":[
+          {
+            "type": "header",
+            "content": "Circumference in cm"
+          },
+          {
+            "type": "text",
+            "id": "Circumference_title",
+            "label": "Unisex CM Title"
+          },
+          {
+            "type": "text",
+            "id": "cm_1",
+            "label": "Circumference in cm1"
+          },     
+          {
+            "type": "text",
+            "id": "cm_2",
+            "label": "Circumference in cm2"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_3",
+            "label": "Circumference in cm3"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_4",
+            "label": "Circumference in cm4"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_5",
+            "label": "Circumference in cm5"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_6",
+            "label": "Circumference in cm6"
+          },
+          {
+            "type": "header",
+            "content": "Unisex Size"
+          },
+          {
+            "type": "text",
+            "id": "size_title",
+            "label": "Unisex Size Title"
+          },
+          {
+            "type": "text",
+            "id": "size_s",
+            "label": "Size Small"
+          },     
+          {
+            "type": "text",
+            "id": "size_m",
+            "label": "Size Medium"
+          }, 
+          {
+            "type": "text",
+            "id": "size_l",
+            "label": "Size Large"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xl",
+            "label": "Size XL"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xxl",
+            "label": "Size XXL"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xxxl",
+            "label": "Size XXXL"
+          }
+        ]
+      },
+      {
+        "type":"kids-size",
+        "name":"Kids/Junior Size",
+        "limit":1,
+        "settings":[
+          {
+            "type": "header",
+            "content": "Circumference in cm"
+          },
+          {
+            "type": "text",
+            "id": "Circumference_title",
+            "label": "Kids/Junior CM Title"
+          },
+          {
+            "type": "text",
+            "id": "cm_1",
+            "label": "Circumference in cm1"
+          },     
+          {
+            "type": "text",
+            "id": "cm_2",
+            "label": "Circumference in cm2"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_3",
+            "label": "Circumference in cm3"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_4",
+            "label": "Circumference in cm4"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_5",
+            "label": "Circumference in cm5"
+          }, 
+          {
+            "type": "text",
+            "id": "cm_6",
+            "label": "Circumference in cm6"
+          },
+          {
+            "type": "header",
+            "content": "Kids/Junior Size"
+          },
+          {
+            "type": "text",
+            "id": "size_title",
+            "label": "Kids/Junior Size Title"
+          },
+          {
+            "type": "text",
+            "id": "size_s",
+            "label": "Size Small"
+          },     
+          {
+            "type": "text",
+            "id": "size_m",
+            "label": "Size Medium"
+          }, 
+          {
+            "type": "text",
+            "id": "size_l",
+            "label": "Size Large"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xl",
+            "label": "Size XL"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xxl",
+            "label": "Size XXL"
+          }, 
+          {
+            "type": "text",
+            "id": "size_xxxl",
+            "label": "Size XXXL"
+          }
+        ]
       }
     ],
     "presets":[
@@ -164,9 +651,3 @@ data-section-id="{{ section.id }}">
     ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

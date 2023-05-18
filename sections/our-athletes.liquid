@@ -1,0 +1,147 @@
+{%- liquid
+  assign section_width = section.settings.width
+  assign animations_enabled = settings.animations_enabled
+  assign animation_anchor = '#Athletes--' | append: section.id
+  assign animation_delay = 150
+-%}
+<style>
+  #Athletes--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+</style>
+<section
+id="Athletes--{{ section.id }}"
+class="section-padding"
+data-section-type="athletes-form"
+data-section-id="{{ section.id }}">
+  <div class="{{ section_width }}">
+    <div class="athletes-main-wrap">
+      {% for block in section.blocks %}
+        <div class="athletes-inner-wrap">
+          <div class="athletes-inner-content">
+            {% if block.settings.athletes_img != blank %}
+              <div class="athletes-image">
+                <img class="lazyload" src="{{ block.settings.athletes_img | img_url:'' }}" alt="{{ block.settings.athletes_img.alt }}" />
+              </div>
+            {% endif %}
+            <div class="athletes-card-content-overlay">
+              {% if block.settings.athletes_title != blank %}<h4>{{ block.settings.athletes_title }}</h4>{% endif %}
+              {% if block.settings.athletes_type != blank %}<span>{{ block.settings.athletes_type }}</span>{% endif %}
+              {% if block.settings.athletes_nation != blank %}<div>NATION<span>{{ block.settings.athletes_nation }}</span></div>{% endif %}
+              {% if block.settings.athletes_dob_year != blank %}<div>YEAR OF BIRTH<span>{{ block.settings.athletes_dob_year }}</span></div>{% endif %}
+            </div>
+          </div>
+          <div class="athletes-content">
+            {% if block.settings.athletes_title != blank %}<h4>{{ block.settings.athletes_title }}</h4>{% endif %}
+            {% if block.settings.athletes_type != blank %}<span>{{ block.settings.athletes_type }}</span>{% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Our Athletes",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper--narrow",
+        "options": [
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" },
+          { "value": "wrapper--narrow", "label": "Page width narrow" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ],
+    "blocks":[
+      {
+        "type":"our-athlets",
+        "name":"Athletes",
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "athletes_img",
+            "label": "Athletes Image"
+          },
+          {
+            "type": "text",
+            "id": "athletes_title",
+            "label": "Athletes Title"
+          },
+          {
+            "type": "text",
+            "id": "athletes_type",
+            "label": "Athletes Type"
+          },
+          {
+            "type": "header",
+            "content": "Athletes Details"
+          },
+          {
+            "type": "text",
+            "id": "athletes_nation",
+            "label": "Athletes Nation"
+          },
+          {
+            "type": "text",
+            "id": "athletes_dob_year",
+            "label": "Athletes Birth Year"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "Our Athletes"
+      }
+    ]
+  }
+{% endschema %}
