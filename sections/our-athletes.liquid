@@ -9,7 +9,12 @@
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
   }
+  .athletes-inner-wrap .athletes-card-content-overlay h3, .athletes-inner-wrap .athletes-card-content-overlay span,
+  .athletes-nation,.athletes-DOB{
+    color: {{ section.settings.content_color }};
+  }
 </style>
+
 <section
 id="Athletes--{{ section.id }}"
 class="section-padding"
@@ -18,33 +23,98 @@ data-section-id="{{ section.id }}">
   <div class="{{ section_width }}">
     <div class="athletes-main-wrap">
       {% for block in section.blocks %}
-        <div class="athletes-inner-wrap">
+        <div class="athletes-inner-wrap" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
           <div class="athletes-inner-content">
             {% if block.settings.athletes_img != blank %}
               <div class="athletes-image">
                 <img class="lazyload" src="{{ block.settings.athletes_img | img_url:'' }}" alt="{{ block.settings.athletes_img.alt }}" />
               </div>
             {% endif %}
-            <div class="athletes-card-content-overlay">
-              {% if block.settings.athletes_title != blank %}<h4>{{ block.settings.athletes_title }}</h4>{% endif %}
+            <div class="athletes-card-content-overlay hidden-sm">
+              <div class="close-overlay">                
+                <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.88513 17.7002L3.5 16.3151L9.0405 10.7749L3.5 5.23467L4.88513 3.84961L10.4256 9.38983L15.9661 3.84961L17.3513 5.23467L11.8108 10.7749L17.3513 16.3151L15.9661 17.7002L10.4256 12.1599L4.88513 17.7002Z" fill="white"/>
+                </svg>
+              </div>
+              {% if block.settings.athletes_title != blank %}<h3>{{ block.settings.athletes_title }}</h3>{% endif %}
               {% if block.settings.athletes_type != blank %}<span>{{ block.settings.athletes_type }}</span>{% endif %}
-              {% if block.settings.athletes_nation != blank %}<div>NATION<span>{{ block.settings.athletes_nation }}</span></div>{% endif %}
-              {% if block.settings.athletes_dob_year != blank %}<div>YEAR OF BIRTH<span>{{ block.settings.athletes_dob_year }}</span></div>{% endif %}
+              {% if block.settings.athletes_nation != blank %}<div class="athletes-nation">NATION<span>{{ block.settings.athletes_nation }}</span></div>{% endif %}
+              {% if block.settings.athletes_dob_year != blank %}<div class="athletes-DOB">YEAR OF BIRTH<span>{{ block.settings.athletes_dob_year }}</span></div>{% endif %}
             </div>
           </div>
           <div class="athletes-content">
             {% if block.settings.athletes_title != blank %}<h4>{{ block.settings.athletes_title }}</h4>{% endif %}
             {% if block.settings.athletes_type != blank %}<span>{{ block.settings.athletes_type }}</span>{% endif %}
           </div>
+          <div class="athletes-card-content-overlay hidden-lg">
+            <div class="close-overlay">                
+              <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.88513 17.7002L3.5 16.3151L9.0405 10.7749L3.5 5.23467L4.88513 3.84961L10.4256 9.38983L15.9661 3.84961L17.3513 5.23467L11.8108 10.7749L17.3513 16.3151L15.9661 17.7002L10.4256 12.1599L4.88513 17.7002Z" fill="white"/>
+              </svg>
+            </div>
+            {% if block.settings.athletes_title != blank %}<h3>{{ block.settings.athletes_title }}</h3>{% endif %}
+            {% if block.settings.athletes_type != blank %}<span>{{ block.settings.athletes_type }}</span>{% endif %}
+            {% if block.settings.athletes_nation != blank %}<div class="athletes-nation">NATION<span>{{ block.settings.athletes_nation }}</span></div>{% endif %}
+            {% if block.settings.athletes_dob_year != blank %}<div class="athletes-DOB">YEAR OF BIRTH<span>{{ block.settings.athletes_dob_year }}</span></div>{% endif %}
+          </div>
         </div>
       {% endfor %}
     </div>
+    <div class="loading-icon rotate">      
+      {% render 'icon-loading' %}
+    </div>
   </div>
 </section>
+<script> 
+  document.addEventListener("DOMContentLoaded", function(event) {   
+    var athletesImg = document.querySelectorAll(".athletes-image");
+    athletesImg.forEach( athletesList => {
+      athletesList.onclick  = function(){           
+        athletesImg.forEach( athletes => {
+            athletes.parentNode.parentNode.classList.remove("active");          
+        });    
+        athletesList.parentNode.parentNode.classList.add("active"); 
+      } 
+    });
+    // var athletesDiv = document.querySelectorAll(".athletes-card-content-overlay");
+    // athletesDiv.forEach( athletesDisc => {
+    //   athletesDisc.onclick  = function(){   
+    //     athletesImg.forEach( athletesUser => {
+    //       athletesUser.classList.remove("active");          
+    //     });         
+    //   } 
+    // });
+
+    var close_overlay = document.querySelectorAll('.close-overlay');
+    close_overlay.forEach( closeDisc => {
+      closeDisc.onclick  = function(){
+        console.log('yessss');
+        athletesImg.forEach( athletesUser => {
+          athletesUser.parentNode.parentNode.classList.remove("active");          
+        });
+      }
+    });
+  });
+</script>
 {% schema %}
   {
     "name": "Our Athletes",
-    "settings": [
+    "settings": [  
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+       {
+        "type": "color",
+        "id": "content_color",
+        "label": "Athletes Overlay Content Color",
+         "default":"#fff"
+      },
       {
         "type": "header",
         "content": "Section spacing"

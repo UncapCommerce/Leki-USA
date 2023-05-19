@@ -1,0 +1,509 @@
+{%- liquid
+  assign unique = section.id
+  assign layout = section.settings.layout
+  assign layout_mobile = section.settings.layout_mobile
+  assign section_width = section.settings.width
+  assign image_size = section.settings.image_size
+  assign image_shape = section.settings.image_shape
+  assign columns = section.settings.columns
+  assign columns_small = columns | at_most: 4
+  assign columns_mobile = section.settings.columns_mobile | plus: 0 | at_least: 1
+  assign collection_limit = 50
+  assign text_size = section.settings.text_size
+  assign text_color = section.settings.text_color
+  assign show_bg_color = false
+  assign bg_color_secondary = section.settings.bg_color_secondary
+  assign animations_enabled = settings.animations_enabled
+  assign animation_anchor = '#SubCollections--' | append: section.id
+  assign text_over_image = section.settings.overlay_text
+
+
+  assign adjust_heading = text_size | divided_by: 100.0
+
+  assign grid_class = 'grid'
+  if columns > section.blocks.size and section.blocks.size > 0
+    assign grid_class = 'grid--center'
+  endif
+
+  if image_shape != 'rectangle'
+    assign height = 100
+  else
+    assign height = 75
+  endif
+
+  assign sub_collections_classes = 'sub-collections-section'
+
+  if layout == 'grid'
+    assign sub_collections_classes = sub_collections_classes | append: ' sub-collections-section--grid'
+  endif
+
+  if text_over_image == false
+    assign sub_collections_classes = sub_collections_classes | append: ' sub-collections-section--under'
+  endif
+
+  if layout_mobile == 'grid'
+    assign mobile_class = 'grid--mobile'
+    assign sub_collections_classes = sub_collections_classes | append: ' sub-collections-section--grid-mobile'
+  endif
+
+  if layout_mobile == 'carousel'
+    assign mobile_class = 'carousel--mobile'
+    assign sub_collections_classes = sub_collections_classes | append: ' sub-collections-section--carousel-mobile'
+  endif
+
+  capture container_class
+    if carousel
+      echo 'carousel__container'
+    else
+      echo 'grid__container'
+    endif
+
+    echo ' sub-collections-section__container'
+  endcapture
+-%}
+
+{%- style -%}
+  #SubCollections--{{ section.id }} .section__heading { color: {{ text_color }}; }
+
+  #SubCollections--{{ section.id }} .collection-list .flickity-prev-next-button:before { --text: {{ text_color }}; }
+
+  #SubCollections--{{ section.id }} {
+    {% comment %} Set a min of 10px top padding to avoid images being cut off when padding top setting is set to less than 10px {% endcomment %}
+    --PT: max(10px, {{ section.settings.padding_top }}px);
+
+    {% comment %} Set a min of 10px bottom padding to avoid images being cut off when padding bottom setting is set to less than 10px and text is over image {% endcomment %}
+    {%- if text_over_image -%}
+      --PB: max(10px, {{ section.settings.padding_bottom }}px);
+    {%- else -%}
+      --PB: {{ section.settings.padding_bottom }}px;
+    {%- endif -%}
+    --height: {{ height | append: '%' }};
+
+    {%- if image_shape -%}
+      --image-size: {{ image_size | append: '%' }};
+    {%- endif -%}
+  }
+
+  {%- if text_size != blank -%}
+    #SubCollections--{{ section.id }} .sub-collections__item__title,
+    #SubCollections--{{ section.id }} .section__heading { --adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ adjust_heading }}); }
+  {%- endif -%}
+
+  @media screen and (min-width: 1024px) {
+    #SubCollections--{{ section.id }} { --grid: repeat({{ columns }}, minmax(0, 1fr)); }
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 1023px) {
+    #SubCollections--{{ section.id }} { --grid: repeat({{ columns_small }}, minmax(0, 1fr)); }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    #SubCollections--{{ section.id }} { --item-width-tablet: calc(90% / 2 - var(--grid-gutter)); }
+  }
+
+  {%- if columns_mobile > 1 %}
+  @media screen and (max-width: 767px) {
+    {% comment %} Because we use it outside .carousel--mobile but .carousel--mobile is also setting its own value for this var and we need to overwrite it {% endcomment %}
+    #SubCollections--{{ section.id }},
+    #SubCollections--{{ section.id }} .carousel--mobile { --item-width-mobile: calc(90% / {{ columns_mobile }} - var(--grid-gutter)); }
+  }
+  {%- endif %}
+
+  @media screen and (max-width: 1023px) {
+    #SubCollections--{{ section.id }} {
+      --PT: max(10px, {{ section.settings.tab_padding_top }}px);
+      {%- if text_over_image -%}
+        --PB: max(10px, {{ section.settings.tab_padding_bottom }}px);
+      {%- else -%}
+        --PB: {{ section.settings.tab_padding_bottom }}px;
+      {%- endif -%}
+    }
+  }
+  @media screen and (max-width: 767px) {
+    #SubCollections--{{ section.id }} {
+      --PT: max(10px, {{ section.settings.mob_padding_top }}px);
+      {%- if text_over_image -%}
+        --PB: max(10px, {{ section.settings.mob_padding_bottom }}px);
+      {%- else -%}
+        --PB: {{ section.settings.mob_padding_bottom }}px;
+      {%- endif -%}
+    }
+  }
+  @media screen and (max-width: 479px) {
+    #SubCollections--{{ section.id }} { --grid-mobile: repeat({{ columns_mobile }}, minmax(0, 1fr)); }
+  }
+  
+{%- endstyle -%}
+
+{%- liquid
+  if custom_collection_image
+    assign image = custom_collection_image
+  elsif collection.image
+    assign image = collection.image
+  elsif collection.products.first and collection.products.first.featured_media.preview_image
+    assign image = collection.products.first.featured_media.preview_image
+  endif
+
+  if collection.title == blank
+    assign collection_title = 'homepage.onboarding.collection_title' | t
+    assign collection_url = '#!'
+  else
+    assign collection_title = collection.title | strip_html | escape | truncatewords: 10
+    assign collection_url = collection.url
+  endif
+
+  assign animations_enabled = settings.animations_enabled
+
+  if overlay_opacity == 100 and custom_bg_color != 'rgba(0,0,0,0)' and custom_bg_color != blank
+    assign show_bg_color = true
+  endif
+
+  capture item_class
+    echo 'list-collections__item'
+
+    if image_shape == 'circle'
+      echo ' list-collections__item--circle'
+    endif
+
+    if image_shape == 'square'
+      echo ' list-collections__item--square'
+    endif
+
+    if image_shape == 'rectangle'
+      echo ' list-collections__item--rectangle'
+    endif
+
+    if text_over_image
+      echo ' list-collections__item--over-image'
+    endif
+
+    if collection == empty
+      echo ' list-collections__item--onboarding'
+    endif
+
+    echo ' ' | append: item_width
+    echo ' ' | append: item_width_mobile
+    echo ' ' | append: text_color
+  endcapture
+
+  capture item_bg_class
+    echo 'list-collections__item__image-bg'
+  endcapture
+
+  capture content_position_class
+    if text_over_image
+      echo 'list-collections__item__content--overlayed'
+    else
+      echo 'list-collections__item__content--under'
+    endif
+  endcapture
+-%}
+
+{% assign pageUrl = collection.handle %}
+{% assign thirdLevel = true %}
+{%- for link in linklists['mega-menu'].links -%}
+  {% for childlink in link.links %}     
+    {% for grandchildlink in childlink.links %}
+      {% assign grandchild_title = grandchildlink.title | handle %}      
+      {% if grandchild_title == pageUrl %}
+        {% assign thirdLevel = false %}        
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+{% if thirdLevel %}
+<section id="SubCollections--{{ section.id }}"
+  class="section-padding {{ sub_collections_classes }}{% if bg_color_secondary %} bg-secondary{% endif %} {{ text_color }}"
+  data-section-type="sub-collections"
+  data-section-id="{{ section.id }}"
+  data-columns="{{ columns }}"
+  data-columns-mobile="{{ columns_mobile }}">
+
+  <div class="{{ section_width }}">
+    {%- if section.settings.title != blank -%}
+      <div class="section__header">
+        <h2 class="section__heading h2"
+          {% if animations_enabled %}
+            data-aos="fade-up"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-delay="{{ animation_delay }}"
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+          {% endif %}>{{ section.settings.title | escape }}</h2>
+
+        {%- if settings.show_spacer_lines -%}
+          <hr class="section__heading-line"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="sub-collections-wrap">
+      {% for block in section.blocks %}
+      {% assign athletes_image = block.settings.athletes_image %}
+      {% assign athletes_title = block.settings.athletes_title %}
+          <div class="{{ item_class }}">
+          <div class="list-collections__item__outer">      
+              <div class="list-collections__item__image"
+                data-product-media-container
+                {% if animations_enabled %}
+                  data-aos="fade-up"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-delay="{{ animation_delay | times: 150 }}"
+                {% endif %}>    
+              {% if athletes_image != blank %}
+                <div class="background-size-cover {{ item_bg_class }}">{{- athletes_image.image | img_url: "" | img_tag -}}</div>                    
+              {% else %}
+               {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+              {% endif %}
+              </div>
+            <div class="list-collections__item__content {{ content_position_class }}"
+              {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay | times: 150 }}"
+              {% endif %}>
+              <h3 class="list-collections__item__title">
+                {{- athletes_title -}}
+              </h3>
+            </div>
+          </div>
+        </div>
+      {% endfor %}              
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Athletes list",
+    "class": "athletes-list",
+    "max_blocks": 12,
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "All collections will be shown if no blocks added"
+      },
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "carousel",
+        "options": [
+          { "value": "grid", "label": "Grid" },
+          { "value": "carousel", "label": "Carousel" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "columns",
+        "label": "Athletes per row",
+        "default": 6,
+        "min": 2,
+        "max": 8,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "image_size",
+        "label": "Image size",
+        "min": 75,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "default": 90
+      },
+      {
+        "type": "select",
+        "id": "image_shape",
+        "label": "Image shape",
+        "default": "circle",
+        "options": [
+          { "label": "Circles", "value": "circle" },
+          { "label": "Squares", "value": "square" },
+          { "label": "Rectangles", "value": "rectangle" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Something for everyone"
+      },
+      {
+        "type": "range",
+        "id": "text_size",
+        "label": "Text size",
+        "default": 100,
+        "min": 75,
+        "max": 150,
+        "step": 5,
+        "unit": "%"
+      },
+      {
+        "type": "checkbox",
+        "id": "overlay_text",
+        "label": "Overlay text",
+        "info": "Text over images",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Mobile layout"
+      },
+      {
+        "type": "select",
+        "id": "layout_mobile",
+        "label": "Mobile layout",
+        "default": "carousel",
+        "options": [
+          { "value": "grid", "label": "Grid" },
+          { "value": "carousel", "label": "Carousel" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "athletes_mobile",
+        "label": "Athletes per row",
+        "default": "2",
+        "options": [
+          { "value": "1", "label": "1" },
+          { "value": "2", "label": "2" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "checkbox",
+        "id": "bg_color_secondary",
+        "label": "Background",
+        "info": "Use secondary background color",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text",
+        "default": "text-dark",
+        "info": "Applies to text not overlaid on images",
+        "options": [
+          { "value": "text-light", "label": "Light" },
+          { "value": "text-dark", "label": "Dark" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full", "label": "Full width" },
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+            {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ],
+    "blocks": [
+      {
+        "type": "athletes",
+        "name": "Athletes",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "athletes_image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "athletes_title",
+            "label": "Athletes Title"
+          }        
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "Athletes list"
+      }
+    ]
+  }
+{% endschema %}

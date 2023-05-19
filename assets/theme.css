@@ -8203,6 +8203,7 @@ a.navlink.navlink--child {
 .cart__empty__buttons .shopify-payment-button__button--unbranded {
   justify-self: center;
   min-width: 180px;
+  border: 1px solid;
 }
 
 .cart__checkout {
@@ -24531,13 +24532,39 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 /* ----------- Athletes Page ---------- */
 .athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
 .athletes-inner-wrap .athletes-image {line-height: 0;}
-.athletes-inner-wrap .athletes-image img {border-radius: var(--radius);}
+.athletes-inner-wrap .athletes-image img {border-radius: var(--radius);cursor: pointer;}
 .athletes-content {padding: 15px 0;}
 .athletes-content h4 {text-transform: uppercase;margin-bottom: 6px;}
-.athletes-content span {font-size: 14px;line-height: 20px;position: relative;}
-.athletes-inner-content {position: relative;}
-.athletes-inner-content .athletes-card-content-overlay {position: absolute;top: 0;bottom: 0;left: 0;right: 0;height: 100%;width: 100%;background: #373738;opacity: 0;visibility: hidden;}
-.athletes-inner-content:hover .athletes-card-content-overlay{opacity: 0.9;visibility:visible;}
+.athletes-content span {font-size: 14px;line-height: 20px;position: relative;isplay: inline-block;vertical-align: middle;}
+.athletes-inner-wrap {position: relative;}
+.athletes-inner-wrap .athletes-card-content-overlay {position: absolute;top: 0;bottom: 0;left: 0;right: 0;height: 100%;width: 100%;background: #373738;opacity: 0;visibility: hidden;padding: 64px 52px 64px 64px;}
+.athletes-inner-wrap.active .athletes-card-content-overlay{opacity: 0.9;visibility:visible;}
+.athletes-nation span, .athletes-DOB span {width: 100%;display: inline-block;vertical-align: middle;font-weight: 600;font-size: 18px;line-height: 26px;padding-top: 3px;text-transform: capitalize;}
+.athletes-inner-wrap .athletes-card-content-overlay > span {font-size: 14px;line-height: 20px;margin-bottom: 24px;width: 100%;display: inline-block;vertical-align: middle;position: relative;padding-bottom: 24px;}
+.athletes-inner-wrap .athletes-card-content-overlay>span::after {position: absolute;content: '';bottom: 0;left: 0;right: 0;height: 1px;width: 100%;background: #ececeb;opacity: 0.3;}
+.athletes-nation ,.athletes-DOB{font-size: 12px;line-height: 16px;text-transform: uppercase;}
+.athletes-nation{margin-bottom: 24px;}
+.athletes-inner-wrap .athletes-card-content-overlay h3 {text-transform: uppercase;}
+.athletes-card-content-overlay .close-overlay {position: absolute;top: 24px;right: 24px;cursor: pointer;height: 21px;width: 21px;opacity: 0.3;display: flex;align-items: center;}
+.banner-inner.text--uppercase .section-header__title.banner__title {text-transform: uppercase;}
+.section-header__title.banner__title {margin-bottom: 15px;}
+.banner__description p {margin: 0;}
+.athletes-list .list-collections__item .list-collections__item__image-bg:before {display: none;}
+.loading-icon.rotate {text-align: center;}
+.loading-icon.rotate svg{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media(min-width: 768px){
   .product-single__thumbnails .flickity-page-dots {display: none;}
 }
@@ -24545,6 +24572,8 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .accordion__content .wrapper--narrow {max-width: 100%;width: 920px;}  
   .template-collection .accordion__content .wrapper--narrow {max-width: 100%;width: 1140px;}
   .Pole-length-advisor .wrapper--narrow,.Glovesize-advisor .wrapper--narrow{width: 960px;}
+  .image-with-title-section .banner-content .wrapper--narrow {width: 970px;}
+  .athletes-inner-content {position: relative;}
 }
 
 @media(max-width: 1440px){
@@ -24555,8 +24584,17 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .sub-collections-wrap .list-collections__item {max-width: 233px;}
   .activity-landing-text .heading {font-size: 70px;line-height: 90px;} 
 }
+@media(max-width: 1399px){
+  .athletes-inner-wrap .athletes-card-content-overlay{padding: 35px 42px 35px 50px;}
+}
 @media(max-width: 1340px){
   .footer-blocks{gap: 100px;}
+}
+@media(max-width: 1299px){
+  .athletes-inner-wrap .athletes-card-content-overlay {
+    padding: 25px 32px 25px 30px;
+  }
+  .athletes-card-content-overlay .close-overlay{top: 15px;right: 15px;}
 }
 @media(max-width: 1199px){
   .navlink--icon{height: 20px;width: 20px;}  
@@ -24565,6 +24603,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .mosaic__item{padding: 0 10px;}
   .mosaic__grid{margin: 0 -10px;}
   .activity-landing-text .heading {font-size: 60px;line-height: 80px;margin-bottom: 30px;}
+  .athletes-main-wrap{grid-template-columns: 1fr 1fr 1fr;row-gap: 60px;}
 }
 @media(min-width: 1024px) and (max-width: 1199px){
   .collection__products .grid{grid-template-columns: repeat(3, minmax(0, 1fr));}
@@ -24621,6 +24660,8 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   form#RecoverCustomerPassword .btn {padding: 13px 20px;font-size: 14px;line-height: 20px;}
   form#RecoverCustomerPassword input {padding: 13px 20px;line-height: 20px;}
   .page--gloves-size-advisor .featured-collection__top .section__heading {font-size: 36px;line-height: 48px;}
+  .athletes-inner-wrap .athletes-card-content-overlay{padding: 44px 52px 44px 30px;}
+  .athletes-inner-wrap .athletes-card-content-overlay{border-radius:8px;}
 }
 @media(max-width: 991px){  
   #gloves-adviser-drawer{width: 700px;}
@@ -24745,6 +24786,17 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .glove-size-chart .size-chart-inner .table-wrapper table td.title span {position: relative;text-decoration: underline;text-decoration-thickness: 2px;text-underline-offset: 3px;z-index: 2;text-decoration-color: #fff;}
   .gloveSizeAdvisorForm .gloves-versionB {padding-top: 40px;}
   .glove-size-chart .size-chart-inner .table-wrapper table td.title::after {position: absolute;content: '';width: 100%;left: 0;right: 0;bottom: 0;top: auto;height: 1px;background: #e6e6e6;}
+  .section-header__title.banner__title {margin-bottom: 8px;}
+  .athletes-main-wrap{grid-template-columns: 1fr 1fr;row-gap: 40px;}
+  .athletes-content {padding: 8px 0;}
+  .athletes-content h4{margin-bottom: 4px;}
+  .athletes-inner-wrap .athletes-card-content-overlay{padding: 34px 10px 10px;}
+  .athletes-card-content-overlay .close-overlay{height: 11px;width: 11px;top: 10px;right: 10px;}
+  .athletes-card-content-overlay .close-overlay svg {height: 11px;width: 11px;}
+  .athletes-inner-wrap .athletes-card-content-overlay h3{font-size: 14px;line-height: 20px;margin: 0;}
+  .athletes-inner-wrap .athletes-card-content-overlay>span{text-transform: uppercase;padding-bottom: 8px;margin-bottom: 8px;}
+  .athletes-nation {margin-bottom: 8px;}
+  .athletes-nation span, .athletes-DOB span{font-size: 14px;line-height: 20px;padding-top: 0;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}
