@@ -9647,7 +9647,7 @@ a.navlink.navlink--child {
 }
 @media only screen and (min-width: 1024px) {
   .order__item {
-    column-gap: var(--gutter);
+    column-gap: 40px;
   }
 }
 
@@ -9673,14 +9673,102 @@ a.navlink.navlink--child {
 .account__heading {
   display: inline-block;
   margin-right: 20px;
+  font-family: var(--font-stack-body);
 }
-
+.account__heading.section__heading {
+  font-size: 36px;
+  line-height: 48px;  
+  padding-left: 16px;
+  margin: 0;
+}
 .account__heading--small {
   font-size: calc( 2.5rem * var(--adjust-heading));
 }
-
+.account-tabs {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
 .account__subheading {
   margin: 0 0 var(--gutter-mobile);
+}
+.account-tab-item ul {
+  margin: 0;
+}
+.account__logout {
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: underline;
+  color: #494949;
+}
+.account-tab-item ul li {
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 18px 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.account__table__item {
+  position: relative;
+}
+.account-banner-image {
+  line-height: 0;
+}
+.account-banner-image img {
+  border-radius: var(--radius);
+}
+.account-banner-detail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+}
+.account-banner-detail .detail-left-wrap h2 {
+  font-family: var(--font-stack-body);
+  margin: 0;
+}
+.account-banner-detail .detail-right-wrap {
+  line-height: 0;
+}
+.account-banner-detail .detail-right-wrap .btn {
+  background: #BF0038;
+  border: transparent;
+  padding: 17px 28px;
+  font-size: 16px;
+  line-height: 24px;
+}
+.account__table__item.account-details {
+  border: 0.5px solid #ECECEB;
+  border-top: 3px solid #27304A;
+  background: #fff;
+  padding: 24px;
+}
+.account__table__item.account-details h3 {
+  font-size: 24px;
+  line-height: 32px;
+  border-bottom: 1px solid #ECECEB;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  color: var(--COLOR-BLACK);
+}
+.account__table__item.account-details p {
+  margin: 0;
+  line-height: 24px;
+}
+.account__table__item.account-details h4 {
+  margin: 0;
+  text-transform: capitalize;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--COLOR-BLACK);
 }
 @media only screen and (min-width: 768px) {
   .account__subheading {
@@ -9843,12 +9931,15 @@ a.navlink.navlink--child {
 }
 @media only screen and (min-width: 768px) {
   .account__table {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 4.2fr) minmax(0, 1fr);
   }
 }
 @media only screen and (min-width: 1024px) {
   .account__table {
-    gap: var(--gutter);
+    gap: 40px;
+  }
+  .page-customer .wrapper {
+    width: 1560px;
   }
 }
 
@@ -17773,6 +17864,7 @@ a.navlink.navlink--child {
 
 .page-customer {
   padding: var(--gutter) 0;
+  background: #F9F9F9;
 }
 
 .shopify-challenge__container {
@@ -24445,6 +24537,9 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
   width: 100%;
   padding: 12px 52px 12px 20px;
   border: 1px solid #E6E6E6;
+  background: url('icon-arrow-up.svg');
+  background-repeat: no-repeat;
+  background-position: right 14px center;
 }
 .poleLength_calculation .form__item input {
   width: 100%;
@@ -24528,6 +24623,43 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 form#CreateCustomer .btn {font-size: 18px;line-height: 26px;}
 form#RecoverCustomerPassword input {padding: 16px 20px;line-height: 24px;}
 form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size: 18px;line-height: 26px}
+.account__table__item.order-list .account__heading {font-weight: 600;font-size: 24px;line-height: 32px;color: var(--COLOR-BLACK);margin-bottom: 10px;}
+.account__table__item.order-list .table-wrap{border: 1px solid #ECECEB;background: #fff;padding: 40px;}
+.account__table__item.order-list .table-wrap table td, .account__table__item.order-list .table-wrap table th,.account__table__item.order-list .table-wrap table {border: none;padding: 0;}
+.account__table__item.order-list .table-wrap table th {font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);font-weight: 600;padding: 0;text-align: center;}
+.account__table__item.order-list .table-wrap table span {width: 100%;display: inline-block;vertical-align: middle;}
+.account__table__item.order-list .table-wrap .order-wrap,.product-detail {display: flex;align-items: center;gap: 24px;}
+.account__table__item.order-list .table-wrap .order-wrap .order-image,.product-detail .order-image {max-width: 79px;width: 79px;line-height: 0;position: relative;display: inline-block;vertical-align: middle;padding-bottom: 27.3%;}
+.account__table__item.order-list .table-wrap .order-wrap .order-image img,.product-detail .order-image img {object-fit: cover;width: 100%;position: absolute;top: 0;bottom: 0;left: 0;right: 0;height: 100%;border-radius: var(--border);}
+.account__table__item.order-list .table-wrap td{padding: 12px 0 !important;font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);text-align: center;}
+.account__table__item.order-list .table-wrap td a{color: var(--COLOR-BLACK);}
+.account__table__item.order-list .order-details {max-width: 176px;text-align: left;}
+.account__table__item.order-list .table-wrap .order-item-count {font-size: 14px;line-height: 20px;color: #A5A5A5;}
+.account__table__item.order-list .table-wrap .order-id {font-size: 18px;line-height: 26px;font-family: var(--font-stcak-heading);color: var(--COLOR-BLACK);}
+.account__table__item.order-list .table-wrap .view-detail {line-height: 0;padding-top: 8px;}
+.account__table__item.order-list .table-wrap table th:first-child {text-align: left;}
+.account__table__item.order-list .table-wrap .view-detail a {font-size: 14px;line-height: 20px;text-decoration: underline;color: var(--COLOR-BLACK);display: inline-block;vertical-align: middle;}
+.template-customers-order .page-customer {padding: 40px 0 80px;}
+.order-detail-header {display: flex;align-items: center;justify-content: space-between;margin-bottom: 20px;}
+.order-detail-header h3 {margin: 0;color: var(--COLOR-BLACK);font-size: 24px;line-height: 32px;}
+.order-detail-header .account__back {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
+.order__item__title.order-detail-wrap {padding: 40px;background: #fff;border: 1px solid #E6E6E6;}
+.order__item__title.order-detail-wrap table, .order__item__title.order-detail-wrap table td, .order__item__title.order-detail-wrap table th {border: none;}
+.order__item__title.order-detail-wrap .order-item-count {color: #A5A5A5;width: 100%;display: inline-block;vertical-align: middle;margin-bottom: 12px;}
+.order-payment-status > a {padding-right: 4px;color: #A5A5A5;}
+.order-payment-status span A {color: var(--COLOR-BLACK);}
+.order-payment-status {margin-bottom: 8px;}
+.order-inner-wrap {display: flex;justify-content: space-between;align-items: flex-start;border-bottom: 1px solid #E6E6E6;margin-bottom: 22px;padding-bottom: 22px;}
+.order-inner-wrap p {margin: 0;color: #A5A5A5;}
+.order__item__title.order-detail-wrap table th {color: var(--COLOR-BLACK);font-weight: 600;text-align: center;}
+.order__item__title.order-detail-wrap table th:first-child {text-align: left;}
+.order-address {padding: 24px;background: #fff;border: 0.5px solid #ECECEB;border-top: 3px solid #27304A;}
+.order-address.billing-address {margin-bottom: 40px;}
+.order-address h4 {border-bottom: 1px solid #ECECEB;padding-bottom: 18px;margin-bottom: 16px;display: inline-block;vertical-align: middle;width: 100%;}
+.order-address p {margin: 0;color: var(--COLOR-BLACK);}
+.template-customers-order .section__heading.h2 {font-family: var(--font-stack-body);}
+.order__item__title.order-detail-wrap th,.order__item__title.order-detail-wrap table td {padding: 0;text-align: center;}
+.template-customers-order .order-details {max-width: 346px;width: 100%;text-align: left;}
 
 /* ----------- Athletes Page ---------- */
 .athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
@@ -24550,8 +24682,8 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .section-header__title.banner__title {margin-bottom: 15px;}
 .banner__description p {margin: 0;}
 .athletes-list .list-collections__item .list-collections__item__image-bg:before {display: none;}
-.loading-icon.rotate {text-align: center;}
-.loading-icon.rotate svg{
+.page-loader {text-align: center;}
+.page-loader svg{
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
@@ -24818,4 +24950,4 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .product-upsell__holder.product-upsell__holder--cart {margin: 0;}
   .cart__text {margin-top: 10px;}
   .sub-collections-wrap .list-collections__item {max-width: 153px;}
-}
+} 

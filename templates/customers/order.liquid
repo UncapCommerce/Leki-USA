@@ -21,13 +21,32 @@
         {%- endif -%}
       </div>
 
+      <div class="account-tabs">
+        <div class="account-tab-item">
+          <ul>
+            <li>Dashboard</li>
+            <li>My Order</li>
+          </ul>
+        </div>        
+      </div>
+      <div class="order-detail-header">
+        <h3>Order Details</h3>
+        <a class="account__back" href="/account">{{ 'customer.orders.back_title' | t }}</a>
+      </div>
       <div class="order__item">
-        <div class="order__item__title">
-        <h3 class="order-title">{{ 'customer.order.title' | t: name: order.name }}</h3>
-        <p>{{ 'customer.order.date' | t: date: order.created_at | date: "%B %d, %Y %I:%M%p" }}</p>
+        <div class="order__item__title order-detail-wrap">
+          <div class="order-inner-wrap">
+            <div class="order-inner-detail">
+              <h3 class="order-title">Order #{{ order.name }}</h3>
+              <span class="order-item-count">{{ order.line_items.size }} items</span> 
+              <div class="order-payment-status">{{ 'customer.order.payment_status' | t | link_to: order.customer_url }}<span>{{ order.financial_status_label | link_to: order.customer_url }}</span></div>
+              <div class="order-payment-status">{{ 'customer.order.fulfillment_status' | t | link_to: order.customer_url }}<span>{{ order.fulfillment_status_label | link_to: order.customer_url }}</span></div>
+            </div>
+            <p>{{ 'customer.order.date' | t: date: order.created_at | date: "%B %d, %Y" }}</p>
+          </div>
         {% if order.cancelled %}
           <div class="errors">
-            {% assign cancelled_at = order.cancelled_at | date: "%B %d, %Y %I:%M%p" %}
+            {% assign cancelled_at = order.cancelled_at | date: "%B %d, %Y" %}
             <p class="h5">{{ 'customer.order.cancelled' | t: date: cancelled_at }}</p>
             <p>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason }}</p>
           </div>
@@ -46,11 +65,18 @@
                 </tr>
               </thead>
               <tbody>
-                {% for line_item in order.line_items %}
+                {% for line_item in order.line_items %}                  
                   <tr class="responsive-order" id="{{ line_item.id }}">
                     <th>{{ 'customer.order.product' | t }}</th>
                     <td>
-                      {{ line_item.title | strip_html | escape | link_to: line_item.product.url }}
+                      <div class="product-detail">
+                        <div class="order-image">
+                          <img class="lazyload" src="{{ line_item.product.featured_image | img_url:'110' }}">
+                        </div>
+                        <div class="order-details">
+                          {{ line_item.title | strip_html | escape | link_to: line_item.product.url }}
+                        </div>
+                      </div>
                       {% if line_item.fulfillment %}
                         <div class="note">
                           {% assign created_at = line_item.fulfillment.created_at | date: format: 'month_day_year' %}
@@ -186,8 +212,9 @@
           </div>
         </div>
         <div class="order__item__addresses">
+          <div class="order-address billing-address">
           <h4>{{ 'customer.order.billing_address' | t }}</h4>
-          <p>{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</p>
+          {% comment %}<p>{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</p>{% endcomment %}
           <p>{{ order.billing_address.name }}
             {% if order.billing_address.company != '' %}
               {{ order.billing_address.company }}<br>
@@ -201,8 +228,10 @@
             {{ order.billing_address.country }}<br>
             {{ order.billing_address.phone }}
           </p>
+          </div>
+          <div class="order-address">
           <h4>{{ 'customer.order.shipping_address' | t }}</h4>
-          <p>{{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}</p>
+          {% comment %}<p>{{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}</p>{% endcomment %}
           <p>{{ order.shipping_address.name }}
             {% if order.shipping_address.company != '' %}
               {{ order.shipping_address.company }}<br>
@@ -216,6 +245,7 @@
             {{ order.shipping_address.country }}<br>
             {{ order.shipping_address.phone }}
           </p>
+          </div>
         </div>
       </div>
     </div>

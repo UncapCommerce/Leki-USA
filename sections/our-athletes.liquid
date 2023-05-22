@@ -28,7 +28,7 @@ data-section-id="{{ section.id }}">
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>
+            {% endif %} {% if forloop.index > 4 %}style="display: none;"{% endif %} >
           <div class="athletes-inner-content">
             {% if block.settings.athletes_img != blank %}
               <div class="athletes-image">
@@ -65,9 +65,12 @@ data-section-id="{{ section.id }}">
         </div>
       {% endfor %}
     </div>
-    <div class="loading-icon rotate">      
+    <div class="quotes">
+    </div>
+    <div class="page-loader" style="display: none;">      
       {% render 'icon-loading' %}
     </div>
+                
   </div>
 </section>
 <script> 
@@ -99,8 +102,82 @@ data-section-id="{{ section.id }}">
         });
       }
     });
+
   });
 </script>
+
+
+<script>
+const cardContainer = document.querySelector(".athletes-main-wrap");
+const loader = document.querySelector(".page-loader");
+
+const cardLimit = 100;
+const cardIncrease = 5;
+const pageCount = Math.ceil(cardLimit / cardIncrease);
+  console.log('pageCount--',pageCount);
+let currentPage = 1;
+
+
+var throttleTimer;
+const throttle = (callback, time) => {
+  if (throttleTimer) return;
+
+  throttleTimer = true;
+
+  setTimeout(() => {
+    callback();
+    throttleTimer = false;
+  }, time);
+};
+
+// const createCard = (index) => {
+//   const card = document.querySelectorAll(".athletes-inner-wrap");
+//   //card.className = "cards_itm";
+//   //card.innerHTML = index;
+//   card.style.display = "block";
+//   //cardContainer.appendChild(card);
+// };
+
+const addCards = (pageIndex) => {
+  currentPage = pageIndex;
+
+  const startRange = (pageIndex - 1) * cardIncrease;
+  const endRange =
+    currentPage == pageCount ? cardLimit : pageIndex * cardIncrease;
+
+  for (let i = startRange + 1; i <= endRange; i++) {
+    const card = document.querySelectorAll(".athletes-inner-wrap");
+    card[i].style.display = "block"; 
+    //createCard(i);
+  }
+  loader.style.display = "block";
+};
+
+const handleInfiniteScroll = () => {
+  throttle(() => {
+    const endOfPage =
+      window.pageYOffset >= cardContainer.offsetHeight;
+    if (endOfPage) {
+      addCards(currentPage + 1);
+    }
+
+    if (currentPage === pageCount) {
+      removeInfiniteScroll();
+    }
+  }, 1500);
+};
+
+const removeInfiniteScroll = () => {
+  loader.remove();
+  window.removeEventListener("scroll", handleInfiniteScroll);
+};
+
+window.onload = function () {
+  addCards(currentPage);
+};
+
+window.addEventListener("scroll", handleInfiniteScroll);
+</script>   
 {% schema %}
   {
     "name": "Our Athletes",

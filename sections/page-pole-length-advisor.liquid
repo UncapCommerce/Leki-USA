@@ -23,16 +23,6 @@
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);
     padding: 60px;
   }
-  .from-control-arrow {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 14px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    z-index: 2;
-  }
   @media(max-width: 1440px){
     .poleLenght-form-wrapper.has-bg {
       padding-top: 180px;
@@ -79,21 +69,7 @@
     .page--pole-length-advisor .featured-collection__top .section__heading{font-size: 24px;line-height: 32px;}
   }
 </style>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {   
 
-    let btn = document.querySelector('.from-control-arrow');
-
-   btn.addEventListener('click', function () {
-      alert('Mouse Clicked');
-   });
-  
-  let clickEvent = new Event('click');
-  let dropdown_wrap = document.querySelector('.form-control');
-  dropdown_wrap.dispatchEvent(clickEvent);
-    
-  });
-</script>
 <section
 id="PoleLenght--{{ section.id }}"
 class="section-padding"
@@ -109,7 +85,7 @@ data-section-id="{{ section.id }}">
   <div class="poleLenght-bg">
   <div class="{{ section_width }}">
     <div class="poleLenght-form-wrapper {% if section.settings.polelength_bgimg != blank %}has-bg{% endif %}">
-      <form method="post" action="#" id="poleSizeAdvisorForm">\
+      <form method="post" action="#" id="poleSizeAdvisorForm">
         {% if section.settings.title != blank %}
           <div class="form__item form__item--heading"
             {% if animations_enabled %}
@@ -164,7 +140,6 @@ data-section-id="{{ section.id }}">
               {% if section.settings.option-nine != blank %}<option value="{{ section.settings.option-nine }}">{{ section.settings.option-nine }}</option>{% endif %}
               {% if section.settings.option-ten != blank %}<option value="{{ section.settings.option-ten }}">{{ section.settings.option-ten }}</option>{% endif %}
             </select>
-            <div class="from-control-arrow">{%- render 'icon-arrow-up' -%}</div>
           </div>
           {% endif %}
           <h4 class="title" {% if animations_enabled %}
