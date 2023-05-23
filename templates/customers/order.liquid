@@ -74,7 +74,7 @@
                           <img class="lazyload" src="{{ line_item.product.featured_image | img_url:'110' }}">
                         </div>
                         <div class="order-details">
-                          {{ line_item.title | strip_html | escape | link_to: line_item.product.url }}
+                          {{ line_item.title | strip_html | link_to: line_item.product.url }}
                         </div>
                       </div>
                       {% if line_item.fulfillment %}
@@ -161,20 +161,55 @@
               </tbody>
               <tfoot>
                 <tr class="responsive-order">
-                  <td colspan="{% if showSku == true %}4{% else %}3{% endif %}">{{ 'customer.order.subtotal' | t }}</td>
-                  <td>
-                    {%- if order.line_items_subtotal_price == 0 -%}
-                      {{ 'products.product.free' | t  }}
-                    {%- else -%}
-                      {{ order.line_items_subtotal_price | money_with_currency }}
-                    {%- endif -%}
+                  <td style="text-align:left;"><a class="btn reorder-btn">reorder</a>
+                  <a class="btn download-btn" {% if animations_enabled %}
+                        data-aos="fade-up"
+                        data-aos-anchor="{{ animation_anchor }}"
+                        data-aos-delay="{{ animation_delay }}"
+                        {%- assign animation_delay = animation_delay | plus: 150 -%}
+                      {% endif %} href="#" target="_blank" rel="noopener noreferrer">{% render 'icon-download' %}Download PDF file</a>
+                  </div>
+                  </td>
+                  <td colspan="3" style="text-align: left;">
+                  <div class="cost-breakdown-wrap">
+                    <div class="cost-breakdown-left">
+                      <span class="subtotal">{{ 'customer.order.subtotal' | t }}</span>                      
+                      <span class="discount">{{ 'customer.order.discount' | t }}: {{ discount_application.title }}</span>
+                      <span class="shipping">{{ 'customer.order.shipping' | t }}({{ shipping_method.title }})</span>
+                      <span class="tax">{{ 'customer.order.tax' | t }}({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)</span>
+                      <span class="total">{{ 'customer.order.total' | t }}</span>
+                    </div>
+                    <div class="cost-breakdown-right">
+                      {%- if order.line_items_subtotal_price == 0 -%}
+                        {{ 'products.product.free' | t  }}
+                      {%- else -%}
+                        {{ order.line_items_subtotal_price | money_with_currency }}
+                      {%- endif -%}
+                      <span>
+                      {%- if order.total_price == 0 -%}
+                        {{ 'products.product.free' | t  }}
+                      {%- else -%}
+                        {{ order.total_price | money_with_currency }}
+                      {%- endif -%}
+                      </span>
+                      <span class="discount">-{{ discount_application.total_allocated_amount | money }}</span>
+                      <span>
+                        {%- if order.line_items_subtotal_price == 0 -%}
+                          {{ 'products.product.free' | t  }}
+                        {%- else -%}
+                          {{ shipping_method.price | money }}
+                        {%- endif -%}
+                      </span>
+                      <span>{{ tax_line.price | money }}</span>
+                    </div>
+                  </div>
                   </td>
                 </tr>
               {%- if order.cart_level_discount_applications != blank -%}
                 {%- for discount_application in order.cart_level_discount_applications -%}
                 <tr class="responsive-order order_summary discount">
                   <td colspan="{% if showSku == true %}4{% else %}3{% endif %}"><span class="discount">{{ 'customer.order.discount' | t }}: {{ discount_application.title }}</span></td>
-                  <td><span class="discount">-{{ discount_application.total_allocated_amount | money }}</span></td>
+                  <td></td>
                 </tr>
                 {%- endfor -%}
               {%- endif -%}
@@ -197,16 +232,7 @@
                   <td>{{ tax_line.price | money }}</td>
                 </tr>
               {%- endfor -%}
-                <tr class="responsive-order">
-                  <td colspan="{% if showSku == true %}4{% else %}3{% endif %}">{{ 'customer.order.total' | t }}</td>
-                  <td>
-                    {%- if order.total_price == 0 -%}
-                      {{ 'products.product.free' | t  }}
-                    {%- else -%}
-                      {{ order.total_price | money_with_currency }}
-                    {%- endif -%}
-                  </td>
-                </tr>
+        
               </tfoot>
             </table>
           </div>
