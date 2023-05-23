@@ -24651,15 +24651,24 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .order-payment-status {margin-bottom: 8px;}
 .order-inner-wrap {display: flex;justify-content: space-between;align-items: flex-start;border-bottom: 1px solid #E6E6E6;margin-bottom: 22px;padding-bottom: 22px;}
 .order-inner-wrap p {margin: 0;color: #A5A5A5;}
-.order__item__title.order-detail-wrap table th {color: var(--COLOR-BLACK);font-weight: 600;text-align: center;}
-.order__item__title.order-detail-wrap table th:first-child {text-align: left;}
+.order__item__title.order-detail-wrap table th {color: var(--COLOR-BLACK);font-weight: 600;text-align: center;min-width: 130px;max-width: 130px;}
+.order__item__title.order-detail-wrap table th:first-child {text-align: left;max-width: 100%;width: 550px;}
 .order-address {padding: 24px;background: #fff;border: 0.5px solid #ECECEB;border-top: 3px solid #27304A;}
 .order-address.billing-address {margin-bottom: 40px;}
 .order-address h4 {border-bottom: 1px solid #ECECEB;padding-bottom: 18px;margin-bottom: 16px;display: inline-block;vertical-align: middle;width: 100%;}
 .order-address p {margin: 0;color: var(--COLOR-BLACK);}
 .template-customers-order .section__heading.h2 {font-family: var(--font-stack-body);}
-.order__item__title.order-detail-wrap th,.order__item__title.order-detail-wrap table td {padding: 0;text-align: center;}
+.order__item__title.order-detail-wrap th,.order__item__title.order-detail-wrap table td {padding: 12px 0;text-align: center;}
 .template-customers-order .order-details {max-width: 346px;width: 100%;text-align: left;}
+.product-detail .order-image{padding-bottom: 20.8%;}
+.order__item__title.order-detail-wrap tfoot .reorder-btn {padding: 10px 30px;min-width: auto;text-transform: capitalize;cursor: pointer;}
+.order__item__title.order-detail-wrap tfoot .download-btn {padding: 10px 20px;min-width: auto;margin-left: 20px;}
+.order__item__title.order-detail-wrap tfoot .download-btn svg {display: inline-block;vertical-align: middle;margin-right: 12px;}
+.cost-breakdown-wrap {display: flex;align-items: flex-start;justify-content: space-around;}
+.cost-breakdown-left span, .cost-breakdown-right span {width: 100%;display: inline-block;vertical-align: middle;}
+.cost-breakdown-right {text-align: right;}
+.order__item__title.order-detail-wrap tfoot {border-top: 1px solid #E6E6E6;}
+.cost-breakdown-left span {color: #A5A5A5}
 
 /* ----------- Athletes Page ---------- */
 .athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
@@ -24950,4 +24959,4 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .product-upsell__holder.product-upsell__holder--cart {margin: 0;}
   .cart__text {margin-top: 10px;}
   .sub-collections-wrap .list-collections__item {max-width: 153px;}
-} 
+}

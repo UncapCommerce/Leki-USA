@@ -65,9 +65,7 @@ data-section-id="{{ section.id }}">
         </div>
       {% endfor %}
     </div>
-    <div class="quotes">
-    </div>
-    <div class="page-loader" style="display: none;">      
+    <div class="page-loader">      
       {% render 'icon-loading' %}
     </div>
                 
@@ -96,7 +94,6 @@ data-section-id="{{ section.id }}">
     var close_overlay = document.querySelectorAll('.close-overlay');
     close_overlay.forEach( closeDisc => {
       closeDisc.onclick  = function(){
-        console.log('yessss');
         athletesImg.forEach( athletesUser => {
           athletesUser.parentNode.parentNode.classList.remove("active");          
         });
@@ -108,75 +105,70 @@ data-section-id="{{ section.id }}">
 
 
 <script>
-const cardContainer = document.querySelector(".athletes-main-wrap");
-const loader = document.querySelector(".page-loader");
-
-const cardLimit = 100;
-const cardIncrease = 5;
-const pageCount = Math.ceil(cardLimit / cardIncrease);
-  console.log('pageCount--',pageCount);
-let currentPage = 1;
-
-
-var throttleTimer;
-const throttle = (callback, time) => {
-  if (throttleTimer) return;
-
-  throttleTimer = true;
-
-  setTimeout(() => {
-    callback();
-    throttleTimer = false;
-  }, time);
-};
-
-// const createCard = (index) => {
-//   const card = document.querySelectorAll(".athletes-inner-wrap");
-//   //card.className = "cards_itm";
-//   //card.innerHTML = index;
-//   card.style.display = "block";
-//   //cardContainer.appendChild(card);
-// };
-
-const addCards = (pageIndex) => {
-  currentPage = pageIndex;
-
-  const startRange = (pageIndex - 1) * cardIncrease;
-  const endRange =
-    currentPage == pageCount ? cardLimit : pageIndex * cardIncrease;
-
-  for (let i = startRange + 1; i <= endRange; i++) {
-    const card = document.querySelectorAll(".athletes-inner-wrap");
-    card[i].style.display = "block"; 
-    //createCard(i);
-  }
-  loader.style.display = "block";
-};
-
-const handleInfiniteScroll = () => {
-  throttle(() => {
-    const endOfPage =
-      window.pageYOffset >= cardContainer.offsetHeight;
-    if (endOfPage) {
-      addCards(currentPage + 1);
+document.addEventListener("DOMContentLoaded", function(event) { 
+  const cardContainer = document.querySelector(".athletes-main-wrap");
+  const loader = document.querySelector(".page-loader");
+  
+  const cardLimit = 100;
+  const cardIncrease = 5;
+  const pageCount = Math.ceil(cardLimit / cardIncrease);
+  let currentPage = 1;
+  
+  
+  var throttleTimer;
+  const throttle = (callback, time) => {
+    if (throttleTimer) return;
+  
+    throttleTimer = true;
+  
+    setTimeout(() => {
+      callback();
+      throttleTimer = false;
+    }, time);
+  };
+  
+  const addCards = (pageIndex) => {
+    currentPage = pageIndex;
+  
+    const startRange = (pageIndex - 1) * cardIncrease;
+    const endRange =
+      currentPage == pageCount ? cardLimit : pageIndex * cardIncrease;
+  
+    for (let i = startRange + 1; i <= endRange; i++) {
+      if(document.querySelectorAll(".athletes-inner-wrap") != null ){
+      const card = document.querySelectorAll(".athletes-inner-wrap");
+      card[i].style.display = "block"; 
+      //createCard(i);
+      }
     }
-
-    if (currentPage === pageCount) {
-      removeInfiniteScroll();
-    }
-  }, 1500);
-};
-
-const removeInfiniteScroll = () => {
-  loader.remove();
-  window.removeEventListener("scroll", handleInfiniteScroll);
-};
-
-window.onload = function () {
-  addCards(currentPage);
-};
-
-window.addEventListener("scroll", handleInfiniteScroll);
+  };
+  
+  const handleInfiniteScroll = () => {
+    throttle(() => {
+      const endOfPage =
+        window.pageYOffset >= cardContainer.offsetHeight;
+      if (endOfPage) {
+        addCards(currentPage + 1);
+      }
+  
+      // if (currentPage === pageCount) {
+      //   removeInfiniteScroll();
+      // }
+    }, 1000);
+  };
+  
+  const removeInfiniteScroll = () => {
+    loader.remove();
+    document.querySelector('.page-loader').classList.add('hidden');
+    window.removeEventListener("scroll", handleInfiniteScroll);
+  };
+  
+  window.onload = function () {
+    addCards(currentPage);
+  };
+  
+  window.addEventListener("scroll", handleInfiniteScroll);
+});
 </script>   
 {% schema %}
   {

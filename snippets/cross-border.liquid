@@ -1,97 +1,279 @@
-{%- liquid
-  assign show_locale = false
-  assign show_currency = false
+{%- comment -%} /templates/customers/order.liquid {%- endcomment -%}
+{%- comment -%}
+  SKU column logic.
+{%- endcomment -%}
 
-  if section.settings.show_locale_selector and shop.published_locales.size > 1
-    assign show_locale = true
-  endif
+{%- for line_item in order.line_items -%}
+  {%- if line_item.sku != blank -%}
+    {%- assign showSku = true -%}
+  {%- else -%}
+    {%- assign showSku = false -%}
+  {%- endif -%}
+{%- endfor -%}
 
-  if section.settings.show_currency_selector and shop.enabled_currencies.size > 1
-    assign show_currency = true
-  endif
--%}
+<section class="page-customer">
+  <div class="wrapper">
+    <div class="order text-left">
+      <div class="section__header">
+        <h1 class="section__heading h2"><a href="{{ routes.account_url }}">{{ 'customer.account.title' | t }}</a></h1>
+        {%- if settings.show_spacer_lines -%}
+          <hr class="section__heading-line">
+        {%- endif -%}
+      </div>
 
-{%- if show_locale or show_currency -%}
-  {%- form 'localization', class: 'footer__select-popout', id: 'LocalizationForm' -%}
-    {%- if show_locale -%}
-      <div>
-        <h2 class="visually-hidden" id="lang-heading">
-          {{ 'footer.language' | t }}
-        </h2>
-
-        <div class="select-popout" data-popout>
-          <button type="button" class="select-popout__toggle" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-popout-toggle>
-            {{ localization.language.endonym_name }}
-            {%- render 'icon-select' -%}
-          </button>
-
-          <div id="lang-list" class="select-popout__list" data-popout-list>
-            <ul class="select-popout__list__scroll">
-              {%- for language in localization.available_languages -%}
-                <li class="select-popout__item{% if language == localization.language %} select-popout__item--current{% endif %}">
-                  <a class="select-popout__option" href="#" lang="{{ locale.iso_code }}"{% if locale.iso_code == localization.language %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}" data-popout-option>
-                    <span>{{ language.endonym_name }}</span>
-                  </a>
-                </li>
-              {%- endfor -%}
-            </ul>
+      <div class="account-tabs">
+        <div class="account-tab-item">
+          <ul>
+            <li>Dashboard</li>
+            <li>My Order</li>
+          </ul>
+        </div>        
+      </div>
+      <div class="order-detail-header">
+        <h3>Order Details</h3>
+        <a class="account__back" href="/account">{{ 'customer.orders.back_title' | t }}</a>
+      </div>
+      <div class="order__item">
+        <div class="order__item__title order-detail-wrap">
+          <div class="order-inner-wrap">
+            <div class="order-inner-detail">
+              <h3 class="order-title">Order #{{ order.name }}</h3>
+              <span class="order-item-count">{{ order.line_items.size }} items</span> 
+              <div class="order-payment-status">{{ 'customer.order.payment_status' | t | link_to: order.customer_url }}<span>{{ order.financial_status_label | link_to: order.customer_url }}</span></div>
+              <div class="order-payment-status">{{ 'customer.order.fulfillment_status' | t | link_to: order.customer_url }}<span>{{ order.fulfillment_status_label | link_to: order.customer_url }}</span></div>
+            </div>
+            <p>{{ 'customer.order.date' | t: date: order.created_at | date: "%B %d, %Y" }}</p>
           </div>
+        {% if order.cancelled %}
+          <div class="errors">
+            {% assign cancelled_at = order.cancelled_at | date: "%B %d, %Y" %}
+            <p class="h5">{{ 'customer.order.cancelled' | t: date: cancelled_at }}</p>
+            <p>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason }}</p>
+          </div>
+        {% endif %}
+          <div class="table-wrap">
+            <table class="full">
+              <thead>
+                <tr class="order-history">
+                  <th class="desktop-order" >{{ 'customer.order.product' | t }}</th>
+                  {% if showSku == true %}
+                    <th class="desktop-order" >{{ 'customer.order.sku' | t }}</th>
+                  {% endif %}
+                  <th class="desktop-order" >{{ 'customer.order.price' | t }}</th>
+                  <th class="desktop-order">{{ 'customer.order.quantity' | t }}</th>
+                  <th class="desktop-order">{{ 'customer.order.total' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for line_item in order.line_items %}                  
+                  <tr class="responsive-order" id="{{ line_item.id }}">
+                    <th>{{ 'customer.order.product' | t }}</th>
+                    <td>
+                      <div class="product-detail">
+                        <div class="order-image">
+                          <img class="lazyload" src="{{ line_item.product.featured_image | img_url:'110' }}">
+                        </div>
+                        <div class="order-details">
+                          {{ line_item.title | strip_html | link_to: line_item.product.url }}
+                        </div>
+                      </div>
+                      {% if line_item.fulfillment %}
+                        <div class="note">
+                          {% assign created_at = line_item.fulfillment.created_at | date: format: 'month_day_year' %}
+                          {{ 'customer.order.fulfilled_at' | t: date: created_at }}
+                          {% if line_item.fulfillment.tracking_number %}
+                            <a href="{{ line_item.fulfillment.tracking_url }}">{{ line_item.fulfillment.tracking_company }} #{{ line_item.fulfillment.tracking_number}}</a>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% unless line_item.selling_plan_allocation == nil  %}
+                        <p class="order__item__subscription">
+                          {{ line_item.selling_plan_allocation.selling_plan.name }}
+                        </p>
+                      {% endunless %}
+                    </td>
+                    {% if showSku == true %}
+                      <th>{{ 'customer.order.sku' | t }}</th>
+                      <td>{{ line_item.sku }}</td>
+                    {% endif %}
+                    <th>{{ 'customer.order.price' | t }}</th>
+                    <td>
+                      {% if line_item.original_price > line_item.final_price %}
+                        <s>{{ line_item.original_price | money }}</s>
+                      {% endif %}
+                      {%- if line_item.final_price == 0 -%}
+                        {{ 'products.product.free' | t  }}
+                      {%- else -%}
+                        {{ line_item.final_price | money }}
+                      {%- endif -%}
+                    </td>
+                    <th>{{ 'customer.order.quantity' | t }}</th>
+                    <td>{{ line_item.quantity }}</td>
+                    <th>{{ 'customer.order.total' | t }}</th>
+                    <td>
+                      {% if line_item.original_line_price > line_item.final_line_price %}
+                        <s>{{ line_item.original_line_price | money }}</s>
+                      {% endif %}
+                      {%- if line_item.final_line_price == 0 -%}
+                        {{ 'products.product.free' | t  }}
+                      {%- else -%}
+                        {{ line_item.final_line_price | money }}
+                      {%- endif -%}
 
-          <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-popout-input>
+                      {%- if line_item.unit_price_measurement -%}
+                        {%- capture unit_price_separator -%}
+                          <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+                        {%- endcapture -%}
+
+                        <span class="product__unit-price">
+                          {%- if line_item.unit_price == 0 -%}
+                            {{ 'products.product.free' | t  }}
+                          {%- else -%}
+                            {{ line_item.unit_price | money }}
+                          {%- endif -%}
+                          {{ unit_price_separator }}
+                          {%- if line_item.unit_price_measurement.reference_value != 1 -%}
+                              {{- line_item.unit_price_measurement.reference_value -}}
+                          {%- endif -%}
+                          {{- line_item.unit_price_measurement.reference_unit -}}
+                        </span>
+                      {%- endif -%}
+
+                      {% comment %}
+                        Display the specific line item discount
+                      {% endcomment %}
+                      {% if line_item.line_level_discount_allocations.size > 0 %}
+                          <div class="order__discounts text-discounts">
+                            {% for discount_allocation in line_item.line_level_discount_allocations %}
+                              <p>{{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})</p>
+                            {% endfor %}
+                          </div>
+                        {% elsif line_item.discount_allocations.size > 0 %}
+                          <div class="order__discounts text-discounts">
+                            {% for discount_allocation in line_item.discount_allocations %}
+                              <p>{{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})</p>
+                            {% endfor %}
+                          </div>
+                        {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+              <tfoot>
+                <tr class="responsive-order">
+                  <td style="text-align:left;"><a class="btn reorder-btn">reorder</a>
+                  <a class="btn download-btn" {% if animations_enabled %}
+                        data-aos="fade-up"
+                        data-aos-anchor="{{ animation_anchor }}"
+                        data-aos-delay="{{ animation_delay }}"
+                        {%- assign animation_delay = animation_delay | plus: 150 -%}
+                      {% endif %} href="#" target="_blank" rel="noopener noreferrer">{% render 'icon-download' %}Download PDF file</a>
+                  </div>
+                  </td>
+                  <td colspan="3" style="text-align: left;">
+                  <div class="cost-breakdown-wrap">
+                    <div class="cost-breakdown-left">
+                      <span class="subtotal">{{ 'customer.order.subtotal' | t }}</span>                      
+                      <span class="discount">{{ 'customer.order.discount' | t }}: {{ discount_application.title }}</span>
+                      <span class="shipping">{{ 'customer.order.shipping' | t }}({{ shipping_method.title }})</span>
+                      <span class="tax">{{ 'customer.order.tax' | t }}({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)</span>
+                      <span class="total">{{ 'customer.order.total' | t }}</span>
+                    </div>
+                    <div class="cost-breakdown-right">
+                      {%- if order.line_items_subtotal_price == 0 -%}
+                        {{ 'products.product.free' | t  }}
+                      {%- else -%}
+                        {{ order.line_items_subtotal_price | money_with_currency }}
+                      {%- endif -%}
+                      <span>
+                      {%- if order.total_price == 0 -%}
+                        {{ 'products.product.free' | t  }}
+                      {%- else -%}
+                        {{ order.total_price | money_with_currency }}
+                      {%- endif -%}
+                      </span>
+                      <span class="discount">-{{ discount_application.total_allocated_amount | money }}</span>
+                      <span>
+                        {%- if order.line_items_subtotal_price == 0 -%}
+                          {{ 'products.product.free' | t  }}
+                        {%- else -%}
+                          {{ shipping_method.price | money }}
+                        {%- endif -%}
+                      </span>
+                      <span>{{ tax_line.price | money }}</span>
+                    </div>
+                  </div>
+                  </td>
+                </tr>
+              {%- if order.cart_level_discount_applications != blank -%}
+                {%- for discount_application in order.cart_level_discount_applications -%}
+                <tr class="responsive-order order_summary discount">
+                  <td colspan="{% if showSku == true %}4{% else %}3{% endif %}"><span class="discount">{{ 'customer.order.discount' | t }}: {{ discount_application.title }}</span></td>
+                  <td></td>
+                </tr>
+                {%- endfor -%}
+              {%- endif -%}
+
+              {%- for shipping_method in order.shipping_methods -%}
+                <tr class="responsive-order">
+                  <td colspan="{% if showSku == true %}4{% else %}3{% endif %}">{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</td>
+                  <td>
+                    {%- if order.line_items_subtotal_price == 0 -%}
+                      {{ 'products.product.free' | t  }}
+                    {%- else -%}
+                      {{ shipping_method.price | money }}
+                    {%- endif -%}
+                  </td>
+                </tr>
+              {%- endfor -%}
+              {%- for tax_line in order.tax_lines -%}
+                <tr class="responsive-order">
+                  <td colspan="{% if showSku == true %}4{% else %}3{% endif %}">{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)</td>
+                  <td>{{ tax_line.price | money }}</td>
+                </tr>
+              {%- endfor -%}
+        
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="order__item__addresses">
+          <div class="order-address billing-address">
+          <h4>{{ 'customer.order.billing_address' | t }}</h4>
+          {% comment %}<p>{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</p>{% endcomment %}
+          <p>{{ order.billing_address.name }}
+            {% if order.billing_address.company != '' %}
+              {{ order.billing_address.company }}<br>
+            {% endif %}
+            {{ order.billing_address.street }}<br>
+            {{ order.billing_address.city }}<br>
+            {% if order.billing_address.province != nil %}
+              {{ order.billing_address.province }}<br>
+            {% endif %}
+            {{ order.billing_address.zip | upcase }}<br>
+            {{ order.billing_address.country }}<br>
+            {{ order.billing_address.phone }}
+          </p>
+          </div>
+          <div class="order-address">
+          <h4>{{ 'customer.order.shipping_address' | t }}</h4>
+          {% comment %}<p>{{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}</p>{% endcomment %}
+          <p>{{ order.shipping_address.name }}
+            {% if order.shipping_address.company != '' %}
+              {{ order.shipping_address.company }}<br>
+            {% endif %}
+            {{ order.shipping_address.street }}<br>
+            {{ order.shipping_address.city }}<br>
+            {% if order.shipping_address.province != nil %}
+              {{ order.shipping_address.province }}<br>
+            {% endif %}
+            {{ order.shipping_address.zip | upcase }}<br>
+            {{ order.shipping_address.country }}<br>
+            {{ order.shipping_address.phone }}
+          </p>
+          </div>
         </div>
       </div>
-    {%- endif -%}
-
-    {%- if show_currency -%}
-      <div>
-        <h2 class="visually-hidden" id="currency-heading">
-          {{ 'footer.currency' | t }}
-        </h2>
-
-        <div class="select-popout" data-popout>
-          {%- if section.settings.currency_type == 'currency' -%}
-            <button type="button" class="select-popout__toggle" aria-expanded="false" aria-controls="currency-list" aria-describedby="currency-heading" data-popout-toggle>
-              {{ form.current_currency.iso_code }} {%- if form.current_currency.symbol -%}{{ form.current_currency.symbol }}{%- endif -%}
-              {%- render 'icon-select' -%}
-            </button>
-
-            <div id="currency-list" class="select-popout__list" data-popout-list>
-              <ul class="select-popout__list__scroll">
-                {% for currency in form.available_currencies %}
-                  <li class="select-popout__item{% if currency.iso_code == form.current_currency.iso_code %}  select-popout__item--current{% endif %}">
-                    <a class="select-popout__option" href="#"{% if currency.iso_code == form.current_currency.iso_code %} aria-current="true"{% endif %} data-value="{{ currency.iso_code }}" data-popout-option>
-                      <span>{{ currency.iso_code }} {%- if currency.symbol -%}{{ currency.symbol }}{%- endif -%}</span>
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </div>
-
-            <input type="hidden" name="currency_code" id="CurrencySelector" value="{{ form.current_currency.iso_code }}" data-popout-input>
-          {%- endif -%}
-
-          {%- if section.settings.currency_type == 'country' -%}
-            <button type="button" class="select-popout__toggle" aria-expanded="false" aria-controls="currency-list" aria-describedby="currency-heading" data-popout-toggle>
-              {{ localization.country }} ({{ localization.country.iso_code }}) - {{ localization.country.currency.symbol }}
-              {%- render 'icon-select' -%}
-            </button>
-
-            <div id="currency-list" class="select-popout__list" data-popout-list>
-              <ul class="select-popout__list__scroll">
-                {%- for country in localization.available_countries -%}
-                  <li class="select-popout__item{% if country == localization.country %} select-popout__item--current{% endif %}">
-                    <a class="select-popout__option" href="#"{% if country == localization.country %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}" data-popout-option>
-                      <span>{{ country.name }} ({{ country.iso_code }}) - {{ country.currency.symbol }}</span>
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </div>
-
-            <input type="hidden" name="country_code" id="CurrencySelector" value="{{ localization.country.iso_code }}" data-popout-input>
-          {%- endif -%}
-        </div>
-      </div>
-    {%- endif -%}
-  {%- endform -%}
-{%- endif -%}
+    </div>
+  </div>
+</section>
