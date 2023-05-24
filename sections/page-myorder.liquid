@@ -1,3 +1,134 @@
+<section class="page-customer">
+  <div class="wrapper">
+    <div class="section__header">
+      <h1 class="section__heading account__heading">{{ 'customer.account.title' | t }}</h1>          
+
+      {%- if settings.show_spacer_lines -%}
+        <hr class="section__heading-line">
+      {%- endif -%}
+    </div>
+    <div class="account-tabs">
+      <div class="account-tab-item">
+        <ul>
+          <li class="{% if request.path contains '/account' %}active{% endif %}"><a href="/account">Dashboard</a></li>
+          <li class="{% if request.path contains '/my-orders' %}active{% endif %}"><a href="/pages/my-orders">My Order</a></li>
+        </ul>
+      </div>
+      <a class="account__logout" href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a>
+    </div>
+    <div class="order-detail-header">
+      <h3>My Orders</h3>
+      <a class="account__back" href="/account">{{ 'customer.orders.back_title' | t }}</a>
+    </div>
+    <div class="account__table">   
+      <div class="account__table__item order-list">
+        {% comment %}
+        If we have past orders, loop through each one
+        {% endcomment %}
+        {% paginate customer.orders by 1 %}
+          {% if customer.orders.size != 0 %}
+            <div class="table-wrap">
+              <table class="full">
+                <thead class="desktop-order">
+                  <tr>
+                    <th>{{ 'customer.orders.order_number' | t }}</th>
+                    <th>{{ 'customer.orders.date' | t }}</th>
+                    <th>{{ 'customer.orders.payment_status' | t }}</th>
+                    <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+                    <th>{{ 'customer.orders.total' | t }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+               
+                  {% for order in customer.orders %}
+                    {%- liquid
+                      if order.total_price == 0
+                        assign order_total = 'products.product.free' | t | link_to: order.customer_url
+                      else
+                        assign order_total = order.total_price | money_with_currency | link_to: order.customer_url
+                      endif
+                    -%}
+                      {% for line_item in order.line_items limit: 1 %}
+                        {% assign order_image = line_item.product.featured_image %}
+                      {% endfor %}
+                    <tr class="responsive-order">
+                      <th class="order-title">{{ 'customer.orders.order_number' | t }}</th>
+                      <td class="order-title order-wrap">
+                      <div class="order-image">
+                        <img class="lazyload" src="{{ order_image | img_url:'110' }}" alt="{{ order_image.alt }}">
+                      </div>
+                      <div class="order-details">
+                        <span class="order-item-count">{{ order.line_items.size }} items</span>  
+                        <span class="order-id">Order #{{ order.name | link_to: order.customer_url }}</span>
+                        <span class="view-detail">{{ 'customer.orders.purchase_detail' | t | link_to: order.customer_url }}</span>
+                      </div>
+                      </td>
+                      <th>{{ 'customer.orders.date' | t | link_to: order.customer_url }}</th>
+                      <td>{{ order.created_at | date: format: 'month_day_year' | link_to: order.customer_url }}</td>
+                      <th>{{ 'customer.orders.payment_status' | t | link_to: order.customer_url }}</th>
+                      <td>{{ order.financial_status_label | link_to: order.customer_url }}</td>
+                      <th>{{ 'customer.orders.fulfillment_status' | t | link_to: order.customer_url }}</th>
+                      <td>{{ order.fulfillment_status_label | link_to: order.customer_url }}</td>
+                      <th>{{ 'customer.orders.total' | t | link_to: order.customer_url }}</th>
+                      <td class="item-total">{{- order_total -}}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          {% else %}
+            <p>{{ 'customer.orders.none' | t }}</p>
+          {% endif %}
+    
+          {% if paginate.pages > 1 %}
+            {%- if settings.show_spacer_lines -%}
+              <hr class="hr--full">
+            {%- endif -%}
+            <div class="pagination">
+              {%- capture icon_previous -%}
+                {% render 'icon-arrow-up' %}
+              {% endcapture %}
+              {%- capture icon_next -%}
+                {% render 'icon-arrow-up' %}
+              {% endcapture %}
+              {{- paginate | default_pagination | replace: '&laquo; Previous', icon_previous | replace: 'Next &raquo;', icon_next -}}
+            </div>
+          {% endif %}
+        {% endpaginate %}
+      </div>
+      <div class="account__table__item account-details">
+          <h3>{{ 'customer.account.details' | t }}</h3>              
+          {% if customer.default_address != nil %}
+            <p><h4>{{ customer.default_address.first_name }} {{ customer.default_address.last_name }}</h4><br>
+              {{ customer.default_address.address1 }}<br>
+              {% if customer.default_address.address2 != "" %}
+                {{ customer.default_address.address2 }}<br>
+              {% endif %}
+              {% if customer.default_address.city != "" %}
+                {{ customer.default_address.city }}<br>
+              {% endif %}
+              {% if customer.default_address.province_code != nil %}
+                {{ customer.default_address.province_code | upcase }}<br>
+              {% endif %}
+              {% if customer.default_address.zip != "" %}
+                {{ customer.default_address.zip | upcase }}<br>
+              {% endif %}
+              {% if customer.default_address.country != "" %}
+                {{ customer.default_address.country }}<br>
+              {% endif %}
+              {% if customer.default_address.phone != "" %}
+                {{ customer.default_address.phone }}
+              {% endif %}
+            </p>
+          {% else %}
+            <h4>{{ customer.name }}</h4>
+          {% endif %}
+          <p><a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% schema %}
   {
     "name": "My Order",

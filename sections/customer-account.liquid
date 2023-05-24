@@ -16,8 +16,8 @@
         <div class="account-tabs">
           <div class="account-tab-item">
             <ul>
-              <li>Dashboard</li>
-              <li>My Order</li>
+              <li class="{% if request.path contains '/account' %}active{% endif %}"><a href="/account">Dashboard</a></li>
+              <li class="{% if request.path contains '/my-orders' %}active{% endif %}"><a href="/pages/my-orders">My Order</a></li>
             </ul>
           </div>
           <a class="account__logout" href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a>
@@ -27,23 +27,22 @@
             {% if section.settings.banner_img != blabk %}
               <div class="account-banner-image">
                 <img class="lazyload" src="{{ section.settings.banner_img | img_url:'' }}" alt="{{ section.settings.banner_img.alt }}" />
+                <div class="account-banner-detail {{ text_color }}">
+                <div class="detail-left-wrap">
+                  {% if section.settings.banner_title != blank %}<h2>{{ section.settings.banner_title }}</h2>{% endif %}
+                  {% if section.settings.banner_desc != blank %}<span>{{ section.settings.banner_desc }}</span>{% endif %}
+                </div>
+                <div class="detail-right-wrap">
+                  {%- if section.settings.button_text != blank -%}
+                    <a class="btn" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+                  {%- endif -%}
+                </div>
+              </div>
               </div>
             {% endif %}
-            <div class="account-banner-detail {{ text_color }}">
-              <div class="detail-left-wrap">
-                {% if section.settings.banner_title != blank %}<h2>{{ section.settings.banner_title }}</h2>{% endif %}
-                {% if section.settings.banner_desc != blank %}<span>{{ section.settings.banner_desc }}</span>{% endif %}
-              </div>
-              <div class="detail-right-wrap">
-                {%- if section.settings.button_text != blank -%}
-                  <a class="btn" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
-                {%- endif -%}
-              </div>
-            </div>
           </div>
           <div class="account__table__item account-details">
-              <h3>{{ 'customer.account.details' | t }}</h3>
-
+              <h3>{{ 'customer.account.details' | t }}</h3>              
               {% if customer.default_address != nil %}
                 <p><h4>{{ customer.default_address.first_name }} {{ customer.default_address.last_name }}</h4><br>
                   {{ customer.default_address.address1 }}<br>
@@ -72,7 +71,10 @@
               <p><a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
           </div>
           <div class="account__table__item order-list">
-            <h4 class="account__heading">{{ 'customer.orders.title' | t }}</h4>
+            <div class="order-list-header">
+              <h4 class="account__heading">{{ 'customer.orders.title' | t }}</h4>
+              <a href="/pages/my-orders" target="_blank">View all Orders</a>
+            </div>
             {% comment %}
             If we have past orders, loop through each one
             {% endcomment %}
@@ -91,7 +93,7 @@
                     </thead>
                     <tbody>
                    
-                      {% for order in customer.orders %}
+                      {% for order in customer.orders limit:1 %}
                         {%- liquid
                           if order.total_price == 0
                             assign order_total = 'products.product.free' | t | link_to: order.customer_url
@@ -121,7 +123,7 @@
                           <th>{{ 'customer.orders.fulfillment_status' | t | link_to: order.customer_url }}</th>
                           <td>{{ order.fulfillment_status_label | link_to: order.customer_url }}</td>
                           <th>{{ 'customer.orders.total' | t | link_to: order.customer_url }}</th>
-                          <td>{{- order_total -}}</td>
+                          <td class="item-total">{{- order_total -}}</td>
                         </tr>
                       {% endfor %}
                     </tbody>

@@ -2102,3 +2102,97 @@
     </div>
   {%- endunless -%}
 {%- endunless -%}
+
+{%- capture ProdVariant -%}
+ 
+  {%- for variant in product.variants -%}
+    {%- unless variant.title == "Default Title" -%}
+      {%- assign variantShow = true -%}
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- if variantShow -%}
+    {%- unless product.has_only_default_variant -%}
+
+      
+      "{%- assign variant_id = '' -%}
+      {%- for option in product.options_with_values -%}
+
+        {%- liquid 
+           for variant in product.variants 
+             assign variant_id = variant.id 
+           endfor 
+        -%}
+
+            {%- assign color_variant_text = 'general.swatches.color_variant' | t -%}
+          {%- for value in option.values -%}
+            {%- assign opt_name = option.name | handle -%}
+            {%- if opt_name == 'colour' or opt_name == 'color' -%}
+            <a href='{{ product.url }}?variant={{ variant_id }}' id='{{ product.id }}-{{ variant_id }}-{{ value | handle }}' data-swatch-variant='{{ value }}'  class='watch__link swatch__label swatch__label__{{ value | handle }}'></a>
+          {%- endif -%}
+          {%- endfor -%}
+      {%- endfor -%}"
+    {%- endunless -%} 
+  {%- else -%}
+    "<span></span>"
+  {%- endif -%}
+  
+{%- endcapture -%}
+<script>
+function setRecentlyViewedProducts() {
+  const productData = {
+    productTitle: '{{ product.title }}',
+    productImg: '{{ product.featured_media | img_url: '300x' }}',
+    productPrice: '{{ product.price | money }}',
+    productComparePrice: '{{  product.selected_or_first_available_variant.compare_at_price | money }}',
+    productUrl: '{{ product.url }}',
+    productImageAltText: '{{product.featured_media.alt | escape }}',
+    productVariant: {{ ProdVariant }}
+  };
+
+  
+  console.log('productData--',productData);
+  const productList = [];
+  let jsonResp, jsonRespArr, jsonRespArrStr;
+  const numberOfProducts = 8;
+  productList.push(productData);
+  const currProductPageTitle = productData.productUrl;
+  const productDataString = JSON.stringify(productList);
+  const localData = localStorage.getItem("recentlyViewedProduct");
+  //console.log('productList--',productList);
+  
+  //console.log('localData--',localData);
+  
+  if (localData === null) {
+    localStorage.setItem("recentlyViewedProduct", productDataString);
+    //console.log('setItem--');
+  } else if (localData) {
+    //console.log('getItem--');
+    const oldProductData = localStorage.getItem("recentlyViewedProduct");
+    const countProductData = (oldProductData.match(/productUrl/g) || []).length;
+    const sameProduct = oldProductData.includes(currProductPageTitle);
+    if (countProductData < numberOfProducts && sameProduct == false) {
+      jsonResp = JSON.parse(oldProductData);
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArrStr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArrStr);
+      
+      //console.log('jsonRespArrStr--',jsonRespArrStr);
+    } else if (countProductData >= numberOfProducts && sameProduct == false) {
+      jsonResp = JSON.parse(oldProductData);
+      jsonResp.shift();
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArr);
+      //console.log('jsonRespArr--',jsonRespArr);
+    }
+  }
+}
+
+const localViewed = localStorage.recentlyViewedProduct;
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  setRecentlyViewedProducts();
+  //getRecentlyViewedProducts();
+});
+</script> 

@@ -3705,9 +3705,19 @@ input{
   padding: 8px;
 }
 .pagination .page.current {
-  border-bottom: var(--BORDER-WIDTH) solid var(--text);
+  border-bottom: var(--BORDER-WIDTH) solid var(--COLOR-BLACK);
+  color: var(--COLOR-BLACK);
 }
-
+.pagination .next svg {
+  display: inline-block;
+  vertical-align: middle;
+  transform: rotate(-90deg);
+}
+.pagination .prev svg {
+  display: inline-block;
+  vertical-align: middle;
+  transform: rotate(90deg);
+}
 .pagination__loading {
   padding-top: 40px;
   display: inline-block;
@@ -9644,6 +9654,9 @@ a.navlink.navlink--child {
     grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
     column-gap: var(--gutter-mobile);
   }
+  .template-customers-order .order__item{
+    grid-template-columns: minmax(0, 3fr) minmax(0, 0.85fr);
+  }
 }
 @media only screen and (min-width: 1024px) {
   .order__item {
@@ -9680,6 +9693,7 @@ a.navlink.navlink--child {
   line-height: 48px;  
   padding-left: 16px;
   margin: 0;
+  color: var(--COLOR-BLACK);
 }
 .account__heading--small {
   font-size: calc( 2.5rem * var(--adjust-heading));
@@ -9715,6 +9729,7 @@ a.navlink.navlink--child {
 }
 .account-banner-image {
   line-height: 0;
+  position: relative;
 }
 .account-banner-image img {
   border-radius: var(--radius);
@@ -9735,6 +9750,11 @@ a.navlink.navlink--child {
   font-family: var(--font-stack-body);
   margin: 0;
 }
+.account-banner-detail .detail-left-wrap span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 24px;
+}
 .account-banner-detail .detail-right-wrap {
   line-height: 0;
 }
@@ -9750,6 +9770,8 @@ a.navlink.navlink--child {
   border-top: 3px solid #27304A;
   background: #fff;
   padding: 24px;
+  color: var(--COLOR-BLACK);
+  line-height: 24px;
 }
 .account__table__item.account-details h3 {
   font-size: 24px;
@@ -9769,6 +9791,9 @@ a.navlink.navlink--child {
   font-size: 16px;
   line-height: 24px;
   color: var(--COLOR-BLACK);
+}
+.template-customers-account .section__header {
+  margin-bottom: 16px;
 }
 @media only screen and (min-width: 768px) {
   .account__subheading {
@@ -17863,7 +17888,7 @@ a.navlink.navlink--child {
 }
 
 .page-customer {
-  padding: var(--gutter) 0;
+  padding: 40px 0 var(--gutter);
   background: #F9F9F9;
 }
 
@@ -24626,7 +24651,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .account__table__item.order-list .account__heading {font-weight: 600;font-size: 24px;line-height: 32px;color: var(--COLOR-BLACK);margin-bottom: 10px;}
 .account__table__item.order-list .table-wrap{border: 1px solid #ECECEB;background: #fff;padding: 40px;}
 .account__table__item.order-list .table-wrap table td, .account__table__item.order-list .table-wrap table th,.account__table__item.order-list .table-wrap table {border: none;padding: 0;}
-.account__table__item.order-list .table-wrap table th {font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);font-weight: 600;padding: 0;text-align: center;}
+.account__table__item.order-list .table-wrap table th {font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);font-weight: 600;padding: 0;text-align: center;padding-bottom: 22px;}
 .account__table__item.order-list .table-wrap table span {width: 100%;display: inline-block;vertical-align: middle;}
 .account__table__item.order-list .table-wrap .order-wrap,.product-detail {display: flex;align-items: center;gap: 24px;}
 .account__table__item.order-list .table-wrap .order-wrap .order-image,.product-detail .order-image {max-width: 79px;width: 79px;line-height: 0;position: relative;display: inline-block;vertical-align: middle;padding-bottom: 27.3%;}
@@ -24640,7 +24665,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .account__table__item.order-list .table-wrap table th:first-child {text-align: left;}
 .account__table__item.order-list .table-wrap .view-detail a {font-size: 14px;line-height: 20px;text-decoration: underline;color: var(--COLOR-BLACK);display: inline-block;vertical-align: middle;}
 .template-customers-order .page-customer {padding: 40px 0 80px;}
-.order-detail-header {display: flex;align-items: center;justify-content: space-between;margin-bottom: 20px;}
+.order-detail-header {display: flex;align-items: center;justify-content: space-between;margin-bottom: 20px;max-width: 1090px;}
 .order-detail-header h3 {margin: 0;color: var(--COLOR-BLACK);font-size: 24px;line-height: 32px;}
 .order-detail-header .account__back {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
 .order__item__title.order-detail-wrap {padding: 40px;background: #fff;border: 1px solid #E6E6E6;}
@@ -24658,17 +24683,27 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .order-address h4 {border-bottom: 1px solid #ECECEB;padding-bottom: 18px;margin-bottom: 16px;display: inline-block;vertical-align: middle;width: 100%;}
 .order-address p {margin: 0;color: var(--COLOR-BLACK);}
 .template-customers-order .section__heading.h2 {font-family: var(--font-stack-body);}
-.order__item__title.order-detail-wrap th,.order__item__title.order-detail-wrap table td {padding: 12px 0;text-align: center;}
-.template-customers-order .order-details {max-width: 346px;width: 100%;text-align: left;}
+.order__item__title.order-detail-wrap th,.order__item__title.order-detail-wrap table td {padding: 12px 0;text-align: center;color: var(--COLOR-BLACK);}
+.template-customers-order .order-details {max-width: 346px;width: 100%;text-align: left;color: var(--COLOR-BLACK);font-weight: 600;}
 .product-detail .order-image{padding-bottom: 20.8%;}
 .order__item__title.order-detail-wrap tfoot .reorder-btn {padding: 10px 30px;min-width: auto;text-transform: capitalize;cursor: pointer;}
 .order__item__title.order-detail-wrap tfoot .download-btn {padding: 10px 20px;min-width: auto;margin-left: 20px;}
 .order__item__title.order-detail-wrap tfoot .download-btn svg {display: inline-block;vertical-align: middle;margin-right: 12px;}
-.cost-breakdown-wrap {display: flex;align-items: flex-start;justify-content: space-around;}
-.cost-breakdown-left span, .cost-breakdown-right span {width: 100%;display: inline-block;vertical-align: middle;}
+.cost-breakdown-wrap {display: flex;align-items: flex-start;justify-content: space-between;padding-left: 20px;}
+.cost-breakdown-left span, .cost-breakdown-right span {width: 100%;display: inline-block;vertical-align: middle;margin-bottom: 12px;}
 .cost-breakdown-right {text-align: right;}
 .order__item__title.order-detail-wrap tfoot {border-top: 1px solid #E6E6E6;}
 .cost-breakdown-left span {color: #A5A5A5}
+.order__item__title.order-detail-wrap .footer-btns {display: flex;align-items: flex-start;}
+.order__item__title.order-detail-wrap tfoot td {padding-top: 32px;}
+.order__item__title.order-detail-wrap table tbody tr:last-child td {padding: 12px 0 32px 0;}
+.cost-breakdown-right span {color: var(--COLOR-BLACK);}
+.cost-breakdown-right span.grand-total {font-size: 20px;line-height: 28px;font-weight: 600;}
+.order__item__title.order-detail-wrap table td .item-total,.account__table__item.order-list .table-wrap td.item-total {font-weight: 600;}
+.order-list-header {display: flex;align-items: center;justify-content: space-between;}
+.order-list-header a {font-size: 14px;line-height: 20px;}
+.page--my-orders .order-detail-header {max-width: 1130px;}
+.account-tab-item ul li.active {border-bottom: 2px solid #BF0038;font-weight: 600;}
 
 /* ----------- Athletes Page ---------- */
 .athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
