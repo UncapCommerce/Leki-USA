@@ -2113,30 +2113,71 @@
 
   {%- if variantShow -%}
     {%- unless product.has_only_default_variant -%}
-
-      
+      {%- liquid 
+          assign has_colors = false
+  
+          if settings.enable_color_swatches_collection and product.has_only_default_variant == false
+            capture swatch_translation
+              echo 'general.swatches.color' | t
+            endcapture
+        
+            assign swatch_labels = swatch_translation | remove: '  ' | replace: ', ', ',' | replace: ' ,', ',' | split: ','
+            for label in swatch_labels
+              assign sanitized_label = label | strip
+              if product.options_by_name[sanitized_label].values.size > 0
+                assign color_label = label
+                assign has_colors = true
+                break
+              endif
+            endfor
+          endif
+      -%}
       "{%- assign variant_id = '' -%}
-      {%- for option in product.options_with_values -%}
-
-        {%- liquid 
-           for variant in product.variants 
-             assign variant_id = variant.id 
-           endfor 
-        -%}
-
-            {%- assign color_variant_text = 'general.swatches.color_variant' | t -%}
-          {%- for value in option.values -%}
-            {%- assign opt_name = option.name | handle -%}
-            {%- if opt_name == 'colour' or opt_name == 'color' -%}
-            <a href='{{ product.url }}?variant={{ variant_id }}' id='{{ product.id }}-{{ variant_id }}-{{ value | handle }}' data-swatch-variant='{{ value }}'  class='watch__link swatch__label swatch__label__{{ value | handle }}'></a>
-          {%- endif -%}
-          {%- endfor -%}
+      {%- for option in product.options_by_name[color_label].values -%}
+          {%- liquid
+              for variant in product.variants
+                if variant.options contains option
+                  assign swatch_variant = variant
+                  break
+                endif
+              endfor
+          -%}       
+          <a href='{{ product.url }}?variant={{ swatch_variant.id }}' data-swatch-variant='{{ swatch_variant.id }}' id='{{ product.id }}-{{ swatch_variant.id }}-{{ option }}' data-swatch='{{ option }}'  class='watch__link swatch__label swatch__label__{{ option }}' style='background-color: {{ option | split: ' ' | last | handle }};'></a>       
       {%- endfor -%}"
     {%- endunless -%} 
   {%- else -%}
     "<span></span>"
   {%- endif -%}
   
+{%- endcapture -%}
+
+{%- liquid
+  assign show_sale_badge = settings.show_sale_badge
+  assign show_custom_badge = settings.show_custom_badge
+  assign show_sold_badge = settings.show_sold_badge
+  assign show_saving_badge = settings.show_saving_badge
+  assign sold_out_text = 'products.product.sold_out' | t
+  assign sale_text = 'products.product.sale' | t
+
+  if settings.show_saving_badge
+    assign price = product.price
+    assign price_compare = product.compare_at_price
+    assign price_difference = price_compare | minus: price
+
+    if settings.saving_badge_type == 'percentage'
+      assign percent_off = price_difference | times: 1.00 | divided_by: price_compare | times: 100
+      assign discount = percent_off | floor | append: '%'
+    endif
+
+    if saving_badge_text == blank
+      assign show_saving_badge = false
+    endif
+  endif
+-%}
+{%- capture product_badges -%}
+  "{%- if on_sale and show_sale_badge and sold_out == false and show_saving_badge -%}
+    <div class="product__badge__item product__badge__item--sale"><span>{{ sale_text }}</span><span class="product__badge__item product__badge__item--saving">{{ saving_badge_text }}</span></div>
+  {%- endif -%}"
 {%- endcapture -%}
 <script>
 
@@ -2148,11 +2189,10 @@ function setRecentlyViewedProducts() {
     productComparePrice: '{{  product.selected_or_first_available_variant.compare_at_price | money }}',
     productUrl: '{{ product.url }}',
     productImageAltText: '{{product.featured_media.alt | escape }}',
-    productVariant:{{ ProdVariant }}
+    productVariant:{{ ProdVariant }},
+    ProductBadges: {{ product_badges }}
   };
 
-  
-  console.log('productData--',productData);
   const productList = [];
   let jsonResp, jsonRespArr, jsonRespArrStr;
   const numberOfProducts = 8;
@@ -2160,7 +2200,7 @@ function setRecentlyViewedProducts() {
   const currProductPageTitle = productData.productUrl;
   const productDataString = JSON.stringify(productList);
   const localData = localStorage.getItem("recentlyViewedProduct");
-  //console.log('productList--',productList);
+  // console.log('productList--',productList);
   
   //console.log('localData--',localData);
   

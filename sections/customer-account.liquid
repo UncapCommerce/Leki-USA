@@ -26,7 +26,8 @@
           <div class="account__table__item">
             {% if section.settings.banner_img != blabk %}
               <div class="account-banner-image">
-                <img class="lazyload" src="{{ section.settings.banner_img | img_url:'' }}" alt="{{ section.settings.banner_img.alt }}" />
+                  <img class="lazyload {% if section.settings.banner_mob_img != blabk %}hidden-sm{% endif %}" src="{{ section.settings.banner_img | img_url:'' }}" alt="{{ section.settings.banner_img.alt }}" />
+                  <img class="lazyload {% if section.settings.banner_img != blabk %}hidden-lg{% endif %}" src="{{ section.settings.banner_mob_img | img_url:'' }}" alt="{{ section.settings.banner_mob_img.alt }}" />
                 <div class="account-banner-detail {{ text_color }}">
                 <div class="detail-left-wrap">
                   {% if section.settings.banner_title != blank %}<h2>{{ section.settings.banner_title }}</h2>{% endif %}
@@ -41,7 +42,7 @@
               </div>
             {% endif %}
           </div>
-          <div class="account__table__item account-details">
+          <div class="account__table__item account-details hidden-sm">
               <h3>{{ 'customer.account.details' | t }}</h3>              
               {% if customer.default_address != nil %}
                 <p><h4>{{ customer.default_address.first_name }} {{ customer.default_address.last_name }}</h4><br>
@@ -70,7 +71,7 @@
               {% endif %}
               <p><a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
           </div>
-          <div class="account__table__item order-list">
+          <div class="account__table__item order-list desktop">
             <div class="order-list-header">
               <h4 class="account__heading">{{ 'customer.orders.title' | t }}</h4>
               <a href="/pages/my-orders" target="_blank">View all Orders</a>
@@ -143,6 +144,117 @@
               {% endif %}
             {% endpaginate %}
           </div>
+          <div class="account__table__item order-list mobile">
+            <div class="order-list-header">
+              <h4 class="account__heading">{{ 'customer.orders.title' | t }}</h4>
+              <a href="/pages/my-orders" target="_blank">View all Orders</a>
+            </div>
+            {% comment %}
+            If we have past orders, loop through each one
+            {% endcomment %}
+            {% paginate customer.orders by 20 %}
+              {% if customer.orders.size != 0 %}
+                <div class="table-wrap">
+                  <table class="full">
+                    <thead class="desktop-order">
+                      <tr>
+                        <th>{{ 'customer.orders.order_number' | t }}</th>
+                        <th>{{ 'customer.orders.date' | t }}</th>
+                        <th>{{ 'customer.orders.payment_status' | t }}</th>
+                        <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+                        <th>{{ 'customer.orders.total' | t }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for order in customer.orders limit:3 %}
+                        {%- liquid
+                          if order.total_price == 0
+                            assign order_total = 'products.product.free' | t | link_to: order.customer_url
+                          else
+                            assign order_total = order.total_price | money_with_currency | link_to: order.customer_url
+                          endif
+                        -%}
+                          {% for line_item in order.line_items limit: 1 %}
+                            {% assign order_image = line_item.product.featured_image %}
+                          {% endfor %}
+                        <tr class="responsive-order{% if forloop.index == 1 %} first{% endif %}">
+                          <th class="order-title">{{ 'customer.orders.order_number' | t }}</th>
+                          <tr>
+                            <td class="order-title order-wrap">                          
+                            <div class="order-image">
+                              <img class="lazyload" src="{{ order_image | img_url:'110' }}" alt="{{ order_image.alt }}">
+                            </div>
+                            <div class="order-details">
+                              <span class="order-item-count">{{ order.line_items.size }} items</span>  
+                              <span class="order-id">Order #{{ order.name | link_to: order.customer_url }}</span>
+                              <span class="view-detail">{{ 'customer.orders.purchase_detail' | t | link_to: order.customer_url }}</span>
+                            </div>
+                            </td>
+                          </tr>
+                        </tr>
+                          <tr>                            
+                            <th>{{ 'customer.orders.date' | t | link_to: order.customer_url }}</th>
+                            <td>{{ order.created_at | date: format: 'month_day_year' | link_to: order.customer_url }}</td>                                  
+                          </tr>
+                          <tr>
+                             <th>{{ 'customer.orders.payment_status' | t | link_to: order.customer_url }}</th>
+                             <td>{{ order.financial_status_label | link_to: order.customer_url }}</td>                           
+                          </tr>
+                          <tr>
+                           <th>{{ 'customer.orders.fulfillment_status' | t | link_to: order.customer_url }}</th>
+                            <td>{{ order.fulfillment_status_label | link_to: order.customer_url }}</td>
+                          </tr>
+                          <tr>
+                            <th>{{ 'customer.orders.total' | t | link_to: order.customer_url }}</th>
+                            <td class="item-total">{{- order_total -}}</td>
+                          </tr>  
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              {% else %}
+                <p>{{ 'customer.orders.none' | t }}</p>
+              {% endif %}
+
+              {% if paginate.pages > 1 %}
+                {%- if settings.show_spacer_lines -%}
+                  <hr class="hr--full">
+                {%- endif -%}
+                <div class="pagination">
+                  {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+                </div>
+              {% endif %}
+            {% endpaginate %}
+          </div>
+          <div class="account__table__item account-details hidden-lg">
+              <h3>{{ 'customer.account.details' | t }}</h3>              
+              {% if customer.default_address != nil %}
+                <p><h4>{{ customer.default_address.first_name }} {{ customer.default_address.last_name }}</h4><br>
+                  {{ customer.default_address.address1 }}<br>
+                  {% if customer.default_address.address2 != "" %}
+                    {{ customer.default_address.address2 }}<br>
+                  {% endif %}
+                  {% if customer.default_address.city != "" %}
+                    {{ customer.default_address.city }}<br>
+                  {% endif %}
+                  {% if customer.default_address.province_code != nil %}
+                    {{ customer.default_address.province_code | upcase }}<br>
+                  {% endif %}
+                  {% if customer.default_address.zip != "" %}
+                    {{ customer.default_address.zip | upcase }}<br>
+                  {% endif %}
+                  {% if customer.default_address.country != "" %}
+                    {{ customer.default_address.country }}<br>
+                  {% endif %}
+                  {% if customer.default_address.phone != "" %}
+                    {{ customer.default_address.phone }}
+                  {% endif %}
+                </p>
+              {% else %}
+                <h4>{{ customer.name }}</h4>
+              {% endif %}
+              <p><a href="{{ routes.account_addresses_url }}">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -157,6 +269,11 @@
         "id": "banner_img",
         "label": "Banner Image"
       },  
+      {
+        "type": "image_picker",
+        "id": "banner_mob_img",
+        "label": "Mobile Banner Image"
+      }, 
       {
         "type": "text",
         "id": "banner_title",

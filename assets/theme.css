@@ -9730,9 +9730,21 @@ a.navlink.navlink--child {
 .account-banner-image {
   line-height: 0;
   position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  padding-bottom: 26.6%;
 }
 .account-banner-image img {
   border-radius: var(--radius);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .account-banner-detail {
   position: absolute;
@@ -9744,7 +9756,8 @@ a.navlink.navlink--child {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px;
+  padding: 0 40px;
+  flex-wrap: wrap;
 }
 .account-banner-detail .detail-left-wrap h2 {
   font-family: var(--font-stack-body);
@@ -9952,11 +9965,16 @@ a.navlink.navlink--child {
 .account__table {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--gutter-mobile);
+  gap: 40px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1300px) {
   .account__table {
     grid-template-columns: minmax(0, 4.2fr) minmax(0, 1fr);
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1299px){
+  .account__table {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -9965,6 +9983,11 @@ a.navlink.navlink--child {
   }
   .page-customer .wrapper {
     width: 1560px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .account__table {
+    grid-template-columns: 1fr;    
   }
 }
 
@@ -11938,7 +11961,7 @@ a.navlink.navlink--child {
 .product-grid-item__info {
   display: grid;
   grid-template-columns: minmax(0, 100%);
-  gap: 11px;
+  gap: 7px;
   align-content: start;
   font-size: calc(0.8rem * var(--adjust-body));
   margin: 15px 0 0;
@@ -12034,8 +12057,8 @@ a.navlink.navlink--child {
   }
 }
 .product-grid-item__swatch .swatch__button {
-  margin: 0 6px 6px 0;
-  padding: 0;
+  margin: 0 8px 6px 0;
+  padding: 4px 0;
 }
 .product-grid-item__swatch .swatch__button:last-child {
   margin-right: 0;
@@ -24651,7 +24674,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .account__table__item.order-list .account__heading {font-weight: 600;font-size: 24px;line-height: 32px;color: var(--COLOR-BLACK);margin-bottom: 10px;}
 .account__table__item.order-list .table-wrap{border: 1px solid #ECECEB;background: #fff;padding: 40px;}
 .account__table__item.order-list .table-wrap table td, .account__table__item.order-list .table-wrap table th,.account__table__item.order-list .table-wrap table {border: none;padding: 0;}
-.account__table__item.order-list .table-wrap table th {font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);font-weight: 600;padding: 0;text-align: center;padding-bottom: 22px;}
+.account__table__item.order-list .table-wrap table th {font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);font-weight: 600;text-align: center;padding: 0 16px 22px;}
 .account__table__item.order-list .table-wrap table span {width: 100%;display: inline-block;vertical-align: middle;}
 .account__table__item.order-list .table-wrap .order-wrap,.product-detail {display: flex;align-items: center;gap: 24px;}
 .account__table__item.order-list .table-wrap .order-wrap .order-image,.product-detail .order-image {max-width: 79px;width: 79px;line-height: 0;position: relative;display: inline-block;vertical-align: middle;padding-bottom: 27.3%;}
@@ -24705,6 +24728,12 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .page--my-orders .order-detail-header {max-width: 1130px;}
 .account-tab-item ul li.active {border-bottom: 2px solid #BF0038;font-weight: 600;}
 
+/* ----------- Recently View ------------ */
+.recently-viewed-grid-item .swatch__button {width: 100%;text-align: left;line-height: 0;margin-top: 7px;padding: 4px 0;}
+.recently-viewed-grid-item .swatch__button .swatch__label {height: 12px;width: 12px;display: inline-block;vertical-align: middle;margin: 0 8px 0 0;cursor: auto;}
+.recently-viewed-grid-item .swatch__button .swatch__label::after,.recently-viewed-grid-item .swatch__button .swatch__label::before{display:none;}
+.recently-viewed-grid-item .swatch__button .swatch__label:last-child {margin: 0;}
+
 /* ----------- Athletes Page ---------- */
 .athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
 .athletes-inner-wrap .athletes-image {line-height: 0;}
@@ -24750,6 +24779,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .Pole-length-advisor .wrapper--narrow,.Glovesize-advisor .wrapper--narrow{width: 960px;}
   .image-with-title-section .banner-content .wrapper--narrow {width: 970px;}
   .athletes-inner-content {position: relative;}
+  .account__table__item.order-list.mobile {display: none;}
 }
 
 @media(max-width: 1440px){
@@ -24780,6 +24810,13 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .mosaic__grid{margin: 0 -10px;}
   .activity-landing-text .heading {font-size: 60px;line-height: 80px;margin-bottom: 30px;}
   .athletes-main-wrap{grid-template-columns: 1fr 1fr 1fr;row-gap: 60px;}
+  .account-banner-detail .detail-left-wrap h2{font-size: 30px;line-height: 42px;}
+  .account__table__item.order-list .table-wrap table th.order-title {display: none;}
+  .account__table__item.order-list .table-wrap .order-id {font-size: 16px;line-height: 24px;}
+  .account__table__item.order-list .table-wrap table th {font-size: 14px;line-height: 20px;}
+  .account__table__item.order-list .table-wrap{padding: 20px;}
+  .account__table__item.account-details{padding: 20px;}
+  .account__table__item.account-details h3 {font-size: 18px;line-height: 26px;margin-bottom: 20px;padding-bottom: 20px;}
 }
 @media(min-width: 1024px) and (max-width: 1199px){
   .collection__products .grid{grid-template-columns: repeat(3, minmax(0, 1fr));}
@@ -24837,7 +24874,21 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   form#RecoverCustomerPassword input {padding: 13px 20px;line-height: 20px;}
   .page--gloves-size-advisor .featured-collection__top .section__heading {font-size: 36px;line-height: 48px;}
   .athletes-inner-wrap .athletes-card-content-overlay{padding: 44px 52px 44px 30px;}
-  .athletes-inner-wrap .athletes-card-content-overlay{border-radius:8px;}
+  .athletes-inner-wrap .athletes-card-content-overlay{border-radius:8px;}  
+  .account__table__item.order-list.desktop {display: none;}
+  .account__table__item.order-list .table-wrap .order-wrap .order-image, .product-detail .order-image{padding-bottom: 36%;width: 65px;max-width: 65px;}
+  .account__table__item.order-list.mobile tbody th {padding: 0;font-size: 12px;line-height: 16px;}
+  .account__table__item.order-list.mobile tbody th a {color: #A5A5A5;}
+  .account__table__item.order-list.mobile tbody td {padding: 0 !important;font-size: 12px;line-height: 16px;max-width: 100px;text-align: right;}
+  .account__table__item.order-list.mobile tbody td.order-title.order-wrap {max-width: 100%;margin-bottom: 14px;}
+  .account__table__item.order-list.mobile tbody tr {display: flex;align-items: center;justify-content: space-between;margin-bottom: 6px;}
+  .account__table__item.order-list.mobile tbody tr.responsive-order {padding-top: 42px;border-top: 1px solid #E6E6E6;margin-top: 18px;}
+  .account__table__item.order-list.mobile tbody tr.responsive-order.first {padding-top: 0;border: none;margin:0;}
+  .account__table__item.order-list.mobile {background: #fff;padding: 20px;margin: 0 -10px;}
+  .account__table__item.order-list.mobile .table-wrap{padding: 0;border: none;}
+  .account__table__item.order-list.mobile .order-list-header{ margin-bottom: 30px;}
+  .page--my-orders .order-detail-header{padding: 0 20px;}
+  .page--my-orders .order-detail-header h3{font-size: 18px;line-height: 26px;}
 }
 @media(max-width: 991px){  
   #gloves-adviser-drawer{width: 700px;}
@@ -24973,6 +25024,21 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .athletes-inner-wrap .athletes-card-content-overlay>span{text-transform: uppercase;padding-bottom: 8px;margin-bottom: 8px;}
   .athletes-nation {margin-bottom: 8px;}
   .athletes-nation span, .athletes-DOB span{font-size: 14px;line-height: 20px;padding-top: 0;}
+  .account-banner-image{padding-bottom: 62.5%;}
+  .account-banner-detail{justify-content: center;padding: 0 18px;text-align: center;}
+  .account-banner-detail .detail-left-wrap,.account-banner-detail .detail-right-wrap {width: 100%;}
+  .account-banner-detail .detail-left-wrap h2 {font-size: 24px;line-height: 32px;text-align: center;}
+  .account-banner-detail .detail-left-wrap span{font-size: 14px;line-height: 20px;text-align: center;padding-top: 4px;}
+  .account-banner-detail .detail-right-wrap .btn{padding: 14px 32px;font-size: 14px;line-height: 20px;}
+  .page-customer .wrapper {padding: 0;}
+  .template-customers-account .page-customer .account__table{padding: 0 10px;}
+  .account__heading.section__heading {font-size: 24px;line-height: 32px;}
+  .account__table__item.order-list .account__heading{font-size: 18px;line-height: 26px;}
+  .account__table__item.order-list {padding: 0 10px;}
+  .account__table__item.account-details{margin: 0 -10px;}
+  .page-customer .account__logout {display: none;}
+  .template-customers-account .account-tabs{margin-bottom: 40px;}
+  .template-customers-account .section__header {margin-bottom: 8px;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}

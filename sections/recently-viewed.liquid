@@ -1,15 +1,18 @@
-<div class="recently-viewed-wrapper">
+<section id="recently-viewed-wrapper--{{ section.id }}"
+  class="section-padding recently-viewed-wrapper"
+  data-section-type="recently-views"
+  data-section-id="{{ section.id }}">
+
   <div class="wrapper">
     <div class="recent-view-header">
       <h3>{{ section.settings.title }}</h3>
-      <a href="#" target="_blank">View all Products</a>
+      <a href="/pages/recently-views" target="_blank">View all Products</a>
     </div>
     <div class="recently-viewed-grid list-style-none">
     <!-- Recently viewed products will appear here -->
     </div>
   </div>
-</div>
-
+</section>
 <script>
 function getRecentlyViewedProducts() {
   const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
@@ -19,6 +22,7 @@ function getRecentlyViewedProducts() {
     assign image_aspect_ratio = image.aspect_ratio | default: 1
   %}
   productData.map(item => {
+    let data_length = productData.slice(0, 3);
     recentlyViewedHtml.unshift(`
 	
 	<div class="product-grid-item recently-viewed-grid-item">
@@ -32,15 +36,7 @@ function getRecentlyViewedProducts() {
                alt="${item.productImageAltText}"
                loading="lazy"
                                          ></a>
-          <div class="card__badge {{ settings.badge_position }}">
-            {%- if product.available == false -%}
-            <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}">Sold Out</span>
-            {%- elsif product.compare_at_price > product.price and product.available -%}
-            <span class="badge badge--bottom-left sale-badge color-{{ settings.sale_badge_color_scheme }}">Sale</span>
-            {%- elsif product.tags contains 'new' -%}
-            <span class="badge badge--bottom-left new-badge color-{{ settings.sale_badge_color_scheme }}">New</span>
-            {%- endif -%}
-          </div>
+  
           </div>
           </div>
           </div>
@@ -95,6 +91,7 @@ function getRecentlyViewedProducts() {
       </div>
     </div> 
    `);
+  
   });
   const newProductData = `${recentlyViewedHtml.join("")}`;
   const fullContent = document.getElementsByClassName("recently-viewed-grid");
@@ -106,12 +103,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 </script>
-
-
 <style>
+  #recently-viewed-wrapper--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  .page--recently-views .recent-view-header a {
+    display: none;
+  }
   .recently-viewed-wrapper {
     background: #F9F9F9;
-    padding-bottom: 120px;
   }
   .recently-viewed-wrapper .wrapper {
     width: 1560px;
@@ -178,6 +179,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
     line-height: 20px;
     color: var(--COLOR-BLACK);
   }
+  @media(max-width: 1023px){
+    .recently-viewed-wrapper {
+      background: #fff;
+      padding: 20px 0;
+    }
+    .recently-viewed-grid{
+      padding: 0;
+      border: none;
+    }
+  }
 </style>
 
 {% schema %}
@@ -188,6 +199,66 @@ document.addEventListener("DOMContentLoaded", function (event) {
         "type":"text",
         "id":"title",
         "label":"Heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
       }
     ],
   "presets": [
