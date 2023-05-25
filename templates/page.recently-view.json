@@ -1,0 +1,13 @@
+{
+    "sections": {
+      "main": {
+        "type": "recently-viewed",
+        "settings": {
+          "title": "Recently Viewed"
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
