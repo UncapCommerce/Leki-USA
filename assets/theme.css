@@ -9654,13 +9654,15 @@ a.navlink.navlink--child {
     grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
     column-gap: var(--gutter-mobile);
   }
-  .template-customers-order .order__item{
-    grid-template-columns: minmax(0, 3fr) minmax(0, 0.85fr);
-  }
 }
 @media only screen and (min-width: 1024px) {
   .order__item {
     column-gap: 40px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .template-customers-order .order__item{
+    grid-template-columns: minmax(0, 3fr) minmax(0, 0.85fr);
   }
 }
 
@@ -9903,13 +9905,15 @@ a.navlink.navlink--child {
   }
 
   .template-customers-order .order-title {
-    font-size: calc( 1.125rem * var(--adjust-body));
+    margin: 0;
+    font-size: 18px;
+    line-height: 26px;
   }
   .template-customers-order table {
     border-collapse: separate;
   }
   .template-customers-order th,
-.template-customers-order td {
+  .template-customers-order td {
     display: block;
     width: 100%;
     background: none;
@@ -9921,7 +9925,7 @@ a.navlink.navlink--child {
     border-right: 0;
   }
   .template-customers-order th:first-of-type,
-.template-customers-order td:first-of-type {
+  .template-customers-order td:first-of-type {
     border-top-width: 2px;
   }
   .template-customers-order tfoot tr:last-of-type td, .template-customers-order tfoot tr:last-of-type th {
@@ -24734,6 +24738,40 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .recently-viewed-grid-item .swatch__button .swatch__label::after,.recently-viewed-grid-item .swatch__button .swatch__label::before{display:none;}
 .recently-viewed-grid-item .swatch__button .swatch__label:last-child {margin: 0;}
 
+/* ---------- store locatore page ----------- */
+.page--lekiusa #MainContent {
+  background: #F9F9F9;
+}
+.page--lekiusa div#col-main {
+  max-width: 1424px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+#store-locator-title {
+  font-size: 50px;
+  line-height: 58px;
+  color: var(--COLOR-BLACK);
+  text-transform: uppercase;
+}
+.addresses li a ,.addresses li a .name,.addresses li a span{
+  color: var(--COLOR-BLACK) !important;
+}
+.addresses li a .name {
+  font-size: 18px;
+  line-height: 26px;
+}
+.addresses li {
+  padding: 16px 20px !important;
+  background-color: #ececeb !important;
+  border: 1px solid #BF0038 !important;
+  margin-bottom: 16px;
+}
+.addresses li:last-child{margin:0;}
+#store_map{width: 59.2% !important;}
+.footer_html {
+  display: none;
+}
+
 /* ----------- Athletes Page ---------- */
 .athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
 .athletes-inner-wrap .athletes-image {line-height: 0;}
@@ -24770,6 +24808,31 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   100% { transform: rotate(360deg); }
 }
 
+
+/* ------------ sponsorship page ----------- */
+.sponsorship-tabs ul {
+  margin: 0;
+  max-width: 671px;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+}
+.sponsorship-tabs ul li.tab-title {
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 16px 32px;
+  background: #fff;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  border-radius: 12px 12px 0 0;
+}
+.sponsorship-tabs ul li.tab-title:hover {
+  background: #E6E6E6;
+  border-radius: 0;
+  cursor: pointer;
+}
+
 @media(min-width: 768px){
   .product-single__thumbnails .flickity-page-dots {display: none;}
 }
@@ -24780,6 +24843,10 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .image-with-title-section .banner-content .wrapper--narrow {width: 970px;}
   .athletes-inner-content {position: relative;}
   .account__table__item.order-list.mobile {display: none;}
+  .order__item__title.order-detail-wrap .mobile-table {display: none;}
+  .order__item__title.order-detail-wrap tfoot td.order-payment-status {
+    display: none;
+  }
 }
 
 @media(max-width: 1440px){
@@ -24792,6 +24859,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 }
 @media(max-width: 1399px){
   .athletes-inner-wrap .athletes-card-content-overlay{padding: 35px 42px 35px 50px;}
+  .order__item__title.order-detail-wrap {padding: 25px;}
 }
 @media(max-width: 1340px){
   .footer-blocks{gap: 100px;}
@@ -24817,9 +24885,14 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .account__table__item.order-list .table-wrap{padding: 20px;}
   .account__table__item.account-details{padding: 20px;}
   .account__table__item.account-details h3 {font-size: 18px;line-height: 26px;margin-bottom: 20px;padding-bottom: 20px;}
+  .template-customers-order .order__item{grid-template-columns: minmax(0, 1fr);}
 }
 @media(min-width: 1024px) and (max-width: 1199px){
   .collection__products .grid{grid-template-columns: repeat(3, minmax(0, 1fr));}
+  .order-address.billing-address{margin-top: 40px;margin-bottom: 20px;}
+  .order__item__title.order-detail-wrap tfoot .reorder-btn,.order__item__title.order-detail-wrap tfoot .download-btn{font-size: 14px;}
+  .order__item__title.order-detail-wrap table th,.order__item__title.order-detail-wrap th, .order__item__title.order-detail-wrap table td{font-size: 14px;line-height: 20px;}
+  .cost-breakdown-right span.grand-total {font-size: 18px;line-height: 26px;}
 }
 @media(max-width: 1023px){
   .footer-blocks {gap: 28px;}
@@ -24876,7 +24949,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .athletes-inner-wrap .athletes-card-content-overlay{padding: 44px 52px 44px 30px;}
   .athletes-inner-wrap .athletes-card-content-overlay{border-radius:8px;}  
   .account__table__item.order-list.desktop {display: none;}
-  .account__table__item.order-list .table-wrap .order-wrap .order-image, .product-detail .order-image{padding-bottom: 36%;width: 65px;max-width: 65px;}
+  .account__table__item.order-list .table-wrap .order-wrap .order-image, .product-detail .order-image{padding-bottom: 83px;width: 65px;max-width: 65px;}
   .account__table__item.order-list.mobile tbody th {padding: 0;font-size: 12px;line-height: 16px;}
   .account__table__item.order-list.mobile tbody th a {color: #A5A5A5;}
   .account__table__item.order-list.mobile tbody td {padding: 0 !important;font-size: 12px;line-height: 16px;max-width: 100px;text-align: right;}
@@ -24889,6 +24962,83 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .account__table__item.order-list.mobile .order-list-header{ margin-bottom: 30px;}
   .page--my-orders .order-detail-header{padding: 0 20px;}
   .page--my-orders .order-detail-header h3{font-size: 18px;line-height: 26px;}
+  .order__item__title.order-detail-wrap .desktop-table,.order__item__title.order-detail-wrap .responsive-order.mobile > th {display: none;}
+  .order__item__title.order-detail-wrap .footer-btns{flex-wrap: wrap;order: 2;padding-top: 26px;gap: 15px;}
+  .order__item__title.order-detail-wrap tr th, .order__item__title.order-detail-wrap tr td {padding: 0 0 6px;font-size: 14px;line-height: 20px;}
+  .order__item__title.order-detail-wrap .order-image {width: 59px;max-width: 59px;padding-bottom: 83px;}
+  .template-customers-order .order-details {max-width: calc(100% - 70px);display: flex;align-items: center;justify-content: space-between;gap: 20px;}
+  .template-customers-order .order-details .price-qty span {
+    width: 100%;
+    display: block;font-weight: 500;
+  }
+  .order-address h4{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .order-address p{font-size: 14px;line-height: 20px;}
+  .mobile-table td.order-payment-status:last-child {
+    padding: 0 !important;
+  }
+  tbody.mobile-table {
+    border-bottom: 1px solid #E6E6E6;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+  }
+  .order-inner-wrap{margin-bottom: 24px;padding-bottom: 24px;}
+  .order__item__title.order-detail-wrap {
+    padding: 20px;
+  }
+  .template-customers-order .order-details .price-qty span.qty {
+    color: #717684;
+  }
+  .template-customers-order .order-details a {
+    max-width: 118px;
+  }
+  .template-customers-order .order-details .price-qty {
+    text-align: right;
+  }
+  .account__table__item.order-list .table-wrap .order-wrap, .product-detail{gap: 12px;width: 100%;justify-content: space-between;}
+  .order-inner-detail .order-payment-status {display: none;}
+  .order__item__title.order-detail-wrap tfoot td.order-payment-status {
+    padding: 0 0 6px!important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .account-tabs{margin-bottom: 20px;}
+  .order-detail-header{padding: 0 20px;margin-bottom: 28px;}
+  .order-detail-header h3{font-size: 18px;line-height: 26px;}
+  .order__item__title.order-detail-wrap .order-item-count{margin-bottom: 0;}
+  .order__item__title.order-detail-wrap .responsive-order{grid-template-columns: repeat(1,minmax(0,1fr));}
+  .order__item__title.order-detail-wrap tfoot .download-btn{margin: 0;width: calc(50% - 7.5px);}
+  .order__item__addresses {margin-top: 40px;}
+  .cost-breakdown-wrap{padding-left: 0;}
+  .order__item__title.order-detail-wrap tfoot .reorder-btn {padding: 12px 30px;width: calc(50% - 7.5px);}
+  .order-inner-wrap p{font-size: 14px;line-height: 20px;}
+  .order__item__title.order-detail-wrap tfoot {
+    border-top: none;
+  }
+  .order__item__title.order-detail-wrap tfoot tr:first-child {
+    padding-bottom: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+  }
+  .template-customers-order .page-customer {
+    padding: 38px 0 20px;
+  }
+  .cost-breakdown-right span.grand-total {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  tbody.mobile-table tr {
+    display: block;
+  }
+  .template-customers-account td.order-title.order-wrap,.page--my-orders td.order-title.order-wrap{
+    justify-content: flex-start !important;
+  }
 }
 @media(max-width: 991px){  
   #gloves-adviser-drawer{width: 700px;}
@@ -25039,6 +25189,9 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .page-customer .account__logout {display: none;}
   .template-customers-account .account-tabs{margin-bottom: 40px;}
   .template-customers-account .section__header {margin-bottom: 8px;}
+  .order__item__title.order-detail-wrap .footer-btns{gap:0;}
+  .order__item__title.order-detail-wrap tfoot .reorder-btn,.order__item__title.order-detail-wrap tfoot .download-btn{width:100%;}
+  .order__item__title.order-detail-wrap tfoot .download-btn{margin: 18px 0 0;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}

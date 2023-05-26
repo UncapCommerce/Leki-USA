@@ -1,7 +1,223 @@
+{%- liquid
+  assign section_width = section.settings.width
+  assign animations_enabled = settings.animations_enabled
+  assign animation_anchor = '#Sponsorship--' | append: section.id
+  assign animation_delay = 150
+-%}
+
+<style>
+  #Sponsorship--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  .sponsorship-section .wrapper--narrow {
+    width: 960px;
+  }
+  {% if section.settings.sponsorship_bgimg != blank %}
+  .Sponsorship-bg {
+    background-image: url('{{ section.settings.sponsorship_bgimg | img_url:'' }}');
+    background-repeat: no-repeat;
+  }{% endif %}
+  .Sponsorship-form-wrapper.has-bg {
+    padding-top: 206px;
+  }
+  .Sponsorship-form-wrapper.has-bg .sponsorship-detail ,.Sponsorship-form-wrapper.has-bg .sponsorship-detail h2{
+    text-align: center;
+    color: {{ section.settings.content_color }}
+  }
+  .Sponsorship-form-wrapper.has-bg .sponsorship-detail h2 {
+    margin-bottom: 16px;
+  }
+  .Sponsorship-form-wrapper.has-bg .sponsorship-detail p {
+    margin: 0;
+    line-height: 24px;
+  }
+  .Sponsorship-form-wrapper.has-bg .sponsorship-detail {
+    margin-bottom: 78px;
+  }
+  @media(max-width: 1440px){
+    .Sponsorship-form-wrapper.has-bg {
+      padding-top: 180px;
+    }
+  }
+  @media(max-width: 1023px){
+    .Sponsorship-form-wrapper.has-bg {
+      padding-top: 120px;
+    }
+  }
+  @media(max-width: 767px){
+  #Sponsorship--{{ section.id }} {
+    --PT: {{ section.settings.mob_padding_top }}px;
+    --PB: {{ section.settings.mob_padding_bottom }}px;
+  }
+    .Sponsorship-form-wrapper.has-bg {
+      padding-top: 0;
+    }
+    .Sponsorship-bg{background:none;}    
+  }
+</style>
+
+<section
+id="Sponsorship--{{ section.id }}"
+class="section-padding"
+data-section-type="Sponsorship-form"
+data-section-id="{{ section.id }}">
+  {% if section.settings.mob_image != blank %}
+    <div class="Sponsorship-mobile-image hidden-lg">
+      <figure>
+        <img class="lazyload" src="{{ section.settings.mob_image | img_url:'' }}" alt="{{ section.settings.mob_image.alt }}">
+      </figure>
+    </div>
+  {% endif %}
+  <div class="Sponsorship-bg">
+    <div class="{{ section_width }}">
+      <div class="Sponsorship-form-wrapper {% if section.settings.sponsorship_bgimg != blank %}has-bg{% endif %}">
+        <div class="sponsorship-detail">
+          {% if section.settings.title != blank %}<h2 class="h1">{{ section.settings.title }}</h2>{% endif %}
+          {% if section.settings.description != blank %}<p>{{ section.settings.description }}</p>{% endif %}
+        </div>
+        <div class="sponsorship-tabs">
+          <ul>
+            {% for block in section.blocks %}
+              {% if block.settings.tab_title != blank %}<li class="tab-title" data-tab={{ forloop.index }}>{{ block.settings.tab_title }}</li>{% endif %}
+            {% endfor %}
+          </ul>
+            {% for block in section.blocks %}
+              <div class="sponsor-tab-content" data-id="{{ forloop.index }}">
+                {% if block.settings.block_title != blank %}<h2>{{ block.settings.block_title }}</h2>{% endif %}
+                {% if block.settings.block_content != blank %}{{ block.settings.block_content }}{% endif %}
+              </div>
+            {% endfor %}          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var tab = document.querySelectorAll(".sponsorship-tabs .tab-title");
+    tab.forEach(element => {
+      element.onclick = function(){
+        tab.forEach(tabs => {          
+          tabs.classList.remove("active");   
+          tabs.getAttribute('data-set');
+        });
+        element.classList.add("active");        
+      };
+    });  
+  });
+</script>
+
 {% schema %}
   {
     "name": "Sponshorship Page",
-    "settings": [],
+    "class":"sponsorship-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "sponsorship_bgimg",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob_image",
+        "label": "Mobile Iamge"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "color",
+        "id": "content_color",
+        "label": "Content Color"
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper--narrow",
+        "options": [
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" },
+          { "value": "wrapper--narrow", "label": "Page width narrow" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ],
+    "blocks":[
+      {
+        "type":"tab-content",
+        "name":"Tab Content",
+        "settings":[
+          {
+            "type": "text",
+            "id": "tab_title",
+            "label": "Tab Title"
+          },
+          {
+            "type": "text",
+            "id": "block_title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "block_content",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
     "presets":[
       {
         "name": "Sponshorship Page"
