@@ -15,7 +15,8 @@
   <div class="wrapper">
     <div class="order text-left">
       <div class="section__header">
-        <h1 class="section__heading h2"><a href="{{ routes.account_url }}">{{ 'customer.account.title' | t }}</a></h1>
+        <h1 class="section__heading account__heading">{{ 'customer.account.title' | t }}</h1>          
+
         {%- if settings.show_spacer_lines -%}
           <hr class="section__heading-line">
         {%- endif -%}
@@ -65,7 +66,7 @@
                   <th class="desktop-order">{{ 'customer.orders.total' | t }}</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="desktop-table">
                 {% for line_item in order.line_items %}                  
                   <tr class="responsive-order" id="{{ line_item.id }}">
                     <th>{{ 'customer.order.product' | t }}</th>
@@ -75,7 +76,7 @@
                           <img class="lazyload" src="{{ line_item.product.featured_image | img_url:'110' }}">
                         </div>
                         <div class="order-details">
-                          {{ line_item.title | strip_html | link_to: line_item.product.url }}
+                          {{ line_item.title | strip_html | link_to: line_item.product.url }}                
                         </div>
                       </div>
                       {% if line_item.fulfillment %}
@@ -138,9 +139,9 @@
                               {{- line_item.unit_price_measurement.reference_value -}}
                           {%- endif -%}
                           {{- line_item.unit_price_measurement.reference_unit -}}
-                        </span>
+                        </span>                    
                       {%- endif -%}
-
+                        
                       {% comment %}
                         Display the specific line item discount
                       {% endcomment %}
@@ -159,10 +160,57 @@
                         {% endif %}
                       </span>
                     </td>
-                  </tr>
+                  </tr>               
                 {% endfor %}
               </tbody>
+              <tbody class="mobile-table">               
+                  {% for line_item in order.line_items %}  
+                   <tr class="responsive-order" id="{{ line_item.id }}">
+                    <tr>
+                    <td>
+                      <div class="product-detail">
+                        <div class="order-image">
+                          <img class="lazyload" src="{{ line_item.product.featured_image | img_url:'110' }}">
+                        </div>
+                        <div class="order-details">
+                          {{ line_item.title | strip_html | link_to: line_item.product.url }}
+                          <div class="price-qty">
+                            <span>
+                            {% if line_item.original_price > line_item.final_price %}
+                              <s>{{ line_item.original_price | money_with_currency }}</s>
+                            {% endif %}
+                            {%- if line_item.final_price == 0 -%}
+                              {{ 'products.product.free' | t  }}
+                            {%- else -%}
+                              {{ line_item.final_price | money_with_currency }}
+                            {%- endif -%}
+                            </span>
+                            <span class="qty">x{{ line_item.quantity }}</span>
+                          </div>
+                        </div>
+                      </div>
+                      {% if line_item.fulfillment %}
+                        <div class="note">
+                          {% assign created_at = line_item.fulfillment.created_at | date: format: 'month_day_year' %}
+                          {{ 'customer.order.fulfilled_at' | t: date: created_at }}
+                          {% if line_item.fulfillment.tracking_number %}
+                            <a href="{{ line_item.fulfillment.tracking_url }}">{{ line_item.fulfillment.tracking_company }} #{{ line_item.fulfillment.tracking_number}}</a>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% unless line_item.selling_plan_allocation == nil  %}
+                        <p class="order__item__subscription">
+                          {{ line_item.selling_plan_allocation.selling_plan.name }}
+                        </p>
+                      {% endunless %}
+                    </td>
+                    </tr>      
+                  </tr>
+                  {% endfor %}                  
+              </tbody>
               <tfoot>
+                <td class="order-payment-status">{{ 'customer.order.payment_status' | t | link_to: order.customer_url }}<span>{{ order.financial_status_label | link_to: order.customer_url }}</span></td>
+                <td class="order-payment-status">{{ 'customer.order.fulfillment_status' | t | link_to: order.customer_url }}<span>{{ order.fulfillment_status_label | link_to: order.customer_url }}</span></td>
                 <tr class="responsive-order">
                   <td style="text-align:left;" class="footer-btns">
                   <a class="btn reorder-btn">reorder</a>

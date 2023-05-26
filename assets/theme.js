@@ -14829,6 +14829,7 @@
     const sub_collection = document.querySelector('.sub-collections-wrap');
     const about_content = document.querySelector('.about-content-wrap');
     const about_image = document.querySelector('.about-image-wrap');
+    const recently_view = document.querySelector('.recently-viewed-slider');
     
     if(sub_collection != null){
       const subcollection = new Flickity(sub_collection, {  
@@ -14840,6 +14841,18 @@
         groupCells: 3,
         groupCells: true
       });
+    }
+
+    if(recently_view != null){
+      const recently_viewed_slider = new Flickity(recently_view, {
+        contain : true,
+        pageDots: false, 
+        lazyLoad: true,
+        freeScroll: true,
+        prevNextButtons: true,
+        groupCells: 3,
+        groupCells: true
+        });
     }
 
     if(about_content != null){

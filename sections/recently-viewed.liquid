@@ -8,7 +8,7 @@
       <h3>{{ section.settings.title }}</h3>
       <a href="/pages/recently-views" target="_blank">View all Products</a>
     </div>
-    <div class="recently-viewed-grid list-style-none">
+    <div class="recently-viewed-grid list-style-none {% unless page.handle contains 'recently-views' %}recently-viewed-slider{% endunless %}">
     <!-- Recently viewed products will appear here -->
     </div>
   </div>
@@ -39,6 +39,8 @@ function getRecentlyViewedProducts() {
   
           </div>
           </div>
+
+          ${item.ProductQuickbuy}
           </div>
         </div>
 
@@ -122,25 +124,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
     width: 100%;
   }
   .recently-viewed-grid {
-    display: grid;
-    grid-gap: 24px;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 332px), 1fr));
     list-style: none;
     margin:0; 
     max-width: 1131px;
     padding: 40px;
     background: #fff;
     border: 1px solid #ECECEB;
-  }    
-  .recently-viewed-grid-item {
-    display: flex;
-    flex-direction: column;
-/*     text-align: center; */
+  }   
+  .recently-viewed-grid:not(.recently-viewed-slider){
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 332px), 1fr));
   }
-  .recently-viewed-a {
-    text-decoration: none;
-    color: black;
-  }  
+  .recently-viewed-grid.recently-viewed-slider {
+    padding: 40px 28px;
+  }
   .recently-viewed-grid-item .product-grid-item__info{
     text-align: left;
     gap: 0;
@@ -179,6 +177,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     line-height: 20px;
     color: var(--COLOR-BLACK);
   }
+  .recently-viewed-grid.recently-viewed-slider .recently-viewed-grid-item {
+    max-width: 356px;
+    width: 356px;
+    padding: 12px;
+  }
   @media(max-width: 1023px){
     .recently-viewed-wrapper {
       background: #fff;
@@ -188,6 +191,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
       padding: 0;
       border: none;
     }
+  }
+  @media(max-width: 767px){
+  .recently-viewed-grid.recently-viewed-slider {
+    padding: 0;
+  }
+  .recently-viewed-grid.recently-viewed-slider .recently-viewed-grid-item {
+    max-width: 174px;
+    width: 174px;
+    padding: 10px;
+  }
   }
 </style>
 
