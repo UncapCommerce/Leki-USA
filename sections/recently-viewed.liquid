@@ -13,92 +13,141 @@
     </div>
   </div>
 </section>
+
 <script>
-function getRecentlyViewedProducts() {
-  const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
-  const recentlyViewedHtml = [];
-  {% liquid 
-    assign image = featured_media.preview_image
-    assign image_aspect_ratio = image.aspect_ratio | default: 1
-  %}
-  productData.map(item => {
-    let data_length = productData.slice(0, 3);
-    recentlyViewedHtml.unshift(`
-	
-	<div class="product-grid-item recently-viewed-grid-item">
-      <div class="product-grid-item__inner">
-        <div class="product-grid-item__image">
-        <div class="product__media__outer">
-        <div class="product__media__inner">
-          <div class="product__media__container" style="--aspect-ratio: {{ image_aspect_ratio }};">
-          <a href="${item.productUrl}"><img src="${item.productImg}"
-               class="product__img" 
-               alt="${item.productImageAltText}"
-               loading="lazy"
-                                         ></a>
+{% if page.handle contains 'recently-views' %}
+  function getRecentlyViewedProducts() {
+    const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
+    const recentlyViewedHtml = [];
+    {% liquid 
+      assign image = featured_media.preview_image
+      assign image_aspect_ratio = image.aspect_ratio | default: 1
+    %}
   
-          </div>
-          </div>
-
-          ${item.ProductQuickbuy}
-          </div>
-        </div>
-
-        <div class="product-grid-item__info{% unless settings.content_alignment == 'center' %}{{ product_alignment_class }}{% endunless %}"
-          {% if animations_enabled %}
-          data-aos="{{ text_animation }}"
-          {% if animation_anchor %}
-            data-aos-anchor="{{ animation_anchor }}"
-          {% endif %}
-          data-aos-delay="{{ animation_delay | times: 150 }}"
-          {% endif %}>
-          <a class="product-grid-item__title" href="{{ product.url | within: collection }}" aria-label="{{ product.title | strip_html | escape }}"{% if index > 1 %} tabindex="-1"{% endif %} data-grid-link>
-            ${item.productTitle}
-          </a>  
-
-          <div class="price price--on-sale ">
-          <div class="price__container">
-          <div class="price__sale">
-                  <span class="visually-hidden visually-hidden--inline">Regular price</span>
-                  <span>
-                    <s class="price-item price-item--regular">
-                      
-                        ${item.productComparePrice}
-                      
-                    </s>
-                  </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
-                <span class="price-item price-item--sale price-item--last">
-                  ${item.productPrice}
-                </span>
-              </div>
-              <small class="unit-price caption hidden">
-                <span class="visually-hidden">Unit price</span>
-                <span class="price-item price-item--last">
-                  <span></span>
-                  <span aria-hidden="true">/</span>
-                  <span class="visually-hidden">&nbsp;per&nbsp;</span>
-                  <span>
-                  </span>
-                </span>
-              </small>
-            </div>
-          </div>
-          </div>
-
-          <div class="swatch__button" data-swatch-button>         
-          ${item.productVariant}
-          </div>
-        </div>
+    if ( productData == null ){
+      document.querySelector('.recently-viewed-wrapper').style.display = 'none';
+    }
+    if ( productData != null ){
+    productData.forEach(function(item, key) { 
+      //console.log("productData-->", item, "---", key);
+        recentlyViewedHtml.unshift(`
+      	<div class="product-grid-item recently-viewed-grid-item">
+            <div class="product-grid-item__inner">
+              <div class="product-grid-item__image">
+              <div class="product__media__outer">
+              <div class="product__media__inner">
+                <div class="product__media__container" style="--aspect-ratio: {{ image_aspect_ratio }};">
+                <a href="${item.productUrl}"><img src="${item.productImg}"
+                     class="product__img" 
+                     alt="${item.productImageAltText}"
+                     loading="lazy"
+                                               ></a>
         
-      </div>
-    </div> 
-   `);
+                </div>
+                </div>
+                <div class="product__badge">
+                ${item.ProductBadges}
+                </div>
+                ${item.ProductQuickbuy}
+                </div>
+              </div>
+      
+              <div class="product-grid-item__info{% unless settings.content_alignment == 'center' %}{{ product_alignment_class }}{% endunless %}"
+                {% if animations_enabled %}
+                data-aos="{{ text_animation }}"
+                {% if animation_anchor %}
+                  data-aos-anchor="{{ animation_anchor }}"
+                {% endif %}
+                data-aos-delay="{{ animation_delay | times: 150 }}"
+                {% endif %}>
+                <a class="product-grid-item__title" href="{{ product.url | within: collection }}" aria-label="{{ product.title | strip_html | escape }}"{% if index > 1 %} tabindex="-1"{% endif %} data-grid-link>
+                  ${item.productTitle}
+                </a>  
+                ${item.productPrice}
+      
+                <div class="swatch__button" data-swatch-button>         
+                ${item.productVariant}
+                </div>
+              </div>
+              
+            </div>
+          </div> 
+        `);
+    });
+    }
+    
+    const newProductData = `${recentlyViewedHtml.join("")}`;
+    const fullContent = document.getElementsByClassName("recently-viewed-grid");
+    fullContent[0].innerHTML = newProductData;
+  }
+  {% else %}
+  function getRecentlyViewedProducts() {
+    const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
+    const recentlyViewedHtml = [];
+    {% liquid 
+      assign image = featured_media.preview_image
+      assign image_aspect_ratio = image.aspect_ratio | default: 1
+    %}
   
-  });
-  const newProductData = `${recentlyViewedHtml.join("")}`;
-  const fullContent = document.getElementsByClassName("recently-viewed-grid");
-  fullContent[0].innerHTML = newProductData;
-}
+    if ( productData == null ){
+      document.querySelector('.recently-viewed-wrapper').style.display = 'none';
+    }
+    if ( productData != null ){
+    productData.forEach(function(item, key) { 
+      //console.log("productData-->", item, "---", key);
+      if (key == 0 || key == 1 || key == 2){
+        recentlyViewedHtml.unshift(`
+      	<div class="product-grid-item recently-viewed-grid-item">
+            <div class="product-grid-item__inner">
+              <div class="product-grid-item__image">
+              <div class="product__media__outer">
+              <div class="product__media__inner">
+                <div class="product__media__container" style="--aspect-ratio: {{ image_aspect_ratio }};">
+                <a href="${item.productUrl}"><img src="${item.productImg}"
+                     class="product__img" 
+                     alt="${item.productImageAltText}"
+                     loading="lazy"
+                                               ></a>
+        
+                </div>
+                </div>
+                <div class="product__badge">
+                ${item.ProductBadges}
+                </div>
+                ${item.ProductQuickbuy}
+                </div>
+              </div>
+      
+              <div class="product-grid-item__info{% unless settings.content_alignment == 'center' %}{{ product_alignment_class }}{% endunless %}"
+                {% if animations_enabled %}
+                data-aos="{{ text_animation }}"
+                {% if animation_anchor %}
+                  data-aos-anchor="{{ animation_anchor }}"
+                {% endif %}
+                data-aos-delay="{{ animation_delay | times: 150 }}"
+                {% endif %}>
+                <a class="product-grid-item__title" href="{{ product.url | within: collection }}" aria-label="{{ product.title | strip_html | escape }}"{% if index > 1 %} tabindex="-1"{% endif %} data-grid-link>
+                  ${item.productTitle}
+                </a>  
+                ${item.productPrice}
+      
+                <div class="swatch__button" data-swatch-button>         
+                ${item.productVariant}
+                </div>
+              </div>
+              
+            </div>
+          </div> 
+        `);
+      }
+    });
+    }
+    
+    const newProductData = `${recentlyViewedHtml.join("")}`;
+    const fullContent = document.getElementsByClassName("recently-viewed-grid");
+    fullContent[0].innerHTML = newProductData;
+  }
+{% endif %}
 
 document.addEventListener("DOMContentLoaded", function (event) {
   getRecentlyViewedProducts();
@@ -129,8 +178,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     max-width: 1131px;
     padding: 40px;
     background: #fff;
-    border: 1px solid #ECECEB;
+    border: 1px solid #ECECEB;    
   }   
+  .recently-viewed-grid:not(.flickity-enabled){
+    display: flex;
+  }
   .recently-viewed-grid:not(.recently-viewed-slider){
     display: grid;
     grid-gap: 24px;
@@ -180,7 +232,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   .recently-viewed-grid.recently-viewed-slider .recently-viewed-grid-item {
     max-width: 356px;
     width: 356px;
-    padding: 12px;
+    padding: 0 12px;
+  }
+  @media(max-width: 1199px){
+    .recently-viewed-grid.recently-viewed-slider {
+      padding: 30px 0px;
+    }
   }
   @media(max-width: 1023px){
     .recently-viewed-wrapper {
@@ -193,14 +250,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   @media(max-width: 767px){
-  .recently-viewed-grid.recently-viewed-slider {
-    padding: 0;
+    .recently-viewed-grid.recently-viewed-slider {
+      padding: 0;
+      margin: 0 -10px;
+    }
+    .recently-viewed-grid.recently-viewed-slider .recently-viewed-grid-item {
+      max-width: 284px;
+      width: 284px;
+      padding: 10px;
+    }
   }
-  .recently-viewed-grid.recently-viewed-slider .recently-viewed-grid-item {
-    max-width: 174px;
-    width: 174px;
-    padding: 10px;
-  }
+  @media(max-width: 575px){
+    .recently-viewed-grid.recently-viewed-slider .recently-viewed-grid-item {
+      max-width: 170px;
+      width: 170px;
+    }
+    .recently-viewed-grid-item .product__media__outer {
+      padding-top: 140%;
+    }
   }
 </style>
 

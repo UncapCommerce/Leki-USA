@@ -77,6 +77,9 @@
                         </div>
                         <div class="order-details">
                           {{ line_item.title | strip_html | link_to: line_item.product.url }}                
+                          <div class="line-item_variant">
+                            {% if line_item.product.template_suffix == 'gloves' %}Glove Size:{% else %}Pole Length: {% endif %} {{ line_item.variant.title }}
+                          </div>
                         </div>
                       </div>
                       {% if line_item.fulfillment %}
@@ -173,7 +176,12 @@
                           <img class="lazyload" src="{{ line_item.product.featured_image | img_url:'110' }}">
                         </div>
                         <div class="order-details">
-                          {{ line_item.title | strip_html | link_to: line_item.product.url }}
+                          <div>
+                            {{ line_item.title | strip_html | link_to: line_item.product.url }}
+                            <div class="line-item_variant">
+                              {% if line_item.product.template_suffix == 'gloves' %}Glove Size:{% else %}Pole Length: {% endif %} {{ line_item.variant.title }}
+                            </div>
+                          </div>
                           <div class="price-qty">
                             <span>
                             {% if line_item.original_price > line_item.final_price %}

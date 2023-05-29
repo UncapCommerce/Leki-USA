@@ -52,6 +52,12 @@
       },
       {
         "type": "color",
+        "id": "color_red",
+        "label": "Red text",
+        "default": "#f0f0f0"
+      },
+      {
+        "type": "color",
         "id": "color_accent",
         "label": "Accent",
         "default": "#004AC7"

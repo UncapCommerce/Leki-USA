@@ -1,3 +1,4 @@
+{% if customer %}
 <section class="page-customer">
   <div class="wrapper">
     <div class="section__header">
@@ -97,14 +98,10 @@
         {% endpaginate %}
       </div>
       <div class="account__table__item order-list mobile">
-            <div class="order-list-header">
-              <h4 class="account__heading">{{ 'customer.orders.title' | t }}</h4>
-              <a href="/pages/my-orders" target="_blank">View all Orders</a>
-            </div>
             {% comment %}
             If we have past orders, loop through each one
             {% endcomment %}
-            {% paginate customer.orders by 1 %}
+            {% paginate customer.orders by 2 %}
               {% if customer.orders.size != 0 %}
                 <div class="table-wrap">
                   <table class="full">
@@ -118,7 +115,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      {% for order in customer.orders limit:1 %}
+                      {% for order in customer.orders limit:2 %}
                         {%- liquid
                           if order.total_price == 0
                             assign order_total = 'products.product.free' | t | link_to: order.customer_url
@@ -216,7 +213,7 @@
     </div>
   </div>
 </section>
-
+{% endif %}
 {% schema %}
   {
     "name": "My Order",

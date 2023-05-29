@@ -1,4 +1,17 @@
 {%- comment -%} /templates/customers/login.liquid {%- endcomment -%}
+
+<style>
+  .page-customer{
+    background-image: url('{{ section.settings.account_bgimg | img_url:'' }}');
+    background-repeat: no-repeat;
+    padding: 123px 0 112px;
+  }
+  @media(max-width:767px){
+    .page-customer{
+      padding: 83px 0 131px;
+    }
+  }
+</style>
 <section class="page-customer" data-account-form>
   <div class="wrapper">
     <div class="form-vertical-wrapper">
@@ -10,11 +23,11 @@
             {{ 'customer.recover_password.success' | t }}
           </div>
           <div class="section__header">
-            <h2 class="section__heading account__heading--small">{{ 'customer.login.title' | t }}</h2>
+            <h2 class="section__heading">{{ 'customer.login.title' | t }}</h2>
             {%- if settings.show_spacer_lines -%}
               <hr class="section__heading-line">
             {%- endif -%}
-            <p class="account__subheading">{{ 'customer.login.create_account_prompt' | t }} <a href="{{ routes.account_register_url }}">{{ 'customer.login.create_account_cta' | t }}</a></p>
+            {% comment %}<p class="account__subheading">{{ 'customer.login.create_account_prompt' | t }} <a href="{{ routes.account_register_url }}">{{ 'customer.login.create_account_cta' | t }}</a></p>{% endcomment %}
           </div>
           {{ form.errors | default_errors }}
           <label for="CustomerEmail" class="hidden-label">{{ 'customer.login.email' | t }}</label>
@@ -23,17 +36,23 @@
             <label for="CustomerPassword" class="hidden-label">{{ 'customer.login.password' | t }}</label>
             <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input--full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}" required>
           {% endif %}
-          <button type="submit" class="btn">{{ 'customer.login.sign_in' | t }}</button>
-          <div class = "return light-gray">
+          <div class = "return light-gray remember-login">
+            <div class="remember-text">
+              <input type="checkbox" id="Form-{{ section.id }}" class="input--checkbox" name="" value="">
+              <span>Remember me</span>
+            </div>
             {% if form.password_needed %}
               <p><a href="#RecoverPasswordForm" id="RecoverPassword" data-show-reset>{{ 'customer.login.forgot_password' | t }}</a></p>
             {% endif %}
           </div>
+          <button type="submit" class="btn login-btn">{{ 'customer.login.sign_in' | t }}</button>     
         {% endform %}
+        <a href="{{ routes.account_register_url }}" class="register-btn"><button type="submit" class="btn">{{ 'customer.register.title' | t }}</button> </a>  
+        <div class="login-info">{{ section.settings.login_info }}</div>
       </div>
 
       <div id="RecoverPasswordForm" class="text-left is-hidden" data-recover-password>
-        <h2 class="account__heading account__heading--small">{{ 'customer.recover_password.title' | t }}</h2>
+        <h2 {% comment %}class="account__heading account__heading--small"{% endcomment %}>{{ 'customer.recover_password.title' | t }}</h2>
         <div class="form-vertical">
           {% form 'recover_customer_password', id: 'RecoverCustomerPassword' %}
             {{ form.errors | default_errors }}
@@ -67,3 +86,32 @@
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Login form",
+  "class": "shopify-section--login-form",
+  "settings": [    
+    {
+      "type": "image_picker",
+      "id": "account_bgimg",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "account_mob_bgimg",
+      "label": "Mobile Iamge"
+    },
+    {
+      "type": "richtext",
+      "id": "login_info",
+      "label": "Login Information"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Login form"
+    }
+  ]
+}
+{% endschema %}

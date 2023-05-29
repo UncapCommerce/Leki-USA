@@ -2102,7 +2102,9 @@
     </div>
   {%- endunless -%}
 {%- endunless -%}
-
+<div data-bv-show="review_highlights" data-bv-product-id=""></div>
+<div data-bv-show="reviews" data-bv-product-id=""></div>
+<div data-bv-show="questions" data-bv-product-id=""></div>
 {% comment %}
 {%- capture product_image -%}
 "<div class='product__media__outer'><div class='product__media__inner'><div class='{{ image_container_class }}' style='--aspect-ratio: {{ image_aspect_ratio }};'><a class='product__media__holder' href='{{ product.url | within: collection }}' aria-label='{{ product.title | strip_html | escape }}' data-grid-link
@@ -2298,19 +2300,71 @@
 -%}
 {%- capture product_badges -%}
   {%- if custom_badge_metafield and show_custom_badge -%}
-    "<div class='product__badge__item product__badge__item--custom'><span>{{ custom_badge_metafield_text }}</span></div>"
+    <div class='product__badge__item product__badge__item--custom'><span>{{ custom_badge_metafield_text }}</span></div>
   {%- endif -%}
 
   {%- if sold_out and show_sold_badge -%}
-    "<div class='product__badge__item product__badge__item--sold'><span>{{ sold_out_text }}</span></div>"
+    <div class='product__badge__item product__badge__item--sold'><span>{{ sold_out_text }}</span></div>
   {%- endif -%}
 
   {%- if on_sale and show_sale_badge and sold_out == false and show_saving_badge -%}
-    "<div class='product__badge__item product__badge__item--sale'><span>{{ sale_text }}</span><span class='product__badge__item product__badge__item--saving'>{{ saving_badge_text }}</span></div>"
+    <div class='product__badge__item product__badge__item--sale'><span>{{ sale_text }}</span><span class='product__badge__item product__badge__item--saving'>{{ saving_badge_text }}</span></div>
   {%- endif -%}
 
 {%- endcapture -%}
 
+{%- capture product_info_price -%}
+  "<a class='product-grid-item__price price' href='{{ product.url | within: collection }}'{% if index > 1 %} tabindex='-1'{% endif %} data-grid-link>
+    {%- liquid
+      if product.price == 0 and product.price_varies == false
+        assign product_price = 'products.product.free' | t
+        assign product_price_min = 'products.product.free' | t
+      elsif currency_code_enable
+        assign product_price = product.price | money_with_currency
+        assign product_price_min = product.price_min | money_with_currency
+      else
+        assign product_price = product.price | money_without_currency
+        assign product_price_min = product.price_min | money_without_currency
+      endif
+    -%}
+
+    {%- if product.price_varies -%}
+      {{- 'products.general.from_text_html' | t: price: product_price_min -}}
+    {%- else -%}
+      {%- if on_sale -%}
+        <span class='product-grid-item__price__new'>{{ product_price }}</span>        
+          {%- if currency_code_enable -%}
+            <s class='compare_price'>
+              {{- product.compare_at_price | money_with_currency -}}
+            </s>
+          {%- else -%}
+          <s class='compare_price'>
+            {{- product.compare_at_price | money_without_currency -}}
+          </s>
+          {%- endif -%}        
+      {%- else -%}
+        {{- product_price -}}
+      {%- endif -%}
+    {%- endif -%}
+    {%- if current_variant.unit_price_measurement -%}
+      {%- capture unit_price_separator -%}
+        <span aria-hidden='true'>/</span><span class='visually-hidden'>{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+      {%- endcapture -%}
+      <span class='product__unit-price{% if current_variant.unit_price == 0 %} hidden{% endif %}'>
+        {{ current_variant.unit_price | money_without_currency }}
+        {{ unit_price_separator }}
+        {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
+          {{- current_variant.unit_price_measurement.reference_value -}}
+        {%- endif -%}
+        {{ current_variant.unit_price_measurement.reference_unit }}
+      </span>
+    {%- endif -%}
+  </a>"
+{%- endcapture -%}
+
+{%- capture cart_icon -%}
+  <svg width='24' height='25' aria-hidden='true' focusable='false' role='presentation' class='icon icon-shopping-bag' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.28118 13.6518C3.39353 11.8541 3.47473 10.5791 3.663 9.61434C3.84713 8.67078 4.11601 8.12798 4.53399 7.73531C4.95197 7.34264 5.51048 7.10814 6.46369 6.98323C7.43831 6.85551 8.7159 6.854 10.517 6.854H13.4858C15.2869 6.854 16.5645 6.85551 17.5392 6.98323C18.4924 7.10814 19.0509 7.34264 19.4689 7.73531C19.8868 8.12798 20.1557 8.67078 20.3399 9.61434C20.5281 10.5791 20.6093 11.8541 20.7217 13.6518C20.8475 15.6658 20.9355 17.0991 20.8543 18.1894C20.7748 19.2581 20.5393 19.8748 20.1123 20.3293C19.6853 20.7838 19.0845 21.0573 18.0229 21.2033C16.9398 21.3523 15.5038 21.354 13.4858 21.354H10.517C8.49909 21.354 7.06308 21.3523 5.97995 21.2033C4.91832 21.0573 4.31753 20.7838 3.89057 20.3293C3.4636 19.8748 3.22804 19.2581 3.14852 18.1894C3.06739 17.0991 3.1553 15.6658 3.28118 13.6518Z' stroke='white' stroke-width='2'/><path fill-rule='evenodd' clip-rule='evenodd' d='M7.85158 9.104C8.38955 9.104 8.73211 8.4711 8.60267 7.94893C8.53559 7.67834 8.5 7.39533 8.5 7.104C8.5 5.171 10.067 3.604 12 3.604C13.933 3.604 15.5 5.171 15.5 7.104C15.5 7.39533 15.4644 7.67834 15.3973 7.94893C15.2679 8.4711 15.6105 9.104 16.1484 9.104C16.413 9.104 16.6563 8.94854 16.7406 8.69777C16.9088 8.1972 17 7.66125 17 7.104C17 4.34258 14.7614 2.104 12 2.104C9.23858 2.104 7 4.34258 7 7.104C7 7.66125 7.09116 8.1972 7.25938 8.69777C7.34365 8.94854 7.58703 9.104 7.85158 9.104Z' fill='white'/><path d='M8.5 13.104C8.77614 13.104 9 12.8801 9 12.604C9 12.3279 8.77614 12.104 8.5 12.104C8.22386 12.104 8 12.3279 8 12.604C8 12.8801 8.22386 13.104 8.5 13.104Z' stroke='white' stroke-width='2'/><path d='M15.5 13.104C15.7761 13.104 16 12.8801 16 12.604C16 12.3279 15.7761 12.104 15.5 12.104C15.2239 12.104 15 12.3279 15 12.604C15 12.8801 15.2239 13.104 15.5 13.104Z' stroke='white' stroke-width='2'/></svg>
+{%- endcapture -%}
 {%- capture quickbuy_button -%}
   {%- liquid
     assign quick_buy = settings.quick_buy
@@ -2326,12 +2380,9 @@
     {%- endif -%}>
       {%- if single_variant -%}        
         {%- capture unique -%}{{ section.id }}-{{ product.id }}{%- endcapture -%}
-        {%- form 'product', product, data-product-form: '', data-quickbuy-form: '', id: unique, class: 'quick__form' -%}
-          <input type='hidden' name='quantity' value='1'><input type='hidden' name='id' value='{{ current_variant.id }}'><button type='submit' name='add' class='btn--quick {{ settings.button_style }}' data-add-to-cart data-cart-drawer-toggle data-product-id='{{ current_variant.id }}'{% if index > 1 %} tabindex='-1'{% endif %}><span class='btn__inner'>{{ cart_icon }}<span class='btn__text'>{{ 'products.product.quick_view' | t }}</span><span class='btn__loader'><svg height='18' width='18' class='svg-loader'><circle r='7' cx='9' cy='9' /><circle stroke-dasharray='87.96459430051421 87.96459430051421' r='7' cx='9' cy='9' /></svg></span></span></button><div class='product-grid-item__error' data-cart-errors-container></div>
-        {%- endform -%}
+        <form method='post' action='/cart/add' id='template--{{ unique }}' accept-charset='UTF-8' class='quick__form' enctype='multipart/form-data' data-product-form='' data-quickbuy-form=''><input type='hidden' name='quantity' value='1'><input type='hidden' name='id' value='{{ current_variant.id }}'><button type='submit' name='add' class='btn--quick {{ settings.button_style }}' data-add-to-cart data-cart-drawer-toggle data-product-id='{{ current_variant.id }}'{% if index > 1 %} tabindex='-1'{% endif %}><span class='btn__inner'>{{- cart_icon -}}<span class='btn__text'>{{ 'products.product.quick_view' | t }}</span><span class='btn__loader'><svg height='18' width='18' class='svg-loader'><circle r='7' cx='9' cy='9' /><circle stroke-dasharray='87.96459430051421 87.96459430051421' r='7' cx='9' cy='9' /></svg></span></span></button><div class='product-grid-item__error' data-cart-errors-container></div></form>
       {%- else -%}
-        <a class='btn--quick {{ settings.button_style }}' href='{{ product.url | within: collection }}' aria-label='{{ product.title | strip_html | escape }}' data-handle='{{ product.handle }}' data-button-quick-view data-grid-link
-          {%- if index > 1 -%} tabindex='-1'{%- endif -%}><span class='btn__inner'><svg width='24' height='25' aria-hidden='true' focusable='false' role='presentation' class='icon icon-shopping-bag' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.28118 13.6518C3.39353 11.8541 3.47473 10.5791 3.663 9.61434C3.84713 8.67078 4.11601 8.12798 4.53399 7.73531C4.95197 7.34264 5.51048 7.10814 6.46369 6.98323C7.43831 6.85551 8.7159 6.854 10.517 6.854H13.4858C15.2869 6.854 16.5645 6.85551 17.5392 6.98323C18.4924 7.10814 19.0509 7.34264 19.4689 7.73531C19.8868 8.12798 20.1557 8.67078 20.3399 9.61434C20.5281 10.5791 20.6093 11.8541 20.7217 13.6518C20.8475 15.6658 20.9355 17.0991 20.8543 18.1894C20.7748 19.2581 20.5393 19.8748 20.1123 20.3293C19.6853 20.7838 19.0845 21.0573 18.0229 21.2033C16.9398 21.3523 15.5038 21.354 13.4858 21.354H10.517C8.49909 21.354 7.06308 21.3523 5.97995 21.2033C4.91832 21.0573 4.31753 20.7838 3.89057 20.3293C3.4636 19.8748 3.22804 19.2581 3.14852 18.1894C3.06739 17.0991 3.1553 15.6658 3.28118 13.6518Z' stroke='white' stroke-width='2'/><path fill-rule='evenodd' clip-rule='evenodd' d='M7.85158 9.104C8.38955 9.104 8.73211 8.4711 8.60267 7.94893C8.53559 7.67834 8.5 7.39533 8.5 7.104C8.5 5.171 10.067 3.604 12 3.604C13.933 3.604 15.5 5.171 15.5 7.104C15.5 7.39533 15.4644 7.67834 15.3973 7.94893C15.2679 8.4711 15.6105 9.104 16.1484 9.104C16.413 9.104 16.6563 8.94854 16.7406 8.69777C16.9088 8.1972 17 7.66125 17 7.104C17 4.34258 14.7614 2.104 12 2.104C9.23858 2.104 7 4.34258 7 7.104C7 7.66125 7.09116 8.1972 7.25938 8.69777C7.34365 8.94854 7.58703 9.104 7.85158 9.104Z' fill='white'/><path d='M8.5 13.104C8.77614 13.104 9 12.8801 9 12.604C9 12.3279 8.77614 12.104 8.5 12.104C8.22386 12.104 8 12.3279 8 12.604C8 12.8801 8.22386 13.104 8.5 13.104Z' stroke='white' stroke-width='2'/><path d='M15.5 13.104C15.7761 13.104 16 12.8801 16 12.604C16 12.3279 15.7761 12.104 15.5 12.104C15.2239 12.104 15 12.3279 15 12.604C15 12.8801 15.2239 13.104 15.5 13.104Z' stroke='white' stroke-width='2'/></svg><span class='btn__text'>{{ 'products.product.quick_view' | t }}</span><span class='btn__loader'><svg height='18' width='18' class='svg-loader'><circle r='7' cx='9' cy='9' /><circle stroke-dasharray='87.96459430051421 87.96459430051421' r='7' cx='9' cy='9' /></svg></span></span></a>
+        <a class='btn--quick {{ settings.button_style }}' href='{{ product.url | within: collection }}' aria-label='{{ product.title | strip_html | escape }}' data-handle='{{ product.handle }}' data-button-quick-view data-grid-link{% if index > 1 %} tabindex='-1'{% endif %}><span class='btn__inner'><svg width='24' height='25' aria-hidden='true' focusable='false' role='presentation' class='icon icon-shopping-bag' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.28118 13.6518C3.39353 11.8541 3.47473 10.5791 3.663 9.61434C3.84713 8.67078 4.11601 8.12798 4.53399 7.73531C4.95197 7.34264 5.51048 7.10814 6.46369 6.98323C7.43831 6.85551 8.7159 6.854 10.517 6.854H13.4858C15.2869 6.854 16.5645 6.85551 17.5392 6.98323C18.4924 7.10814 19.0509 7.34264 19.4689 7.73531C19.8868 8.12798 20.1557 8.67078 20.3399 9.61434C20.5281 10.5791 20.6093 11.8541 20.7217 13.6518C20.8475 15.6658 20.9355 17.0991 20.8543 18.1894C20.7748 19.2581 20.5393 19.8748 20.1123 20.3293C19.6853 20.7838 19.0845 21.0573 18.0229 21.2033C16.9398 21.3523 15.5038 21.354 13.4858 21.354H10.517C8.49909 21.354 7.06308 21.3523 5.97995 21.2033C4.91832 21.0573 4.31753 20.7838 3.89057 20.3293C3.4636 19.8748 3.22804 19.2581 3.14852 18.1894C3.06739 17.0991 3.1553 15.6658 3.28118 13.6518Z' stroke='white' stroke-width='2'/><path fill-rule='evenodd' clip-rule='evenodd' d='M7.85158 9.104C8.38955 9.104 8.73211 8.4711 8.60267 7.94893C8.53559 7.67834 8.5 7.39533 8.5 7.104C8.5 5.171 10.067 3.604 12 3.604C13.933 3.604 15.5 5.171 15.5 7.104C15.5 7.39533 15.4644 7.67834 15.3973 7.94893C15.2679 8.4711 15.6105 9.104 16.1484 9.104C16.413 9.104 16.6563 8.94854 16.7406 8.69777C16.9088 8.1972 17 7.66125 17 7.104C17 4.34258 14.7614 2.104 12 2.104C9.23858 2.104 7 4.34258 7 7.104C7 7.66125 7.09116 8.1972 7.25938 8.69777C7.34365 8.94854 7.58703 9.104 7.85158 9.104Z' fill='white'/><path d='M8.5 13.104C8.77614 13.104 9 12.8801 9 12.604C9 12.3279 8.77614 12.104 8.5 12.104C8.22386 12.104 8 12.3279 8 12.604C8 12.8801 8.22386 13.104 8.5 13.104Z' stroke='white' stroke-width='2'/><path d='M15.5 13.104C15.7761 13.104 16 12.8801 16 12.604C16 12.3279 15.7761 12.104 15.5 12.104C15.2239 12.104 15 12.3279 15 12.604C15 12.8801 15.2239 13.104 15.5 13.104Z' stroke='white' stroke-width='2'/></svg><span class='btn__text'>{{ 'products.product.quick_view' | t }}</span><span class='btn__loader'><svg height='18' width='18' class='svg-loader'><circle r='7' cx='9' cy='9' /><circle stroke-dasharray='87.96459430051421 87.96459430051421' r='7' cx='9' cy='9' /></svg></span></span></a>
       {%- endif -%}
     </div>"
   {%- endunless -%}
@@ -2343,12 +2394,12 @@ function setRecentlyViewedProducts() {
   const productData = {
     productTitle: '{{ product.title }}',
     productImg: '{{ product.featured_media | img_url: '300x' }}',
-    productPrice: '{{ product.price | money }}',
-    productComparePrice: '{{  product.selected_or_first_available_variant.compare_at_price | money }}',
+    productPrice: {{ product_info_price }},
     productUrl: '{{ product.url }}',
     productImageAltText: '{{product.featured_media.alt | escape }}',
     productVariant:{{ ProdVariant }},
-    ProductQuickbuy: {{ quickbuy_button }}
+    ProductQuickbuy: {{ quickbuy_button }},
+    ProductBadges: "{{ product_badges }}"
   };
 
   console.log('productData--',productData);

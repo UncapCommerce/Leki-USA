@@ -14830,7 +14830,8 @@
     const about_content = document.querySelector('.about-content-wrap');
     const about_image = document.querySelector('.about-image-wrap');
     const recently_view = document.querySelector('.recently-viewed-slider');
-    
+    const recently_view_item = document.querySelectorAll('.recently-viewed-slider .product-grid-item');
+
     if(sub_collection != null){
       const subcollection = new Flickity(sub_collection, {  
         contain : true,
@@ -14843,16 +14844,18 @@
       });
     }
 
-    if(recently_view != null){
-      const recently_viewed_slider = new Flickity(recently_view, {
-        contain : true,
-        pageDots: false, 
-        lazyLoad: true,
-        freeScroll: true,
-        prevNextButtons: true,
-        groupCells: 3,
-        groupCells: true
+    if(recently_view != null){  
+      if( recently_view_item.length > 2 ){
+        const recently_viewed_slider = new Flickity(recently_view, {
+          contain : true,
+          pageDots: false, 
+          lazyLoad: true,
+          freeScroll: true,
+          prevNextButtons: true,
+          groupCells: 3,
+          groupCells: true
         });
+      }
     }
 
     if(about_content != null){

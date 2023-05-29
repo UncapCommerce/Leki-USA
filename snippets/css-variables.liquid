@@ -122,6 +122,7 @@
   endif
 
   assign color_black = settings.color_black
+  assign color_red = settings.color_red
 
   assign color_accent = settings.color_accent
   assign color_accent_text = '#fff'
@@ -447,6 +448,8 @@
   --COLOR-BLACK-ALPHA-20: {{ '#000000' | color_modify: 'alpha', 0.20 }};
   --COLOR-BLACK-ALPHA-50: {{ '#000000' | color_modify: 'alpha', 0.50 }};
   --COLOR-BLACK-ALPHA-60: {{ '#000000' | color_modify: 'alpha', 0.60 }};
+
+  --COLOR-RED: {{ color_red }};
 
   {%- comment -%} Typography {%- endcomment -%}
 /*   --FONT-STACK-BODY: {{ base_font.family }}, {{ base_font.fallback_families }};
