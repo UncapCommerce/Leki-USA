@@ -113,7 +113,12 @@
 {%- capture section_heading_content -%}
   <div class="section__header featured-collection__top__wrapper">
     {%- if sub_heading != blank -%}
-      <span class="section__subheading">{{- sub_heading -}}</span>
+      <span class="section__subheading" {% if animations_enabled %}
+        data-aos="fade-up"
+        data-aos-delay="{{ animation_delay }}"
+        data-aos-anchor="{{ animation_anchor }}"
+        {%- assign animation_delay = animation_delay | plus: 150 -%}
+      {% endif %}>{{- sub_heading -}}</span>
     {%- endif -%} 
   
     {%- if heading != blank -%}

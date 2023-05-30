@@ -2962,7 +2962,6 @@
     originalSelectorId: '[data-product-select]',
     preOrderTag: '_preorder',
     priceWrapper: '[data-price-wrapper]',
-    skuWrapper: '[data-sku]',
     priceOffWrap: '[data-price-off]',
     priceOffType: '[data-price-off-type]',
     priceOffAmount: '[data-price-off-amount]',
@@ -2986,7 +2985,8 @@
     storeAvailabilityContainer: '[data-store-availability-container]',
     upsellButton: '[data-upsell-btn]',
     sectionNode: '.shopify-section',
-    quickViewItem: '[data-quick-view-item]',
+    quickViewItem: '[data-quick-view-item]',  
+    skuWrapper: '[data-sku]',    
   };
 
   const classes$c = {
@@ -3103,15 +3103,16 @@
 
     pushState(formState) {
       this.productState = this.setProductState(formState);
-      console.log('this.productState---',this.productState);
       this.updateAddToCartState(formState);
       this.updateProductPrices(formState);
-      this.updateProductSku(formState);
       this.updateSaleText(formState);
       this.updateSubscriptionText(formState);
       this.fireHookEvent(formState);
       this.updateRemaining(formState);
       this.sellout?.update(formState);
+      if (window.location.pathname.indexOf('/products/') !== -1) {
+        this.updateProductSku(formState);
+      }
       if (this.enableHistoryState) {
         this.updateHistoryState(formState);
       }
@@ -3128,12 +3129,14 @@
     updateAddToCartState(formState) {
       const variant = formState.variant;
       const priceWrapper = this.container.querySelectorAll(selectors$e.priceWrapper);
-      const skuWrappers = this.container.querySelectorAll(selectors$e.skuWrapper);
       const addToCart = this.container.querySelectorAll(selectors$e.addToCart);
       const addToCartText = this.container.querySelectorAll(selectors$e.addToCartText);
       const formWrapper = this.container.querySelectorAll(selectors$e.formWrapper);
       const buyItNow = this.container.querySelector(selectors$e.buyItNow);
       let addText = theme.strings.add_to_cart;
+      if (window.location.pathname.indexOf('/products/') !== -1) {
+        let skuWrappers = this.container.querySelectorAll(selectors$e.skuWrapper);
+      }
 
       if (this.productJSON.tags.includes(selectors$e.preOrderTag)) {
         addText = theme.strings.preorder;
@@ -3446,12 +3449,11 @@
     }
 
     updateProductSku(formState){
-      const variant = formState.variant;
-      const plan = formState.plan;
-      const skuWrappers = this.container.querySelectorAll(selectors$e.skuWrapper);
+      let variant = formState.variant;
+      let plan = formState.plan;
+      let skuWrappers = this.container.querySelectorAll(selectors$e.skuWrapper);
       let currVar = variant.sku;
-
-      if(currVar != null){
+      if(formState.variant !== null){
         skuWrappers.forEach((skuwrap) => {
           skuwrap.innerHTML = 'SKU ' + currVar;
         });
@@ -5536,6 +5538,7 @@
 
     cartEvents() {
       const cartItemRemove = document.querySelectorAll(selectors$k.cartItemRemove);
+
       if (cartItemRemove.length) {
         this.totalItems = cartItemRemove.length;
         cartItemRemove.forEach((item) => {
@@ -7202,6 +7205,7 @@
       this.container = container;
       this.body = document.body;
       this.sliders = this.container.querySelectorAll(selectors$o.slider);
+
       if (theme.settings.productGridHover === 'slideshow' && !window.theme.touch) {
         this.productGridSlideshow();
       }
@@ -7233,7 +7237,7 @@
               wrapAround: true,
               imagesLoaded: true,
               lazyLoad: true,
-              pageDots: true,
+              pageDots: false,
               prevNextButtons: false,
               adaptiveHeight: false,
               pauseAutoPlayOnHover: false,
@@ -13540,7 +13544,8 @@
   class RelatedProducts {
     constructor(container) {
       this.container = container;
-      this.relatedProducts = this.container.querySelector(selectors$X.relatedProducts);  
+      this.relatedProducts = this.container.querySelector(selectors$X.relatedProducts);
+
       this.init();
     }
 
@@ -14762,11 +14767,10 @@
     if (!hasNativeSmoothScroll) {
       loadScript({url: theme.assets.smoothscroll});
     }
-
+    
     // product accordion
     if (document.querySelectorAll(".inner_accordion") != null ){
       const accordionContent = document.querySelectorAll(".inner_accordion");
-
       if (document.querySelector(".accordion_inner-title") != null ){
         accordionContent.forEach((item, index) => {
           let header = item.querySelector(".accordion_inner-title");
@@ -14804,9 +14808,11 @@
     
     // pole advisor drawer
     if( document.querySelector('.pole-advisor') != null ){
-      let pole_div = document.querySelector('.pole-advisor');
-      pole_div.addEventListener("click", () =>{
-        document.body.classList.add('pole-drawer-active');
+      let pole_div = document.querySelectorAll('.pole-advisor');
+      pole_div.forEach( poleDrawer => {
+        poleDrawer.addEventListener("click", () =>{
+          document.body.classList.add('pole-drawer-active');
+        });
       });
       let close_drawer = document.querySelector('#pole-adviser-drawer .pole-close .icon.icon-close');
       close_drawer.addEventListener("click", () =>{
@@ -14825,13 +14831,12 @@
         document.body.classList.remove('glove-drawer-active');
       });
     }
-
+    
     const sub_collection = document.querySelector('.sub-collections-wrap');
     const about_content = document.querySelector('.about-content-wrap');
     const about_image = document.querySelector('.about-image-wrap');
     const recently_view = document.querySelector('.recently-viewed-slider');
     const recently_view_item = document.querySelectorAll('.recently-viewed-slider .product-grid-item');
-
     if(sub_collection != null){
       const subcollection = new Flickity(sub_collection, {  
         contain : true,
@@ -14843,7 +14848,6 @@
         groupCells: true
       });
     }
-
     if(recently_view != null){  
       if( recently_view_item.length > 2 ){
         const recently_viewed_slider = new Flickity(recently_view, {
@@ -14857,7 +14861,6 @@
         });
       }
     }
-
     if(about_content != null){
       var aboutcontent = new Flickity( about_content, {
         asNavFor: ".about-image-wrap", 
@@ -14866,7 +14869,6 @@
         pageDots: true,
       });
     }
-
     if(about_image != null){
       var aboutimage = new Flickity( about_image, {  
         sync: ".about-content-wrap",    
@@ -14878,9 +14880,28 @@
         pageDots: false
       });
     }
-
+    
   });
 
 }(themeVendor.ScrollLock, themeVendor.Flickity, themeVendor.Sqrl, themeVendor.themeCurrency, themeVendor.ajaxinate, themeVendor.AOS));
-
 //# sourceMappingURL=theme.js.map
+
+
+function poleLength(t){
+  if( document.querySelector('.pole-advisor') != null ){
+     document.body.classList.add('pole-drawer-active');
+    let close_drawer = document.querySelector('#pole-adviser-drawer .pole-close .icon.icon-close');
+    close_drawer.addEventListener("click", () =>{
+      document.body.classList.remove('pole-drawer-active');
+    });
+  }
+}
+function gloveSize(){
+  if( document.querySelector('.glove-advisor') != null ){
+      document.body.classList.add('glove-drawer-active');
+    let hide_drawer = document.querySelector('#gloves-adviser-drawer .glove-close .icon.icon-close');
+    hide_drawer.addEventListener("click", () =>{
+      document.body.classList.remove('glove-drawer-active');
+    });
+  }
+}
