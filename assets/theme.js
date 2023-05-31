@@ -5678,6 +5678,7 @@
           this.build(cleanResponse);
 
           this.updateItemsQuantity(this.cartItemCount);
+          document.querySelector('.cart-count-bubble').innerHTML = this.cartItemCount;
         })
         .catch((error) => console.log(error));
     }
@@ -8695,7 +8696,7 @@
      */
     initSlider() {
       const slides = this.slider.querySelectorAll(selectors$u.barSlide);
-
+      
       if (slides) {
         let slideSelector = `${selectors$u.barSlide}`;
 
@@ -9762,7 +9763,7 @@
 
       if (this.flkty[sliderId] === undefined || !this.flkty[sliderId].isActive) {
         this.flkty[sliderId] = new Flickity(slider, {
-          pageDots: false,
+          pageDots: true,
           cellSelector: selectors$E.sliderItem,
           cellAlign: 'left',
           groupCells: true,
@@ -9831,7 +9832,8 @@
           if ((isDesktop && itemsCount > columns) || (isTablet && itemsCount > 2)) {
             this.initSlider(slider);
           } else {
-            this.destroySlider(slider);
+            // this.destroySlider(slider);
+            this.initSlider(slider);
           }
         });
       }

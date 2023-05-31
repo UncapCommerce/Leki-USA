@@ -83,6 +83,7 @@
         {{- item_info -}}
       {%- endif -%}
 
+      {% comment %}
       {%- if item.object_type == 'page' or item.object_type == 'article' -%}
         <div class="search-results__item__badge product__badge" data-product-badge>
           <span class="product__badge__item product__badge__item--custom">
@@ -97,6 +98,7 @@
           </span>
         </div>
       {%- endif -%}
+      {% endcomment %}
     </div>
   </div>
 

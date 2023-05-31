@@ -144,9 +144,10 @@
       endif
     -%}
 
+  {% comment %}
     {%- if product.price_varies -%}
       {{- 'products.general.from_text_html' | t: price: product_price_min -}}
-    {%- else -%}
+    {%- endif -%}{% endcomment %}
       {%- if on_sale -%}
         <span class="product-grid-item__price__new">{{ product_price }}</span>
 
@@ -160,7 +161,6 @@
       {%- else -%}
         {{- product_price -}}
       {%- endif -%}
-    {%- endif -%}
 
     {%- if current_variant.unit_price_measurement -%}
       {%- capture unit_price_separator -%}

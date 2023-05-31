@@ -102,6 +102,7 @@
           name="contact[email]"
           autocorrect="off"
           autocapitalize="off"
+          required
           aria-label="{{ 'general.newsletter_form.email' | t }}"
           {% if form.errors contains 'email' %}
             aria-invalid="true"
