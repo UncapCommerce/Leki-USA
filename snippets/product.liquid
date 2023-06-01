@@ -95,11 +95,11 @@
               {%- render 'media', unique: unique, current_variant: current_variant, media: media, featured_media: featured_media, enable_video_looping: enable_video_looping, enable_zoom: enable_zoom, section_type: section_type -%}
             {%- endif -%}
           {%- endfor -%}
-        {% comment %}{%- else -%}
+          {%- else -%}
           {%- assign media_aspect_ratio = 1 -%}
           {%- assign media_padding_top = 1 | divided_by: media_aspect_ratio | times: 100 | round: 1 -%}
           {%- assign image_url_pattern = product.featured_image | img_url: '1000x' | replace: '_1000x.', '_{width}x.' -%}
-          {%- assign image_widths = "[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048, 2450, 2700, 3000, 3350, 3750, 4100]" -%}{% endcomment %}
+          {%- assign image_widths = "[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048, 2450, 2700, 3000, 3350, 3750, 4100]" -%}
 
           <div
             id="FeaturedMedia-{{ unique }}"

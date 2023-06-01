@@ -188,14 +188,9 @@
             <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title }}</label>
           {%- endif -%}
           <div class="selector-wrapper">
-            <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect" name="contact[{{ block.settings.title | handleize }}]" {{ block.settings.required1 }}>
-              <option selected disabled>{{ block.settings.default_name }}</option>
-              {%- for i in (1..6) -%}
-                {%- capture index -%}label-{%- cycle 'one', 'two', 'three', 'four', 'five', 'six' -%}{%- endcapture -%}
-                {%- if block.settings[index] != blank -%}
-                  <option value="{{ block.settings[index] }}">{{ block.settings[index] }}</option>
-                {%- endif -%}
-              {%- endfor -%}
+            <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect country-select" name="contact[{{ block.settings.title | handleize }}]" {{ block.settings.required1 }}>
+              <option disabled selected value="Select Country">Country*</option>        
+              {{ all_country_option_tags }}
             </select>
             {%- render 'icon-select' -%}
           </div>
@@ -212,14 +207,8 @@
               <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title1 }}</label>
             {%- endif -%}
             <div class="selector-wrapper">
-              <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect" name="contact[{{ block.settings.title1 | handleize }}]" {{ block.settings.required2 }}>
-                <option selected disabled>{{ block.settings.default_name1 }}</option>
-                {%- for i in (1..6) -%}
-                  {%- capture index -%}label-{%- cycle 'one-1', 'two-1', 'three-1', 'four-1', 'five-1', 'six-1' -%}{%- endcapture -%}                  
-                  {%- if block.settings[index] != blank -%}
-                    <option value="{{ block.settings[index] }}">{{ block.settings[index] }}</option>
-                  {%- endif -%}
-                {%- endfor -%}
+              <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect state-select" name="contact[{{ block.settings.title1 | handleize }}]" {{ block.settings.required2 }}>
+              <option disabled selected value="Select Country">State*</option> 
               </select>
               {%- render 'icon-select' -%}
             </div>
@@ -352,6 +341,43 @@
   }
 {%- endstyle -%}
 
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  if(document.querySelector('.country-select') != null){
+  let select = document.querySelector('.country-select');
+  let selectState = document.querySelector('.state-select');
+  select.addEventListener('change', (event)=> {
+
+    var getProvinces = '';
+    for(i=0; i<select.length; i++){
+      let getOptions = select.options[i];
+      if ( getOptions.value == event.target.value){
+        let getProvincesData = getOptions.dataset.provinces;
+        
+        getProvinces = getProvincesData.substring(1, getProvincesData.length-1);
+        newProvinces = getProvinces.split('],[').join(",");
+        listProvinces = newProvinces.split('","').join(', ');
+        stringListProvinces = listProvinces.substring(2, listProvinces.length-2);
+        arrListProvinces = stringListProvinces.split(', ');
+        
+        var res = arrListProvinces.filter(function(v, idx) {
+          return idx % 2 == 0;
+        });
+
+        for(var j = 0; j < res.length; j++) {
+          var opt = res[j];
+          var el = document.createElement("option");
+          el.textContent = opt;
+          el.value = opt;
+          selectState.appendChild(el);
+        }
+      }
+    }
+  });
+  }
+});
+</script>
 <section
 id="ContactForm--{{ section.id }}"
 class="section-padding"
@@ -392,6 +418,9 @@ data-section-id="{{ section.id }}">
       {%- endif -%}
 
       {{- form_fields -}}
+       <select name="country">
+        {{ all_country_option_tags }}
+      </select>
 
       {%- assign types = '' -%}
       {%- for block in section.blocks -%}

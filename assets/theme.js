@@ -5677,8 +5677,18 @@
           const cleanResponse = element.querySelector(selectors$k.apiContent);
           this.build(cleanResponse);
 
-          this.updateItemsQuantity(this.cartItemCount);
-          document.querySelector('.cart-count-bubble').innerHTML = this.cartItemCount;
+          this.updateItemsQuantity(this.cartItemCount); 
+          if(document.querySelectorAll('.cart-count-bubble') != null){
+            let getBubble = document.querySelectorAll('.cart-count-bubble');
+            getBubble.forEach( cartCount => {
+              cartCount.innerHTML = this.cartItemCount;
+              if(this.cartItemCount > 0 ){
+                cartCount.style.display = 'flex';
+              }else{
+                cartCount.style.display = 'none';
+              }
+            });
+          }
         })
         .catch((error) => console.log(error));
     }
@@ -6399,7 +6409,7 @@
       manyItemsText = manyItemsText.split('}}')[1];
 
       if (this.cartItemsQty) {
-        this.cartItemsQty.textContent = itemsQty === 1 ? `${itemsQty} ${oneItemText}` : `${itemsQty} ${manyItemsText}`;
+        this.cartItemsQty.textContent = itemsQty === 0 || itemsQty === 1 ? `${itemsQty} ${oneItemText}` : `${itemsQty} ${manyItemsText}`;
       }
     }
 
