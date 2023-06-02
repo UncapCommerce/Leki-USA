@@ -573,7 +573,7 @@
                 data-tooltip="{{ option }}">
               </div>
               {%- assign color_variant_text = 'general.swatches.color_variant' | t -%}
-              <a href="{{ product.url }}?variant={{ swatch_variant.id }}" data-swatch-variant="{{ swatch_variant.id }}"  class="swatch__link">{{ product.title | append: ' - ' | append: color_variant_text | append: ': ' | append: option }}</a>
+              <a href="{{ product.url }}?variant={{ swatch_variant.id }}" data-variant-price="{{ swatch_variant.price | money_without_currency }}" data-variant-compare="{{ swatch_variant.compare_at_price | money_without_currency }}" data-swatch-variant="{{ swatch_variant.id }}"  class="swatch__link">{{ product.title | append: ' - ' | append: color_variant_text | append: ': ' | append: option }}</a>
             </div>
           {%- endfor -%}
         </product-grid-item-swatch>

@@ -86,7 +86,7 @@
     endcase
   endif
 -%}
-
+{% assign section_height_mob = section.settings.video_height_mob %}
 {%- style -%}
   #FeaturedVideo--{{ section.id }} { --overlay-opacity: {{ overlay_opacity }}; }
   #FeaturedVideo--{{ section.id }} {
@@ -103,6 +103,9 @@
     #FeaturedVideo--{{ section.id }} {
       --PT: {{ section.settings.mob_padding_top }}px;
       --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+    #FeaturedVideo--{{ section.id }} {
+      height: {{ section_height_mob }}px;
     }
   }
   #FeaturedVideo--{{ section.id }} .main-heading { --adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ heading_size }}); }
@@ -160,6 +163,11 @@
         { "value": "five-fifty-height ", "label": "550px" },
         { "value": "four-fifty-height", "label": "450px" }
       ]
+    },
+    {
+      "type": "number",
+      "id": "video_height_mob",
+      "label": "Video Mobile Height"
     },
     {
       "type": "select",

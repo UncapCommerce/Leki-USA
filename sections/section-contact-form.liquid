@@ -189,7 +189,7 @@
           {%- endif -%}
           <div class="selector-wrapper">
             <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect country-select" name="contact[{{ block.settings.title | handleize }}]" {{ block.settings.required1 }}>
-              <option disabled selected value="Select Country">Country*</option>        
+              <option disabled selected value="Select Country">{{ block.settings.default_name }}</option>        
               {{ all_country_option_tags }}
             </select>
             {%- render 'icon-select' -%}
@@ -208,7 +208,7 @@
             {%- endif -%}
             <div class="selector-wrapper">
               <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect state-select" name="contact[{{ block.settings.title1 | handleize }}]" {{ block.settings.required2 }}>
-              <option disabled selected value="Select Country">State*</option> 
+              <option disabled selected value="Select Country">{{ block.settings.default_name1 }}</option> 
               </select>
               {%- render 'icon-select' -%}
             </div>
@@ -305,6 +305,9 @@
   .contact-additional-info p:last-child {
     margin: 0;
   }
+  .country-select option[value="---"] {
+    display: none;
+  }
   @media(max-width: 1440px){
     .contact-form-wrapper {padding-top: 160px;}
     .locations__info {padding-right: 120px;}
@@ -341,43 +344,6 @@
   }
 {%- endstyle -%}
 
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  if(document.querySelector('.country-select') != null){
-  let select = document.querySelector('.country-select');
-  let selectState = document.querySelector('.state-select');
-  select.addEventListener('change', (event)=> {
-
-    var getProvinces = '';
-    for(i=0; i<select.length; i++){
-      let getOptions = select.options[i];
-      if ( getOptions.value == event.target.value){
-        let getProvincesData = getOptions.dataset.provinces;
-        
-        getProvinces = getProvincesData.substring(1, getProvincesData.length-1);
-        newProvinces = getProvinces.split('],[').join(",");
-        listProvinces = newProvinces.split('","').join(', ');
-        stringListProvinces = listProvinces.substring(2, listProvinces.length-2);
-        arrListProvinces = stringListProvinces.split(', ');
-        
-        var res = arrListProvinces.filter(function(v, idx) {
-          return idx % 2 == 0;
-        });
-
-        for(var j = 0; j < res.length; j++) {
-          var opt = res[j];
-          var el = document.createElement("option");
-          el.textContent = opt;
-          el.value = opt;
-          selectState.appendChild(el);
-        }
-      }
-    }
-  });
-  }
-});
-</script>
 <section
 id="ContactForm--{{ section.id }}"
 class="section-padding"
@@ -390,7 +356,12 @@ data-section-id="{{ section.id }}">
       </figure>
     </div>
   {% endif %}
-  <div class="contact-form-bg">
+  <div class="contact-form-bg" {% if animations_enabled %}
+          data-aos="fade-up"
+          data-aos-anchor="{{ animation_anchor }}"
+          data-aos-delay="{{ animation_delay }}"
+          {%- assign animation_delay = animation_delay | plus: 150 -%}
+        {% endif %}>
   <div class="{{ section_width }}">
     <div class="contact-form-wrapper {% if section.settings.contact_bgimg != blank %}has-bg{% endif %}">
     {%- form 'contact', id: 'ContactForm'  -%}
@@ -418,9 +389,6 @@ data-section-id="{{ section.id }}">
       {%- endif -%}
 
       {{- form_fields -}}
-       <select name="country">
-        {{ all_country_option_tags }}
-      </select>
 
       {%- assign types = '' -%}
       {%- for block in section.blocks -%}
@@ -470,6 +438,9 @@ data-section-id="{{ section.id }}">
 </section>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  //// file upload js
   document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
   const dropZoneElement = inputElement.closest(".drop-zone");
 
@@ -496,51 +467,108 @@ data-section-id="{{ section.id }}">
 
   dropZoneElement.addEventListener("drop", (e) => {
     e.preventDefault();
-
-    if (e.dataTransfer.files.length) {
-      inputElement.files = e.dataTransfer.files;
-      updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
-    }
-
-    dropZoneElement.classList.remove("drop-zone--over");
+  
+      if (e.dataTransfer.files.length) {
+        inputElement.files = e.dataTransfer.files;
+        updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+      }
+  
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
   });
-});
   /**
  * Updates the thumbnail on a drop zone element.
  *
  * @param {HTMLElement} dropZoneElement
  * @param {File} file
  */
-function updateThumbnail(dropZoneElement, file) {
-  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-
-  // First time - remove the prompt
-  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
-    dropZoneElement.querySelector(".drop-zone__prompt").remove();
+  function updateThumbnail(dropZoneElement, file) {
+    let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+  
+    // First time - remove the prompt
+    if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+      dropZoneElement.querySelector(".drop-zone__prompt").remove();
+    }
+  
+    // First time - there is no thumbnail element, so lets create it
+    if (!thumbnailElement) {
+      thumbnailElement = document.createElement("div");
+      thumbnailElement.classList.add("drop-zone__thumb");
+      dropZoneElement.appendChild(thumbnailElement);
+    }
+  
+    thumbnailElement.dataset.label = file.name;
+  
+    // Show thumbnail for image files
+    if (file.type.startsWith("image/")) {
+      const reader = new FileReader();
+  
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+      };
+    } else {
+      thumbnailElement.style.backgroundImage = null;
+    }
   }
 
-  // First time - there is no thumbnail element, so lets create it
-  if (!thumbnailElement) {
-    thumbnailElement = document.createElement("div");
-    thumbnailElement.classList.add("drop-zone__thumb");
-    dropZoneElement.appendChild(thumbnailElement);
+  ///////// country state select js
+  if(document.querySelector('.country-select') != null){
+  let select = document.querySelector('.country-select');
+  let selectState = document.querySelector('.state-select');
+    select.addEventListener('change', (event)=> {
+      
+      for( k=selectState.length-1; k>=0; k--){
+        selectState.remove('option'); 
+      }  
+      var getProvinces = '';                                                 
+      for(i=0; i<select.length; i++){
+      let getOptions = select.options[i];
+        if ( getOptions.value == event.target.value){
+        let getProvincesData = getOptions.dataset.provinces;
+          if (getProvincesData != '[]'){
+            getProvinces = getProvincesData.substring(1, getProvincesData.length-1);
+            newProvinces = getProvinces.split('],[').join(",");
+            listProvinces = newProvinces.split('","').join(', ');
+            stringListProvinces = listProvinces.substring(2, listProvinces.length-2);
+            arrListProvinces = stringListProvinces.split(', ');
+            
+            var res = arrListProvinces.filter(function(v, idx) {
+              return idx % 2 == 0;
+            });
+    
+            for(var j = 0; j < res.length; j++) {
+              var opt = res[j];
+              var el = document.createElement("option");
+              el.textContent = opt;
+              el.value = opt;    
+              var optionLength = selectState.options.length;        
+              selectState.appendChild(el);                
+            }
+            
+          }else{
+            var setOption = document.createElement("option"); 
+            setOption.textContent = 'No State';
+            setOption.value = 'No State';
+            function setAttributes(element, attributes) {
+              Object.keys(attributes).forEach(attr => {
+                element.setAttribute(attr, attributes[attr]);
+              });
+            }            
+            const attributes = {
+              selected: 'selected',
+              disabled: 'disabled',
+            };
+            setAttributes(setOption, attributes);
+            selectState.appendChild(setOption);
+          }
+        }
+      }
+    });
   }
-
-  thumbnailElement.dataset.label = file.name;
-
-  // Show thumbnail for image files
-  if (file.type.startsWith("image/")) {
-    const reader = new FileReader();
-
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-    };
-  } else {
-    thumbnailElement.style.backgroundImage = null;
-  }
-}
+});
 </script>
+
 {% schema %}
 {
   "name": "Contact form",
@@ -778,18 +806,6 @@ function updateThumbnail(dropZoneElement, file) {
         },
         {
           "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "default": "Select an option",
-          "info": "Example: Choose a delivery location"
-        },
-        {
-          "type": "header",
-          "content": "Include up to six options",
-          "info":  "Leave option text blank to exclude"
-        },
-        {
-          "type": "text",
           "id": "default_name",
           "label": "Select Default",
           "info":"Ex: Select Country"
@@ -799,43 +815,7 @@ function updateThumbnail(dropZoneElement, file) {
           "id": "required1",
           "label": "Required",
           "default": false
-        },
-        {
-          "type": "text",
-          "id": "label-one",
-          "default": "Select option one",
-          "label": "Option one"
-        },
-        {
-          "type": "text",
-          "id": "label-two",
-          "default": "Select option two",
-          "label": "Option two"
-        },
-        {
-          "type": "text",
-          "id": "label-three",
-          "default": "Select option three",
-          "label": "Option three"
-        },
-        {
-          "type": "text",
-          "id": "label-four",
-          "default": "Select option four",
-          "label": "Option four"
-        },
-        {
-          "type": "text",
-          "id": "label-five",
-          "default": "Select option five",
-          "label": "Option five"
-        },
-        {
-          "type": "text",
-          "id": "label-six",
-          "default": "Select option six",
-          "label": "Option six"
-        },
+        },        
         {
           "type":"header",
           "content":"Dropdown2"
@@ -844,62 +824,14 @@ function updateThumbnail(dropZoneElement, file) {
           "type": "text",
           "id": "default_name1",
           "label": "Select Default",
-          "info":"Ex: Select Country"
+          "info":"Ex: Select State"
         },
         {
           "type": "checkbox",
           "id": "required2",
           "label": "Required",
           "default": false
-        },
-        {
-          "type": "text",
-          "id": "title1",
-          "label": "Heading",
-          "default": "Select an option",
-          "info": "Example: Choose a delivery location"
-        },
-        {
-          "type": "header",
-          "content": "Include up to six options",
-          "info":  "Leave option text blank to exclude"
-        },
-        {
-          "type": "text",
-          "id": "label-one-1",
-          "default": "Select option one",
-          "label": "Option one"
-        },
-        {
-          "type": "text",
-          "id": "label-two-1",
-          "default": "Select option two",
-          "label": "Option two"
-        },
-        {
-          "type": "text",
-          "id": "label-three-1",
-          "default": "Select option three",
-          "label": "Option three"
-        },
-        {
-          "type": "text",
-          "id": "label-four-1",
-          "default": "Select option four",
-          "label": "Option four"
-        },
-        {
-          "type": "text",
-          "id": "label-five-1",
-          "default": "Select option five",
-          "label": "Option five"
-        },
-        {
-          "type": "text",
-          "id": "label-six-1",
-          "default": "Select option six",
-          "label": "Option six"
-        },
+        },        
         {
           "type":"header",
           "content":"Text"
@@ -909,7 +841,7 @@ function updateThumbnail(dropZoneElement, file) {
           "id": "title_1",
           "label": "Label",
           "default": "Name",
-          "info": "Example: Name"
+          "info": "Example: Zip code"
         },
         {
           "type": "checkbox",

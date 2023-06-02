@@ -12098,10 +12098,10 @@ a.results-popular__link:hover {
   width: 20px;
   height: 10px;
 }
-
+/* 
 .swatch__link--no-image {
   cursor: default;
-}
+} */
 
 .soldout .quick__form {
   display: none;
@@ -21319,7 +21319,8 @@ body.notification-visible .popup.popup--visible {
   width: 200vw;
   background: rgba(0, 0, 0, 0.2);
 }
-@media(max-width: 768px){
+
+@media(min-width: 768px){
   .popup-quick-view__body div[data-form-wrapper] {
     max-height: 280px;
     overflow-y: auto;
@@ -21336,6 +21337,16 @@ body.notification-visible .popup.popup--visible {
     border-radius: 30px;
   }
 }
+@media(min-width: 768px) and (max-width: 1920px){
+  .popup-quick-view__body div[data-form-wrapper]{
+    max-height: 280px;
+  }
+}
+@media(min-width: 1921px){
+  .popup-quick-view__body div[data-form-wrapper]{
+    max-height: 630px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .popup-quick-view .pswp__bg {
     top: -100vh;
@@ -21345,6 +21356,9 @@ body.notification-visible .popup.popup--visible {
   }
 }
 
+.popup-quick-view__body .selector-wrapper--grid .radio__legend {
+  margin-bottom: 24px;
+}
 .popup-quick-view .pswp__container {
   -webkit-user-select: auto;
   user-select: auto;
@@ -21372,7 +21386,7 @@ body.notification-visible .popup.popup--visible {
 }
 
 .popup-quick-view .product-single__media {
-  padding-top: 100%;
+  padding-top: 100% !important;
 }
 
 .popup-quick-view .product-single__media img {
@@ -21609,6 +21623,7 @@ body.notification-visible .popup.popup--visible {
 @media only screen and (max-width: 767px) {
   .popup-quick-view__foot {
     padding: 0 25px 20px;
+    box-shadow: none;
   }
 }
 .popup-quick-view__foot:before {
@@ -24851,7 +24866,6 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .recently-viewed-grid-item .swatch__button .swatch__label:last-child {margin: 0;}
 
 /* ---------- store locatore page ----------- */
-.page--lekiusa #MainContent {background: #F9F9F9;}
 .page--lekiusa div#col-main {max-width: 1424px;margin: 0 auto;padding: 80px 0;}
 #store-locator-title {font-size: 50px;line-height: 58px;color: var(--COLOR-BLACK);text-transform: uppercase;}
 .addresses li a ,.addresses li a .name,.addresses li a span{color: var(--COLOR-BLACK) !important;}

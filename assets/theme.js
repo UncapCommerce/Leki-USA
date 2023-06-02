@@ -577,7 +577,7 @@
       this.id = container.getAttribute(attributes$1.id);
       this.type = registration.type;
       this.callStack = registration.getStack();
-
+      
       try {
         this.onLoad();
       } catch (e) {
@@ -675,7 +675,7 @@
 
     const section = new Registration(type, components);
     registered[type] = section;
-
+       
     return registered;
   }
 
@@ -2523,7 +2523,7 @@
         plan: this.plan(variant),
       };
     }
-
+    
     // Private Methods
     // -----------------------------------------------------------------------------
     _setIdInputValue(variant) {
@@ -3100,8 +3100,8 @@
         this.pushState(evt.dataset);
       }
     }
-
-    pushState(formState) {
+    
+    pushState(formState) {     
       this.productState = this.setProductState(formState);
       this.updateAddToCartState(formState);
       this.updateProductPrices(formState);
@@ -3283,7 +3283,7 @@
     updateRemaining(formState) {
       const variant = formState.variant;
       const remainingClasses = [classes$c.remainingIn, classes$c.remainingOut, classes$c.remainingUnavailable, classes$c.remainingLow];
-
+      console.log('remainingClasses----',remainingClasses);
       if (variant && this.remainingWrapper && this.remainingJSON) {
         const remaining = this.remainingJSON[variant.id];
 
@@ -3915,7 +3915,6 @@
                       parseInt(this.element.getAttribute(attributes$9.index)) === parseInt(this.outer.getAttribute(attributes$9.dataFetchedImageIndex))
                     ) {
                       this.replaceImages();
-
                       this.outer.removeAttribute(attributes$9.dataFetchedImageIndex);
                     }
                   })
@@ -3943,6 +3942,23 @@
       this.swatchLink.addEventListener('click', (event) => {
         event.preventDefault();
         this.updateImagesAndLinksOnEvent();
+       
+        if(document.querySelectorAll('.product-grid-item__swatch .swatch__button') != null){
+          const swatchBtn = document.querySelectorAll('.product-grid-item__swatch .swatch__button');
+          swatchBtn.forEach(vbtn => {
+            vbtn.addEventListener('click',(e)=>{
+              const getPrice = e.target.getAttribute('data-variant-price');
+              const getcomparePrice = e.target.getAttribute('data-variant-compare');
+              let priceDiv = e.target.parentNode.parentNode.parentNode.childNodes[1].children[1];  
+              if(getcomparePrice){
+                priceDiv.querySelector('.product-grid-item__price__new').innerHTML = themeCurrency.formatMoney(getPrice, theme.moneyWithCurrencyFormat);
+                priceDiv.querySelector('.compare_price').innerHTML = themeCurrency.formatMoney(getcomparePrice, theme.moneyWithCurrencyFormat);
+              }else{
+                priceDiv.innerHTML = themeCurrency.formatMoney(getPrice, theme.moneyWithCurrencyFormat);
+              }
+            });
+          });
+        }
       });
 
       this.swatchLink.addEventListener('keyup', (event) => {
@@ -13554,6 +13570,7 @@
   const sections$s = {};
 
   class RelatedProducts {
+    
     constructor(container) {
       this.container = container;
       this.relatedProducts = this.container.querySelector(selectors$X.relatedProducts);
@@ -13606,6 +13623,7 @@
         this.gridSlider.onUnload();
       }
     }
+    
   }
 
   const RelatedProductsSection = {
@@ -14917,3 +14935,6 @@ function gloveSize(){
     });
   }
 }
+
+
+
