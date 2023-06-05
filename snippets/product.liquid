@@ -1742,7 +1742,7 @@
               </div>
             </div>
 
-            <div data-form-wrapper>
+            <div data-form-wrapper {% if product.description == blank %}class="not-scrollable"{% endif %}>
               {%- comment -%} Product Form Variants {%- endcomment -%}
               <!-- /partials/product-form-quickview-body.liquid -->
 
@@ -1771,7 +1771,9 @@
   {%- if show_remaining -%}
     {%- render 'inventory-countdown',
       current_variant: current_variant,
-      product_variants: product.variants
+      product_variants: product.variants,
+      max_inventory: settings.max_inventory,
+      hide_inventory_count: settings.hide_inventory_count
     -%}
   {%- endif -%}
 
@@ -1928,7 +1930,7 @@
                         value="{{ value | escape_once }}"
                         id="{{ input_id }}"
                         {% if value == current_value %}checked{% endif %}>
-                      <label for="{{ input_id }}" class="swatch__label swatch__label--{{ value | escape_once }}" data-swatch="{{ value | escape_once }}" data-tooltip="{{ value | escape_once }}">
+                      <label for="{{ input_id }}" class="swatch__label swatch__label__{{ value | escape_once }}" data-swatch="{{ value | escape_once }}" data-tooltip="{{ value | escape_once }}">
                         <span class="visually-hidden">{{ value | escape_once }}</span>
                         {%- if settings.color_swatches_product_style == 'circle' -%}
                           <span class="icon icon-check"></span>

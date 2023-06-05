@@ -322,7 +322,6 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 
   <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'flickity.js' | asset_url }}" defer="defer"></script>
 
   {{ content_for_header }}
 
@@ -365,7 +364,9 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
       {{ content_for_layout }}
     </main>
 
+    {%- section 'swatch-image' -%}
     {%- section 'footer' -%}
+
   </div>
 
   {% comment %} Cart Templates {% endcomment %}

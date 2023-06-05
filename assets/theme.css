@@ -12762,6 +12762,7 @@ a.results-popular__link:hover {
 
 .collection-promo__content--stacked .collection-promo__heading{
   margin-bottom: 8px;
+  font-family: var(--font-stack-body);
 }
 .collection-promo__content--stacked .collection-promo__text{
   margin-bottom: 24px;
@@ -14528,7 +14529,13 @@ a.results-popular__link:hover {
 .featured-collection--split-right {
   overflow: visible;
 }
-
+.featured-collection .flickity-viewport {
+  overflow: visible;
+}
+/* .featured-collection .flickity-viewport::-webkit-scrollbar {
+  width: 1px; 
+  background: transparent;
+} */
 .featured-collection__top {
   position: relative;
   display: flex;
@@ -21325,6 +21332,10 @@ body.notification-visible .popup.popup--visible {
     max-height: 280px;
     overflow-y: auto;
   }
+  .popup-quick-view__body div[data-form-wrapper].not-scrollable {
+    max-height: max-content;
+    overflow-y: hidden;
+  }
   .popup-quick-view__body div[data-form-wrapper]::-webkit-scrollbar {
     width: 10px;
   }
@@ -24589,7 +24600,10 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .specification-list-item p{font-size: 14px;line-height: 20px;margin: 0;}
 /* ------------- Recommended Product ------------ */
 .recommended-product .product__media__outer {padding-top: 140%;}
-.recommendation-section h2.section__heading {color: var(--COLOR-BLACK);}
+.recommendation-section h2.section__heading {color: var(--COLOR-BLACK);font-family: var(--font-stack-body);}
+
+/* ------- accordion section --------- */
+.accordion-section .section__heading,.accordion-section .accordion__item__title__text {font-family: var(--font-stack-body);}
 
 /* -------------- Sub Collection List --------------- */
 .sub-collections-wrap {margin: 0 0 0 -10px;}
@@ -24967,6 +24981,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 @media(min-width: 768px){
   .product-single__thumbnails .flickity-page-dots ,.featured-collection__container.carousel__container .flickity-page-dots{display: none;}
   .page--compare-products .product__media__outer{ padding-top: 130.5%;}
+  .featured-collection__container .carousel .flickity-slider.comparable-collection {overflow: hidden;}
 }
 @media(min-width: 1024px){
   .accordion__content .wrapper--narrow {max-width: 100%;width: 920px;}  
@@ -24981,9 +24996,10 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   }
 }
 
-.featured-collection__container .carousel.carousel--mobile {
-    display: block;
+.featured-collection__container .carousel {
+  display: block;
 }
+
 @media(max-width: 1440px){
   .footer-blocks{gap: 150px;}
   .upsell__products__slider:not(.flickity-enabled) .product-upsell__holder {max-width: 100%;flex: 0 0 100%;margin: 0 0 10px;}
