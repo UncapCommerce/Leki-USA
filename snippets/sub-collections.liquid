@@ -200,18 +200,23 @@
 -%}
 
 {% assign pageUrl = collection.handle %}
-{% assign thirdLevel = true %}
+{% assign thirdLevel = false %}
 {%- for link in linklists['mega-menu'].links -%}
-  {% for childlink in link.links %}     
-    {% for grandchildlink in childlink.links %}
-      {% assign grandchild_title = grandchildlink.title | handle %}      
-      {% if grandchild_title == pageUrl %}
-        {% assign thirdLevel = false %}        
-      {% endif %}
-    {% endfor %}
+  {% for childlink in link.links %}    
+    {% assign childlink_title = childlink.title | handle %}  
+      {% if childlink_title == pageUrl %}
+        {% if childlink.links == blank %} {% assign thirdLevel = true %} {% endif %}
+        {% endif %}
+        {% for grandchildlink in childlink.links %}
+        {% assign grandchild_title = grandchildlink.title | handle %}          
+        {% if grandchild_title == pageUrl %}
+          {% assign thirdLevel = true %} 
+        {% endif %}
+      {% endfor %}    
   {% endfor %}
 {% endfor %}
-{% if thirdLevel %}
+
+{% unless thirdLevel %}
 <section id="SubCollections--{{ section.id }}"
   class="section-padding {{ sub_collections_classes }}{% if bg_color_secondary %} bg-secondary{% endif %} {{ text_color }}"
   data-section-type="sub-collections"
@@ -243,10 +248,6 @@
     {%- endif -%}
 
     <div class="sub-collections-wrap">
-      {% comment %}{% assign pageUrl = request.host | append: request.path %}
-      {% assign finlaURL = pageUrl | split: '/' | last %}{% endcomment %}
-
-   
       {% for link in linklists['mega-menu'].links %}
       {% assign firstLevel = link.title | handle %}
         {% if link.links != blank %}
@@ -289,32 +290,32 @@
                   {% assign collection_title = grandchild_link.title %}
                   {% assign thirdLevelLink = grandchild_link.url %}
                     <div class="{{ item_class }}">
-                    <a href="{{ thirdLevelLink }}" class="list-collections__item__outer">      
-                    <div class="list-collections__item__image"
-                      data-product-media-container
-                      {% if animations_enabled %}
-                        data-aos="fade-up"
-                        data-aos-anchor="{{ animation_anchor }}"
-                        data-aos-delay="{{ animation_delay | times: 150 }}"
-                      {% endif %}>    
-                    {% if grandchild_link.object.image != blank %}
-                      <div class="background-size-cover {{ item_bg_class }}">{{- grandchild_link.object.image | img_url: "" | img_tag -}}</div>                    
-                    {% else %}
-                     {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
-                    {% endif %}
+                      <a href="{{ thirdLevelLink }}" class="list-collections__item__outer">      
+                        <div class="list-collections__item__image"
+                          data-product-media-container
+                          {% if animations_enabled %}
+                            data-aos="fade-up"
+                            data-aos-anchor="{{ animation_anchor }}"
+                            data-aos-delay="{{ animation_delay | times: 150 }}"
+                          {% endif %}>    
+                        {% if grandchild_link.object.image != blank %}
+                          <div class="background-size-cover {{ item_bg_class }}">{{- grandchild_link.object.image | img_url: "" | img_tag -}}</div>                    
+                        {% else %}
+                         {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                        {% endif %}
+                        </div>
+                        <div class="list-collections__item__content {{ content_position_class }}"
+                          {% if animations_enabled %}
+                            data-aos="fade-up"
+                            data-aos-anchor="{{ animation_anchor }}"
+                            data-aos-delay="{{ animation_delay | times: 150 }}"
+                          {% endif %}>
+                          <h3 class="list-collections__item__title">
+                            {{- collection_title -}}
+                          </h3>
+                        </div>
+                      </a>
                     </div>
-                  <div class="list-collections__item__content {{ content_position_class }}"
-                    {% if animations_enabled %}
-                      data-aos="fade-up"
-                      data-aos-anchor="{{ animation_anchor }}"
-                      data-aos-delay="{{ animation_delay | times: 150 }}"
-                    {% endif %}>
-                    <h3 class="list-collections__item__title">
-                      {{- collection_title -}}
-                    </h3>
-                  </div>
-                  </a>
-                </div>
                 {% endfor %}
               {% endif %}
             {% endif %}
@@ -324,4 +325,4 @@
     </div>
   </div>
 </section>
-{% endif %}
+{% endunless %}

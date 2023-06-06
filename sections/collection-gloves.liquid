@@ -114,18 +114,21 @@
 {%- endstyle -%}
 
 {% assign pageUrl = collection.handle %}
-{% assign thirdLevel = true %}
+{% assign secondLevel = true %}
 {%- for link in linklists['mega-menu'].links -%}
   {% for childlink in link.links %}
+    {% assign childlink_title = childlink.title | handle %}      
+    {% if childlink_title == pageUrl %}
+      {% assign secondLevel = false %}        
+      {% endif %}
     {% for grandchildlink in childlink.links %}
       {% assign grandchild_title = grandchildlink.title | handle %}      
-      {% if grandchild_title == pageUrl %}
-      {% assign thirdLevel = false %}        
+      {% if grandchild_title == pageUrl %}      
       {% endif %}
     {% endfor %}
   {% endfor %}
 {% endfor %}
-{% unless thirdLevel %}
+{% unless secondLevel %}
   <div id="collection-details--{{ section.id }}" class="section-padding" {% if animations_enabled %}
               data-aos="fade"
               data-aos-anchor="{{ animation_anchor }}"
@@ -1352,4 +1355,4 @@
       }
     ]
   }
-{% endschema %}
+{% endschema %} 

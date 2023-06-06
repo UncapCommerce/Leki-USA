@@ -1899,7 +1899,7 @@
               {%- assign current_value = current_variant.options[forloop.index0] -%}
               {% assign option_name = option.name | handle %}
               <fieldset class="radio__fieldset radio__fieldset--{{ settings.color_swatches_product_style }}">
-                <legend class="radio__legend">
+                <legend class="radio__legend {% if option_name contains 'size' %}selector_mb{% endif %}">
                   <span class="radio__legend__label">{% if option_name contains 'color' %}Colors: {% elsif option_name contains 'size' and product.template_suffix == 'gloves' %}Glove Size: {% elsif option_name contains 'size' %}Pole Length: {% else %}{{ option.name | escape_once }}{% endif %}</span>
                   {% if option_name contains 'size' and product.template_suffix == 'gloves' %}
                     <div class="glove-advisor size-advisor" onclick="gloveSize()"><span>Glove Size Advisor</span>

@@ -172,6 +172,7 @@
       "price": "Price",
       "quantity": "Quantity",
       "items_with_count": {
+        "zero": "{{ count }} item",
         "one": "{{ count }} item",
         "other": "{{ count }} items"
       },

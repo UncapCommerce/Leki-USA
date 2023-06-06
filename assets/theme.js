@@ -3283,10 +3283,8 @@
     updateRemaining(formState) {
       const variant = formState.variant;
       const remainingClasses = [classes$c.remainingIn, classes$c.remainingOut, classes$c.remainingUnavailable, classes$c.remainingLow];
-      console.log('remainingClasses----',remainingClasses);
       if (variant && this.remainingWrapper && this.remainingJSON) {
         const remaining = this.remainingJSON[variant.id];
-
         if (remaining === 'out' || remaining < 1) {
           this.remainingWrapper.classList.remove(...remainingClasses);
           this.remainingWrapper.classList.add(classes$c.remainingOut);
@@ -6575,6 +6573,7 @@
         if (!isDrawerToggle && !isDrawerChild) {
           this.close(event);
         }
+        
       };
 
       this.initListeners();
@@ -13072,7 +13071,7 @@
         const flktyUpsell = new Flickity(slider, {
           contain : true,
           wrapAround: false,
-          pageDots: false,
+          pageDots: true,
           adaptiveHeight: true,
           prevNextButtons: false,
           lazyLoad: true,
