@@ -9860,6 +9860,7 @@
             // this.destroySlider(slider);
             this.initSlider(slider);
           }
+          
         });
       }
     }

@@ -104,7 +104,7 @@
       --PT: {{ section.settings.mob_padding_top }}px;
       --PB: {{ section.settings.mob_padding_bottom }}px;
     }
-    #FeaturedVideo--{{ section.id }} {
+    #FeaturedVideo--{{ section.id }} .video-wrapper {
       height: {{ section_height_mob }}px;
     }
   }
@@ -112,10 +112,10 @@
 {%- endstyle -%}
 
 <section id="FeaturedVideo--{{ unique }}"
-  class="section-padding featured-video-section {{ section_height }}"
+  class="section-padding featured-video-section"
   data-section-id="{{ unique }}"
   data-section-type="featured-video">
-  <div class="video-wrapper">
+  <div class="video-wrapper {{ section_height }}">
     {%- render 'video',
       unique: unique,
       text_color: text_color,

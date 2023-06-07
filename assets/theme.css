@@ -8453,9 +8453,14 @@ a.results-popular__link:hover {
   line-height: 20px;
   color: var(--COLOR-BLACK);
   display: flex;
+  display: -webkit-box;      
+  display: -moz-box;         
+  display: -ms-flexbox;      
+  display: -webkit-flex; 
   align-items: center;
   justify-content: space-between;
 }
+.radio__legend.selector_mb {margin-bottom: 24px;}
 .radio__legend .size-advisor {display: flex;align-items: center;cursor: pointer;}
 .radio__legend .size-advisor span {font-size: 14px;line-height: 20px;color: #3758B9;display: inline-block;vertical-align: middle;}
 @media only screen and (max-width: 767px) {
@@ -8525,7 +8530,8 @@ a.results-popular__link:hover {
 .radio__button.sold-out input:checked ~ .radio__label, .radio__button.unavailable input:checked ~ .radio__label {
   background-color: var(--label-active-background);
 }
-.radio__button.sold-out .radio__label, .radio__button.unavailable .radio__label {
+.radio__button.sold-out .radio__label, .radio__button.unavailable .radio__label,
+.radio__button.sold-out .radio__label:hover, .radio__button.unavailable .radio__label:hover{
   background-color: transparent;
   text-decoration: line-through;
   border-color: #a5a5a5;
@@ -8736,7 +8742,7 @@ a.results-popular__link:hover {
   z-index: 1;
   width: var(--swatch-size);
   height: var(--BORDER-WIDTH);
-  background-color: var(--label-text);
+  background-color: var(--label-active-text);
   transform: translate(-50%, -50%) rotate(135deg);
   opacity: 0;
   visibility: hidden;
@@ -9005,7 +9011,7 @@ a.results-popular__link:hover {
 /*   top: calc((0.9375rem * var(--adjust-body) * var(--line-height) - var(--dot-size)) / 2); */
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin: 8px 0 5px;
   left: 0;
   width: var(--dot-size);
   height: var(--dot-size);
@@ -13356,7 +13362,7 @@ a.results-popular__link:hover {
   height: 11px;
   border-radius: 50%;
   border: 1px solid var(--text);
-  margin: 7px 0;
+  margin: 5px 0 7px;
 }
 .collection__sort__button::after {
   content: "";
@@ -13367,7 +13373,7 @@ a.results-popular__link:hover {
   height: 5px;
   border-radius: 50%;
   background: transparent;
-  margin: 10px 3px;
+  margin: 8px 3px 10px;
 }
 
 .collection__sort-bar .collection__sort__button {
@@ -14787,7 +14793,7 @@ a.results-popular__link:hover {
 
 .video-wrapper {
   position: relative;
-  height: 100%;
+/*   height: 100%; */
   overflow: hidden;
   border-radius: inherit;
   -webkit-transform: translateZ(0px);
@@ -15927,6 +15933,9 @@ a.results-popular__link:hover {
 }
 .image-with-text__buttons a.btn--secondary{
   color: var(--COLOR-BLACK);
+}
+.image-with-text__buttons a{
+  padding: 18px 27.5px 16px;
 }
 .image-with-text__buttons a.btn--secondary:hover{
   color: var(--button-secondary-text-hover);
@@ -20245,8 +20254,6 @@ body.notification-visible .popup.popup--visible {
 * Variant States
 */
 .variant--soldout .quantity-selector label,
-.variant--soldout .quantity-selector input,
-.variant--soldout .quantity-selector button,
 .variant--soldout .shopify-payment-button label,
 .variant--soldout .shopify-payment-button input,
 .variant--soldout .shopify-payment-button button,
@@ -20377,7 +20384,7 @@ body.notification-visible .popup.popup--visible {
 
 .product-upsell__content {
   width: calc(100% - 160px);
-  padding: 5px 0;
+  padding: 5px 10px;
   font-size: calc(1rem * var(--adjust-body));
 }
 
@@ -24521,7 +24528,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .template-product .image-with-text__heading{font-size: 50px;line-height: 58px;}
 
 /* ------------- related Product ----------------- */
-.related-products .section__heading {color: var(--COLOR-BLACK);MARGIN: 0;}
+.related-products .section__heading {color: var(--COLOR-BLACK);margin: 0;font-family: var(--font-stack-body);}
 .related-products .section__header.featured-collection__top {margin-bottom: 30px;}
 .related-products .product__media__outer {padding-top: 130.5%;}
 
@@ -24798,18 +24805,18 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .gloves-versionA {display: flex;flex-wrap: nowrap;gap: 50px;margin: 60px 0 20px;align-items: center;}
 .versionA-details {max-width: 440px;}
 .gloveSizeAdvisorForm .form__item.form__item--content {margin: 0;}
-.glove-size-chart .size-chart-inner .table-wrapper table td ul {margin: 0;}
-.glove-size-chart .table-wrapper td ul li {list-style: none;display: inline-block;vertical-align: middle;width: 73px;max-width: 73px;text-transform: uppercase;}
+.glove-size-chart .size-chart-inner table td ul {margin: 0;}
+.glove-size-chart td ul li {list-style: none;display: inline-block;vertical-align: middle;width: 73px;max-width: 73px;text-transform: uppercase;}
 .gloveSizeAdvisorForm .form__item.form__item--content p {text-align: center;color: var(--COLOR-BLACK);}
 .gloves-versionA .versionA-details p {margin: 0;color: var(--COLOR-BLACK);line-height: 24px;}
 .glove-size-chart .size-chart-inner h4 {margin-bottom: 20px;color: var(--COLOR-BLACK);}
 .glove-size-chart .size-chart-inner {margin-bottom: 40px;}
-.glove-size-chart .size-chart-inner .table-wrapper table, .glove-size-chart .size-chart-inner .table-wrapper table td {border: none;}
-.glove-size-chart .size-chart-inner .table-wrapper table td {padding: 10px 0;font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
-.glove-size-chart .size-chart-inner .table-wrapper table tr {border-bottom: 1px solid #ECECEB;display: flex;flex-wrap: nowrap;align-items: center;}
+.glove-size-chart .size-chart-inner table, .glove-size-chart .size-chart-inner table td {border: none;}
+.glove-size-chart .size-chart-inner table td {padding: 10px 0;font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
+.glove-size-chart .size-chart-inner table tr {border-bottom: 1px solid #ECECEB;display: flex;flex-wrap: nowrap;align-items: center;}
 .glove-size-chart .size-chart-inner:last-child {margin: 0;}
 .gloveSizeAdvisorForm .gloves-versionB {padding-top: 60px;}
-.glove-size-chart .size-chart-inner .table-wrapper table td.title {width: 150px;max-width: 150px;margin-right: 40px;font-weight: 600;color: var(--COLOR-BLACK);}
+.glove-size-chart .size-chart-inner table td.title {width: 150px;max-width: 150px;margin-right: 40px;font-weight: 600;color: var(--COLOR-BLACK);}
 .versionB-details h3 ,.versionA-details h3 {color: var(--COLOR-BLACK);}
 .versionB-details p {margin: 0;font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);}
 .gloveSizeAdvisorForm .download-btn {width: 100%;background: #27304A;padding: 13px 20px;margin-top: 20px;line-height: 24px;}
@@ -25010,11 +25017,12 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 @media(min-width: 768px){
   .product-single__thumbnails .flickity-page-dots ,.featured-collection__container.carousel__container .flickity-page-dots{display: none;}
   .page--compare-products .product__media__outer{ padding-top: 130.5%;}
+  .related-products .flickity-page-dots{display:none;}
 /*   .featured-collection__container .carousel .flickity-slider.comparable-collection {overflow: hidden;} */
 }
 @media(min-width: 1024px){
   .accordion__content .wrapper--narrow {width: 920px;}  
-  .template-collection .accordion__content .wrapper--narrow {width: 1140px;}
+  .template-collection .accordions-section .wrapper--narrow {width: 1140px;}
   .Pole-length-advisor .wrapper--narrow,.Glovesize-advisor .wrapper--narrow{width: 960px;}
   .image-with-title-section .banner-content .wrapper--narrow {width: 970px;}
   .athletes-inner-content {position: relative;}
@@ -25271,7 +25279,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .product__description.rte p{font-size: 14px;line-height: 20px;}
   .product-single__thumbnail:first-child {padding-left: 0;}
   .product-single__thumbnails {margin: 15px -10px 15px 0;}
-  .product-single__media--image-height {padding-top: 100%!important;}
+/*   .product-single__media--image-height {padding-top: 100%!important;} */
   .inner_accordion{margin: 0 0 10px;}
   .product__accordions {padding-top: 24px;}
   .product-single__media-slider .flickity-prev-next-button.previous{left: -10px;}
@@ -25301,7 +25309,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .gloves-main-wrap table + div {text-align: left !important;width: 100%;display: inline-block;margin-bottom: 60px;}
   .gloves-main-wrap p {margin-bottom: 40px;}
   .image-with-text__heading {margin-bottom: 8px;}
-  .image-with-text__heading a, .image-with-text__buttons a{padding: 12px 20px;font-size: 14px;line-height: 20px;}
+  .image-with-text__heading a, .image-with-text__buttons a{padding: 13px 20px 11px;font-size: 14px;line-height: 20px;}
   .image-with-text__buttons a svg{padding-left: 5px;}    
   .recommended-product .product__media__outer {padding-top: 133.5%;}
   .product-upsell__holder{max-width: 100%;padding: 12px 12px 26px;}
@@ -25342,17 +25350,17 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .page--gloves-size-advisor .featured-collection__top .section__heading {font-size: 24px;line-height: 32px;}
   .versionA-image {width: 100%;text-align: center;}
   .gloveSizeAdvisorForm .download-btn{margin-bottom: 80px;}
-  .glove-size-chart .size-chart-inner table table tr{flex-wrap: wrap;margin-bottom: 16px;}
-  .glove-size-chart .size-chart-inner table table tr:last-child{margin:0;}
-  .glove-size-chart .size-chart-inner table table td.title {width: 100%;max-width: 100%;margin-right: 0;color: var(--COLOR-RED);padding: 0;margin-bottom: 4px;position: relative;}
-  .glove-size-chart .size-chart-inner table table td.title:empty:after{display: none}
-  .glove-size-chart .size-chart-inner table table tr {border-bottom: none;}
+  .glove-size-chart .size-chart-inner table tr{flex-wrap: wrap;margin-bottom: 16px;}
+  .glove-size-chart .size-chart-inner table tr:last-child{margin:0;}
+  .glove-size-chart .size-chart-inner table td.title {width: 100%;max-width: 100%;margin-right: 0;color: var(--COLOR-RED);padding: 0;margin-bottom: 4px;position: relative;}
+  .glove-size-chart .size-chart-inner table td.title:empty:after{display: none}
+  .glove-size-chart .size-chart-inner table tr {border-bottom: none;}
   .glove-size-chart .size-chart-inner h4 {margin-bottom: 8px;font-size: 16px;line-height: 24px;}
-  .glove-size-chart table td ul li{width: 39px;max-width: 39px;margin-right: 8px;}
-  .glove-size-chart .size-chart-inner table table td {padding: 4px 0;font-size: 12px;line-height: 16px;}
-  .glove-size-chart .size-chart-inner table table td.title span {position: relative;text-decoration: underline;text-decoration-thickness: 2px;text-underline-offset: 3px;z-index: 2;text-decoration-color: #fff;}
+  .glove-size-chart table td ul li,.glove-size-chart .table-wrapper td ul li{width: 39px;max-width: 39px;margin-right: 8px;}
+  .glove-size-chart .size-chart-inner table td {padding: 4px 0;font-size: 12px;line-height: 16px;}
+  .glove-size-chart .size-chart-inner table td.title span {position: relative;text-decoration: underline;text-decoration-thickness: 2px;text-underline-offset: 3px;z-index: 2;text-decoration-color: #fff;}
   .gloveSizeAdvisorForm .gloves-versionB {padding-top: 40px;}
-  .glove-size-chart .size-chart-inner table table td.title::after {position: absolute;content: '';width: 100%;left: 0;right: 0;bottom: 0;top: auto;height: 1px;background: #e6e6e6;}
+  .glove-size-chart .size-chart-inner table td.title::after {position: absolute;content: '';width: 100%;left: 0;right: 0;bottom: 0;top: auto;height: 1px;background: #e6e6e6;}
   .section-header__title.banner__title {margin-bottom: 8px;}
   .athletes-main-wrap{grid-template-columns: 1fr 1fr;row-gap: 40px;}
   .athletes-content {padding: 8px 0;}
@@ -25396,6 +25404,11 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .popup-quick-view .product__price--off{margin-top: 6px;max-width: 107px;width: 107px;}
   .popup-quick-view__body .product__form{padding: 0;}
   .specification-list-item{flex-wrap: wrap;}
+  .related-products .carousel.carousel--mobile {display: block;}
+  .related-products .flickity-button {display: none;}
+  .related-products .flickity-page-dots{bottom: -60px;padding: 0 10px;}
+  .page--activity-landing .slide__text__wrapper .slide__heading.main-heading {font-size: 36px;line-height: 48px;width: 90%;margin: 0 auto;}
+  .page--activity-landing .featured-collection__container.carousel__container .flickity-page-dots {bottom: -60px;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}
@@ -25403,7 +25416,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .pole-drawer-active #pole-adviser-drawer{transform: translate(100vw);}
   #gloves-adviser-drawer{width: 100vw;max-width: 100%;}
   .glove-drawer-active #gloves-adviser-drawer{transform: translate(100vw);}
-  .image-with-text__heading a, .image-with-text__buttons a{padding: 12px 30px;}
+  .image-with-text__heading a, .image-with-text__buttons a{padding: 13px 30px 11px;}
   .sub-collections-wrap .list-collections__item {max-width: 183px;}
   .drop-info span{max-width: 50%;}
   .form__item--submit button.btn{padding: 12px 22px;}

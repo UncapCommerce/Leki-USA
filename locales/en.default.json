@@ -102,7 +102,7 @@
       "error_info": "Select one in the Upsell block setting",
       "error_no_product": "No upsell product selected",
       "pair_products": "Buy It With",
-      "quick_view": "Quick buy",
+      "quick_view": "Quick Buy",
       "add_to_cart": "Add to Cart"
     },
     "complementary": {
@@ -499,7 +499,7 @@
       "on_sale": "Sale",
       "save_badge_html": "Save {{ discount }}",
       "save_badge_up_to_html": "Save {{ discount }}",
-      "quick_view": "Quick buy",
+      "quick_view": "Quick Buy",
       "checkout": "Checkout",
       "view_in_space": "View in Your Space",
       "view_in_space_label": "View in your space, loads item in augmented reality window",

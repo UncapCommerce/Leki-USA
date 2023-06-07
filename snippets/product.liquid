@@ -109,7 +109,7 @@
             data-aspectratio="{{ media_aspect_ratio }}"
             data-product-single-media-wrapper>
             <div class="product-single__media product-single__media--image">
-              <div class="product-single__media--image-height" {% comment %}style="padding-top: {{ media_padding_top }}%;"{% endcomment %}></div>
+              <div class="product-single__media--image-height" style="padding-top: {{ media_padding_top }}%;"></div>
               <img class="lazyload"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 data-src="{{ image_url_pattern }}"
@@ -718,9 +718,9 @@
             {% endif %}>
             {%- if enable_variant_boxes or is_swatch_option -%}
               {%- assign current_value = current_variant.options[forloop.index0] -%}
+              {% assign option_name = option.name | handle %}
               <fieldset class="radio__fieldset radio__fieldset--{{ settings.color_swatches_product_style }}">
-                <legend class="radio__legend{% if is_size_option and info_page != blank %} radio__legend--flex radio__legend--size-chart{% endif %}">
-                  {% assign option_name = option.name | handle %}
+                <legend class="radio__legend{% if option_name contains 'size' %} selector_mb{% endif %}{% if is_size_option and info_page != blank %} radio__legend--flex radio__legend--size-chart{% endif %}">
                   {%- if is_size_option and show_labels and info_page != blank -%}
                     {{- size_chart_button -}}
                   {%- else -%}
@@ -1073,8 +1073,8 @@
       {% endif %}>
       {%- if enable_variant_boxes -%}
         <fieldset class="radio__fieldset">
-          <legend class="radio__legend">
-            <span class="radio__legend__label">{% if product.template_suffix == 'gloves' %}Glove Size: {% else %}Pole Length:{% endif %}</span>
+          <legend class="radio__legend selector_mb">
+            <span class="radio__legend__label"> Pole Length:</span>
           </legend>
 
           {%- for i in (1..3) -%}
@@ -1097,8 +1097,8 @@
         </fieldset>
       {%- else -%}
         <div class="select__fieldset">
-          <span class="radio__legend">
-            <span class="radio__legend__label" id="onboarding-{{ section.id }}-option-1-label">{% if product.template_suffix == 'gloves' %}Glove Size: {% else %}Pole Length:{% endif %}<</span>
+          <span class="radio__legend selector_mb">
+            <span class="radio__legend__label" id="onboarding-{{ section.id }}-option-1-label">Pole Length:<</span>
           </span>
 
           <div class="select-popout" data-popout data-popout-prevent="true">
@@ -2406,6 +2406,20 @@
   {%- endunless -%}
 {%- endcapture -%}
 
+<script>
+// document.addEventListener("DOMContentLoaded", function (event) {
+//   let media_slide = document.querySelectorAll('.product-single__media-slide');
+//   var mediaHeight = 0;
+//   media_slide.forEach(media =>{
+//     let matchHeight = media.clientHeight;
+//     if( matchHeight > mediaHeight ){
+//       mediaHeight = media.clientHeight;
+//     }
+//     media.style.minHeight = mediaHeight + "px";
+//   })
+// });
+</script>
+          
 <script>
 
 function setRecentlyViewedProducts() {

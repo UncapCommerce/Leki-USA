@@ -719,8 +719,8 @@
             {%- if enable_variant_boxes or is_swatch_option -%}
               {%- assign current_value = current_variant.options[forloop.index0] -%}
               <fieldset class="radio__fieldset radio__fieldset--{{ settings.color_swatches_product_style }}">
-                <legend class="radio__legend{% if is_size_option and info_page != blank %} radio__legend--flex radio__legend--size-chart{% endif %}">
-                  {% assign option_name = option.name | handle %}
+              {% assign option_name = option.name | handle %}
+                <legend class="radio__legend{% if option_name contains 'size' %} selector_mb{% endif %}{% if is_size_option and info_page != blank %} radio__legend--flex radio__legend--size-chart{% endif %}">
                   {%- if is_size_option and show_labels and info_page != blank -%}
                     {{- size_chart_button -}}
                   {%- else -%}
@@ -2333,7 +2333,7 @@ function setRecentlyViewedProducts() {
     ProductBadges: "{{ product_badges }}"
   };
 
-  console.log('productData--',productData);
+  // console.log('productData--',productData);
   const productList = [];
   let jsonResp, jsonRespArr, jsonRespArrStr;
   const numberOfProducts = 8;
