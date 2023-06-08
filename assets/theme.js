@@ -14841,7 +14841,7 @@
       let pole_div = document.querySelectorAll('.pole-advisor');
       pole_div.forEach( poleDrawer => {
         poleDrawer.addEventListener("click", () =>{
-          document.body.classList.add('pole-drawer-active');
+          document.body.classList.add('pole-drawer-active');          
         });
       });
       let close_drawer = document.querySelector('#pole-adviser-drawer .pole-close .icon.icon-close');
@@ -14921,6 +14921,15 @@ function poleLength(t){
   if( document.querySelector('.pole-advisor') != null ){
      document.body.classList.add('pole-drawer-active');
     let close_drawer = document.querySelector('#pole-adviser-drawer .pole-close .icon.icon-close');
+    document.querySelector('.pole-adviser-drawer').addEventListener("click", (event) =>{
+      event.stopPropagation();
+    });
+    document.querySelector('.popup-quick-view__wrapper').addEventListener("click", (event) =>{
+      event.stopPropagation();
+    });
+    document.body.addEventListener("click", () =>{
+      document.body.classList.remove('pole-drawer-active');
+    });
     close_drawer.addEventListener("click", () =>{
       document.body.classList.remove('pole-drawer-active');
     });
@@ -14929,6 +14938,15 @@ function poleLength(t){
 function gloveSize(){
   if( document.querySelector('.glove-advisor') != null ){
       document.body.classList.add('glove-drawer-active');
+    document.querySelector('.gloves-adviser-drawer').addEventListener("click", (event) =>{
+      event.stopPropagation();
+    });
+    document.querySelector('.popup-quick-view__wrapper').addEventListener("click", (event) =>{
+      event.stopPropagation();
+    });
+    document.body.addEventListener("click", () =>{
+      document.body.classList.remove('glove-drawer-active');
+    });
     let hide_drawer = document.querySelector('#gloves-adviser-drawer .glove-close .icon.icon-close');
     hide_drawer.addEventListener("click", () =>{
       document.body.classList.remove('glove-drawer-active');
