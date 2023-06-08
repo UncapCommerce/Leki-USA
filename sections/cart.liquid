@@ -10,7 +10,7 @@
   assign show_continue_shopping = settings.show_continue_shopping
   assign continue_shopping_link = routes.all_products_collection_url
   assign show_empty_cart_buttons = settings.show_empty_cart_buttons
-  assign empty_cart_buttons = settings.empty_cart_buttons | default: 'main-menu'
+  assign empty_cart_buttons = settings.empty_cart_buttons | default: 'empty-cart-buttons'
   assign enable_cart_notes = settings.enable_cart_notes
   assign enable_gift_notes = settings.enable_gift_notes
   assign enable_accept_terms = settings.enable_accept_terms
@@ -33,6 +33,18 @@
   .cart {
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
+  }
+  @media(max-width: 1023px){
+    .cart {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+    .cart {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
   }
 {%- endstyle -%}
 
@@ -83,7 +95,7 @@
           {%- endif -%}
 
           {%- if show_empty_cart_buttons and linklists[empty_cart_buttons].links.size > 0 -%}
-            {%- for link in linklists[empty_cart_buttons].links limit: 3 -%}
+            {%- for link in linklists[empty_cart_buttons].links limit: 4 -%}
               <a href="{{ link.url }}" class="btn btn--secondary btn--small">{{ link.title | strip_html | escape }}</a>
             {%- endfor -%}
           {%- endif -%}
@@ -397,6 +409,46 @@
       "step": 2,
       "unit": "px",
       "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_top",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "label": "Tablet Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_bottom",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "label": "Tablet Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_top",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_bottom",
+      "min": 0,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding bottom",
       "default": 60
     }
   ],

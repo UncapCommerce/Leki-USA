@@ -4,6 +4,7 @@
   .page-customer{
     background-image: url('{{ section.settings.account_bgimg | img_url:'' }}');
     background-repeat: no-repeat;
+    background-size: 100%;
     padding: 123px 0 112px;
   }
   @media(max-width:767px){
@@ -38,7 +39,7 @@
           {% endif %}
           <div class = "return light-gray remember-login">
             <div class="remember-text">
-              <input type="checkbox" id="Form-{{ section.id }}" class="input--checkbox" name="" value=""></input>
+              <input type="checkbox" id="Form-{{ section.id }}" class="input--checkbox" name="" value="">
               <span>Remember me</span>
             </div>
             {% if form.password_needed %}

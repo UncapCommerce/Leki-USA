@@ -112,7 +112,7 @@
                             <img class="lazyload" src="{{ order_image | img_url:'110' }}" alt="{{ order_image.alt }}">
                           </div>
                           <div class="order-details">
-                            <span class="order-item-count">{{ order.line_items.size }} items</span>  
+                            <span class="order-item-count">{{ order.line_items.size }} {% if order.line_items.size > 1 %}items {% else %}item{% endif %}</span>  
                             <span class="order-id">Order #{{ order.name | link_to: order.customer_url }}</span>
                             <span class="view-detail">{{ 'customer.orders.purchase_detail' | t | link_to: order.customer_url }}</span>
                           </div>
@@ -185,7 +185,7 @@
                               <img class="lazyload" src="{{ order_image | img_url:'110' }}" alt="{{ order_image.alt }}">
                             </div>
                             <div class="order-details">
-                              <span class="order-item-count">{{ order.line_items.size }} items</span>  
+                              <span class="order-item-count">{{ order.line_items.size }} {% if order.line_items.size > 1 %}items {% else %}item{% endif %}</span>  
                               <span class="order-id">Order #{{ order.name | link_to: order.customer_url }}</span>
                               <span class="view-detail">{{ 'customer.orders.purchase_detail' | t | link_to: order.customer_url }}</span>
                             </div>

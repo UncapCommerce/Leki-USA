@@ -28,7 +28,7 @@ data-section-id="{{ section.id }}">
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %} {% if forloop.index > 4 %}style="display: none;"{% endif %} >
+            {% endif %} {% comment %}{% if forloop.index > 4 %}style="display: none;"{% endif %}{% endcomment %} >
           <div class="athletes-inner-content">
             {% if block.settings.athletes_img != blank %}
               <div class="athletes-image">
@@ -65,9 +65,9 @@ data-section-id="{{ section.id }}">
         </div>
       {% endfor %}
     </div>
-    <div class="page-loader">      
+    {% comment %}<div class="page-loader">      
       {% render 'icon-loading' %}
-    </div>
+    </div>{% endcomment %}
                 
   </div>
 </section>
@@ -103,7 +103,7 @@ data-section-id="{{ section.id }}">
   });
 </script>
 
-
+{% comment %}
 <script>
 document.addEventListener("DOMContentLoaded", function(event) { 
   const cardContainer = document.querySelector(".athletes-main-wrap");
@@ -170,6 +170,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   window.addEventListener("scroll", handleInfiniteScroll);
 });
 </script>   
+{% endcomment %}
+
 {% schema %}
   {
     "name": "Our Athletes",

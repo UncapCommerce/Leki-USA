@@ -9,7 +9,7 @@
   assign continue_shopping_link = routes.all_products_collection_url
   assign show_continue_shopping = settings.show_continue_shopping
   assign show_empty_cart_buttons = settings.show_empty_cart_buttons
-  assign empty_cart_buttons = settings.empty_cart_buttons | default: 'main-menu'
+  assign empty_cart_buttons = settings.empty_cart_buttons | default: 'empty-cart-buttons'
 
   if settings.continue_shopping_link != blank
     assign continue_shopping_link = settings.continue_shopping_link
@@ -169,7 +169,7 @@
           {%- endif -%}
 
           {%- if show_empty_cart_buttons and linklists[empty_cart_buttons].links.size > 0 -%}
-            {%- for link in linklists[empty_cart_buttons].links limit: 3 -%}
+            {%- for link in linklists[empty_cart_buttons].links limit: 4 -%}
               <div{% if animations_enabled %}
                 data-aos="fade"
                 data-aos-delay="{{ animation_delay }}"

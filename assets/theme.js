@@ -6398,7 +6398,7 @@
         this.flktyUpsell = new Flickity(this.pairProducts, {
           wrapAround: true,
           pageDots: true,
-          adaptiveHeight: true,
+          adaptiveHeight: false,
           prevNextButtons: false,
           on: {
             ready: function () {
