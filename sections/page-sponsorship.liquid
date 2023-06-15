@@ -65,9 +65,8 @@
     --PB: {{ section.settings.mob_padding_bottom }}px;
   }
     .Sponsorship-form-wrapper.has-bg {
-      padding-top: 0;
-    }
-    .Sponsorship-bg{background:none;}    
+      padding-top: 98px;
+    }    
   }
 </style>
 
@@ -102,7 +101,13 @@ data-section-id="{{ section.id }}">
                 data-aos-delay="{{ animation_delay }}"
                 {%- assign animation_delay = animation_delay | plus: 150 -%}
               {% endif %}>
-          <ul {% if animations_enabled %}
+          <span class="hidden-lg">{{ section.settings.mob_heading }}</span>
+          <select class="select-type hidden-lg">
+            {% for block in section.blocks %}
+              {% if block.settings.tab_title != blank %}<option value="{{ block.settings.tab_title }}" class="tab-title {% if forloop.first %}active{% endif %}" data-id="{{ forloop.index }}">{{ block.settings.tab_title }}</option>{% endif %}
+            {% endfor %}
+          </select>
+          <ul class="hidden-sm" {% if animations_enabled %}
                 data-aos="fade-up"
                 data-aos-anchor="{{ animation_anchor }}"
                 data-aos-delay="{{ animation_delay }}"
@@ -119,9 +124,9 @@ data-section-id="{{ section.id }}">
                 {%- assign animation_delay = animation_delay | plus: 150 -%}
               {% endif %}>
             {% for block in section.blocks %}
-              <div class="sponsor-tab-content {% if forloop.first %}active{% endif %}" id="{{ forloop.index }}">
+              <div class="sponsor-tab-content {% if forloop.first %}active{% endif %}" id="{{ forloop.index }}" data-title="{{ block.settings.tab_title | handle }}">
                 {% if block.settings.block_title != blank %}<h2>{{ block.settings.block_title }}</h2>{% endif %}
-                {% if block.settings.block_content != blank %}{{ block.settings.block_content }}{% endif %}
+                {% if block.settings.block_content != blank %}<div class="tab-data"><div class="tab-inner-data" data-height="264">{{ block.settings.block_content }}</div></div><a href='javascript:void(0)' class="readmore hidden-lg" >Read More</a>{% endif %}                
                 {% if block.settings.form_data != blank %}{{ block.settings.form_data }}{% endif %}
               </div>               
             {% endfor %} 
@@ -132,9 +137,9 @@ data-section-id="{{ section.id }}">
     </div>
   </div>
 </section>
-
+      
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function(event) {
   let buttons = document.querySelectorAll('.tab-title');
   buttons.forEach( tablist => {
     tablist.onclick = function(){
@@ -142,7 +147,7 @@ data-section-id="{{ section.id }}">
       var dataIndex = Number(this.dataset.tab);
        this.parentElement.querySelectorAll(".tab-title").forEach(function(evtt){
           evtt.classList.remove("active");
-        })
+        });
        this.parentElement.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
          evt.classList.remove("active");
         });
@@ -155,9 +160,48 @@ data-section-id="{{ section.id }}">
       });
     }
   });
+
+  let selectType = document.querySelector('.select-type');
+  selectType.addEventListener('change', function handleChange(event) {
+    var select_val = this.value.replace(' ', '-');
+    var handle_val = select_val.toLowerCase();
+    event.target.nextElementSibling.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
+     evt.classList.remove("active");
+    });
+
+    event.target.nextElementSibling.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
+      let get_title = (evt.getAttribute('data-title'));
+      if( handle_val == get_title ){
+        evt.classList.add("active");
+      }
+     }); 
+  });
+
+  var desc = document.querySelector('.tab-inner-data');  
+  var height = desc.clientHeight;   
+  var innerheight = Number(desc.getAttribute('data-height'));
+  console.log(height, innerheight);
+    if (height <= innerheight ){
+      document.querySelector(".readmore").style.display = "none";
+      }
+    else{ 
+      document.querySelector(".readmore").style.display = "block";
+    }
+  var readmore = document.querySelector('.readmore');        
+   
+  readmore.addEventListener('click', () => {
+   var readinnertext = readmore.innerText; 
+   var readdesc = document.querySelector('.tab-data');    
+   readdesc.classList.toggle('showmore');    
+    if(readinnertext == 'Read More'){
+      document.querySelector('.readmore').innerText = 'Read Less';          
+    }
+    else {
+      document.querySelector('.readmore').innerText = 'Read More';      
+    }
+  }); 
 });
 </script>
-
 {% schema %}
   {
     "name": "Sponshorship Page",
@@ -215,6 +259,15 @@ data-section-id="{{ section.id }}">
       },
       {
         "type": "header",
+        "content": "Mobile Select Heading"
+      },
+      {
+        "type": "text",
+        "id": "mob_heading",
+        "label": "Select Heading"
+      }, 
+      {
+        "type": "header",
         "content": "Section spacing"
       },
       {
@@ -267,7 +320,7 @@ data-section-id="{{ section.id }}">
         "unit": "px",
         "label": "Mobile Padding bottom",
         "default": 60
-      }
+      }     
     ],
     "blocks":[
       {
@@ -293,7 +346,7 @@ data-section-id="{{ section.id }}">
             "type": "html",
             "id": "form_data",
             "label": "Add Form ID Div",
-            "info": "Copy from the app and add here <div style='margin:0 auto;' class='pxFormGenerator' id='S8_WC9jXWK4PZbv8YYgaWA'></div>"
+            "info": "Info : Copy from the app and add here, Ex: <div style='margin:0 auto;' class='pxFormGenerator' id='S8_WC9jXWK4PZbv8YYgaWA'></div>"
           }
         ]
       }
