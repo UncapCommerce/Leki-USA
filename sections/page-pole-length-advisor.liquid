@@ -129,17 +129,18 @@ data-section-id="{{ section.id }}">
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>
+            {% assign opt_3 = section.settings.option-three | split: '-' %}
             <select class="form-control" name="category" id="category">
-              {% if section.settings.option-one != blank %}<option value="{{ section.settings.option-one }}">{{ section.settings.option-one }}</option>{% endif %}
-              {% if section.settings.option-two != blank %}<option value="{{ section.settings.option-two }}">{{ section.settings.option-two }}</option>{% endif %}
-              {% if section.settings.option-three != blank %}<option value="{{ section.settings.option-three }}">{{ section.settings.option-three }}</option>{% endif %}
-              {% if section.settings.option-four != blank %}<option value="{{ section.settings.option-four }}">{{ section.settings.option-four }}</option>{% endif %}
-              {% if section.settings.option-five != blank %}<option value="{{ section.settings.option-five }}">{{ section.settings.option-five }}</option>{% endif %}
-              {% if section.settings.option-six != blank %}<option value="{{ section.settings.option-six }}">{{ section.settings.option-six }}</option>{% endif %}
-              {% if section.settings.option-seven != blank %}<option value="{{ section.settings.option-seven }}">{{ section.settings.option-seven }}</option>{% endif %}
-              {% if section.settings.option-eight != blank %}<option value="{{ section.settings.option-eight }}">{{ section.settings.option-eight }}</option>{% endif %}
-              {% if section.settings.option-nine != blank %}<option value="{{ section.settings.option-nine }}">{{ section.settings.option-nine }}</option>{% endif %}
-              {% if section.settings.option-ten != blank %}<option value="{{ section.settings.option-ten }}">{{ section.settings.option-ten }}</option>{% endif %}
+              {% if section.settings.option-one != blank %}<option value="{{ section.settings.option-one | split: '|' | first }}" data-classic="{{ section.settings.option-one | split: '|' | last }}" data-skate="">{{ section.settings.option-one | split: '-' | first }}</option>{% endif %}
+              {% if section.settings.option-two != blank %}<option value="{{ section.settings.option-two | split: '|' | first }}" data-classic="{{ section.settings.option-two | split: '|' | last }}" data-skate="">{{ section.settings.option-two | split: '-' | first }}</option>{% endif %}
+              {% if section.settings.option-three != blank %}<option value="{{ opt_3[0] }}" data-classic="{{ opt_3[1] }}" data-skate="{{ opt_3[2] }}">{{ section.settings.option-three | split: '|' | first }}</option>{% endif %}
+              {% if section.settings.option-four != blank %}<option value="{{ section.settings.option-four | split: '|' | first }}" data-classic="{{ section.settings.option-four | split: '|' | last }}" data-skate="">{{ section.settings.option-four | split: '-' | first }}</option>{% endif %}
+              {% if section.settings.option-five != blank %}<option value="{{ section.settings.option-five | split: '|' | first }}" data-classic="{{ section.settings.option-five | split: '|' | last }}" data-skate="">{{ section.settings.option-five | split: '-' | first }}</option>{% endif %}
+              {% if section.settings.option-six != blank %}<option value="{{ section.settings.option-six | split: '|' | first }}" data-classic="{{ section.settings.option-six | split: '|' | last }}" data-skate="">{{ section.settings.option-six | split: '-' | first }}</option>{% endif %}
+              {% if section.settings.option-seven != blank %}<option value="{{ section.settings.option-seven | split: '|' | first }}" data-classic="{{ section.settings.option-seven | split: '|' | last }}" data-skate="">{{ section.settings.option-seven | split: '-' | first }}</option>{% endif %}
+              {% if section.settings.option-eight != blank %}<option value="{{ section.settings.option-eight | split: '|' | first }}" data-classic="{{ section.settings.option-eight | split: '|' | last }}" data-skate="">{{ section.settings.option-eight | split: '-' | first }}</option>{% endif %}
+              {% if section.settings.option-nine != blank %}<option value="{{ section.settings.option-nine | split: '|' | first }}" data-classic="{{ section.settings.option-nine | split: '|' | last }}" data-skate="">{{ section.settings.option-nine | split: '-' | first }}</option>{% endif %}
+              {% if section.settings.option-ten != blank %}<option value="{{ section.settings.option-ten | split: '|' | first }}" data-classic="{{ section.settings.option-ten | split: '|' | last }}" data-skate="">{{ section.settings.option-ten | split: '-' | first }}</option>{% endif %}
             </select>
           </div>
           {% endif %}
@@ -161,7 +162,7 @@ data-section-id="{{ section.id }}">
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>
-            <input type="number" class="form-control" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
+            <input type="number" class="form-control height" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
             </div>
           {% if settings.pole_button_text %}
             <div class="form__item" {% if animations_enabled %}
@@ -170,7 +171,7 @@ data-section-id="{{ section.id }}">
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>
-            <input type="submit" class="btn {{ pole_button_style }}" value="{{ settings.pole_button_text }}">
+            <input type="button" class="btn {{ pole_button_style }}" value="{{ settings.pole_button_text }}">
             </div>
           {% endif %}
         </div>
@@ -182,11 +183,43 @@ data-section-id="{{ section.id }}">
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>{%- render 'icon-info' -%}<span>{{ section.settings.info_text }}</span></div>
         {% endif %}
+        <div id="poleSizeCalculationResult" class="pole-size-advisor-result hidden">
+          <div class="pole-size-advisor-result-wrapper">  
+            <div class="result-left-wrap">
+              <span>Our Suggestion</span>
+              <div id="roundedSize"></div>
+              <span class="calculated-cm">Exact calculated length:</span>
+              <div id="calculatedSize"></div>
+              <a href="" class="btn">Show All Result</a>
+            </div>
+            <div class="result-right-wrap">
+              
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var calculateBtn = document.querySelector('.form__item input[type="button"]');
+    calculateBtn.onclick = (calbtn) =>{
+      var height_val = document.querySelector('.form-control.height').value;
+      if(height_val){
+        document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
+        var selectElement = document.querySelector('#category');
+        var output = selectElement.value;
+        var calclateHeight = Number(height_val * 0.7).toFixed(1);
+        var roundVal = Math.round(calclateHeight);
+        document.querySelector('#roundedSize').innerHTML = roundVal + 'cm';
+        document.querySelector('#calculatedSize').innerHTML = calclateHeight + 'cm';
+      }
+    }
+  });
+</script>
 {% schema %}
   {
     "name": "Pole Length Advisor",
@@ -221,61 +254,71 @@ data-section-id="{{ section.id }}">
         "type": "text",
         "id": "option-one",
         "default": "Select option one",
-        "label": "Option one"
+        "label": "Option one",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-two",
         "default": "Select option two",
-        "label": "Option two"
+        "label": "Option two",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-three",
         "default": "Select option three",
-        "label": "Option three"
+        "label": "Option three",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-four",
         "default": "Select option four",
-        "label": "Option four"
+        "label": "Option four",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-five",
         "default": "Select option five",
-        "label": "Option five"
+        "label": "Option five",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-six",
         "default": "Select option six",
-        "label": "Option six"
+        "label": "Option six",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-seven",
         "default": "Select option seven",
-        "label": "Option seven"
+        "label": "Option seven",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-eight",
         "default": "Select option eight",
-        "label": "Option eight"
+        "label": "Option eight",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-nine",
         "default": "Select option nine",
-        "label": "Option nine"
+        "label": "Option nine",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",
         "id": "option-ten",
         "default": "Select option Ten",
-        "label": "Option Ten"
+        "label": "Option Ten",
+        "info":"Note: Title | Classic Value | Skate Value "
       },
       {
         "type": "text",

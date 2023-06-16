@@ -264,6 +264,7 @@
   .contact-form-bg {
     background-image: url('{{ section.settings.contact_bgimg | img_url:'' }}');
     background-repeat: no-repeat;
+    background-size: 100%;
   }{% endif %}
   .contact-form{
     background-color: {{ section.settings.form_bg }};
@@ -933,4 +934,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ]
 }
-{% endschema %} 
+{% endschema %}

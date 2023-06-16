@@ -1,0 +1,139 @@
+{%- liquid
+  assign section_width = section.settings.width
+  assign banner_height = section.settings.banner_height
+  assign animations_enabled = settings.animations_enabled
+  assign animation_anchor = '#ContactForm--' | append: section.id
+  assign animation_delay = 150
+-%}
+
+{%- style -%}
+  
+  {% if section.settings.thankyou_bgimg != blank %}
+    .thank-you-bg {
+      background-image: url('{{ section.settings.thankyou_bgimg | img_url:'' }}');
+      background-repeat: no-repeat;
+      background-size: 100%;      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 0;   
+      padding-top: {{ 100 | divided_by: section.settings.thankyou_bgimg.aspect_ratio | append: '%' }}
+    }
+    .thank-you-wrapper .banner-content .banner-heading, .thank-you-wrapper .banner-content .banner-desc{
+      color: {{ section.settings.text_color }}
+    }
+ 
+    @media(max-width: 767px){
+      {% if section.settings.thank_mob_image != blank %}
+        .thank-you-bg {
+          background-image: url('{{ section.settings.thank_mob_image | img_url:'' }}');
+          padding-top: {{ 100 | divided_by: section.settings.thank_mob_image.aspect_ratio | append: '%' }}
+        }
+      {% endif %}
+    }
+  {% endif %}
+  
+{% endstyle %}
+<section
+id="Thankyou--{{ section.id }}"
+class="section-padding"
+data-section-type="thankyou-page"
+data-section-id="{{ section.id }}">
+   <div class="thank-you-bg {{ section.settings.banner_height }}" {% if animations_enabled %}
+          data-aos="fade-up"
+          data-aos-anchor="{{ animation_anchor }}"
+          data-aos-delay="{{ animation_delay }}"
+          {%- assign animation_delay = animation_delay | plus: 150 -%}
+        {% endif %}>
+  <div class="{{ section_width }}">
+    <div class="thank-you-wrapper {% if section.settings.thankyou_bgimg != blank %}has-bg{% endif %}">
+      <div class="banner-content">
+        <h2 class="banner-heading h1">{{ section.settings.banner_heading }}</h2>
+        <p class="banner-desc">{{ section.settings.banner_desc }}</p>
+        <a href="{{ section.settings.btn_link }}" class="btn {{ section.settings.slide_btn_style }}">{{ section.settings.bnt_text }}</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Thank You Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "thankyou_bgimg",
+        "label": "Thankyou Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "thank_mob_image",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "text",
+        "id": "banner_heading",
+        "label": "Banner Heading"
+      },
+      {
+        "type": "text",
+        "id": "banner_desc",
+        "label": "Banner Heading"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "select",
+        "id": "slide_btn_style",
+        "label": "Style",
+        "default": "btn--primary btn--small",
+        "options": [
+          { "label": "Text", "value": "btn--text" },
+          { "label": "Small button", "value": "btn--primary btn--small" },
+          { "label": "Large button", "value": "btn--primary" },
+          { "label": "Small secondary button", "value": "btn--secondary btn--small" },
+          { "label": "Large secondary button", "value": "btn--secondary" }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "bnt_text",
+        "label": "Banner Button Text"
+      },
+      {
+        "type": "url",
+        "id": "btn_link",
+        "label": "Banner Button Link"
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper--narrow",
+        "options": [
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" },
+          { "value": "wrapper--narrow", "label": "Page width narrow" }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "Thank You Section"
+      }
+    ]
+  }
+{% endschema %}

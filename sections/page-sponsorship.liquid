@@ -17,6 +17,7 @@
   .Sponsorship-bg {
     background-image: url('{{ section.settings.sponsorship_bgimg | img_url:'' }}');
     background-repeat: no-repeat;
+    background-size: 100%;
   }{% endif %}
   .Sponsorship-form-wrapper.has-bg {
     padding-top: 206px;
@@ -64,9 +65,14 @@
     --PT: {{ section.settings.mob_padding_top }}px;
     --PB: {{ section.settings.mob_padding_bottom }}px;
   }
-    .Sponsorship-form-wrapper.has-bg {
+  .Sponsorship-form-wrapper.has-bg {
       padding-top: 98px;
-    }    
+  }
+  {% if section.settings.mob_image != blank %}
+    .Sponsorship-bg {
+      background-image: url('{{ section.settings.mob_image | img_url:'' }}');
+    }
+  {% endif %}
   }
 </style>
 
@@ -75,13 +81,6 @@ id="Sponsorship--{{ section.id }}"
 class="section-padding"
 data-section-type="Sponsorship-form"
 data-section-id="{{ section.id }}">
-  {% if section.settings.mob_image != blank %}
-    <div class="Sponsorship-mobile-image hidden-lg">
-      <figure>
-        <img class="lazyload" src="{{ section.settings.mob_image | img_url:'' }}" alt="{{ section.settings.mob_image.alt }}">
-      </figure>
-    </div>
-  {% endif %}
   <div class="Sponsorship-bg">
     <div class="{{ section_width }}">
       <div class="Sponsorship-form-wrapper {% if section.settings.sponsorship_bgimg != blank %}has-bg{% endif %}">

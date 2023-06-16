@@ -24769,59 +24769,25 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .form_address-fields .form__item {max-width: calc(33.33% - 13px);flex: 0 0 calc(33.33% - 13px);}
 
 /* ----------- Pole Length Advisor page ------------- */
-.poleLength_calculation .custom-select {
-  position: relative;
-}
-.poleLength_calculation .custom-select select {
-  width: 100%;
-  padding: 12px 52px 12px 20px;
-  border: 1px solid #E6E6E6;
-  background: url('icon-arrow-up.svg');
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-}
-.poleLength_calculation .form__item input {
-  width: 100%;
-  border: 1px solid #E6E6E6;
-  padding: 12px 20px;
-}
-.poleLength_calculation .form__item input.btn {
-  background: #27304A;
-  padding: 13px 20px;
-}
-.poleLength_calculation .form__item input.btn:hover{
-  background: transparent;
-}
-.poleLenght-form-wrapper .form__item.form__item--content {
-  line-height: 24px;
-  margin-bottom: 40px;
-}
-.poleLength_calculation h4.title {
-  font-size: 20px;
-  line-height: 28px;
-  color: var(--COLOR-BLACK);
-}
-.poleLength_calculation p {
-  margin: 0 0 20px;
-  color: var(--COLOR-BLACK);
-}
-.poleLenght-form-wrapper .pole-information {
-  padding: 0;
-  justify-content: flex-end;
-}
-.poleLenght-form-wrapper .form__item p {
-  text-align: center;
-  color: var(--COLOR-BLACK);
-}
-.page--pole-length-advisor .featured-collection__top .section__heading {
-  margin-bottom: 30px;
-  font-size: 50px;
-  line-height: 58px;
-  color: var(--COLOR-BLACK);
-  font-family: var(--font-stack-body);
-}
+.poleLength_calculation .custom-select {position: relative;}
+.poleLength_calculation .custom-select select {width: 100%;padding: 12px 52px 12px 20px;border: 1px solid #E6E6E6;background: url('icon-arrow-up.svg');background-repeat: no-repeat;background-position: right 14px center;}
+.poleLength_calculation .form__item input {width: 100%;border: 1px solid #E6E6E6;padding: 12px 20px;}
+.poleLength_calculation .form__item input.btn {background: #27304A;padding: 13px 20px;cursor: pointer;}
+.poleLength_calculation .form__item input.btn:hover{background: transparent;}
+.poleLenght-form-wrapper .form__item.form__item--content {line-height: 24px;margin-bottom: 40px;}
+.poleLength_calculation h4.title {font-size: 20px;line-height: 28px;color: var(--COLOR-BLACK);}
+.poleLength_calculation p {margin: 0 0 20px;color: var(--COLOR-BLACK);}
+.poleLenght-form-wrapper .pole-information {padding: 0;justify-content: flex-end;}
+.poleLenght-form-wrapper .form__item p {text-align: center;color: var(--COLOR-BLACK);}
+.page--pole-length-advisor .featured-collection__top .section__heading {margin-bottom: 30px;font-size: 50px;line-height: 58px;color: var(--COLOR-BLACK);font-family: var(--font-stack-body);}
 .page--pole-length-advisor .featured-collection__top {margin: 0;}
 .page--pole-length-advisor .featured-collection__container .product__media__outer{padding-top: 130.5%;}
+#poleSizeCalculationResult {background: #F9F9F9;border-radius: 8px;padding: 12px;margin-top: 40px;}
+.pole-size-advisor-result-wrapper {display: flex;gap: 98px;}
+.result-left-wrap {padding: 5px 10px;}
+.result-left-wrap span {font-size: 14px;line-height: 20px;margin-bottom: 4px;display: inline-block;vertical-align: middle;width: 100%;}
+.result-left-wrap .btn {background: var(--button-primary-text);color: var(--color-text);padding: 6px 20px;font-size: 12px;line-height: 16px;min-width: auto;margin-top: 20px;}
+.result-left-wrap span.calculated-cm {margin-top: 20px;}
 
 /* ------------- glove size advisor page ------------ */
 .gloveSizeAdvisorForm {background: #FFFFFF;box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);padding: 60px;line-height: 0;color: var(--COLOR-BLACK);}
@@ -25003,14 +24969,22 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .sponsorship-inner-wrap .sponsor-tab-content {display: none;}
 .sponsorship-tabs ul li.tab-title:hover:first-child,.sponsorship-tabs ul li.tab-title:first-child {border-radius: 12px 0 0 0;}
 .sponsorship-tabs ul li.tab-title:hover:last-child,.sponsorship-tabs ul li.tab-title:last-child {border-radius: 0 12px 0 0;}
-.sponsorship-inner-wrap {background: #fff;padding: 60px;border-radius: 0px 8px 0px 0px;border-top: 10px solid var(--COLOR-RED);box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);}
-.sponsorship-inner-wrap .sponsor-tab-content h2 {color: var(--COLOR-BLACK);font-family: var(--font-stack-body);margin-bottom: 24px;}
+.sponsorship-inner-wrap {background: #fff;padding: 60px 60px 20px;border-radius: 0px 8px 0px 0px;border-top: 10px solid var(--COLOR-RED);box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);}
+.sponsorship-inner-wrap .sponsor-tab-content h2 {color: var(--COLOR-BLACK);font-family: var(--font-stack-body);margin-bottom: 24px;font-weight: 500;}
 .sponsorship-inner-wrap .sponsor-tab-content li {margin-bottom: 12px;}
 .sponsorship-inner-wrap .sponsor-tab-content li:last-child {margin: 0;}
 .sponsorship-inner-wrap .sponsor-tab-content ol {margin-bottom: 0;}
 .sponsorship-inner-wrap .sponsor-tab-content .tab-data {max-height: 264px;overflow: hidden;}
 .sponsorship-inner-wrap .sponsor-tab-content .tab-data.showmore {max-height: none;}
 .sponsorship-inner-wrap .sponsor-tab-content a.readmore {font-weight: 600;font-size: 12px;line-height: 16px;padding-top: 24px;color: #176295;}
+
+/* -------- Thank You --------- */
+.thank-you-bg .wrapper--narrow {padding: 0 16px;width: 872px;}
+.thank-you-wrapper .banner-content .banner-heading {margin-bottom: 16px;}
+.thank-you-wrapper .banner-content .banner-desc {margin: 0;font-size: 20px;line-height: 28px;margin-bottom: 24px;}
+.thank-you-wrapper .banner-content .btn {line-height: 24px;}
+.thank-you-bg .thank-you-wrapper .banner-content {position: relative;}
+.thank-you-bg .thank-you-wrapper {position: absolute;top: 0;left: 0;right: 0;max-width: 840px;margin: auto;display: flex;align-items: center;justify-content: center;height: 100%;width: 100%;padding: 0 20px;}
 
 /* ------------ compare product ----------- */
 .page--compare-products .featured-collection__top {margin: 0;}
@@ -25056,6 +25030,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .page--compare-products .product__media__outer{ padding-top: 130.5%;}
   .related-products .flickity-page-dots{display:none;}
   .product-single__media--image-height{padding-top: 112.5% !important;}
+  .template-list-collections .list-collections-section__container .flickity-page-dots {display: none;}
 /*   .featured-collection__container .carousel .flickity-slider.comparable-collection {overflow: hidden;} */
 }
 @media(min-width: 1024px){
@@ -25275,7 +25250,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   #store-locator-title {font-size: 36px;line-height: 48px;}
   .page--lekiusa div#col-main{padding: 60px 20px;}
   .addresses{width: 36% !important;}
-  .sponsorship-inner-wrap{padding: 40px;}
+  .sponsorship-inner-wrap{padding: 40px 40px 20px;}
 }
 @media(max-width: 991px){  
   #gloves-adviser-drawer{width: 700px;}
@@ -25465,6 +25440,9 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .sponsorship-inner-wrap .sponsor-tab-content li{font-size: 14px;line-height: 20px;}
   .sponsorship-tabs span {font-size: 14px;line-height: 20px;color: #fff;font-weight: 600;margin-bottom: 12px;display: inline-block;vertical-align: middle;width: 100%;}
   .sponsorship-tabs select {border: 1px solid #000000;border-radius: 30px;width: 100%;margin-bottom: 38px;position: relative;background-image: url('icon-arrow-up.svg');background-repeat: no-repeat;background-position: right 14px center;font-size: 14px;line-height: 20px;padding: 15px 20px;}
+  .thank-you-wrapper .banner-content .banner-heading{font-size: 36px;line-height: 48px;}
+  .thank-you-wrapper .banner-content .banner-desc{font-size: 16px;line-height: 24px;}
+  .thank-you-wrapper .banner-content .btn{max-width: 195px;padding: 17px 16px;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}
