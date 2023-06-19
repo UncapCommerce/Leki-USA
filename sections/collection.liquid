@@ -883,7 +883,7 @@
           <div class="collection__products collection__products--{{ columns }} collection__products--{{ size_mobile }}" data-collection-products>
             {%- if collection_count > 0 -%}
               {%- if collection.products_count > 0 -%}
-                <div class="grid"{% if enable_infinity_scroll %} id="AjaxinateLoop"{% endif %}>
+                <div class="grid" id="gridLoop"{% if enable_infinity_scroll %} id="AjaxinateLoop"{% endif %}>
                   {%- if promos_array.size > 0 -%}
                     {%- liquid
   assign counter_grid = 1
