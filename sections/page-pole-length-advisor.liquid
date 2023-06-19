@@ -121,8 +121,8 @@ data-section-id="{{ section.id }}">
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>For which activity do you want to calculate the optimal pole size?</p>
-          {% if section.settings.option-one != blank or section.settings.option-two != blank or section.settings.option-three or section.settings.option-four or section.settings.option-five or 
-          section.settings.option-six != blank or section.settings.option-seven != blank or section.settings.option-eight != blank or section.settings.option-nine != blank or section.settings.option-ten != blank %}
+          {% if settings.option-one != blank or settings.option-two != blank or settings.option-three or settings.option-four or settings.option-five or 
+          settings.option-six != blank or settings.option-seven != blank or settings.option-eight != blank or settings.option-nine != blank or settings.option-ten != blank %}
           <div class="custom-select form__item" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
