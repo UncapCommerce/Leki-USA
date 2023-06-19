@@ -14953,6 +14953,19 @@ function gloveSize(){
   }
 }
 
+function getfilterResult(url) {
+  fetch(url)
+  .then((response) => response.text()) 
+  .then((responseText) => {
+    const gridid = 'AjaxinateLoop';
+    const html = new DOMParser().parseFromString(responseText, 'text/html')  
+    const destination = document.querySelector('.result-right-wrap');
+    const source = html.getElementById(gridid);
+    if (source && destination) destination.innerHTML = source.innerHTML; 
+      
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
   var calculateBtn = document.querySelector('#poleSizeAdvisorForm input[type="button"]');
   calculateBtn.onclick = (calbtn) =>{
@@ -15012,18 +15025,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 });
 
-function getfilterResult(url) {
-  fetch(url)
-  .then((response) => response.text()) 
-  .then((responseText) => {
-    const gridid = 'AjaxinateLoop';
-    const html = new DOMParser().parseFromString(responseText, 'text/html')  
-    const destination = document.querySelector('.result-right-wrap');
-    const source = html.getElementById(gridid);
-    if (source && destination) destination.innerHTML = source.innerHTML; 
-      
-  });
-}
+
 
 
 
