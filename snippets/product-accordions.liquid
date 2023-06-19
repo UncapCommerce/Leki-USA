@@ -30,6 +30,30 @@
 {{- accordions -}}
 {% endcomment %}
 
+{% assign opt_1 = settings.option-one | split: '-' %}
+{% assign opt_2 = settings.option-two | split: '-' %}
+{% assign opt_3 = settings.option-three | split: '-' %}
+{% assign opt_4 = settings.option-four | split: '-' %}
+{% assign opt_5 = settings.option-five | split: '-' %}
+{% assign opt_6 = settings.option-six | split: '-' %}
+{% assign opt_7 = settings.option-seven | split: '-' %}
+{% assign opt_8 = settings.option-eight | split: '-' %}
+{% assign opt_9 = settings.option-nine | split: '-' %}
+{% assign opt_10 = settings.option-ten | split: '-' %}
+
+<select class="form-control hidden" name="category" id="category">
+  {% if settings.option-one != blank %}<option value="{{ opt_1[0] | handle }}" data-title="{{ opt_1[0] | split: '|' }}" data-classic="{{ opt_1[1] }}" data-skate="{{ opt_1[2] }}">{{ opt_1[0] }}</option>{% endif %}
+  {% if settings.option-two != blank %}<option value="{{ opt_2[0] | handle }}" data-title="{{ opt_2[0] | split: '|' }}" data-classic="{{ opt_2[1] }}" data-skate="{{ opt_2[2] }}">{{ opt_2[0] }}</option>{% endif %}
+  {% if settings.option-three != blank %}<option value="{{ opt_3[0] | handle }}" data-title="{{ opt_3[0] | split: '|' }}" data-classic="{{ opt_3[1] }}" data-skate="{{ opt_3[2] }}">{{ opt_3[0] }}</option>{% endif %}
+  {% if settings.option-four != blank %}<option value="{{ opt_4[0] | handle }}" data-title="{{ opt_4[0] | split: '|'}}" data-classic="{{ opt_1[1] }}" data-skate="{{ opt_4[2] }}">{{ opt_4[0] }}</option>{% endif %}
+  {% if settings.option-five != blank %}<option value="{{ opt_5[0] | handle }}" data-title="{{ opt_5[0] | split: '|' }}" data-classic="{{ opt_5[1] }}" data-skate="{{ opt_5[2] }}">{{ opt_5[0] }}</option>{% endif %}
+  {% if settings.option-six != blank %}<option value="{{ opt_6[0] | handle }}" data-title="{{ opt_6[0] | split: '|' }}" data-classic="{{ opt_6[1] }}" data-skate="{{ opt_6[2] }}">{{ opt_6[0] }}</option>{% endif %}
+  {% if settings.option-seven != blank %}<option value="{{ opt_7[0] | handle }}" data-title="{{ opt_7[0] | split: '|' }}" data-classic="{{ opt_7[1] }}" data-skate="{{ opt_7[2] }}">{{ opt_7[0] }}</option>{% endif %}
+  {% if settings.option-eight != blank %}<option value="{{ opt_8[0] | handle }}" data-title="{{ opt_8[0] | split: '|' }}" data-classic="{{ opt_8[1] }}" data-skate="{{ opt_8[2] }}">{{ opt_8[0] }}</option>{% endif %}
+  {% if settings.option-nine != blank %}<option value="{{ opt_9[0] | handle }}" data-title="{{ opt_9[0] | split: '|' }}" data-classic="{{ opt_9[1] }}" data-skate="{{ opt_9[2] }}">{{ opt_9[0] }}</option>{% endif %}
+  {% if settings.option-ten != blank %}<option value="{{ opt_10[0] | handle }}" data-title="{{ opt_10[0] | split: '|' }}" data-classic="{{ opt_10[1] }}" data-skate="{{ opt_10[2] }}">{{ opt_10[0] }}</option>{% endif %}
+</select>
+      
 {%- for i in (1..5) -%}
   {%- assign accordion_title = 'accordion_heading_' | append: forloop.index -%}
   {%- assign accordion_title = block_settings[accordion_title] -%}
@@ -58,7 +82,7 @@
         {% if product.metafields.custom.activities != blank %}
         <tr>
           <td class="heading">Activities:</td>
-          <td>{{ product.metafields.custom.activities | metafield_tag }}</td>
+          <td class="select-activities">{{ product.metafields.custom.activities | metafield_tag }}</td>
         </tr>
         {% endif %}
         {% if product.metafields.custom.age_group != blank %}
@@ -218,10 +242,10 @@
       {% assign metafield_description = product.metafields.custom.more_info %}
   {% endcase %}
 
-  {%- if accordion_title != blank and accordion_content != blank or accordion_title != blank and metafield_description != blank -%}
+  {%- if accordion_title != blank and accordion_content != blank or accordion_title != blank and metafield_description != blank or accordion_title != blank and specificationsContent != blank -%}
     {%- capture accordions -%}
       {{- accordions -}}
-
+      
       <div class="product__accordion" >
         <button class="product__accordion__title" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
           {{- accordion_title -}}
@@ -270,10 +294,19 @@
             {% endif %}
           </div>
         </div>
-        
       </div>
     {%- endcapture -%}
   {%- endif -%}
 {%- endfor -%}
 
 {{- accordions -}}
+
+<!-- <script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  var pole_btn = document.querySelector('#poleSizeAdvisorForm input[type="button"]');
+  var select_act = document.querySelector('.select-activities');
+  pole_btn.onclick = (calbtn) =>{
+    var get_height = document.querySelector('.form-control#height').value;
+  };
+});
+</script> -->

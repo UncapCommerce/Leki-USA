@@ -7,12 +7,26 @@
     <h3>{{ settings.title }}</h3>
     <span>{{ settings.subtitle }}</span>
     <form id="poleSizeAdvisorForm" method="post" action="#">
-      <input type="number" class="form-control" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
-      <input type="submit" class="btn {{ pole_button_style }}" value="{{ settings.pole_button_text }}">
+      <input type="number" class="form-control height" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
+      <input type="button" class="btn {{ pole_button_style }}" value="{{ settings.pole_button_text }}">
       <div class="pole-information">    
         {%- render 'icon-info' -%}
         <span>You can adjust Vario-Poles to the exact length.</span>
       </div> 
-    </form>
+    </form>  
+    <div id="poleSizeCalculationResult" class="pole-size-advisor-result hidden">
+      <div class="pole-size-advisor-result-wrapper">  
+        <div class="result-left-wrap">
+          <span>Our Suggestion</span>
+          <div id="roundedSize"></div>
+          <div id="skateroundedSize"></div>
+          <span class="calculated-cm">Exact calculated length:</span>
+          <div id="calculatedSize"></div>
+          <div id="skateSize"></div>
+          <div class="result-btn">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

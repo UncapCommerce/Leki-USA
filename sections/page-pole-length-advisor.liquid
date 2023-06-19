@@ -129,18 +129,29 @@ data-section-id="{{ section.id }}">
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>
-            {% assign opt_3 = section.settings.option-three | split: '-' %}
+            
+            {% assign opt_1 = settings.option-one | split: '-' %}
+            {% assign opt_2 = settings.option-two | split: '-' %}
+            {% assign opt_3 = settings.option-three | split: '-' %}
+            {% assign opt_4 = settings.option-four | split: '-' %}
+            {% assign opt_5 = settings.option-five | split: '-' %}
+            {% assign opt_6 = settings.option-six | split: '-' %}
+            {% assign opt_7 = settings.option-seven | split: '-' %}
+            {% assign opt_8 = settings.option-eight | split: '-' %}
+            {% assign opt_9 = settings.option-nine | split: '-' %}
+            {% assign opt_10 = settings.option-ten | split: '-' %}
+            
             <select class="form-control" name="category" id="category">
-              {% if section.settings.option-one != blank %}<option value="{{ section.settings.option-one | split: '|' | first }}" data-classic="{{ section.settings.option-one | split: '|' | last }}" data-skate="">{{ section.settings.option-one | split: '-' | first }}</option>{% endif %}
-              {% if section.settings.option-two != blank %}<option value="{{ section.settings.option-two | split: '|' | first }}" data-classic="{{ section.settings.option-two | split: '|' | last }}" data-skate="">{{ section.settings.option-two | split: '-' | first }}</option>{% endif %}
-              {% if section.settings.option-three != blank %}<option value="{{ opt_3[0] }}" data-classic="{{ opt_3[1] }}" data-skate="{{ opt_3[2] }}">{{ section.settings.option-three | split: '|' | first }}</option>{% endif %}
-              {% if section.settings.option-four != blank %}<option value="{{ section.settings.option-four | split: '|' | first }}" data-classic="{{ section.settings.option-four | split: '|' | last }}" data-skate="">{{ section.settings.option-four | split: '-' | first }}</option>{% endif %}
-              {% if section.settings.option-five != blank %}<option value="{{ section.settings.option-five | split: '|' | first }}" data-classic="{{ section.settings.option-five | split: '|' | last }}" data-skate="">{{ section.settings.option-five | split: '-' | first }}</option>{% endif %}
-              {% if section.settings.option-six != blank %}<option value="{{ section.settings.option-six | split: '|' | first }}" data-classic="{{ section.settings.option-six | split: '|' | last }}" data-skate="">{{ section.settings.option-six | split: '-' | first }}</option>{% endif %}
-              {% if section.settings.option-seven != blank %}<option value="{{ section.settings.option-seven | split: '|' | first }}" data-classic="{{ section.settings.option-seven | split: '|' | last }}" data-skate="">{{ section.settings.option-seven | split: '-' | first }}</option>{% endif %}
-              {% if section.settings.option-eight != blank %}<option value="{{ section.settings.option-eight | split: '|' | first }}" data-classic="{{ section.settings.option-eight | split: '|' | last }}" data-skate="">{{ section.settings.option-eight | split: '-' | first }}</option>{% endif %}
-              {% if section.settings.option-nine != blank %}<option value="{{ section.settings.option-nine | split: '|' | first }}" data-classic="{{ section.settings.option-nine | split: '|' | last }}" data-skate="">{{ section.settings.option-nine | split: '-' | first }}</option>{% endif %}
-              {% if section.settings.option-ten != blank %}<option value="{{ section.settings.option-ten | split: '|' | first }}" data-classic="{{ section.settings.option-ten | split: '|' | last }}" data-skate="">{{ section.settings.option-ten | split: '-' | first }}</option>{% endif %}
+              {% if settings.option-one != blank %}<option value="{{ opt_1[0] | handle }}" data-title="{{ opt_1[0] | split: '|' }}" data-classic="{{ opt_1[1] }}" data-skate="{{ opt_1[2] }}">{{ opt_1[0] }}</option>{% endif %}
+              {% if settings.option-two != blank %}<option value="{{ opt_2[0] | handle }}" data-title="{{ opt_2[0] | split: '|' }}" data-classic="{{ opt_2[1] }}" data-skate="{{ opt_2[2] }}">{{ opt_2[0] }}</option>{% endif %}
+              {% if settings.option-three != blank %}<option value="{{ opt_3[0] | handle }}" data-title="{{ opt_3[0] | split: '|' }}" data-classic="{{ opt_3[1] }}" data-skate="{{ opt_3[2] }}">{{ opt_3[0] }}</option>{% endif %}
+              {% if settings.option-four != blank %}<option value="{{ opt_4[0] | handle }}" data-title="{{ opt_4[0] | split: '|'}}" data-classic="{{ opt_1[1] }}" data-skate="{{ opt_4[2] }}">{{ opt_4[0] }}</option>{% endif %}
+              {% if settings.option-five != blank %}<option value="{{ opt_5[0] | handle }}" data-title="{{ opt_5[0] | split: '|' }}" data-classic="{{ opt_5[1] }}" data-skate="{{ opt_5[2] }}">{{ opt_5[0] }}</option>{% endif %}
+              {% if settings.option-six != blank %}<option value="{{ opt_6[0] | handle }}" data-title="{{ opt_6[0] | split: '|' }}" data-classic="{{ opt_6[1] }}" data-skate="{{ opt_6[2] }}">{{ opt_6[0] }}</option>{% endif %}
+              {% if settings.option-seven != blank %}<option value="{{ opt_7[0] | handle }}" data-title="{{ opt_7[0] | split: '|' }}" data-classic="{{ opt_7[1] }}" data-skate="{{ opt_7[2] }}">{{ opt_7[0] }}</option>{% endif %}
+              {% if settings.option-eight != blank %}<option value="{{ opt_8[0] | handle }}" data-title="{{ opt_8[0] | split: '|' }}" data-classic="{{ opt_8[1] }}" data-skate="{{ opt_8[2] }}">{{ opt_8[0] }}</option>{% endif %}
+              {% if settings.option-nine != blank %}<option value="{{ opt_9[0] | handle }}" data-title="{{ opt_9[0] | split: '|' }}" data-classic="{{ opt_9[1] }}" data-skate="{{ opt_9[2] }}">{{ opt_9[0] }}</option>{% endif %}
+              {% if settings.option-ten != blank %}<option value="{{ opt_10[0] | handle }}" data-title="{{ opt_10[0] | split: '|' }}" data-classic="{{ opt_10[1] }}" data-skate="{{ opt_10[2] }}">{{ opt_10[0] }}</option>{% endif %}
             </select>
           </div>
           {% endif %}
@@ -188,9 +199,12 @@ data-section-id="{{ section.id }}">
             <div class="result-left-wrap">
               <span>Our Suggestion</span>
               <div id="roundedSize"></div>
+              <div id="skateroundedSize"></div>
               <span class="calculated-cm">Exact calculated length:</span>
               <div id="calculatedSize"></div>
-              <a href="" class="btn">Show All Result</a>
+              <div id="skateSize"></div>
+              <div class="result-btn">
+              </div>
             </div>
             <div class="result-right-wrap">
               
@@ -203,7 +217,7 @@ data-section-id="{{ section.id }}">
   </div>
 </section>
 
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     var calculateBtn = document.querySelector('.form__item input[type="button"]');
     calculateBtn.onclick = (calbtn) =>{
@@ -211,15 +225,58 @@ data-section-id="{{ section.id }}">
       if(height_val){
         document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
         var selectElement = document.querySelector('#category');
-        var output = selectElement.value;
-        var calclateHeight = Number(height_val * 0.7).toFixed(1);
-        var roundVal = Math.round(calclateHeight);
-        document.querySelector('#roundedSize').innerHTML = roundVal + 'cm';
-        document.querySelector('#calculatedSize').innerHTML = calclateHeight + 'cm';
+        var selected_val = selectElement.value;
+
+        for(i=0; i<selectElement.length; i++){
+          var optionVal = selectElement.options[i];    
+          if (optionVal.value == selected_val) {                
+            var classic_val = optionVal.dataset.classic;  
+            var skate_val = optionVal.dataset.skate;  
+            var get_title = optionVal.dataset.title;  
+          }
+        }
+
+        var filter_val = get_title.replaceAll(' ','+');
+        var getcurrURL = "{{ shop.url }}" + "/collections/all?filter.p.m.custom.sport="+ filter_val +"&filter.p.m.custom.length="+ height_val +"+cm"; 
+        var getCurrent = "{{ shop.url }}" + "/collections/all?filter.p.m.custom.sport="+ filter_val +"&filter.p.m.custom.length="+ height_val +"+cm";
+    
+        document.querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
+        document.querySelector('.result-btn a').setAttribute('href',getcurrURL);
+        getfilterResult(getCurrent);
+        
+        var classicHeight = Number(height_val * classic_val).toFixed(1);
+        var classicroundVal = Math.round(classicHeight);    
+        var skateHeight = Number(height_val * skate_val).toFixed(1);
+        var skateroundVal = Math.round(skateHeight);        
+        if(classic_val && skate_val ){
+          document.querySelector('#roundedSize').innerHTML = 'Classic ' + classicroundVal + 'cm';
+          if(skateroundVal > 0 ){document.querySelector('#skateroundedSize').innerHTML = 'Skate ' + skateroundVal + 'cm';}
+        }else{
+          document.querySelector('#roundedSize').innerHTML = classicroundVal + 'cm';
+          if(skateroundVal > 0 ){
+            document.querySelector('#skateroundedSize').innerHTML = skateroundVal + 'cm';
+          }
+          else{
+            document.querySelector('#skateroundedSize').innerHTML = '';
+          }
+        }
+        if(classic_val && skate_val){
+          document.querySelector('#calculatedSize').innerHTML = 'Classic ' + classicHeight + 'cm';
+          if(skateHeight > 0 ){document.querySelector('#skateSize').innerHTML = 'Skate ' + skateHeight + 'cm';}
+        }else{
+          document.querySelector('#calculatedSize').innerHTML = classicHeight + 'cm';
+          if(skateHeight > 0){
+            document.querySelector('#skateSize').innerHTML = skateHeight + 'cm';
+          }
+          else{
+            document.querySelector('#skateSize').innerHTML = '';
+          }
+        }
       }
-    }
+    } 
+
   });
-</script>
+</script> -->
 {% schema %}
   {
     "name": "Pole Length Advisor",
@@ -255,75 +312,84 @@ data-section-id="{{ section.id }}">
         "id": "option-one",
         "default": "Select option one",
         "label": "Option one",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-two",
         "default": "Select option two",
         "label": "Option two",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-three",
         "default": "Select option three",
         "label": "Option three",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-four",
         "default": "Select option four",
         "label": "Option four",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-five",
         "default": "Select option five",
         "label": "Option five",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-six",
         "default": "Select option six",
         "label": "Option six",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-seven",
         "default": "Select option seven",
         "label": "Option seven",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-eight",
         "default": "Select option eight",
         "label": "Option eight",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-nine",
         "default": "Select option nine",
         "label": "Option nine",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-ten",
         "default": "Select option Ten",
         "label": "Option Ten",
-        "info":"Note: Title | Classic Value | Skate Value "
+        "info":"Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "info_text",
         "label": "Information Text"
+      },      
+      {
+        "type": "header",
+        "content": "Result Section"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Reslu Button Text"
       },
       {
         "type": "header",
