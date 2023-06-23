@@ -310,7 +310,8 @@
       "total": "Total",
       "none": "You haven't placed any orders yet.",
       "purchase_detail": "View purchase details",
-      "back_title": "Go back to orders"
+      "back_title": "Go back to orders",
+      "back_dashboard": "Go back to dashboard"
     },
     "order": {
       "title": "Order {{ name }}",

@@ -214,21 +214,21 @@
   for line_item in cart.items
     assign upsell_product_list = line_item.product.metafields.theme.upsell_list
     assign upsell_product = line_item.product.metafields.theme.upsell
-
-    if upsell_product_list.value != nil and upsell_product_list.type == 'list.product_reference'
+    
       comment
         Product meta field type "List of products"
       endcomment
 
       for upsell_product in upsell_product_list.value
         if cart_products contains upsell_product.id or upsell_product.available == false
-          continue
+          continue          
         endif
-
-        unless upsell_products contains upsell_product.handle
+        unless upsell_products contains upsell_product.handle   
+        echo unlesss
           assign upsell_products = upsell_products | append: upsell_product.handle | append: ','
         endunless
       endfor
+   if upsell_product_list.value != nil and upsell_product_list.type == 'list.product_reference'
     endif
 
     comment

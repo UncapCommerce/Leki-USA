@@ -1,47 +1,132 @@
 {
-    "sections": {  
-      "main": {
-        "type": "collection",
-        "blocks": {
-          "1f70d126-5c7c-402e-958c-61882397cc44": {
-            "type": "promo",
-            "settings": {
-              "collection": "outlet",
-              "position": 5,
-              "width": "half",
-              "image": "{{ collection.metafields.custom.promo_banner.value }}",
-              "text_color": "text-light",
-              "text_position": "center",
-              "layout": "stacked",
-              "overlay_opacity": 10,
-              "bg_color": "#d3d3d3",
-              "title": "<p>Shop Skiing Poles<\/p>",
-              "heading_highlight_type": "circle",
-              "heading_size": 100,
-              "content": "To be fast and safe on the slopes, you need equipment you can rely on.",
-              "text_size": 100,
-              "btn_text": "Shop More",
-              "btn_link": "#",
-              "btn_style": "btn--secondary btn--small"
-            }
-          }
-        },
-        "block_order": [
-          "1f70d126-5c7c-402e-958c-61882397cc44"
-        ],
-        "settings": {
-          "show_breadcrumbs": true,
-          "enable_sorting": true,
-          "enable_filters": true,
-          "filters_open": true,
-          "filter_mode": "default",
-          "bg_color": "",
-          "padding_top": 0,
-          "padding_bottom": 60
-        }
-      }    
+  "sections": {
+    "hero": {
+      "type": "collection-image-with-title",
+      "settings": {
+        "banner_height": "three-fifty-height",
+        "text_position": "bottom-left",
+        "text_transform": "uppercase",
+        "show_image": true,
+        "banner_image": "{{ collection.metafields.custom.collection_banner.value }}",
+        "banner_title": "{{ collection.metafields.custom.banner_text.value }}",
+        "text_color": "text-light",
+        "overlay_opacity": 0,
+        "bg_color_secondary": false,
+        "width": "wrapper--full-padded",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 0,
+        "mob_padding_top": 30,
+        "mob_padding_bottom": 30
+      }
     },
-    "order": [
-      "main"
-    ]
-  }
+    "f0928a40-1c97-4068-9db1-059da2c6415d": {
+      "type": "sub-collections",
+      "settings": {
+        "layout": "carousel",
+        "columns": 6,
+        "image_size": 75,
+        "image_shape": "circle",
+        "title": "",
+        "text_size": 100,
+        "overlay_text": true,
+        "layout_mobile": "carousel",
+        "columns_mobile": "2",
+        "bg_color_secondary": false,
+        "text_color": "text-light",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
+      }
+    },
+    "main": {
+      "type": "collection-gloves",
+      "blocks": {
+        "1f70d126-5c7c-402e-958c-61882397cc44": {
+          "type": "promo",
+          "settings": {
+            "collection": "outlet",
+            "position": 5,
+            "width": "half",
+            "image": "{{ collection.metafields.custom.promo_banner.value }}",
+            "text_color": "text-light",
+            "text_position": "center",
+            "layout": "stacked",
+            "overlay_opacity": 10,
+            "bg_color": "#d3d3d3",
+            "title": "<p>Shop Skiing Poles<\/p>",
+            "heading_highlight_type": "circle",
+            "heading_size": 100,
+            "content": "To be fast and safe on the slopes, you need equipment you can rely on.",
+            "text_size": 100,
+            "btn_text": "Shop More",
+            "btn_link": "#",
+            "btn_style": "btn--secondary btn--small"
+          }
+        }
+      },
+      "block_order": [
+        "1f70d126-5c7c-402e-958c-61882397cc44"
+      ],
+      "settings": {
+        "show_breadcrumbs": true,
+        "enable_sorting": true,
+        "enable_filters": true,
+        "filters_open": true,
+        "filter_mode": "default",
+        "bg_color": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 30,
+        "tab_padding_bottom": 30,
+        "mob_padding_top": 24,
+        "mob_padding_bottom": 24
+      }
+    },
+    "ff41c90e-35b4-4d75-b865-33f50fd4b141": {
+      "type": "section-accordions",
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "subheading": "",
+        "text": "",
+        "layout": "one-column",
+        "show_accordion_divider": false,
+        "tabs_bg_color": "rgba(0,0,0,0)",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
+      }
+    },
+    "5c37c9bf-9767-4722-aa72-f21aee119087": {
+      "type": "product-recommendation",
+      "settings": {
+        "select_metafield": "{{ collection.metafields.custom.product_recommendation.value }}",
+        "product_recommendations_heading": "You might also like",
+        "bg_color": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "f0928a40-1c97-4068-9db1-059da2c6415d",
+    "main",
+    "ff41c90e-35b4-4d75-b865-33f50fd4b141",
+    "5c37c9bf-9767-4722-aa72-f21aee119087"
+  ]
+}

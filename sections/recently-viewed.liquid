@@ -93,9 +93,12 @@
       document.querySelector('.recently-viewed-wrapper').style.display = 'none';
     }
     if ( productData != null ){
+    var count = 0;
+  console.log('-----',[...productData].sort().reverse());
+    var productDataReverse = [...productData].sort().reverse();
+
     productData.forEach(function(item, key) { 
-      //console.log("productData-->", item, "---", key);
-      if (key == 0 || key == 1 || key == 2){
+      count += 1;
         recentlyViewedHtml.unshift(`
       	<div class="product-grid-item recently-viewed-grid-item">
             <div class="product-grid-item__inner">
@@ -139,7 +142,7 @@
             </div>
           </div> 
         `);
-      }
+      
     });
     }
     
@@ -168,14 +171,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
   .recently-viewed-wrapper .wrapper {
     width: 1560px;
   }
-  .recent-view-header{width: 1131px;max-width: 100%;display: flex;align-items: center;justify-content: space-between;margin-bottom: 20px;}
+  .recent-view-header{width: calc(100% - 309px);max-width: 100%;display: flex;align-items: center;justify-content: space-between;margin-bottom: 20px;}
   .recently-viewed-img {
     width: 100%;
   }
   .recently-viewed-grid {
     list-style: none;
     margin:0; 
-    width: 1131px;
+    width: calc(100% - 309px);
     max-width: 100%;
     padding: 40px;
     background: #fff;
@@ -249,16 +252,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
       padding: 0;
       border: none;
     }
+    .recently-viewed-grid ,.recent-view-header{ 
+      width: 100%;
+    }    
   }
   @media(max-width: 767px){
     .recently-viewed-grid.recently-viewed-slider {
       padding: 0;
-      margin: 0 -10px;
     }
     .recently-viewed-grid.recently-viewed-slider .recently-viewed-grid-item {
       max-width: 284px;
       width: 284px;
       padding: 10px;
+    }
+    .recent-view-header h3 {
+      font-size: 18px;
+      line-height: 26px;
     }
   }
   @media(max-width: 575px){
@@ -268,6 +277,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     .recently-viewed-grid-item .product__media__outer {
       padding-top: 140%;
+    }
+  }
+  @media(max-width: 350px){
+    .recent-view-header a {
+      font-size: 12px;
+      line-height: 18px;
     }
   }
 </style>

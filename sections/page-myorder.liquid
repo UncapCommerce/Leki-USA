@@ -11,15 +11,15 @@
     <div class="account-tabs">
       <div class="account-tab-item">
         <ul>
-          <li class="{% if request.path contains '/account' %}active{% endif %}"><a href="/account">Dashboard</a></li>
-          <li class="{% if request.path contains '/my-orders' %}active{% endif %}"><a href="/pages/my-orders">My Order</a></li>
+          <li class="{% unless request.path contains '/account/orders' or request.path contains '/my-orders' %}active{% endunless %}"><a href="/account">Dashboard</a></li>
+          <li class="{% if request.path contains '/my-orders' or request.path contains '/account/orders' %}active{% endif %}"><a href="/pages/my-orders">My Orders</a></li>
         </ul>
       </div>
       <a class="account__logout" href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a>
     </div>
     <div class="order-detail-header">
       <h3>My Orders</h3>
-      <a class="account__back" href="/account">{{ 'customer.orders.back_title' | t }}</a>
+      <a class="account__back" href="/account">{{ 'customer.orders.back_dashboard' | t }}</a>
     </div>
     <div class="account__table">   
       <div class="account__table__item order-list desktop">
@@ -59,7 +59,7 @@
                         <img class="lazyload" src="{{ order_image | img_url:'110' }}" alt="{{ order_image.alt }}">
                       </div>
                       <div class="order-details">
-                        <span class="order-item-count">{{ order.line_items.size }} items</span>  
+                        <span class="order-item-count">{{ order.line_items.size }} {% if order.line_items.size > 1 %}items {% else %}item{% endif %}</span>  
                         <span class="order-id">Order #{{ order.name | link_to: order.customer_url }}</span>
                         <span class="view-detail">{{ 'customer.orders.purchase_detail' | t | link_to: order.customer_url }}</span>
                       </div>
@@ -87,10 +87,14 @@
             {%- endif -%}
             <div class="pagination">
               {%- capture icon_previous -%}
-                {% render 'icon-arrow-up' %}
+                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.13281 12.5802L5.16531 13.6127L10.9986 7.77938L5.16531 1.94604L4.13281 2.97854L8.93365 7.77938L4.13281 12.5802Z" fill="black"/>
+                  </svg>
               {% endcapture %}
               {%- capture icon_next -%}
-                {% render 'icon-arrow-up' %}
+                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.13281 12.5802L5.16531 13.6127L10.9986 7.77938L5.16531 1.94604L4.13281 2.97854L8.93365 7.77938L4.13281 12.5802Z" fill="black"/>
+                  </svg>
               {% endcapture %}
               {{- paginate | default_pagination | replace: '&laquo; Previous', icon_previous | replace: 'Next &raquo;', icon_next -}}
             </div>
@@ -101,7 +105,7 @@
             {% comment %}
             If we have past orders, loop through each one
             {% endcomment %}
-            {% paginate customer.orders by 2 %}
+            {% paginate customer.orders by 1 %}
               {% if customer.orders.size != 0 %}
                 <div class="table-wrap">
                   <table class="full">
@@ -134,7 +138,7 @@
                               <img class="lazyload" src="{{ order_image | img_url:'110' }}" alt="{{ order_image.alt }}">
                             </div>
                             <div class="order-details">
-                              <span class="order-item-count">{{ order.line_items.size }} items</span>  
+                              <span class="order-item-count">{{ order.line_items.size }} {% if order.line_items.size > 1 %}items {% else %}item{% endif %}</span>  
                               <span class="order-id">Order #{{ order.name | link_to: order.customer_url }}</span>
                               <span class="view-detail">{{ 'customer.orders.purchase_detail' | t | link_to: order.customer_url }}</span>
                             </div>
@@ -170,11 +174,15 @@
                   <hr class="hr--full">
                 {%- endif -%}
                 <div class="pagination">
-                  {%- capture icon_previous -%}
-                    {% render 'icon-arrow-up' %}
+                  {%- capture icon_previous -%}                    
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.13281 12.5802L5.16531 13.6127L10.9986 7.77938L5.16531 1.94604L4.13281 2.97854L8.93365 7.77938L4.13281 12.5802Z" fill="black"/>
+                    </svg>
                   {% endcapture %}
-                  {%- capture icon_next -%}
-                    {% render 'icon-arrow-up' %}
+                  {%- capture icon_next -%}                    
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.13281 12.5802L5.16531 13.6127L10.9986 7.77938L5.16531 1.94604L4.13281 2.97854L8.93365 7.77938L4.13281 12.5802Z" fill="black"/>
+                    </svg>
                   {% endcapture %}
                   {{- paginate | default_pagination | replace: '&laquo; Previous', icon_previous | replace: 'Next &raquo;', icon_next -}}
                 </div>

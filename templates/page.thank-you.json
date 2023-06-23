@@ -1,45 +1,32 @@
 {
-    "sections": {
-      "main": {
-        "type": "main-page",
-        "settings": {
-          "show_page_title": true,
-          "bg_color_secondary": false,
-          "padding_top": 60,
-          "padding_bottom": 60
-        }
-      },
-      "86e26f3d-b999-4286-874a-1a735d581c03": {
-        "type": "section-collection",
-        "settings": {
-          "collection": "gloves",
-          "products_layout": "carousel",
-          "number_of_products": 4,
-          "text_alignment": "text-center",
-          "subtitle": "",
-          "subtitle_color": "#27304a",
-          "title": "You might want to compare",
-          "heading_size": 300,
-          "heading_weight": "bold",
-          "text": "",
-          "text_size": 125,
-          "button_text": "",
-          "button_style": "btn--primary",
-          "bg_color_secondary": false,
-          "enable_slider_mobile": true,
-          "columns_mobile": "2",
-          "width": "wrapper",
-          "padding_top": 60,
-          "padding_bottom": 60,
-          "tab_padding_top": 60,
-          "tab_padding_bottom": 60,
-          "mob_padding_top": 60,
-          "mob_padding_bottom": 60
-        }
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "order": [
-      "main",
-      "86e26f3d-b999-4286-874a-1a735d581c03"
-    ]
-  }
+    "8fd840e8-b066-46ae-9694-eec5d69a99f2": {
+      "type": "page-thank-you",
+      "settings": {
+        "thankyou_bgimg": "shopify:\/\/shop_images\/thank-image.jpg",
+        "thank_mob_image": "shopify:\/\/shop_images\/thank-mobile.jpg",
+        "banner_heading": "Thank you!",
+        "banner_desc": "Your Inquiry has been submitted. We will get back to you in 36hours to discuss more about this matter. For the mean time, you might want to browse our products.",
+        "text_color": "#ffffff",
+        "slide_btn_style": "btn--secondary btn--small",
+        "bnt_text": "Continue Shopping",
+        "btn_link": "shopify:\/\/collections",
+        "width": "wrapper--narrow"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8fd840e8-b066-46ae-9694-eec5d69a99f2"
+  ]
+}

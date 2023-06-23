@@ -36,7 +36,7 @@
   }
 {%- endstyle -%}
 {% if recommended_products != blank %}
-  <section id="Recommendation-products--{{ section.id }}">
+  <section id="Recommendation-products--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="recommended-product">
     <div class="section-padding recommended-product">
       <div class="{{ section_width }}">
         {%- if heading != blank -%}

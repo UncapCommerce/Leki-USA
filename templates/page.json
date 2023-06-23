@@ -8,9 +8,38 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "86e26f3d-b999-4286-874a-1a735d581c03": {
+      "type": "section-collection",
+      "settings": {
+        "collection": "gloves",
+        "products_layout": "carousel",
+        "number_of_products": 4,
+        "text_alignment": "text-center",
+        "subtitle": "",
+        "subtitle_color": "#27304a",
+        "title": "You might want to compare",
+        "heading_size": 300,
+        "heading_weight": "bold",
+        "text": "",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "86e26f3d-b999-4286-874a-1a735d581c03"
   ]
 }

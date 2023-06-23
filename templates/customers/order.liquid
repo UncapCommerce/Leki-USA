@@ -25,8 +25,8 @@
       <div class="account-tabs">
         <div class="account-tab-item">
           <ul>
-            <li class="{% if request.path contains '/account' %}active{% endif %}"><a href="/account">Dashboard</a></li>
-            <li class="{% if request.path contains '/my-orders' %}active{% endif %}"><a href="/pages/my-orders">My Order</a></li>
+            <li class="{% unless request.path contains '/account/orders' or request.path contains '/my-orders' %}active{% endunless %}"><a href="/account">Dashboard</a></li>
+            <li class="{% if request.path contains '/my-orders' or request.path contains '/account/orders' %}active{% endif %}"><a href="/pages/my-orders">My Orders</a></li>
           </ul>
         </div>
         <a class="account__logout" href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a>
@@ -40,7 +40,7 @@
           <div class="order-inner-wrap">
             <div class="order-inner-detail">
               <h3 class="order-title">Order #{{ order.name }}</h3>
-              <span class="order-item-count">{{ order.line_items.size }} items</span> 
+              <span class="order-item-count">{{ order.line_items.size }} {% if order.line_items.size > 1 %}items {% else %}item{% endif %}</span> 
               <div class="order-payment-status">{{ 'customer.order.payment_status' | t | link_to: order.customer_url }}<span>{{ order.financial_status_label | link_to: order.customer_url }}</span></div>
               <div class="order-payment-status">{{ 'customer.order.fulfillment_status' | t | link_to: order.customer_url }}<span>{{ order.fulfillment_status_label | link_to: order.customer_url }}</span></div>
             </div>
@@ -78,7 +78,7 @@
                         <div class="order-details">
                           {{ line_item.title | strip_html | link_to: line_item.product.url }}                
                           <div class="line-item_variant">
-                            {% if line_item.product.template_suffix == 'gloves' %}Glove Size:{% else %}Pole Length: {% endif %} {{ line_item.variant.title }}
+                            {% if line_item.variant.title %}{% if line_item.product.template_suffix == 'gloves' %}Glove Size:{% else %}Pole Length: {% endif %} {{ line_item.variant.title }}{% endif %}
                           </div>
                         </div>
                       </div>

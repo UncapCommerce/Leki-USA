@@ -1,7 +1,6 @@
 {%- liquid
   assign upsell_products = upsell_products | strip_newlines | split: ','
 -%}
-
 {%- for product_handle in upsell_products -%}
   {%- liquid
     assign upsell_product = all_products[product_handle]

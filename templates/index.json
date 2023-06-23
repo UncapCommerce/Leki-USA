@@ -40,13 +40,15 @@
         "duration": 4,
         "transition": "slide",
         "enable_zoom_animation": true,
-        "heading_size": 180
+        "heading_size": 180,
+        "show_arrow": false
       }
     },
     "a31d1161-7e59-421d-8104-3bbcee3ecc27": {
       "type": "section-video",
       "settings": {
-        "video_height": "full-height",
+        "video_height": "seven-fifty-height",
+        "video_height_mob": 221,
         "text_position": "middle-center",
         "video_link_bg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/42919bbcc36f479d9621f9c50d768077.mp4",
         "video_link": "",
@@ -71,14 +73,15 @@
     "section-collection-0": {
       "type": "section-collection",
       "settings": {
-        "collection": "adventure",
+        "collection": "ski-poles",
         "products_layout": "carousel",
-        "number_of_products": 4,
+        "number_of_products": 20,
         "text_alignment": "text-left",
         "subtitle": "find the right pole",
         "subtitle_color": "#bf0038",
         "title": "Our Makalu Family",
         "heading_size": 175,
+        "heading_weight": "normal",
         "text": "<p>Over 50 years ago, LEKI developed the world's first adjustable trekking pole, the Makalu. In 1978 Reinhold Messner climbed Mount Everest with it and the trekking poles conquered the mountains. In the meantime, a whole family has grown up around the Makalu.<\/p>",
         "text_size": 125,
         "button_text": "",
@@ -92,7 +95,7 @@
         "tab_padding_top": 48,
         "tab_padding_bottom": 50,
         "mob_padding_top": 40,
-        "mob_padding_bottom": 40
+        "mob_padding_bottom": 60
       }
     },
     "9c881319-66c4-4a51-a225-05b49735a0d8": {
@@ -108,7 +111,7 @@
             "subheading": "",
             "title": "Folding Poles",
             "text": "",
-            "button_text": "To the poless",
+            "button_text": "To the poles",
             "link": "#",
             "secondary_button_text": "",
             "secondary_button_link": "",
@@ -125,7 +128,7 @@
             "subheading": "",
             "title": "Telescopic Poles",
             "text": "",
-            "button_text": "To the poless",
+            "button_text": "To the poles",
             "link": "#",
             "secondary_button_text": "",
             "secondary_button_link": "",
@@ -152,21 +155,22 @@
         "padding_bottom": 60,
         "tab_padding_top": 40,
         "tab_padding_bottom": 40,
-        "mob_padding_top": 20,
+        "mob_padding_top": 40,
         "mob_padding_bottom": 20
       }
     },
     "section-collection-1": {
       "type": "section-collection",
       "settings": {
-        "collection": "adventure",
-        "products_layout": "grid",
-        "number_of_products": 4,
+        "collection": "hiking-poles",
+        "products_layout": "carousel",
+        "number_of_products": 20,
         "text_alignment": "text-left",
         "subtitle": "ALPINE SKII POLES",
         "subtitle_color": "#27304a",
         "title": "Popular right now",
         "heading_size": 300,
+        "heading_weight": "bold",
         "text": "",
         "text_size": 150,
         "button_text": "",
@@ -180,7 +184,7 @@
         "tab_padding_top": 56,
         "tab_padding_bottom": 56,
         "mob_padding_top": 40,
-        "mob_padding_bottom": 18
+        "mob_padding_bottom": 60
       }
     },
     "65119804-ec72-41f1-a297-a1e4279cf92d": {
@@ -244,7 +248,7 @@
         "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-2"
       ],
       "settings": {
-        "height": "330",
+        "height": "530",
         "enable_mobile_height": true,
         "mobile_height": "320",
         "heading_size": 100,
@@ -396,7 +400,11 @@
         "text_color": "text-dark",
         "width": "wrapper",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "section-promotion-row-0": {
@@ -580,6 +588,7 @@
         "subtitle_color": "#27304a",
         "title": "Best Sellers",
         "heading_size": 300,
+        "heading_weight": "normal",
         "text": "<p>Use this text to share information about your collection with your customers.<\/p>",
         "text_size": 150,
         "button_text": "Shop the collection",

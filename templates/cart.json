@@ -3,6 +3,13 @@
     "main": {
       "type": "cart",
       "settings": {
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 140,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 90,
+        "mob_padding_top": 16,
+        "mob_padding_bottom": 60
       }
     }
   },

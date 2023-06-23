@@ -1,0 +1,395 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "e90af4f2-1efa-431d-b13e-0062ec8edee6": {
+      "type": "image-with-title",
+      "settings": {
+        "banner_height": "three-fifty-height",
+        "text_position": "middle-center",
+        "text_transform": "uppercase",
+        "banner_image": "shopify:\/\/shop_images\/athletes-bg.jpg",
+        "banner_mob_image": "shopify:\/\/shop_images\/athletes-mobile.jpg",
+        "banner_title": "Athletes",
+        "banner_content": "<p>Exceptional athletes need outstanding products and support. LEKI draws on a unique pool of expertise with its team of over 1,000 athletes involved in alpine skiing, Nordic, trail running and mountaineering. This partnership is not just about providing athletes with the best equipment. It's about standing by them as a true partner and being there for them in every way.<\/p>",
+        "text_color": "text-light",
+        "overlay_opacity": 10,
+        "bg_color_secondary": false,
+        "width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "tab_padding_top": 0,
+        "tab_padding_bottom": 0,
+        "mob_padding_top": 0,
+        "mob_padding_bottom": 0
+      }
+    },
+    "0e30c893-806e-428c-9582-9df6ce172725": {
+      "type": "athletes-list",
+      "blocks": {
+        "9c36122f-3470-4319-945d-d74dcdcff875": {
+          "type": "athletes",
+          "settings": {
+            "athletes_image": "shopify:\/\/shop_images\/alpinesking.jpg",
+            "athletes_title": "Alpine Skiing"
+          }
+        },
+        "136e5177-024e-4d52-81bc-7d5537c2caae": {
+          "type": "athletes",
+          "settings": {
+            "athletes_image": "shopify:\/\/shop_images\/Freeride.jpg",
+            "athletes_title": "Freeride"
+          }
+        },
+        "ad4d2307-f238-4041-8d73-1a85b9e75662": {
+          "type": "athletes",
+          "settings": {
+            "athletes_image": "shopify:\/\/shop_images\/cross_country.jpg",
+            "athletes_title": "Cross Country"
+          }
+        },
+        "63b42d40-65fd-4198-a97d-b07ef0a6ecb5": {
+          "type": "athletes",
+          "settings": {
+            "athletes_image": "shopify:\/\/shop_images\/touring.jpg",
+            "athletes_title": "Touring"
+          }
+        },
+        "b82aa6b8-d2cd-4603-b70f-b5efea926b15": {
+          "type": "athletes",
+          "settings": {
+            "athletes_image": "shopify:\/\/shop_images\/Trail_Running.jpg",
+            "athletes_title": "Trail Running"
+          }
+        },
+        "1f470e3c-7b82-45c8-965b-59501c7a455e": {
+          "type": "athletes",
+          "settings": {
+            "athletes_image": "shopify:\/\/shop_images\/Cross_Trail.jpg",
+            "athletes_title": "Cross Trail"
+          }
+        }
+      },
+      "block_order": [
+        "9c36122f-3470-4319-945d-d74dcdcff875",
+        "136e5177-024e-4d52-81bc-7d5537c2caae",
+        "ad4d2307-f238-4041-8d73-1a85b9e75662",
+        "63b42d40-65fd-4198-a97d-b07ef0a6ecb5",
+        "b82aa6b8-d2cd-4603-b70f-b5efea926b15",
+        "1f470e3c-7b82-45c8-965b-59501c7a455e"
+      ],
+      "settings": {
+        "layout": "carousel",
+        "image_size": 100,
+        "image_shape": "rectangle",
+        "title": "",
+        "text_size": 100,
+        "overlay_text": true,
+        "layout_mobile": "carousel",
+        "athletes_mobile": "2",
+        "bg_color_secondary": false,
+        "text_color": "text-light",
+        "width": "wrapper--full-padded",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 0
+      }
+    },
+    "f89ad6a5-70ce-48bb-b5b3-fdc4077e4563": {
+      "type": "our-athletes",
+      "blocks": {
+        "5451bc32-0294-4f9f-b461-df993211f52b": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-1.jpg",
+            "athletes_title": "BENJAMIN ALEXANDER",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "885126fb-5bab-4b73-af83-06354a3784ea": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-2.jpg",
+            "athletes_title": "MIKAELA SHIFFRIN",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "cd6aa916-a14f-4ec1-a286-44aab22e4f9a": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-3.jpg",
+            "athletes_title": "ALEXIS PINTURAULT",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "8a550e97-1aed-439d-a515-3f14d321fd92": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-4.jpg",
+            "athletes_title": "MARCO ODERMATT",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "2aae0510-e2a3-4603-8c03-5ef98e299335": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-5.jpg",
+            "athletes_title": "ALEKSANDER KILDE AAMODT",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "847c96db-abba-43cb-9366-abb17de2af25": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-6.jpg",
+            "athletes_title": "JOSEF FERSTL",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "80d9a260-b75f-4c63-869e-b4a882315ebb": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-7.jpg",
+            "athletes_title": "STEFAN LUITZ",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "Italy",
+            "athletes_dob_year": "1992"
+          }
+        },
+        "e9c35560-8590-46ce-a79e-c99b590a7bf6": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-8.jpg",
+            "athletes_title": "PATRICK FEURSTEIN",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "aa679de9-162f-458f-8764-f0a5299b1af5": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-9.jpg",
+            "athletes_title": "MATTHIAS MAYER",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "48c388d3-390b-4b7b-802d-938ca58d3803": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-10.jpg",
+            "athletes_title": "JOSHUA STURM",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "480043a3-242d-49af-9269-dd750f9e5269": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-11.jpg",
+            "athletes_title": "ADRIAN PERTL",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "44b7cec9-2e59-4402-9d87-8c0bda40203f": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-12.jpg",
+            "athletes_title": "DOMINIK PARIS",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "599918a8-9588-4e3b-9ecb-9bfa6c0ecd97": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-13.jpg",
+            "athletes_title": "MAURO CAVIEZEL",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "09b07e92-f637-4ad6-ab9b-f2443e7eea1b": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-14.jpg",
+            "athletes_title": "CORINNE SUTER",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "40d9e876-2436-440d-9b2e-b89b777287fd": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-15.jpg",
+            "athletes_title": "TESSA WORLEY",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "6a8c5a63-d066-473b-8742-4782c606d54f": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-16.jpg",
+            "athletes_title": "LARA GUT-BEHRAMI",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "5a7bae36-7beb-4b69-ad5e-13e221a92802": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-17.jpg",
+            "athletes_title": "BEAT FEUZ",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "0a04bc7a-ab19-4b6b-b1e7-2594b4209962": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-18.jpg",
+            "athletes_title": "LUKAS FEURSTEIN",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "1991d96e-7493-4f2d-86fc-2cab675e3897": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-19.jpg",
+            "athletes_title": "LUKAS FEURSTEIN",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "628aa0f9-1498-4cfd-950d-6446b05b0edc": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-20.jpg",
+            "athletes_title": "ZAN KRANJEC",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "1ff5e6f2-5529-4727-ae8b-e00a110768f6": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-21.jpg",
+            "athletes_title": "RAMON ZENHÄUSERN",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "609a57a5-3fd6-4f1b-becd-46ab02b3dc36": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-22.jpg",
+            "athletes_title": "NICOLE SCHMIDHOFER",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "8496dd04-2df1-4df9-a74c-9ffd89ba6ddb": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-23.jpg",
+            "athletes_title": "RAMONA SIEBENHOFER",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        },
+        "d707f6d1-1bfc-4501-8551-e4fb0157fa50": {
+          "type": "our-athlets",
+          "settings": {
+            "athletes_img": "shopify:\/\/shop_images\/athletes-24.jpg",
+            "athletes_title": "LUCA DE ALIPRANDINI",
+            "athletes_type": "Alpine Skiing",
+            "athletes_nation": "",
+            "athletes_dob_year": ""
+          }
+        }
+      },
+      "block_order": [
+        "5451bc32-0294-4f9f-b461-df993211f52b",
+        "885126fb-5bab-4b73-af83-06354a3784ea",
+        "cd6aa916-a14f-4ec1-a286-44aab22e4f9a",
+        "8a550e97-1aed-439d-a515-3f14d321fd92",
+        "2aae0510-e2a3-4603-8c03-5ef98e299335",
+        "847c96db-abba-43cb-9366-abb17de2af25",
+        "80d9a260-b75f-4c63-869e-b4a882315ebb",
+        "e9c35560-8590-46ce-a79e-c99b590a7bf6",
+        "aa679de9-162f-458f-8764-f0a5299b1af5",
+        "48c388d3-390b-4b7b-802d-938ca58d3803",
+        "480043a3-242d-49af-9269-dd750f9e5269",
+        "44b7cec9-2e59-4402-9d87-8c0bda40203f",
+        "599918a8-9588-4e3b-9ecb-9bfa6c0ecd97",
+        "09b07e92-f637-4ad6-ab9b-f2443e7eea1b",
+        "40d9e876-2436-440d-9b2e-b89b777287fd",
+        "6a8c5a63-d066-473b-8742-4782c606d54f",
+        "5a7bae36-7beb-4b69-ad5e-13e221a92802",
+        "0a04bc7a-ab19-4b6b-b1e7-2594b4209962",
+        "1991d96e-7493-4f2d-86fc-2cab675e3897",
+        "628aa0f9-1498-4cfd-950d-6446b05b0edc",
+        "1ff5e6f2-5529-4727-ae8b-e00a110768f6",
+        "609a57a5-3fd6-4f1b-becd-46ab02b3dc36",
+        "8496dd04-2df1-4df9-a74c-9ffd89ba6ddb",
+        "d707f6d1-1bfc-4501-8551-e4fb0157fa50"
+      ],
+      "settings": {
+        "content_color": "#ffffff",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "e90af4f2-1efa-431d-b13e-0062ec8edee6",
+    "0e30c893-806e-428c-9582-9df6ce172725",
+    "f89ad6a5-70ce-48bb-b5b3-fdc4077e4563"
+  ]
+}

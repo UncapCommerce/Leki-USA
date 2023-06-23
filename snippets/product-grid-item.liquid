@@ -520,8 +520,8 @@
       {% if template contains 'poles' %}
         {% if product.metafields.custom.grip != blank or product.metafields.custom.shaft_material != blank %}
           <div class="product-info-wrapper">
-            {% if product.metafields.custom.grip != blank %}<div class="specification-list-item"><span>Grip:</span>{{ product.metafields.custom.specification_grip | metafield_tag }}</div>{% endif %}
-            {% if product.metafields.custom.shaft_material != blank %}<div class="specification-list-item"><span>Shaft material:</span>{{ product.metafields.custom.shaft_material | metafield_tag }}</div>{% endif %}
+            {% if product.metafields.custom.grip != blank %}<div class="specification-list-item"><span>Grip:</span>{{ product.metafields.custom.specification_grip }}</div>{% endif %}
+            {% if product.metafields.custom.shaft_material != blank %}<div class="specification-list-item"><span>Shaft material:</span>{{ product.metafields.custom.shaft_material }}</div>{% endif %}
           </div>
         {% endif %}
       {% endif %}

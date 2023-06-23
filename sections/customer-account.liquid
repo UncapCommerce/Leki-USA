@@ -16,8 +16,8 @@
         <div class="account-tabs">
           <div class="account-tab-item">
             <ul>
-              <li class="{% if request.path contains '/account' %}active{% endif %}"><a href="/account">Dashboard</a></li>
-              <li class="{% if request.path contains '/my-orders' %}active{% endif %}"><a href="/pages/my-orders">My Order</a></li>
+              <li class="{% unless request.path contains '/account/orders' or request.path contains '/my-orders' %}active{% endunless %}"><a href="/account">Dashboard</a></li>
+              <li class="{% if request.path contains '/my-orders' or request.path contains '/account/orders' %}active{% endif %}"><a href="/pages/my-orders">My Orders</a></li>
             </ul>
           </div>
           <a class="account__logout" href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a>

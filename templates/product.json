@@ -182,7 +182,6 @@
         "image_location": "left",
         "image_width": "standard",
         "image": "shopify:\/\/shop_images\/Airgon.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/grip-mobile.jpg",
         "subheading": "",
         "title": "<p>Airgon Air Grip<\/p>",
         "heading_highlight_type": "circle",
@@ -197,16 +196,14 @@
         "bg_color": "#27304a",
         "section_width": "wrapper--full",
         "padding_top": 0,
-        "padding_bottom": 0,
-        "mob_padding_top": 36,
-        "mob_padding_bottom": 36
+        "padding_bottom": 0
       }
     },
     "related": {
       "type": "related-products",
       "settings": {
         "limit": 4,
-        "product_recommendations_heading": "You May Also Like",
+        "product_recommendations_heading": "You may also like",
         "bg_color": "",
         "width": "wrapper",
         "padding_top": 80,
@@ -214,47 +211,11 @@
         "tab_padding_top": 60,
         "tab_padding_bottom": 60,
         "mob_padding_top": 40,
-        "mob_padding_bottom": 40
+        "mob_padding_bottom": 80
       }
     },
     "tabs": {
       "type": "section-accordions",
-      "blocks": {
-        "acordion-0": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "text": ""
-          }
-        },
-        "acordion-1": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "text": "<p>Use this text block to discuss some commonly asked questions like shipping and returns, sizing, warranties, or product and company details.<\/p>"
-          }
-        },
-        "acordion-2": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "text": ""
-          }
-        },
-        "fb7f4e5a-3ae7-4ff9-ab8b-6d9baf2251be": {
-          "type": "text",
-          "settings": {
-            "title": "",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "acordion-0",
-        "acordion-1",
-        "acordion-2",
-        "fb7f4e5a-3ae7-4ff9-ab8b-6d9baf2251be"
-      ],
       "settings": {
         "title": "Frequently Asked Questions",
         "subheading": "",

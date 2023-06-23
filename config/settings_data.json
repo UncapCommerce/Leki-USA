@@ -5,6 +5,7 @@
     "color_headings": "#27304a",
     "color_body_text": "#27304a",
     "color_black": "#000",
+    "color_red": "#bf0038",
     "color_accent": "#000",
     "color_borders_and_lines": "#a5a5a5",
     "color_saving_badge_bg": "#bf0038",
@@ -36,11 +37,12 @@
     "line_thickness": "normal",
     "arrow_style": "chevron",
     "show_rounded_corners": true,
+    "show_text_shadow": false,
     "mobile_menu_behaviour": "link",
-    "enable_infinity_scroll": false,
+    "enable_infinity_scroll": true,
     "button_style": "pill",
     "color_swatches_product_style": "circle",
-    "variants_style": "auto",
+    "variants_style": "boxes",
     "enable_color_swatches_product": true,
     "content_alignment": "inline",
     "products_per_row_on_desktop": 4,
@@ -48,28 +50,41 @@
     "image_size": "cover",
     "image_aspect_ratio": 1.4,
     "show_gray_bg": false,
-    "product_grid_hover": "none",
+    "product_grid_hover": "image",
+    "product_grid_hover_animation": "slide-in",
     "show_saving_badge": true,
     "enable_color_swatches_collection": true,
     "product_grid_hover_swatches": false,
     "show_rating": true,
     "quick_buy": "quick_buy",
-    "quick_buy_image_layout": "small",
+    "quick_buy_image_layout": "large",
     "show_labels": true,
     "show_quantity": false,
-    "show_payment_button": true,
-    "max_inventory": 5,
+    "show_remaining": true,
+    "show_payment_button": false,
+    "max_inventory": 10,
+    "hide_inventory_count": true,
     "cart_type": "drawer",
     "enable_cart_notes": false,
+    "enable_gift_notes": false,
     "show_empty_cart_buttons": true,
+    "show_free_shipping_message": true,
+    "free_shipping_limit": "100",
+    "enable_accept_terms": true,
     "title": "Pole Size Advisor",
     "subtitle": "Please enter your height in cm",
     "pole_button_style": "btn--primary btn--small",
     "pole_button_text": "Calculate Length",
-    "glove_title1": "Women Size",
-    "glove_title2": "Unisex",
-    "glove_title3": "Kids \/ Junior Size",
-    "select_page": "gloves-size-advisor",
+    "option-one": "Alpine Skiing-0.7",
+    "option-two": "Cross Trail-0.7",
+    "option-three": "Cross Country Skiing-0.83-0.9",
+    "option-four": "Mountaineering | Four Season-0.7",
+    "option-five": "Nordic Walking-0.68",
+    "option-six": "Touring | Backcountry-0.7",
+    "option-seven": "Trail Running-0.7",
+    "option-eight": "Trekking-0.7",
+    "option-nine": "",
+    "option-ten": "",
     "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
     "social_twitter_link": "",
     "social_pinterest_link": "https:\/\/www.pinterest.com\/shopify",
@@ -78,6 +93,13 @@
     "social_tiktok_link": "",
     "loading_image_width": 150,
     "loading_appearance": "once",
+    "currency_code_enable": true,
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "favicon_svg": "<svg width=\"32\" height=\"32\" viewbox=\"0 0 32 32\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<g clip-path=\"url(#clip0_5122_11472)\">\n<path d=\"M1.90447 11H0V15.8193C0 16.3397 0.422211 16.7619 0.942637 16.7619H8.38101V15.3215H1.90447V11Z\" fill=\"black\"><\/path>\n<path d=\"M0 19.6426C0.0519297 20.1156 0.451563 20.4825 0.936993 20.4825H20.1905V19.6426H0Z\" fill=\"#E4032E\"><\/path>\n<path d=\"M32.0009 19.6426C31.9501 20.1156 31.5493 20.4825 31.0639 20.4825H20.1914V19.6426H32.0009Z\" fill=\"#FFED00\"><\/path>\n<path d=\"M30.0957 11V15.8193C30.0957 16.3397 30.5179 16.7619 31.0383 16.7619H32.0002V11H30.0957Z\" fill=\"black\"><\/path>\n<path d=\"M9.90527 11V15.8193C9.90527 16.3397 10.3275 16.7619 10.8479 16.7619H18.2863V15.3215H11.8097V14.4815H18.2863V13.2804H11.8097V12.4405H18.2863V11H9.90527Z\" fill=\"black\"><\/path>\n<path d=\"M25.7638 11L22.096 13.522V11H20.1904V16.8771L22.9461 14.9817L25.5358 16.7619H28.7385L24.548 13.881L28.7385 11H25.7638Z\" fill=\"black\"><\/path>\n<\/g>\n<defs>\n<clippath id=\"clip0_5122_11472\">\n<rect width=\"32\" height=\"32\" fill=\"white\"><\/rect>\n<\/clippath>\n<\/defs>\n<\/svg>",
+    "glove_title1": "Women Size",
+    "glove_title2": "Unisex",
+    "glove_title3": "Kids \/ Junior Size",
+    "select_page": "gloves-size-advisor",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_color": "#ffffff",
@@ -220,11 +242,50 @@
           "text_size": 100,
           "message_spacing": 25
         }
+      },
+      "swatch-image": {
+        "type": "swatch-image",
+        "blocks": {
+          "cb9c5abc-268c-4f93-be4d-44c79cea0e7a": {
+            "type": "colorcode",
+            "settings": {
+              "color_img": "shopify:\/\/shop_images\/green.jpg",
+              "color_name": "green"
+            }
+          },
+          "39dc4463-fe08-412f-a3f8-37c07df4d24b": {
+            "type": "colorcode",
+            "settings": {
+              "color_img": "shopify:\/\/shop_images\/turquoise-terrazzo.png",
+              "color_name": "black"
+            }
+          }
+        },
+        "block_order": [
+          "cb9c5abc-268c-4f93-be4d-44c79cea0e7a",
+          "39dc4463-fe08-412f-a3f8-37c07df4d24b"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "319724205969189013": {
+        "type": "shopify:\/\/apps\/hulk-form-builder\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "3228365661995190140": {
+        "type": "shopify:\/\/apps\/comparable-products\/blocks\/compare_products\/a0463732-e49b-4c6e-b22b-3158b9b069a8",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Vibrant": {

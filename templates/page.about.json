@@ -1,11 +1,38 @@
 {
   "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "slideshow": {
       "type": "section-slideshow",
       "blocks": {
         "slideshow-0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/aboutus.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/about-mobile.jpg",
+            "overlay_opacity": 10,
+            "text_width": "normal",
+            "text_position": "center",
+            "text_color": "text-light",
+            "subheading": "",
+            "title": "About leki",
+            "text": "LEKI's DNA is made up of many faces, stories and values. For decades, LEKI has been built on the six core values that will continue to guide us into the future. Enthusiasm, innovation, quality, partnership, excellence and responsibility characterize LEKI and our employees, partners and athletes. For each value, we have chosen a representative who embodies that value and who thus also embodies what LEKI stands for.",
+            "slide_btn_text": "",
+            "slide_btn_link": "",
+            "slide_btn_style": "btn--primary btn--small",
+            "slide_btn_text_2": "",
+            "slide_btn_link_2": "",
+            "slide_btn_style_2": "btn--secondary btn--small",
+            "video_text": "",
+            "video_link": ""
           }
         }
       },
@@ -13,102 +40,438 @@
         "slideshow-0"
       ],
       "settings": {
-        "slide_height": "six-fifty-height"
-      }
-    },
-    "overlapping-images": {
-      "type": "section-overlapping-images",
-      "settings": {
+        "slide_height": "six-fifty-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "five-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "heading_size": 120,
+        "show_arrow": false
       }
     },
     "text": {
       "type": "section-text",
       "blocks": {
-        "subheading": {
-          "type": "subheading",
-          "settings": {
-          }
-        },
         "heading": {
           "type": "heading",
           "settings": {
+            "text": "<p>Enthusiasm<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
+            "text": "<p>We bring determination, natural enthusiasm and dedication to everything we do. We are passionate about outdoor sports and we live for our products. We are proud to offer athletes the world's best products.<\/p>",
+            "size": 100
           }
         }
       },
       "block_order": [
-        "subheading",
         "heading",
-        "text",
-        "button"
+        "text"
       ],
       "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
       }
     },
-    "columns": {
-      "type": "section-columns",
+    "e25669f9-a90f-4a8d-93dd-d341a6017677": {
+      "type": "about-image-with-text",
       "blocks": {
-        "column-0": {
-          "type": "text_block",
+        "9c752311-383b-498f-ac7f-0daa1c05571a": {
+          "type": "image-with-text",
           "settings": {
-            "button_text": ""
+            "image": "shopify:\/\/shop_images\/PRODUCT_MANAGEMENT.jpg",
+            "subheading": "PRODUCT MANAGEMENT",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Even though I don't do top-level sports anymore, I'm still an athlete at heart. Every now and then, I start a crazy challenge. Like 100 kilometers on cross-country skis through the Black Forest, for example. Or I do a sunrise to sunset trek in minus 20 degrees on the Feldberg.\n\nBjörn is representative of the entire LEKI team. Our products are only good enough when we have tested them ourselves and we are absolutely convinced and enthusiastic about them.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
           }
         },
-        "column-1": {
-          "type": "text_block",
+        "d402564f-87b9-46f9-b55d-450eada71e60": {
+          "type": "image-with-text",
           "settings": {
-            "button_text": ""
-          }
-        },
-        "column-2": {
-          "type": "text_block",
-          "settings": {
-            "button_text": ""
-          }
-        },
-        "column-3": {
-          "type": "text_block",
-          "settings": {
-            "button_text": ""
+            "image": "shopify:\/\/shop_images\/landing-1.jpg",
+            "subheading": "PRODUCT MANAGEMENT",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Share details about a promotion, welcome customers, describe a product, or talk about your brand.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
           }
         }
       },
       "block_order": [
-        "column-0",
-        "column-1",
-        "column-2",
-        "column-3"
+        "9c752311-383b-498f-ac7f-0daa1c05571a",
+        "d402564f-87b9-46f9-b55d-450eada71e60"
       ],
       "settings": {
-        "title": "",
-        "align_text": "text-left",
-        "columns": 3,
-        "equalize_height": true,
-        "image_aspect_ratio": 0.8,
-        "show_images": true
+        "section_width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 40
       }
     },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
+    "0b3f60cb-e263-45b8-bcdf-787927683c4f": {
+      "type": "section-text",
+      "blocks": {
+        "template--18722030354726__0b3f60cb-e263-45b8-bcdf-787927683c4f-1683698935b6d74e0f-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>Innovation<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "template--18722030354726__0b3f60cb-e263-45b8-bcdf-787927683c4f-1683698935b6d74e0f-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We never rest on our laurels. We review our performance daily. Today's challenges become tomorrow's solutions and products. We are constantly looking for better and more practical solutions for our demanding customers.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--18722030354726__0b3f60cb-e263-45b8-bcdf-787927683c4f-1683698935b6d74e0f-1",
+        "template--18722030354726__0b3f60cb-e263-45b8-bcdf-787927683c4f-1683698935b6d74e0f-2"
+      ],
       "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
+      }
+    },
+    "611e2baa-df26-4301-9ea5-efa2f988f277": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "d6f16775-85b8-4dee-8b42-cad90b7d00bb": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/TECHNOLOGY_TEAM.jpg",
+            "subheading": "TECHNOLOGY TEAM",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "1974 – the birth of LEKI Makalu. The crazy idea of an adjustable trekking pole was first suggested during a meeting between Klaus Lenhart and Reinhold Messner. After much tinkering and much trial and error, the first Makalu was born. Four years later, Reinhold Messner became the first person to climb Mount Everest without artificial oxygen – and he did it with the LEKI Makalu. The one basic requirement for innovation is having the courage to try things out and not letting others stop you.\n\n\"Our passion is shown by our attention tiny details that then evolve into something big. In the end, if even one person wins a race, has a memorable moment, or achieves a personal goal, we're satisfied.\"",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "d6f16775-85b8-4dee-8b42-cad90b7d00bb"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 40
+      }
+    },
+    "99e70c64-645d-4f82-8b8d-dfa3043e7c2c": {
+      "type": "section-text",
+      "blocks": {
+        "template--18722030354726__99e70c64-645d-4f82-8b8d-dfa3043e7c2c-1683698935b6d74e0f-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>QUALITY<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "template--18722030354726__99e70c64-645d-4f82-8b8d-dfa3043e7c2c-1683698935b6d74e0f-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We strive for the highest quality in the design and manufacture of our products. High-quality, reliable and durable products ensure an optimal user experience and the satisfaction of our customers.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--18722030354726__99e70c64-645d-4f82-8b8d-dfa3043e7c2c-1683698935b6d74e0f-1",
+        "template--18722030354726__99e70c64-645d-4f82-8b8d-dfa3043e7c2c-1683698935b6d74e0f-2"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
+      }
+    },
+    "1896ece3-8d9a-43f6-9b79-69388af45dfa": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "b9a3377a-ef06-4fee-9975-2887b9691fac": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MADE_IN_TACHOV.jpg",
+            "subheading": "MADE IN TACHOV",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Maintaining quality over the years is a constant challenge and is sometimes an exhausting process. Just as not every training session is a pure pleasure for our athletes, every step in production requires attention and effort. All for the higher goal of quality, and for the years to come. Every gear must mesh with all the others. Because we want to make sure we meet the needs of all our customers. We use detailed test criteria to guarantee the quality of each and every LEKI product. We use specially developed machines to test every product until we're 100 percent satisfied.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "b9a3377a-ef06-4fee-9975-2887b9691fac"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 40
+      }
+    },
+    "38b018ea-23fd-46f2-985f-68de9f99c098": {
+      "type": "section-text",
+      "blocks": {
+        "template--18722030354726__38b018ea-23fd-46f2-985f-68de9f99c098-1683698935b6d74e0f-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>PARTNERSHIP<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "template--18722030354726__38b018ea-23fd-46f2-985f-68de9f99c098-1683698935b6d74e0f-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We keep our promises. Professional and recreational athletes around the world trust LEKI for a reason. The same goes for our employees and business partners. We treat everyone with respect, appreciation and sincerity.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--18722030354726__38b018ea-23fd-46f2-985f-68de9f99c098-1683698935b6d74e0f-1",
+        "template--18722030354726__38b018ea-23fd-46f2-985f-68de9f99c098-1683698935b6d74e0f-2"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
+      }
+    },
+    "4f702ff1-69b3-4a17-955c-96230c066a2e": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "79704ca8-2a95-44cb-a946-7eb360d4591f": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SUPPORT_FOR_ATHLETES.jpg",
+            "subheading": "SUPPORT FOR ATHLETES",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Partnership also takes first place when it comes to our athletes. LEKI draws on a unique pool of expertise, with over 1,000 athletes involved in alpine skiing, Nordic sports, trail running and mountaineering. This partnership is not just about providing each athlete with the best equipment. It's about standing by athletes as a true partner and being there for them in every way. This requires skill, commitment and patience. We do all this for our athletes, to give them an extra boost and to enhance their performance.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "79704ca8-2a95-44cb-a946-7eb360d4591f"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 40
+      }
+    },
+    "4b2c5915-931a-4ed0-a68a-009e9ded6efc": {
+      "type": "section-text",
+      "blocks": {
+        "template--18722030354726__4b2c5915-931a-4ed0-a68a-009e9ded6efc-1683698935b6d74e0f-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>TOP PERFORMANCE<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "template--18722030354726__4b2c5915-931a-4ed0-a68a-009e9ded6efc-1683698935b6d74e0f-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>LEKI stands for ultimate performance. We proudly support athletes in delivering their top performance and in celebrating their successes. The connection to elite sports is the foundation of our product development work.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--18722030354726__4b2c5915-931a-4ed0-a68a-009e9ded6efc-1683698935b6d74e0f-1",
+        "template--18722030354726__4b2c5915-931a-4ed0-a68a-009e9ded6efc-1683698935b6d74e0f-2"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
+      }
+    },
+    "611e875f-b1d3-4e3a-a98e-528de942076c": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "bbf831f4-b8d0-45b3-b45a-d1eb1241ff21": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RACING_SERVICE.jpg",
+            "subheading": "RACING SERVICE",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Exceptional athletes need outstanding products and support. Vladimir Kreis, also known as Vladi, has been taking care of that for over 27 years. He customizes poles and gloves for all athletes and fulfills their every wish. Sometimes a pole only needs to be shortened by a millimeter or its weight changed by just an ounce – because we strive for perfection. Driven by our passion for details.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "bbf831f4-b8d0-45b3-b45a-d1eb1241ff21"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 40
+      }
+    },
+    "7ce86507-0676-48dd-99c3-c7bffb37aa65": {
+      "type": "section-text",
+      "blocks": {
+        "template--18722030354726__7ce86507-0676-48dd-99c3-c7bffb37aa65-1683698935b6d74e0f-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>RESPONSIBILITY<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "template--18722030354726__7ce86507-0676-48dd-99c3-c7bffb37aa65-1683698935b6d74e0f-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We take responsibility for our actions and for the protection of our environment. People use our products to conquer their natural environment and to face their personal challenges there.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--18722030354726__7ce86507-0676-48dd-99c3-c7bffb37aa65-1683698935b6d74e0f-1",
+        "template--18722030354726__7ce86507-0676-48dd-99c3-c7bffb37aa65-1683698935b6d74e0f-2"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper--narrow",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
+      }
+    },
+    "db36240e-b2cb-4506-8f0e-a80ec0e51e45": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "c4db59f0-2ecc-4e9c-97d3-e6015b350665": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WALTRAUD_LENHART.jpg",
+            "subheading": "WALTRAUD LENHART",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Taking responsibility for our actions and producing high-quality products are essential for LEKI. We were once asked, \"Why do you repair all those old poles after so many years of use?\" Our answer was short and to the point: \"Because it's the right thing to do.\" Responsibility is also especially important to us in connection with our athletes and partners. We support athletes who handle their roles responsibly and support sustainable and social projects.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "c4db59f0-2ecc-4e9c-97d3-e6015b350665"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 40
       }
     }
   },
   "order": [
+    "main",
     "slideshow",
-    "overlapping-images",
     "text",
-    "columns",
-    "main"
+    "e25669f9-a90f-4a8d-93dd-d341a6017677",
+    "0b3f60cb-e263-45b8-bcdf-787927683c4f",
+    "611e2baa-df26-4301-9ea5-efa2f988f277",
+    "99e70c64-645d-4f82-8b8d-dfa3043e7c2c",
+    "1896ece3-8d9a-43f6-9b79-69388af45dfa",
+    "38b018ea-23fd-46f2-985f-68de9f99c098",
+    "4f702ff1-69b3-4a17-955c-96230c066a2e",
+    "4b2c5915-931a-4ed0-a68a-009e9ded6efc",
+    "611e875f-b1d3-4e3a-a98e-528de942076c",
+    "7ce86507-0676-48dd-99c3-c7bffb37aa65",
+    "db36240e-b2cb-4506-8f0e-a80ec0e51e45"
   ]
 }

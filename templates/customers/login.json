@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "customer-login",
+      "settings": {
+        "account_bgimg": "shopify:\/\/shop_images\/login.jpg",
+        "account_mob_bgimg": "shopify:\/\/shop_images\/login-mobile.jpg",
+        "login_info": "<p>By Clicking “Create Account” you agree to our Privacy Policy. See our <a href=\"#\" title=\"#\">Privacy Policy<\/a> for details about of information practices.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

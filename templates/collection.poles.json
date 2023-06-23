@@ -5,6 +5,7 @@
       "settings": {
         "banner_height": "three-fifty-height",
         "text_position": "bottom-left",
+        "text_transform": "uppercase",
         "show_image": true,
         "banner_image": "{{ collection.metafields.custom.collection_banner.value }}",
         "banner_title": "{{ collection.metafields.custom.banner_text.value }}",
@@ -37,10 +38,10 @@
         "width": "wrapper--full-padded",
         "padding_top": 60,
         "padding_bottom": 60,
-        "tab_padding_top": 60,
-        "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
-        "mob_padding_bottom": 60
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 16,
+        "mob_padding_bottom": 16
       }
     },
     "main": {
@@ -50,27 +51,19 @@
           "type": "promo",
           "settings": {
             "collection": "ski-roller",
-            "position": 1,
+            "position": 3,
             "width": "half",
-            "highlight_banner": "{{ collection.metafields.custom.highlight_banner.value }}",
-            "h_bg_color": "#ececeb",
+            "image": "{{ collection.metafields.custom.promo_banner.value }}",
             "text_color": "text-light",
-            "text_position": "top-left",
+            "text_position": "center",
             "layout": "stacked",
             "overlay_opacity": 10,
-            "bg_color": "#bf0038",
-            "title": "<p>{{ block.settings.collection.metafields.custom.promo_title | metafield_tag }}<\/p>",
+            "bg_color": "rgba(0,0,0,0)",
+            "title": "{{ block.settings.collection.metafields.custom.promo_title | metafield_tag }}",
             "heading_highlight_type": "circle",
             "heading_size": 100,
-            "subtitle": "{{ block.settings.collection.metafields.custom.promo_subtitle.value }}",
             "content": "",
             "text_size": 100,
-            "accordion_title1": "{{ block.settings.collection.metafields.custom.promo_accordion1_title.value }}",
-            "accordion_desc1": "{{ block.settings.collection.metafields.custom.promo_accordion1_description.value }}",
-            "accordion_title2": "{{ block.settings.collection.metafields.custom.promo_accordion2_title.value }}",
-            "accordion_desc2": "{{ block.settings.collection.metafields.custom.promo_accordion2_description.value }}",
-            "accordion_title3": "{{ block.settings.collection.metafields.custom.promo_accordion3_title.value }}",
-            "accordion_desc3": "{{ block.settings.collection.metafields.custom.promo_accordion3_description.value }}",
             "btn_text": "{{ block.settings.collection.metafields.custom.promo_button_text.value }}",
             "btn_link": "{{ collection.metafields.custom.promo_button_link.value }}",
             "btn_style": "btn--secondary btn--small"
@@ -88,7 +81,11 @@
         "filter_mode": "default",
         "bg_color": "",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 30,
+        "tab_padding_bottom": 30,
+        "mob_padding_top": 24,
+        "mob_padding_bottom": 24
       }
     },
     "e1c604d5-6991-41f1-9709-f56ba1e60304": {
@@ -113,9 +110,9 @@
       "type": "product-recommendation",
       "settings": {
         "select_metafield": "{{ collection.metafields.custom.product_recommendation.value }}",
-        "product_recommendations_heading": "You May Also Like",
+        "product_recommendations_heading": "You might also like",
         "bg_color": "",
-        "width": "wrapper",
+        "width": "wrapper--full-padded",
         "padding_top": 60,
         "padding_bottom": 60,
         "tab_padding_top": 50,

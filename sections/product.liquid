@@ -1,3 +1,4 @@
+ 
 {%- comment -%}
 This file has been modified by the Yoast SEO for Shopify app.
 You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
@@ -59,6 +60,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 {
   "@context": "http://schema.org/",
   "@type": "Product",
+  "@id" : "{{shop.url}}{{ product.url }}",
   "name": {{ product.title | strip_html | json }},
   "url": {{ shop.url | append: product.url | json }},
   {%- if product.featured_media -%}
@@ -104,7 +106,9 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 }
 {%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
 </script>
+
 {%- endif -%}
+
 
 {% schema %}
 {

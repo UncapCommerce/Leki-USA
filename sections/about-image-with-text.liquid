@@ -126,6 +126,7 @@
 </section>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
     document.getElementsByClassName("slider-button-next")[0].addEventListener("click", triggerClick);
 
     function triggerClick() {
@@ -136,6 +137,7 @@
     function trigger() {
       document.getElementsByClassName('previous')[0].click();
     } 
+});
 </script>
 {% schema %}
   {

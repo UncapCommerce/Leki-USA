@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "customer-register",
+      "settings": {
+        "account_bgimg": "shopify:\/\/shop_images\/login.jpg",
+        "account_mob_bgimg": "shopify:\/\/shop_images\/login-mobile.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -3,20 +3,43 @@
     "main": {
       "type": "page-pole-length-advisor",
       "settings": {
+        "polelength_bgimg": "shopify:\/\/shop_images\/pole.jpg",
+        "mob_image": "shopify:\/\/shop_images\/pole-mob.jpg",
+        "title": "Pole Length Advisor",
+        "content": "<p>A pole's length is an import factor for being able to wield it in such a way that all its benefits are utilized, whether it's alpine skiing, cross-country skiing that utilizes the classic or skating technique, cross trail, trail running, hiking and trekking, or Nordic walking. The pole should support a technique, prevent wrong movements, absorb potential falls, and enable an optimal transfer of strength. This only works when the pole is the right length – and this can vary a great deal according to the type of sport. This is why LEKI has a pole length aid for calculating the ideal pole length. It determines the optimal length for the respective sport in combination with the body size.<\/p>",
+        "option-one": "Alpine Skiing-0.7",
+        "option-two": "Cross Trail-0.7",
+        "option-three": "Cross Country Skiing-0.83-0.9",
+        "option-four": "Mountaineering | Four Season-0.7",
+        "option-five": "Nordic Walking-0.68",
+        "option-six": "Touring | Backcountry-0.7",
+        "option-seven": "Trail Running-0.7",
+        "option-eight": "Trekking-0.7",
+        "option-nine": "",
+        "option-ten": "",
+        "info_text": "You can adjust Vario-Poles to the exact length.",
+        "btn_text": "Show all results",
+        "btn_link": "",
+        "width": "wrapper--narrow",
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "mob_padding_top": 0,
+        "mob_padding_bottom": 0
       }
     },
     "268ec661-852f-4a1a-8e81-42f9a305ff0a": {
       "type": "section-collection",
       "settings": {
-        "collection": "adventure",
-        "products_layout": "grid",
+        "collection": "ski-gloves",
+        "products_layout": "carousel",
         "number_of_products": 4,
         "text_alignment": "text-center",
         "subtitle": "",
-        "subtitle_color": "#27304A",
-        "title": "",
+        "subtitle_color": "#27304a",
+        "title": "Our Athlete’s Top Picks",
         "heading_size": 300,
-        "text": "<p>Pole Length Advisor<\/p>",
+        "heading_weight": "bold",
+        "text": "",
         "text_size": 125,
         "button_text": "",
         "button_style": "btn--primary",
@@ -26,10 +49,10 @@
         "width": "wrapper",
         "padding_top": 60,
         "padding_bottom": 60,
-        "tab_padding_top": 60,
-        "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
-        "mob_padding_bottom": 60
+        "tab_padding_top": 50,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
       }
     }
   },

@@ -14968,11 +14968,13 @@ function getfilterResult(url) {
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var calculateBtn = document.querySelector('#poleSizeAdvisorForm input[type="button"]');
+  if(calculateBtn){
   calculateBtn.onclick = (calbtn) =>{
     var height_val = document.querySelector('.form-control.height').value;
     if(height_val){
       document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
-      var select_act = document.querySelector('.select-activities');
+      var select_act = document.querySelector('.select-activities .metafield-rich_text_field');
+      console.log('select_act---',select_act.innerHTML);
       var selectElement = document.querySelector('#category');
       var selected_val = selectElement.value;
 
@@ -15022,7 +15024,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }
   } 
-
+  }
 });
 
 

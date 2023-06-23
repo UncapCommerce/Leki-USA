@@ -3,10 +3,45 @@
     "main": {
       "type": "search",
       "settings": {
+        "enable_filters": true,
+        "filters_open": true,
+        "enable_sorting": true,
+        "search_products": true,
+        "search_pages": false,
+        "search_articles": false,
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "5f3623f5-f483-434b-bcdf-b9b922dc2441": {
+      "type": "swatch-image",
+      "blocks": {
+        "073ae389-d48a-40ee-baf1-690503aea344": {
+          "type": "colorcode",
+          "settings": {
+            "color_img": "shopify:\/\/shop_images\/green.jpg",
+            "color_name": "green"
+          }
+        },
+        "e4ebc2fb-286e-4d85-ba71-8dc4304e00e4": {
+          "type": "colorcode",
+          "settings": {
+            "color_img": "shopify:\/\/shop_images\/turquoise-terrazzo.png",
+            "color_name": "black"
+          }
+        }
+      },
+      "block_order": [
+        "073ae389-d48a-40ee-baf1-690503aea344",
+        "e4ebc2fb-286e-4d85-ba71-8dc4304e00e4"
+      ],
+      "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "5f3623f5-f483-434b-bcdf-b9b922dc2441"
   ]
 }

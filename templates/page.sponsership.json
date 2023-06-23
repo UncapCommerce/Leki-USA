@@ -1,12 +1,72 @@
 {
-    "sections": {
-      "main": {
-        "type": "page-sponsorship",
-        "settings": {
+  "sections": {
+    "main": {
+      "type": "page-sponsorship",
+      "blocks": {
+        "245c814b-627e-44c5-9730-45b6efbcaab2": {
+          "type": "tab-content",
+          "settings": {
+            "tab_title": "Event",
+            "block_title": "Event Sponsorship",
+            "block_content": "<ol><li>You need to fill out and submit your application at least 60 days prior to your event.<\/li><li>We will try to respond to your request within 10 business days of application submission.<\/li><li>In your application please make sure to let us know what you are looking for in terms of support. If you have multiple levels of sponsorship please submit any relevant information for review in the section of the application where we ask for attachments.<\/li><li>Due to budget cuts, we are not able to sponsor as many events as we have in the past. We would like to support each and every event, but we have to choose events that are closely aligned with our strategic plan.<\/li><li>We no longer have the budget to send out door-prizes\/giveaway items. Any support will are able to provide will be in the form of a partnership where we will request deliverables (EX: Images\/Video from event to use on our social media channels, and marketing).<\/li><\/ol>",
+            "form_data": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"S8_WC9jXWK4PZbv8YYgaWA\"><\/div>"
+          }
+        },
+        "e7b300bb-1177-4160-8fad-68601c609715": {
+          "type": "tab-content",
+          "settings": {
+            "tab_title": "Organization",
+            "block_title": "Organization Sponsorship",
+            "block_content": "<ol><li>You need to fill out and submit your application at least 60 days prior to your event.<\/li><li>We will try to respond to your request within 10 business days of application submission.<\/li><li>In your application please make sure to let us know what you are looking for in terms of support. If you have multiple levels of sponsorship please submit any relevant information for review in the section of the application where we ask for attachments.<\/li><li>Due to budget cuts, we are not able to sponsor as many events as we have in the past. We would like to support each and every event, but we have to choose events that are closely aligned with our strategic plan.<\/li><li>We no longer have the budget to send out door-prizes\/giveaway items. Any support will are able to provide will be in the form of a partnership where we will request deliverables (EX: Images\/Video from event to use on our social media channels, and marketing).<\/li><\/ol>",
+            "form_data": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"zVqav0YI_WQY5SpBkhXVFg\"><\/div>"
+          }
+        },
+        "7731d923-b639-4259-822e-0b07780f8c2a": {
+          "type": "tab-content",
+          "settings": {
+            "tab_title": "Winter Athlete",
+            "block_title": "Winter Sponsorship",
+            "block_content": "<ol><li>You need to fill out and submit your application at least 60 days prior to your event.<\/li><li>We will try to respond to your request within 10 business days of application submission.<\/li><li>In your application please make sure to let us know what you are looking for in terms of support. If you have multiple levels of sponsorship please submit any relevant information for review in the section of the application where we ask for attachments.<\/li><li>Due to budget cuts, we are not able to sponsor as many events as we have in the past. We would like to support each and every event, but we have to choose events that are closely aligned with our strategic plan.<\/li><li>We no longer have the budget to send out door-prizes\/giveaway items. Any support will are able to provide will be in the form of a partnership where we will request deliverables (EX: Images\/Video from event to use on our social media channels, and marketing).<\/li><\/ol>",
+            "form_data": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"Egse_qH7_UWRqZDkR_DoxQ\"><\/div>"
+          }
+        },
+        "c044c0f4-31b9-44db-9501-250d95a8d008": {
+          "type": "tab-content",
+          "settings": {
+            "tab_title": "Summer Athlete",
+            "block_title": "Summer Sponsorship",
+            "block_content": "<ol><li>You need to fill out and submit your application at least 60 days prior to your event.<\/li><li>We will try to respond to your request within 10 business days of application submission.<\/li><li>In your application please make sure to let us know what you are looking for in terms of support. If you have multiple levels of sponsorship please submit any relevant information for review in the section of the application where we ask for attachments.<\/li><li>Due to budget cuts, we are not able to sponsor as many events as we have in the past. We would like to support each and every event, but we have to choose events that are closely aligned with our strategic plan.<\/li><li>We no longer have the budget to send out door-prizes\/giveaway items. Any support will are able to provide will be in the form of a partnership where we will request deliverables (EX: Images\/Video from event to use on our social media channels, and marketing).<\/li><\/ol>",
+            "form_data": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"tW4JsKAFyuOstQDfQCUcOg\"><\/div>"
+          }
         }
+      },
+      "block_order": [
+        "245c814b-627e-44c5-9730-45b6efbcaab2",
+        "e7b300bb-1177-4160-8fad-68601c609715",
+        "7731d923-b639-4259-822e-0b07780f8c2a",
+        "c044c0f4-31b9-44db-9501-250d95a8d008"
+      ],
+      "settings": {
+        "sponsorship_bgimg": "shopify:\/\/shop_images\/sponsorship.jpg",
+        "mob_image": "shopify:\/\/shop_images\/leki-mobile.jpg",
+        "title": "LEKI USA Sponsorship",
+        "description": "Thank you for your interest in a sponsorship from LEKI. Whether you are an event, organization, or athlete seeking sponsorship we want to set expectations up front, so please read through the following information before filling out and submitting an application.",
+        "tab_titleclr": "#000000",
+        "tab_title_bgclr": "#ffffff",
+        "title_hvrclr": "#e6e6e6",
+        "title_activeclr": "#ffffff",
+        "title_active_bgclr": "#bf0038",
+        "content_color": "#ffffff",
+        "mob_heading": "Select Sponsorship type:",
+        "width": "wrapper--narrow",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "mob_padding_top": 0,
+        "mob_padding_bottom": 40
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

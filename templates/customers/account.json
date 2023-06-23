@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "customer-account",
+      "settings": {
+        "banner_img": "shopify:\/\/shop_images\/account_3111c34d-0059-4efb-b4c6-0189bef5f5e6.jpg",
+        "banner_mob_img": "shopify:\/\/shop_images\/account-mobile.jpg",
+        "banner_title": "New Items Available",
+        "banner_desc": "Save now on our top rated poles, glove, and accessories.",
+        "text_color": "text-light",
+        "button_text": "Shop All Season Poles",
+        "button_link": "#"
+      }
+    },
+    "a6474dcc-1563-4de0-a730-c69e11547f2b": {
+      "type": "recently-viewed",
+      "settings": {
+        "title": "Recently Viewed",
+        "padding_top": 0,
+        "padding_bottom": 120,
+        "tab_padding_top": 0,
+        "tab_padding_bottom": 80,
+        "mob_padding_top": 0,
+        "mob_padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a6474dcc-1563-4de0-a730-c69e11547f2b"
+  ]
+}

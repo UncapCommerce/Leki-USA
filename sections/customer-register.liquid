@@ -1,5 +1,6 @@
 {%- comment -%} /templates/customers/register.liquid {%- endcomment -%}
 <style>
+  {% if section.settings.account_bgimg != blank %}
   .page-customer{
     background-image: url('{{ section.settings.account_bgimg | img_url:'' }}');
     background-repeat: no-repeat;
@@ -8,9 +9,14 @@
   }
   @media(max-width:767px){
     .page-customer{
+      {% if section.settings.account_mob_bgimg != blank %}
+        background-image: url('{{ section.settings.account_mob_bgimg | img_url:'' }}');
+      {% endif %}
       padding: 83px 0 131px;
+      background-size: cover;
     }
   }
+  {% endif %}
 </style>
 <section class="page-customer">
   <div class="wrapper">

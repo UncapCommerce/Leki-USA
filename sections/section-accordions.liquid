@@ -88,7 +88,6 @@
 {% elsif template contains 'collection' %}
   {% assign faqlist = collection.metafields.custom.faqs.value %}
 {% endif %}
-
 {% capture section__heading %}
   {% if faqlist %}
   {%- unless heading == blank and subheading == blank and text == blank -%}
