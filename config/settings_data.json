@@ -39,7 +39,7 @@
     "show_rounded_corners": true,
     "show_text_shadow": false,
     "mobile_menu_behaviour": "link",
-    "enable_infinity_scroll": true,
+    "enable_infinity_scroll": false,
     "button_style": "pill",
     "color_swatches_product_style": "circle",
     "variants_style": "boxes",

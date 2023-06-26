@@ -25477,6 +25477,8 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .order-detail-header{padding: 0 20px;}  
   .page--my-orders .account__table__item.account-details {margin: 0 12px;}
   .template-customers-login .wrapper {padding: 0 25px;}
+  .remember-text input[type=checkbox] {margin: 0 6px 2px 0;}
+  .glove-size-chart .size-chart-inner table td.title:empty {display: none;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}

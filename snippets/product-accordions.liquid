@@ -53,7 +53,7 @@
   {% if settings.option-nine != blank %}<option value="{{ opt_9[0] | handle }}" data-title="{{ opt_9[0] | split: '|' }}" data-classic="{{ opt_9[1] }}" data-skate="{{ opt_9[2] }}">{{ opt_9[0] }}</option>{% endif %}
   {% if settings.option-ten != blank %}<option value="{{ opt_10[0] | handle }}" data-title="{{ opt_10[0] | split: '|' }}" data-classic="{{ opt_10[1] }}" data-skate="{{ opt_10[2] }}">{{ opt_10[0] }}</option>{% endif %}
 </select>
-      
+
 {%- for i in (1..5) -%}
   {%- assign accordion_title = 'accordion_heading_' | append: forloop.index -%}
   {%- assign accordion_title = block_settings[accordion_title] -%}
@@ -116,11 +116,16 @@
           <td class="heading">Pack Size:</td>
           <td>{{ product.metafields.custom.pack_size }}</td>
         </tr>
-        {% endif %}
-        {% if product.metafields.custom.weight != blank %}
+        {% endif %}        
+         {% for variant in product.variants %}
+          {% assign weight_val = variant.metafields.custom.weight %}
+           {% assign weight_list =  weight_list | append: weight_val | append : ', '  %}
+        {% endfor %}
+        {%- assign weight_array = weight_list | split: ', ' | join: ' , ' -%}
+        {% if weight_array != blank %}
         <tr>
           <td class="heading">Weight:</td>
-          <td>{{ product.metafields.custom.weight }}</td>
+          <td>{{ weight_array }}</td>
         </tr>
         {% endif %}
         {% if product.metafields.custom.segments_diameter != blank %}
@@ -207,10 +212,16 @@
           <td>{{ product.metafields.custom.locking_system }}</td>
         </tr>
         {% endif %}
-           {% if product.metafields.custom.basket != blank %}
+        
+          {% for variant in product.variants %}
+            {% assign basket_val = variant.metafields.custom.basket %}
+            {% assign basket_list =  basket_list | append: basket_val | append : ', '  %}
+          {% endfor %}
+        {%- assign basket_array = basket_list | split : ', ' | uniq | join: ' , ' -%}
+        {% if basket_array != blank %} 
         <tr>
-          <td class="heading">Basket:</td>
-          <td>{{ product.metafields.custom.basket }}</td>
+          <td class="heading">Basket:</td>          
+          <td>{{ basket_array }}</td>
         </tr>
         {% endif %}
         {% if product.metafields.custom.suspension_system != blank %}
@@ -357,6 +368,12 @@
           <td>{{ product.metafields.custom.warmth_level }}</td>
         </tr>
         {% endif %}
+        {% if variant.metafields.custom.basket != blank %}
+        <tr>
+          <td class="heading">Basket:</td>
+          <td>{{ variant.metafields.custom.basket }}</td>
+        </tr>
+        {% endif %}
       </table>
     {% endcapture %}
 
@@ -368,7 +385,7 @@
     {%- capture accordions -%}
       {{- accordions -}}
       {% if product.metafields.custom.highlights.value != blank or specificationsContent != blank or product.metafields.custom.more_info != blank %}
-      <div class="product__accordion" >
+      <div class="product__accordion">
         <button class="product__accordion__title" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
           {{- accordion_title -}}
           {%- render 'icon-toggle-plus' -%}
@@ -382,7 +399,7 @@
               {% if block_settings[metafield_content] contains 'highlights' %}
                 {% for value in metafield_description %}
                   <div class="inner_accordion">
-                    {% if value.highlight_title != blank %}<span class="accordion_inner-title">{{ value.highlight_title }}
+                    {% if value.subtitle != blank %}<span class="accordion_inner-title">{{ value.subtitle }}
                        {%- render 'icon-arrow-up' -%}
                     </span>{% endif %}
                     {% if value.content != blank or value.image != blank %}
@@ -393,9 +410,9 @@
                           </div>
                         {% endif %}
                         
-                          {% if value.content != blank or value.subtitle != blank %}
+                          {% if value.content != blank or value.highlight_title != blank %}
                             <div class="right-content {% if value.image == blank %}right-content-wrap{% endif %}">
-                              {% if value.subtitle != blank %}<span class="subtitle">{{ value.subtitle }}</span>{% endif %}
+                              {% if value.highlight_title != blank %}<span class="subtitle">{{ value.highlight_title }}</span>{% endif %}
                               {% if value.content != blank %}<p>{{ value.content }}</p>{% endif %}
                             </div>
                           {% endif %}

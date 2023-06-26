@@ -2368,6 +2368,18 @@ function setRecentlyViewedProducts() {
       localStorage.setItem("recentlyViewedProduct", jsonRespArr);
       //console.log('jsonRespArr--',jsonRespArr);
     }
+     else if (countProductData <= numberOfProducts && sameProduct == true) {
+      jsonResp = JSON.parse(oldProductData);
+      let jsonResp2 = jsonResp;
+      for (let [i] of jsonResp.entries()) {
+        if (jsonResp[i].productUrl === currProductPageTitle) {
+          jsonResp.splice(i, 1); 
+        }
+      }
+      jsonRespArr = jsonResp.concat(productList);
+      jsonRespArrStr = JSON.stringify(jsonRespArr);
+      localStorage.setItem("recentlyViewedProduct", jsonRespArrStr);
+    }
   }
 }
 

@@ -18,6 +18,7 @@
 {% if page.handle contains 'recently-views' %}
   function getRecentlyViewedProducts() {
     const productData = JSON.parse(localStorage.getItem("recentlyViewedProduct"));
+  console.log('productData',productData);
     const recentlyViewedHtml = [];
     {% liquid 
       assign image = featured_media.preview_image

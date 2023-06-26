@@ -38,13 +38,13 @@
               data-handle="{{ upsell_product.handle }}"
               data-product-id="{{ upsell_product.first_available_variant.id }}">
               <span class="product-upsell__btn-hidden" data-upsell-btn-text>
-                {{ 'general.upsell.add_to_cart' | t }}
+                {{ 'general.upsell.quick_view' | t }}
               </span>
 
               <span class="product-upsell__btn-text">
-                {{ 'general.upsell.add_to_cart' | t }}
+                {{ 'general.upsell.quick_view' | t }}
               </span>
-
+{% comment %}
               <span class="product-upsell__btn-price">&nbsp;-&nbsp;
                 {%- liquid
                   if upsell_variant.price == 0
@@ -53,7 +53,7 @@
                     echo upsell_variant_price
                   endif
                 -%}
-              </span>
+              </span>{% endcomment %}
 
               <span class="product-upsell__btn-progress">
                 <svg height="18" width="18" class="svg-loader">
