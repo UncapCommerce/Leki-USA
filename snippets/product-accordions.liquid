@@ -378,7 +378,7 @@
     {% endcapture %}
 
     {% when 'more-info' %}
-      {% assign metafield_description = product.metafields.custom.more_info.value %}    
+      {% assign metafield_description = product.metafields.custom.more_info %}    
   {% endcase %}
 
   {%- if accordion_title != blank and accordion_content != blank or accordion_title != blank and metafield_description != blank or accordion_title != blank and specificationsContent != blank -%}
@@ -420,12 +420,10 @@
                     {% endif %}
                   </div>
                 {% endfor %}
-                {% else %}
-                 {% if block_settings[metafield_content] contains 'specifications' %}    
+                 {% elsif block_settings[metafield_content] contains 'specifications' %}    
                   {{ specificationsContent }}
-                {% else %}
+                {% elsif block_settings[metafield_content] contains 'more-info' %}
                    {{ metafield_description }}
-                {% endif %}
               {% endif %}
               </div>
             {% else %}

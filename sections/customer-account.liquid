@@ -74,7 +74,7 @@
           <div class="account__table__item order-list desktop">
             <div class="order-list-header">
               <h4 class="account__heading">{{ 'customer.orders.title' | t }}</h4>
-              <a href="/pages/my-orders" target="_blank">View all Orders</a>
+              {% if customer.orders.size != 0 %}<a href="/pages/my-orders" target="_blank">View all Orders</a>{% endif %}
             </div>
             {% comment %}
             If we have past orders, loop through each one

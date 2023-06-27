@@ -8668,6 +8668,7 @@ a.results-popular__link:hover {
   padding: 13px 30px;
   font-size: 16px;
   line-height: 24px;
+  text-align: center;
 }
 @media only screen and (max-width: 767px) {
   .selector-wrapper--grid .radio__label {
@@ -24651,7 +24652,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .list-collections-section--carousel .flickity-button.flickity-prev-next-button.previous {left: 40px;}
 .banner-inner .banner-img {border-radius: 8px;}
 .collection-heading {text-transform: uppercase;}
-.specification-list-item {display: flex;flex-wrap: nowrap;gap: 4px;}
+.specification-list-item {display: flex;flex-wrap: nowrap;gap: 4px;font-size: 14px;line-height: 20px;}
 .specification-list-item span,.gloves-info-wrapper span {font-weight: 600;font-size: 14px;line-height: 20px;white-space: pre;}
 .specification-list-item ul {margin: 0;}
 .specification-list-item ul li {list-style: none;display: inline-block;vertical-align: middle;font-size: 14px;line-height: 20px;}
@@ -24926,8 +24927,8 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .recently-viewed-grid-item .swatch__button .swatch__label:last-child {margin: 0;}
 
 /* ---------- store locatore page ----------- */
-.page--lekiusa div#col-main {max-width: 1424px;margin: 0 auto;padding: 80px 20px;}
-#store-locator-title {font-size: 50px;line-height: 58px;color: var(--COLOR-BLACK);text-transform: uppercase;}
+.page--leki-usa #MainContent {background: #F9F9F9;}
+#store-locator-title {font-size: 50px;line-height: 58px;color: var(--COLOR-BLACK);text-transform: uppercase;margin-bottom: 24px;}
 .addresses li a ,.addresses li a .name,.addresses li a span{color: var(--COLOR-BLACK) !important;}
 .addresses li a .name {font-size: 18px;line-height: 26px;}
 .addresses li {padding: 16px 20px !important;background-color: #ececeb !important;border: 1px solid var(--COLOR-RED) !important;margin-bottom: 16px;}
@@ -24937,9 +24938,21 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .addresses li a span{font-size: 14px !important;line-height: 20px !important;}
 .distance{display: none !important;}
 .addresses li a{padding-left: 24px !important;width: 100% !important;}
-.addresses .store_website, .store_website_container, .addresses .directions {
-    margin-left: 0 !important;
-}
+.addresses .store_website, .store_website_container, .addresses .directions {margin-left: 0 !important;}
+.page--leki-usa #col-main {width: 1456px;max-width: 100%;margin: 0 auto;padding: 80px 16px;}
+.main_search_label{color: var(--COLOR-BLACK);font-size: 20px;line-height: 28px;font-weight: 600;width: auto !important;}
+input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-left: 12px;line-height: 24px;color: #A5A5A5;}
+.search_bar{display: flex;align-items: center;flex-wrap: wrap;column-gap: 48px;}
+.search_limit_label, .main_search_label, .distance_label{font-size: 20px;line-height: 28px;color: var(--COLOR-BLACK);font-weight: 600;margin-right: 12px;}
+.search_bar .main_search_bar input, .search_bar .search_within_distance select, .search_bar .search_limit select{padding: 5px 16px;line-height: 24px;max-width: 105px;width: 105px;}
+.search_bar .main_search_bar {width: auto !important;}
+.search_bar .search_limit{min-width: auto !important;}
+.search_filters{width: 100%;margin: 22px 0 0 !important;padding-top: 22px !important;}
+.search_filters .search_filter input[type=checkbox] {accent-color: black;cursor: pointer;    height: 16px;width: 16px;display: inline-block;vertical-align: -2px;}
+.search_filters .search_filter label {padding-left: 4px;}
+.search_filters .search_filter{color: var(--COLOR-BLACK);}
+.search_bar {background: none repeat scroll 0 0 #F9F9F9 !important;border: none !important;padding: 0 !important;margin-bottom: 83px !important;}
+.search_bar button {font-size: 14px !important;line-height: 20px !important;background: #27304A !important;box-shadow: none !important;border-radius: 30px !important;width: 206px !important;}
 
 /* ----------- Athletes Page ---------- */
 .athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
@@ -24979,6 +24992,11 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 
 /* ---------- featured collection ------------ */
 .featured-collection__container.carousel__container .flickity-page-dots {text-align: left;margin: 10px 20px;bottom: -50px;}
+/* .featured-collection__container .flickity-viewport{overflow: visible;}
+.featured-collection__container .flickity-slider{overflow: hidden;} */
+.comparable-product-item .comparable-btn {position: absolute;top: 8px;opacity:1;left: 8px;margin: 0;}
+.add-to-comparable[type=checkbox]:checked+label, .add-to-comparable[type=checkbox]:not(:checked)+label{color: var(--COLOR-BLACK);font-size: 12px !important;line-height: 16px !important;.}
+.add-to-comparable[type=checkbox]:checked+label:before, .add-to-comparable[type=checkbox]:not(:checked)+label:before{width: 16px !important;height: 16px !important;}
 
 /* ------------ sponsorship page ----------- */
 .sponsorship-tabs ul {margin: 0;max-width: 671px;border-radius: 12px 12px 0 0;display: inline-block;vertical-align: middle;}
@@ -25038,7 +25056,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .comparable-container .product-table-cell-container .remove-from-compare{right: 20px !important;top: 20px !important;width: 16px !important;height: 16px !important;font-size: 16px !important;color: #494949 !important;background: #ECECEB !important;border-radius: 190px !important;display: flex !important;align-items: center !important;justify-content: center !important;}
 .comparable-container table.comparison-table td.product-table__cell.product-table__cell-keys .comparable-toggle input:checked+label.toggle-label{background: #000 !important;}
 .page--compare-products .section-default .wrapper .rte {margin: 0;}
-.comparable-container .product-table-cell-container .product-summary .image-wrap img{object-fit: cover;}
+/* .comparable-container .product-table-cell-container .product-summary .image-wrap img{object-fit: cover;} */
 
 @media(min-width: 767px){
 .comparable-container table.comparison-table tr:not(.product-table__group-cell) td:first-child:not(.product-table__cell-keys) {padding-left: 0 !important;}
@@ -25084,9 +25102,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .footer-blocks{gap: 100px;}
 }
 @media(max-width: 1299px){
-  .athletes-inner-wrap .athletes-card-content-overlay {
-    padding: 25px 32px 25px 30px;
-  }
+  .athletes-inner-wrap .athletes-card-content-overlay {padding: 25px 32px 25px 30px;}
   .athletes-card-content-overlay .close-overlay{top: 15px;right: 15px;}
 }
 @media(max-width: 1199px){
@@ -25108,6 +25124,8 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .pole-size-advisor-result-wrapper{gap: 75px;}
   .result-right-wrap{max-width: calc(100% - 245px);flex: 0 0 calc(100% - 245px);}
   .order-detail-header{width: 100%;}
+  .search_bar{column-gap: 20px;row-gap: 20px;margin-bottom: 40px!important;}
+  .main_search_label{margin: 0 !important;}
 }
 @media(min-width: 1024px) and (max-width: 1199px){
   .collection__products .grid{grid-template-columns: repeat(3, minmax(0, 1fr));}
@@ -25282,6 +25300,11 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   #gloves-adviser-drawer{width: 700px;}
   .glove-drawer-active #gloves-adviser-drawer{transform: translate(calc(+1 * 700px));}
 }
+@media(max-width: 800px){ 
+  .main_search_label{padding: 0 !important;margin: 0 0 12px!important;font-size: 14px;line-height: 20px;}
+  .search_bar .main_search_bar {width: 100% !important;}
+}
+
 @media(max-width: 767px){  
   .newsletter-form .input-group__item, .newsletter-form .input-group__fields {max-width: 325px;}
   .footer-bottom{margin-top: 40px;}
@@ -25302,6 +25325,8 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .btn--quick .icon{width: 20px;flex: 0 0 20px;}
   .product__media__outer, .search-results__item__image__outer{padding-top: 140%;}
   .carousel--mobile .product-grid-item.carousel__item{width: 43%;}
+  .comparable-product-item .comparable-btn {padding: 8px;top: 0;left: 0;width: 100%;}
+  .product-grid-item__inner {position: relative;padding-top: 32px;}
   .product__badge__item>span{font-size: 10px;line-height: 14px;}
   .product__badge{margin: 11px 9.9px;}
   .product__badge__item{padding: 7.5px 11px 4.5px;}
@@ -25393,8 +25418,9 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .page--gloves-size-advisor .featured-collection__top .section__heading {font-size: 24px;line-height: 32px;}
   .versionA-image {width: 100%;text-align: center;}
   .gloveSizeAdvisorForm .download-btn{margin-bottom: 80px;}
-  .glove-size-chart .size-chart-inner table tr{flex-wrap: wrap;margin-bottom: 16px;}
-  .glove-size-chart .size-chart-inner table tr:last-child{margin:-8px 0 0;}
+  .glove-size-chart .size-chart-inner table tr{flex-wrap: wrap;}
+  .glove-size-chart .size-chart-inner table tr:first-child {margin-bottom: 16px;}
+  .glove-size-chart .size-chart-inner table tr:last-child{margin:-4px 0 0;}
   .glove-size-chart .size-chart-inner table td.title {width: 100%;max-width: 100%;margin-right: 0;color: var(--COLOR-RED);padding: 0;margin-bottom: 4px;position: relative;}
   .glove-size-chart .size-chart-inner table td.title:empty:after{display: none}
   .glove-size-chart .size-chart-inner table tr {border-bottom: none;}
@@ -25435,18 +25461,18 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .line-item_variant {padding-top: 8px;}
   .comparable-container .product-table-cell-container .product-summary .product-title{margin: 6px 0!important;font-size: 14px!important;line-height: 20px!important;}
   .comparable-container table.comparison-table tr.product-table__header-row td {padding: 4px 10px 54px 0!important;}
-  .page--compare-products .section-padding {padding: 32px 0!important;}
+  .page--compare-products .section-padding {padding: 32px 0 64px!important;}
   .page--compare-products .page-title {font-size: 16px;line-height: 24px;text-align: left;}
   .comparable-container table.comparison-table td.product-table__cell.product-table__cell-keys .comparable-toggle label.toggle-text{font-size: 14px;line-height: 20px;}
   .comparable-container table.comparison-table td.product-table__cell.product-table__cell-keys .comparable-toggle label.toggle-label{width: 30px !important;height: 18px !important;}
-  .comparable-container table.comparison-table td.product-table__cell.product-table__cell-keys .comparable-toggle label.toggle-label:after{width: 14px !important;height: 14px !important;}
-  .page--compare-products .featured-collection__top .section__heading{text-align: left;}
+  .comparable-container table.comparison-table td.product-table__cell.product-table__cell-keys .comparable-toggle label.toggle-label:after{width: 14px !important;height: 14px !important;}  
   .compare-bar {padding: 28px 20px!important;}
   .compare-bar .compare-products-item-content.inline-content .compare-products-item-text{font-size: 14px!important;line-height: 20px!important;}
   .compare-bar .compare-products-item-image {max-width: 63px!important;max-height: 88px!important;}
   .popup-quick-view .product__price--off{margin-top: 6px;max-width: 107px;width: 107px;}
   .popup-quick-view__body .product__form{padding: 0;}
-  .specification-list-item{flex-wrap: wrap;}
+  .specification-list-item{flex-wrap: wrap;margin-bottom: 4px;font-size: 12px;line-height: 16px;}
+  .specification-list-item span, .gloves-info-wrapper span{font-size: 12px;line-height: 16px;}
   .related-products .carousel.carousel--mobile {display: block;}
   .related-products .flickity-button {display: none;}
   .related-products .flickity-page-dots{bottom: -60px;padding: 0 10px;}
@@ -25457,7 +25483,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .page--gloves-size-advisor .gloveSizeAdvisorForm{box-shadow: none;}
   #store_map {width: 100%!important;margin-bottom: 16px;}
   .page--lekiusa div#col-main{padding: 40px 20px;}
-  #store-locator-title {font-size: 24px;line-height: 32px;}
+  #store-locator-title {font-size: 24px;line-height: 32px;margin-bottom: 16px;}
   .addresses{padding: 0 !important;width: 100%!important;}
   .cost-breakdown-left span.total{font-size: 18px;line-height: 26px;}
   .Sponsorship-form-wrapper.has-bg .sponsorship-detail h2 {font-size: 36px;line-height: 48px;}
@@ -25479,6 +25505,15 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .template-customers-login .wrapper {padding: 0 25px;}
   .remember-text input[type=checkbox] {margin: 0 6px 2px 0;}
   .glove-size-chart .size-chart-inner table td.title:empty {display: none;}
+  .page--leki-usa #col-main{padding: 40px 16px;}
+  .search_bar{column-gap: 0;row-gap: 0;margin-bottom: 16px!important;}
+  input#address_search {max-width: 100%;width: 100%;margin-left: 0;font-size: 12px;line-height: 16px;padding: 10px 21px;}
+  .search_limit_label, .main_search_label, .distance_label{font-size: 14px;line-height: 20px;}
+  .search_bar .main_search_bar input, .search_bar .search_within_distance select, .search_bar .search_limit select{max-width: 83px;width: 83px;font-size: 12px;line-height: 16px;}
+  .search_bar .search_limit {margin-left: auto;margin-right: 0 !important;}
+  .search_filters {margin: 0!important;padding-top: 22px!important;border-top: none !important;}
+  .search_bar button{padding: 6px 16px !important;margin-top: 2px;height: 36px !important;margin:15px 0 15px auto !important;}
+  .search_filters .search_filter {width: 100% !important;padding: 0 0 10px !important;line-height: 24px;color: var(--COLOR-BLACK);}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}
@@ -25503,10 +25538,8 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
   .sub-collections-wrap .list-collections__item {max-width: 153px;}
 }
 @media(max-width: 400px){
-  .slide__buttons.main-buttons .main-buttons__item .btn {
-    padding: 17px 16px;
-  }
-  .template-customers-order .order-details>div {
-    width: 95px;
-  }
+  .slide__buttons.main-buttons .main-buttons__item .btn {padding: 17px 16px;}
+  .template-customers-order .order-details>div {width: 95px;}
+  .featured-collection .section__heading {font-size: 20px;line-height: 28px;}
+  .search_bar .main_search_bar input, .search_bar .search_within_distance select, .search_bar .search_limit select{max-width: 70px;width: 70px;}
 }

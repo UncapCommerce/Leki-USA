@@ -520,16 +520,18 @@
       {% if template contains 'poles' %}
         {% if product.metafields.custom.grip != blank or product.metafields.custom.shaft_material != blank %}
           <div class="product-info-wrapper">
-            {% if product.metafields.custom.grip != blank %}<div class="specification-list-item"><span>Grip:</span>{{ product.metafields.custom.specification_grip }}</div>{% endif %}
+            {% if product.metafields.custom.grip != blank %}<div class="specification-list-item"><span>Grip:</span>{{ product.metafields.custom.grip }}</div>{% endif %}
             {% if product.metafields.custom.shaft_material != blank %}<div class="specification-list-item"><span>Shaft material:</span>{{ product.metafields.custom.shaft_material }}</div>{% endif %}
           </div>
         {% endif %}
       {% endif %}
 
       {% if template contains 'gloves' %}
+      {% if product.metafields.custom.warmth_level != blank %}
         <div class="gloves-info-wrapper">
-          <div class="specification-list-item"><span>Warmth Level:</span></div>
+          <div class="specification-list-item"><span>Warmth Level:{{ product.metafields.custom.warmth_level }}</span></div>
         </div>
+      {% endif %}
       {% endif %}
 
       {%- if settings.show_rating and product.metafields.reviews != empty -%}

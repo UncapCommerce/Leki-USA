@@ -65,9 +65,9 @@ data-section-id="{{ section.id }}">
         </div>
       {% endfor %}
     </div>
-    {% comment %}<div class="page-loader">      
+    <div class="page-loader">      
       {% render 'icon-loading' %}
-    </div>{% endcomment %}
+    </div>
                 
   </div>
 </section>
@@ -103,7 +103,6 @@ data-section-id="{{ section.id }}">
   });
 </script>
 
-{% comment %}
 <script>
 document.addEventListener("DOMContentLoaded", function(event) { 
   const cardContainer = document.querySelector(".athletes-main-wrap");
@@ -170,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   window.addEventListener("scroll", handleInfiniteScroll);
 });
 </script>   
-{% endcomment %}
 
 {% schema %}
   {

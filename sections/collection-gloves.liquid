@@ -117,17 +117,18 @@
 {% assign secondLevel = true %}
 {%- for link in linklists['mega-menu'].links -%}
   {% for childlink in link.links %}
-    {% assign childlink_title = childlink.title | handle %}      
+    {% assign childlink_title = childlink.title | handle %}   
     {% if childlink_title == pageUrl %}
       {% assign secondLevel = false %}        
       {% endif %}
     {% for grandchildlink in childlink.links %}
-      {% assign grandchild_title = grandchildlink.title | handle %}      
-      {% if grandchild_title == pageUrl %}      
+      {% assign grandchild_title = grandchildlink.title | handle %}    
+      {% if grandchild_title == pageUrl %} 
       {% endif %}
     {% endfor %}
   {% endfor %}
 {% endfor %}
+
 {% unless secondLevel %}
   <div id="collection-details--{{ section.id }}" class="section-padding" {% if animations_enabled %}
               data-aos="fade"

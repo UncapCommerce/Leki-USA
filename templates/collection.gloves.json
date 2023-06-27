@@ -23,6 +23,7 @@
     },
     "f0928a40-1c97-4068-9db1-059da2c6415d": {
       "type": "sub-collections",
+      "disabled": true,
       "settings": {
         "layout": "carousel",
         "columns": 6,
@@ -80,7 +81,7 @@
         "filters_open": true,
         "filter_mode": "default",
         "bg_color": "",
-        "padding_top": 60,
+        "padding_top": 0,
         "padding_bottom": 60,
         "tab_padding_top": 30,
         "tab_padding_bottom": 30,
