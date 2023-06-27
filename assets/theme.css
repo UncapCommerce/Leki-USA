@@ -11729,7 +11729,9 @@ a.results-popular__link:hover {
   position: relative;
   --swatch-size: 30px;
 }
-
+.collection__products svg.icon-arrow-up {
+  transform: rotate(-90deg);
+}
 .collection-section .swatch__button .icon-check {
   width: 14px;
   margin-right: 0;
