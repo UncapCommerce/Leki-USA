@@ -1,16 +1,427 @@
 {
-    "sections": {
-      "main": {
-        "type": "main-page",
-        "settings": {
-          "show_page_title": true,
-          "bg_color_secondary": false,
-          "padding_top": 60,
-          "padding_bottom": 60
-        }
-      }     
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     },
-    "order": [
-      "main"
-    ]
-  }
+    "f1d1891e-1045-4741-a893-55c029a1a9d4": {
+      "type": "section-slideshow",
+      "blocks": {
+        "template--19610616267046__f1d1891e-1045-4741-a893-55c029a1a9d4-1687927967e56e67f2-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Header.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Header_1.jpg",
+            "overlay_opacity": 10,
+            "text_width": "narrow",
+            "text_position": "center",
+            "text_color": "text-light",
+            "subheading": "",
+            "title": "SUSTAINABILITY",
+            "text": "Taking responsibility for our actions, manufacturing high-quality products and also taking social responsibility are integral parts of LEKI. We were once asked, \"Why do you guys fix all those old sticks after years of use?\" Our answer was short and sweet: \"Because it's the right thing to do.\"",
+            "slide_btn_text": "",
+            "slide_btn_link": "",
+            "slide_btn_style": "btn--primary btn--small",
+            "slide_btn_text_2": "",
+            "slide_btn_link_2": "",
+            "slide_btn_style_2": "btn--secondary btn--small",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19610616267046__f1d1891e-1045-4741-a893-55c029a1a9d4-1687927967e56e67f2-0"
+      ],
+      "settings": {
+        "slide_height": "full-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "five-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "heading_size": 120,
+        "show_arrow": false
+      }
+    },
+    "df96dc61-0e70-4693-bbf7-776592fa186a": {
+      "type": "section-text",
+      "blocks": {
+        "template--19610616267046__df96dc61-0e70-4693-bbf7-776592fa186a-1687928369880328c5-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>high end products<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "template--19610616267046__df96dc61-0e70-4693-bbf7-776592fa186a-1687928369880328c5-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We work passionately to create durable products with exceptional value.It is our premise to combine high-end performance with safety and comfort.We consult experts and professional athletes during the development process to ensure LEKI's unique level of quality.More than 250 patents are proof of LEKI's level of innovation and quality.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--19610616267046__df96dc61-0e70-4693-bbf7-776592fa186a-1687928369880328c5-1",
+        "template--19610616267046__df96dc61-0e70-4693-bbf7-776592fa186a-1687928369880328c5-2"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 50,
+        "tab_padding_top": 30,
+        "tab_padding_bottom": 30,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "88efbeb7-fd1a-4fc7-92b0-2896f3a1c23e": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "4908c416-0ad9-4684-af9d-45b7c365458c": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_High-End.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_High-End.jpg",
+            "subheading": "Quality",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Our products are jointly developed and manufactured in the Swabian town of Kirchheim unter Teck and in the Czech town of Tachov. This eliminates long supply chains and complex procurement channels. Our own production offers us control over all processes and transparency in the vertical integration. Thanks to the latest production processes and production facilities, we are state-of-the-art in order to be able to produce in a resource-saving manner.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        },
+        "8f7876a9-7a3c-4b76-948a-4ccdffae19be": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_High-End_2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_High-End_2.jpg",
+            "subheading": "longevity",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "We work with passion on the goal of manufacturing products with real added value. Combining top performance with safety and comfort is a priority. The constant exchange with experts and professional athletes ensures our unique level of quality. The result is intelligently designed products that customers can enjoy for years to come. With over 250 patents, LEKI has fixed more innovations than almost any other manufacturer in the outdoor industry.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "4908c416-0ad9-4684-af9d-45b7c365458c",
+        "8f7876a9-7a3c-4b76-948a-4ccdffae19be"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "tab_padding_top": 20,
+        "tab_padding_bottom": 20,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "50de3871-64cc-4800-b490-f6bf14d10726": {
+      "type": "section-text",
+      "blocks": {
+        "template--19610616267046__50de3871-64cc-4800-b490-f6bf14d10726-1687928369880328c5-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>Made in Europe<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "template--19610616267046__50de3871-64cc-4800-b490-f6bf14d10726-1687928369880328c5-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The majority of our products are manufactured in our modern production facility in the Czech Republic. The greatest advantages of the European location are the local supply chains and the short transport routes.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--19610616267046__50de3871-64cc-4800-b490-f6bf14d10726-1687928369880328c5-1",
+        "template--19610616267046__50de3871-64cc-4800-b490-f6bf14d10726-1687928369880328c5-2"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "tab_padding_top": 20,
+        "tab_padding_bottom": 20,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "fb189933-1e61-48a0-8ad9-a36cb93ba1e2": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "ffa1189d-dc89-4a71-929c-bb51eb33dbc0": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Made_in_Europe.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Made_in_Europe.jpg",
+            "subheading": "Production facility Tachov",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "In this way we can control the manufacturing stages and manage the entire supply chain down to the smallest detail. This results in the unique LEKI quality. Our bestsellers are manufactured in our own factory. Within the entire production process, LEKI consistently pursues the path to optimizing work processes and the entire value chain. We rely on the many years of experience and the passion of our employees. In all production processes, LEKI has made massive technical investments in the future in recent years and relies on state-of-the-art production systems. This means maximum standards in terms of occupational safety, energy efficiency and environmental compatibility.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        },
+        "d557d6dd-d647-4b6e-8626-c41dc794af4a": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Made_in_Europe_2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Made_in_Europe_2.jpg",
+            "subheading": "Production Facility in Tachov",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Wherever economically possible, LEKI uses the heat generated during the production process to save energy and, for example, to heat our production areas. In this way, the warm exhaust air from our compressed air systems is also sustainably used to control the temperature of the production rooms in the adjacent premises. The filter systems in our plants are also equipped with intelligent control technology, which uses the thermal energy in the extracted air and feeds it back into the sucked-in air. This enables us to achieve energy savings of up to 50 percent during the colder seasons. Wherever, due to technological requirements, it is still necessary to use solvents in the production process, these solvents are captured, collected and then purified and treated in a special plant so that they can be used again for cleaning purposes.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "ffa1189d-dc89-4a71-929c-bb51eb33dbc0",
+        "d557d6dd-d647-4b6e-8626-c41dc794af4a"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "tab_padding_top": 20,
+        "tab_padding_bottom": 20,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "2a43c4dc-ada8-49b9-bcaa-a3216edffe21": {
+      "type": "section-text",
+      "blocks": {
+        "b834bff7-efa8-4cc1-ad48-3106530cb33b": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>headquarters<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "9bda1a11-d121-462b-a433-d72a3e5453d1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our brand claim is to develop the best pole and glove in the world.In doing so, we consider it natural to pay attention to the quality of the products as well as to compliance with ecological values.Internally, our processes are regularly checked according to the energy audit according to DIN EN 16247-1.In this way, we ensure that the defined standards are maintained and optimized along the value chain.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "b834bff7-efa8-4cc1-ad48-3106530cb33b",
+        "9bda1a11-d121-462b-a433-d72a3e5453d1"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 50,
+        "tab_padding_top": 30,
+        "tab_padding_bottom": 30,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "276afbbc-54e4-43f7-aa2a-e0989b5574ad": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "3222d764-b8aa-4d49-820b-4f4a23a0515c": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Hauptquartier.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Hauptquartier_f83e8f3c-9feb-470b-9d7f-93ded958d2cd.jpg",
+            "subheading": "Based in Kirchheim",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "We value renewable energies, which is why the first photovoltaic system was installed at our Kirchheim site in 2005. We usually cover our energy needs completely from April to September with our own photovoltaic systems and even produce a surplus. Only in winter do we depend on additional energy. Viewed over the year, LEKI generates 7 percent more electricity than the total consumption. This extreme power saving also noticeably reduces CO² emissions by over 33 tons of CO² per year. In 2014, an intelligent and particularly energy-saving lighting system was installed. Since then, the production and storage rooms have been equipped with energy-saving LED lighting. With this sustainable investment, electricity consumption is reduced from 27 previously.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        },
+        "2a6eedf3-aefb-48b6-8014-908b65a71065": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Produktionsstandard.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Produktionsstandard.jpg",
+            "subheading": "KEFF Label",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "In August 2019, LEKI was the first company in the Esslingen district to be awarded the KEFF energy efficiency label by the Stuttgart Chamber of Commerce and Industry. This certification includes both our new lighting system and our photovoltaic systems. Here at LEKI, we are happy about this award and are also a little proud of having improved our environmental balance. It's nice to know that our efforts to treat our environment as responsibly as possible and to conserve resources have received this public recognition.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "3222d764-b8aa-4d49-820b-4f4a23a0515c",
+        "2a6eedf3-aefb-48b6-8014-908b65a71065"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "tab_padding_top": 20,
+        "tab_padding_bottom": 20,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "7cad3bad-53da-4317-ac4e-780ea949b9fe": {
+      "type": "section-text",
+      "blocks": {
+        "8b052a1a-15a4-4bd9-ae2a-70cc4b77b0c1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>Service & Repair<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "eb71c955-29b6-4bda-9347-8cdc27002208": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With a worldwide network of specialized service centers, products can be repaired and restored after years of intensive use. Reliable and durable products are part of the LEKI DNA. LEKI keeps spare parts in stock for up to ten years.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "8b052a1a-15a4-4bd9-ae2a-70cc4b77b0c1",
+        "eb71c955-29b6-4bda-9347-8cdc27002208"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 50,
+        "tab_padding_top": 30,
+        "tab_padding_bottom": 30,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "b48a8622-2d2a-45bf-8f2d-8f4529765584": {
+      "type": "about-image-with-text",
+      "blocks": {
+        "915cff16-35ee-4159-b03d-862261c19633": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Service.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Service.jpg",
+            "subheading": "repair",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "LEKI products are characterized by the highest level of quality and durability. We therefore offer the option of purchasing replacement parts for a large number of our products. These are usually still available for up to ten years after purchase. With a worldwide network of specialized service centers, products can be repaired and restored after wear.",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        },
+        "9c253f0a-1bf3-4d88-bce2-a93bcb8e8087": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Service_2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Service_2.jpg",
+            "subheading": "Service",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Sibylle has been working in the Service Department at LEKI for over 25 years: \"My greatest pleasure is to make customers happy again by repairing even very old product models. Our customers are often very fond of their poles, for many of them, they bring back memories of someone special or a particularly beautiful time in their lives.\"",
+            "text_alignment": "center",
+            "text_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "915cff16-35ee-4159-b03d-862261c19633",
+        "9c253f0a-1bf3-4d88-bce2-a93bcb8e8087"
+      ],
+      "settings": {
+        "section_width": "wrapper--full-padded",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "tab_padding_top": 20,
+        "tab_padding_bottom": 20,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    },
+    "7d44e97a-3227-4e82-b0bf-a950ca077089": {
+      "type": "section-text",
+      "blocks": {
+        "101fa306-3e03-414e-9618-a4200897a5d8": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>Social responsibility<\/p>",
+            "size": 100,
+            "heading_highlight_type": "italics"
+          }
+        },
+        "545dc8af-822d-44e5-8263-08ead717e36c": {
+          "type": "text",
+          "settings": {
+            "text": "<p>LEKI has been supporting both regional associations and international projects for many years. Close to our hearts is the High Five Foundation, an organization that helps mountaineers recover from life-changing injuries. As a global brand, however, it is also important for us to assume responsibility at a local level. By supporting charities and events, we contribute to the success of the region in which we operate.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "101fa306-3e03-414e-9618-a4200897a5d8",
+        "545dc8af-822d-44e5-8263-08ead717e36c"
+      ],
+      "settings": {
+        "text_position": "center",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 50,
+        "tab_padding_top": 30,
+        "tab_padding_bottom": 30,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "f1d1891e-1045-4741-a893-55c029a1a9d4",
+    "df96dc61-0e70-4693-bbf7-776592fa186a",
+    "88efbeb7-fd1a-4fc7-92b0-2896f3a1c23e",
+    "50de3871-64cc-4800-b490-f6bf14d10726",
+    "fb189933-1e61-48a0-8ad9-a36cb93ba1e2",
+    "2a43c4dc-ada8-49b9-bcaa-a3216edffe21",
+    "276afbbc-54e4-43f7-aa2a-e0989b5574ad",
+    "7cad3bad-53da-4317-ac4e-780ea949b9fe",
+    "b48a8622-2d2a-45bf-8f2d-8f4529765584",
+    "7d44e97a-3227-4e82-b0bf-a950ca077089"
+  ]
+}

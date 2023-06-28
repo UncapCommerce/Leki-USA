@@ -35,7 +35,7 @@
   data-section-type="about-image-with-text">
   <div class="{{ section_width }}">
     <div class="about-image-with_text">
-      <div class="about-content-wrap ">
+      <div class="about-content-wrap about-content-wrap-{{ section.id }}">
         {% if section.blocks.size > 0 %}
         {% for block in section.blocks %}   
         {% liquid
@@ -93,7 +93,7 @@
         {% endif %}
       </div>
 
-      <div class="about-image-wrap" {% if animations_enabled %}
+      <div class="about-image-wrap about-image-wrap-{{ section.id }}" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
@@ -126,18 +126,18 @@
 </section>
 
 <script>
-// document.addEventListener("DOMContentLoaded", () => {
-//     document.getElementsByClassName("slider-button-next")[0].addEventListener("click", triggerClick);
-//     //element.dispatchEvent(new Event('change'));
-//     function triggerClick() {
-//       document.getElementsByClassName('next')[0].click();
-//     } 
-//     document.getElementsByClassName("slider-button-prev")[0].addEventListener("click", trigger);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementsByClassName("slider-button-next")[0].addEventListener("click", triggerClick);
+element.dispatchEvent(new Event('change'));
+    function triggerClick() {
+      document.getElementsByClassName('next')[0].click();
+    } 
+    document.getElementsByClassName("slider-button-prev")[0].addEventListener("click", trigger);
 
-//     function trigger() {
-//       document.getElementsByClassName('previous')[0].click();
-//     } 
-// });
+    function trigger() {
+      document.getElementsByClassName('previous')[0].click();
+    } 
+});
 </script>
 {% schema %}
   {

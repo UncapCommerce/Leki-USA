@@ -16,7 +16,7 @@
             "title": "SEEK THE ADVENTURE",
             "text": "Discover our new collection and experience mountain sports with all its facets.",
             "slide_btn_text": "To the trekking poles",
-            "slide_btn_link": "#",
+            "slide_btn_link": "shopify:\/\/collections\/trekking",
             "slide_btn_style": "btn--secondary btn--small",
             "slide_btn_text_2": "",
             "slide_btn_link_2": "",
@@ -112,7 +112,7 @@
             "title": "Folding Poles",
             "text": "",
             "button_text": "To the poles",
-            "link": "#",
+            "link": "shopify:\/\/collections\/poles",
             "secondary_button_text": "",
             "secondary_button_link": "",
             "text_color": "text-light"
@@ -129,7 +129,7 @@
             "title": "Telescopic Poles",
             "text": "",
             "button_text": "To the poles",
-            "link": "#",
+            "link": "shopify:\/\/collections\/poles",
             "secondary_button_text": "",
             "secondary_button_link": "",
             "text_color": "text-light"

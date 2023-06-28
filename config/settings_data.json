@@ -187,7 +187,7 @@
           "color_wave": "#ffffff",
           "show_social_links": true,
           "show_payment_icons": true,
-          "bottom_menu": "",
+          "bottom_menu": "footer-bottom-menu",
           "color_text": "#000000",
           "color_bg": "#ffffff",
           "color_border": "#ffffff",

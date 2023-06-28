@@ -65,9 +65,9 @@ data-section-id="{{ section.id }}">
         </div>
       {% endfor %}
     </div>
-    <div class="page-loader">      
+<!--     <div class="page-loader">      
       {% render 'icon-loading' %}
-    </div>
+    </div> -->
                 
   </div>
 </section>
@@ -104,70 +104,70 @@ data-section-id="{{ section.id }}">
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function(event) { 
-  const cardContainer = document.querySelector(".athletes-main-wrap");
-  const loader = document.querySelector(".page-loader");
+// document.addEventListener("DOMContentLoaded", function(event) { 
+//   const cardContainer = document.querySelector(".athletes-main-wrap");
+//   const loader = document.querySelector(".page-loader");
   
-  const cardLimit = 100;
-  const cardIncrease = 5;
-  const pageCount = Math.ceil(cardLimit / cardIncrease);
-  let currentPage = 1;
+//   const cardLimit = 5;
+//   const cardIncrease = 5;
+//   const pageCount = Math.ceil(cardLimit / cardIncrease);
+//   let currentPage = 1;
   
   
-  var throttleTimer;
-  const throttle = (callback, time) => {
-    if (throttleTimer) return;
+//   var throttleTimer;
+//   const throttle = (callback, time) => {
+//     if (throttleTimer) return;
   
-    throttleTimer = true;
+//     throttleTimer = true;
   
-    setTimeout(() => {
-      callback();
-      throttleTimer = false;
-    }, time);
-  };
+//     setTimeout(() => {
+//       callback();
+//       throttleTimer = false;
+//     }, time);
+//   };
   
-  const addCards = (pageIndex) => {
-    currentPage = pageIndex;
+//   const addCards = (pageIndex) => {
+//     currentPage = pageIndex;
   
-    const startRange = (pageIndex - 1) * cardIncrease;
-    const endRange =
-      currentPage == pageCount ? cardLimit : pageIndex * cardIncrease;
+//     const startRange = (pageIndex - 1) * cardIncrease;
+//     const endRange =
+//       currentPage == pageCount ? cardLimit : pageIndex * cardIncrease;
   
-    for (let i = startRange + 1; i <= endRange; i++) {
-      if(document.querySelectorAll(".athletes-inner-wrap") != null ){
-      const card = document.querySelectorAll(".athletes-inner-wrap");
-      card[i].style.display = "block"; 
-      //createCard(i);
-      }
-    }
-  };
+//     for (let i = startRange + 1; i <= endRange; i++) {
+//       if(document.querySelectorAll(".athletes-inner-wrap") != null ){
+//       const card = document.querySelectorAll(".athletes-inner-wrap");
+//       card[i].style.display = "block"; 
+//       //createCard(i);
+//       }
+//     }
+//   };
   
-  const handleInfiniteScroll = () => {
-    throttle(() => {
-      const endOfPage =
-        window.pageYOffset >= cardContainer.offsetHeight;
-      if (endOfPage) {
-        addCards(currentPage + 1);
-      }
+//   const handleInfiniteScroll = () => {
+//     throttle(() => {
+//       const endOfPage =
+//         window.pageYOffset >= cardContainer.offsetHeight;
+//       if (endOfPage) {
+//         addCards(currentPage + 1);
+//       }
   
-      // if (currentPage === pageCount) {
-      //   removeInfiniteScroll();
-      // }
-    }, 1000);
-  };
+//       if (currentPage === pageCount) {
+//         removeInfiniteScroll();
+//       }
+//     }, 1000);
+//   };
   
-  const removeInfiniteScroll = () => {
-    loader.remove();
-    document.querySelector('.page-loader').classList.add('hidden');
-    window.removeEventListener("scroll", handleInfiniteScroll);
-  };
+//   const removeInfiniteScroll = () => {
+//     loader.remove();
+//     document.querySelector('.page-loader').classList.add('hidden');
+//     window.removeEventListener("scroll", handleInfiniteScroll);
+//   };
   
-  window.onload = function () {
-    addCards(currentPage);
-  };
+//   window.onload = function () {
+//     addCards(currentPage);
+//   };
   
-  window.addEventListener("scroll", handleInfiniteScroll);
-});
+//   window.addEventListener("scroll", handleInfiniteScroll);
+// });
 </script>   
 
 {% schema %}

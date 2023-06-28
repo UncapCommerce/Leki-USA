@@ -204,8 +204,9 @@
 {%- for link in linklists['mega-menu'].links -%}
   {% for childlink in link.links %}    
     {% assign childlink_title = childlink.title | handle %}  
+      childlink_title---{{ childlink_title }}
       {% if childlink_title == pageUrl %}
-        {% if childlink.links == blank %} {% assign thirdLevel = true %} {% endif %}
+        {% if childlink.links == blank %} thirdLevel---{{ thirdLevel }}{% assign thirdLevel = true %} {% endif %}
         {% endif %}
         {% for grandchildlink in childlink.links %}
         {% assign grandchild_title = grandchildlink.title | handle %}          
