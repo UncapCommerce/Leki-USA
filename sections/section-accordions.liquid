@@ -85,7 +85,6 @@
 
 {% if template contains 'product' %}
   {% assign faqlist = product.metafields.custom.faqs.value %}
-  faqlist----{{ faqlist }}
 {% elsif template contains 'collection' %}
   {% assign faqlist = collection.metafields.custom.faqs.value %}
 {% endif %}

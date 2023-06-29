@@ -199,25 +199,21 @@
   endcapture
 -%}
 
-{% assign pageUrl = collection.handle %}
-{% assign thirdLevel = false %}
-{%- for link in linklists['mega-menu'].links -%}
-  {% for childlink in link.links %}    
-    {% assign childlink_title = childlink.title | handle %}  
-      childlink_title---{{ childlink_title }}
-      {% if childlink_title == pageUrl %}
-        {% if childlink.links == blank %} thirdLevel---{{ thirdLevel }}{% assign thirdLevel = true %} {% endif %}
-        {% endif %}
-        {% for grandchildlink in childlink.links %}
-        {% assign grandchild_title = grandchildlink.title | handle %}          
-        {% if grandchild_title == pageUrl %}
-          {% assign thirdLevel = true %} 
-        {% endif %}
-      {% endfor %}    
+{% assign pageUrl = canonical_url | split: "/" | last %}
+{% assign thirdLevel = true %}
+{%- for link in linklists[settings.submenu_list].links -%}
+  {% for childlink in link.links %}     
+      {% assign childlink_handle = childlink.url | split: "/" | last %}
+      {% if childlink_handle == pageUrl %} {% assign thirdLevel = true %} {% endif %}
+    {% for grandchildlink in childlink.links %}
+      {% assign grandchild_title = grandchildlink.url | split: "/" | last %}  
+      {% if grandchild_title == pageUrl %}
+        {% assign thirdLevel = false %} 
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 {% endfor %}
-
-{% unless thirdLevel %}
+{% if thirdLevel %}
 <section id="SubCollections--{{ section.id }}"
   class="section-padding {{ sub_collections_classes }}{% if bg_color_secondary %} bg-secondary{% endif %} {{ text_color }}"
   data-section-type="sub-collections"
@@ -249,11 +245,11 @@
     {%- endif -%}
 
     <div class="sub-collections-wrap">
-      {% for link in linklists['mega-menu'].links %}
-      {% assign firstLevel = link.title | handle %}
+      {% for link in linklists[settings.submenu_list].links %}
+      {% assign firstLevel = link.url | split: "/" | last %}
         {% if link.links != blank %}
           {% for child_link in link.links %}
-          {% assign secondLevel = child_link.title | handle %}
+          {% assign secondLevel = child_link.url | split: "/" | last %}
           {% assign secondLevelLink = child_link.url %}
             {% if firstLevel == pageUrl %}
             {% assign collection_title = child_link.title %}
@@ -326,4 +322,4 @@
     </div>
   </div>
 </section>
-{% endunless %}
+{% endif %}

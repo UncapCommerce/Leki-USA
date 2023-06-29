@@ -113,23 +113,37 @@
   }
 {%- endstyle -%}
 
+{% comment %}
 {% assign pageUrl = collection.handle %}
 {% assign secondLevel = true %}
-{%- for link in linklists['mega-menu'].links -%}
-  {% for childlink in link.links %}
-    {% assign childlink_title = childlink.title | handle %}   
-    {% if childlink_title == pageUrl %}
+{%- for link in linklists[settings.submenu_list].links -%}
+  {% for childlink in link.links %}    
+    {% assign childlink_handle = childlink.url | split: "/" | last %}   
+    {% if childlink_handle == pageUrl %}
       {% assign secondLevel = false %}        
       {% endif %}
     {% for grandchildlink in childlink.links %}
-      {% assign grandchild_title = grandchildlink.title | handle %}    
-      {% if grandchild_title == pageUrl %} 
+      {% assign grandchild_handle = grandchildlink.url | split: "/" | last %}    
+      {% if grandchild_handle == pageUrl %} 
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}{% endcomment %}
+
+{% assign pageUrl = canonical_url | split: "/" | last %}
+{% assign thirdLevel = true %}
+{%- for link in linklists[settings.submenu_list].links -%}
+  {% for childlink in link.links %}    
+    {% for grandchildlink in childlink.links %}
+      {% assign grandchild_handle = grandchildlink.url | split: "/" | last %}      
+      {% if grandchild_handle == pageUrl %}
+      {% assign thirdLevel = false %}        
       {% endif %}
     {% endfor %}
   {% endfor %}
 {% endfor %}
 
-{% unless secondLevel %}
+{% unless thirdLevel %}
   <div id="collection-details--{{ section.id }}" class="section-padding" {% if animations_enabled %}
               data-aos="fade"
               data-aos-anchor="{{ animation_anchor }}"

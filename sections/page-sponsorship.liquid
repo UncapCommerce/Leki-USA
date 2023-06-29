@@ -185,19 +185,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
     else{ 
       document.querySelector(".readmore").style.display = "block";
     }
-  var readmore = document.querySelector('.readmore');        
-   
-  readmore.addEventListener('click', () => {
-   var readinnertext = readmore.innerText; 
-   var readdesc = document.querySelector('.tab-data');    
+  var readmore = document.querySelectorAll('.readmore');
+   readmore.forEach(function(self){
+  self.addEventListener('click', () => {
+   var readinnertext = self.innerText; 
+   var readdesc = self.closest('.sponsor-tab-content').querySelector('.tab-data');    
    readdesc.classList.toggle('showmore');    
     if(readinnertext == 'Read More'){
-      document.querySelector('.readmore').innerText = 'Read Less';          
+      self.innerText = 'Read Less';          
     }
     else {
-      document.querySelector('.readmore').innerText = 'Read More';      
+      self.innerText = 'Read More';      
     }
   }); 
+   })
 });
 </script>
 {% schema %}

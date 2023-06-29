@@ -811,6 +811,16 @@
     ]
   },
   {
+    "name": "Sub Collections",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "submenu_list",
+        "label": "Select Sub Collection List"
+      }
+    ]
+  },
+  {
     "name": "Quick shop",
     "settings": [
       {
@@ -1120,78 +1130,78 @@
         "label": "Button text"
       },
       {
-        "type":"header",
-        "content":"Dropdown"
+        "type": "header",
+        "content": "Dropdown"
       },
       {
         "type": "text",
         "id": "option-one",
         "default": "Select option one",
         "label": "Option one",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-two",
         "default": "Select option two",
         "label": "Option two",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-three",
         "default": "Select option three",
         "label": "Option three",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-four",
         "default": "Select option four",
         "label": "Option four",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-five",
         "default": "Select option five",
         "label": "Option five",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-six",
         "default": "Select option six",
         "label": "Option six",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-seven",
         "default": "Select option seven",
         "label": "Option seven",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-eight",
         "default": "Select option eight",
         "label": "Option eight",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-nine",
         "default": "Select option nine",
         "label": "Option nine",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       },
       {
         "type": "text",
         "id": "option-ten",
         "default": "Select option Ten",
         "label": "Option Ten",
-        "info":"Note: Title - Classic Value - Skate Value "
+        "info": "Note: Title - Classic Value - Skate Value "
       }
     ]
   },

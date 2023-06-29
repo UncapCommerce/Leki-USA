@@ -17332,7 +17332,10 @@
           .click();
       });
     });
-
+    if (window.location.href.includes('/account')) {
+      var container = document.querySelector('[data-recently-viewed-section]');
+      new QuickViewPopup(container);
+    }
     // if (about_content != null) {
     //   var aboutcontent = new Flickity(about_content, {
     //     asNavFor: ".about-image-wrap",
@@ -17552,3 +17555,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 //     }
 // privacyfilterResult();
 });
+//open outer link in new tab
+
+var allAnchor = document.querySelectorAll('a');
+allAnchor.forEach(function(self){
+    if (!(self.href == '#' || self.href == '#!' || self.href == 'javascript:void(0)' || self.href.includes(window.location.host) || self.href == '')) {
+        self.setAttribute('target', '_blank');
+    }
+})

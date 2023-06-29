@@ -3,7 +3,6 @@
 {%- endcomment -%}
 {%- liquid
   assign section_width = section.settings.width
-  assign animations_enabled = settings.animations_enabled
   assign animation_anchor = '#ContactForm--' | append: section.id
   assign animation_delay = 150
 -%}
@@ -16,94 +15,51 @@
     {%- endif -%}
 
     {%- case block.type -%}
-
       {%- when 'heading' -%}
-        <div class="form__item form__item--heading"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <div class="form__item form__item--heading" {{ block.shopify_attributes }}>
           <h2 class="form__heading">{{ block.settings.title }}</h2>          
         </div>
       {%- when 'content' -%}
-        <div class="form__item form__item--content" {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <div class="form__item form__item--content" {{ block.shopify_attributes }}>
           {{ block.settings.content }}
         </div>
 
       {%- when 'email' -%}
-        <div class="form__item"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <div class="form__item" {{ block.shopify_attributes }}>
           <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
           <input type="email" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[email]" placeholder="{{ block.settings.title }}" autocorrect="off" autocapitalize="off" {{ required }}/>
         </div>
 
       {%- when 'body' -%}
-        <div class="form__item"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <div class="form__item" {{ block.shopify_attributes }}>
           <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
           <textarea rows="10" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[body]" placeholder="{{ block.settings.title }}" {{ required }}></textarea>
         </div>
 
       {%- when 'text' -%}
-        <div class="form__item"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <div class="form__item" {{ block.shopify_attributes }}>
           <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
           <input type="text" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[{{ block.settings.title | handleize }}]" autocapitalize="words" value="" placeholder="{{ block.settings.title }}" {{ required }}/>
         </div>
 
       {%- when 'textarea' -%}
-        <div class="form__item"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <div class="form__item" {{ block.shopify_attributes }}>
           <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
           <textarea rows="10" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[{{ block.settings.title | handleize }}]" placeholder="{{ block.settings.title }}" {{ required }}></textarea>
         </div>
 
       {%- when 'telephone' -%}
-        <div class="form__item"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <div class="form__item" {{ block.shopify_attributes }}>
           <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
           <input type="tel" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[telephone]" value="" placeholder="{{ block.settings.title }}" {{ required }}/>
         </div>
 
+      {%- when 'date' -%}
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <input type="text" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[date]" value="" placeholder="{{ block.settings.title }}" onfocus="(this.type='date')"{{ required }}/>
+        </div>
+        
       {%- when 'spacer' -%}
         {%- assign hr_class = 'hr--clear' -%}
         {%- assign show_line = block.settings.line -%}
@@ -111,25 +67,11 @@
           {%- assign hr_class = 'hr--full' -%}
         {%- endif -%}
         <div class="form__item">
-          <hr class="{{ hr_class }}"
-            {% if animations_enabled and show_line %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}
-            {{ block.shopify_attributes }}>
+          <hr class="{{ hr_class }}" {{ block.shopify_attributes }}>
         </div>
         
       {%- when 'checkbox' -%}
-        <div class="form__item form__item--checkbox field_space"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <div class="form__item form__item--checkbox field_space" {{ block.shopify_attributes }}>
           <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
             <input type="checkbox" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--checkbox" name="contact[{{ block.settings.title | handleize }}]" value="{{ block.settings.title }}" {{ required }}></input>
             <span>{{ block.settings.title }}</span>
@@ -137,27 +79,14 @@
         </div>
 
       {%- when 'data-checkbox' -%}
-        <div class="form__item form__item--checkbox"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>
+        <div class="form__item form__item--checkbox">
           <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
           <input type="checkbox" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--checkbox" name="" value="" {{ required }}></input>
           <span>{{ block.settings.title }}</span>
         </div>
 
       {%- when 'radio' -%}
-        <fieldset class="form__item form__item--radio"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <fieldset class="form__item form__item--radio" {{ block.shopify_attributes }}>
           {%- if block.settings.title != blank -%}
             <legend class="form__label">{{ block.settings.title }}</legend>
           {%- endif -%}
@@ -176,14 +105,7 @@
 
       {%- when 'select' -%}
         <div class="form_address-fields">
-          <fieldset class="form__item"
-            {% if animations_enabled %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}
-            {{ block.shopify_attributes }}>
+          <fieldset class="form__item" {{ block.shopify_attributes }}>
             {%- if block.settings.title != blank -%}
               <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title }}</label>
             {%- endif -%}
@@ -195,14 +117,8 @@
               {%- render 'icon-select' -%}
             </div>
           </fieldset>
-          <fieldset class="form__item"
-            {% if animations_enabled %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}
-            {{ block.shopify_attributes }}>
+          
+          <fieldset class="form__item" {{ block.shopify_attributes }}>
             {%- if block.settings.title1 != blank -%}
               <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title1 }}</label>
             {%- endif -%}
@@ -213,28 +129,14 @@
               {%- render 'icon-select' -%}
             </div>
           </fieldset>
-          <div class="form__item"
-            {% if animations_enabled %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}
-            {{ block.shopify_attributes }}>
+          <div class="form__item" {{ block.shopify_attributes }}>
             <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title_1 }}</label>
             <input type="text" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[{{ block.settings.title_1 | handleize }}]" autocapitalize="words" value="" placeholder="{{ block.settings.title_1 }}" {{ required }}/>
           </div>
         </div>
             
       {%- when 'product-type' -%}
-        <fieldset class="form__item"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}
-          {{ block.shopify_attributes }}>
+        <fieldset class="form__item" {{ block.shopify_attributes }}>
           {%- if block.settings.title != blank -%}
             <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title }}</label>
           {%- endif -%}
@@ -254,13 +156,7 @@
         </fieldset>
         
       {%- when 'upload-file' -%}
-        <div class="form__item"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>
+        <div class="form__item">
           <label for="fileupload">{{ 'contact.form.select_file' | t }}</label>
           <div class="drop-zone">
             <span class="drop-zone__prompt">
@@ -290,12 +186,7 @@
       </figure>
     </div>
   {% endif %}
-  <div class="contact-form-bg" {% if animations_enabled %}
-      data-aos="fade-up"
-      data-aos-anchor="{{ animation_anchor }}"
-      data-aos-delay="{{ animation_delay }}"
-      {%- assign animation_delay = animation_delay | plus: 150 -%}
-    {% endif %}>
+  <div class="contact-form-bg">
     <div class="{{ section_width }}">
       <div class="warranty-form-wrapper contact-form-wrapper {% if section.settings.contact_bgimg != blank %}has-bg{% endif %}">
       {%- form 'contact', id: 'ContactForm'  -%}
@@ -352,18 +243,12 @@
             </div>
           {%- endunless -%}
           <span class="field-info">Fields marked with asterisks (*) are required.</span>
-          <div class="form__item form__item--submit"
-            {% if animations_enabled %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>
+          <div class="form__item form__item--submit">
             <button type="submit" class="btn">Send</button>
           </div>
         </div>
-        
       {%- endform -%}
+      
       {% if section.settings.additional_info != blank %}
         <div class="contact-additional-info">
           {{ section.settings.additional_info }}
@@ -394,8 +279,7 @@
   {% endif %}
   
   .warranty-form-wrapper .contact-form{
-    max-width: 645px;
-    padding: 0 40px;
+    max-width: 540px;
   }
   
   .shopify-section--contact-form .wrapper--narrow {
@@ -481,7 +365,7 @@
     .form_address-fields {flex-wrap: wrap;gap: 0;}
     .form_address-fields .form__item {max-width: 100%;flex: 0 0 100%;}
     .warranty-form-wrapper .contact-form{
-      padding: 0 20px;
+      padding: 0;
     }
   }
   
@@ -784,6 +668,25 @@ document.addEventListener("DOMContentLoaded", () => {
           "label": "Label",
           "default": "Phone Number",
           "info": "Example: Phone Number"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "date",
+      "name": "Date",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Date",
+          "info": "Example: Date"
         },
         {
           "type": "checkbox",

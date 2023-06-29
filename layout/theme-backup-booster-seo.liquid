@@ -8,10 +8,10 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 		assign disabled_by_yoast_seo = false
 	endif
 -%}
-<!DOCTYPE html>
-<html lang="{{ request.locale.iso_code }}">
+<!doctype html>
+<html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
   {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
@@ -327,8 +327,66 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 
 </head>
 
-<body>
+{%- capture body_class -%}
+template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
+{% if customer %} customer-logged-in{% endif %}
+{% if settings.show_rounded_corners %} body--rounded-corners{% endif %}
+{% if settings.animations_enabled %} aos-initialized{% endif %}
+{% if settings.color_body_bg == '#000000' or settings.color_body_bg == '#000' %} palette--dark{% endif %}
+{% if settings.color_body_bg == '#ffffff' or settings.color_body_bg == '#fff' %} palette--light{% endif %}
+  no-outline
+{%- endcapture -%}
+
+{%- liquid
+  capture root
+    if routes.root_url == '/'
+      echo routes.root_url
+    else
+      echo routes.root_url | append: '/'
+    endif
+  endcapture
+
+  assign challenge = 'challenge' | prepend: root
+-%}
+
+<body id="{{ page_title | handle }}" class="{% if product.template_suffix != blank %}template--{{ product.template_suffix }}{% endif %} {% if collection.template_suffix != blank %}template--collection-{{ collection.template_suffix }}{% endif %} page--{{ page_title | handle }} {{ body_class | strip_newlines | strip }}" data-animations="{{ settings.animations_enabled }}">
   {%- render 'loading' -%}
-  {{ content_for_layout }}
+
+  <a class="in-page-link skip-link" data-skip-content href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div data-announcement-bar>
+    {%- section 'announcement-bar' -%}
+  </div>
+  {%- section 'header' -%}
+
+  <div id="PageContainer" data-page-container>
+    <main id="MainContent" class="main-content" data-main>
+      {{ content_for_layout }}
+    </main>
+
+    {%- section 'swatch-image' -%}
+    {%- section 'footer' -%}
+
+  </div>
+
+  {% comment %} Cart Templates {% endcomment %}
+  {%- render 'cart-templates' -%}
+
+  {%- comment -%} Photoswipe containers {%- endcomment -%}
+  {%- render 'zoom-pswp', template_index: 0 -%}
+  {%- render 'zoom-pswp', template_index: 1 -%}
+
+  {%- comment -%} Swatches Template {%- endcomment -%}
+	{%- render 'template-swatch' -%}
+
+  {%- unless request.path == challenge -%}
+    {%- section 'popup' -%}
+  {%- endunless -%}
+
+  {%- if settings.show_scroll_to_top -%}
+    <button type="button" class="btn btn--primary btn--scroll-top" data-scroll-top-button aria-label="{{ 'general.accessibility.scroll_to_top' | t }}">
+      {% render 'icon-select' %}
+    </button>
+  {%- endif -%}
 </body>
 </html>
