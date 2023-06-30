@@ -142,7 +142,7 @@
 
       {%- comment -%} Product Thumbnails {%- endcomment -%}
       {%- if product.media.size > 1 and hide_product_thumbnails == false -%}
-        <div class="product-single__thumbnails" id="ProductThumbs" data-product-single-media-thumbs>
+        <div class="product-single__thumbnails hidden-lg" id="ProductThumbs" data-product-single-media-thumbs>
           {%- comment -%} Show Featured media thumbnail first {%- endcomment -%}
           {%- render 'media-thumb', media: featured_media, featured_media: featured_media, has_link: true, product_title: product.title -%}
 

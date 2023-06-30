@@ -6321,7 +6321,6 @@
       if (this.isCartPage) {
         this.renderPairProducts();
       }
-
       document.addEventListener("theme:popup:open", this.closeCartDrawer);
     }
 
@@ -6488,6 +6487,13 @@
         );
         this.cartForm.addEventListener("submit", this.formSubmitHandler);
       }
+      document.querySelectorAll('[data-quantity-field]').forEach(function(self){
+        self.addEventListener('keydown', function(event){
+           if(!(event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 )) {
+            event.preventDefault();
+           } 
+        })
+      })
     }
 
     /**
@@ -15015,7 +15021,7 @@
         this.flkty = new Flickity(slider, {
           wrapAround: true,
           pageDots: false,
-          adaptiveHeight: true,
+          adaptiveHeight: false,
           on: {
             ready: () => {
               slider.setAttribute(attributes$z.tabindex, "-1");

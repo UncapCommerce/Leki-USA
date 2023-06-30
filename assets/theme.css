@@ -721,7 +721,12 @@ input[type=image] {
   padding-left: 0;
   padding-right: 0;
 }
-
+.product-single__media-slide[data-type="video"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
