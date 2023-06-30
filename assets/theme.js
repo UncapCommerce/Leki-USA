@@ -17332,11 +17332,10 @@
           .click();
       });
     });
-    if (window.location.href.includes('/account')) {
-      console.log(234); 
       var container = document.querySelector('[data-recently-viewed-section]');
-      new QuickViewPopup(container);
-    }
+      if (container) {
+        new QuickViewPopup(container);
+      }
     // if (about_content != null) {
     //   var aboutcontent = new Flickity(about_content, {
     //     asNavFor: ".about-image-wrap",
