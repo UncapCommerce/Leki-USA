@@ -17333,6 +17333,7 @@
       });
     });
     if (window.location.href.includes('/account')) {
+      console.log(234); 
       var container = document.querySelector('[data-recently-viewed-section]');
       new QuickViewPopup(container);
     }
