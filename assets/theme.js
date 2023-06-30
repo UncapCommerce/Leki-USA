@@ -17427,133 +17427,62 @@ function getfilterResult(url) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  var calculateBtn = document.querySelector(
-    '#poleSizeAdvisorForm input[type="button"]'
-  );
-  if (calculateBtn) {
-    calculateBtn.onclick = (calbtn) => {
-      var height_val = document.querySelector(".form-control.height").value;
-      if (height_val) {
-        document
-          .querySelector("#poleSizeCalculationResult")
-          .classList.remove("hidden");
-        var select_act = document.querySelector(
-          ".select-activities .metafield-rich_text_field"
-        );
-        console.log("select_act---", select_act.innerHTML);
-        var selectElement = document.querySelector("#category");
-        var selected_val = selectElement.value;
+document.addEventListener("DOMContentLoaded", function(event) {
+  var calculateBtn = document.querySelector('.form__item input[type="button"]');
+  calculateBtn.onclick = (calbtn) =>{
+    var height_val = document.querySelector('.form-control.height').value;
+    if(height_val){
+      document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
+      var selectElement = document.querySelector('#category');
+      var selected_val = selectElement.value;
 
-        for (i = 0; i < selectElement.length; i++) {
-          var optionVal = selectElement.options[i];
-          if (optionVal.value == selected_val) {
-            var classic_val = optionVal.dataset.classic;
-            var skate_val = optionVal.dataset.skate;
-            var get_title = optionVal.dataset.title;
-          }
-        }
-
-        var filter_val = get_title.replaceAll(" ", "+");
-        var getcurrURL =
-          "/collections/all?filter.p.m.custom.sport=" +
-          filter_val +
-          "&filter.p.m.custom.length=" +
-          height_val +
-          "+cm";
-
-        document.querySelector(".result-btn").innerHTML =
-          '<a href="#" class="btn" target="_blank">Show all results</a>';
-        document
-          .querySelector(".result-btn a")
-          .setAttribute("href", getcurrURL);
-        getfilterResult(getcurrURL);
-
-        var classicHeight = Number(height_val * classic_val).toFixed(1);
-        var classicroundVal = Math.round(classicHeight);
-        var skateHeight = Number(height_val * skate_val).toFixed(1);
-        var skateroundVal = Math.round(skateHeight);
-        if (classic_val && skate_val) {
-          document.querySelector("#roundedSize").innerHTML =
-            "Classic " + classicroundVal + "cm";
-          if (skateroundVal > 0) {
-            document.querySelector("#skateroundedSize").innerHTML =
-              "Skate " + skateroundVal + "cm";
-          }
-        } else {
-          document.querySelector("#roundedSize").innerHTML =
-            classicroundVal + "cm";
-          if (skateroundVal > 0) {
-            document.querySelector("#skateroundedSize").innerHTML =
-              skateroundVal + "cm";
-          } else {
-            document.querySelector("#skateroundedSize").innerHTML = "";
-          }
-        }
-        if (classic_val && skate_val) {
-          document.querySelector("#calculatedSize").innerHTML =
-            "Classic " + classicHeight + "cm";
-          if (skateHeight > 0) {
-            document.querySelector("#skateSize").innerHTML =
-              "Skate " + skateHeight + "cm";
-          }
-        } else {
-          document.querySelector("#calculatedSize").innerHTML =
-            classicHeight + "cm";
-          if (skateHeight > 0) {
-            document.querySelector("#skateSize").innerHTML = skateHeight + "cm";
-          } else {
-            document.querySelector("#skateSize").innerHTML = "";
-          }
+      for(i=0; i<selectElement.length; i++){
+        var optionVal = selectElement.options[i];    
+        if (optionVal.value == selected_val) {                
+          var classic_val = optionVal.dataset.classic;  
+          var skate_val = optionVal.dataset.skate;  
+          var get_title = optionVal.dataset.title;  
         }
       }
-    };
-  }
 
-  // modal js
-
-  var modal = document.querySelector(".modal");
-  var modal_privacy = document.querySelector(".modal_privacy");
-  var triggers = document.querySelectorAll(".cookie-modal");
-  var privacy_modal = document.querySelectorAll(".privacy-modal");
-  var closeButton = document.querySelector(".close-button");
-
-  function toggleModal() {
-    modal.classList.toggle("show-modal");
-  }
-  function privacyModal() {
-    modal_privacy.classList.toggle("show-modal");
-  }
-
-  function windowOnClick(event) {
-    if (event.target === modal) {
-      toggleModal();
+      var filter_val = get_title.replaceAll(' ','+');
+      var getcurrURL = "/collections/all?filter.p.m.custom.tags="+ filter_val +"&filter.v.option.size | length="+ height_val +"+cm"; 
+  
+      document.querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
+      document.querySelector('.result-btn a').setAttribute('href',getcurrURL);
+      getfilterResult(getcurrURL);
+      
+      var classicHeight = Number(height_val * classic_val).toFixed(1);
+      var classicroundVal = Math.round(classicHeight);    
+      var skateHeight = Number(height_val * skate_val).toFixed(1);
+      var skateroundVal = Math.round(skateHeight);        
+      if(classic_val && skate_val ){
+        document.querySelector('#roundedSize').innerHTML = 'Classic ' + classicroundVal + 'cm';
+        if(skateroundVal > 0 ){document.querySelector('#skateroundedSize').innerHTML = 'Skate ' + skateroundVal + 'cm';}
+      }else{
+        document.querySelector('#roundedSize').innerHTML = classicroundVal + 'cm';
+        if(skateroundVal > 0 ){
+          document.querySelector('#skateroundedSize').innerHTML = skateroundVal + 'cm';
+        }
+        else{
+          document.querySelector('#skateroundedSize').innerHTML = '';
+        }
+      }
+      if(classic_val && skate_val){
+        document.querySelector('#calculatedSize').innerHTML = 'Classic ' + classicHeight + 'cm';
+        if(skateHeight > 0 ){document.querySelector('#skateSize').innerHTML = 'Skate ' + skateHeight + 'cm';}
+      }else{
+        document.querySelector('#calculatedSize').innerHTML = classicHeight + 'cm';
+        if(skateHeight > 0){
+          document.querySelector('#skateSize').innerHTML = skateHeight + 'cm';
+        }
+        else{
+          document.querySelector('#skateSize').innerHTML = '';
+        }
+      }
     }
-  }
+  } 
 
-  for (var i = 0, len = triggers.length; i < len; i++) {
-    triggers[i].addEventListener("click", toggleModal);
-  }
-  for (var i = 0, len = privacy_modal.length; i < len; i++) {
-    privacy_modal[i].addEventListener("click", privacyModal);
-  }
-  closeButton.addEventListener("click", toggleModal);
-  window.addEventListener("click", windowOnClick);
-
-//   var page_privacy_url = "/policies/privacy-policy"
-//       console.log(page_privacy_url, "----");
-//     function privacyfilterResult(page_privacy_url) {
-//   fetch(page_privacy_url)
-//     .then((response) => response.text())
-//     .then((responseText) => {
-//       const get_text = "cms-element-text";
-//       const html = new DOMParser().parseFromString(responseText, "text/html");
-//       const destination = document.querySelector(".privacy_text");
-//       const source = html.getElementById(get_text);
-//         if (source && destination) destination.innerHTML = source.innerHTML;
-//     });
-//     }
-// privacyfilterResult();
 });
 //open outer link in new tab
 
