@@ -13,8 +13,8 @@
     assign show_upsell = true
   endif
 
-  assign upsell_form_id = "UpsellForm--" | append: unique
-  assign upsell_button_id = "UpsellButton--" | append: unique
+  assign upsell_form_id = 'UpsellForm--' | append: unique
+  assign upsell_button_id = 'UpsellButton--' | append: unique
 
   assign single_variant = false
   if upsell_product.variants.size == 1 and upsell_product.selling_plan_groups.size == 0
@@ -28,7 +28,10 @@
 -%}
 
 {%- if show_upsell -%}
-  <div class="product-upsell__holder{% if upsell_error %} product-upsell__holder--onboarding{% endif %}" data-upsell-holder>
+  <div
+    class="product-upsell__holder{% if upsell_error %} product-upsell__holder--onboarding{% endif %}"
+    data-upsell-holder
+  >
     <div class="product-upsell">
       <div class="product-upsell__content">
         <p class="product-upsell__subtitle">{{ subtitle }}</p>
@@ -44,25 +47,33 @@
             {%- form 'product', upsell_product, data-product-form: '', id: upsell_form_id -%}
               <input type="hidden" name="id" value="{{ upsell_variant.id }}">
 
-              <button type="submit" name="add"
+              <button
+                type="submit"
+                name="add"
                 class="product-upsell__btn btn btn--secondary{% unless upsell_variant.available %} is-hidden{% endunless %}"
                 id="{{ upsell_button_id }}"
-                {% unless upsell_variant.available %} is-hidden{% endunless %}
+                {% unless upsell_variant.available %}
+                  is-hidden
+                {% endunless %}
                 data-add-to-cart
                 data-focus-element
-                data-upsell-btn>
-                <span class="product-upsell__btn-hidden" data-upsell-btn-text>{{ 'general.upsell.add_to_cart' | t }}</span>
-                <span class="product-upsell__btn-text">{{ 'general.upsell.add_to_cart' | t }}</span>
-                <span class="product-upsell__btn-price">&nbsp;-&nbsp;
-                  {%- liquid
-                    if upsell_variant.price == 0
-                      echo 'products.product.free' | t
-                    else
-                      echo upsell_variant.price | money
-                    endif
-                  -%}
+                data-upsell-btn
+              >
+                <span class="product-upsell__btn-hidden" data-upsell-btn-text>
+                  {{- 'general.upsell.add_to_cart' | t -}}
                 </span>
-
+                <span class="product-upsell__btn-text">{{ 'general.upsell.add_to_cart' | t }}</span>
+                {% comment %}
+                  <span class="product-upsell__btn-price">&nbsp;-&nbsp;
+                    {%- liquid
+                      if upsell_variant.price == 0
+                        echo 'products.product.free' | t
+                      else
+                        echo upsell_variant.price | money
+                      endif
+                    -%}
+                  </span>
+                {% endcomment %}
                 <span class="product-upsell__btn-progress">
                   <svg height="18" width="18" class="svg-loader">
                     <circle r="7" cx="9" cy="9" />
@@ -80,20 +91,21 @@
               <p class="product-upsell__unavailable">{{ 'products.product.sold_out' | t }}</p>
             {%- endunless -%}
 
-            <a class="product-upsell__btn btn btn--secondary"
+            <a
+              class="product-upsell__btn btn btn--secondary"
               href="{{ upsell_link }}"
               data-handle="{{ upsell_product.handle }}"
               data-button-quick-view
-              >
-                <span class="product-upsell__btn-text">{{ 'general.upsell.quick_view' | t }}</span>
-                <span class="product-upsell__btn-progress">
-                  <svg height="18" width="18" class="svg-loader">
-                    <circle r="7" cx="9" cy="9" />
-                    <circle stroke-dasharray="87.96459430051421 87.96459430051421" r="7" cx="9" cy="9" />
-                  </svg>
-                </span>
+            >
+              <span class="product-upsell__btn-text">{{ 'general.upsell.quick_view' | t }}</span>
+              <span class="product-upsell__btn-progress">
+                <svg height="18" width="18" class="svg-loader">
+                  <circle r="7" cx="9" cy="9" />
+                  <circle stroke-dasharray="87.96459430051421 87.96459430051421" r="7" cx="9" cy="9" />
+                </svg>
+              </span>
 
-                <span class="product-upsell__btn-check">&nbsp;</span>
+              <span class="product-upsell__btn-check">&nbsp;</span>
             </a>
           {%- endif -%}
         {%- endif -%}
@@ -102,25 +114,38 @@
       </div>
 
       <div class="product-upsell__image">
-        <a class="product-upsell__image__link" href="{{ upsell_link }}" aria-label="{{ upsell_product.title | escape | strip_html }}"{% if index > 1 %} tabindex="-1"{% endif %}>
+        <a
+          class="product-upsell__image__link"
+          href="{{ upsell_link }}"
+          aria-label="{{ upsell_product.title | escape | strip_html }}"
+          {% if index > 1 %}
+            tabindex="-1"
+          {% endif %}
+        >
           {%- liquid
             assign image = upsell_image
             assign image_url_pattern = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
-            assign image_widths = "[150, 300, 600]"
+            assign image_widths = '[150, 300, 600]'
           -%}
 
-          <img src="{{ 'blank.gif' | asset_img_url: '1x1' }}"
-              class="product-upsell__image__thumb lazyload"
-              data-src="{{ image_url_pattern }}"
-              data-widths= "{{ image_widths }}"
-              data-aspectratio="{{ image.aspect_ratio }}"
-              data-sizes="auto"
-              width="150"
-              height="150"
-              data-object-fit="cover"
-              alt="{{ image.alt | escape }}">
+          <img
+            src="{{ 'blank.gif' | asset_img_url: '1x1' }}"
+            class="product-upsell__image__thumb lazyload"
+            data-src="{{ image_url_pattern }}"
+            data-widths="{{ image_widths }}"
+            data-aspectratio="{{ image.aspect_ratio }}"
+            data-sizes="auto"
+            width="150"
+            height="150"
+            data-object-fit="cover"
+            alt="{{ image.alt | escape }}"
+          >
           <noscript>
-            <img src="{{ image.src | img_url: '150x' }}" alt="{{ image.alt | escape }}" class="product-upsell__image__thumb">
+            <img
+              src="{{ image.src | img_url: '150x' }}"
+              alt="{{ image.alt | escape }}"
+              class="product-upsell__image__thumb"
+            >
           </noscript>
         </a>
       </div>

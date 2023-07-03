@@ -82,7 +82,7 @@
     --PB: {{ section.settings.padding_bottom }}px;
   }
   #collection-details--{{ section.id }}{
-    padding-top: 60px;
+    padding-top: 30px;
     padding-bottom: 60px;
   }
   {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
@@ -101,7 +101,7 @@
       --PB: {{ section.settings.tab_padding_bottom }}px;
     }
     #collection-details--{{ section.id }}{
-      padding-top: 40px;
+      padding-top: 20px;
       padding-bottom: 40px;
     }
   }
@@ -113,32 +113,37 @@
   }
 {%- endstyle -%}
 
-{% assign pageUrl = canonical_url | split: "/" | last %}
+{% assign pageUrl = canonical_url | split: '/' | last %}
 {% assign thirdLevel = true %}
 {%- for link in linklists[settings.submenu_list].links -%}
   {% for childlink in link.links %}
     {% for grandchildlink in childlink.links %}
-      {% assign grandchild_handle = grandchildlink.url | split: "/" | last %}      
+      {% assign grandchild_handle = grandchildlink.url | split: '/' | last %}
       {% if grandchild_handle == pageUrl %}
-      {% assign thirdLevel = false %}             
+        {% assign thirdLevel = false %}
       {% endif %}
     {% endfor %}
   {% endfor %}
 {% endfor %}
 {% unless thirdLevel %}
-  <div id="collection-details--{{ section.id }}" class="section-padding" {% if animations_enabled %}
-              data-aos="fade"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>
+  <div
+    id="collection-details--{{ section.id }}"
+    class="section-padding"
+    {% if animations_enabled %}
+      data-aos="fade"
+      data-aos-anchor="{{ animation_anchor }}"
+      data-aos-delay="{{ animation_delay }}"
+      {%- assign animation_delay = animation_delay | plus: 150 -%}
+    {% endif %}
+  >
     <div class="wrapper--full-padded">
       <h2 class="collection-heading">{{ collection.title }}</h2>
       {{ collection.description }}
     </div>
   </div>
 {% endunless %}
-<div id="{{ id }}"
+<div
+  id="{{ id }}"
   class="{{ section_class }}"
   data-section-type="collection-template"
   data-section-id="{{ section.id }}"
@@ -149,13 +154,14 @@
   {% if filter_by_tags %}
     data-collection="{{ collection.url | default: routes.all_products_collection_url }}"
     data-tags="{{ selected_tags }}"
-  {% endif %}>
-
+  {% endif %}
+>
   <div class="collection__wrapper" data-collection-wrapper>
     <div class="wrapper--full-padded">
       <div class="collection__inner">
         {%- if show_breadcrumbs or enable_filters or enable_sorting -%}
-          <div id="CollectionStickyBar"
+          <div
+            id="CollectionStickyBar"
             class="collection__sticky-bar"
             data-collection-sticky-bar
             {% if animations_enabled %}
@@ -163,41 +169,61 @@
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>
-
+            {% endif %}
+          >
             {%- if show_breadcrumbs -%}
               {%- render 'breadcrumbs' -%}
             {%- endif -%}
 
             {%- if enable_sorting -%}
-                        {%- assign sort_by = search.sort_by | default: collection.sort_by | default: collection.default_sort_by -%}
-          {%- assign sort_options = search.sort_options | default: collection.sort_options -%}
+              {%- assign sort_by = search.sort_by
+                | default: collection.sort_by
+                | default: collection.default_sort_by
+              -%}
+              {%- assign sort_options = search.sort_options | default: collection.sort_options -%}
 
-          <div class="collection__sort-bar">
-            <button type="button" class="collection__sort__label" data-sort-toggle>
-              {{ 'collections.sorting.title' | t }}
-              {%- render 'icon-select' -%}
-            </button>
+              <div class="collection__sort-bar">
+                <button type="button" class="collection__sort__label" data-sort-toggle>
+                  {{ 'collections.sorting.title' | t }}
+                  {%- render 'icon-select' -%}
+                </button>
 
-            <div class="collection__sort__option-wrapper" data-collection-sort-options>
-              <div class="collection__sort__options">
-                <ul class="collection__filter-tags collection__filter-tags--default" collection-sort-by="{{ sort_by }}">
-                  {%- for option in sort_options -%}
-                    <li class="collection__filter-tag">
-                      <input class="collection__sort__input" type="radio" name="sort_by_bar" value="{{ option.value }}" id="filter-bar-{{ option.name | handle | append: option.value | handle | append: section.id }}" data-input-sort{% if option.value == sort_by %} checked{% endif %}>
-                      <label class="collection__sort__button" for="filter-bar-{{ option.name | handle | append: option.value | handle | append: section.id }}" tabindex="0">
-                        {{- option.name -}}
-                      </label>
-                    </li>
-                  {%- endfor -%}
-                </ul>
+                <div class="collection__sort__option-wrapper" data-collection-sort-options>
+                  <div class="collection__sort__options">
+                    <ul
+                      class="collection__filter-tags collection__filter-tags--default"
+                      collection-sort-by="{{ sort_by }}"
+                    >
+                      {%- for option in sort_options -%}
+                        <li class="collection__filter-tag">
+                          <input
+                            class="collection__sort__input"
+                            type="radio"
+                            name="sort_by_bar"
+                            value="{{ option.value }}"
+                            id="filter-bar-{{ option.name | handle | append: option.value | handle | append: section.id }}"
+                            data-input-sort
+                            {% if option.value == sort_by %}
+                              checked
+                            {% endif %}
+                          >
+                          <label
+                            class="collection__sort__button"
+                            for="filter-bar-{{ option.name | handle | append: option.value | handle | append: section.id }}"
+                            tabindex="0"
+                          >
+                            {{- option.name -}}
+                          </label>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
 
-                <noscript>
-                  <button type="submit" class="btn">{{ 'collection.filters.sort_button' | t }}</button>
-                </noscript>
+                    <noscript>
+                      <button type="submit" class="btn">{{ 'collection.filters.sort_button' | t }}</button>
+                    </noscript>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
             {%- endif -%}
 
             <div class="collection__products-count" data-products-count="{{ products_count }}">
@@ -205,7 +231,11 @@
             </div>
 
             {%- if enable_filters or enable_sorting -%}
-              <button class="collection__filters__toggle" aria-label="{{ 'products.general.filters' | t }}" data-toggle-filters>
+              <button
+                class="collection__filters__toggle"
+                aria-label="{{ 'products.general.filters' | t }}"
+                data-toggle-filters
+              >
                 {%- render 'icon-filter' -%}
               </button>
             {%- endif -%}
@@ -213,18 +243,18 @@
 
           {%- if enable_filters or enable_sorting -%}
             {%- liquid
-  assign filters_available = false
-  assign filter_count = 0
-  assign all_active_tags_count = 0
+              assign filters_available = false
+              assign filter_count = 0
+              assign all_active_tags_count = 0
 
-  capture sort_param
-    if collection.sort_by != collection.default_sort_by
-      echo '?sort_by=' | append: collection.sort_by
-    endif
-  endcapture
--%}
+              capture sort_param
+                if collection.sort_by != collection.default_sort_by
+                  echo '?sort_by=' | append: collection.sort_by
+                endif
+              endcapture
+            -%}
 
-{%- capture filters -%}
+            {%- capture filters -%}
   {%- case filter_mode -%}
 
     {%- when 'default' -%}
@@ -492,7 +522,7 @@
   {%- endcase -%}
 {%- endcapture -%}
 
-{%- capture filter_reset_buttons -%}
+            {%- capture filter_reset_buttons -%}
   {%- if filter_mode == 'default' -%}
     {%- for filter in collection.filters -%}
       {%- if filter.type == 'price_range' -%}
@@ -532,106 +562,144 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- if enable_sorting or enable_filters -%}
-  <div class="collection__filters" data-collection-filters>
-    <div class="collection__filters-wrapper" data-collection-filters-wrapper>
-      <div class="collection__filters-list">
-        <div class="collection__filters-list__inner" data-collection-filters-list>
+            {%- if enable_sorting or enable_filters -%}
+              <div class="collection__filters" data-collection-filters>
+                <div class="collection__filters-wrapper" data-collection-filters-wrapper>
+                  <div class="collection__filters-list">
+                    <div class="collection__filters-list__inner" data-collection-filters-list>
+                      <form
+                        data-collection-filters-form
+                        {% if animations_enabled %}
+                          data-aos="fade"
+                          data-aos-anchor="{{ animation_anchor }}"
+                          data-aos-delay="{{ animation_delay }}"
+                          {%- assign animation_delay = animation_delay | plus: 150 -%}
+                        {% endif %}
+                      >
+                        <div class="collection__filters-header">
+                          <button class="collection__filters__close" type="button" data-close-filters>
+                            <span class="visually-hidden">{{ 'products.general.close' | t }}</span>
+                            {%- render 'icon-close' -%}
+                          </button>
 
-          <form data-collection-filters-form
-            {% if animations_enabled %}
-              data-aos="fade"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>
+                          {%- if enable_filters -%}
+                            <div class="collection__filters__top">
+                              <div class="collection__filters__title">
+                                <span>
+                                  {{- 'products.general.filters' | t -}}
+                                  {% if filter_count > 0 %} ({{ filter_count }}){% endif -%}
+                                </span>
+                              </div>
 
-            <div class="collection__filters-header">
-              <button class="collection__filters__close" type="button" data-close-filters>
-                <span class="visually-hidden">{{ 'products.general.close' | t }}</span>
-                {%- render 'icon-close' -%}
-              </button>
+                              <a
+                                href="{{ collection.url }}/{{ sort_param }}"
+                                class="collection__filters__reset {% if current_tags != blank or filter_count > 0 %} is-visible{% endif %}"
+                                data-filter-reset-button
+                              >
+                                {{- 'products.general.clear_filters' | t -}}
+                              </a>
+                            </div>
 
-              {%- if enable_filters -%}
-                <div class="collection__filters__top">
-                  <div class="collection__filters__title">
-                    <span>{{- 'products.general.filters' | t -}}{% if filter_count > 0 %} ({{ filter_count }}){% endif %}</span>
+                            <div class="collection__filters__clear" data-filters-reset>
+                              {{- filter_reset_buttons -}}
+                            </div>
+
+                            <hr class="hr--full collection__filters__line">
+                          {%- endif -%}
+                        </div>
+
+                        {%- if enable_sorting -%}
+                          {%- assign sort_by = search.sort_by
+                            | default: collection.sort_by
+                            | default: collection.default_sort_by
+                          -%}
+                          {%- assign sort_options = search.sort_options | default: collection.sort_options -%}
+
+                          <div class="collection__sort">
+                            <button
+                              type="button"
+                              class="collection__sort__label"
+                              aria-expanded="false"
+                              aria-controls="CollectionSorting"
+                              data-collapsible-trigger
+                            >
+                              {{ 'collections.sorting.title' | t }}
+                              {%- render 'icon-toggle-plus' -%}
+                              {%- render 'icon-toggle-minus' -%}
+                            </button>
+
+                            <div
+                              id="CollectionSorting"
+                              class="collection__sort__option-wrapper"
+                              aria-expanded="false"
+                              data-collapsible-container
+                            >
+                              <div class="collection__sort__options" data-collapsible-content>
+                                <ul
+                                  class="collection__filter-tags collection__filter-tags--default"
+                                  collection-sort-by="{{ sort_by }}"
+                                >
+                                  {%- for option in sort_options -%}
+                                    <li class="collection__filter-tag">
+                                      <input
+                                        class="collection__sort__input"
+                                        type="radio"
+                                        name="sort_by"
+                                        value="{{ option.value }}"
+                                        id="filter-{{ option.name | handle | append: option.value | handle | append: section.id }}"
+                                        data-input-sort
+                                        {% if option.value == sort_by %}
+                                          checked
+                                        {% endif %}
+                                      >
+                                      <label
+                                        class="collection__sort__button"
+                                        for="filter-{{ option.name | handle | append: option.value | handle | append: section.id }}"
+                                      >
+                                        {{- option.name -}}
+                                      </label>
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+
+                                <noscript>
+                                  <button type="submit" class="btn">{{ 'collection.filters.sort_button' | t }}</button>
+                                </noscript>
+                              </div>
+                            </div>
+                          </div>
+                        {%- endif -%}
+
+                        {%- if enable_filters and filters_available -%}
+                          {{- filters -}}
+                        {%- endif -%}
+                      </form>
+                    </div>
+
+                    {%- if enable_filters -%}
+                      <div class="collection__filters-bottom{% if current_tags != blank or filter_count > 0 %} is-visible{% endif %}">
+                        <button
+                          class="collection__filters__close-bottom btn btn--primary"
+                          type="button"
+                          data-close-filters
+                        >
+                          {{- 'collection.filters.close' | t -}}
+                        </button>
+                      </div>
+                    {%- endif -%}
                   </div>
-
-                  <a href="{{ collection.url }}/{{ sort_param }}" class="collection__filters__reset {% if current_tags != blank or filter_count > 0 %} is-visible{% endif %}" data-filter-reset-button>
-                    {{- 'products.general.clear_filters' | t -}}
-                  </a>
                 </div>
-
-                <div class="collection__filters__clear" data-filters-reset>
-                  {{- filter_reset_buttons -}}
-                </div>
-
-                <hr class="hr--full collection__filters__line">
-              {%- endif -%}
-            </div>
-
-            {%- if enable_sorting -%}
-                        {%- assign sort_by = search.sort_by | default: collection.sort_by | default: collection.default_sort_by -%}
-          {%- assign sort_options = search.sort_options | default: collection.sort_options -%}
-
-          <div class="collection__sort">
-            <button type="button" class="collection__sort__label" aria-expanded="false" aria-controls="CollectionSorting" data-collapsible-trigger>
-              {{ 'collections.sorting.title' | t }}
-              {%- render 'icon-toggle-plus' -%}
-              {%- render 'icon-toggle-minus' -%}
-            </button>
-
-            <div id="CollectionSorting"
-              class="collection__sort__option-wrapper"
-              aria-expanded="false"
-              data-collapsible-container>
-              <div class="collection__sort__options" data-collapsible-content>
-                <ul class="collection__filter-tags collection__filter-tags--default" collection-sort-by="{{ sort_by }}">
-                  {%- for option in sort_options -%}
-                    <li class="collection__filter-tag">
-                      <input class="collection__sort__input" type="radio" name="sort_by" value="{{ option.value }}" id="filter-{{ option.name | handle | append: option.value | handle | append: section.id }}" data-input-sort{% if option.value == sort_by %} checked{% endif %}>
-                      <label class="collection__sort__button" for="filter-{{ option.name | handle | append: option.value | handle | append: section.id }}">
-                        {{- option.name -}}
-                      </label>
-                    </li>
-                  {%- endfor -%}
-                </ul>
-
-                <noscript>
-                  <button type="submit" class="btn">{{ 'collection.filters.sort_button' | t }}</button>
-                </noscript>
               </div>
-            </div>
-          </div>
             {%- endif -%}
-
-            {%- if enable_filters and filters_available -%}
-              {{- filters -}}
-            {%- endif -%}
-          </form>
-        </div>
-
-        {%- if enable_filters -%}
-          <div class="collection__filters-bottom{% if current_tags != blank or filter_count > 0 %} is-visible{% endif %}">
-            <button class="collection__filters__close-bottom btn btn--primary" type="button" data-close-filters>
-              {{- 'collection.filters.close' | t -}}
-            </button>
-          </div>
-        {%- endif -%}
-      </div>
-    </div>
-  </div>
-{%- endif -%}
           {%- endif -%}
         {%- endif -%}
 
         {%- paginate collection.products by pagination_limit -%}
           {%- assign promos_array = '' -%}
 
-{%- if paginate.current_page == 1 -%}
-  {%- for block in section.blocks -%}
-    {%- capture current_promo -%}
+          {%- if paginate.current_page == 1 -%}
+            {%- for block in section.blocks -%}
+              {%- capture current_promo -%}
       {%- liquid
         assign block_id = 'CollectionPromo--' | append: block.id
         assign promo_collection = block.settings.collection
@@ -873,134 +941,159 @@
 
     {%- endcapture -%}
 
-    {%- assign promos_array = promos_array | append: promo_order | append: '#promo_position#' | append: promo_position | append: '#promo_html#' | append: current_promo | append: '#block_id#' | append: block_id | append: '#promo_collection#' | append: promo_collection | append: '#promo_width#'| append: current_promo_width | append: '#promo_width_class#'| append: promo_width_class | append: '@@' -%}
-  {%- endfor -%}
+              {%- assign promos_array = promos_array
+                | append: promo_order
+                | append: '#promo_position#'
+                | append: promo_position
+                | append: '#promo_html#'
+                | append: current_promo
+                | append: '#block_id#'
+                | append: block_id
+                | append: '#promo_collection#'
+                | append: promo_collection
+                | append: '#promo_width#'
+                | append: current_promo_width
+                | append: '#promo_width_class#'
+                | append: promo_width_class
+                | append: '@@'
+              -%}
+            {%- endfor -%}
 
-  {%- assign promos_array = promos_array | split: '@@' | sort -%}
-{%- endif -%}
+            {%- assign promos_array = promos_array | split: '@@' | sort -%}
+          {%- endif -%}
 
-          <div class="collection__products collection__products--{{ columns }} collection__products--{{ size_mobile }}" data-collection-products>
+          <div
+            class="collection__products collection__products--{{ columns }} collection__products--{{ size_mobile }}"
+            data-collection-products
+          >
             {%- if collection_count > 0 -%}
               {%- if collection.products_count > 0 -%}
-                <div class="grid"{% if enable_infinity_scroll %} id="AjaxinateLoop"{% endif %}>
+                <div
+                  class="grid"
+                  {% if enable_infinity_scroll %}
+                    id="AjaxinateLoop"
+                  {% endif %}
+                >
                   {%- if promos_array.size > 0 -%}
                     {%- liquid
-  assign counter_grid = 1
-  assign counter_delay = 0
-  assign added_promos_index = ''
-  assign items_on_row_remaining = columns
-  assign tablet_counter = 0
+                      assign counter_grid = 1
+                      assign counter_delay = 0
+                      assign added_promos_index = ''
+                      assign items_on_row_remaining = columns
+                      assign tablet_counter = 0
 
-  assign columns_even = true
-  if columns == 3
-    assign columns_even = false
-  endif
--%}
+                      assign columns_even = true
+                      if columns == 3
+                        assign columns_even = false
+                      endif
+                    -%}
 
-{%- for product in collection.products -%}
-  {%- for promo in promos_array -%}
-    {%- liquid
-      if promo == ''
-        continue
-      endif
+                    {%- for product in collection.products -%}
+                      {%- for promo in promos_array -%}
+                        {%- liquid
+                          if promo == ''
+                            continue
+                          endif
 
-      assign promo_index = forloop.index
-      assign current_promo_markup = promo | split: '#promo_html#' | last | split: '#block_id#' | first
-      assign block_id = promo | split: '#block_id#' | last | split: '#promo_collection#' | first
-      assign promo_collection = promo | split: '#promo_collection#' | last | split: '#promo_width#' | first
-      assign promo_position = promo | split: '#promo_position#' | last | split: '#promo_html#' | first | times: 1
-      assign promo_width = promo | split: '#promo_width#' | last | split: '#promo_width_class#' | first | times: 1
-      assign promo_width_class = promo | split: '#promo_width_class#' | last
-      assign promo_index_tag = '@' | append: promo_index | append: '@'
-      assign block_class = 'collection-promo' | append: ' ' | append: promo_width_class
-      assign block_tablet_class = ''
-      assign promo_tablet_class = 'collection-promo--'
-      assign tablet_grid_class = 'tablet-grid collection-promo--tablet-even'
-      assign tablet_full_class = 'tablet-full'
-      assign animation_delay = counter_delay | modulo: columns | times: 1
-    -%}
+                          assign promo_index = forloop.index
+                          assign current_promo_markup = promo | split: '#promo_html#' | last | split: '#block_id#' | first
+                          assign block_id = promo | split: '#block_id#' | last | split: '#promo_collection#' | first
+                          assign promo_collection = promo | split: '#promo_collection#' | last | split: '#promo_width#' | first
+                          assign promo_position = promo | split: '#promo_position#' | last | split: '#promo_html#' | first | times: 1
+                          assign promo_width = promo | split: '#promo_width#' | last | split: '#promo_width_class#' | first | times: 1
+                          assign promo_width_class = promo | split: '#promo_width_class#' | last
+                          assign promo_index_tag = '@' | append: promo_index | append: '@'
+                          assign block_class = 'collection-promo' | append: ' ' | append: promo_width_class
+                          assign block_tablet_class = ''
+                          assign promo_tablet_class = 'collection-promo--'
+                          assign tablet_grid_class = 'tablet-grid collection-promo--tablet-even'
+                          assign tablet_full_class = 'tablet-full'
+                          assign animation_delay = counter_delay | modulo: columns | times: 1
+                        -%}
 
-    {%- if promo_position <= counter_grid -%}
-      {%- unless added_promos_index contains promo_index_tag -%}
-        {%- if promo_collection == empty or promo_collection == collection.handle -%}
-          {%- liquid
-            if items_on_row_remaining < promo_width
-              assign animation_delay = 0
-              assign counter_delay = 0
-              assign items_on_row_remaining = columns
-            endif
+                        {%- if promo_position <= counter_grid -%}
+                          {%- unless added_promos_index contains promo_index_tag -%}
+                            {%- if promo_collection == empty or promo_collection == collection.handle -%}
+                              {%- liquid
+                                if items_on_row_remaining < promo_width
+                                  assign animation_delay = 0
+                                  assign counter_delay = 0
+                                  assign items_on_row_remaining = columns
+                                endif
 
-            assign counter_grid = counter_grid | plus: promo_width
-            assign items_on_row_remaining = items_on_row_remaining | minus: promo_width
-            assign promo_even = tablet_counter | modulo: 2
-            assign counter_delay = counter_delay | plus: promo_width
+                                assign counter_grid = counter_grid | plus: promo_width
+                                assign items_on_row_remaining = items_on_row_remaining | minus: promo_width
+                                assign promo_even = tablet_counter | modulo: 2
+                                assign counter_delay = counter_delay | plus: promo_width
 
-            case promo_width
-              when 1
-                assign block_tablet_class = tablet_grid_class
+                                case promo_width
+                                  when 1
+                                    assign block_tablet_class = tablet_grid_class
 
-                if promo_even == 0
-                  assign block_tablet_class = 'tablet-grid'
-                endif
+                                    if promo_even == 0
+                                      assign block_tablet_class = 'tablet-grid'
+                                    endif
 
-                assign tablet_counter = tablet_counter | plus: 1
+                                    assign tablet_counter = tablet_counter | plus: 1
 
-              when columns
-                assign counter_delay = 0
-                assign items_on_row_remaining = columns
+                                  when columns
+                                    assign counter_delay = 0
+                                    assign items_on_row_remaining = columns
 
-              when 2 or columns
-                assign counter_increase = 1
-                assign block_tablet_class = tablet_grid_class
+                                  when 2, columns
+                                    assign counter_increase = 1
+                                    assign block_tablet_class = tablet_grid_class
 
-                if promo_even == 0
-                  assign counter_increase = 2
-                  assign block_tablet_class = tablet_full_class
-                endif
+                                    if promo_even == 0
+                                      assign counter_increase = 2
+                                      assign block_tablet_class = tablet_full_class
+                                    endif
 
-                assign tablet_counter = tablet_counter | plus: counter_increase
-            endcase
+                                    assign tablet_counter = tablet_counter | plus: counter_increase
+                                endcase
 
-            assign promo_tablet_class = promo_tablet_class | append: block_tablet_class
-            assign added_promos_index = added_promos_index | append: '@' | append: promo_index | append: '@#'
-          -%}
-          <div id="{{ block_id }}"
-            class="{{ block_class }} {{ promo_tablet_class }}"
-            {% if animations_enabled %}
-              data-aos="fade"
-              data-aos-delay="{{ animation_delay | times: 150 }}"
-            {% endif %}>
-            {{ current_promo_markup }}
-          </div>
-        {%- endif -%}
-      {%- endunless -%}
-    {%- endif -%}
+                                assign promo_tablet_class = promo_tablet_class | append: block_tablet_class
+                                assign added_promos_index = added_promos_index | append: '@' | append: promo_index | append: '@#'
+                              -%}
+                              <div
+                                id="{{ block_id }}"
+                                class="{{ block_class }} {{ promo_tablet_class }}"
+                                {% if animations_enabled %}
+                                  data-aos="fade"
+                                  data-aos-delay="{{ animation_delay | times: 150 }}"
+                                {% endif %}
+                              >
+                                {{ current_promo_markup }}
+                              </div>
+                            {%- endif -%}
+                          {%- endunless -%}
+                        {%- endif -%}
 
-    {%- liquid
-      assign mod = counter_delay | modulo: columns
-      if mod < 1
-        assign items_on_row_remaining = columns
-        assign counter_delay = 0
-      endif
-    -%}
-  {%- endfor -%}
+                        {%- liquid
+                          assign mod = counter_delay | modulo: columns
+                          if mod < 1
+                            assign items_on_row_remaining = columns
+                            assign counter_delay = 0
+                          endif
+                        -%}
+                      {%- endfor -%}
 
-  {%- liquid
-    assign animation_delay = counter_delay | modulo: columns | times: 1
-    assign counter_delay = counter_delay | plus: 1
-    assign counter_grid = counter_grid | plus: 1
-    assign items_on_row_remaining = items_on_row_remaining | minus: 1
-    assign tablet_counter = tablet_counter | plus: 1
+                      {%- liquid
+                        assign animation_delay = counter_delay | modulo: columns | times: 1
+                        assign counter_delay = counter_delay | plus: 1
+                        assign counter_grid = counter_grid | plus: 1
+                        assign items_on_row_remaining = items_on_row_remaining | minus: 1
+                        assign tablet_counter = tablet_counter | plus: 1
 
-    render 'product-grid-item', product: product, animation_delay: animation_delay, tablet_counter: tablet_counter
+                        render 'product-grid-item', product: product, animation_delay: animation_delay, tablet_counter: tablet_counter
 
-    assign mod = counter_delay | modulo: columns
-    if mod < 1
-      assign items_on_row_remaining = columns
-      assign counter_delay = 0
-    endif
-  -%}
-{%- endfor -%}
+                        assign mod = counter_delay | modulo: columns
+                        if mod < 1
+                          assign items_on_row_remaining = columns
+                          assign counter_delay = 0
+                        endif
+                      -%}
+                    {%- endfor -%}
                   {%- else -%}
                     {%- liquid
                       for product in collection.products
@@ -1012,10 +1105,15 @@
                 </div>
               {%- else -%}
                 <div class="collection--no-results">
-                  <p class="no-matches">{{ 'collections.general.no_matches_by_filter' | t : products_count: collection.products_count }}</p>
+                  <p class="no-matches">
+                    {{ 'collections.general.no_matches_by_filter' | t: products_count: collection.products_count }}
+                  </p>
                   {%- if enable_filters and filter_tags != blank -%}
                     <div class="collection__filters-reset">
-                      <button class="collection__filters__reset btn {{ section.settings.button_style }}{% if current_tags != blank %} is-visible{% endif %}" data-reset-filters>
+                      <button
+                        class="collection__filters__reset btn {{ section.settings.button_style }}{% if current_tags != blank %} is-visible{% endif %}"
+                        data-reset-filters
+                      >
                         {{ 'products.general.reset' | t }}
                         <span>({{ current_tags | size }})</span>
                       </button>
@@ -1027,7 +1125,7 @@
             {%- elsif collection.handle != 'all' and collection_count == 0 -%}
               <div class="collection--no-results">
                 <p class="no-matches">{{ 'collections.general.no_matches' | t }}</p>
-                <a href="{{ routes.root_url }}" class="btn" >{{ 'general.404.button_text' | t }}</a>
+                <a href="{{ routes.root_url }}" class="btn">{{ 'general.404.button_text' | t }}</a>
               </div>
             {%- endif -%}
 
@@ -1061,295 +1159,295 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Collection pages",
-    "class": "collection-section",
-    "settings": [      
-      {
-        "type": "header",
-        "content": "Layout"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_breadcrumbs",
-        "label": "Show breadcrumbs",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Filters and sorting"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_sorting",
-        "label": "Enable sorting",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_filters",
-        "label": "Enable filters",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "filters_open",
-        "label": "Open filters by default",
-        "info": "Desktop only",
-        "default": true
-      },
-      {
-        "type": "select",
-        "label": "Filter mode",
-        "id": "filter_mode",
-        "info": "Filters by group requires specific tag formatting. [Learn more](https://presidiocreative.com/link/palo-alto/docs/collection-filtering)",
-        "default": "default",
-        "options": [
-          { "label": "Default (Faceted)", "value": "default" },
-          { "label": "By tag", "value": "tag" },
-          { "label": "By group", "value": "group" }
-        ]
-      },
-      {
-        "type": "header",
-        "content": "Colors"
-      },
-      {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background"
-      },
-      {
-        "type": "header",
-        "content": "Section spacing"
-      },
-      {
-        "type": "range",
-        "id": "padding_top",
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "px",
-        "label": "Padding top",
-        "default": 30
-      },
-      {
-        "type": "range",
-        "id": "padding_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "px",
-        "label": "Padding bottom",
-        "default": 60
-      },
-      {
-        "type": "range",
-        "id": "tab_padding_top",
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "px",
-        "label": "Tablet Padding top",
-        "default": 30
-      },
-      {
-        "type": "range",
-        "id": "tab_padding_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "px",
-        "label": "Tablet Padding bottom",
-        "default": 60
-      },
-      {
-        "type": "range",
-        "id": "mob_padding_top",
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "px",
-        "label": "Mobile Padding top",
-        "default": 30
-      },
-      {
-        "type": "range",
-        "id": "mob_padding_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 2,
-        "unit": "px",
-        "label": "Mobile Padding bottom",
-        "default": 60
-      }
-    ],
-    "blocks": [
-      {
-        "type": "promo",
-        "name": "Promo",
-        "limit": 5,
-        "settings": [
-          {
-            "type": "collection",
-            "id": "collection",
-            "label": "Collection",
-            "info": "Show on specific collection only"
-          },
-          {
-            "type": "range",
-            "id": "position",
-            "label": "Show in position",
-            "min": 1,
-            "max": 24,
-            "step": 1,
-            "default": 1
-          },
-          {
-            "type": "select",
-            "id": "width",
-            "label": "Width",
-            "default": "auto",
-            "options": [
-              { "value": "full", "label": "Full width" },
-              { "value": "half", "label": "2 grid items" },
-              { "value": "auto", "label": "Grid item" }
-            ]
-          },
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          },
-          {
-            "type": "select",
-            "id": "text_color",
-            "label": "Text",
-            "default": "text-light",
-            "options": [
-              {
-                "value": "text-light",
-                "label": "Light"
-              },
-              {
-                "value": "text-dark",
-                "label": "Dark"
-              }
-            ]
-          },
-          {
-            "type": "select",
-            "id": "text_position",
-            "label": "Content position",
-            "default": "center",
-            "options": [
-              { "value": "left", "label": "Left" },
-              { "value": "center", "label": "Center" },
-              { "value": "right", "label": "Right" },
-              { "value": "bottom-left", "label": "Bottom left" },
-              { "value": "bottom-right", "label": "Bottom right" },
-              { "value": "top-left", "label": "Top left" },
-              { "value": "top-right", "label": "Top right" }
-            ]
-          },
-          {
-            "type": "select",
-            "id": "layout",
-            "label": "Layout",
-            "default": "stacked",
-            "options": [
-              { "label": "Inline", "value": "inline" },
-              { "label": "Stacked", "value": "stacked" }
-            ]
-          },
-          {
-            "type": "range",
-            "id": "overlay_opacity",
-            "label": "Text contrast",
-            "info": "Improves readability of text",
-            "min": 0,
-            "max": 95,
-            "step": 5,
-            "unit": "%",
-            "default": 10
-          },
-          {
-            "type": "color",
-            "id": "bg_color",
-            "label": "Background color",
-            "default": "#D3D3D3"
-          },
-          {
-            "type": "richtext",
-            "id": "title",
-            "label": "Heading",
-            "default": "<p>Promotion title</p>",
-            "info": "Highlight one or two key words in your heading by italicizing them, then choose the highlight option below"
-          },
-          {
-            "type": "select",
-            "id": "heading_highlight_type",
-            "label": "Highlight type",
-            "default": "circle",
-            "options": [
-              { "value": "italics", "label": "Italics (no decoration)" },
-              { "value": "squiggle", "label": "Squiggle" },
-              { "value": "circle", "label": "Circle" },
-              { "value": "stroke", "label": "Stroke (outlined text)" }
-            ]
-          },
-          {
-            "type": "range",
-            "id": "heading_size",
-            "label": "Heading size",
-            "default": 100,
-            "min": 100,
-            "max": 200,
-            "step": 10,
-            "unit": "%"
-          },
-          {
-            "type": "textarea",
-            "id": "content",
-            "label": "Text",
-            "default": "Advertise a promotion or a sale"
-          },
-          {
-            "type": "range",
-            "id": "text_size",
-            "label": "Text size",
-            "default": 100,
-            "min": 100,
-            "max": 200,
-            "step": 5,
-            "unit": "%"
-          },
-          {
-            "type": "text",
-            "id": "btn_text",
-            "label": "Button text",
-            "info": "Leave blank to link entire image"
-          },
-          {
-            "type": "url",
-            "id": "btn_link",
-            "label": "Button URL"
-          },
-          {
-            "type": "select",
-            "id": "btn_style",
-            "label": "Button style",
-            "default": "btn--primary btn--small",
-            "options": [
-              { "label": "Text", "value": "btn--text" },
-              { "label": "Small button", "value": "btn--primary btn--small" },
-              { "label": "Large button", "value": "btn--primary" },
-              { "label": "Small secondary button", "value": "btn--secondary btn--small" },
-              { "label": "Large secondary button", "value": "btn--secondary" }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+{
+  "name": "Collection pages",
+  "class": "collection-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Filters and sorting"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "label": "Enable sorting",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filters",
+      "label": "Enable filters",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "filters_open",
+      "label": "Open filters by default",
+      "info": "Desktop only",
+      "default": true
+    },
+    {
+      "type": "select",
+      "label": "Filter mode",
+      "id": "filter_mode",
+      "info": "Filters by group requires specific tag formatting. [Learn more](https://presidiocreative.com/link/palo-alto/docs/collection-filtering)",
+      "default": "default",
+      "options": [
+        { "label": "Default (Faceted)", "value": "default" },
+        { "label": "By tag", "value": "tag" },
+        { "label": "By group", "value": "group" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    },
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Tablet Padding top",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Tablet Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding top",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promo",
+      "name": "Promo",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Show on specific collection only"
+        },
+        {
+          "type": "range",
+          "id": "position",
+          "label": "Show in position",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "auto",
+          "options": [
+            { "value": "full", "label": "Full width" },
+            { "value": "half", "label": "2 grid items" },
+            { "value": "auto", "label": "Grid item" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "text_color",
+          "label": "Text",
+          "default": "text-light",
+          "options": [
+            {
+              "value": "text-light",
+              "label": "Light"
+            },
+            {
+              "value": "text-dark",
+              "label": "Dark"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_position",
+          "label": "Content position",
+          "default": "center",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" },
+            { "value": "bottom-left", "label": "Bottom left" },
+            { "value": "bottom-right", "label": "Bottom right" },
+            { "value": "top-left", "label": "Top left" },
+            { "value": "top-right", "label": "Top right" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "default": "stacked",
+          "options": [
+            { "label": "Inline", "value": "inline" },
+            { "label": "Stacked", "value": "stacked" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Text contrast",
+          "info": "Improves readability of text",
+          "min": 0,
+          "max": 95,
+          "step": 5,
+          "unit": "%",
+          "default": 10
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background color",
+          "default": "#D3D3D3"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Heading",
+          "default": "<p>Promotion title</p>",
+          "info": "Highlight one or two key words in your heading by italicizing them, then choose the highlight option below"
+        },
+        {
+          "type": "select",
+          "id": "heading_highlight_type",
+          "label": "Highlight type",
+          "default": "circle",
+          "options": [
+            { "value": "italics", "label": "Italics (no decoration)" },
+            { "value": "squiggle", "label": "Squiggle" },
+            { "value": "circle", "label": "Circle" },
+            { "value": "stroke", "label": "Stroke (outlined text)" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "heading_size",
+          "label": "Heading size",
+          "default": 100,
+          "min": 100,
+          "max": 200,
+          "step": 10,
+          "unit": "%"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Text",
+          "default": "Advertise a promotion or a sale"
+        },
+        {
+          "type": "range",
+          "id": "text_size",
+          "label": "Text size",
+          "default": 100,
+          "min": 100,
+          "max": 200,
+          "step": 5,
+          "unit": "%"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button text",
+          "info": "Leave blank to link entire image"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button URL"
+        },
+        {
+          "type": "select",
+          "id": "btn_style",
+          "label": "Button style",
+          "default": "btn--primary btn--small",
+          "options": [
+            { "label": "Text", "value": "btn--text" },
+            { "label": "Small button", "value": "btn--primary btn--small" },
+            { "label": "Large button", "value": "btn--primary" },
+            { "label": "Small secondary button", "value": "btn--secondary btn--small" },
+            { "label": "Large secondary button", "value": "btn--secondary" }
+          ]
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

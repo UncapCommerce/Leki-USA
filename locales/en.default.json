@@ -117,7 +117,7 @@
       "newer_post": "Newer Post",
       "tags": "Tags",
       "filter_by_tags": "Filter by tags",
-      "clear_tags": "Clear all",
+      "clear_tags": "Clear All",
       "comment_meta_html": "{{ author }} on {{ date }}",
       "read_more": "Read more",
       "onboarding": {
@@ -473,7 +473,7 @@
       "filters": "Filters",
       "filter_by": "Filter by",
       "reset": "Clear Filters",
-      "clear_filters": "Clear all",
+      "clear_filters": "Clear All",
       "close": "Close Filters",
       "products_with_count": {
         "one": "{{ count }} product",

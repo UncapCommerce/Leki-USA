@@ -79,7 +79,7 @@
   {% else %}
     data-hover-disclosure-toggle
   {% endif %}>
-  <a href="{{ link.url }}" data-top-link class="navlink navlink--toplevel {% if link.active %}active{% endif %} {% if link.child_active %}child-active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
+  <a href="{{ link.url }}" data-top-link class="navlink navlink--toplevel {% if link.current %}active{% endif %} {% if link.child_active %}child-active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
     <span class="navtext">{{ link_title }}</span>
   </a>
   {%- if expands -%}
@@ -100,14 +100,14 @@
                     <div class="dropdown__family">
                       {%- assign link_title = link.title -%}
                       {%- assign link_title_lowercase = link.title | downcase -%}
-                      <a href="{{ link.url }}" class="navlink navlink--child{% if link_image_markup != blank %} navlink--image{% endif %}{% if link.active %} navlink--active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
+                      <a href="{{ link.url }}" class="navlink navlink--child{% if link_image_markup != blank %} navlink--image{% endif %}{% if link.current %} navlink--active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
                         {{- link_image_markup -}}
                         <span class="navtext">{{ link_title }}</span>
                       </a>
                       {%- for link in link.links -%}
                         {%- assign link_title = link.title -%}
                         {%- assign link_title_lowercase = link.title | downcase -%}
-                        <a href="{{ link.url }}" class="navlink navlink--grandchild{% if link.active %} navlink--active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
+                        <a href="{{ link.url }}" class="navlink navlink--grandchild{% if link.current %} navlink--active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
                           <span class="navtext">{{ link_title }}</span>
                         </a>
                       {%- endfor -%}
@@ -118,7 +118,7 @@
                     {%- for link in link.links -%}
                       {%- assign link_title = link.title -%}
                       {%- assign link_title_lowercase = link.title | downcase -%}
-                      <a href="{{ link.url }}" data-stagger class="navlink navlink--grandchild{% if link.active %} navlink--active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
+                      <a href="{{ link.url }}" data-stagger class="navlink navlink--grandchild{% if link.current %} navlink--active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
                         <span class="navtext">{{ link_title }}</span>
                       </a>
                     {%- endfor %}
@@ -139,7 +139,7 @@
             {%- for link in link.links -%}
               {%- assign link_title = link.title -%}
               {%- assign link_title_lowercase = link.title | downcase -%}
-              <a href="{{ link.url }}" data-stagger class="navlink navlink--child{% if link.active %} navlink--active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
+              <a href="{{ link.url }}" data-stagger class="navlink navlink--child{% if link.current %} navlink--active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
                 <span class="navtext">{{ link_title }}</span>
               </a>
             {%- endfor -%}
