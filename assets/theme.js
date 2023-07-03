@@ -17421,75 +17421,76 @@ function gloveSize() {
   }
 }
 
-function getfilterResult(url) {
-  fetch(url)
-    .then((response) => response.text())
-    .then((responseText) => {
-      const gridid = "gridLoop";
-      const html = new DOMParser().parseFromString(responseText, "text/html");
-      const destination = document.querySelector(".result-right-wrap");
-      const source = html.getElementById(gridid);
-      if (source && destination) destination.innerHTML = source.innerHTML;
-    });
-}
+// function getfilterResult(url) {
+//   fetch(url)
+//     .then((response) => response.text())
+//     .then((responseText) => {
+//       const gridid = "gridLoop";
+//       const html = new DOMParser().parseFromString(responseText, "text/html");
+//       const destination = document.querySelector(".result-right-wrap");
+//       const source = html.getElementById(gridid);
+//       if (source && destination) destination.innerHTML = source.innerHTML;
+//     });
+// }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  var calculateBtn = document.querySelector('.form__item input[type="button"]');
-  calculateBtn.onclick = (calbtn) =>{
-    var height_val = document.querySelector('.form-control.height').value;
-    if(height_val){
-      document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
-      var selectElement = document.querySelector('#category');
-      var selected_val = selectElement.value;
+// document.addEventListener("DOMContentLoaded", function(event) {
+//   var calculateBtn = document.querySelector('.form__item input[type="button"]');
+//   calculateBtn.onclick = (calbtn) =>{
+//     var height_val = document.querySelector('.form-control.height').value;
+//     if(height_val){
+//       document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
+//       var selectElement = document.querySelector('#category');
+//       var selected_val = selectElement.value;
 
-      for(i=0; i<selectElement.length; i++){
-        var optionVal = selectElement.options[i];    
-        if (optionVal.value == selected_val) {                
-          var classic_val = optionVal.dataset.classic;  
-          var skate_val = optionVal.dataset.skate;  
-          var get_title = optionVal.dataset.title;  
-        }
-      }
+//       for(i=0; i<selectElement.length; i++){
+//         var optionVal = selectElement.options[i];    
+//         if (optionVal.value == selected_val) {                
+//           var classic_val = optionVal.dataset.classic;  
+//           var skate_val = optionVal.dataset.skate;  
+//           var get_title = optionVal.dataset.title;  
+//         }
+//       }
 
-      var filter_val = get_title.replaceAll(' ','+');
-      var getcurrURL = "/collections/all?filter.p.m.custom.tags="+ filter_val +"&filter.v.option.size | length="+ height_val +"+cm"; 
+//       var filter_val = get_title.replaceAll(' ','+');
+//       var getcurrURL = "/collections/all?filter.p.m.custom.tags="+ filter_val +"&filter.v.option.size | length="+ height_val +"+cm"; 
   
-      document.querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
-      document.querySelector('.result-btn a').setAttribute('href',getcurrURL);
-      getfilterResult(getcurrURL);
+//       document.querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
+//       document.querySelector('.result-btn a').setAttribute('href',getcurrURL);
+//       getfilterResult(getcurrURL);
       
-      var classicHeight = Number(height_val * classic_val).toFixed(1);
-      var classicroundVal = Math.round(classicHeight);    
-      var skateHeight = Number(height_val * skate_val).toFixed(1);
-      var skateroundVal = Math.round(skateHeight);        
-      if(classic_val && skate_val ){
-        document.querySelector('#roundedSize').innerHTML = 'Classic ' + classicroundVal + 'cm';
-        if(skateroundVal > 0 ){document.querySelector('#skateroundedSize').innerHTML = 'Skate ' + skateroundVal + 'cm';}
-      }else{
-        document.querySelector('#roundedSize').innerHTML = classicroundVal + 'cm';
-        if(skateroundVal > 0 ){
-          document.querySelector('#skateroundedSize').innerHTML = skateroundVal + 'cm';
-        }
-        else{
-          document.querySelector('#skateroundedSize').innerHTML = '';
-        }
-      }
-      if(classic_val && skate_val){
-        document.querySelector('#calculatedSize').innerHTML = 'Classic ' + classicHeight + 'cm';
-        if(skateHeight > 0 ){document.querySelector('#skateSize').innerHTML = 'Skate ' + skateHeight + 'cm';}
-      }else{
-        document.querySelector('#calculatedSize').innerHTML = classicHeight + 'cm';
-        if(skateHeight > 0){
-          document.querySelector('#skateSize').innerHTML = skateHeight + 'cm';
-        }
-        else{
-          document.querySelector('#skateSize').innerHTML = '';
-        }
-      }
-    }
-  } 
+//       var classicHeight = Number(height_val * classic_val).toFixed(1);
+//       var classicroundVal = Math.round(classicHeight);    
+//       var skateHeight = Number(height_val * skate_val).toFixed(1);
+//       var skateroundVal = Math.round(skateHeight);        
+//       if(classic_val && skate_val ){
+//         document.querySelector('#roundedSize').innerHTML = 'Classic ' + classicroundVal + 'cm';
+//         if(skateroundVal > 0 ){document.querySelector('#skateroundedSize').innerHTML = 'Skate ' + skateroundVal + 'cm';}
+//       }else{
+//         document.querySelector('#roundedSize').innerHTML = classicroundVal + 'cm';
+//         if(skateroundVal > 0 ){
+//           document.querySelector('#skateroundedSize').innerHTML = skateroundVal + 'cm';
+//         }
+//         else{
+//           document.querySelector('#skateroundedSize').innerHTML = '';
+//         }
+//       }
+//       if(classic_val && skate_val){
+//         document.querySelector('#calculatedSize').innerHTML = 'Classic ' + classicHeight + 'cm';
+//         if(skateHeight > 0 ){document.querySelector('#skateSize').innerHTML = 'Skate ' + skateHeight + 'cm';}
+//       }else{
+//         document.querySelector('#calculatedSize').innerHTML = classicHeight + 'cm';
+//         if(skateHeight > 0){
+//           document.querySelector('#skateSize').innerHTML = skateHeight + 'cm';
+//         }
+//         else{
+//           document.querySelector('#skateSize').innerHTML = '';
+//         }
+//       }
+//     }
+//   } 
 
-});
+// });
+
 //open outer link in new tab
 
 var allAnchor = document.querySelectorAll('a');

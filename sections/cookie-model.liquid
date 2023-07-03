@@ -229,115 +229,124 @@
   </div>
   
   <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-                       getCookie('policy-cookie-set=true')
-                      });
-                      // modal js
+  document.addEventListener("DOMContentLoaded", function(event) {
+    getCookie('policy-cookie-set=true')
+  });
+  // modal js
   
-                        var modal = document.querySelector(".modal");
-                        var modal_privacy = document.querySelector(".modal_privacy");
-                        var modal_ideas = document.querySelector(".modal_ideas");
-                        var triggers = document.querySelectorAll(".cookie-modal");
-                        var privacy_modal = document.querySelectorAll(".privacy-modal");
-                        var modal_ideas_modal = document.querySelectorAll(".modal_ideas_btn");
-                        var closeButton = document.querySelector(".close-button");
-                        var set_cookie =  document.querySelectorAll(".accept_btn");
-  
-  
-  
-                        function toggleModal() {
-                          modal.classList.toggle("show-modal");
-                          document.querySelector("body").classList.add("modal-open");
-                        }
-                        function privacyModal() {
-                          modal_privacy.classList.toggle("show-modal");
-                          modal_ideas.classList.remove("show-modal");
-                           document.querySelector("body").classList.add("modal-open");
-                            var page_privacy_url = "/policies/privacy-policy"
-                           fetch(page_privacy_url)
-                          .then((response) => response.text())
-                          .then((responseText) => {
-                            const get_text ='.page--privacy-policy .cms-element-text'
-                            const html = new DOMParser().parseFromString(responseText, "text/html");
-                            const destination = document.querySelector(".privacy_text");
-                            const source = html.querySelector(get_text);
-                            if (source && destination) destination.innerHTML = source.innerHTML;
-                          });
-                        }
-                          function WriteCookie() {
-                               var now = new Date();
-                                 // var minutes = 1;
-                                now.setMonth( now.getMonth() + 1 )
-                               // now.setTime(now.getTime() + (minutes * 60 * 1000));
-                                // console.log(now.setMonth( now.getMonth() + 1 ))
-                              document.cookie = 'policy-cookie-set= true;expires='+now.toUTCString()+';';
-                              document.querySelector("body").classList.remove("modal-open")
-                              modal.classList.remove("show-modal");
-                            }
-                              function getCookie() {
-                              let cookies = document.cookie;
-                            // console.log(cookies, cookies.includes('policy-cookie-set=true'));
-                                if(cookies.includes('policy-cookie-set=true')){
-                                   document.querySelector("body").classList.remove("modal-open")
-                                   modal.classList.remove("show-modal");
-                                   modal_ideas.classList.remove("show-modal");
-                                }
-                                else{
-                                   modal.classList.add("show-modal");
-                                   document.querySelector("body").classList.add("modal-open");
-                                }
-                              }
-  
-                        function ideaModal(){
-                            modal_ideas.classList.toggle("show-modal");
-                           document.querySelector("body").classList.add("modal-open");
-                          getCookie('policy-cookie-set=true')
-                        }
-  
-                        function selectsCheckbox(){
-                          var ele=document.querySelectorAll('.custom-control-input');
-                          for(var i=0; i<ele.length; i++){
-                              if(ele[i].type=='checkbox')
-                                  ele[i].checked=true;
-                          }
-                          }
+  var modal = document.querySelector(".modal");
+  var modal_privacy = document.querySelector(".modal_privacy");
+  var modal_ideas = document.querySelector(".modal_ideas");
+  var triggers = document.querySelectorAll(".cookie-modal");
+  var privacy_modal = document.querySelectorAll(".privacy-modal");
+  var modal_ideas_modal = document.querySelectorAll(".modal_ideas_btn");
+  var closeButton = document.querySelector(".close-button");
+  var set_cookie = document.querySelectorAll(".accept_btn");
   
   
-                        // function windowOnClick(event) {
-                        //   if (event.target === modal) {
-                        //     privacyModal();
-                        //   }
-                        // }
   
-                        for (var i = 0, len = triggers.length; i < len; i++) {
-                          triggers[i].addEventListener("click", toggleModal);
-                        }
-                        for (var i = 0, len = privacy_modal.length; i < len; i++) {
-                          privacy_modal[i].addEventListener("click", privacyModal);
-                        }
-                       for (var i = 0, len = modal_ideas_modal.length; i < len; i++) {
-                          modal_ideas_modal[i].addEventListener("click", ideaModal);
-                        }
+  function toggleModal() {
+      modal.classList.toggle("show-modal");
+      document.querySelector("body").classList.add("modal-open");
+  }
   
-                        closeButton.addEventListener("click", privacyModal);
-                      set_cookie.forEach(function(postBox) {
-                        postBox.addEventListener('click', function() {
-                          WriteCookie();
-                        getCookie('policy-cookie-set=true');
-                          selectsCheckbox();
-                            })
-                })
-                        //set_cookie.addEventListener("click", WriteCookie);
-                        // window.addEventListener("click", windowOnClick);
+  function privacyModal() {
+      modal_privacy.classList.toggle("show-modal");
+      modal_ideas.classList.remove("show-modal");
+      document.querySelector("body").classList.add("modal-open");
+      var page_privacy_url = "/policies/privacy-policy"
+      fetch(page_privacy_url)
+          .then((response) => response.text())
+          .then((responseText) => {
+              const get_text = '.page--privacy-policy .cms-element-text'
+              const html = new DOMParser().parseFromString(responseText, "text/html");
+              const destination = document.querySelector(".privacy_text");
+              const source = html.querySelector(get_text);
+              if (source && destination) destination.innerHTML = source.innerHTML;
+          });
+  }
   
-                var menu = document.getElementsByClassName("offcanvas-cookie-entries");
-          var i;
-          for(i=0; i<menu.length; i++){
-            menu[i].onclick=function(){
-              this.classList.toggle("offcanvas-cookie-entries--active");
-             // this.nextElementSibling.classList.toggle("show");
-            }
-          }
+  function WriteCookie() {
+      var now = new Date();
+      // var minutes = 1;
+      now.setMonth(now.getMonth() + 1)
+      // now.setTime(now.getTime() + (minutes * 60 * 1000));
+      // console.log(now.setMonth( now.getMonth() + 1 ))
+      document.cookie = 'policy-cookie-set= true;expires=' + now.toUTCString() + ';';
+      document.querySelector("body").classList.remove("modal-open")
+      modal.classList.remove("show-modal");
+  }
+  
+  function getCookie() {
+      let cookies = document.cookie;
+      // console.log(cookies, cookies.includes('policy-cookie-set=true'));
+      if (cookies.includes('policy-cookie-set=true')) {
+          document.querySelector("body").classList.remove("modal-open")
+          modal.classList.remove("show-modal");
+          modal_ideas.classList.remove("show-modal");
+      } else {
+          modal.classList.add("show-modal");
+          document.querySelector("body").classList.add("modal-open");
+      }
+  }
+  
+  function ideaModal() {
+      modal_ideas.classList.toggle("show-modal");
+      document.querySelector("body").classList.add("modal-open");
+      getCookie('policy-cookie-set=true')
+  }
+  
+  function selectsCheckbox() {
+      var ele = document.querySelectorAll('.custom-control-input');
+      for (var i = 0; i < ele.length; i++) {
+          if (ele[i].type == 'checkbox')
+              ele[i].checked = true;
+      }
+  }
+  
+  
+  // function windowOnClick(event) {
+  //   if (event.target === modal) {
+  //     privacyModal();
+  //   }
+  // }
+  
+  for (var i = 0, len = triggers.length; i < len; i++) {
+      triggers[i].addEventListener("click", toggleModal);
+  }
+  for (var i = 0, len = privacy_modal.length; i < len; i++) {
+      privacy_modal[i].addEventListener("click", privacyModal);
+  }
+  for (var i = 0, len = modal_ideas_modal.length; i < len; i++) {
+      modal_ideas_modal[i].addEventListener("click", ideaModal);
+  }
+  
+  closeButton.addEventListener("click", privacyModal);
+  set_cookie.forEach(function(postBox) {
+      postBox.addEventListener('click', function() {
+          WriteCookie();
+          getCookie('policy-cookie-set=true');
+          selectsCheckbox();
+      })
+  })
+  //set_cookie.addEventListener("click", WriteCookie);
+  // window.addEventListener("click", windowOnClick);
+  
+  var menu = document.getElementsByClassName("offcanvas-cookie-entries");
+  var i;
+  for (i = 0; i < menu.length; i++) {
+      menu[i].onclick = function() {
+          this.classList.toggle("offcanvas-cookie-entries--active");
+          // this.nextElementSibling.classList.toggle("show");
+      }
+  }
+  document.addEventListener("DOMContentLoaded", function(event) {
+    if (Shopify.designMode) {
+      document.querySelector("body").classList.remove("modal-open");
+      var modal = document.querySelector(".modal");
+      modal.classList.remove("show-modal");
+    }
+  });
   </script>
   
   {% schema %}
