@@ -23,11 +23,10 @@
     },
     "f0928a40-1c97-4068-9db1-059da2c6415d": {
       "type": "sub-collections",
-      "disabled": true,
       "settings": {
         "layout": "carousel",
         "columns": 6,
-        "image_size": 75,
+        "image_size": 100,
         "image_shape": "circle",
         "title": "",
         "text_size": 100,
