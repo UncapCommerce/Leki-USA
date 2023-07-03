@@ -259,6 +259,7 @@
     font-size: 14px;
     line-height: 20px;
     padding: 20px;
+    margin-top: -80px;
   }
   {% if section.settings.contact_bgimg != blank %}
   .contact-form-bg {
@@ -314,6 +315,8 @@
   .contact-form-wrapper .form__item label {
     display: flex;
   }
+  
+
   @media(max-width: 1440px){
     .contact-form-wrapper.has-bg {padding-top: 160px;}
     .locations__info {padding-right: 120px;}
@@ -370,10 +373,12 @@ data-section-id="{{ section.id }}">
         {% endif %}>
   <div class="{{ section_width }}">
     <div class="contact-form-wrapper {% if section.settings.contact_bgimg != blank %}has-bg{% endif %}">
+
+      {{ section.settings.form_div }}
+
+        {% comment %}
+      
     {%- form 'contact', id: 'ContactForm'  -%}
-      {%- comment -%}
-        Success message
-      {%- endcomment -%}
       {%- if form.posted_successfully? -%}
         <div class="contact-form__message" data-form-message>
           <div class="wrapper">
@@ -435,6 +440,7 @@ data-section-id="{{ section.id }}">
       <span class="field-info">Fields marked with asterisks (*) are required.</span>
 
     {%- endform -%}
+    {% endcomment %}
     <div class="contact-additional-info">
       {{ section.settings.additional_info }}
     </div>
@@ -445,7 +451,7 @@ data-section-id="{{ section.id }}">
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
+  {% comment %}
   //// file upload js
   document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
   const dropZoneElement = inputElement.closest(".drop-zone");
@@ -517,6 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
       thumbnailElement.style.backgroundImage = null;
     }
   }
+{% endcomment %}
 
   ///////// country state select js
   if(document.querySelector('.country-select') != null){
@@ -610,6 +617,12 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       "type": "paragraph",
       "content": "Name, Email, and Message fields are required. You can add them as blocks in order to edit or reorder."
+    },
+    {
+      "type": "text",
+      "id": "form_div",
+      "label": "Add Form ID Div",
+      "info": "Info : Copy from the app and add here, Ex: <div style='margin:0 auto;' class='pxFormGenerator' id='S8_WC9jXWK4PZbv8YYgaWA'></div>"
     },
     {
       "type": "header",
