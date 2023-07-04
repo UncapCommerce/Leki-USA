@@ -8553,7 +8553,9 @@
      */
     popupClose() {
       const popupProduct = document.querySelector(selectors$o.popupProduct);
+      console.log('popupProduct', popupProduct);
       if (popupProduct) {
+        console.log(123123123);
         const popupClose = popupProduct.querySelector(selectors$o.popupClose);
         popupClose.dispatchEvent(new Event("click"));
       }
