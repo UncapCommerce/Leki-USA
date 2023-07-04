@@ -456,7 +456,9 @@
 
   function unlock(e) {
     const timeout = e.detail;
-
+    if (document.body.classList.contains('glove-drawer-active')) {
+      document.body.classList.remove('glove-drawer-active');
+    }
     if (timeout) {
       scrollLockTimer = setTimeout(removeScrollLock, timeout);
     } else {
@@ -468,7 +470,6 @@
     const isPopupVisible =
       document.body.classList.contains(classes$2.quickViewVisible) ||
       document.body.classList.contains(classes$2.cartDrawerOpen);
-
     if (!isPopupVisible) {
       scrollLock.clearQueueScrollLocks();
       scrollLock.enablePageScroll();

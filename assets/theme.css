@@ -25117,7 +25117,7 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   }
 }
 @media(min-width:1921px){
-  .product-upsell__holder{
+  .template-product .product-upsell__holder{
         max-width: none;
         width: calc(50% - 10px);
   }
