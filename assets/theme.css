@@ -25117,12 +25117,11 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   }
 }
 @media(min-width:1921px){
-  .template-product .product-upsell__holder{
-        max-width: none;
+  .template-product .product__block .product-upsell__holder {
+        max-width: none;  
         width: calc(50% - 10px);
   }
-  
-}
+} 
 
 .featured-collection__container .carousel {
   display: block;
@@ -25589,6 +25588,9 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   .template-customers-order .order-details>div {width: 95px;}
   .featured-collection .section__heading {font-size: 20px;line-height: 28px;}
   .search_bar .main_search_bar input, .search_bar .search_within_distance select, .search_bar .search_limit select{max-width: 70px;width: 70px;}
+}
+.pole-adviser-drawer #category {
+  display: none;
 }
 @media print {
   .order .account-tabs ,

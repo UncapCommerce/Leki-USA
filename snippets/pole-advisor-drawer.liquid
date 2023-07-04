@@ -7,8 +7,73 @@
     <h3>{{ settings.title }}</h3>
     <span>{{ settings.subtitle }}</span>
     <form id="poleSizeAdvisorForm" method="post" action="#">
+      {% assign opt_1 = settings.option-one | split: ', ' %}
+      {% assign opt_2 = settings.option-two | split: ', ' %}
+      {% assign opt_3 = settings.option-three | split: ', ' %}
+      {% assign opt_4 = settings.option-four | split: ', ' %}
+      {% assign opt_5 = settings.option-five | split: ', ' %}
+      {% assign opt_6 = settings.option-six | split: ', ' %}
+      {% assign opt_7 = settings.option-seven | split: ', ' %}
+      {% assign opt_8 = settings.option-eight | split: ', ' %}
+      {% assign opt_9 = settings.option-nine | split: ', ' %}
+      {% assign opt_10 = settings.option-ten | split: ', ' %}
+      {% assign prodCollHandle = '' %}
+      {% for prodCollec in productCollections %}
+        {% if prodCollec.handle == opt_1[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_2[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_3[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_4[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_5[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_6[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_7[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_8[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_9[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+        {% if prodCollec.handle == opt_10[3] %}
+          {% assign prodCollHandle = prodCollec.handle %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      <select class="form-control" name="category" id="category">
+        {% if settings.option-one != blank %}<option value="{{ opt_1[3] | handle }}" data-title="{{ opt_1[0] | split: '|' }}" data-classic="{{ opt_1[1] }}" data-skate="{{ opt_1[2] }}" {% if prodCollHandle == opt_1[3] %}selected{% endif %}>{{ opt_1[0] }}</option>{% endif %}
+        {% if settings.option-two != blank %}<option value="{{ opt_2[3] | handle }}" data-title="{{ opt_2[0] | split: '|' }}" data-classic="{{ opt_2[1] }}" data-skate="{{ opt_2[2] }}" {% if prodCollHandle == opt_2[3] %}selected{% endif %}>{{ opt_2[0] }}</option>{% endif %}
+        {% if settings.option-three != blank %}<option value="{{ opt_3[3] | handle }}" data-title="{{ opt_3[0] | split: '|' }}" data-classic="{{ opt_3[1] }}" data-skate="{{ opt_3[2] }}" {% if prodCollHandle == opt_3[3] %}selected{% endif %}>{{ opt_3[0] }}</option>{% endif %}
+        {% if settings.option-four != blank %}<option value="{{ opt_4[3] | handle }}" data-title="{{ opt_4[0] | split: '|'}}" data-classic="{{ opt_1[1] }}" data-skate="{{ opt_4[2] }}" {% if prodCollHandle == opt_4[3] %}selected{% endif %}>{{ opt_4[0] }}</option>{% endif %}
+        {% if settings.option-five != blank %}<option value="{{ opt_5[3] | handle }}" data-title="{{ opt_5[0] | split: '|' }}" data-classic="{{ opt_5[1] }}" data-skate="{{ opt_5[2] }}" {% if prodCollHandle == opt_5[3] %}selected{% endif %}>{{ opt_5[0] }}</option>{% endif %}
+        {% if settings.option-six != blank %}<option value="{{ opt_6[3] | handle }}" data-title="{{ opt_6[0] | split: '|' }}" data-classic="{{ opt_6[1] }}" data-skate="{{ opt_6[2] }}" {% if prodCollHandle == opt_6[3] %}selected{% endif %}>{{ opt_6[0] }}</option>{% endif %}
+        {% if settings.option-seven != blank %}<option value="{{ opt_7[3] | handle }}" data-title="{{ opt_7[0] | split: '|' }}" data-classic="{{ opt_7[1] }}" data-skate="{{ opt_7[2] }}" {% if prodCollHandle == opt_7[3] %}selected{% endif %}>{{ opt_7[0] }}</option>{% endif %}
+        {% if settings.option-eight != blank %}<option value="{{ opt_8[3] | handle }}" data-title="{{ opt_8[0] | split: '|' }}" data-classic="{{ opt_8[1] }}" data-skate="{{ opt_8[2] }}" {% if prodCollHandle == opt_8[3] %}selected{% endif %}>{{ opt_8[0] }}</option>{% endif %}
+        {% if settings.option-nine != blank %}<option value="{{ opt_9[3] | handle }}" data-title="{{ opt_9[0] | split: '|' }}" data-classic="{{ opt_9[1] }}" data-skate="{{ opt_9[2] }}" {% if prodCollHandle == opt_9[3] %}selected{% endif %}>{{ opt_9[0] }}</option>{% endif %}
+        {% if settings.option-ten != blank %}<option value="{{ opt_10[3] | handle }}" data-title="{{ opt_10[0] | split: '|' }}" data-classic="{{ opt_10[1] }}" data-skate="{{ opt_10[2] }}" {% if prodCollHandle == opt_10[3] %}selected{% endif %}>{{ opt_10[0] }}</option>{% endif %}
+      </select>
       <input type="number" class="form-control height" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
-      <input type="button" class="btn {{ pole_button_style }}" value="{{ settings.pole_button_text }}">
+      <input type="button" class="btn {{ pole_button_style }} pole_length_getter" onclick="filterClickButton(this)" value="{{ settings.pole_button_text }}">
       <div class="pole-information">    
         {%- render 'icon-info' -%}
         <span>You can adjust Vario-Poles to the exact length.</span>

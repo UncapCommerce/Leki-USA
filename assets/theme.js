@@ -17512,3 +17512,76 @@ function printDiv(divName) {
   document.body.innerHTML = originalContents;
 }
 /* print invoice */
+
+/* Pole Length Advisor Calculator Start */
+
+function getfilterResult(url) {
+  fetch(url)
+    .then((response) => response.text())
+    .then((responseText) => {
+      const gridid = ".collection__products";
+      const html = new DOMParser().parseFromString(responseText, "text/html");
+      const destination = document.querySelector(".result-right-wrap");
+      const source = html.querySelector(gridid);
+      if (source && destination) {
+        destination.innerHTML = source.innerHTML;
+      }
+    });
+}
+function filterClickButton()  {
+  var height;
+  if (document.querySelector('.height')) {
+    height = document.querySelector('.height').value;
+  }
+  if (height) {
+    document.querySelectorAll('#skateroundedSize, #skateSize, #roundedSize, #calculatedSize').forEach(function(self){
+      self.innerHTML = '';
+    })
+    document.querySelector('.height').style.borderColor = '#E6E6E6';
+    document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
+    var e = document.querySelector("#category");
+    var value = e.options[e.selectedIndex].value;
+    var classicValue = Number(e.options[e.selectedIndex].getAttribute('data-classic'));
+    var skateValue = Number(e.options[e.selectedIndex].getAttribute('data-skate'));
+    var lowestValue = 80;
+    var highestValue = 180;
+    if (classicValue) {
+      var classicNumber = parseInt(height * classicValue);
+      document.querySelector('#calculatedSize').innerHTML = 'Classic ' + classicNumber;
+      var suggestionClassicNumber = 0;
+      if (classicNumber > highestValue) {
+        suggestionClassicNumber = highestValue;
+      }
+      else if (classicNumber < lowestValue){
+        suggestionClassicNumber = lowestValue;
+      }
+      else {
+        suggestionClassicNumber = Math.round(classicNumber / 5) * 5;
+      }
+      document.querySelector('#roundedSize').innerHTML = 'Classic ' + suggestionClassicNumber + 'cm';
+      var getCurrent = "/collections/"+ document.querySelector("#category").value +"?filter.v.option.size="+ suggestionClassicNumber +"+cm";
+      document.querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
+      document.querySelector('.result-btn a').setAttribute('href',getCurrent);
+      getfilterResult(getCurrent);
+    }
+    if (skateValue) {
+      var skateNumber = parseInt(height * skateValue);
+      document.querySelector('#skateSize').innerHTML = 'Skate ' + skateNumber;
+      var suggestionSkateNumber = 0;
+      if (skateNumber > highestValue) {
+        suggestionSkateNumber = highestValue;
+      }
+      else if (skateNumber < lowestValue){
+        suggestionSkateNumber = lowestValue;
+      }
+      else {
+        suggestionSkateNumber = skateNumber;
+      }
+      document.querySelector('#skateroundedSize').innerHTML = 'Skate ' + suggestionSkateNumber + 'cm';
+    }
+  } else {
+    document.querySelector('.height').style.borderColor = 'red';
+  }
+};
+
+/* Pole Length Advisor Calculator End */
