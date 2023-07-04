@@ -449,9 +449,9 @@ data-section-id="{{ section.id }}">
     </div>
 </section>
 
+{% comment %}
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  {% comment %}
   //// file upload js
   document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
   const dropZoneElement = inputElement.closest(".drop-zone");
@@ -523,7 +523,6 @@ document.addEventListener("DOMContentLoaded", () => {
       thumbnailElement.style.backgroundImage = null;
     }
   }
-{% endcomment %}
 
   ///////// country state select js
   if(document.querySelector('.country-select') != null){
@@ -581,6 +580,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+{% endcomment %}
 
 {% schema %}
 {

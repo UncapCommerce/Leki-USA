@@ -1,12 +1,14 @@
+{% if product.metafields.custom.gloves_size_advisor != blank %}
 {% assign pole_button_style = settings.pole_button_style %}
-<div id="gloves-adviser-drawer" class="gloves-adviser-drawer">
-  <div class="glove-close">
-    {%- render 'icon-close' -%}
-  </div>
-
-  <div class="gloves-inner-wrap">
-    <div class="gloves-main-wrap">
-      {% if product.metafields.custom.gloves_size_advisor != blank %}{{ product.metafields.custom.gloves_size_advisor.value.content }}{% endif %}
+  <div id="gloves-adviser-drawer" class="gloves-adviser-drawer">
+    <div class="glove-close">
+      {%- render 'icon-close' -%}
+    </div>
+  
+    <div class="gloves-inner-wrap">
+      <div class="gloves-main-wrap">
+        {{ product.metafields.custom.gloves_size_advisor.value.content }}
+      </div>
     </div>
   </div>
-</div>
+{% endif %}

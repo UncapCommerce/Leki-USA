@@ -1,16 +1,261 @@
 {
-    "sections": {
-      "main": {
-        "type": "main-page",
-        "settings": {
-          "show_page_title": true,
-          "bg_color_secondary": false,
-          "padding_top": 60,
-          "padding_bottom": 60
-        }
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "order": [
-      "main"
-    ]
-  }
+    "1fab490c-87d8-46a6-a651-198faadb2809": {
+      "type": "image-with-title",
+      "settings": {
+        "banner_height": "three-fifty-height",
+        "text_position": "middle-center",
+        "text_transform": "uppercase",
+        "banner_image": "shopify:\/\/shop_images\/wallpapers.jpg",
+        "banner_mob_image": "shopify:\/\/shop_images\/wallpaper-mobile.jpg",
+        "banner_title": "Wallpapers",
+        "banner_content": "<p>Welcome to the world of digital wallpaper. LEKI has made it easy to freshen up your computer screen and bring the great outdoors to your workspace. Now you can change your background images out in seconds and select the perfect wallpaper to fit your mood.<\/p>",
+        "text_color": "text-light",
+        "overlay_opacity": 10,
+        "bg_color_secondary": false,
+        "width": "wrapper--full-padded",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "tab_padding_top": 38,
+        "tab_padding_bottom": 38,
+        "mob_padding_top": 30,
+        "mob_padding_bottom": 30
+      }
+    },
+    "0d9dc457-c21f-46e1-b353-d3c860f3485a": {
+      "type": "section-text",
+      "blocks": {
+        "template--19702786588966__0d9dc457-c21f-46e1-b353-d3c860f3485a-1688450507c3e94730-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Scroll through the wallpaper images below, and find one you like. Select the image size based on your computer screen format (You might want to try both options to see which format fits your screen best), and click the download button. Once the file has been downloaded, all you need to do is open the downloaded file, save the image to your computer, right-click on the file, and click the “Set Desktop Picture” (MAC) or “Set as Desktop Background” (PC). That all there is to it. Now it’s up to you to choose your season and enjoy.<\/p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--19702786588966__0d9dc457-c21f-46e1-b353-d3c860f3485a-1688450507c3e94730-2"
+      ],
+      "settings": {
+        "text_position": "left",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper--full-padded",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "tab_padding_top": 20,
+        "tab_padding_bottom": 20,
+        "mob_padding_top": 0,
+        "mob_padding_bottom": 0
+      }
+    },
+    "2529c804-597c-46e9-ba01-83cd4402de86": {
+      "type": "page-wallpapers",
+      "blocks": {
+        "f3800f73-5657-4546-ab1d-b3e3ec5ee0aa": {
+          "type": "title",
+          "settings": {
+            "wallpaper_category": "Spring"
+          }
+        },
+        "4c549c53-135a-4286-9cf2-b14c4124d906": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-1.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px",
+            "view_image1": "shopify:\/\/shop_images\/wallpaper-1.jpg"
+          }
+        },
+        "dbd832d8-acc8-48ab-970c-74fbda79f692": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-2.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "0653e418-646f-4815-b791-f5280d3b38ee": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-3.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "3f1ba2ef-7f05-48cf-a346-5b87a819d356": {
+          "type": "title",
+          "settings": {
+            "wallpaper_category": "Summer"
+          }
+        },
+        "e459df16-34f9-4870-b911-d5fd9284aa40": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-4.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "5c4212a4-98ff-4120-9fa7-a80bac389ddd": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-5.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "f25e7aa7-dae9-42ce-9c5f-f79701ea443e": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-6.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "71412ead-cae0-45da-a398-c60276ba058d": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-7.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "30f8a1db-7149-4596-b1f1-c48167db6ab8": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-8.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "2045211c-d3ae-40f7-82ba-04ed653f5bbe": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-9.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "dfc0dc50-0443-4d73-b6af-574f74bc46fb": {
+          "type": "title",
+          "settings": {
+            "wallpaper_category": "Fall"
+          }
+        },
+        "385c689e-751d-43dd-bfe1-e095e45c924c": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-10.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "66b0769c-b0ef-46a7-a486-c0160aacf282": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-11.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "2cdc25e1-a90a-44cf-95c1-f26c5a3a1533": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-12.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "5fa49b0a-eb7c-410f-8914-f3903ad9db67": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-13.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "5e448196-11c5-4f90-b46f-da87654f8b49": {
+          "type": "title",
+          "settings": {
+            "wallpaper_category": "Summer"
+          }
+        },
+        "8ba159d8-cf82-4365-81f2-48db24e2314d": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-14.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "b880263f-6455-4f01-917d-ffaa03155489": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-15.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "1e2b1f3a-4ddd-47a8-8aab-8257d09e91c4": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-16.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        },
+        "0e18d6e1-49dd-4989-8e68-502399fa5ec4": {
+          "type": "wallpaper",
+          "settings": {
+            "wallpaper_img": "shopify:\/\/shop_images\/wallpaper-17.jpg",
+            "wallpaper_dim1": "1920 px x 1080 px",
+            "wallpaper_dim2": "1280px x 1024px"
+          }
+        }
+      },
+      "block_order": [
+        "f3800f73-5657-4546-ab1d-b3e3ec5ee0aa",
+        "4c549c53-135a-4286-9cf2-b14c4124d906",
+        "dbd832d8-acc8-48ab-970c-74fbda79f692",
+        "0653e418-646f-4815-b791-f5280d3b38ee",
+        "3f1ba2ef-7f05-48cf-a346-5b87a819d356",
+        "e459df16-34f9-4870-b911-d5fd9284aa40",
+        "5c4212a4-98ff-4120-9fa7-a80bac389ddd",
+        "f25e7aa7-dae9-42ce-9c5f-f79701ea443e",
+        "71412ead-cae0-45da-a398-c60276ba058d",
+        "30f8a1db-7149-4596-b1f1-c48167db6ab8",
+        "2045211c-d3ae-40f7-82ba-04ed653f5bbe",
+        "dfc0dc50-0443-4d73-b6af-574f74bc46fb",
+        "385c689e-751d-43dd-bfe1-e095e45c924c",
+        "66b0769c-b0ef-46a7-a486-c0160aacf282",
+        "2cdc25e1-a90a-44cf-95c1-f26c5a3a1533",
+        "5fa49b0a-eb7c-410f-8914-f3903ad9db67",
+        "5e448196-11c5-4f90-b46f-da87654f8b49",
+        "8ba159d8-cf82-4365-81f2-48db24e2314d",
+        "b880263f-6455-4f01-917d-ffaa03155489",
+        "1e2b1f3a-4ddd-47a8-8aab-8257d09e91c4",
+        "0e18d6e1-49dd-4989-8e68-502399fa5ec4"
+      ],
+      "settings": {
+        "width": "wrapper--full-padded"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1fab490c-87d8-46a6-a651-198faadb2809",
+    "0d9dc457-c21f-46e1-b353-d3c860f3485a",
+    "2529c804-597c-46e9-ba01-83cd4402de86"
+  ]
+}
