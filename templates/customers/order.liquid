@@ -12,7 +12,7 @@
 {%- endfor -%}
 
 <section class="page-customer">
-  <div class="wrapper">
+  <div id="printableArea" class="wrapper">
     <div class="order text-left">
       <div class="section__header">
         <h1 class="section__heading account__heading">{{ 'customer.account.title' | t }}</h1>          
@@ -69,7 +69,9 @@
               <tbody class="desktop-table">
                 {% for line_item in order.line_items %}                  
                   <tr class="responsive-order" id="{{ line_item.id }}">
-                    <th>{{ 'customer.order.product' | t }}</th>
+                    {% comment %}
+                      <th>{{ 'customer.order.product' | t }}</th>
+                    {% endcomment %}
                     <td>
                       <div class="product-detail">
                         <div class="order-image">
@@ -98,10 +100,14 @@
                       {% endunless %}
                     </td>
                     {% if showSku == true %}
+                    {% comment %}
                       <th>{{ 'customer.order.sku' | t }}</th>
+                    {% endcomment %}
                       <td>{{ line_item.sku }}</td>
                     {% endif %}
+                  {% comment %}
                     <th>{{ 'customer.order.price' | t }}</th>
+                  {% endcomment %}
                     <td>
                       {% if line_item.original_price > line_item.final_price %}
                         <s>{{ line_item.original_price | money_with_currency }}</s>
@@ -112,9 +118,13 @@
                         {{ line_item.final_price | money_with_currency }}
                       {%- endif -%}
                     </td>
+                  {% comment %}
                     <th>{{ 'customer.order.quantity' | t }}</th>
+                  {% endcomment %}
                     <td>{{ line_item.quantity }}</td>
+                  {% comment %}
                     <th>{{ 'customer.orders.total' | t }}</th>
+                  {% endcomment %}
                     <td>
                     <span class="item-total">
                       {% if line_item.original_line_price > line_item.final_line_price %}
@@ -221,15 +231,13 @@
                 <td class="order-payment-status">{{ 'customer.order.fulfillment_status' | t | link_to: order.customer_url }}<span>{{ order.fulfillment_status_label | link_to: order.customer_url }}</span></td>
                 <tr class="responsive-order">
                   <td style="text-align:left;" class="footer-btns">
-                  <a class="btn reorder-btn">reorder</a>
-                  <a class="btn download-btn" {% if animations_enabled %}
-                        data-aos="fade-up"
-                        data-aos-anchor="{{ animation_anchor }}"
-                        data-aos-delay="{{ animation_delay }}"
-                        {%- assign animation_delay = animation_delay | plus: 150 -%}
-                      {% endif %} href="#" target="_blank" rel="noopener noreferrer">{% render 'icon-download' %}Download Invoice</a>                 
+                  <a class="btn reorder-btn">reorder</a>  
+                  <button type="button" class="btn download-btn" onclick="printDiv('printableArea')" {% if animations_enabled %} data-aos="fade-up" 
+                    data-aos-anchor="{{ animation_anchor }}" data-aos-delay="{{ animation_delay }}" {%- assign animation_delay = animation_delay | plus: 150 -%}{% endif %}>
+                    {% render 'icon-download' %}Download Invoice
+                  </button>                 
                   </td>
-                  <td colspan="{% if showSku == true %}4{% else %}3{% endif %}" style="text-align: left;">
+                  <td colspan="{% if showSku == true %}5{% else %}4{% endif %}" style="text-align: left;">
                   <div class="cost-breakdown-wrap">
                     <div class="cost-breakdown-left">
                       {% assign count = 0 %}

@@ -25590,3 +25590,21 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   .featured-collection .section__heading {font-size: 20px;line-height: 28px;}
   .search_bar .main_search_bar input, .search_bar .search_within_distance select, .search_bar .search_limit select{max-width: 70px;width: 70px;}
 }
+@media print {
+  .order .account-tabs ,
+  .order .section__header ,
+  .order-address p br:nth-child(3) ,
+  .template-customers-order .mobile-table ,
+  .order .order-detail-header .account__back ,
+  .template-customers-order .order-detail-header ,
+  .order__item__title.order-detail-wrap .footer-btns ,
+  .order__item__title.order-detail-wrap tfoot td.order-payment-status {display: none;}
+  .template-customers-order .product-detail .order-details,
+  .order-inner-wrap .order-inner-detail .order-payment-status {display: block;}
+  .order-address.billing-address {margin-bottom: 0;}
+  .order__item__title.order-detail-wrap tfoot {border-top: 1px solid #E6E6E6;}
+  .order__item__addresses .order-address {max-width: calc(50% - 40px / 2);width: 100%;}
+  .template-customers-order .order__item__title.order-detail-wrap .desktop-table {display: contents;}
+  .template-customers-order .order__item {display: flex;flex-direction: column-reverse;flex-wrap: wrap;gap: 40px;}
+  .order__item__addresses {display: flex;flex-wrap: wrap;gap: 40px;align-items: center;justify-content: center;height: 100%;}
+}
