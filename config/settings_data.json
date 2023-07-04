@@ -76,14 +76,14 @@
     "subtitle": "Please enter your height in cm",
     "pole_button_style": "btn--primary btn--small",
     "pole_button_text": "Calculate Length",
-    "option-one": "Alpine Skiing-0.7",
-    "option-two": "Cross Trail-0.7",
-    "option-three": "Cross Country Skiing-0.83-0.9",
-    "option-four": "Mountaineering | Four Season-0.7",
-    "option-five": "Nordic Walking-0.68",
-    "option-six": "Touring | Backcountry-0.7",
-    "option-seven": "Trail Running-0.7",
-    "option-eight": "Trekking-0.7",
+    "option-one": "Alpine Skiing, 0.7, , alpine-skiing",
+    "option-two": "Cross Trail, 0.7, , cross-trail",
+    "option-three": "Cross Country Skiing, 0.83, 0.9, cross-country",
+    "option-four": "Mountaineering | Four Season, 0.7, , mountaineering-four-season",
+    "option-five": "Nordic Walking, 0.68, , nordic-walking",
+    "option-six": "Touring | Backcountry, 0.7, , touring-backcountry",
+    "option-seven": "Trail Running, 0.7, , trail-running",
+    "option-eight": "Trekking, 0.7, , trekking",
     "option-nine": "",
     "option-ten": "",
     "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
@@ -266,6 +266,11 @@
           "cb9c5abc-268c-4f93-be4d-44c79cea0e7a",
           "39dc4463-fe08-412f-a3f8-37c07df4d24b"
         ],
+        "settings": {
+        }
+      },
+      "cookie-model": {
+        "type": "cookie-model",
         "settings": {
         }
       }
