@@ -8548,6 +8548,7 @@ a.results-popular__link:hover {
   float: left;
 /*   font-size: calc(0.875rem * var(--adjust-body)); */
 }
+
 .radio__button:last-child{margin-right:0;}
 
 .radio__button.sold-out input:checked ~ .radio__label, .radio__button.unavailable input:checked ~ .radio__label {
@@ -25651,3 +25652,19 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   .template-customers-order .order__item {display: flex;flex-direction: column-reverse;flex-wrap: wrap;gap: 40px;}
   .order__item__addresses {display: flex;flex-wrap: wrap;gap: 40px;align-items: center;justify-content: center;height: 100%;}
 }
+.radio__legend {
+  grid-column: span 6;
+}
+@media(max-width: 1440px){
+  .radio__legend{grid-column: span 5;}
+}
+@media(max-width: 1199px){
+  .radio__legend{grid-column: span 4;}
+}
+@media(max-width: 1023px){
+  .radio__legend{grid-column: span 8;}
+}
+
+.radio__button {
+grid-column: auto;
+  grid-row: 1 span;}
