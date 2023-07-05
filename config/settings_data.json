@@ -273,6 +273,472 @@
         "type": "cookie-model",
         "settings": {
         }
+      },
+      "language": {
+        "type": "language",
+        "blocks": {
+          "e74f125f-a1f4-42ed-9943-1cf0087f4c71": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Belgium",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Belgium.svg",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "FR",
+              "language_title_link_one": "https:\/\/www.leki.com\/be\/fr",
+              "language_title_two": "DE",
+              "language_title_link_two": "https:\/\/www.leki.com\/be\/de",
+              "language_title_three": "EN",
+              "language_title_link_three": "https:\/\/www.leki.com\/be\/en",
+              "language_title_four": "Heading",
+              "language_title_link_four": ""
+            }
+          },
+          "0198df62-dc34-4f17-9416-919486dc3193": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Germany",
+              "country_image": "shopify:\/\/shop_images\/germany-flag-png-xl.jpg",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "DE",
+              "language_title_link_one": "https:\/\/www.leki.com\/de\/de",
+              "language_title_two": "EN",
+              "language_title_link_two": "https:\/\/www.leki.com\/de\/en",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "Heading",
+              "language_title_link_four": ""
+            }
+          },
+          "ef820fa0-27b3-4936-ba9f-15fac9a0b7c4": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Denmark",
+              "country_image": "shopify:\/\/shop_images\/Flag-Denmark.webp",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/dk\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "37fd9556-4e78-428d-a03a-017f7d3c56bd": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Finland",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Finland.svg",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/fi\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "9cf4cd91-b850-43a1-9a32-1ace487236b8": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "France",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_France_svg.webp",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "FR",
+              "language_title_link_one": "https:\/\/www.leki.com\/fr\/fr",
+              "language_title_two": "EN",
+              "language_title_link_two": "https:\/\/www.leki.com\/fr\/en",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "a6711912-399a-4bad-abb6-9ef2f73a6603": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Italy",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Italy_svg.png",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "IT",
+              "language_title_link_one": "https:\/\/www.leki.com\/it\/it",
+              "language_title_two": "DE",
+              "language_title_link_two": "https:\/\/www.leki.com\/it\/de",
+              "language_title_three": "EN",
+              "language_title_link_three": "https:\/\/www.leki.com\/it\/en",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "256a5885-3cb2-4c95-a825-765aab248a2a": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Lithuania",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Lithuania_svg.png",
+              "language_title_link_main": "https:\/\/www.leki.lt",
+              "language_title_option": true,
+              "language_title": "",
+              "language_title_link_one": "",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "851876a4-dc6a-4949-a466-4ec6fd87b703": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Luxembourg",
+              "country_image": "shopify:\/\/shop_images\/Flag-Luxembourg.webp",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "FR",
+              "language_title_link_one": "https:\/\/www.leki.com\/lu\/fr",
+              "language_title_two": "DE",
+              "language_title_link_two": "https:\/\/www.leki.com\/lu\/de",
+              "language_title_three": "EN",
+              "language_title_link_three": "https:\/\/www.leki.com\/lu\/en",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "578570de-6d52-4d9b-979c-03dbbf755c3d": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Netherlands",
+              "country_image": "shopify:\/\/shop_images\/download.png",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "DE",
+              "language_title_link_one": "https:\/\/www.leki.com\/nl\/de",
+              "language_title_two": "EN",
+              "language_title_link_two": "https:\/\/www.leki.com\/nl\/en",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "81e8ef0b-c305-48ad-890c-0a5a6961b1ce": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Norway",
+              "country_image": "shopify:\/\/shop_images\/Flag-Norway.webp",
+              "language_title_link_main": "https:\/\/www.leki.no\/",
+              "language_title_option": true,
+              "language_title": "",
+              "language_title_link_one": "",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "e96a0f93-b481-4dd5-a399-6d662e36db39": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Poland",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Poland_svg.png",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/pl\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "113cae28-e229-4f23-a6d7-ec7cd966ceff": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Portugal",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Portugal_svg.png",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/pt\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "f0aa76aa-674f-4247-a681-2d97286cfcfa": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Sweden",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Sweden_svg.png",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/se\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "20d1f251-476e-4fcc-aa1d-723179072401": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Switzerland",
+              "country_image": "shopify:\/\/shop_images\/Flag-Switzerland.webp",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "DE",
+              "language_title_link_one": "https:\/\/www.leki.com\/ch\/de",
+              "language_title_two": "EN",
+              "language_title_link_two": "https:\/\/www.leki.com\/ch\/en",
+              "language_title_three": "FR",
+              "language_title_link_three": "https:\/\/www.leki.com\/ch\/fr",
+              "language_title_four": "IT",
+              "language_title_link_four": "https:\/\/www.leki.com\/ch\/it"
+            }
+          },
+          "a7ddc56c-a11c-4385-a9a8-1bf476a2994e": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Slovenia",
+              "country_image": "shopify:\/\/shop_images\/download_1.svg",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/si\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "a543a615-4a80-4e8a-a82c-685f5b3a18ba": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Spain",
+              "country_image": "shopify:\/\/shop_images\/flag-35697_1280.webp",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/es\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "24867dfa-5b04-46d7-8d1d-e6fb85a88ece": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Czech Republic",
+              "country_image": "shopify:\/\/shop_images\/download_2.svg",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "CS",
+              "language_title_link_one": "https:\/\/www.leki.com\/cz\/cs",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "188185be-0df4-4a1d-b7aa-42e49227b01e": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "United Kingdom",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_the_United_Kingdom__1-2__svg.webp",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/gb\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "22bea5a3-f76f-4b58-a2f2-14c0451bb323": {
+            "type": "text",
+            "settings": {
+              "category": "Europe",
+              "title": "Austria",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Austria_svg.png",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "DE",
+              "language_title_link_one": "https:\/\/www.leki.com\/at\/de",
+              "language_title_two": "EN",
+              "language_title_link_two": "https:\/\/www.leki.com\/at\/en",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "9346cc40-5d07-46d0-afe5-be13f70dc1ce": {
+            "type": "text",
+            "settings": {
+              "category": "North America",
+              "title": "United States",
+              "country_image": "shopify:\/\/shop_images\/download_3.svg",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "",
+              "language_title_link_one": "",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "e4c62e9e-3639-4998-8770-4c9d4a3ad503": {
+            "type": "text",
+            "settings": {
+              "category": "North America",
+              "title": "Canada",
+              "country_image": "shopify:\/\/shop_images\/images.png",
+              "language_title_link_main": "https:\/\/www.leki.ca\/en\/",
+              "language_title_option": true,
+              "language_title": "",
+              "language_title_link_one": "",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "9006c489-419e-49d6-a6de-5cbb120370c1": {
+            "type": "text",
+            "settings": {
+              "category": "Asia",
+              "title": "Japan",
+              "country_image": "shopify:\/\/shop_images\/Flag_of_Japan_svg.png",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "WINTER",
+              "language_title_link_one": "http:\/\/www.uvex-sports.jp\/leki\/index\/",
+              "language_title_two": "SUMMER",
+              "language_title_link_two": "https:\/\/www.caravan-web.com\/brand_leki\/",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "9338050d-683f-47af-96b4-d405ff6dd31d": {
+            "type": "text",
+            "settings": {
+              "category": "Asia",
+              "title": "Korea",
+              "country_image": "shopify:\/\/shop_images\/download_4.svg",
+              "language_title_link_main": "https:\/\/leki.kr",
+              "language_title_option": true,
+              "language_title": "",
+              "language_title_link_one": "",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          },
+          "5e1e997d-69b4-475f-b0f8-8657feede90c": {
+            "type": "text",
+            "settings": {
+              "category": "Other countries",
+              "title": "International",
+              "country_image": "shopify:\/\/shop_images\/download_5.svg",
+              "language_title_link_main": "",
+              "language_title_option": false,
+              "language_title": "EN",
+              "language_title_link_one": "https:\/\/www.leki.com\/int\/en",
+              "language_title_two": "",
+              "language_title_link_two": "",
+              "language_title_three": "",
+              "language_title_link_three": "",
+              "language_title_four": "",
+              "language_title_link_four": ""
+            }
+          }
+        },
+        "block_order": [
+          "e74f125f-a1f4-42ed-9943-1cf0087f4c71",
+          "0198df62-dc34-4f17-9416-919486dc3193",
+          "ef820fa0-27b3-4936-ba9f-15fac9a0b7c4",
+          "37fd9556-4e78-428d-a03a-017f7d3c56bd",
+          "9cf4cd91-b850-43a1-9a32-1ace487236b8",
+          "a6711912-399a-4bad-abb6-9ef2f73a6603",
+          "256a5885-3cb2-4c95-a825-765aab248a2a",
+          "851876a4-dc6a-4949-a466-4ec6fd87b703",
+          "578570de-6d52-4d9b-979c-03dbbf755c3d",
+          "81e8ef0b-c305-48ad-890c-0a5a6961b1ce",
+          "e96a0f93-b481-4dd5-a399-6d662e36db39",
+          "113cae28-e229-4f23-a6d7-ec7cd966ceff",
+          "f0aa76aa-674f-4247-a681-2d97286cfcfa",
+          "20d1f251-476e-4fcc-aa1d-723179072401",
+          "a7ddc56c-a11c-4385-a9a8-1bf476a2994e",
+          "a543a615-4a80-4e8a-a82c-685f5b3a18ba",
+          "24867dfa-5b04-46d7-8d1d-e6fb85a88ece",
+          "188185be-0df4-4a1d-b7aa-42e49227b01e",
+          "22bea5a3-f76f-4b58-a2f2-14c0451bb323",
+          "9346cc40-5d07-46d0-afe5-be13f70dc1ce",
+          "e4c62e9e-3639-4998-8770-4c9d4a3ad503",
+          "9006c489-419e-49d6-a6de-5cbb120370c1",
+          "9338050d-683f-47af-96b4-d405ff6dd31d",
+          "5e1e997d-69b4-475f-b0f8-8657feede90c"
+        ],
+        "settings": {
+          "modal_title": "Choose your country and language"
+        }
       }
     },
     "content_for_index": [
