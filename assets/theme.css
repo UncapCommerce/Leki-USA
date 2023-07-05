@@ -25664,6 +25664,11 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
 @media(max-width: 1023px){
   .radio__legend{grid-column: span 8;}
 }
+@media(min-width: 1921px){
+.radio__legend {
+  grid-column: span 8;
+}
+}
 
 .radio__button {
 grid-column: auto;
