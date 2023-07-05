@@ -22,6 +22,7 @@
     {%- endif -%}
 
     <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
+    <link rel="preload" as="style" href="{{ 'custom.css' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'lazysizes.min.js' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'vendor.js' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
@@ -190,6 +191,7 @@
 
     {%- comment -%} CSS {%- endcomment -%}
     {{- 'theme.css' | asset_url | stylesheet_tag -}}
+    {{- 'custom.css' | asset_url | stylesheet_tag -}}
 
     {%- comment -%}{{- 'theme.dev.css' | asset_url | stylesheet_tag -}}{%- endcomment -%}
 
