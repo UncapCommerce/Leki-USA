@@ -1,0 +1,143 @@
+{%- comment -%} Packing Lists section {%- endcomment -%}
+
+<style>
+    .packing_lists-grid-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr;gap: 20px;}
+    .packing_lists-grid-wrap .packing_lists-inner-wrap figure {margin: 0;}
+    .packing_lists-grid-wrap .packing_lists-inner-wrap {padding: 25px;}
+    .packing_lists-grid-wrap .packing_lists-inner-wrap .packing_lists-image-wrap , .packing_lists-grid-wrap .packing_lists-inner-wrap .packing_lists-content {line-height: 0;}
+    .packing_lists-grid-wrap .packing_lists-content {padding-top: 20px;display: flex;align-items: center;justify-content: space-between;gap: 12px;}
+    .packing_lists-grid-wrap .packing_lists-content h3 {font-size: 24px;line-height: 32px;margin: 0;color: var(--COLOR-BLACK);font-family: var(--font-stack-body);}
+    .packing_lists-content a.btn {min-width: 131px;padding: 6px 24px 4px;background: var(--text);text-transform: capitalize;font-size: 14px;line-height: 20px;font-weight: 500;}
+    .packing_lists-content a.btn svg {display: inline-block;vertical-align: -3px;height: 14px;width: 14px;margin-right: 5px;}
+    .packing_lists-content a.btn:hover svg path {stroke: #000;}
+    .page--packing-lists .text-highlight__break {font-size: 50px;line-height: 58px;color: var(--COLOR-TEXT);}
+    .page--packing-lists .text__content p {line-height: 24px;color: var(--COLOR-TEXT);}
+    .packing_lists-image-wrap img {width: 100%;}
+  
+    @media(max-width: 1799px){
+      .packing_lists-grid-wrap .packing_lists-content h3 {font-size: 20px;line-height: 28px;}
+    }
+    @media(max-width: 1599px){
+      .packing_lists-grid-wrap .packing_lists-inner-wrap {padding: 15px;}
+      .packing_lists-grid-wrap .packing_lists-content h3 {font-size: 16px;line-height: 24px;}
+    }
+    @media(max-width: 1399px){
+      .packing_lists-content a.btn{padding: 6px 18px 4px;}
+    }
+    @media(max-width: 1199px){
+      .packing_lists-grid-wrap{grid-template-columns: 1fr 1fr;}
+      .page--packing-lists .text-highlight__break {font-size: 36px;line-height: 48px;}
+    }
+    @media(max-width: 767px){    
+      .packing_lists-grid-wrap .packing_lists-content h3 {font-size: 12px;line-height: 16px;}
+      .packing_lists-content a.btn {padding: 6px 12px 4px;min-width: auto;width: auto;font-size: 12px;line-height: 16px;}
+      .packing_lists-content a.btn svg{height: 12px;width: 12px;vertical-align: -2px;}
+      .packing_lists-grid-wrap .packing_lists-inner-wrap {padding: 0;}
+      .page--packing-lists .text-highlight__break {font-size: 24px;line-height: 32px;}
+      .page--packing-lists .text__content p {font-size: 14px;line-height: 20px;}
+      .packing_lists-grid-wrap .packing_lists-content {padding-top: 10px;}
+    }
+    @media(max-width: 649px){    
+      .packing_lists-grid-wrap {grid-template-columns: 1fr;gap: 0;row-gap: 32px;padding: 10px 0 20px;}
+    }
+    @media(max-width: 349px){ 
+      .packing_lists-grid-wrap .packing_lists-content{gap: 8px;}
+    }
+  </style>
+  {%- liquid
+    assign section_width = section.settings.width
+    assign animations_enabled = settings.animations_enabled
+    assign animation_anchor = '#Accordions--' | append: section.id
+    assign animation_delay = 150
+  -%}
+  
+  {% if section.blocks.size > 0 %}
+    <section class="section-padding packing_lists-section">
+      <div class="{{ section_width }}">
+        <div class="packing_lists-grid-wrap">
+          {% for block in section.blocks %}
+            {% if block.settings.packing_lists_img != blank %}
+              <div class="packing_lists-inner-wrap">
+                <div class="packing_lists-image-wrap" {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-delay="{{ animation_delay }}"
+                    {%- assign animation_delay = animation_delay | plus: 150 -%}
+                {% endif %}>
+                {% if block.settings.packing_lists_pdf != blank %}
+                  <a href="{{ block.settings.packing_lists_pdf }}" target="_blank">
+                {% endif %}
+                    <figure>
+                      <img class="lazyload" src="{{ block.settings.packing_lists_img | img_url:'' }}" alt="{{ block.settings.packing_lists_img.alt }}">
+                    </figure>
+                 {% if block.settings.packing_lists_pdf != blank %}
+                  </a>
+                {% endif %}
+                </div>
+                 <div class="packing_lists-content" {% if animations_enabled %}
+                        data-aos="fade-up"
+                        data-aos-anchor="{{ animation_anchor }}"
+                        data-aos-delay="{{ animation_delay }}"
+                        {%- assign animation_delay = animation_delay | plus: 150 -%}
+                    {% endif %}>
+                    <h3>{{ block.settings.packing_lists_title }}</h3>
+                    <a href="{{ block.settings.packing_lists_img | img_url: '' }}" class="btn" download>{% render 'icon-download-1' %}download</a>
+                  </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {% schema %}
+    {
+      "name": "Packing Lists Section",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Section spacing"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "wrapper",
+          "options": [
+            { "value": "wrapper--full-padded", "label": "Full width padded" },
+            { "value": "wrapper", "label": "Page width" },
+            { "value": "wrapper--narrow", "label": "Page width narrow" }
+          ]
+        }
+      ],
+      "blocks":[
+        {
+          "name":"Packing List Image",
+          "type":"packing_lists-image",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "packing_lists_img",
+              "label": "Packing List Image"
+            },
+            {
+              "type": "url",
+              "id": "packing_lists_pdf",
+              "label": "Packing List PDF Link",
+              "info":"first add PDF file in shopify admin files and then add that link here"
+            },
+            {
+              "type": "text",
+              "id": "packing_lists_title",
+              "label": "Packing List Title"
+            }
+          ]
+        }
+      ],
+      "presets":[
+        {
+          "name": "Packing Lists Section"
+        }
+      ]
+    }
+  {% endschema %}

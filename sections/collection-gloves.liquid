@@ -83,7 +83,7 @@
   }
   #collection-details--{{ section.id }}{
     padding-top: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
   }
   {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
     .template-collection .collection-section {
@@ -102,7 +102,7 @@
     }
     #collection-details--{{ section.id }}{
       padding-top: 20px;
-      padding-bottom: 40px;
+      padding-bottom: 20px;
     }
   }
   @media(max-width: 767px){
@@ -145,21 +145,23 @@
 {% endfor %}
 
 {% unless thirdLevel %}
-  <div
-    id="collection-details--{{ section.id }}"
-    class="section-padding"
-    {% if animations_enabled %}
-      data-aos="fade"
-      data-aos-anchor="{{ animation_anchor }}"
-      data-aos-delay="{{ animation_delay }}"
-      {%- assign animation_delay = animation_delay | plus: 150 -%}
-    {% endif %}
-  >
-    <div class="wrapper--full-padded">
-      <h2 class="collection-heading">{{ collection.title }}</h2>
-      {{ collection.description }}
+  {% if collection.title != blank or collection.description != blank %}
+    <div
+      id="collection-details--{{ section.id }}"
+      class="section-padding"
+      {% if animations_enabled %}
+        data-aos="fade"
+        data-aos-anchor="{{ animation_anchor }}"
+        data-aos-delay="{{ animation_delay }}"
+        {%- assign animation_delay = animation_delay | plus: 150 -%}
+      {% endif %}
+    >
+      <div class="wrapper--full-padded">
+        {% if collection.title != blank %}<h2 class="collection-heading">{{ collection.title }}</h2>{% endif %}
+        {% if collection.description != blank %}<div class="collection-desc">{{ collection.description }}</div>{% endif %}
+      </div>
     </div>
-  </div>
+  {% endif %}
 {% endunless %}
 <div
   id="{{ id }}"

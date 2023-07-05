@@ -1,124 +1,125 @@
 {%- comment -%} Wallpapers section {%- endcomment -%}
 
 {%- liquid
-    assign section_width = section.settings.width
-    assign animations_enabled = settings.animations_enabled
-    assign animation_anchor = '#Accordions--' | append: section.id
-    assign animation_delay = 150
-  -%}
-  {% if section.blocks.size > 0 %}
-    <section class="section-padding wallpaper-section">
-      <div class="{{ section_width }}">
-        <div class="wallpaper-grid-wrap">
-        {% for block in section.blocks %}
-          {%- case block.type -%}
-            {%- when 'title' -%}
-              <div class="wallpaper-grid-inner-title">
-                <h2>{{ block.settings.wallpaper_category }}</h2>
-              </div>
-            {%- when 'wallpaper' -%}
-              <div class="wallpaper-grid-inner">
-                {% if block.settings.wallpaper_img != blank %}
-                  <div class="wallpaper-content">
-                    <figure>
-                      <img class="lazyload" src="{{ block.settings.wallpaper_img | img_url:'' }}" alt="{{ block.settings.wallpaper_img.alt }}">
-                    </figure>
-                    <div class="wallpaper-details">
-                      <div class="detail-inner">
-                        {% if block.settings.wallpaper_dim1 != blank %}<div class="left-detail">{{ block.settings.wallpaper_dim1 }}</div>{% endif %}
-                        <div class="right-detail">
-                          <a href="{% if block.settings.view_image1 != blank %}{{ block.settings.view_image1 | img_url: '' }}{% else %}{{ block.settings.wallpaper_img | img_url:'' }}{% endif %}" class="view-image">view</a>
-                          <a href="{% if block.settings.view_image1 != blank %}{{ block.settings.view_image1 | img_url: '' }}{% else %}{{ block.settings.wallpaper_img | img_url:'' }}{% endif %}" class="btn" download>{% render 'icon-download' %}download</a>
-                        </div>
+  assign section_width = section.settings.width
+  assign animations_enabled = settings.animations_enabled
+  assign animation_anchor = '#Accordions--' | append: section.id
+  assign animation_delay = 150
+-%}
+{% if section.blocks.size > 0 %}
+  <section class="section-padding wallpaper-section">
+    <div class="{{ section_width }}">
+      <div class="wallpaper-grid-wrap">
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+          {%- when 'title' -%}
+            <div class="wallpaper-grid-inner-title">
+              <h2>{{ block.settings.wallpaper_category }}</h2>
+            </div>
+          {%- when 'wallpaper' -%}
+            <div class="wallpaper-grid-inner">
+              {% if block.settings.wallpaper_img != blank %}
+                <div class="wallpaper-content">
+                  <figure>
+                    <img class="lazyload" src="{{ block.settings.wallpaper_img | img_url:'' }}" alt="{{ block.settings.wallpaper_img.alt }}">
+                  </figure>
+                  <div class="wallpaper-details">
+                    <div class="detail-inner">
+                      {% if block.settings.wallpaper_dim1 != blank %}<div class="left-detail">{{ block.settings.wallpaper_dim1 }}</div>{% endif %}
+                      <div class="right-detail">
+                        <a href="{% if block.settings.view_image1 != blank %}{{ block.settings.view_image1 | img_url: '' }}{% else %}{{ block.settings.wallpaper_img | img_url:'' }}{% endif %}" class="view-image">view</a>
+                        <a href="{% if block.settings.view_image1 != blank %}{{ block.settings.view_image1 | img_url: '' }}{% else %}{{ block.settings.wallpaper_img | img_url:'' }}{% endif %}" class="btn" download>{% render 'icon-download-1' %}download</a>
                       </div>
-                      <div class="detail-inner">
-                        {% if block.settings.wallpaper_dim2 != blank %}<div class="left-detail">{{ block.settings.wallpaper_dim2 }}</div>{% endif %}
-                        <div class="right-detail">
-                          <a href="{% if block.settings.view_image2 != blank %}{{ block.settings.view_image2 | img_url: '' }}{% else %}{{ block.settings.wallpaper_img | img_url:'' }}{% endif %}" class="view-image">view</a>
-                          <a href="{% if block.settings.view_image2 != blank %}{{ block.settings.view_image2 | img_url: '' }}{% else %}{{ block.settings.wallpaper_img | img_url:'' }}{% endif %}" class="btn" download>{% render 'icon-download' %}download</a>
-                        </div>
+                    </div>
+                    <div class="detail-inner">
+                      {% if block.settings.wallpaper_dim2 != blank %}<div class="left-detail">{{ block.settings.wallpaper_dim2 }}</div>{% endif %}
+                      <div class="right-detail">
+                        <a href="{% if block.settings.view_image2 != blank %}{{ block.settings.view_image2 | img_url: '' }}{% else %}{{ block.settings.wallpaper_img | img_url:'' }}{% endif %}" class="view-image">view</a>
+                        <a href="{% if block.settings.view_image2 != blank %}{{ block.settings.view_image2 | img_url: '' }}{% else %}{{ block.settings.wallpaper_img | img_url:'' }}{% endif %}" class="btn" download>{% render 'icon-download-1' %}download</a>
                       </div>
                     </div>
                   </div>
-                {% endif %}
-              </div>          
-          {%- endcase -%}
-        {% endfor %}
-        </div>
-       
+                </div>
+              {% endif %}
+            </div>          
+        {%- endcase -%}
+      {% endfor %}
       </div>
-    </section>
-  {% endif %}
-  
-  {% schema %}
-    {
-      "name": "wallpaper-section",
-      "settings": [
-        {
-          "type": "header",
-          "content": "Section spacing"
-        },
-        {
-          "type": "select",
-          "id": "width",
-          "label": "Width",
-          "default": "wrapper",
-          "options": [
-            { "value": "wrapper--full-padded", "label": "Full width padded" },
-            { "value": "wrapper", "label": "Page width" },
-            { "value": "wrapper--narrow", "label": "Page width narrow" }
-          ]
-        }
-      ],
-      "blocks":[
-        {
-          "name":"Wallpaper",
-          "type":"wallpaper",
-          "settings": [
-            {
-              "type": "image_picker",
-              "id": "wallpaper_img",
-              "label": "Wallpaper Image"
-            },
-            {
-              "type": "text",
-              "id": "wallpaper_dim1",
-              "label": "Wallpaper Dimention 1"
-            },
-            {
-              "type": "text",
-              "id": "wallpaper_dim2",
-              "label": "Wallpaper Dimention 2"
-            },
-            {
-              "type": "image_picker",
-              "id": "view_image1",
-              "label": "View Image URL1"
-            },
-            {
-              "type": "image_picker",
-              "id": "view_image2",
-              "label": "View Image URL2"
-            }
-          ]
-        },
-        {
-          "name":"Title",
-          "type":"title",
-          "settings": [
-            {
-              "type": "text",
-              "id": "wallpaper_category",
-              "label": "Wallpaper Category"
-            }
-          ]
-        }
-      ],
-      "presets":[
-        {
-          "name": "wallpaper-section"
-        }
-      ]
-    }
-  {% endschema %}
-  
+     
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "wallpaper-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" },
+          { "value": "wrapper--narrow", "label": "Page width narrow" }
+        ]
+      }
+    ],
+    "blocks":[
+      {
+        "name":"Wallpaper",
+        "type":"wallpaper",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "wallpaper_img",
+            "label": "Wallpaper Image"
+          },
+          {
+            "type": "text",
+            "id": "wallpaper_dim1",
+            "label": "Wallpaper Dimention 1"
+          },
+          {
+            "type": "text",
+            "id": "wallpaper_dim2",
+            "label": "Wallpaper Dimention 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "view_image1",
+            "label": "View Image URL1",
+            "info": "Ex: 1920 px x 1080 px"
+          },
+          {
+            "type": "image_picker",
+            "id": "view_image2",
+            "label": "View Image URL2",
+            "info": "Ex: 1280px x 1024px"
+          }
+        ]
+      },
+      {
+        "name":"Title",
+        "type":"title",
+        "settings": [
+          {
+            "type": "text",
+            "id": "wallpaper_category",
+            "label": "Wallpaper Category"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "wallpaper-section"
+      }
+    ]
+  }
+{% endschema %}
