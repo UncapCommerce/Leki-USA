@@ -720,7 +720,7 @@
               {%- assign current_value = current_variant.options[forloop.index0] -%}
               <fieldset class="radio__fieldset radio__fieldset--{{ settings.color_swatches_product_style }}">
               {% assign option_name = option.name | handle %}
-                <legend class="radio__legend{% if option_name contains 'size' %} selector_mb{% endif %}{% if is_size_option and info_page != blank %} radio__legend--flex radio__legend--size-chart{% endif %}">
+                <div class="radio__legend{% if option_name contains 'size' %} selector_mb{% endif %}{% if is_size_option and info_page != blank %} radio__legend--flex radio__legend--size-chart{% endif %}">
                   {%- if is_size_option and show_labels and info_page != blank -%}
                     {{- size_chart_button -}}
                   {%- else -%}
@@ -733,7 +733,7 @@
                       </svg>
                     </div>                    
                   {% endif %}
-                </legend>
+                </div>
                 {%- for value in option.values -%}
                   {%- capture input_id -%}{{ product.id }}-{{ option.name | escape_once }}-{{ value | escape_once }}{%- endcapture -%}
 
