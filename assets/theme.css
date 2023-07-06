@@ -21584,7 +21584,7 @@ body.notification-visible .popup.popup--visible {
 .popup-quick-view .shopify-payment-button {
   width: 100%;  
 }
-.popup-quick-view .product__form__wrapper:not(.variant--soldout) .product__submit__add{background: #E4032E;color:#fff;border-color: currentColor;font-size: 14px;line-height: 20px;padding: 13px 22px;}
+.popup-quick-view .product__form__wrapper:not(.variant--soldout) .product__submit__add{background: #E4032E;border-color: currentColor;font-size: 14px;line-height: 20px;padding: 13px 22px;}
 .popup-quick-view .variant--soldout .product__submit__add {
   pointer-events: none;
   padding: 12px 22px;
@@ -25673,3 +25673,5 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
 .radio__button {
 grid-column: auto;
   grid-row: 1 span;}
+  .variant--unavailabe .product__submit__add { color: #fff;}
+  .variant--unavailabe .product__submit__add:hover{ color: #fff; }
