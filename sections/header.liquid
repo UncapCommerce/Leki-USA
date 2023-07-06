@@ -214,7 +214,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       {%- render 'icon-hamburger' -%}
     </button>
   </div>
-
+  
   {%- for link in linklists[section.settings.main-menu].links -%}
     {%- render 'nav-item', link: link, section: section, index: forloop.index, highlight_item: highlight_item -%}
   {%- endfor -%}

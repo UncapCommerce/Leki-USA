@@ -40,7 +40,7 @@
         {% assign count = count | plus: 1 %}
       {% endfor %}
       <div
-        class="flag-title-icon {% if count > 10 %} column{% endif %}" style="display: none;"
+        class="flag-title-icon {% if count > 10 %} column{% endif %}"
       >
         {%- for block in section.blocks -%}
           {% assign category_arry = block.settings.category %}
@@ -157,7 +157,6 @@
     window.addEventListener("click", windowOnClick);
 
   const accSingleTriggers = document.querySelectorAll('.country_desc');
-    console.log(accSingleTriggers)
 
   accSingleTriggers.forEach(trigger => trigger.addEventListener('click', toggleAccordion));
 

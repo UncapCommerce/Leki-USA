@@ -1,235 +1,242 @@
 {%- comment -%} Innovation section {%- endcomment -%}
 
 {%- liquid
-    assign section_width = section.settings.width
-    assign animations_enabled = settings.animations_enabled
-    assign animation_delay = 150
-  -%}
-  {% if section.blocks.size > 0 %}
-    <section class="innovation_section">
-      <div class="{{ section_width }}">
-        <div class="inno_grid">
-        {% for block in section.blocks %}
-          {%- case block.type -%}
-            {%- when 'title' -%}
-              <div class="inno_grid_title">
-                {% if block.settings.title != blank %}
-                  <h2 class="in_title" {% if animations_enabled %}
-                      data-aos="fade-up"
-                      data-aos-delay="{{ animation_delay }}"
-                      {%- assign animation_delay = animation_delay | plus: 150 -%}
-                    {% endif %}>{{ block.settings.title }}</h2>
-                {% endif %}
-                {% if block.settings.cnt != blank %}
-                  <div class="in_cnt"
-                  {% if animations_enabled %}
-                      data-aos="fade-up"
-                      data-aos-delay="{{ animation_delay }}"
-                      {%- assign animation_delay = animation_delay | plus: 150 -%}
-                    {% endif %}>
-                  {{ block.settings.cnt }}</div>
-                {% endif %}
-              </div>
-            {%- when 'systems' -%}
-              <div class="inno_grid_cnt">
-                {% if block.settings.system_img != blank %}
-                  <div class="inno_cls">
-                    <figure>
-                      <img class="lazyload" src="{{ block.settings.system_img | img_url:'' }}" alt="{{ block.settings.system_img.alt }}">
-                    </figure>
-                    <div class="inno_inner">
-                      {% if block.settings.system_txt != blank %}
-                        <h3 class="dt_title" {% if block.settings.system_txt_clr != blank %}style="color:{{ block.settings.system_txt_clr }}"{% endif %}>{{ block.settings.system_txt }}</h3>
-                      {% endif %}
-                      {% if block.settings.system_cnt != blank %}
-                        <div class="dt_cnt">{{ block.settings.system_cnt }}</div>
-                      {% endif %}
-                    </div>
+  assign section_width = section.settings.width
+  assign animations_enabled = settings.animations_enabled
+  assign animation_delay = 150
+-%}
+{% if section.blocks.size > 0 %}
+  <section class="innovation_section">
+    <div class="{{ section_width }}">
+      <div class="inno_grid">
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+          {%- when 'title' -%}
+            <div class="inno_grid_title">
+              {% if block.settings.title != blank %}
+                <h2 class="in_title" {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-delay="{{ animation_delay }}"
+                    {%- assign animation_delay = animation_delay | plus: 150 -%}
+                  {% endif %}>{{ block.settings.title }}</h2>
+              {% endif %}
+              {% if block.settings.cnt != blank %}
+                <div class="in_cnt"
+                {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-delay="{{ animation_delay }}"
+                    {%- assign animation_delay = animation_delay | plus: 150 -%}
+                  {% endif %}>
+                {{ block.settings.cnt }}</div>
+              {% endif %}
+            </div>
+          {%- when 'systems' -%}
+            <div class="inno_grid_cnt">
+              {% if block.settings.system_img != blank %}
+                <div class="inno_cls">
+                  <figure>
+                    <img class="lazyload" src="{{ block.settings.system_img | img_url:'' }}" alt="{{ block.settings.system_img.alt }}">
+                  </figure>
+                  <div class="inno_inner">
+                    {% if block.settings.system_txt_url != blank %}
+                      <a class="dt_title" href="{{ block.settings.system_txt_url }}" {% if block.settings.system_txt_clr != blank %}style="color:{{ block.settings.system_txt_clr }}"{% endif %}>{{ block.settings.system_txt }}</a>
+                    {% else %}
+                      <h3 class="dt_title">{{ block.settings.system_txt }}</h3>
+                    {% endif %}
+                    {% if block.settings.system_cnt != blank %}
+                      <div class="dt_cnt">{{ block.settings.system_cnt }}</div>
+                    {% endif %}
                   </div>
-                {% endif %}
-              </div>          
-          {%- endcase -%}
-        {% endfor %}
-        </div>
-       
+                </div>
+              {% endif %}
+            </div>          
+        {%- endcase -%}
+      {% endfor %}
       </div>
-    </section>
-  {% endif %}
-  
-  {% style %}
+     
+    </div>
+  </section>
+{% endif %}
+
+{% style %}
+  {% comment %} innovation section {% endcomment %}
+  .inno_grid {
+    display: grid;
+    column-gap: 40px;
+  }
+  .inno_grid_title {
+    grid-column: span 3;
+    padding: 80px 0 20px;
+  }
+  .inno_grid_cnt {
+    display:flex;
+    grid-column: span 1;
+    margin: 20px 0;
+  }
+  .inno_grid_title .in_title {
+    font-family: var(--font-stack-body);
+    font-size: 50px;
+    line-height: 58px;
+    margin-bottom: 15px;
+  }
+  .dt_cnt p{
+    color:var(--COLOR-BLACK);
+  }
+  .inno_grid_title .in_cnt p,.dt_cnt p{
+    line-height: 24px;
+    margin: 0;
+  }
+  .inno_cls {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .inno_cls figure {
+    width: 30.44%;
+    margin: 0;
+  }
+  .inno_cls .inno_inner {
+    width: 69.56%;
+    background: #F9F9F9;
+    padding: 15px;
+  }
+  .inno_inner .dt_title {
+    font-family: var(--font-stack-body);
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 8px;
+    color:var(--COLOR-TEXT);
+  }
+  .inno_inner a.dt_title {
+    font-weight: 600;
+    display: inline-block;
+    color:#176295;
+  }
+  @media screen and (max-width:1399px){
+    {% comment %} innovation section {% endcomment %}
+    .inno_grid{
+      column-gap:30px;
+    }
+  }
+  @media screen and (max-width:1199px){
     {% comment %} innovation section {% endcomment %}
     .inno_grid {
-      display: grid;
-      column-gap: 40px;
+      column-gap: 30px;
     }
     .inno_grid_title {
-      grid-column: span 3;
-      padding: 80px 0 20px;
+      grid-column: span 2;
     }
-    .inno_grid_cnt {
-      display:flex;
+  }
+  @media screen and (max-width:767px){
+    {% comment %} image with title section {% endcomment %}
+    body.page--innovations .banner-inner.align--middle-center{
+      align-items: flex-end;
+      justify-content: flex-end;
+      text-align: left;
+    }
+    body.page--innovations .image-with-title-section .banner__description p{
+      font-size: 14px;
+      line-height: 20px;
+    }
+    {% comment %} innovation section {% endcomment %}
+    .inno_grid_title {
       grid-column: span 1;
-      margin: 20px 0;
+      padding: 10px 0 20px;
     }
     .inno_grid_title .in_title {
-      font-family: var(--font-stack-body);
-      font-size: 50px;
-      line-height: 58px;
-      margin-bottom: 15px;
+      font-size: 24px;
+      line-height: 32px;
     }
-    .dt_cnt p{
-      color:var(--COLOR-BLACK);
+    .inno_grid_cnt{
+      margin:0 0 20px;
     }
-    .inno_grid_title .in_cnt p,.dt_cnt p{
-      line-height: 24px;
-      margin: 0;
+    .inno_grid_title + .inno_grid_cnt {
+      margin-top: 10px;
     }
-    .inno_cls {
-      display: flex;
-      flex-wrap: wrap;
+    .inno_grid_title:first-child {
+      margin-top: 10px;
     }
-    .inno_cls figure {
-      width: 30.44%;
-      margin: 0;
-    }
-    .inno_cls .inno_inner {
-      width: 69.56%;
-      background: #F9F9F9;
-      padding: 15px;
+    .inno_grid_title .in_cnt p, .dt_cnt p {
+      font-size:14px;
+      line-height: 20px;
     }
     .inno_inner .dt_title {
-      font-family: var(--font-stack-body);
-      font-size: 18px;
-      line-height: 26px;
-      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 4px;
     }
-    @media screen and (max-width:1399px){
-      {% comment %} innovation section {% endcomment %}
-      .inno_grid{
-        column-gap:30px;
+  }
+{% endstyle %}
+
+
+{% schema %}
+  {
+    "name": "Innovation section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" },
+          { "value": "wrapper--narrow", "label": "Page width narrow" }
+        ]
       }
-    }
-    @media screen and (max-width:1199px){
-      {% comment %} innovation section {% endcomment %}
-      .inno_grid {
-        column-gap: 30px;
+    ],
+    "blocks":[
+      {
+        "name":"Systems",
+        "type":"systems",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "system_img",
+            "label": "System Image"
+          },
+          {
+            "type": "url",
+            "id": "system_txt_url",
+            "label": "System text url"
+          },
+          {
+            "type": "text",
+            "id": "system_txt",
+            "label": "System text"
+          },
+          {
+            "type": "richtext",
+            "id": "system_cnt",
+            "label": "System content"
+          }
+        ]
+      },
+      {
+        "name":"Title",
+        "type":"title",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "cnt",
+            "label": "Content"
+          }
+        ]
       }
-      .inno_grid_title {
-        grid-column: span 2;
+    ],
+    "presets":[
+      {
+        "name": "Innovation section"
       }
-    }
-    @media screen and (max-width:767px){
-      {% comment %} image with title section {% endcomment %}
-      body.page--innovations .banner-inner.align--middle-center{
-        align-items: flex-end;
-        justify-content: flex-end;
-        text-align: left;
-      }
-      body.page--innovations .image-with-title-section .banner__description p{
-        font-size: 14px;
-        line-height: 20px;
-      }
-      {% comment %} innovation section {% endcomment %}
-      .inno_grid_title {
-        grid-column: span 1;
-        padding: 10px 0 20px;
-      }
-      .inno_grid_title .in_title {
-        font-size: 24px;
-        line-height: 32px;
-      }
-      .inno_grid_cnt{
-        margin:0 0 20px;
-      }
-      .inno_grid_title + .inno_grid_cnt {
-        margin-top: 10px;
-      }
-      .inno_grid_title:first-child {
-        margin-top: 10px;
-      }
-      .inno_grid_title .in_cnt p, .dt_cnt p {
-        font-size:14px;
-        line-height: 20px;
-      }
-      .inno_inner .dt_title {
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 4px;
-      }
-    }
-  {% endstyle %}
-  
-  
-  {% schema %}
-    {
-      "name": "Innovation section",
-      "settings": [
-        {
-          "type": "header",
-          "content": "Section spacing"
-        },
-        {
-          "type": "select",
-          "id": "width",
-          "label": "Width",
-          "default": "wrapper",
-          "options": [
-            { "value": "wrapper--full-padded", "label": "Full width padded" },
-            { "value": "wrapper", "label": "Page width" },
-            { "value": "wrapper--narrow", "label": "Page width narrow" }
-          ]
-        }
-      ],
-      "blocks":[
-        {
-          "name":"Systems",
-          "type":"systems",
-          "settings": [
-            {
-              "type": "image_picker",
-              "id": "system_img",
-              "label": "System Image"
-            },
-            {
-              "type": "color",
-              "id": "system_txt_clr",
-              "label": "System text color",
-              "default": "#176295"
-            },
-            {
-              "type": "text",
-              "id": "system_txt",
-              "label": "System text"
-            },
-            {
-              "type": "richtext",
-              "id": "system_cnt",
-              "label": "System content"
-            }
-          ]
-        },
-        {
-          "name":"Title",
-          "type":"title",
-          "settings": [
-            {
-              "type": "text",
-              "id": "title",
-              "label": "Title"
-            },
-            {
-              "type": "richtext",
-              "id": "cnt",
-              "label": "Content"
-            }
-          ]
-        }
-      ],
-      "presets":[
-        {
-          "name": "Innovation section"
-        }
-      ]
-    }
-  {% endschema %}
+    ]
+  }
+{% endschema %}
   

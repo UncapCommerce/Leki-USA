@@ -1,306 +1,306 @@
 {%- liquid
-    assign layout = section.settings.layout
-    assign image_location = section.settings.image_location
-    assign image_width = section.settings.image_width
-    assign section_width = section.settings.section_width
-    assign image = section.settings.image
-    assign text_alignment = section.settings.text_alignment
-    assign title = section.settings.title
-    assign heading_size = section.settings.heading_size | times: 0.01
-    assign text_content = section.settings.text_content
-    assign button_text = section.settings.button_text
-    assign items_layout_class = ''
-    assign id = 'ImageWithText--' | append: section.id
-    assign selector_id = '#' | append: id
-    assign animation_anchor = selector_id
-    assign animations_enabled = settings.animations_enabled
-    assign animation_delay = 150
-  
-    case text_alignment
-     when 'left'
-      assign text_alignment_class = 'text-left'
-     when 'center'
-      assign text_alignment_class = 'text-center'
-     when 'right'
-      assign text_alignment_class = 'text-right'
-    endcase
-  
-    case layout
-      when 'inline'
-        case image_location
-          when 'left'
-            assign items_layout_class = items_layout_class | append: ' image-with-text__items--inline-left'
-          when 'right'
-            assign items_layout_class = items_layout_class | append: ' image-with-text__items--inline-right'
-        endcase
-      when 'overlay'
-        case image_location
-          when 'left'
-            assign items_layout_class = items_layout_class | append: ' image-with-text__items--overlay-left'
-          when 'right'
-            assign items_layout_class = items_layout_class | append: ' image-with-text__items--overlay-right'
-        endcase
-    endcase
-  
-    case image_width
-      when 'extra-narrow'
-        assign image_width_class = 'image-with-text--image-thirty'
-      when 'narrow'
-        assign image_width_class = 'image-with-text--image-forty'
-      when 'standard'
-        assign image_width_class = 'image-with-text--image-fifty'
-      when 'wide'
-        assign image_width_class = 'image-with-text--image-sixty'
-      when 'extra-wide'
-        assign image_width_class = 'image-with-text--image-seventy'
-    endcase
-  -%}
-  
-  {%- style -%}
-    {{ selector_id }} {
-      --PT: {{ section.settings.padding_top }}px;
-      --PB: {{ section.settings.padding_bottom }}px;
-    }
-    {{ selector_id }} .image-with-text__heading {
-      --adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ heading_size }});
-    }
-    @media screen and (max-width:1399px){
-      
-    }
-    @media screen and (max-width:767px){
-      
-    }
-  {%- endstyle -%}
-  
-  {%- capture content -%}
-    {%- if title != blank -%}
-      <h3 class="image-with-text__heading h1{% if has_text_highlight %} {{ text_highlight_wrapper_class }}{% endif %}"
+  assign layout = section.settings.layout
+  assign image_location = section.settings.image_location
+  assign image_width = section.settings.image_width
+  assign section_width = section.settings.section_width
+  assign image = section.settings.image
+  assign text_alignment = section.settings.text_alignment
+  assign title = section.settings.title
+  assign heading_size = section.settings.heading_size | times: 0.01
+  assign text_content = section.settings.text_content
+  assign button_text = section.settings.button_text
+  assign items_layout_class = ''
+  assign id = 'ImageWithText--' | append: section.id
+  assign selector_id = '#' | append: id
+  assign animation_anchor = selector_id
+  assign animations_enabled = settings.animations_enabled
+  assign animation_delay = 150
+
+  case text_alignment
+   when 'left'
+    assign text_alignment_class = 'text-left'
+   when 'center'
+    assign text_alignment_class = 'text-center'
+   when 'right'
+    assign text_alignment_class = 'text-right'
+  endcase
+
+  case layout
+    when 'inline'
+      case image_location
+        when 'left'
+          assign items_layout_class = items_layout_class | append: ' image-with-text__items--inline-left'
+        when 'right'
+          assign items_layout_class = items_layout_class | append: ' image-with-text__items--inline-right'
+      endcase
+    when 'overlay'
+      case image_location
+        when 'left'
+          assign items_layout_class = items_layout_class | append: ' image-with-text__items--overlay-left'
+        when 'right'
+          assign items_layout_class = items_layout_class | append: ' image-with-text__items--overlay-right'
+      endcase
+  endcase
+
+  case image_width
+    when 'extra-narrow'
+      assign image_width_class = 'image-with-text--image-thirty'
+    when 'narrow'
+      assign image_width_class = 'image-with-text--image-forty'
+    when 'standard'
+      assign image_width_class = 'image-with-text--image-fifty'
+    when 'wide'
+      assign image_width_class = 'image-with-text--image-sixty'
+    when 'extra-wide'
+      assign image_width_class = 'image-with-text--image-seventy'
+  endcase
+-%}
+
+{%- style -%}
+  {{ selector_id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  {{ selector_id }} .image-with-text__heading {
+    --adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ heading_size }});
+  }
+  @media screen and (max-width:1399px){
+    
+  }
+  @media screen and (max-width:767px){
+    
+  }
+{%- endstyle -%}
+
+{%- capture content -%}
+  {%- if title != blank -%}
+    <h3 class="image-with-text__heading h1{% if has_text_highlight %} {{ text_highlight_wrapper_class }}{% endif %}"
+      {% if animations_enabled %}
+        data-aos="fade-up"
+        data-aos-anchor="{{ animation_anchor }}"
+        data-aos-delay="{{ animation_delay }}"
+        {%- assign animation_delay = animation_delay | plus: 150 -%}
+      {% endif %}>
+      {%- render 'title-with-highlights',
+        title: title
+      -%}
+    </h3>
+
+    {%- if settings.show_spacer_lines -%}
+      <hr
+        {% if animations_enabled %}
+          data-aos="fade-up"
+          data-aos-delay="{{ animation_delay }}"
+          data-aos-anchor="{{ animation_anchor }}"
+        {% endif %}>
+      {%- assign animation_delay = animation_delay | plus: 150 -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if button_text != blank -%}
+    <div class="image-with-text__buttons main-buttons">
+      <div class="main-buttons__item"
         {% if animations_enabled %}
           data-aos="fade-up"
           data-aos-anchor="{{ animation_anchor }}"
           data-aos-delay="{{ animation_delay }}"
           {%- assign animation_delay = animation_delay | plus: 150 -%}
         {% endif %}>
-        {%- render 'title-with-highlights',
-          title: title
-        -%}
-      </h3>
-  
-      {%- if settings.show_spacer_lines -%}
-        <hr
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-delay="{{ animation_delay }}"
-            data-aos-anchor="{{ animation_anchor }}"
-          {% endif %}>
-        {%- assign animation_delay = animation_delay | plus: 150 -%}
-      {%- endif -%}
-    {%- endif -%}
-    {%- if button_text != blank -%}
-      <div class="image-with-text__buttons main-buttons">
-        <div class="main-buttons__item"
-          {% if animations_enabled %}
-            data-aos="fade-up"
-            data-aos-anchor="{{ animation_anchor }}"
-            data-aos-delay="{{ animation_delay }}"
-            {%- assign animation_delay = animation_delay | plus: 150 -%}
-          {% endif %}>
-          <div class="btn">{{ button_text }}</div>
-        </div>
-      </div>
-    {%- endif -%}
-    {%- if text_content != blank -%}
-      <div class="image-with-text__text"
-        {% if animations_enabled %}
-          data-aos="fade-up"
-          data-aos-anchor="{{ animation_anchor }}"
-          data-aos-delay="{{ animation_delay }}"
-          {%- assign animation_delay = animation_delay | plus: 150 -%}
-        {% endif %}>{{ text_content | newline_to_br }}</div>
-    {%- endif -%}
-  {%- endcapture -%}
-  
-  {%- liquid
-    if content == blank
-      assign items_layout_class = items_layout_class | append: ' image-with-text__items--no-content'
-    endif
-  -%}
-  
-  <section id="{{ id }}"
-    class="history_img_section section-padding image-with-text {{ image_width_class }}"
-    data-section-id="{{ section.id }}"
-    data-section-type="image-with-text"
-    data-prevent-transparent-header>
-    <div class="image-with-text__wrapper">
-      <div class="{{ section_width }}">
-        <div class="image-with-text__items {{ items_layout_class }}">
-          <div class="image-with-text__image">
-            {%- assign animation_delay = 150 -%}
-  
-            {%- capture image_attributes -%}
-              {% if animations_enabled %}
-                data-aos="fade"
-                data-aos-anchor="{{ animation_anchor }}"
-                data-aos-delay="{{ animation_delay }}"
-              {% endif %}
-            {%- endcapture -%}
-  
-            {%- render 'image-fill', is_background: true, img_object: image, image_attributes: image_attributes, classes: 'image-with-text__image-bg', placeholder_svg: 'lifestyle-1' -%}
-          </div>
-  
-          {%- unless content == blank -%}
-            <div class="image-with-text__content {{ text_alignment_class }}"
-              {% if animations_enabled %}
-                data-aos="fade-up"
-                data-aos-anchor="{{ animation_anchor }}"
-              {% endif %}>
-              <div class="image-with-text__content-items">
-                {{- content -}}
-              </div>
-            </div>
-          {%- endunless -%}
-        </div>
+        <div class="hs_btn">{{ button_text }}</div>
       </div>
     </div>
-  </section>
-  
-  {% schema %}
-  {
-      "name": "History image",
-      "class": "transparent-header",
-      "settings": [
-        {
-          "type": "header",
-          "content": "Layout"
-        },
-        {
-          "type": "select",
-          "id": "layout",
-          "label": "Layout style",
-          "default": "inline",
-          "options": [
-            { "label": "Inline", "value": "inline" },
-            { "label": "Overlay", "value": "overlay" }
-          ]
-        },
-        {
-          "type": "select",
-          "id": "image_location",
-          "label": "Image position",
-          "default": "left",
-          "options": [
-            { "value": "left", "label": "Left" },
-            { "value": "right", "label": "Right" }
-          ]
-        },
-        {
-          "type": "select",
-          "id": "image_width",
-          "label": "Image width",
-          "default": "standard",
-          "info": "Only applies to the 'inline' layout",
-          "options": [
-            { "value": "extra-narrow", "label": "Extra narrow" },
-            { "value": "narrow", "label": "Narrow" },
-            { "value": "standard", "label": "Standard" },
-            { "value": "wide", "label": "Wide" },
-            { "value": "extra-wide", "label": "Extra wide" }
-          ]
-        },
-        {
-          "type": "header",
-          "content": "Image"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "header",
-          "content": "Text"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading"
-        },
-        {
-          "type": "range",
-          "id": "heading_size",
-          "label": "Heading size",
-          "min": 100,
-          "max": 200,
-          "step": 10,
-          "default": 130,
-          "unit": "%"
-        },
-        {
-          "type": "header",
-          "content": "Button"
-        },
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Text"
-        },
-        {
-          "type": "textarea",
-          "id": "text_content",
-          "label": "Text"
-        },
-        {
-          "type": "select",
-          "id": "text_alignment",
-          "label": "Text justification",
-          "default": "left",
-          "options": [
-            { "value": "left", "label": "Left" },
-            { "value": "center", "label": "Center" },
-            { "value": "right", "label": "Right" }
-          ]
-        },
-        {
-          "type": "header",
-          "content": "Section spacing"
-        },
-        {
-          "type": "select",
-          "id": "section_width",
-          "label": "Width",
-          "default": "wrapper",
-          "options": [
-            { "value": "wrapper--full", "label": "Full width" },
-            { "value": "wrapper--full-padded", "label": "Full width padded" },
-            { "value": "wrapper", "label": "Page width" }
-          ]
-        },
-        {
-          "type": "range",
-          "id": "padding_top",
-          "min": 0,
-          "max": 100,
-          "step": 2,
-          "unit": "px",
-          "label": "Padding top",
-          "default": 60
-        },
-        {
-          "type": "range",
-          "id": "padding_bottom",
-          "min": 0,
-          "max": 100,
-          "step": 2,
-          "unit": "px",
-          "label": "Padding bottom",
-          "default": 60
-        }
-      ],
-      "presets": [
-        {
-          "name": "History image",
-          "category": "Image"
-        }
-      ]
-  }
-  {% endschema %}
+  {%- endif -%}
+  {%- if text_content != blank -%}
+    <div class="image-with-text__text"
+      {% if animations_enabled %}
+        data-aos="fade-up"
+        data-aos-anchor="{{ animation_anchor }}"
+        data-aos-delay="{{ animation_delay }}"
+        {%- assign animation_delay = animation_delay | plus: 150 -%}
+      {% endif %}>{{ text_content | newline_to_br }}</div>
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- liquid
+  if content == blank
+    assign items_layout_class = items_layout_class | append: ' image-with-text__items--no-content'
+  endif
+-%}
+
+<section id="{{ id }}"
+  class="history_img_section section-padding image-with-text {{ image_width_class }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="image-with-text"
+  data-prevent-transparent-header>
+  <div class="image-with-text__wrapper">
+    <div class="{{ section_width }}">
+      <div class="image-with-text__items {{ items_layout_class }}">
+        <div class="image-with-text__image">
+          {%- assign animation_delay = 150 -%}
+
+          {%- capture image_attributes -%}
+            {% if animations_enabled %}
+              data-aos="fade"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+            {% endif %}
+          {%- endcapture -%}
+
+          {%- render 'image-fill', is_background: true, img_object: image, image_attributes: image_attributes, classes: 'image-with-text__image-bg', placeholder_svg: 'lifestyle-1' -%}
+        </div>
+
+        {%- unless content == blank -%}
+          <div class="image-with-text__content {{ text_alignment_class }}"
+            {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+            {% endif %}>
+            <div class="image-with-text__content-items">
+              {{- content -}}
+            </div>
+          </div>
+        {%- endunless -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+    "name": "History image",
+    "class": "transparent-header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout style",
+        "default": "inline",
+        "options": [
+          { "label": "Inline", "value": "inline" },
+          { "label": "Overlay", "value": "overlay" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "image_location",
+        "label": "Image position",
+        "default": "left",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "right", "label": "Right" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "image_width",
+        "label": "Image width",
+        "default": "standard",
+        "info": "Only applies to the 'inline' layout",
+        "options": [
+          { "value": "extra-narrow", "label": "Extra narrow" },
+          { "value": "narrow", "label": "Narrow" },
+          { "value": "standard", "label": "Standard" },
+          { "value": "wide", "label": "Wide" },
+          { "value": "extra-wide", "label": "Extra wide" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Heading size",
+        "min": 100,
+        "max": 200,
+        "step": 10,
+        "default": 130,
+        "unit": "%"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Text"
+      },
+      {
+        "type": "textarea",
+        "id": "text_content",
+        "label": "Text"
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text justification",
+        "default": "left",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "section_width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full", "label": "Full width" },
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      }
+    ],
+    "presets": [
+      {
+        "name": "History image",
+        "category": "Image"
+      }
+    ]
+}
+{% endschema %}  
