@@ -24990,6 +24990,7 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
 .search_filters .search_filter{color: var(--COLOR-BLACK);}
 .search_bar {background: none repeat scroll 0 0 #F9F9F9 !important;border: none !important;padding: 0 !important;margin-bottom: 83px !important;}
 .search_bar button {font-size: 14px !important;line-height: 20px !important;background: #27304A !important;box-shadow: none !important;border-radius: 30px !important;width: 206px !important;}
+.search_filters .search_filter {margin-right: 75px!important;width: 184px!important;padding: 0 0 10px!important; }
 
 /* ----------- Athletes Page ---------- */
 .athletes-main-wrap {display: grid;grid-template-columns: 1fr 1fr 1fr 1fr;column-gap: 20px;row-gap: 80px;}
@@ -25382,6 +25383,7 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   .template-customers-order .product-detail{ gap: 11px;}
   .template-customers-order .order-details > div {width: 218.8px;}
   .shopify-policy__container {padding: 0 16px !important;}
+  .search_filters .search_filter { margin-right: 65px!important;}
 }
 @media(max-width: 991px){  
   #gloves-adviser-drawer{width: 700px;}
@@ -25615,6 +25617,7 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   .page--wallpapers .banner-inner.align--middle-center{align-items: flex-end;justify-content: flex-end;text-align: left;}
   .wallpaper-grid-inner:last-child .wallpaper-content:last-child {padding: 0;}
   .wallpaper-content figure{padding-bottom: 59.4%;}
+  .page--sustainability .slide__text__wrapper .slide__heading.main-heading {font-size: 40px;line-height: 52px;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}
@@ -25644,6 +25647,12 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   .template-customers-order .order-details>div {width: 95px;}
   .featured-collection .section__heading {font-size: 20px;line-height: 28px;}
   .search_bar .main_search_bar input, .search_bar .search_within_distance select, .search_bar .search_limit select{max-width: 70px;width: 70px;}
+}
+@media(max-width: 350px){
+  .page--sustainability .slide__text__wrapper .slide__heading.main-heading{
+    font-size: 36px;
+    line-height: 48px;
+  }
 }
 .pole-adviser-drawer #category {
   display: none;
@@ -25690,26 +25699,3 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
 }
   .variant--unavailabe .product__submit__add { color: #fff;}
   .variant--unavailabe .product__submit__add:hover{ color: #fff; }
-  .search_filters .search_filter {
-    margin-right: 75px!important;
-    width: 184px!important;
-    padding: 0 0 10px!important;
-}
-@media (max-width: 1023px){
-.search_filters .search_filter {
-    margin-right: 65px!important;
-}
-}
-
-@media(max-width: 767px){
-  .page--sustainability .slide__text__wrapper .slide__heading.main-heading{
-    font-size: 40px;
-    line-height: 52px;
-  }
-}
-@media(max-width: 350px){
-  .page--sustainability .slide__text__wrapper .slide__heading.main-heading{
-    font-size: 36px;
-    line-height: 48px;
-  }
-}

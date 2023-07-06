@@ -60,10 +60,10 @@
               {%- assign country_title = block.settings.title -%}
               {%- assign country_image = block.settings.country_image -%}
               {%- if catt == block.settings.category -%}
-                {% if block.settings.language_title_link_main != blank and block.settings.language_title_option %}
-                  <a href="{{block.settings.language_title_link_main }}">
-                {% endif %}
                 <div class="contry_main">
+                  {% if block.settings.language_title_link_main != blank and block.settings.language_title_option %}
+                    <a href="{{block.settings.language_title_link_main }}">
+                  {% endif %}
                   <div class="country_desc">
                     {%- if country_image != blank -%}
                       <div class="country_image">
