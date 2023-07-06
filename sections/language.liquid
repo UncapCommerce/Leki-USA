@@ -39,13 +39,6 @@
       {%- for block in section.blocks -%}
         {% assign count = count | plus: 1 %}
       {% endfor %}
-      <div class="flag-title-icon {% if count > 10 %} column{% endif %}">
-        {% for block in section.blocks %}
-          <div class="flag_main">
-            {{block.settings.category}}
-          </div>
-        {% endfor %}
-      </div>
       <div
         class="flag-title-icon {% if count > 10 %} column{% endif %}" style="display: none;"
       >
@@ -55,13 +48,14 @@
         {%- endfor -%}
         {% assign category_list = category_arry_new | split: ',' | uniq %}
         {%- for catt in category_list -%}
+          <div class="flag_main {{ category }}">
           {%- assign category = '' -%}
           {% for block in section.blocks %}
             {% if catt == block.settings.category %}
               {%- assign category = block.settings.category -%}
             {% endif %}
           {% endfor %}
-          <div class="flag_main {{ category }}">
+         
             <h4>{{ category }}</h4>
             {%- for block in section.blocks -%}
               {%- assign country_title = block.settings.title -%}
@@ -125,8 +119,8 @@
                 </div>
               {% endif %}
             {% endfor %}
-          </div>
         {% endfor %}
+      </div>
       </div>
     </div>
   </div>

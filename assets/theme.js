@@ -6618,10 +6618,10 @@
           this.build(cleanResponse);
 
           this.updateItemsQuantity(this.cartItemCount);
-          if (document.querySelectorAll(".cart-count-bubble span") != null) {
-            let getBubble = document.querySelectorAll(".cart-count-bubble span");
+          if (document.querySelectorAll(".cart-count-bubble") != null) {
+            let getBubble = document.querySelectorAll(".cart-count-bubble");
             getBubble.forEach((cartCount) => {
-              cartCount.innerHTML = this.cartItemCount;
+              cartCount.innerHTML ="<span>" +  this.cartItemCount + "</span>";
               if (this.cartItemCount > 0) {
                 cartCount.style.display = "flex";
               } else {
