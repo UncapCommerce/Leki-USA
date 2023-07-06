@@ -6618,8 +6618,8 @@
           this.build(cleanResponse);
 
           this.updateItemsQuantity(this.cartItemCount);
-          if (document.querySelectorAll(".cart-count-bubble") != null) {
-            let getBubble = document.querySelectorAll(".cart-count-bubble");
+          if (document.querySelectorAll(".cart-count-bubble span") != null) {
+            let getBubble = document.querySelectorAll(".cart-count-bubble span");
             getBubble.forEach((cartCount) => {
               cartCount.innerHTML = this.cartItemCount;
               if (this.cartItemCount > 0) {
@@ -17583,5 +17583,11 @@ function filterClickButton()  {
     document.querySelector('.height').style.borderColor = 'red';
   }
 };
-
 /* Pole Length Advisor Calculator End */
+
+// cart count bubble css class
+if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+  document.body.classList.add('mac');
+} else {
+  document.body.classList.add('windows');
+}

@@ -4396,23 +4396,37 @@ hr.hr--full {
   text-align: center;
 }
 .cart-count-bubble {
-  font-weight: 600;
+  color: #fff;
   font-size: 10px;
   line-height: 14px;
+  position: absolute;
+  top: -4px;
+  bottom: auto;
+  left: auto;
+  right: -6px;
+  text-align: center;
   background: #E4032E;
+  border-radius: 50%;
   height: 15px;
   width: 15px;
-  color: #fff;
-  border-radius: 50%;
+  font-weight: 600;
   display: flex;
-  align-items: center;
+  display: -ms-flexbox;    
+  display: -moz-box; 
   justify-content: center;
-  position: absolute;
-  top: 0;
-  right: -6px;
-  padding-top: 3px;
+  -webkit-justify-content: center;
 }
-a.navlink.navlink--icon.cart__toggle.cart__toggle.cart-toggle-has-items .cart-count-bubble{margin: auto;bottom: 0;top: -12px;right: -6px;}
+.cart-count-bubble span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.mac .cart-count-bubble span {
+  padding-top: 2px;
+}
+/* a.navlink.navlink--icon.cart__toggle.cart__toggle.cart-toggle-has-items .cart-count-bubble{margin: auto;bottom: 0;top: -12px;right: -6px;} */
 @media only screen and (max-width: 1023px) {
   .cart-count-bubble{
     top: 5px;
@@ -25671,7 +25685,8 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
 }
 
 .radio__button {
-grid-column: auto;
-  grid-row: 1 span;}
+  grid-column: auto;
+  grid-row: 1 span;
+}
   .variant--unavailabe .product__submit__add { color: #fff;}
   .variant--unavailabe .product__submit__add:hover{ color: #fff; }
