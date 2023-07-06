@@ -459,6 +459,9 @@
     if (document.body.classList.contains('glove-drawer-active')) {
       document.body.classList.remove('glove-drawer-active');
     }
+    if (document.body.classList.contains('pole-drawer-active')) {
+      document.body.classList.remove('pole-drawer-active');
+    }
     if (timeout) {
       scrollLockTimer = setTimeout(removeScrollLock, timeout);
     } else {
