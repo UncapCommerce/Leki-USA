@@ -15,8 +15,8 @@
         "width": "wrapper--full-padded",
         "padding_top": 50,
         "padding_bottom": 30,
-        "tab_padding_top": 20,
-        "tab_padding_bottom": 0,
+        "tab_padding_top": 30,
+        "tab_padding_bottom": 30,
         "mob_padding_top": 30,
         "mob_padding_bottom": 30
       }
@@ -37,11 +37,11 @@
         "text_color": "text-light",
         "width": "wrapper--full-padded",
         "padding_top": 30,
-        "padding_bottom": 60,
-        "tab_padding_top": 60,
-        "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
-        "mob_padding_bottom": 60
+        "padding_bottom": 30,
+        "tab_padding_top": 20,
+        "tab_padding_bottom": 20,
+        "mob_padding_top": 16,
+        "mob_padding_bottom": 16
       }
     },
     "main": {
@@ -80,9 +80,9 @@
         "filters_open": true,
         "filter_mode": "default",
         "bg_color": "",
-        "padding_top": 0,
+        "padding_top": 30,
         "padding_bottom": 60,
-        "tab_padding_top": 20,
+        "tab_padding_top": 30,
         "tab_padding_bottom": 30,
         "mob_padding_top": 24,
         "mob_padding_bottom": 24
