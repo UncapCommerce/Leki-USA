@@ -37,9 +37,9 @@
         "text_color": "text-light",
         "width": "wrapper--full-padded",
         "padding_top": 30,
-        "padding_bottom": 60,
-        "tab_padding_top": 40,
-        "tab_padding_bottom": 40,
+        "padding_bottom": 30,
+        "tab_padding_top": 20,
+        "tab_padding_bottom": 20,
         "mob_padding_top": 16,
         "mob_padding_bottom": 16
       }
