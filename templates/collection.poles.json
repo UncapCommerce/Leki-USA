@@ -15,10 +15,10 @@
         "width": "wrapper--full-padded",
         "padding_top": 50,
         "padding_bottom": 30,
-        "tab_padding_top": 20,
-        "tab_padding_bottom": 0,
-        "mob_padding_top": 30,
-        "mob_padding_bottom": 30
+        "tab_padding_top": 30,
+        "tab_padding_bottom": 30,
+        "mob_padding_top": 24,
+        "mob_padding_bottom": 24
       }
     },
     "a82a41c2-decf-4424-93cf-a16ed7287d52": {
