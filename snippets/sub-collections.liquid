@@ -199,15 +199,15 @@
   endcapture
 -%}
 
-{% assign pageUrl = canonical_url | split: "/" | last %}
+{% assign pageUrl = collection.url | split: '/' | last %}
 {% assign thirdLevel = true %}
 {%- for link in linklists[settings.submenu_list].links -%}
-  {% for childlink in link.links %}     
-      {% assign childlink_handle = childlink.url | split: "/" | last %}
-      {% if childlink_handle == pageUrl %} {% assign thirdLevel = true %} {% endif %}
+  {% for childlink in link.links %}  
+      {% assign childlink_handle = childlink.url | split: "/" %}
+      {% if childlink_handle[2] == pageUrl %} {% assign thirdLevel = true %}{% endif %}    
     {% for grandchildlink in childlink.links %}
-      {% assign grandchild_title = grandchildlink.url | split: "/" | last %}  
-      {% if grandchild_title == pageUrl %}
+        {% assign grandchild_title = grandchildlink.url | split: "/" %}  
+      {% if grandchild_title[2] == pageUrl %}
         {% assign thirdLevel = false %} 
       {% endif %}
     {% endfor %}
@@ -244,14 +244,14 @@
       </div>
     {%- endif -%}
 
-    <div class="sub-collections-wrap">
+     <div class="sub-collections-wrap">
       {% for link in linklists[settings.submenu_list].links %}
-      {% assign firstLevel = link.url | split: "/" | last %}
+      {% assign firstLevel = link.url | split: "/" %}
         {% if link.links != blank %}
           {% for child_link in link.links %}
-          {% assign secondLevel = child_link.url | split: "/" | last %}
+          {% assign secondLevel = child_link.url | split: "/" %}
           {% assign secondLevelLink = child_link.url %}
-            {% if firstLevel == pageUrl %}
+            {% if firstLevel[2] == pageUrl %}
             {% assign collection_title = child_link.title %}
                 <div class="{{ item_class }}">
                   <a href="{{ secondLevelLink }}" class="list-collections__item__outer">      
@@ -281,7 +281,7 @@
                 </a>
               </div>
             {% endif %}        
-            {% if secondLevel == pageUrl %}
+            {% if secondLevel[2] == pageUrl %}
               {% if child_link.links != blank %}
                 {% for grandchild_link in child_link.links %}
                   {% assign collection_title = grandchild_link.title %}

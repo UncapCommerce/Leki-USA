@@ -6497,7 +6497,7 @@
             event.preventDefault();
            } 
         })
-      })
+      });
     }
 
     /**
@@ -17534,9 +17534,9 @@ function getfilterResult(url) {
 function filterClickButton()  {
   var height;
   if (document.querySelector('.height')) {
-    height = document.querySelector('.height').value;
+    height = document.querySelector('.height').value;   
   }
-  if (height) {
+  if (height >=75 && height <=230 ) {
     document.querySelectorAll('#skateroundedSize, #skateSize, #roundedSize, #calculatedSize').forEach(function(self){
       self.innerHTML = '';
     })
@@ -17584,6 +17584,7 @@ function filterClickButton()  {
     }
   } else {
     document.querySelector('.height').style.borderColor = 'red';
+    document.querySelector('.error-message').style.display = 'block';
   }
 };
 
@@ -17595,3 +17596,11 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
 } else {
   document.body.classList.add('windows');
 }
+
+document.querySelectorAll('.height').forEach(function(self){
+  self.addEventListener('keydown', function(event){
+     if(!(event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 )) {
+      event.preventDefault();
+     } 
+  })
+})

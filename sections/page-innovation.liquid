@@ -31,7 +31,11 @@
               {% endif %}
             </div>
           {%- when 'systems' -%}
-            <div class="inno_grid_cnt">
+            <div class="inno_grid_cnt" {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-delay="{{ animation_delay }}"
+                    {%- assign animation_delay = animation_delay | plus: 150 -%}
+                  {% endif %}>
               {% if block.settings.system_img != blank %}
                 <div class="inno_cls">
                   <figure>

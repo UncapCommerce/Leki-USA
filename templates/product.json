@@ -80,6 +80,7 @@
         },
         "product_accordions": {
           "type": "product_accordions",
+          "disabled": true,
           "settings": {
             "accordion_heading_1": "HIGHLIGHTS",
             "accordion_text_1": "",
@@ -101,13 +102,6 @@
             "accordion_text_5": "",
             "accordion_page_5": "",
             "metafield_content_5": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies<\/p>",
-            "padding_bottom": 24
-          }
-        },
-        "upsell": {
-          "type": "upsell",
-          "settings": {
-            "product_list": "{{ product.metafields.custom.buy_it_with.value }}",
             "padding_bottom": 24
           }
         },
@@ -143,6 +137,36 @@
             "text": "Share",
             "padding_bottom": 20
           }
+        },
+        "51be199f-9aa7-471d-8534-63ed199c945d": {
+          "type": "product_highlights",
+          "repeater": "{{ product.metafields.custom.highlights.value }}",
+          "settings": {
+            "highlights_accordion_title": "Highlights",
+            "high_title": "{{ block.repeater.highlight_title.value }}",
+            "high_image": "{{ block.repeater.image.value }}",
+            "high_subtitle": "{{ block.repeater.subtitle.value }}",
+            "high_content": "<p>{{ block.repeater.content | metafield_tag }}<\/p>"
+          }
+        },
+        "fda1bd93-8b92-4462-a98e-692774ffd01a": {
+          "type": "product_specifications",
+          "settings": {
+            "specifications_accordion_title": "Specifications"
+          }
+        },
+        "fe5be2d4-57a1-441a-9d0f-553073edc311": {
+          "type": "product_moreinfo",
+          "settings": {
+            "moreinfo_accordion_title": "More Info"
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "settings": {
+            "product_list": "{{ product.metafields.custom.buy_it_with.value }}",
+            "padding_bottom": 24
+          }
         }
       },
       "block_order": [
@@ -154,9 +178,12 @@
         "1e56ec34-f9bb-43ed-bf34-7a68bbec022d",
         "description",
         "product_accordions",
-        "upsell",
         "icon_row",
-        "share-button"
+        "share-button",
+        "51be199f-9aa7-471d-8534-63ed199c945d",
+        "fda1bd93-8b92-4462-a98e-692774ffd01a",
+        "fe5be2d4-57a1-441a-9d0f-553073edc311",
+        "upsell"
       ],
       "settings": {
         "product_sticky_enable": true,

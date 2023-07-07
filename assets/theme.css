@@ -4673,7 +4673,12 @@ hr.hr--full {
   transition: opacity 1s ease, height 0.5s ease, visibility 0s;
 }
 .product__accordion__content[data-collapsible-container].is-expanded {
-    margin-bottom: 40px;
+  margin-bottom: 50px;
+}
+@media(max-width: 767px){
+  .product__accordion__content[data-collapsible-container].is-expanded {
+    margin-bottom: 20px;
+  }
 }
 [data-collapsible-content] {
   overflow: hidden;
@@ -6994,7 +6999,7 @@ section:hover .flickity-enabled > .flickity-prev-next-button:not(:disabled):hove
   transform: scaleX(1);
 }
 .menu__item > .navlink {
-  min-height: 100%;
+/*   min-height: 100%; */
   margin-right: 15px;
 }
 
@@ -11619,7 +11624,11 @@ a.results-popular__link:hover {
 .cart__pair:empty {
   display: none;
 }
-
+@media(max-width: 575px){
+  .cart__pair .flickity-page-dots .dot{
+    margin: 0 8px 8px 0;
+  }
+}
 #dynamic-checkout-cart:empty {
   min-height: 0 !important;
 }
@@ -19751,7 +19760,6 @@ body.notification-visible .popup.popup--visible {
 .product__accordion {
   text-align: left;
   overflow: hidden;
-  border-bottom: 1px solid #E6E6E6;
 }
 
 .product__accordion__inner {
@@ -19778,6 +19786,8 @@ body.notification-visible .popup.popup--visible {
   background: transparent;
   border: 0;
   text-transform: uppercase;
+  border-bottom: 1px solid #E6E6E6;
+  border-radius: 0;
 }
 .product__accordion__title .icon {
   top: 0;
@@ -22453,6 +22463,9 @@ body.notification-visible .popup.popup--visible {
 .search-results__item__info {
   text-align: center;
 }
+#search-results .results__list.grid li {
+  position: relative;
+}
 
 /*================ Slideshow ================*/
 .slider {
@@ -24842,6 +24855,10 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .result-right-wrap {display: flex;flex-wrap: nowrap;gap: 20px;max-width: calc(100% - 268px);flex: 0 0 calc(100% - 268px);overflow-x: auto;}
 .result-right-wrap .grid .product-grid-item {width: 129px;max-width: 100%;flex: 0 0 auto;margin: 0;}
 .result-right-wrap .grid .product-grid-item__info,.result-right-wrap .product-grid-item__title {margin: 0;}
+.pole-size-advisor-result-wrapper .specification-list-item {display: none;}
+span.error-message {margin-top: 10px;color: red;}
+#pole-adviser-drawer span.error-message {margin: 0 0 10px;}
+.pole-size-advisor-result-wrapper .product-grid-item__inner{padding-top: 0;}
 
 /* ------------- glove size advisor page ------------ */
 .gloveSizeAdvisorForm {background: #FFFFFF;box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);padding: 60px;line-height: 0;color: var(--COLOR-BLACK);}
@@ -24892,7 +24909,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 form#CreateCustomer .btn {font-size: 18px;line-height: 26px;}
 form#RecoverCustomerPassword input {padding: 16px 20px;line-height: 24px;}
 form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size: 18px;line-height: 26px}
-.account__table__item.order-list .account__heading {font-weight: 600;font-size: 24px;line-height: 32px;color: var(--COLOR-BLACK);margin-bottom: 10px;}
+.account__table__item.order-list .account__heading {font-weight: 600;font-size: 24px;line-height: 32px;color: var(--COLOR-BLACK);margin-bottom: 0;}
 .account__table__item.order-list .table-wrap{border: 1px solid #ECECEB;background: #fff;padding: 40px;}
 .account__table__item.order-list .table-wrap table td, .account__table__item.order-list .table-wrap table th,.account__table__item.order-list .table-wrap table {border: none;padding: 0;}
 .account__table__item.order-list .table-wrap table th {font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);font-weight: 600;text-align: center;padding: 0 16px 22px;}
@@ -24948,7 +24965,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .cost-breakdown-right span {color: var(--COLOR-BLACK);}
 .cost-breakdown-right span.grand-total {font-size: 20px;line-height: 28px;font-weight: 600;}
 .order__item__title.order-detail-wrap table td .item-total,.account__table__item.order-list .table-wrap td.item-total {font-weight: 600;}
-.order-list-header {display: flex;align-items: center;justify-content: space-between;}
+.order-list-header {display: flex;align-items: center;justify-content: space-between;padding-bottom: 10px;}
 .order-list-header a {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
 .page--my-orders .order-detail-header {max-width: 100%;width: calc(100% - 310px);}
 .account-tab-item ul li.active {border-bottom: 2px solid var(--COLOR-RED);font-weight: 600;}
@@ -24968,7 +24985,7 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 #store-locator-title {font-size: 50px;line-height: 58px;color: var(--COLOR-BLACK);text-transform: uppercase;margin-bottom: 24px;}
 .addresses li a ,.addresses li a .name,.addresses li a span{color: var(--COLOR-BLACK) !important;}
 .addresses li a .name {font-size: 18px;line-height: 26px;}
-.addresses li {padding: 16px 20px !important;background-color: #ececeb !important;border: 1px solid var(--COLOR-RED) !important;margin-bottom: 16px;}
+.addresses li {padding: 16px 20px !important;background-color: #ececeb !important;border: none !important;margin-bottom: 16px;}
 .addresses li:last-child{margin:0;}
 #store_map{width: 59.2% !important;}
 .footer_html {display: none;}
@@ -24978,10 +24995,10 @@ form#RecoverCustomerPassword .btn {padding: 15px 20px;font-weight: 600;font-size
 .addresses .store_website, .store_website_container, .addresses .directions {margin-left: 0 !important;}
 .page--leki-usa #col-main {width: 1456px;max-width: 100%;margin: 0 auto;padding: 80px 16px;}
 .main_search_label{color: var(--COLOR-BLACK);font-size: 20px;line-height: 28px;font-weight: 600;width: auto !important;}
-input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-left: 12px;line-height: 24px;color: #A5A5A5;}
+input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-left: 12px;line-height: 24px;color: #A5A5A5;border-color: var(--COLOR-BLACK);}
 .search_bar{display: flex;align-items: center;flex-wrap: wrap;column-gap: 48px;}
 .search_limit_label, .main_search_label, .distance_label{font-size: 20px;line-height: 28px;color: var(--COLOR-BLACK);font-weight: 600;margin-right: 12px;}
-.search_bar .main_search_bar input, .search_bar .search_within_distance select, .search_bar .search_limit select{padding: 5px 16px;line-height: 24px;max-width: 105px;width: 105px;}
+.search_bar .main_search_bar input, .search_bar .search_within_distance select, .search_bar .search_limit select{padding: 5px 16px;line-height: 24px;max-width: 105px;width: 105px;border-color: var(--COLOR-BLACK);}
 .search_bar .main_search_bar {width: auto !important;}
 .search_bar .search_limit{min-width: auto !important;}
 .search_filters{width: 100%;margin: 22px 0 0 !important;padding-top: 22px !important;}
@@ -25052,6 +25069,7 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
 .comparable-product-item .comparable-btn {position: absolute;top: 8px;opacity:1;left: 8px;margin: 0;}
 .add-to-comparable[type=checkbox]:checked+label, .add-to-comparable[type=checkbox]:not(:checked)+label{color: var(--COLOR-BLACK);font-size: 12px !important;line-height: 16px !important;.}
 .add-to-comparable[type=checkbox]:checked+label:before, .add-to-comparable[type=checkbox]:not(:checked)+label:before{width: 16px !important;height: 16px !important;}
+.comparable-custom-action{z-index: 2 !important;}
 
 /* ------------ sponsorship page ----------- */
 .sponsorship-tabs ul {margin: 0;max-width: 671px;border-radius: 12px 12px 0 0;display: inline-block;vertical-align: middle;}
@@ -25132,6 +25150,11 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
 .wallpaper-details .detail-inner .right-detail a.btn svg {display: inline-block;vertical-align: -2px;height: 14px;width: 14px;margin-right: 5px;}
 .wallpaper-details .detail-inner .right-detail a.btn:hover svg path {stroke:  var(--COLOR-TEXT);}
 .page--wallpapers .text__content p {line-height: 24px;color: var(--COLOR-TEXT);}
+
+/* ----- product page accordion ----- */
+.product__block.upsell__products {padding-top: 40px;}
+.product__block.product__accordions {padding: 0;}
+.product__accordion__content.more-info[data-collapsible-container].is-expanded {padding-top: 20px;}
 
 @media(min-width: 767px){
 .comparable-container table.comparison-table tr:not(.product-table__group-cell) td:first-child:not(.product-table__cell-keys) {padding-left: 0 !important;}
@@ -25593,7 +25616,7 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   .result-left-wrap .btn{width: auto;}
   .order-detail-header{padding: 0 20px;}  
   .page--my-orders .account__table__item.account-details {margin: 0 12px;}
-  .template-customers-login .wrapper {padding: 0 25px;}
+  .template-customers-login .wrapper {padding: 10px 20px;}
   .remember-text input[type=checkbox] {margin: 0 6px 2px 0;}
   .glove-size-chart .size-chart-inner table td.title:empty {display: none;}
   .page--leki-usa #col-main{padding: 40px 16px;}
@@ -25618,6 +25641,7 @@ input#address_search {max-width: 190px;width: 190px;padding: 5px 16px;margin-lef
   .wallpaper-grid-inner:last-child .wallpaper-content:last-child {padding: 0;}
   .wallpaper-content figure{padding-bottom: 59.4%;}
   .page--sustainability .slide__text__wrapper .slide__heading.main-heading {font-size: 40px;line-height: 52px;}
+  .page--create-account .page-customer .wrapper {padding: 10px 20px;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}

@@ -79,7 +79,7 @@
   {% else %}
     data-hover-disclosure-toggle
   {% endif %}>
-  <a href="{{ link.url }}" data-top-link class="navlink navlink--toplevel {% if link.current %}active{% endif %} {% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
+  <a href="{{ link.url }}" data-top-link class="navlink navlink--toplevel {% if link.current %}active{% endif %} {% if link.child_active %}child-active{% endif %}{% if highlight_item == link_title_lowercase %} navlink--highlight{% endif %}">
     <span class="navtext">{{ link_title }}</span>
   </a>
   {%- if expands -%}

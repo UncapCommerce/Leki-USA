@@ -80,6 +80,7 @@
         },
         "product_accordions": {
           "type": "product_accordions",
+          "disabled": true,
           "settings": {
             "accordion_heading_1": "HIGHLIGHTS",
             "accordion_text_1": "",
@@ -101,13 +102,6 @@
             "accordion_text_5": "",
             "accordion_page_5": "",
             "metafield_content_5": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies<\/p>",
-            "padding_bottom": 24
-          }
-        },
-        "upsell": {
-          "type": "upsell",
-          "settings": {
-            "product_list": "{{ product.metafields.custom.buy_it_with.value }}",
             "padding_bottom": 24
           }
         },
@@ -143,6 +137,36 @@
             "text": "Share",
             "padding_bottom": 20
           }
+        },
+        "23c44872-81a1-42ef-a8b7-819d66a0d46f": {
+          "type": "product_highlights",
+          "repeater": "{{ product.metafields.custom.highlights.value }}",
+          "settings": {
+            "highlights_accordion_title": "Highlights",
+            "high_title": "{{ block.repeater.highlight_title.value }}",
+            "high_image": "{{ block.repeater.image.value }}",
+            "high_subtitle": "{{ block.repeater.subtitle.value }}",
+            "high_content": "<p>{{ block.repeater.content | metafield_tag }}<\/p>"
+          }
+        },
+        "760b06dc-130b-4162-838e-bf86cdee9a8b": {
+          "type": "product_specifications",
+          "settings": {
+            "specifications_accordion_title": "Specifications"
+          }
+        },
+        "de2d470a-e4e4-4657-84f5-0710aa688ee7": {
+          "type": "product_moreinfo",
+          "settings": {
+            "moreinfo_accordion_title": "More Info"
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "settings": {
+            "product_list": "{{ product.metafields.custom.buy_it_with.value }}",
+            "padding_bottom": 24
+          }
         }
       },
       "block_order": [
@@ -154,9 +178,12 @@
         "1e56ec34-f9bb-43ed-bf34-7a68bbec022d",
         "description",
         "product_accordions",
-        "upsell",
         "icon_row",
-        "share-button"
+        "share-button",
+        "23c44872-81a1-42ef-a8b7-819d66a0d46f",
+        "760b06dc-130b-4162-838e-bf86cdee9a8b",
+        "de2d470a-e4e4-4657-84f5-0710aa688ee7",
+        "upsell"
       ],
       "settings": {
         "product_sticky_enable": true,
@@ -189,7 +216,7 @@
         "text_content": "Skiing is one of the most popular winter sports activities. In addition to skis and poles, the basic equipment also includes ski gloves. Our gloves ensure optimal well-being and warm hands even on icy days. Discover our wide range of gloves for women, men and children.",
         "text_alignment": "center",
         "button_text": "Show all ski gloves",
-        "button_link": "#",
+        "button_link": "shopify:\/\/collections\/alpine-skiing-for-gloves",
         "button_style": "btn--secondary btn--small",
         "video_link": "",
         "text_color": "text-light",

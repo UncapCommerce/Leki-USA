@@ -73,6 +73,7 @@
         {% if settings.option-ten != blank %}<option value="{{ opt_10[3] | handle }}" data-title="{{ opt_10[0] | split: '|' }}" data-classic="{{ opt_10[1] }}" data-skate="{{ opt_10[2] }}" {% if prodCollHandle == opt_10[3] %}selected{% endif %}>{{ opt_10[0] }}</option>{% endif %}
       </select>
       <input type="number" class="form-control height" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
+      <span style="display: none;" class="error-message">Value must be greater than 75 and less than 230.</span>
       <input type="button" class="btn {{ pole_button_style }} pole_length_getter" onclick="filterClickButton(this)" value="{{ settings.pole_button_text }}">
       <div class="pole-information">    
         {%- render 'icon-info' -%}

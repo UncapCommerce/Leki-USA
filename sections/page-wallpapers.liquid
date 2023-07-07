@@ -14,10 +14,18 @@
         {%- case block.type -%}
           {%- when 'title' -%}
             <div class="wallpaper-grid-inner-title">
-              <h2>{{ block.settings.wallpaper_category }}</h2>
+              <h2 {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-delay="{{ animation_delay }}"
+                    {%- assign animation_delay = animation_delay | plus: 150 -%}
+                  {% endif %}>{{ block.settings.wallpaper_category }}</h2>
             </div>
           {%- when 'wallpaper' -%}
-            <div class="wallpaper-grid-inner">
+            <div class="wallpaper-grid-inner" {% if animations_enabled %}
+                    data-aos="fade-up"
+                    data-aos-delay="{{ animation_delay }}"
+                    {%- assign animation_delay = animation_delay | plus: 150 -%}
+                  {% endif %}>
               {% if block.settings.wallpaper_img != blank %}
                 <div class="wallpaper-content">
                   <figure>

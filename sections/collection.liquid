@@ -114,13 +114,13 @@
   }
 {%- endstyle -%}
 
-{% assign pageUrl = collection.handle %}
+{% assign pageUrl = collection.url | split: '/' | last %}
 {% assign thirdLevel = true %}
-{%- for link in linklists['mega-menu'].links -%}
+{%- for link in linklists[settings.submenu_list].links -%}
   {% for childlink in link.links %}
     {% for grandchildlink in childlink.links %}
-      {% assign grandchild_title = grandchildlink.title | handle %}
-      {% if grandchild_title == pageUrl %}
+      {% assign grandchild_handle = grandchildlink.url | split: '/' %}
+      {% if grandchild_handle[2] == pageUrl %}
         {% assign thirdLevel = false %}
       {% endif %}
     {% endfor %}

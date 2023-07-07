@@ -1,31 +1,38 @@
 {% style %}
-  .languages-modal{position:fixed;left:0;top:0;height:100%;background-color:rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:scale(1.1);transition:visibility 0s linear .25s,opacity .25s 0s,transform .25s;border-radius:0}
-  .languages-modal.show-modal{opacity:1;visibility:visible;width:100%;transform:scale(1);transition:visibility 0s linear 0s,opacity .25s 0s,transform .25s;z-index:999}
-  .languages-modal .modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:#fff;padding:1.25rem 5rem;max-width:1000px;border-radius:0.5rem;width:100%}
-  .languages-modal .close-button{float:right;width:1.5rem;font-size:1.2em;line-height:1;padding:0 .2em .15em;text-align:center;cursor:pointer;border-radius:0.25rem;transition:color .12s ease-in-out}
-  .languages-modal .modal_inner{padding:0}
-  .languages-modal .modal-content{overflow:auto}
-  .flag-title-icon.column{column-count:3;padding:1.25rem 0}
-  .country_image{margin-right:.625rem;border:1px solid #27304a;height:22px;width:30px;border-radius:0.1875rem;margin-top:0;-ms-flex-negative:0;flex-shrink:0;white-space:nowrap;overflow:hidden;display:inline-block}
-  .country_image img{height:22px;width:30px}
-  .country_desc{font-weight:700;display:-webkit-flex;display:flex;-ms-flex-align:center;align-items:center;margin-top:1.25rem;font-size:.875rem;white-space:normal;text-align:left;cursor:pointer}
-  .languages-modal .modal-content p{margin:0;padding:0}
-  .flag_main .contry_main:last-child{margin-bottom:2.5rem}
-  .modal_title_btn{padding:1.25rem 0}
-  .show_language_type{overflow:hidden;transition:.4s cubic-bezier(.4, 0, .2, 1);transition-property:opacity,height;will-change:opacity,contents;max-height:0;opacity:0}
-  .contry_main.is-open .show_language_type{max-height:150px;opacity:1}
-  .show_language_type ul{display:-webkit-flex;display:flex;list-style:none;margin-bottom:0;margin-left:0;padding:0}
-  .show_language_type ul li a{display:inline-block;padding:5px .625rem 15px;color:#27304a;text-decoration:none;background-color:transparent;text-transform:uppercase}
-  .show_language_type ul li:before{content:"|";position:relative;left:0;top:0;color:rgba(0,0,0,.2)}
-  .show_language_type ul li:first-child:before{content:unset}
-  .show_language_type ul li a:hover{color:#0d1018;text-decoration:underline}
-  .modal_title_btn{display:flex;justify-content:space-between;align-items:baseline}
-  .countries .country_image{background-color:#006aa7;background-position:center}
-    @media(max-width:991px){
-      .languages-modal .modal-content {padding: 20px;max-width:90%;}
-      .flag-title-icon.column{column-count: 2;}
-      .flag_main.North.America {padding-top: 2.5rem;}
-    }
+    .languages-modal{position:fixed;left:0;top:0;height:100%;background-color:rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:scale(1.1);transition:visibility 0s linear .25s,opacity .25s 0s,transform .25s;border-radius:0}
+    .languages-modal.show-modal{opacity:1;visibility:visible;width:100%;transform:scale(1);transition:visibility 0s linear 0s,opacity .25s 0s,transform .25s;z-index:999}
+    .languages-modal .modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:#fff;padding:1.25rem 5rem;max-width:1000px;border-radius:0.5rem;width:100%}
+    .languages-modal .close-button{float:right;width:1.5rem;font-size:1.2em;line-height:1;padding:0 .2em .15em;text-align:center;cursor:pointer;border-radius:0.25rem;transition:color .12s ease-in-out}
+    .languages-modal .modal_inner{padding:0}
+    .languages-modal .modal-content{overflow:auto}
+    .flag-title-icon.column{padding:1.25rem 0;display:flex;flex-wrap: wrap;}
+    .col-6.col-md-3 {
+      flex: 0 0 33.3%;
+      max-width: 33.33%;
+  }
+    .country_image{margin-right:.625rem;border:1px solid #27304a;height:22px;width:30px;border-radius:0.1875rem;margin-top:0;-ms-flex-negative:0;flex-shrink:0;white-space:nowrap;overflow:hidden;display:inline-block}
+    .country_image img{height:22px;width:30px}
+    .country_desc{font-weight:700;display:-webkit-flex;display:flex;-ms-flex-align:center;align-items:center;margin-top:1.25rem;font-size:.875rem;white-space:normal;text-align:left;cursor:pointer}
+    .languages-modal .modal-content p{margin:0;padding:0}
+    .flag_main .contry_main:last-child{margin-bottom:2.5rem}
+    .modal_title_btn{padding:1.25rem 0}
+    .show_language_type{overflow:hidden;transition:.4s cubic-bezier(.4, 0, .2, 1);transition-property:opacity,height;will-change:opacity,contents;max-height:0;opacity:0}
+    .contry_main.is-open .show_language_type{max-height:150px;opacity:1}
+    .show_language_type ul{display:-webkit-flex;display:flex;list-style:none;margin-bottom:0;margin-left:0;padding:0}
+    .show_language_type ul li a{display:inline-block;padding:5px .625rem 15px;color:#27304a;text-decoration:none;background-color:transparent;text-transform:uppercase}
+    .show_language_type ul li:before{content:"|";position:relative;left:0;top:0;color:rgba(0,0,0,.2)}
+    .show_language_type ul li:first-child:before{content:unset}
+    .show_language_type ul li a:hover{color:#0d1018;text-decoration:underline}
+    .modal_title_btn{display:flex;justify-content:space-between;align-items:baseline}
+    .countries .country_image{background-color:#006aa7;background-position:center}
+       .languages-modal .modal-content {max-height: 80%;overflow: auto;}
+      @media(max-width:991px){
+        .languages-modal .modal-content {padding: 20px;max-width:90%;}
+        .col-6.col-md-3:last-child{padding-top: 2.5rem;max-width: 100%;flex: none;width: 100%;display: flex;    flex-wrap: wrap;}
+      .col-6.col-md-3:last-child  .flag_main{flex: 0 0 50%;max-width:50%;}
+      .col-6.col-md-3 {flex: 0 0 50%;max-width:50%;}
+
+      }
 {% endstyle %}
 
 <div class="languages-modal">
@@ -36,8 +43,12 @@
         <button class="close-btn">{% render 'icon-close' %}</button>
       </div>
       {% assign count = 0 %}
+      {% assign blockCount = 0 %}
       {%- for block in section.blocks -%}
         {% assign count = count | plus: 1 %}
+        {% if block.settings.category == 'Europe' %}
+          {% assign blockCount = blockCount | plus: 1 %}
+        {% endif %}
       {% endfor %}
       <div
         class="flag-title-icon {% if count > 10 %} column{% endif %}"
@@ -48,77 +59,161 @@
         {%- endfor -%}
         {% assign category_list = category_arry_new | split: ',' | uniq %}
         {%- for catt in category_list -%}
-          {%- assign category = '' -%}
-          {% for block in section.blocks %}
-            {% if catt == block.settings.category %}
-              {%- assign category = block.settings.category -%}
-            {% endif %}
-          {% endfor %}
-          <div class="flag_main {{ category }}">
-            <h4>{{ category }}</h4>
-            {%- for block in section.blocks -%}
-              {%- assign country_title = block.settings.title -%}
-              {%- assign country_image = block.settings.country_image -%}
-              {%- if catt == block.settings.category -%}
-                <div class="contry_main">
-                  {% if block.settings.language_title_link_main != blank and block.settings.language_title_option %}
-                    <a href="{{block.settings.language_title_link_main }}">
-                  {% endif %}
-                  <div class="country_desc">
-                    {%- if country_image != blank -%}
-                      <div class="country_image">
-                        <img src="{{ country_image | image_url }}" alt="country_image">
+          {% if forloop.first %}
+            {% for i in (0..1) %}
+              <div class="col-6 col-md-3">
+                <div class="flag_main {{ catt }}">
+                  <h4>
+                    {% if forloop.first %}{{ catt }}{% else %}&nbsp;{% endif %}
+                  </h4>
+                  {% assign blockdivide = blockCount | divided_by: 2 %}
+                  {% assign blockoffset = forloop.index0 | times: blockdivide %}
+                  {%- for block in section.blocks limit: blockdivide offset: blockoffset -%}
+                    {%- assign country_title = block.settings.title -%}
+                    {%- assign country_image = block.settings.country_image -%}
+                    {%- if catt == block.settings.category -%}
+                      <div class="contry_main">
+                        {% if block.settings.language_title_link_main != blank
+                          and block.settings.language_title_option
+                        %}
+                          <a href="{{block.settings.language_title_link_main }}">
+                        {% endif %}
+                        <div class="country_desc">
+                          {%- if country_image != blank -%}
+                            <div class="country_image">
+                              <img src="{{ country_image | image_url }}" alt="country_image">
+                            </div>
+                          {% endif %}
+                          {%- if country_title != blank -%}
+                            <div class="country_name">
+                              <span>
+                                {{ country_title }}
+                              </span>
+                            </div>
+                          {% endif %}
+                        </div>
+                        {% if block.settings.language_title_link_main != blank
+                          and block.settings.language_title_option
+                        %}
+                          </a>
+                        {% endif %}
+                        {% unless block.settings.language_title_link_main != blank
+                          and block.settings.language_title_option
+                        %}
+                          <div class="show_language_type">
+                            <ul>
+                              {%- if block.settings.language_title != blank -%}
+                                <li>
+                                  <a href="{{block.settings.language_title_link_one }}">
+                                    {{- block.settings.language_title -}}
+                                  </a>
+                                </li>
+                              {% endif %}
+                              {%- if block.settings.language_title_two != blank -%}
+                                <li>
+                                  <a href="{{block.settings.language_title_link_two }}">
+                                    {{ block.settings.language_title_two }}
+                                  </a>
+                                </li>
+                              {% endif %}
+                              {% if block.settings.language_title_three != blank %}
+                                <li>
+                                  <a href="{{block.settings.language_title_link_three }}">
+                                    {{ block.settings.language_title_three }}
+                                  </a>
+                                </li>
+                              {% endif %}
+                              {% if block.settings.language_title_link_four != blank %}
+                                <li>
+                                  <a href="{{block.settings.language_title_link_four }}">
+                                    {{ block.settings.language_title_four }}
+                                  </a>
+                                </li>
+                              {% endif %}
+                            </ul>
+                          </div>
+                        {% endunless %}
                       </div>
                     {% endif %}
-                    {%- if country_title != blank -%}
-                      <div class="country_name">
-                        <span>
-                          {{ country_title }}
-                        </span>
-                      </div>
-                    {% endif %}
-                  </div>
-                  {% if block.settings.language_title_link_main != blank and block.settings.language_title_option %}
-                    </a>
-                  {% endif %}
-                  {% unless block.settings.language_title_link_main != blank and block.settings.language_title_option %}
-                    <div class="show_language_type">
-                      <ul>
-                        {%- if block.settings.language_title != blank -%}
-                          <li>
-                            <a href="{{block.settings.language_title_link_one }}">
-                              {{- block.settings.language_title -}}
-                            </a>
-                          </li>
-                        {% endif %}
-                        {%- if block.settings.language_title_two != blank -%}
-                          <li>
-                            <a href="{{block.settings.language_title_link_two }}">
-                              {{ block.settings.language_title_two }}
-                            </a>
-                          </li>
-                        {% endif %}
-                        {% if block.settings.language_title_three != blank %}
-                          <li>
-                            <a href="{{block.settings.language_title_link_three }}">
-                              {{ block.settings.language_title_three }}
-                            </a>
-                          </li>
-                        {% endif %}
-                        {% if block.settings.language_title_link_four != blank %}
-                          <li>
-                            <a href="{{block.settings.language_title_link_four }}">
-                              {{ block.settings.language_title_four }}
-                            </a>
-                          </li>
-                        {% endif %}
-                      </ul>
-                    </div>
-                  {% endunless %}
+                  {% endfor %}
                 </div>
-              {% endif %}
+              </div>
             {% endfor %}
-          </div>
+          {% else %}
+            {% if forloop.index == 2 %}
+              <div class="col-6 col-md-3">
+            {% endif %}
+            <div class="flag_main {{ catt }}">
+              <h4>{{ catt }}</h4>
+              {%- for block in section.blocks -%}
+                {%- assign country_title = block.settings.title -%}
+                {%- assign country_image = block.settings.country_image -%}
+                {%- if catt == block.settings.category -%}
+                  <div class="contry_main">
+                    {% if block.settings.language_title_link_main != blank and block.settings.language_title_option %}
+                      <a href="{{block.settings.language_title_link_main }}">
+                    {% endif %}
+                    <div class="country_desc">
+                      {%- if country_image != blank -%}
+                        <div class="country_image">
+                          <img src="{{ country_image | image_url }}" alt="country_image">
+                        </div>
+                      {% endif %}
+                      {%- if country_title != blank -%}
+                        <div class="country_name">
+                          <span>
+                            {{ country_title }}
+                          </span>
+                        </div>
+                      {% endif %}
+                    </div>
+                    {% if block.settings.language_title_link_main != blank and block.settings.language_title_option %}
+                      </a>
+                    {% endif %}
+                    {% unless block.settings.language_title_link_main != blank
+                      and block.settings.language_title_option
+                    %}
+                      <div class="show_language_type">
+                        <ul>
+                          {%- if block.settings.language_title != blank -%}
+                            <li>
+                              <a href="{{block.settings.language_title_link_one }}">
+                                {{- block.settings.language_title -}}
+                              </a>
+                            </li>
+                          {% endif %}
+                          {%- if block.settings.language_title_two != blank -%}
+                            <li>
+                              <a href="{{block.settings.language_title_link_two }}">
+                                {{ block.settings.language_title_two }}
+                              </a>
+                            </li>
+                          {% endif %}
+                          {% if block.settings.language_title_three != blank %}
+                            <li>
+                              <a href="{{block.settings.language_title_link_three }}">
+                                {{ block.settings.language_title_three }}
+                              </a>
+                            </li>
+                          {% endif %}
+                          {% if block.settings.language_title_link_four != blank %}
+                            <li>
+                              <a href="{{block.settings.language_title_link_four }}">
+                                {{ block.settings.language_title_four }}
+                              </a>
+                            </li>
+                          {% endif %}
+                        </ul>
+                      </div>
+                    {% endunless %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% if forloop.last %}
+              </div>
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </div>
     </div>
@@ -176,104 +271,104 @@
 
 {% schema %}
 {
-   "name": "Language",
-   "class": "language-list",
-   "settings": [
+ "name": "Language",
+ "class": "language-list",
+ "settings": [
+  {
+    "type": "header",
+    "content": "Modal Title"
+    },
     {
-      "type": "header",
-      "content": "Modal Title"
+        "type": "text",
+        "id": "modal_title",
+        "label": "Modal Title"
+    }
+ ],
+"blocks":[
+  {
+    "name": "Text",
+    "type": "text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "category",
+        "label": "Category"
       },
       {
-          "type": "text",
-          "id": "modal_title",
-          "label": "Modal Title"
+        "type": "text",
+        "id": "title",
+        "label": "Country Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "country_image",
+        "label": "Country  Flag Image"
+      },
+      {
+         "type": "checkbox",
+        "id": "language_title_option",
+        "label": "Language Title Link",
+        "default": false,
+        "info":  "This link work when option is not available"
+      },
+      {
+        "type": "url",
+        "id": "language_title_link_main",
+        "label": "Language Title Link",
+        "info":  "This link work when above checkbox is checked and option is not available "
+      },
+      {
+      "type": "header",
+      "content": "language option"
+      },
+      {
+        "type": "text",
+        "id": "language_title",
+        "label": "Language Title One"
+      },
+      {
+        "type": "url",
+        "id": "language_title_link_one",
+        "label": "Language Title One Link"
+      },
+       {
+        "type": "text",
+        "id": "language_title_two",
+        "label": "Language Title Two"
+      },
+       {
+        "type": "url",
+        "id": "language_title_link_two",
+        "label": "Language Title Two Link"
+      },
+       {
+        "type": "text",
+        "id": "language_title_three",
+        "label": "Language Title Three"
+      },
+      {
+        "type": "url",
+        "id": "language_title_link_three",
+        "label": "Language Title Three Link"
+      },
+       {
+        "type": "text",
+        "id": "language_title_four",
+        "label": "Language Title Four"
+      },
+      {
+        "type": "url",
+        "id": "language_title_link_four",
+        "label": "Language Title four Link"
       }
-   ],
-  "blocks":[
-    {
-      "name": "Text",
-      "type": "text",
-      "settings": [
-        {
-          "type": "text",
-          "id": "category",
-          "label": "Category"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Country Title"
-        },
-        {
-          "type": "image_picker",
-          "id": "country_image",
-          "label": "Country  Flag Image"
-        },
-        {
-           "type": "checkbox",
-          "id": "language_title_option",
-          "label": "Language Title Link",
-          "default": false,
-          "info":  "This link work when option is not available"
-        },
-        {
-          "type": "url",
-          "id": "language_title_link_main",
-          "label": "Language Title Link",
-          "info":  "This link work when above checkbox is checked and option is not available "
-        },
-        {
-        "type": "header",
-        "content": "language option"
-        },
-        {
-          "type": "text",
-          "id": "language_title",
-          "label": "Language Title One"
-        },
-        {
-          "type": "url",
-          "id": "language_title_link_one",
-          "label": "Language Title One Link"
-        },
-         {
-          "type": "text",
-          "id": "language_title_two",
-          "label": "Language Title Two"
-        },
-         {
-          "type": "url",
-          "id": "language_title_link_two",
-          "label": "Language Title Two Link"
-        },
-         {
-          "type": "text",
-          "id": "language_title_three",
-          "label": "Language Title Three"
-        },
-        {
-          "type": "url",
-          "id": "language_title_link_three",
-          "label": "Language Title Three Link"
-        },
-         {
-          "type": "text",
-          "id": "language_title_four",
-          "label": "Language Title Four"
-        },
-        {
-          "type": "url",
-          "id": "language_title_link_four",
-          "label": "Language Title four Link"
-        }
-      ]
-    }
-  ],
-   "presets":[
-     {
-      "name": "Language",
-      "category": "Text"
-     }
-   ]
- }
+    ]
+  }
+],
+ "presets":[
+   {
+    "name": "Language",
+    "category": "Text"
+   }
+ ]
+}
 {% endschema %}

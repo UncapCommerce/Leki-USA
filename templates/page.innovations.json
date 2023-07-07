@@ -46,7 +46,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/trigger_3d.png",
-            "system_txt_clr": "#176295",
+            "system_txt_url": "https:\/\/www.youtube.com\/watch?v=JNDwgegeuU8",
             "system_txt": "Trigger 3D",
             "system_cnt": "<p>Our Trigger System has been defining the market since 1999. In 2020, LEKI once again upgraded this proven technology. A three-dimensional release provides even more control, comfort and safety on the slopes!<\/p>"
           }
@@ -55,7 +55,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/airgon.png",
-            "system_txt_clr": "#176295",
+            "system_txt_url": "https:\/\/www.youtube.com\/watch?v=s7js_-_XEUw&t=1s",
             "system_txt": "Aergon Air",
             "system_cnt": "<p>The ergonomic shape and cavity technology of the Aergon Air ensures maximum comfort and absolute control while hiking. The rubberized grip head provides maximum grip when going downhill.<\/p>"
           }
@@ -64,7 +64,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/trail.png",
-            "system_txt_clr": "#176295",
+            "system_txt_url": "https:\/\/www.youtube.com\/watch?v=AsgbOqArk4M&t=2s",
             "system_txt": "Trail Shark",
             "system_cnt": "<p>Every ounce counts when trail running. The Air Channel construction offers minimal weight and maximum stability. The Shark System also allows for easy clicking in and out in seconds.<\/p>"
           }
@@ -73,7 +73,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/cross.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Cross Shark",
             "system_cnt": "<p>The Cross Shark combines the advantages of a trail running grip with the advantages of a trekking grip. It combines the speed of the Shark System with an ergonomic support surface, making it ideal for fast mountain walking.<\/p>"
           }
@@ -82,7 +82,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/shark.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Shark 2.0",
             "system_cnt": "<p>Our Shark 2.0 is a versatile multi-sport grip. It offers perfect energy transfer and the easiest handling. It is therefore ideal for cross-country skiing and Nordic walking. This versatile grip has also proven effective in roller skiing and trail running.<\/p>"
           }
@@ -91,7 +91,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/nordic.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Nordic FRT",
             "system_cnt": "<p>There are few other sports in which the hand-pole connection is as important as in the Nordic disciplines. To achieve maximum energy transfer, the strap and grip must be precisely adapted to the runner. Our FRT system makes this precise adjustment possible.<\/p>"
           }
@@ -107,7 +107,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/push.png",
-            "system_txt_clr": "#176295",
+            "system_txt_url": "",
             "system_txt": "Push Button",
             "system_cnt": "<p>Our Push Button System allows folding poles to be quickly assembled and disassembled with the push of a button.<\/p>"
           }
@@ -116,7 +116,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/core_locking.png",
-            "system_txt_clr": "#176295",
+            "system_txt_url": "",
             "system_txt": "Core Locking Device",
             "system_cnt": "<p>Our Push Button System allows folding poles to be quickly assembled and disassembled with the push of a button.<\/p>"
           }
@@ -125,7 +125,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/external.png",
-            "system_txt_clr": "#176295",
+            "system_txt_url": "https:\/\/www.youtube.com\/watch?v=7dN2z4VoDoU",
             "system_txt": "External Locking Device",
             "system_cnt": "<p>Our ELD system allows folding poles to be quickly assembled and disassembled with the push of a button. The special construction of the release button provides even more stability.<\/p>"
           }
@@ -141,7 +141,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/speed.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Speed Lock",
             "system_cnt": "<p>The TÜV Süd-certified adjustment system works with an external clamp for easy adjustment and maximum holding power.<\/p>"
           }
@@ -150,7 +150,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/speed_lock.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Speed Lock Systems",
             "system_cnt": "<p>In recent years, we have further optimized the SLS. One modification is the loss-protection feature for the wheel and lever. Individual parts can still be easily replaced.<\/p>"
           }
@@ -159,7 +159,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/super_lock.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Super Lock",
             "system_cnt": "<p>The slim internal adjustment system guarantees maximum holding force. The 360° reverse rotation safety also ensures optimum stability.<\/p>"
           }
@@ -175,7 +175,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/get.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Fin Vario",
             "system_cnt": "<p>The Fin Vario basket exchange system allows you to adjust the basket size according to the condition of the trail. The S\/M cross-country basket is suitable for firm snow. For softer ground, we recommend the M\/L basket. The roller tip is optimal for the road.<\/p>"
           }
@@ -184,7 +184,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/smartip.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Smart Tip 2.0",
             "system_cnt": "<p>The redesigned Smart Tip is a true multi-terrain performer. The grippy pad provides the necessary grip for poles on asphalt paths. The integrated and extendable carbide tip also grips in meadows, mud and snow. The pad change feature works simply and without tools.<\/p>"
           }
@@ -193,7 +193,7 @@
           "type": "systems",
           "settings": {
             "system_img": "shopify:\/\/shop_images\/dynamic.png",
-            "system_txt_clr": "#27304a",
+            "system_txt_url": "",
             "system_txt": "Dynamic Suspension System",
             "system_cnt": "<p>The DSS is a vibration-absorbing construction made of elastomer material. According to a study by the University of Tübingen, DSS reduces impact forces by about 40 percent, thus relieving strain on muscles, joints and ligaments. The damping also makes it easier to control the use of the pole.<\/p>"
           }

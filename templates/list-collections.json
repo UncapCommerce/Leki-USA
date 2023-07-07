@@ -3,6 +3,24 @@
     "main": {
       "type": "list-collections",
       "settings": {
+        "layout": "carousel",
+        "columns": 6,
+        "image_size": 100,
+        "image_shape": "square",
+        "title": "Something for everyone",
+        "text_size": 100,
+        "overlay_text": false,
+        "layout_mobile": "carousel",
+        "columns_mobile": "2",
+        "bg_color_secondary": false,
+        "text_color": "text-dark",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     }
   },
