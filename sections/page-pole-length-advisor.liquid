@@ -174,7 +174,7 @@ data-section-id="{{ section.id }}">
               {%- assign animation_delay = animation_delay | plus: 150 -%}
             {% endif %}>
             <input type="number" class="form-control height" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
-            <span style="display: none;" class="error-message">Value must be greater than 75 and less than 230.</span>
+            <span style="display: none;" class="error-message">Value must be greater than or equal to 75 and less than or equal to 230.</span>
             </div>
           {% if settings.pole_button_text %}
             <div class="form__item" {% if animations_enabled %}

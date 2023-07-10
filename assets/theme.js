@@ -12072,7 +12072,7 @@
       this.searchInput.addEventListener(
         "input",
         debounce((event) => {
-          const val = event.target.value;
+          const val = event.target.value.trim();
           if (val && val.length > 1) {
             this.searchContainer.classList.add(
               classes$B.isSearching,
@@ -15156,16 +15156,17 @@
 
       if (items.length > 2) {
         const flktyUpsell = new Flickity(slider, {
-          contain: true,
+          contain: false,
           wrapAround: false,
           pageDots: true,
           adaptiveHeight: true,
           prevNextButtons: false,
           lazyLoad: true,
           freeScroll: true,
-          groupCells: 2,
+          groupCells: 1,
           groupCells: true,
-          infinite: false,
+          infinite: true,
+          loop: true,
         });
 
         flktyUpsell.on("change", (index) => {
@@ -17240,6 +17241,22 @@
       }
     }
 
+    // const accordionTitles = document.querySelectorAll(".accordion_inner-title");
+    
+    // accordionTitles.forEach((accordionTitle) => {
+    //   accordionTitle.addEventListener("click", () => {
+    //     if (accordionTitle.classList.contains("is-open")) {
+    //       accordionTitle.classList.remove("is-open");
+    //     } else {
+    //       const accordionTitlesWithIsOpen = document.querySelectorAll(".is-open");
+    //       accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
+    //           accordionTitleWithIsOpen.classList.remove("is-open");
+    //       });
+    //       accordionTitle.classList.add("is-open");
+    //     }
+    //   });
+    // });
+
     // pole advisor drawer
     if (document.querySelector(".pole-advisor") != null) {
       let pole_div = document.querySelectorAll(".pole-advisor");
@@ -17531,7 +17548,7 @@ function getfilterResult(url) {
       }
     });
 }
-function filterClickButton()  {
+function filterClickButton()  {  
   var height;
   if (document.querySelector('.height')) {
     height = document.querySelector('.height').value;   
@@ -17542,6 +17559,7 @@ function filterClickButton()  {
     })
     document.querySelector('.height').style.borderColor = '#E6E6E6';
     document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
+    document.querySelector('.error-message').style.display = 'none';
     var e = document.querySelector("#category");
     var value = e.options[e.selectedIndex].value;
     var classicValue = Number(e.options[e.selectedIndex].getAttribute('data-classic'));
@@ -17549,8 +17567,12 @@ function filterClickButton()  {
     var lowestValue = 80;
     var highestValue = 180;
     if (classicValue) {
-      var classicNumber = parseInt(height * classicValue);
-      document.querySelector('#calculatedSize').innerHTML = 'Classic ' + classicNumber;
+      var classicNumber = Number(height * classicValue).toFixed(1);
+      if(value == 'cross-country'){        
+        document.querySelector('#calculatedSize').innerHTML = 'Classic ' + classicNumber + ' cm';
+      }else{
+        document.querySelector('#calculatedSize').innerHTML = classicNumber + ' cm';
+      }
       var suggestionClassicNumber = 0;
       if (classicNumber > highestValue) {
         suggestionClassicNumber = highestValue;
@@ -17561,15 +17583,23 @@ function filterClickButton()  {
       else {
         suggestionClassicNumber = Math.round(classicNumber / 5) * 5;
       }
-      document.querySelector('#roundedSize').innerHTML = 'Classic ' + suggestionClassicNumber + 'cm';
+      if(value == 'cross-country'){        
+        document.querySelector('#roundedSize').innerHTML = 'Classic ' + suggestionClassicNumber + 'cm';
+      }else{
+        document.querySelector('#roundedSize').innerHTML = suggestionClassicNumber + 'cm';
+      }      
       var getCurrent = "/collections/"+ document.querySelector("#category").value +"?filter.v.option.size="+ suggestionClassicNumber +"+cm";
       document.querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
       document.querySelector('.result-btn a').setAttribute('href',getCurrent);
       getfilterResult(getCurrent);
     }
     if (skateValue) {
-      var skateNumber = parseInt(height * skateValue);
-      document.querySelector('#skateSize').innerHTML = 'Skate ' + skateNumber;
+      var skateNumber = Number(height * skateValue).toFixed(1);
+      if(value == 'cross-country'){        
+        document.querySelector('#skateSize').innerHTML = 'Skate ' + skateNumber + ' cm';
+      }else{
+        document.querySelector('#skateSize').innerHTML = skateNumber + ' cm';
+      }         
       var suggestionSkateNumber = 0;
       if (skateNumber > highestValue) {
         suggestionSkateNumber = highestValue;
@@ -17580,11 +17610,18 @@ function filterClickButton()  {
       else {
         suggestionSkateNumber = skateNumber;
       }
-      document.querySelector('#skateroundedSize').innerHTML = 'Skate ' + suggestionSkateNumber + 'cm';
+      if(value == 'cross-country'){        
+        document.querySelector('#skateroundedSize').innerHTML = 'Skate ' + suggestionSkateNumber + 'cm';
+      }else{
+        document.querySelector('#skateroundedSize').innerHTML = suggestionSkateNumber + 'cm';
+      }         
     }
   } else {
-    document.querySelector('.height').style.borderColor = 'red';
-    document.querySelector('.error-message').style.display = 'block';
+    if (height <= 75 || height >= 230 ){
+      document.querySelector('.height').style.borderColor = 'red';
+      document.querySelector('.error-message').style.display = 'block';
+      document.querySelector('#poleSizeCalculationResult').classList.add('hidden');
+    }
   }
 };
 
@@ -17597,9 +17634,10 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
   document.body.classList.add('windows');
 }
 
+// pole length advisor page height input js
 document.querySelectorAll('.height').forEach(function(self){
   self.addEventListener('keydown', function(event){
-     if(!(event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 )) {
+     if(!( event.keyCode === 8 || event.keyCode === 13 || event.keyCode === 17 || event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 91 || event.keyCode === 96 || event.keyCode === 97 || event.keyCode === 98 || event.keyCode === 99 || event.keyCode === 100 || event.keyCode === 101 || event.keyCode === 102 || event.keyCode === 103 || event.keyCode === 104 || event.keyCode === 105 )) {
       event.preventDefault();
      } 
   })

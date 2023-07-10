@@ -1100,7 +1100,7 @@
       {%- else -%}
         <div class="select__fieldset">
           <span class="radio__legend selector_mb">
-            <span class="radio__legend__label" id="onboarding-{{ section.id }}-option-1-label">Pole Length:<</span>
+            <span class="radio__legend__label" id="onboarding-{{ section.id }}-option-1-label">Pole Length:</span>
           </span>
 
           <div class="select-popout" data-popout data-popout-prevent="true">
@@ -1289,7 +1289,7 @@
                           <div class="inner_accordion">
                               {% if value.subtitle != blank %}
                                 <span class="accordion_inner-title">{{ value.subtitle }}
-                                  {%- render 'icon-arrow-up' -%}
+                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon-arrow-up" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.2859 14.7141L7.28591 10.7141C7.09761 10.5258 6.99182 10.2704 6.99182 10.0041C6.99182 9.73779 7.09761 9.48239 7.28591 9.29409C7.47421 9.10579 7.72961 9 7.99591 9C8.26221 9 8.5176 9.10579 8.70591 9.29409L11.9959 12.5941L15.2859 9.29409C15.4742 9.10579 15.7296 9 15.9959 9C16.1278 9 16.2583 9.02597 16.3802 9.07643C16.502 9.12689 16.6127 9.20085 16.7059 9.29409C16.7991 9.38733 16.8731 9.49802 16.9236 9.61984C16.974 9.74166 17 9.87223 17 10.0041C17 10.2704 16.8942 10.5258 16.7059 10.7141L12.7059 14.7141C12.6129 14.8078 12.5023 14.8822 12.3805 14.933C12.2586 14.9838 12.1279 15.0099 11.9959 15.0099C11.8639 15.0099 11.7332 14.9838 11.6113 14.933C11.4895 14.8822 11.3789 14.8078 11.2859 14.7141Z" fill="black"/></svg>
                                 </span>
                               {% endif %}
                               {% if value.content != blank or value.image != blank %}
@@ -1982,7 +1982,7 @@
               {%- assign current_value = current_variant.options[forloop.index0] -%}
               {% assign option_name = option.name | handle %}
               <fieldset class="radio__fieldset radio__fieldset--{{ settings.color_swatches_product_style }}">
-                <legend class="radio__legend {% if option_name contains 'size' %}selector_mb{% endif %}">
+                <div class="radio__legend {% if option_name contains 'size' %}selector_mb{% endif %}">
                   <span class="radio__legend__label">{% if option_name contains 'color' %}Colors: {% elsif option_name contains 'glove-size' and product.template_suffix == 'gloves' %}Glove Size: {% elsif option_name contains 'size' and product.type contains 'Accessories' %}Accessories Size: {% elsif option_name contains 'size' and product.type contains 'Poles' %}Pole Length: {% else %}{{ option.name | escape_once }}{% endif %}</span>
                   {% if option_name contains 'glove-size' and product.template_suffix == 'gloves' %}
                     <div class="glove-advisor size-advisor" onclick="gloveSize()"><span>Glove Size Advisor</span>
@@ -1999,7 +1999,7 @@
                     </div>  
                     {%- render 'pole-advisor-drawer' ,productCollections:product.collections  -%}
                   {% endif %}  
-                </legend>
+                </div>
                 {%- for value in option.values -%}
                   {%- capture input_id -%}{{ product.id }}-{{ option.name | escape_once }}-{{ value | escape_once }}{%- endcapture -%}
 
