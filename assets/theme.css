@@ -13329,6 +13329,7 @@ a.results-popular__link:hover {
   position: relative;
 }
 .collection__filters__reset::before {position: absolute;content: '';top: auto;bottom: 10px;left: 0;right: 0;height: 1px;width: 100%;background: var(--COLOR-BLACK);}
+.search-page .collection__filters__reset:before {bottom: 0;}
 .collection__filters__reset.is-visible {
   display: block;
 }
