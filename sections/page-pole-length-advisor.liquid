@@ -86,7 +86,7 @@ data-section-id="{{ section.id }}">
   <div class="poleLenght-bg">
   <div class="{{ section_width }}">
     <div class="poleLenght-form-wrapper {% if section.settings.polelength_bgimg != blank %}has-bg{% endif %}">
-      <form method="post" action="#" id="poleSizeAdvisorForm">
+      <div id="poleSizeAdvisorForm">
         {% if section.settings.title != blank %}
           <div class="form__item form__item--heading"
             {% if animations_enabled %}
@@ -212,7 +212,7 @@ data-section-id="{{ section.id }}">
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
   </div>

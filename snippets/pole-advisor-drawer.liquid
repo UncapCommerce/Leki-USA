@@ -6,7 +6,7 @@
   <div class="pole-inner-wrap">
     <h3>{{ settings.title }}</h3>
     <span>{{ settings.subtitle }}</span>
-    <form id="poleSizeAdvisorForm" method="post" action="#">
+    <div id="poleSizeAdvisorForm">
       {% assign opt_1 = settings.option-one | split: ', ' %}
       {% assign opt_2 = settings.option-two | split: ', ' %}
       {% assign opt_3 = settings.option-three | split: ', ' %}
@@ -79,7 +79,7 @@
         {%- render 'icon-info' -%}
         <span>You can adjust Vario-Poles to the exact length.</span>
       </div> 
-    </form>  
+    </div>  
     <div id="poleSizeCalculationResult" class="pole-size-advisor-result hidden">
       <div class="pole-size-advisor-result-wrapper">  
         <div class="result-left-wrap">
