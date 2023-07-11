@@ -17275,15 +17275,16 @@
     });
 
     // pole advisor drawer
-    if (document.querySelectorAll(".pole-advisor") != null) {
+     if (document.querySelector(".pole-advisor") != null) {
       let pole_div = document.querySelectorAll(".pole-advisor");
-      pole_div.forEach( poleDrawer => {
-        poleDrawer.addEventListener("click", (e) => {
-          console.log('e.currentTarget--',e.currentTarget);
+      pole_div.forEach((poleDrawer) => {
+        poleDrawer.addEventListener("click", () => {
           document.body.classList.add("pole-drawer-active");
         });
       });
-      let close_drawer = document.querySelector("#pole-adviser-drawer .pole-close .icon.icon-close");
+      let close_drawer = document.querySelector(
+        "#pole-adviser-drawer .pole-close .icon.icon-close"
+      );
       close_drawer.addEventListener("click", () => {
         document.body.classList.remove("pole-drawer-active");
       });
