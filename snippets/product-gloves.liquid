@@ -1285,8 +1285,8 @@
                           
                           <div class="inner_accordion">
                               {% if value.subtitle != blank %}
-                                <span class="accordion_inner-title">{{ value.subtitle }}
-                                  {%- render 'icon-arrow-up' -%}
+                                <span class="accordion_inner-title product_single_accordion">{{ value.subtitle }}
+                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon-arrow-up" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.2859 14.7141L7.28591 10.7141C7.09761 10.5258 6.99182 10.2704 6.99182 10.0041C6.99182 9.73779 7.09761 9.48239 7.28591 9.29409C7.47421 9.10579 7.72961 9 7.99591 9C8.26221 9 8.5176 9.10579 8.70591 9.29409L11.9959 12.5941L15.2859 9.29409C15.4742 9.10579 15.7296 9 15.9959 9C16.1278 9 16.2583 9.02597 16.3802 9.07643C16.502 9.12689 16.6127 9.20085 16.7059 9.29409C16.7991 9.38733 16.8731 9.49802 16.9236 9.61984C16.974 9.74166 17 9.87223 17 10.0041C17 10.2704 16.8942 10.5258 16.7059 10.7141L12.7059 14.7141C12.6129 14.8078 12.5023 14.8822 12.3805 14.933C12.2586 14.9838 12.1279 15.0099 11.9959 15.0099C11.8639 15.0099 11.7332 14.9838 11.6113 14.933C11.4895 14.8822 11.3789 14.8078 11.2859 14.7141Z" fill="black"/></svg>
                                 </span>
                               {% endif %}
                               {% if value.content != blank or value.image != blank %}
@@ -1327,7 +1327,7 @@
               {% if moreinfo_description != blank %}
               <div class="product__block product__accordions" {% if animations_enabled %} data-aos="fade-up" data-aos-anchor="{{ animation_anchor }}" data-aos-delay="{{ animation_delay }}" {%- assign animation_delay = animation_delay | plus: 150 -%} {% endif %} {{ block_style }} {{ block.shopify_attributes }}>
                 <div class="product__accordion">   
-                  <button class="product__accordion__title" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
+                  <button class="product__accordion__title product_single_accordion" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
                     {{ block.settings.moreinfo_accordion_title }}
                     {%- render 'icon-toggle-plus' -%}
                     {%- render 'icon-toggle-minus' -%}

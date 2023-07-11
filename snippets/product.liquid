@@ -1275,14 +1275,14 @@
                {% assign highlight_description = product.metafields.custom.highlights.value %}
                 <div class="product__accordion">
                 
-                  <button class="product__accordion__title" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
+                  <button class="product__accordion__title product_single_accordion" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}">
                     {{ block.settings.highlights_accordion_title }}
                     {%- render 'icon-toggle-plus' -%}
                     {%- render 'icon-toggle-minus' -%}
                   </button>
                 
                   <div class="product__accordion__content" id="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-container>      
-                    <div class="product__accordion__inner rte" data-collapsible-content>
+                    <div class="product__accordion__inner rte">
                       <div class="accordion_metafield-content">
                         {% for value in highlight_description %}
                           
@@ -1330,13 +1330,13 @@
               {% if moreinfo_description != blank %}
               <div class="product__block product__accordions" {% if animations_enabled %} data-aos="fade-up" data-aos-anchor="{{ animation_anchor }}" data-aos-delay="{{ animation_delay }}" {%- assign animation_delay = animation_delay | plus: 150 -%} {% endif %} {{ block_style }} {{ block.shopify_attributes }}>
                 <div class="product__accordion">   
-                  <button class="product__accordion__title" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
+                  <button class="product__accordion__title product_single_accordion" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}">
                     {{ block.settings.moreinfo_accordion_title }}
                     {%- render 'icon-toggle-plus' -%}
                     {%- render 'icon-toggle-minus' -%}
                   </button>
                 
-                  <div class="product__accordion__content more-info" id="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-container>      
+                  <div class="product__accordion__content more-info" id="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}">      
                     <div class="product__accordion__inner rte" data-collapsible-content>
                       <div class="accordion_metafield-content">                        
                         {% if moreinfo_description != blank %}
@@ -1989,15 +1989,13 @@
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M17.2204 6.37173L13.6283 2.77959C13.5396 2.69095 13.4344 2.62063 13.3186 2.57266C13.2028 2.52469 13.0787 2.5 12.9533 2.5C12.828 2.5 12.7039 2.52469 12.5881 2.57266C12.4723 2.62063 12.367 2.69095 12.2784 2.77959L2.77959 12.277C2.69095 12.3657 2.62063 12.4709 2.57266 12.5867C2.52469 12.7025 2.5 12.8266 2.5 12.952C2.5 13.0773 2.52469 13.2014 2.57266 13.3173C2.62063 13.4331 2.69095 13.5383 2.77959 13.6269L6.37173 17.219C6.46036 17.3077 6.56558 17.378 6.68138 17.426C6.79719 17.4739 6.92131 17.4986 7.04666 17.4986C7.17201 17.4986 7.29613 17.4739 7.41193 17.426C7.52774 17.378 7.63296 17.3077 7.72159 17.219L17.2204 7.72159C17.3091 7.63296 17.3794 7.52774 17.4273 7.41193C17.4753 7.29613 17.5 7.17201 17.5 7.04666C17.5 6.92131 17.4753 6.79719 17.4273 6.68138C17.3794 6.56558 17.3091 6.46036 17.2204 6.37173ZM16.6416 7.14279L7.14347 16.6402C7.1308 16.6529 7.11577 16.663 7.09921 16.6698C7.08266 16.6767 7.06492 16.6802 7.047 16.6802C7.02908 16.6802 7.01134 16.6767 6.99479 16.6698C6.97823 16.663 6.96319 16.6529 6.95053 16.6402L3.35839 13.0488C3.34571 13.0361 3.33566 13.0211 3.3288 13.0045C3.32193 12.988 3.3184 12.9702 3.3184 12.9523C3.3184 12.9344 3.32193 12.9167 3.3288 12.9001C3.33566 12.8836 3.34571 12.8685 3.35839 12.8558L5.6368 10.5774L7.52934 12.47C7.56679 12.5102 7.61195 12.5424 7.66212 12.5648C7.7123 12.5871 7.76646 12.5991 7.82139 12.6001C7.87631 12.6011 7.93087 12.591 7.9818 12.5704C8.03273 12.5498 8.079 12.5192 8.11785 12.4804C8.15669 12.4415 8.18731 12.3953 8.20788 12.3443C8.22846 12.2934 8.23856 12.2388 8.23759 12.1839C8.23662 12.129 8.2246 12.0748 8.20224 12.0246C8.17988 11.9745 8.14765 11.9293 8.10746 11.8919L6.21492 9.99932L7.8184 8.39584L9.71094 10.2884C9.78848 10.3606 9.89104 10.4 9.99701 10.3981C10.103 10.3962 10.2041 10.3533 10.279 10.2784C10.354 10.2034 10.3969 10.1023 10.3988 9.99633C10.4007 9.89036 10.3613 9.7878 10.2891 9.71026L8.39652 7.81772L10 6.21492L11.8925 8.10678C11.9701 8.17903 12.0726 8.21837 12.1786 8.2165C12.2846 8.21463 12.3857 8.1717 12.4606 8.09676C12.5356 8.02181 12.5785 7.9207 12.5804 7.81473C12.5823 7.70876 12.5429 7.6062 12.4707 7.52866L10.5788 5.63612L12.8565 3.35839C12.8692 3.34571 12.8842 3.33566 12.9008 3.3288C12.9173 3.32193 12.9351 3.3184 12.953 3.3184C12.9709 3.3184 12.9887 3.32193 13.0052 3.3288C13.0218 3.33566 13.0368 3.34571 13.0495 3.35839L16.6416 6.94985C16.6543 6.96251 16.6643 6.97755 16.6712 6.9941C16.6781 7.01066 16.6816 7.0284 16.6816 7.04632C16.6816 7.06424 16.6781 7.08198 16.6712 7.09853C16.6643 7.11508 16.6543 7.13012 16.6416 7.14279Z" fill="#3758B9"/>
                       </svg>
-                    </div>   
-                  {%- render 'glove-size-advisor-drawer' -%}
+                    </div>                     
                   {% elsif option_name contains 'size'  and product.type contains 'Poles'  %}
                     <div class="pole-advisor size-advisor" onclick="poleLength(this)"><span>Pole Advisor</span>
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M17.2204 6.37173L13.6283 2.77959C13.5396 2.69095 13.4344 2.62063 13.3186 2.57266C13.2028 2.52469 13.0787 2.5 12.9533 2.5C12.828 2.5 12.7039 2.52469 12.5881 2.57266C12.4723 2.62063 12.367 2.69095 12.2784 2.77959L2.77959 12.277C2.69095 12.3657 2.62063 12.4709 2.57266 12.5867C2.52469 12.7025 2.5 12.8266 2.5 12.952C2.5 13.0773 2.52469 13.2014 2.57266 13.3173C2.62063 13.4331 2.69095 13.5383 2.77959 13.6269L6.37173 17.219C6.46036 17.3077 6.56558 17.378 6.68138 17.426C6.79719 17.4739 6.92131 17.4986 7.04666 17.4986C7.17201 17.4986 7.29613 17.4739 7.41193 17.426C7.52774 17.378 7.63296 17.3077 7.72159 17.219L17.2204 7.72159C17.3091 7.63296 17.3794 7.52774 17.4273 7.41193C17.4753 7.29613 17.5 7.17201 17.5 7.04666C17.5 6.92131 17.4753 6.79719 17.4273 6.68138C17.3794 6.56558 17.3091 6.46036 17.2204 6.37173ZM16.6416 7.14279L7.14347 16.6402C7.1308 16.6529 7.11577 16.663 7.09921 16.6698C7.08266 16.6767 7.06492 16.6802 7.047 16.6802C7.02908 16.6802 7.01134 16.6767 6.99479 16.6698C6.97823 16.663 6.96319 16.6529 6.95053 16.6402L3.35839 13.0488C3.34571 13.0361 3.33566 13.0211 3.3288 13.0045C3.32193 12.988 3.3184 12.9702 3.3184 12.9523C3.3184 12.9344 3.32193 12.9167 3.3288 12.9001C3.33566 12.8836 3.34571 12.8685 3.35839 12.8558L5.6368 10.5774L7.52934 12.47C7.56679 12.5102 7.61195 12.5424 7.66212 12.5648C7.7123 12.5871 7.76646 12.5991 7.82139 12.6001C7.87631 12.6011 7.93087 12.591 7.9818 12.5704C8.03273 12.5498 8.079 12.5192 8.11785 12.4804C8.15669 12.4415 8.18731 12.3953 8.20788 12.3443C8.22846 12.2934 8.23856 12.2388 8.23759 12.1839C8.23662 12.129 8.2246 12.0748 8.20224 12.0246C8.17988 11.9745 8.14765 11.9293 8.10746 11.8919L6.21492 9.99932L7.8184 8.39584L9.71094 10.2884C9.78848 10.3606 9.89104 10.4 9.99701 10.3981C10.103 10.3962 10.2041 10.3533 10.279 10.2784C10.354 10.2034 10.3969 10.1023 10.3988 9.99633C10.4007 9.89036 10.3613 9.7878 10.2891 9.71026L8.39652 7.81772L10 6.21492L11.8925 8.10678C11.9701 8.17903 12.0726 8.21837 12.1786 8.2165C12.2846 8.21463 12.3857 8.1717 12.4606 8.09676C12.5356 8.02181 12.5785 7.9207 12.5804 7.81473C12.5823 7.70876 12.5429 7.6062 12.4707 7.52866L10.5788 5.63612L12.8565 3.35839C12.8692 3.34571 12.8842 3.33566 12.9008 3.3288C12.9173 3.32193 12.9351 3.3184 12.953 3.3184C12.9709 3.3184 12.9887 3.32193 13.0052 3.3288C13.0218 3.33566 13.0368 3.34571 13.0495 3.35839L16.6416 6.94985C16.6543 6.96251 16.6643 6.97755 16.6712 6.9941C16.6781 7.01066 16.6816 7.0284 16.6816 7.04632C16.6816 7.06424 16.6781 7.08198 16.6712 7.09853C16.6643 7.11508 16.6543 7.13012 16.6416 7.14279Z" fill="#3758B9"/>
                       </svg>
-                    </div>  
-                    {%- render 'pole-advisor-drawer' ,productCollections:product.collections  -%}
+                    </div>                      
                   {% endif %}  
                 </div>
                 {%- for value in option.values -%}
@@ -2182,6 +2180,17 @@
           </div>
         </div>
       {%- endform -%}
+
+      {%- for option in product.options_with_values -%}
+      {% assign option_handle = option.name | handle %}      
+        {% if option_handle contains 'size' and product.type contains 'Poles' %}
+          {%- render 'pole-advisor-drawer' ,productCollections:product.collections  -%}
+        {% endif %}
+        {% if option_handle contains 'size' and product.template_suffix == 'gloves' %}
+          {%- render 'glove-size-advisor-drawer' -%}
+        {% endif %}
+      {% endfor %}
+      
 
       <script type="application/json" id="ProductJson-{{ unique }}" data-product-json>{{ product | json }}</script>
       <script type="application/json" id="ModelJson-{{ unique }}">{{ product.media | where: 'media_type', 'model' | json }}</script>

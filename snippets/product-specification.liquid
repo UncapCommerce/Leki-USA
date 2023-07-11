@@ -1,12 +1,12 @@
 <div class="product__accordion">
-  <button class="product__accordion__title" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-trigger>
+  <button class="product__accordion__title product_single_accordion" aria-controls="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}">
     {{ block_settings.specifications_accordion_title }}
     {%- render 'icon-toggle-plus' -%}
     {%- render 'icon-toggle-minus' -%}
   </button>
 
   <div class="product__accordion__content" id="ProductAccordion--page-{{ accordion_title | handle }}-{{ forloop.index }}-{{ section.id }}" data-collapsible-container>      
-    <div class="product__accordion__inner rte" data-collapsible-content>
+    <div class="product__accordion__inner rte">
       <div class="accordion_metafield-content">
         {% capture specificationsContent %}
           <table>

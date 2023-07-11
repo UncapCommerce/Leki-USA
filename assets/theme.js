@@ -6646,6 +6646,7 @@
      */
 
     addToCart(data) {
+      console.log('data-----',data);
       if (this.cartDrawerEnabled && this.button) {
         this.button.classList.add(classes$i.loading);
         this.button.setAttribute(attributes$e.disabled, true);
@@ -17198,76 +17199,91 @@
     }
 
     // product accordion
-    if (document.querySelectorAll(".inner_accordion") != null) {
-      const accordionContent = document.querySelectorAll(".inner_accordion");
-      if (document.querySelector(".accordion_inner-title") != null) {
-        accordionContent.forEach((item, index) => {
-          let header = item.querySelector(".accordion_inner-title");
-          header.addEventListener("click", () => {
-            item.classList.toggle("open");
+    // if (document.querySelectorAll(".inner_accordion") != null) {
+    //   const accordionContent = document.querySelectorAll(".inner_accordion");
+    //   if (document.querySelector(".accordion_inner-title") != null) {
+    //     accordionContent.forEach((item, index) => {
+    //       let header = item.querySelector(".accordion_inner-title");
+    //       header.addEventListener("click", () => {
+    //         item.classList.toggle("open");
 
-            if (item.querySelector(".metafield-inner_content") != null) {
-              let description = item.querySelector(".metafield-inner_content");
-              if (item.classList.contains("open")) {
-                description.style.height = `${description.scrollHeight}px`;
-                item
-                  .querySelector("svg")
-                  .classList.replace("icon-arrow-up", "icon-arrow-dawn");
-              } else {
-                description.style.height = "0px";
-                item
-                  .querySelector("svg")
-                  .classList.replace("icon-arrow-dawn", "icon-arrow-up");
-              }
-            }
-            removeOpen(index); //calling the funtion and also passing the index number of the clicked header
-          });
-        });
-      }
-
-      function removeOpen(index1) {
-        accordionContent.forEach((item2, index2) => {
-          if (index1 != index2) {
-            item2.classList.remove("open");
-            if (item2.querySelector(".metafield-inner_content") != null) {
-              let des = item2.querySelector(".metafield-inner_content");
-              des.style.height = "0px";
-              item2
-                .querySelector("svg")
-                .classList.replace("icon-arrow-dawn", "icon-arrow-up");
-            }
-          }
-        });
-      }
-    }
-
-    // const accordionTitles = document.querySelectorAll(".accordion_inner-title");
-    
-    // accordionTitles.forEach((accordionTitle) => {
-    //   accordionTitle.addEventListener("click", () => {
-    //     if (accordionTitle.classList.contains("is-open")) {
-    //       accordionTitle.classList.remove("is-open");
-    //     } else {
-    //       const accordionTitlesWithIsOpen = document.querySelectorAll(".is-open");
-    //       accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
-    //           accordionTitleWithIsOpen.classList.remove("is-open");
+    //         if (item.querySelector(".metafield-inner_content") != null) {
+    //           let description = item.querySelector(".metafield-inner_content");
+    //           if (item.classList.contains("open")) {
+    //             description.style.height = `${description.scrollHeight}px`;
+    //             item
+    //               .querySelector("svg")
+    //               .classList.replace("icon-arrow-up", "icon-arrow-dawn");
+    //           } else {
+    //             description.style.height = "0px";
+    //             item
+    //               .querySelector("svg")
+    //               .classList.replace("icon-arrow-dawn", "icon-arrow-up");
+    //           }
+    //         }
+    //         removeOpen(index); //calling the funtion and also passing the index number of the clicked header
     //       });
-    //       accordionTitle.classList.add("is-open");
-    //     }
-    //   });
-    // });
+    //     });
+    //   }
+
+    //   function removeOpen(index1) {
+    //     accordionContent.forEach((item2, index2) => {
+    //       if (index1 != index2) {
+    //         item2.classList.remove("open");
+    //         if (item2.querySelector(".metafield-inner_content") != null) {
+    //           let des = item2.querySelector(".metafield-inner_content");
+    //           des.style.height = "0px";
+    //           item2
+    //             .querySelector("svg")
+    //             .classList.replace("icon-arrow-dawn", "icon-arrow-up");
+    //         }
+    //       }
+    //     });
+    //   }
+    // }
+
+    const accordionmainTitles = document.querySelectorAll(".product_single_accordion");
+    
+    accordionmainTitles.forEach((accordionmainTitle) => {
+      accordionmainTitle.addEventListener("click", () => {
+        if (accordionmainTitle.classList.contains("is-open")) {
+          accordionmainTitle.classList.remove("is-open");
+        } else {
+          const accordionmainTitlesWithIsOpen = document.querySelectorAll(".is-open");
+          accordionmainTitlesWithIsOpen.forEach((accordionmainTitleWithIsOpen) => {
+              accordionmainTitleWithIsOpen.classList.remove("is-open");
+          });
+          accordionmainTitle.classList.add("is-open");
+        }
+      });
+    });
+
+    const accordionTitles = document.querySelectorAll(".accordion_inner-title");
+    
+    accordionTitles.forEach((accordionTitle) => {
+      accordionTitle.addEventListener("click", () => {
+        if (accordionTitle.classList.contains("open")) {
+          accordionTitle.classList.remove("open");
+        } else {
+          const accordionTitlesWithIsOpen = document.querySelectorAll(".open");
+          accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
+              accordionTitleWithIsOpen.classList.remove("open");
+          });
+          accordionTitle.classList.add("open");
+        }
+      });
+    });
 
     // pole advisor drawer
-    if (document.querySelector(".pole-advisor") != null) {
+    if (document.querySelectorAll(".pole-advisor") != null) {
       let pole_div = document.querySelectorAll(".pole-advisor");
-      pole_div.forEach((poleDrawer) => {
-        poleDrawer.addEventListener("click", () => {
+      pole_div.forEach( poleDrawer => {
+        poleDrawer.addEventListener("click", (e) => {
+          console.log('e.currentTarget--',e.currentTarget);
           document.body.classList.add("pole-drawer-active");
         });
       });
-      let close_drawer = document.querySelector(
-        "#pole-adviser-drawer .pole-close .icon.icon-close"
-      );
+      let close_drawer = document.querySelector("#pole-adviser-drawer .pole-close .icon.icon-close");
       close_drawer.addEventListener("click", () => {
         document.body.classList.remove("pole-drawer-active");
       });
@@ -17548,19 +17564,20 @@ function getfilterResult(url) {
       }
     });
 }
-function filterClickButton()  {  
+function filterClickButton(self)  { 
   var height;
-  if (document.querySelector('.height')) {
-    height = document.querySelector('.height').value;   
+  console.log(self);
+  if (self.closest('.poleLength_calculation222').querySelector('.height')) {
+    height = self.closest('.poleLength_calculation222').querySelector('.height').value;   
   }
   if (height >=75 && height <=230 ) {
-    document.querySelectorAll('#skateroundedSize, #skateSize, #roundedSize, #calculatedSize').forEach(function(self){
+    self.closest('.poleLength_calculation222').querySelectorAll('#skateroundedSize, #skateSize, #roundedSize, #calculatedSize').forEach(function(self){
       self.innerHTML = '';
     })
-    document.querySelector('.height').style.borderColor = '#E6E6E6';
-    document.querySelector('#poleSizeCalculationResult').classList.remove('hidden');
-    document.querySelector('.error-message').style.display = 'none';
-    var e = document.querySelector("#category");
+    self.closest('.poleLength_calculation222').querySelector('.height').style.borderColor = '#E6E6E6';
+    self.closest('.poleLength_calculation222').querySelector('#poleSizeCalculationResult').classList.remove('hidden');
+    self.closest('.poleLength_calculation222').querySelector('.error-message').style.display = 'none';
+    var e = self.closest('.poleLength_calculation222').querySelector("#category");
     var value = e.options[e.selectedIndex].value;
     var classicValue = Number(e.options[e.selectedIndex].getAttribute('data-classic'));
     var skateValue = Number(e.options[e.selectedIndex].getAttribute('data-skate'));
@@ -17569,9 +17586,9 @@ function filterClickButton()  {
     if (classicValue) {
       var classicNumber = Number(height * classicValue).toFixed(1);
       if(value == 'cross-country'){        
-        document.querySelector('#calculatedSize').innerHTML = 'Classic ' + classicNumber + ' cm';
+        self.closest('.poleLength_calculation222').querySelector('#calculatedSize').innerHTML = 'Classic ' + classicNumber + ' cm';
       }else{
-        document.querySelector('#calculatedSize').innerHTML = classicNumber + ' cm';
+        self.closest('.poleLength_calculation222').querySelector('#calculatedSize').innerHTML = classicNumber + ' cm';
       }
       var suggestionClassicNumber = 0;
       if (classicNumber > highestValue) {
@@ -17584,21 +17601,21 @@ function filterClickButton()  {
         suggestionClassicNumber = Math.round(classicNumber / 5) * 5;
       }
       if(value == 'cross-country'){        
-        document.querySelector('#roundedSize').innerHTML = 'Classic ' + suggestionClassicNumber + 'cm';
+        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = 'Classic ' + suggestionClassicNumber + 'cm';
       }else{
-        document.querySelector('#roundedSize').innerHTML = suggestionClassicNumber + 'cm';
+        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = suggestionClassicNumber + 'cm';
       }      
-      var getCurrent = "/collections/"+ document.querySelector("#category").value +"?filter.v.option.size="+ suggestionClassicNumber +"+cm";
-      document.querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
-      document.querySelector('.result-btn a').setAttribute('href',getCurrent);
+      var getCurrent = "/collections/"+ self.closest('.poleLength_calculation222').querySelector("#category").value +"?filter.v.option.size="+ suggestionClassicNumber +"+cm";
+      self.closest('.poleLength_calculation222').querySelector('.result-btn').self.closest('.poleLength_calculation222') = '<a href="#" class="btn" target="_blank">Show all results</a>';
+      self.closest('.poleLength_calculation222').querySelector('.result-btn a').setAttribute('href',getCurrent);
       getfilterResult(getCurrent);
     }
     if (skateValue) {
       var skateNumber = Number(height * skateValue).toFixed(1);
       if(value == 'cross-country'){        
-        document.querySelector('#skateSize').innerHTML = 'Skate ' + skateNumber + ' cm';
+        self.closest('.poleLength_calculation222').querySelector('#skateSize').innerHTML = 'Skate ' + skateNumber + ' cm';
       }else{
-        document.querySelector('#skateSize').innerHTML = skateNumber + ' cm';
+        self.closest('.poleLength_calculation222').querySelector('#skateSize').innerHTML = skateNumber + ' cm';
       }         
       var suggestionSkateNumber = 0;
       if (skateNumber > highestValue) {
@@ -17611,16 +17628,16 @@ function filterClickButton()  {
         suggestionSkateNumber = skateNumber;
       }
       if(value == 'cross-country'){        
-        document.querySelector('#skateroundedSize').innerHTML = 'Skate ' + suggestionSkateNumber + 'cm';
+        self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = 'Skate ' + suggestionSkateNumber + 'cm';
       }else{
-        document.querySelector('#skateroundedSize').innerHTML = suggestionSkateNumber + 'cm';
+        self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = suggestionSkateNumber + 'cm';
       }         
     }
   } else {
     if (height <= 75 || height >= 230 ){
-      document.querySelector('.height').style.borderColor = 'red';
-      document.querySelector('.error-message').style.display = 'block';
-      document.querySelector('#poleSizeCalculationResult').classList.add('hidden');
+      self.closest('.poleLength_calculation222').querySelector('.height').style.borderColor = 'red';
+      self.closest('.poleLength_calculation222').querySelector('.error-message').style.display = 'block';
+      self.closest('.poleLength_calculation222').querySelector('#poleSizeCalculationResult').classList.add('hidden');
     }
   }
 };
@@ -17637,7 +17654,7 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
 // pole length advisor page height input js
 document.querySelectorAll('.height').forEach(function(self){
   self.addEventListener('keydown', function(event){
-     if(!( event.keyCode === 8 || event.keyCode === 13 || event.keyCode === 17 || event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 91 || event.keyCode === 96 || event.keyCode === 97 || event.keyCode === 98 || event.keyCode === 99 || event.keyCode === 100 || event.keyCode === 101 || event.keyCode === 102 || event.keyCode === 103 || event.keyCode === 104 || event.keyCode === 105 )) {
+     if(!( event.keyCode === 8 || event.keyCode === 17 || event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 91 || event.keyCode === 96 || event.keyCode === 97 || event.keyCode === 98 || event.keyCode === 99 || event.keyCode === 100 || event.keyCode === 101 || event.keyCode === 102 || event.keyCode === 103 || event.keyCode === 104 || event.keyCode === 105 )) {
       event.preventDefault();
      } 
   })

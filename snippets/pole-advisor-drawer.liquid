@@ -3,10 +3,10 @@
   <div class="pole-close">
     {%- render 'icon-close' -%}
   </div>
-  <div class="pole-inner-wrap">
+  <div class="pole-inner-wrap poleLength_calculation222">
     <h3>{{ settings.title }}</h3>
     <span>{{ settings.subtitle }}</span>
-    <div id="poleSizeAdvisorForm">
+    <div id="poleSizeAdvisorForm" class=" ">
       {% assign opt_1 = settings.option-one | split: ', ' %}
       {% assign opt_2 = settings.option-two | split: ', ' %}
       {% assign opt_3 = settings.option-three | split: ', ' %}
@@ -96,3 +96,4 @@
     </div>
   </div>
 </div>
+<div class="drawer_outer__overlay"></div>
