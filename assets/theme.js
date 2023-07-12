@@ -15160,7 +15160,7 @@
           contain: false,
           wrapAround: false,
           pageDots: true,
-          adaptiveHeight: true,
+          adaptiveHeight: false,
           prevNextButtons: false,
           lazyLoad: true,
           freeScroll: true,
@@ -17279,6 +17279,7 @@
       let pole_div = document.querySelectorAll(".pole-advisor");
       pole_div.forEach((poleDrawer) => {
         poleDrawer.addEventListener("click", () => {
+          poleDrawer.closest(".product__form__wrapper, .popup-quick-view__item").querySelector('.pole-adviser-drawer').classList.add('active-drawer');
           document.body.classList.add("pole-drawer-active");
         });
       });
@@ -17287,6 +17288,9 @@
       );
       close_drawer.addEventListener("click", () => {
         document.body.classList.remove("pole-drawer-active");
+        document.querySelectorAll('.pole-adviser-drawer').forEach(function(self){
+          self.classList.remove('active-drawer');
+        })
       });
     }
 
@@ -17413,27 +17417,39 @@
 //# sourceMappingURL=theme.js.map
 
 function poleLength(t) {
+  //t.closest(".product__form__wrapper, .popup-quick-view__item").querySelector('.pole-adviser-drawer').classList.add('active-drawer');
   if (document.querySelector(".pole-advisor") != null) {
     document.body.classList.add("pole-drawer-active");
-    let close_drawer = document.querySelector(
-      "#pole-adviser-drawer .pole-close .icon.icon-close"
-    );
-    document
-      .querySelector(".pole-adviser-drawer")
-      .addEventListener("click", (event) => {
-        event.stopPropagation();
-      });
-    document
-      .querySelector(".popup-quick-view__wrapper")
-      .addEventListener("click", (event) => {
-        event.stopPropagation();
-      });
-    document.body.addEventListener("click", () => {
-      document.body.classList.remove("pole-drawer-active");
-    });
-    close_drawer.addEventListener("click", () => {
-      document.body.classList.remove("pole-drawer-active");
-    });
+    //console.log(t.closest(".popup-quick-view__item").querySelector('.pole-adviser-drawer'));
+    t.closest(".popup-quick-view__item").querySelector('.pole-adviser-drawer').classList.add("active-drawer");
+    let close_drawer = document.querySelectorAll(".pole-adviser-drawer .pole-close .icon.icon-close, .drawer_outer__overlay");
+    // document.querySelector(".pole-adviser-drawer").addEventListener("click", (event) => {
+    //     event.stopPropagation();
+    //   });
+    // document.querySelector(".popup-quick-view__wrapper").addEventListener("click", (event) => {
+    //   event.stopPropagation();
+    // });
+    // var excludedAreas = document.querySelectorAll('.pole-adviser-drawer');
+    // document.addEventListener("click", (event) => {
+    //   var isOutsideExcludedAreas = true;
+    //   for (var i = 0; i < excludedAreas.length; i++) {
+    //     if (excludedAreas[i].contains(event.target)) {
+    //       isOutsideExcludedAreas = false;
+    //       break;
+    //     }
+    //   }
+    //   if (isOutsideExcludedAreas) {
+    //     document.body.classList.remove("pole-drawer-active");
+    //   }
+    // });
+    close_drawer.forEach(function(self){
+        self.addEventListener("click", () => {
+          document.body.classList.remove("pole-drawer-active");
+          document.querySelectorAll('.pole-adviser-drawer').forEach(function(self){
+            self.classList.remove('active-drawer');
+          })
+        });
+    })
   }
 }
 function gloveSize() {
@@ -17552,13 +17568,13 @@ function printDiv(divName) {
 
 /* Pole Length Advisor Calculator Start */
 
-function getfilterResult(url) {
+function getfilterResult(url, selfInner) {
   fetch(url)
     .then((response) => response.text())
     .then((responseText) => {
       const gridid = ".collection__products";
       const html = new DOMParser().parseFromString(responseText, "text/html");
-      const destination = document.querySelector(".result-right-wrap");
+      const destination = selfInner.querySelector(".result-right-wrap");
       const source = html.querySelector(gridid);
       if (source && destination) {
         destination.innerHTML = source.innerHTML;
@@ -17607,9 +17623,9 @@ function filterClickButton(self)  {
         self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = suggestionClassicNumber + 'cm';
       }      
       var getCurrent = "/collections/"+ self.closest('.poleLength_calculation222').querySelector("#category").value +"?filter.v.option.size="+ suggestionClassicNumber +"+cm";
-      self.closest('.poleLength_calculation222').querySelector('.result-btn').self.closest('.poleLength_calculation222') = '<a href="#" class="btn" target="_blank">Show all results</a>';
+      self.closest('.poleLength_calculation222').querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
       self.closest('.poleLength_calculation222').querySelector('.result-btn a').setAttribute('href',getCurrent);
-      getfilterResult(getCurrent);
+      getfilterResult(getCurrent, self.closest('.poleLength_calculation222'));
     }
     if (skateValue) {
       var skateNumber = Number(height * skateValue).toFixed(1);
@@ -17655,7 +17671,7 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
 // pole length advisor page height input js
 document.querySelectorAll('.height').forEach(function(self){
   self.addEventListener('keydown', function(event){
-     if(!( event.keyCode === 8 || event.keyCode === 17 || event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 91 || event.keyCode === 96 || event.keyCode === 97 || event.keyCode === 98 || event.keyCode === 99 || event.keyCode === 100 || event.keyCode === 101 || event.keyCode === 102 || event.keyCode === 103 || event.keyCode === 104 || event.keyCode === 105 )) {
+     if(!( event.keyCode === 8 || event.keyCode === 17 || event.keyCode === 38 || event.keyCode === 40 || event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 91 || event.keyCode === 96 || event.keyCode === 97 || event.keyCode === 98 || event.keyCode === 99 || event.keyCode === 100 || event.keyCode === 101 || event.keyCode === 102 || event.keyCode === 103 || event.keyCode === 104 || event.keyCode === 105 )) {
       event.preventDefault();
      } 
   })

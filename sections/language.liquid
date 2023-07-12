@@ -1,6 +1,6 @@
 {% style %}
     .languages-modal{position:fixed;left:0;top:0;height:100%;background-color:rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:scale(1.1);transition:visibility 0s linear .25s,opacity .25s 0s,transform .25s;border-radius:0}
-    .languages-modal.show-modal{opacity:1;visibility:visible;width:100%;transform:scale(1);transition:visibility 0s linear 0s,opacity .25s 0s,transform .25s;z-index:999}
+    .languages-modal.show-modal{opacity:1;visibility:visible;width:100%;transform:scale(1);transition:visibility 0s linear 0s,opacity .25s 0s,transform .25s;z-index:9999;}
     .languages-modal .modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:#fff;padding:1.25rem 5rem;max-width:1000px;border-radius:0.5rem;width:100%}
     .languages-modal .close-button{float:right;width:1.5rem;font-size:1.2em;line-height:1;padding:0 .2em .15em;text-align:center;cursor:pointer;border-radius:0.25rem;transition:color .12s ease-in-out}
     .languages-modal .modal_inner{padding:0}
@@ -25,14 +25,16 @@
     .show_language_type ul li a:hover{color:#0d1018;text-decoration:underline}
     .modal_title_btn{display:flex;justify-content:space-between;align-items:baseline}
     .countries .country_image{background-color:#006aa7;background-position:center}
-       .languages-modal .modal-content {max-height: 80%;overflow: auto;}
-      @media(max-width:991px){
-        .languages-modal .modal-content {padding: 20px;max-width:90%;}
-        .col-6.col-md-3:last-child{padding-top: 2.5rem;max-width: 100%;flex: none;width: 100%;display: flex;    flex-wrap: wrap;}
-      .col-6.col-md-3:last-child  .flag_main{flex: 0 0 50%;max-width:50%;}
-      .col-6.col-md-3 {flex: 0 0 50%;max-width:50%;}
-
-      }
+    .languages-modal .modal-content {max-height: 80%;overflow: auto;}
+    @media(max-width:991px){
+    .languages-modal .modal-content {padding: 20px;max-width:90%;}
+    .col-6.col-md-3:last-child{padding-top: 2.5rem;max-width: 100%;flex: none;width: 100%;display: flex;    flex-wrap: wrap;}
+    .col-6.col-md-3:last-child  .flag_main{flex: 0 0 50%;max-width:50%;}
+    .col-6.col-md-3 {flex: 0 0 50%;max-width:50%;}
+    }
+    @media(max-width: 349px){
+      .col-6.col-md-3:last-child  .flag_main,.col-6.col-md-3{flex: 0 0 100%;max-width:100%;}
+    }
 {% endstyle %}
 
 <div class="languages-modal">

@@ -265,12 +265,14 @@ data-section-id="{{ section.id }}">
               {% if section.settings.versionB_content != blank %}{{ section.settings.versionB_content }}{% endif %}
             </div>
           </div>
+          {% if section.settings.download_text != blank %}
           <a class="btn download-btn" {% if animations_enabled %}
                 data-aos="fade-up"
                 data-aos-anchor="{{ animation_anchor }}"
                 data-aos-delay="{{ animation_delay }}"
                 {%- assign animation_delay = animation_delay | plus: 150 -%}
-              {% endif %} href="https://res.cloudinary.com/leki-lenhart-gmbh/media/b5/d7/31/1644492604/Handschuhgr%C3%B6%C3%9Fenberater.pdf" target="_blank" rel="noopener noreferrer">Download PDF file<svg width="20" height="21" viewbox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.99996 12.6836V2.68359M9.99996 12.6836L6.66663 9.35026M9.99996 12.6836L13.3333 9.35026M1.66663 14.3503L2.18413 16.4211C2.27425 16.7817 2.48231 17.1018 2.77523 17.3305C3.06816 17.5593 3.42913 17.6835 3.80079 17.6836H16.1991C16.5708 17.6835 16.9318 17.5593 17.2247 17.3305C17.5176 17.1018 17.7257 16.7817 17.8158 16.4211L18.3333 14.3503" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></a>
+              {% endif %} href="{% if section.settings.download_link != blank %}{{ section.settings.download_link }}#{% endif %}" target="_blank" rel="noopener noreferrer">{{ section.settings.download_text }}<svg width="20" height="21" viewbox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.99996 12.6836V2.68359M9.99996 12.6836L6.66663 9.35026M9.99996 12.6836L13.3333 9.35026M1.66663 14.3503L2.18413 16.4211C2.27425 16.7817 2.48231 17.1018 2.77523 17.3305C3.06816 17.5593 3.42913 17.6835 3.80079 17.6836H16.1991C16.5708 17.6835 16.9318 17.5593 17.2247 17.3305C17.5176 17.1018 17.7257 16.7817 17.8158 16.4211L18.3333 14.3503" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg></a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -331,6 +333,16 @@ data-section-id="{{ section.id }}">
         "type": "richtext",
         "id": "versionB_content",
         "label": "varsionB content"
+      },
+      {
+        "type": "url",
+        "id": "download_link",
+        "label": "Download Link"
+      },
+      {
+        "type": "text",
+        "id": "download_text",
+        "label": "Download Text"
       },
       {
         "type": "header",

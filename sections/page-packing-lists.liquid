@@ -9,7 +9,7 @@
     .packing_lists-grid-wrap .packing_lists-content h3 {font-size: 24px;line-height: 32px;margin: 0;color: var(--COLOR-BLACK);font-family: var(--font-stack-body);}
     .packing_lists-content a.btn {min-width: 131px;padding: 6px 24px 4px;background: var(--text);text-transform: capitalize;font-size: 14px;line-height: 20px;font-weight: 500;}
     .packing_lists-content a.btn svg {display: inline-block;vertical-align: -3px;height: 14px;width: 14px;margin-right: 5px;}
-    .packing_lists-content a.btn:hover svg path {stroke: #000;}
+    .packing_lists-content a.btn:hover svg path {stroke: var(--text);}
     .page--packing-lists .text-highlight__break {font-size: 50px;line-height: 58px;color: var(--COLOR-TEXT);}
     .page--packing-lists .text__content p {line-height: 24px;color: var(--COLOR-TEXT);}
     .packing_lists-image-wrap img {width: 100%;}
@@ -74,15 +74,15 @@
                   </a>
                 {% endif %}
                 </div>
-                 <div class="packing_lists-content" {% if animations_enabled %}
-                        data-aos="fade-up"
-                        data-aos-anchor="{{ animation_anchor }}"
-                        data-aos-delay="{{ animation_delay }}"
-                        {%- assign animation_delay = animation_delay | plus: 150 -%}
-                    {% endif %}>
-                    <h3>{{ block.settings.packing_lists_title }}</h3>
-                    <a href="{{ block.settings.packing_lists_img | img_url: '' }}" class="btn" download>{% render 'icon-download-1' %}download</a>
-                  </div>
+               <div class="packing_lists-content" {% if animations_enabled %}
+                      data-aos="fade-up"
+                      data-aos-anchor="{{ animation_anchor }}"
+                      data-aos-delay="{{ animation_delay }}"
+                      {%- assign animation_delay = animation_delay | plus: 150 -%}
+                  {% endif %}>
+                  <h3>{{ block.settings.packing_lists_title }}</h3>
+                  <a href="{{ block.settings.packing_lists_img | img_url: '' }}" class="btn" download>{% render 'icon-download-1' %}download</a>
+                </div>
               </div>
             {% endif %}
           {% endfor %}
