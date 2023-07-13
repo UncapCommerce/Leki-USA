@@ -58,7 +58,11 @@
       "type": "section-collection",
       "settings": {
         "product_list": [
-
+          "carbon-14-3d_leki-usa_alpine-skiing-poles_winter",
+          "airfoil-3d_leki-usa_alpine-skiing-poles_winter",
+          "bold-lite-s_leki-usa_alpine-skiing-poles_winter",
+          "spitfire-3d_leki-usa_alpine-skiing-poles_winter",
+          "neolite-airfoil-womens_leki-usa_alpine-skiing-poles_winter"
         ],
         "collection": "",
         "products_layout": "carousel",
