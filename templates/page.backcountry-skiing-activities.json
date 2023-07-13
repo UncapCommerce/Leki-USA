@@ -52,10 +52,42 @@
         "heading_size": 120,
         "show_arrow": true
       }
+    },
+    "4a7d9659-9d3f-4ab0-bb1f-be61931e251c": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "touring-backcountry",
+        "products_layout": "carousel",
+        "number_of_products": 20,
+        "text_alignment": "text-left",
+        "subtitle": "Take on powder days with Backcountry Poles",
+        "subtitle_color": "#27304A",
+        "title": "Backcountry Poles",
+        "heading_size": 300,
+        "heading_weight": "normal",
+        "text": "<p>Off on the next ski tour! To ensure that you are ready for anything, we offer a large selection of different touring poles. Whether you're looking for a folding or three-piece pole, fixed length or Vario, Aergon Air or Evecon, you will find your perfect LEKI pole here!<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 80
+      }
     }
   },
   "order": [
     "main",
-    "5618dede-7110-43d7-9ed1-629ae1bec91c"
+    "5618dede-7110-43d7-9ed1-629ae1bec91c",
+    "4a7d9659-9d3f-4ab0-bb1f-be61931e251c"
   ]
 }
