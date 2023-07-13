@@ -84,11 +84,54 @@
         "mob_padding_top": 40,
         "mob_padding_bottom": 80
       }
+    },
+    "41b5eed6-ddfc-42a3-8a8b-1bc8b18b554c": {
+      "type": "section-slideshow",
+      "blocks": {
+        "template--19860662255910__41b5eed6-ddfc-42a3-8a8b-1bc8b18b554c-16892511544b1dd726-0": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 10,
+            "text_width": "normal",
+            "text_position": "center",
+            "text_color": "text-light",
+            "subheading": "",
+            "title": "BE A CLICKSTARTER",
+            "text": "Grab the latest on-demand gloves for this season.",
+            "slide_btn_text": "Our Skii Gloves",
+            "slide_btn_link": "shopify:\/\/collections\/gloves",
+            "slide_btn_style": "btn--secondary btn--small",
+            "slide_btn_text_2": "",
+            "slide_btn_link_2": "",
+            "slide_btn_style_2": "btn--secondary btn--small",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19860662255910__41b5eed6-ddfc-42a3-8a8b-1bc8b18b554c-16892511544b1dd726-0"
+      ],
+      "settings": {
+        "slide_height": "original-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "five-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "heading_size": 120,
+        "show_arrow": true
+      }
     }
   },
   "order": [
     "main",
     "d5919211-97ff-489c-8047-fe2eaaed39c5",
-    "f8ee9b42-960d-4126-a2bd-6828ca45494f"
+    "f8ee9b42-960d-4126-a2bd-6828ca45494f",
+    "41b5eed6-ddfc-42a3-8a8b-1bc8b18b554c"
   ]
 }
