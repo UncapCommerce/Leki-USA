@@ -50,9 +50,9 @@
             {% endif %}        
              {% for variant in product.variants %}
               {% assign weight_val = variant.metafields.custom.weight %}
-               {% assign weight_list =  weight_list | append: weight_val | append : ', '  %}
+               {% assign weight_list =  weight_list | append: weight_val | append : ', ' %}
             {% endfor %}
-            {%- assign weight_array = weight_list | split: ', ' | join: ' , ' -%}
+            {%- assign weight_array = weight_list | split: ', ' | uniq | join: ' , ' -%}
             {% if weight_array != blank %}
             <tr>
               <td class="heading">Weight:</td>

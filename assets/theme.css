@@ -16852,7 +16852,9 @@ a.results-popular__link:hover {
 .list-collections-section .section__heading {
   margin-bottom: calc(var(--heading-margin) * 3);
 }
-
+.list-collections__item__image .list-collections__item__image-bg {
+  background-size: contain;
+}
 @media only screen and (max-width: 767px) {
   .list-collections-section--grid .list-collections-section__container {
     overflow: initial;
@@ -16865,6 +16867,7 @@ a.results-popular__link:hover {
     margin-bottom: -15px;
     padding-top: 15px;
     padding-bottom: 15px;
+    display: block;
   }
 }
 
@@ -24865,7 +24868,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .pole-size-advisor-result-wrapper {display: flex;gap: 98px;}
 .result-left-wrap {padding: 5px 10px;max-width: 170px;flex: 0 0 170px;}
 .result-left-wrap span {font-size: 14px;line-height: 20px;margin-bottom: 4px;display: inline-block;vertical-align: middle;width: 100%;color: var(--COLOR-BLACK);}
-.result-left-wrap .btn {background: var(--button-primary-text);color: var(--color-text);padding: 6px 20px;font-size: 12px;line-height: 16px;min-width: auto;margin-top: 20px;font-weight: 500;}
+.result-left-wrap .btn {background: var(--button-primary-text);color: var(--color-text);padding: 6px 20px;font-size: 12px;line-height: 16px;min-width: auto;margin-top: 20px;font-weight: 500;cursor: pointer;}
 .result-left-wrap .btn:hover {color: var(--button-primary-text);border-color: transparent;}
 .result-left-wrap .btn:hover::before {background: var(--button-primary-text-hover);}
 .result-left-wrap span.calculated-cm {margin-top: 20px;}
@@ -25768,3 +25771,12 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .product__form .btn--submit[disabled], .product__form .btn--submit[disabled]:hover {background: #E4032E !important;}
 .product-grid-item:hover .product__badge {opacity: 0;visibility: hidden;}
 .sponsorship-inner-wrap .sponsor-tab-content a.readmore{display: inline-block;vertical-align: middle;}
+.pole-adviser-drawer .pole-size-advisor-result-wrapper {gap: 20px;}
+.pole-adviser-drawer .result-right-wrap{max-width: calc(100% - 200px);flex: 0 0 calc(100% - 200px);}
+.pole-size-advisor-result-wrapper{position: relative;}
+.result-right-wrap .pagination {display: none;}
+.popup-quick-view__inner .comparable-btn {display: none !important;}
+
+@media(max-width: 767px){
+  .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
+}

@@ -517,7 +517,7 @@
         {{ product_info_price }}
       {%- endunless -%}
 
-      {% if template contains 'poles' %}
+      {% if collection.template_suffix contains 'poles' %}
         {% if product.metafields.custom.grip != blank or product.metafields.custom.shaft_material != blank %}
           <div class="product-info-wrapper">
             {% if product.metafields.custom.grip != blank %}<div class="specification-list-item"><span>Grip:</span>{{ product.metafields.custom.grip }}</div>{% endif %}
@@ -526,7 +526,7 @@
         {% endif %}
       {% endif %}
 
-      {% if template contains 'gloves' %}
+      {% if collection.template_suffix contains 'gloves' or page.template_suffix contains 'activity-landing' %}
       {% if product.metafields.custom.warmth_level != blank %}
         <div class="gloves-info-wrapper">
           <div class="specification-list-item"><span>Warmth Level: {{ product.metafields.custom.warmth_level }}</span></div>

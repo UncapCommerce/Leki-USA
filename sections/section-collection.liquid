@@ -187,10 +187,9 @@
       {%- endif -%}
   {%- endif -%}
 {%- endcapture -%}
-
 {%- capture collection_items -%}
-  {% comment %} Check if there are any products in the collection {% endcomment %}
-  {%- if products.size > 0 -%}
+  {% comment %} Check if there are any products in the collection {% endcomment %}  
+    {%- if products.size > 0 -%}
     {%- for product in collection.products limit: number_of_products -%}
       {%- if carousel -%}
         {%- assign animation_delay = forloop.index0 -%}
@@ -232,14 +231,33 @@
 
 {%- capture collection_container -%}
   <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid__container{% endif %}">
-    <div class="{% if carousel %}carousel{% else %}grid{% endif %}{{ mobile_class }}{% if products.size == 0 %} featured-collection--empty{% endif %}"
+    <div class="{% if carousel %}carousel{% else %}grid{% endif %}{{ mobile_class }}{% if products.size == 0 or section.settings.product_list == blank %} featured-collection--empty{% endif %}"
       {% if carousel %}
         data-slider
         data-slider-id="slider--{{ section.id }}"
       {% endif %}>
-      {%- if collection -%}
-        {{ collection_items }}
-      {%- else -%}
+      {% assign product_list_item = section.settings.product_list %}
+      {% if product_list_item != blank and collection == blank %}
+        {% if product_list_item %}
+          {% for product in product_list_item %}
+            {%- if carousel -%}
+              {%- assign animation_delay = forloop.index0 -%}
+            {%- else -%}
+              {%- assign assign columns = settings.products_per_row_on_desktop | plus: 0 -%}
+              {%- assign animation_delay = forloop.index0 | modulo: columns | times: 1 -%}
+            {%- endif -%}
+            {%- render 'product-grid-item',
+              columns_mobile: columns_mobile,
+              product: product,
+              carousel: carousel,
+              animation_delay: animation_delay -%}
+          {% endfor %}
+        {% endif %}
+      {%- elsif collection != blank and product_list_item == blank -%}
+        {% if collection %}
+          {{ collection_items }}
+        {% endif %}
+      {% else %}
         {{ collection_onboarding }}
       {%- endif -%}
     </div>
@@ -288,6 +306,11 @@
   "name": "Featured collection",
   "class":"featured-collection",
   "settings": [
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Product List"
+    },
     {
       "type": "collection",
       "id": "collection",
