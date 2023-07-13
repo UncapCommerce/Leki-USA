@@ -52,10 +52,42 @@
         "heading_size": 120,
         "show_arrow": true
       }
+    },
+    "ec2bf817-45e1-42d1-b382-064c3db328d3": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "",
+        "products_layout": "carousel",
+        "number_of_products": 4,
+        "text_alignment": "text-left",
+        "subtitle": "CROSS-COUNTRY POLES",
+        "subtitle_color": "#27304A",
+        "title": "Popular right now",
+        "heading_size": 300,
+        "heading_weight": "bold",
+        "text": "<p>Let's head for the track! Whether you are a top athlete or an enthusiastic amateur - we offer the right cross-country skiing pole for every need. Whether you're looking for a new Nordic Shark or FRT grip, carbon or aluminium, we offer the perfect pole for everyone. With the Fin Vario interchangeable system, you also have maximum flexibility and can change the basket size in seconds depending on the different trail conditions.<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--secondary btn--small",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "tab_padding_top": 50,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 80
+      }
     }
   },
   "order": [
     "main",
-    "0141b128-5cc2-4c16-9065-351c60b6be5a"
+    "0141b128-5cc2-4c16-9065-351c60b6be5a",
+    "ec2bf817-45e1-42d1-b382-064c3db328d3"
   ]
 }
