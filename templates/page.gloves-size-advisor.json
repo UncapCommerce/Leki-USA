@@ -87,6 +87,8 @@
         "versionA_mobimg": "shopify:\/\/shop_images\/size-mob.jpg",
         "varsionB_title": "Version B",
         "versionB_content": "<p>This is how you find your glove size: Download the PDF file. When printing, please select \"actual size\".<\/p>",
+        "download_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0724\/6430\/2374\/files\/Handschuhgrossenberater.pdf?v=1689157407",
+        "download_text": "Download PDF File",
         "width": "wrapper--narrow",
         "padding_top": 0,
         "padding_bottom": 80,
@@ -97,9 +99,12 @@
     "54786cb4-a52a-4593-92c8-c3933b24bbaa": {
       "type": "section-collection",
       "settings": {
-        "collection": "ski-gloves",
+        "product_list": [
+
+        ],
+        "collection": "gloves",
         "products_layout": "carousel",
-        "number_of_products": 4,
+        "number_of_products": 20,
         "text_alignment": "text-center",
         "subtitle": "",
         "subtitle_color": "#27304a",
