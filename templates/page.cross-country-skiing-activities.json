@@ -134,7 +134,12 @@
       "type": "section-collection",
       "settings": {
         "product_list": [
-
+          "hrc-race-shark_leki-usa_cross-country_gloves_winter",
+          "prc-premium-thermoplus-shark_leki-usa_cross-country_gloves_winter",
+          "prc-thermoplus-shark-womens_leki-usa_cross-country_gloves_winter",
+          "cc-thermo-shark_leki-usa_cross-country_gloves_winter",
+          "cc-thermo-shark-lobster-2-2_leki-usa_cross-country_gloves_winter",
+          "cc-shark_leki-usa_cross-country_gloves_winter"
         ],
         "collection": "",
         "products_layout": "carousel",
