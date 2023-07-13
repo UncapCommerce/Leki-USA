@@ -107,12 +107,44 @@
         "mob_padding_top": 40,
         "mob_padding_bottom": 0
       }
+    },
+    "b63fbd88-dcc8-4ed8-9a0c-580b69eb7462": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "touring-backcountry-for-gloves",
+        "products_layout": "carousel",
+        "number_of_products": 20,
+        "text_alignment": "text-left",
+        "subtitle": "Take on powder days with Backcountry Gloves",
+        "subtitle_color": "#27304A",
+        "title": "Backcountry adventures",
+        "heading_size": 300,
+        "heading_weight": "bold",
+        "text": "<p>Use this text to share information about your collection with your customers.<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 80
+      }
     }
   },
   "order": [
     "main",
     "5618dede-7110-43d7-9ed1-629ae1bec91c",
     "4a7d9659-9d3f-4ab0-bb1f-be61931e251c",
-    "0c985f35-2040-4656-b97e-c31fee239ac3"
+    "0c985f35-2040-4656-b97e-c31fee239ac3",
+    "b63fbd88-dcc8-4ed8-9a0c-580b69eb7462"
   ]
 }
