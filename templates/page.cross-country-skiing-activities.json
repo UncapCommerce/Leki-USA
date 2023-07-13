@@ -126,12 +126,44 @@
         "heading_size": 120,
         "show_arrow": true
       }
+    },
+    "f0e2b8a3-48cc-4d62-83b9-a7c08716c79c": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "",
+        "products_layout": "carousel",
+        "number_of_products": 20,
+        "text_alignment": "text-left",
+        "subtitle": "CROSS-COUNTRY GLOVES",
+        "subtitle_color": "#27304A",
+        "title": "Popular right now",
+        "heading_size": 300,
+        "heading_weight": "normal",
+        "text": "<p>Our cross-country ski gloves allow you to optimise power transmission between glove and pole while offering maximum comfort.  Whether you're taking part in a cross-country race, a ski marathon, or simply training, we have the right accessory for everyone!<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 80
+      }
     }
   },
   "order": [
     "main",
     "0141b128-5cc2-4c16-9065-351c60b6be5a",
     "ec2bf817-45e1-42d1-b382-064c3db328d3",
-    "da8cf50b-e848-444a-a08b-60104c9b270e"
+    "da8cf50b-e848-444a-a08b-60104c9b270e",
+    "f0e2b8a3-48cc-4d62-83b9-a7c08716c79c"
   ]
 }
