@@ -53,10 +53,42 @@
         "heading_size": 120,
         "show_arrow": true
       }
+    },
+    "f8ee9b42-960d-4126-a2bd-6828ca45494f": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "",
+        "products_layout": "carousel",
+        "number_of_products": 20,
+        "text_alignment": "text-left",
+        "subtitle": "ALPINE SKII POLES",
+        "subtitle_color": "#27304A",
+        "title": "Popular right now",
+        "heading_size": 300,
+        "heading_weight": "normal",
+        "text": "<p>Whether you prefer a trigger system or strap, carbon, or aluminium. From the grip to the basket, everyone will find their perfect ski pole. Discover the unique LEKI Alpine ski poles now and see for yourself!<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 100,
+        "tab_padding_top": 50,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
-    "d5919211-97ff-489c-8047-fe2eaaed39c5"
+    "d5919211-97ff-489c-8047-fe2eaaed39c5",
+    "f8ee9b42-960d-4126-a2bd-6828ca45494f"
   ]
 }
