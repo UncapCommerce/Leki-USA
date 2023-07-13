@@ -81,8 +81,8 @@
         "padding_bottom": 100,
         "tab_padding_top": 50,
         "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
-        "mob_padding_bottom": 40
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 80
       }
     }
   },
