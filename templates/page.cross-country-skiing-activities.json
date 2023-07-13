@@ -57,11 +57,14 @@
       "type": "section-collection",
       "settings": {
         "product_list": [
-
+          "hrc-max_leki-usa_cross-country-poles_winter",
+          "prc-750_leki-usa_cross-country-poles_winter",
+          "prc-650_leki-usa_cross-country_poles_winter",
+          "xta-5-5_leki-usa_cross-country_poles_winter"
         ],
         "collection": "",
         "products_layout": "carousel",
-        "number_of_products": 4,
+        "number_of_products": 20,
         "text_alignment": "text-left",
         "subtitle": "CROSS-COUNTRY POLES",
         "subtitle_color": "#27304A",
