@@ -126,12 +126,44 @@
         "heading_size": 120,
         "show_arrow": true
       }
+    },
+    "41b0939b-829b-43f4-8294-037ea0d3cbcf": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "",
+        "products_layout": "carousel",
+        "number_of_products": 20,
+        "text_alignment": "text-left",
+        "subtitle": "ALPINE SKII GLOVES",
+        "subtitle_color": "#27304A",
+        "title": "Popular right now",
+        "heading_size": 300,
+        "heading_weight": "bold",
+        "text": "<p>With LEKI ski gloves you will be ready for anything on the slopes. Find your perfect skiing gloves now, with the right materials, warmth and waterproofing. Whether you're heading out into glorious weather or a snowstorm, there is a ski glove to suit all possible conditions on the mountain.<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 80
+      }
     }
   },
   "order": [
     "main",
     "d5919211-97ff-489c-8047-fe2eaaed39c5",
     "f8ee9b42-960d-4126-a2bd-6828ca45494f",
-    "41b5eed6-ddfc-42a3-8a8b-1bc8b18b554c"
+    "41b5eed6-ddfc-42a3-8a8b-1bc8b18b554c",
+    "41b0939b-829b-43f4-8294-037ea0d3cbcf"
   ]
 }
