@@ -91,6 +91,8 @@
         "template--19860662255910__41b5eed6-ddfc-42a3-8a8b-1bc8b18b554c-16892511544b1dd726-0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/landing-2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/clickstar-mobile.jpg",
             "overlay_opacity": 10,
             "text_width": "normal",
             "text_position": "center",
