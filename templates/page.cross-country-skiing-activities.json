@@ -83,11 +83,55 @@
         "mob_padding_top": 40,
         "mob_padding_bottom": 80
       }
+    },
+    "da8cf50b-e848-444a-a08b-60104c9b270e": {
+      "type": "section-slideshow",
+      "blocks": {
+        "template--19860662321446__da8cf50b-e848-444a-a08b-60104c9b270e-1689252234a683c93a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cross-country-gloves.jpg",
+            "overlay_opacity": 10,
+            "text_width": "normal",
+            "text_position": "center",
+            "text_color": "text-light",
+            "subheading": "",
+            "title": "The Shark System",
+            "text": "",
+            "slide_btn_text": "Our Cross-Country gloves",
+            "slide_btn_link": "shopify:\/\/collections\/cross-country-for-gloves",
+            "slide_btn_style": "btn--primary btn--small",
+            "slide_btn_text_2": "",
+            "slide_btn_link_2": "",
+            "slide_btn_style_2": "btn--secondary btn--small",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19860662321446__da8cf50b-e848-444a-a08b-60104c9b270e-1689252234a683c93a-0"
+      ],
+      "settings": {
+        "slide_height": "original-height",
+        "enable_mobile_height": false,
+        "mobile_slide_height": "five-fifty-height-mobile",
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "heading_size": 120,
+        "show_arrow": true
+      }
     }
   },
   "order": [
     "main",
     "0141b128-5cc2-4c16-9065-351c60b6be5a",
-    "ec2bf817-45e1-42d1-b382-064c3db328d3"
+    "ec2bf817-45e1-42d1-b382-064c3db328d3",
+    "da8cf50b-e848-444a-a08b-60104c9b270e"
   ]
 }
