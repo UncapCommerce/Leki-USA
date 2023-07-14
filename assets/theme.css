@@ -9149,7 +9149,7 @@ a.results-popular__link:hover {
     display: flex;
 /*     margin: 0 calc(var(--offset) / 2); */
 /*     margin: 0 -20px; */
-    gap: 173px;
+    gap: 172px;
     justify-content: space-between;
   }
 }
@@ -25684,6 +25684,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
   .compare-bar .compare-products-item{
     padding-bottom: 70px !important;
   }
+  .collection__header .section-header__title{font-size: 30px;line-height: 42px;}
 }
 @media(max-width: 575px){
   #gloves-adviser-drawer{max-width: 100%;}
@@ -25718,7 +25719,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
   .page--sustainability .slide__text__wrapper .slide__heading.main-heading{
     font-size: 36px;
     line-height: 48px;
-  }
+  }  
 }
 .pole-adviser-drawer #category {
   display: none;
