@@ -1,4 +1,16 @@
 <!-- /snippets/video.liquid -->
+
+<style>
+  .video-text-wrapper .btn svg {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 8px;
+  }  
+  .video-text-wrapper .btn:hover svg path {
+    stroke: #fff;
+  }
+</style>
+
 <div class="video__container video__container--{{ unique }} {{ text_color }}" id="video-{{ unique }}-container">
   {%- capture image_attributes -%}
     {%- if animations_enabled -%}
@@ -164,7 +176,7 @@
             data-aos-anchor="{{ animation_anchor }}"
             data-aos-delay="{{ animation_delay }}"
           {% endif %}>
-          <a class="btn {{ button_style }}" href="{{ button_link }}">{{ button_text }}</a>
+          <a class="btn {{ button_style }}" href="{{ button_link }}">{{ button_text }}{%- render 'icon-arrow-right' -%}</a>
         </div>
       </div>
     {%- endif -%}
