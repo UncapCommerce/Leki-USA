@@ -25784,3 +25784,13 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 @media(max-width: 767px){
   .slide__buttons.main-buttons .main-buttons__item .btn{max-width: max-content;}
 }
+
+
+
+.order__item__title.order-detail-wrap tfoot .reorder-btn:not(.is-loading) .btn__loader,
+.order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading .btn__text {opacity: 0;}
+.order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading .btn__loader {opacity: 1;}
+.order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading .btn__loader .svg-loader circle ~ circle {animation-play-state: running;opacity: 1;}
+.order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading .btn__loader .svg-loader circle {stroke-width: 1;stroke: var(--button-primary-text);opacity: 0.1;}
+.order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading:hover .btn__loader .svg-loader circle {stroke: var(--button-primary-bg-alpha-50);opacity: 1;}
+.order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading:hover .btn__loader .svg-loader circle ~ circle {color: var(--button-secondary-text);opacity: 1;}

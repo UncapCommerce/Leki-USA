@@ -68,7 +68,7 @@
               </thead>
               <tbody class="desktop-table">
                 {% for line_item in order.line_items %}                  
-                  <tr class="responsive-order" id="{{ line_item.id }}">
+                  <tr class="responsive-order" id="{{ line_item.id }}" data-varid="{{ line_item.variant.id }}"  data-qty="{{ line_item.quantity }}">
                     {% comment %}
                       <th>{{ 'customer.order.product' | t }}</th>
                     {% endcomment %}
@@ -231,7 +231,15 @@
                 <td class="order-payment-status">{{ 'customer.order.fulfillment_status' | t | link_to: order.customer_url }}<span>{{ order.fulfillment_status_label | link_to: order.customer_url }}</span></td>
                 <tr class="responsive-order">
                   <td style="text-align:left;" class="footer-btns">
-                  <a class="btn reorder-btn">reorder</a>  
+                  <a class="btn reorder-btn">
+                    <span class="btn__text">reorder</span>
+                    <span class="btn__loader">
+                      <svg height="18" width="18" class="svg-loader">
+                        <circle r="7" cx="9" cy="9" />
+                        <circle stroke-dasharray="87.96459430051421 87.96459430051421" r="7" cx="9" cy="9" />
+                      </svg>
+                    </span>
+                  </a>  
                   <button type="button" class="btn download-btn" onclick="printDiv('printableArea')" {% if animations_enabled %} data-aos="fade-up" 
                     data-aos-anchor="{{ animation_anchor }}" data-aos-delay="{{ animation_delay }}" {%- assign animation_delay = animation_delay | plus: 150 -%}{% endif %}>
                     {% render 'icon-download' %}Download Invoice

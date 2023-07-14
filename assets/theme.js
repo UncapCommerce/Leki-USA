@@ -6646,7 +6646,6 @@
      */
 
     addToCart(data) {
-      console.log('data-----',data);
       if (this.cartDrawerEnabled && this.button) {
         this.button.classList.add(classes$i.loading);
         this.button.setAttribute(attributes$e.disabled, true);
@@ -8558,9 +8557,7 @@
      */
     popupClose() {
       const popupProduct = document.querySelector(selectors$o.popupProduct);
-      console.log('popupProduct', popupProduct);
       if (popupProduct) {
-        console.log(123123123);
         const popupClose = popupProduct.querySelector(selectors$o.popupClose);
         popupClose.dispatchEvent(new Event("click"));
       }
@@ -10490,7 +10487,6 @@
 
     initSliders() {
       if (this.slider.children.length <= 1) return;
-      console.log("this", this);
       let isDraggable = window.innerWidth < window.theme.sizes.small;
 
       if (this.sliderMedia.children.length > 1) {
@@ -17583,7 +17579,6 @@ function getfilterResult(url, selfInner) {
 }
 function filterClickButton(self)  { 
   var height;
-  console.log(self);
   if (self.closest('.poleLength_calculation222').querySelector('.height')) {
     height = self.closest('.poleLength_calculation222').querySelector('.height').value;   
   }
@@ -17675,4 +17670,58 @@ document.querySelectorAll('.height').forEach(function(self){
       event.preventDefault();
      } 
   })
-})
+});
+
+// customer re-order button js
+document.querySelectorAll(".reorder-btn").forEach(function (reorder) {
+  reorder.addEventListener("click", function (e) {
+    e.preventDefault();
+    var $reo_button = this;
+    var $reo_id_array = new Array();
+    document.querySelectorAll('.desktop-table .responsive-order').forEach(function (orderList) {
+      var pro_id = orderList.dataset.varid;
+      var $reo_temQTY = orderList.dataset.qty;
+      var $reo_temVID = pro_id;
+      $reo_id_array.push({ id: $reo_temVID, quantity: $reo_temQTY });
+    });
+    $reo_id_array.reverse();
+    function bundle_addtocart() {
+      if ($reo_id_array.length > 0) {
+        var $reo_request = $reo_id_array.shift();
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify($reo_request)
+        })
+          .then(response => {
+            bundle_addtocart()
+          })
+          .catch((error) => {
+            $reo_button.querySelector('span.btn__text').innerHTML= 'Error';
+            console.error('Error:', error);
+          });
+      } else {
+        $reo_button.classList.remove("is-loading");
+        window.location.href = '/checkout';
+      }
+    }
+    fetch(window.Shopify.routes.root + 'cart/clear.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: ''
+    })
+      .then(response => {
+        $reo_button.classList.add("is-loading");
+        bundle_addtocart();
+      })
+      .catch((error) => {
+        $reo_button.classList.remove("is-loading");
+        $reo_button.querySelector('span.btn__text').innerHTML= 'Error';
+        console.error('Error:', error);
+      });
+  });
+});
