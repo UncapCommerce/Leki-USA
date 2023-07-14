@@ -25779,4 +25779,5 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
+  .slide__buttons.main-buttons .main-buttons__item .btn{max-width: max-content;}
 }
