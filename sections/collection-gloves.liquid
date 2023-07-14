@@ -294,17 +294,22 @@
         endfor
          if selectedValue 
          for filter in collection.filters
+         if filter.label == 'Price'
+           render 'filter', filter: filter, animation_delay: animation_delay, filters_open: filters_open
+         else
          for value in collection.metafields.custom.filter_option.value 
-         if value == filter.label or value == 'Price'
+         if value == filter.label 
           render 'filter', filter: filter, animation_delay: animation_delay, filters_open: filters_open
          endif
         endfor
+        endif
         endfor
           else
          for filter in collection.filters
           render 'filter', filter: filter, animation_delay: animation_delay, filters_open: filters_open
         endfor
          endif
+
       -%}
 
       <noscript>
