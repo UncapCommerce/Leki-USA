@@ -24810,8 +24810,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .custom-naviagation .nav-button {position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto 0;height: 40px;width: 40px;background: #fff;border-radius: 50%;box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);display: flex;align-items: center;justify-content: center;cursor: pointer;}
 .custom-naviagation .slider-button-prev.nav-button {right: auto;left:-20px;}
 .custom-naviagation .slider-button-next.nav-button {left: auto;right: -20px;}
-.custom-naviagation .slider-button-prev.nav-button svg.icon-arrow-up {transform: rotate(90deg);}
-.custom-naviagation .slider-button-next.nav-button svg.icon-arrow-up {transform: rotate(-90deg);}
+.custom-naviagation .slider-button-prev.nav-button svg.icon-arrow-up {transform: rotate(-180deg);}
 
 /* ----------- Activity Landing Page -------------- */
 .activity-landing-text .heading {font-size: 90px;line-height: 110px;letter-spacing: 0.01em;text-transform: uppercase;margin-bottom: 40px;}
@@ -25623,7 +25622,6 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
   .related-products .carousel.carousel--mobile {display: block;}
   .related-products .flickity-button {display: none;}
   .related-products .flickity-page-dots{bottom: -60px;padding: 0 10px;}
-  .page--activity-landing .slide__text__wrapper .slide__heading.main-heading {font-size: 36px;line-height: 48px;width: 90%;margin: 0 auto;}
   .page--activity-landing .featured-collection__container.carousel__container .flickity-page-dots {bottom: -60px;}
   .page--our-athletes .banner-inner {align-items: flex-end;justify-content: flex-end;text-align: left;}
   .page--our-athletes .banner-inner .banner__description p {font-size: 14px;line-height: 20px;}
@@ -25776,6 +25774,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .pole-size-advisor-result-wrapper{position: relative;}
 .result-right-wrap .pagination {display: none;}
 .popup-quick-view__inner .comparable-btn {display: none !important;}
+.sponsorship-inner-wrap .sponsor-tab-content a {color: #3758b9;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}

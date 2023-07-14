@@ -20,6 +20,16 @@
   #Slideshow--{{ section.id }} .slide__heading {
     --adjust-heading: calc(var(--FONT-ADJUST-HEADING) * {{ heading_size }});
   }
+  @media(max-width: 767px){
+    {% if section.settings.mob_font_size %}
+    .slide__text__wrapper .slide__heading.main-heading{
+      font-size: 36px;
+      line-height: 48px;
+      width: 90%;
+      margin: 0 auto;
+    }
+    {% endif %}
+  }
 {%- endstyle -%}
 
 <div class="slider slider--{{ transition }}{% if section.settings.show_arrow_down %} slider--has-arrow{% endif %}{% if section.settings.show_nav_dots %} slider--has-dots{% endif %}{% unless animations_enabled %} slider--no-animation{% endunless %}"
@@ -373,6 +383,12 @@
         { "value": "five-fifty-height-mobile", "label": "550px" },
         { "value": "four-fifty-height-mobile", "label": "450px" }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "mob_font_size",
+      "label": "Mobile Font Size",
+      "default": false
     },
     {
       "type": "checkbox",
