@@ -112,6 +112,9 @@ body.page--history .collection__header .rte p{
     line-height: 20px;
     padding:8px 16px;
   }
+  .history_img_section .image-with-text__text{
+    padding: 0;
+  }
   .history_img_section .image-with-text__image {
     padding-top: 72%;
   }
