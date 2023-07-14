@@ -15153,7 +15153,7 @@
 
       if (items.length > 2) {
         const flktyUpsell = new Flickity(slider, {
-          contain: false,
+          contain: true,
           wrapAround: false,
           pageDots: true,
           adaptiveHeight: false,
