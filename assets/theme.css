@@ -25775,6 +25775,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .result-right-wrap .pagination {display: none;}
 .popup-quick-view__inner .comparable-btn {display: none !important;}
 .sponsorship-inner-wrap .sponsor-tab-content a {color: #3758b9;}
+.slide__buttons.main-buttons .main-buttons__item .btn svg{vertical-align: -7px;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
