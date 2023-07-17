@@ -2183,6 +2183,12 @@
   {%- endunless -%}
 {%- endunless -%}
 
+{% if template contains 'product' %}
+  <div data-bv-show="review_highlights" data-bv-product-id=""></div>
+  <div data-bv-show="reviews" data-bv-product-id=""></div>
+  <div data-bv-show="questions" data-bv-product-id=""></div>
+{% endif %}
+
 {%- capture ProdVariant -%}
  
   {%- for variant in product.variants -%}
