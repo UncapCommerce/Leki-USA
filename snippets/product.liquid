@@ -2212,10 +2212,14 @@
     </div>
   {%- endunless -%}
 {%- endunless -%}
-<div data-bv-show="review_highlights" data-bv-product-id=""></div>
-<div data-bv-show="reviews" data-bv-product-id=""></div>
-<div data-bv-show="questions" data-bv-product-id=""></div>
+
+{% if template contains 'product' %}
+  <div data-bv-show="review_highlights" data-bv-product-id=""></div>
+  <div data-bv-show="reviews" data-bv-product-id=""></div>
+  <div data-bv-show="questions" data-bv-product-id=""></div>
+{% endif %}
 {% comment %}
+
 {%- capture product_image -%}
 "<div class='product__media__outer'><div class='product__media__inner'><div class='{{ image_container_class }}' style='--aspect-ratio: {{ image_aspect_ratio }};'><a class='product__media__holder' href='{{ product.url | within: collection }}' aria-label='{{ product.title | strip_html | escape }}' data-grid-link
         {%- if animations_enabled -%}data-aos='{{ image_animation }}' data-aos-easing='ease' data-aos-duration='1000'

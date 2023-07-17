@@ -94,6 +94,7 @@ body.page--history .collection__header .rte p{
   }
   .history_img_section .image-with-text__text{
     max-width:100%;
+    text-align: justify;
   }
   .history_img_section .image-with-text__buttons{
     justify-content:center;

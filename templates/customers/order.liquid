@@ -231,7 +231,7 @@
                 <td class="order-payment-status">{{ 'customer.order.fulfillment_status' | t | link_to: order.customer_url }}<span>{{ order.fulfillment_status_label | link_to: order.customer_url }}</span></td>
                 <tr class="responsive-order">
                   <td style="text-align:left;" class="footer-btns">
-                  <a class="btn reorder-btn">
+                  <a class="btn reorder-btn" onclick="reorderBtn(this)">
                     <span class="btn__text">reorder</span>
                     <span class="btn__loader">
                       <svg height="18" width="18" class="svg-loader">

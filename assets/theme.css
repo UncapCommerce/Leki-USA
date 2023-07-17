@@ -24660,7 +24660,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .pole-adviser-drawer .pole-inner-wrap > span {width: 100%;display: inline-block;vertical-align: middle;font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);margin-bottom: 20px;}
 .pole-adviser-drawer .pole-inner-wrap .form-control {width: 100%;margin-bottom: 20px;line-height: 24px;border: 1px solid #E6E6E6;}
 .pole-information {display: flex;align-items: center;justify-content: center;gap: 10px;padding-top: 20px;}
-.pole-adviser-drawer input.btn {width: 100%;background: var(--text);padding: 13px 16px;font-size: 16px;line-height: 24px;cursor: pointer;}
+.pole-adviser-drawer input.btn {width: 100%;background: var(--text);padding: 13px 16px;font-size: 16px;line-height: 24px;cursor: pointer;height: 52px;}
 .pole-adviser-drawer input.btn:hover{background: var(--button-secondary-bg);}
 .pole-information span {font-size: 14px;line-height: 20px;color: var(--COLOR-BLACK);}
 .pole-adviser-drawer .pole-inner-wrap .form-control::placeholder{color: #A5A5A5;}
@@ -24672,6 +24672,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .page--pole-length-advisor input[type=number]::-webkit-inner-spin-button,
 .page--pole-length-advisor input[type=number]::-webkit-outer-spin-button{height: auto;margin: 0;-webkit-appearance: auto;}
 .gloves-main-wrap p {margin: 0;font-size: 16px;line-height: 24px;}
+#poleSizeAdvisorForm button {width: 100%;padding: 14px 27.5px;background: var(--COLOR-BUTTON-SECONDARY-TEXT);}
 
 /* ------------ Glove Size Advisor Drawer -------------- */
 .glove-drawer-active,.pole-drawer-active {
@@ -24924,7 +24925,7 @@ span.error-message {margin-top: 10px;color: red;}
 .remember-text label {font-size: 14px;line-height: 20px;color: #A5A5A5;}
 .remember-login p {margin: 0;font-size: 14px;line-height: 20px;}
 .remember-login p a {color: #A5A5A5;}
-.remember-text input[type=checkbox] {accent-color: var(--COLOR-BLACK);margin: 0 6px 4px 0;cursor: pointer;}
+.remember-text input[type=checkbox] {accent-color: var(--COLOR-BLACK);margin: 0 6px 4px 0;cursor: pointer;padding: 0;}
 .remember-text,.remember-text label {display: flex;align-items: center;cursor: pointer;}
 .form-vertical .btn.login-btn {background: var(--COLOR-RED);border-color: transparent;font-size: 18px;line-height: 26px;}
 .form-vertical .btn.login-btn:hover {border-color: var(--COLOR-BLACK);}
@@ -25779,6 +25780,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .popup-quick-view__inner .comparable-btn {display: none !important;}
 .sponsorship-inner-wrap .sponsor-tab-content a {color: #3758b9;}
 .slide__buttons.main-buttons .main-buttons__item .btn svg{vertical-align: -7px;}
+#shopify-section-api-quickview div[data-bv-show="reviews"] {display: none;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}

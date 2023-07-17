@@ -74,7 +74,7 @@
       </select>
       <input type="number" class="form-control height" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
       <span style="display: none;" class="error-message">Value must be greater than or equal to 75 and less than or equal to 230.</span>
-      <input type="button" class="btn {{ pole_button_style }} pole_length_getter" onclick="filterClickButton(this)" value="{{ settings.pole_button_text }}">
+      <button type="button" class="btn {{ pole_button_style }} pole_length_getter" onclick="filterClickButton(this)" value="{{ settings.pole_button_text }}">{{ settings.pole_button_text }}</button>
       <div class="pole-information">    
         {%- render 'icon-info' -%}
         <span>You can adjust Vario-Poles to the exact length.</span>

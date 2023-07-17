@@ -1154,8 +1154,8 @@
       this.transitionOverride = this.container.hasAttribute(
         attributes$2.transitionOverride
       );
-      this.collapsibleToggleEvent = (event) =>
-        throttle(this.collapsibleToggle(event), 1250);
+      this.collapsibleToggleEvent = (event) => 
+            throttle(this.collapsibleToggle(event), 1250);
 
       this.init();
     }
@@ -1163,6 +1163,7 @@
     init() {
       this.triggers.forEach((trigger) => {
         trigger.addEventListener("click", this.collapsibleToggleEvent);
+        trigger.addEventListener("touch", this.collapsibleToggleEvent);
         trigger.addEventListener("keyup", this.collapsibleToggleEvent);
       });
     }
@@ -1290,6 +1291,7 @@
     onUnload() {
       this.triggers.forEach((trigger) => {
         trigger.removeEventListener("click", this.collapsibleToggleEvent);
+        trigger.removeEventListener("touch", this.collapsibleToggleEvent);
         trigger.removeEventListener("keyup", this.collapsibleToggleEvent);
       });
     }
@@ -17673,55 +17675,53 @@ document.querySelectorAll('.height').forEach(function(self){
 });
 
 // customer re-order button js
-document.querySelectorAll(".reorder-btn").forEach(function (reorder) {
-  reorder.addEventListener("click", function (e) {
-    e.preventDefault();
-    var $reo_button = this;
-    var $reo_id_array = new Array();
-    document.querySelectorAll('.desktop-table .responsive-order').forEach(function (orderList) {
-      var pro_id = orderList.dataset.varid;
-      var $reo_temQTY = orderList.dataset.qty;
-      var $reo_temVID = pro_id;
-      $reo_id_array.push({ id: $reo_temVID, quantity: $reo_temQTY });
-    });
-    $reo_id_array.reverse();
-    function bundle_addtocart() {
-      if ($reo_id_array.length > 0) {
-        var $reo_request = $reo_id_array.shift();
-        fetch(window.Shopify.routes.root + 'cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify($reo_request)
-        })
-          .then(response => {
-            bundle_addtocart()
-          })
-          .catch((error) => {
-            $reo_button.querySelector('span.btn__text').innerHTML= 'Error';
-            console.error('Error:', error);
-          });
-      } else {
-        $reo_button.classList.remove("is-loading");
-        window.location.href = '/checkout';
-      }
-    }
-    fetch(window.Shopify.routes.root + 'cart/clear.js', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: ''
-    })
-      .then(response => {
-        $reo_button.classList.add("is-loading");
-        bundle_addtocart();
-      })
-      .catch((error) => {
-        $reo_button.classList.remove("is-loading");
-        $reo_button.querySelector('span.btn__text').innerHTML= 'Error';
-        console.error('Error:', error);
-      });
+
+function reorderBtn(t) {
+  var $reo_button = t;
+  var $reo_id_array = new Array();
+  document.querySelectorAll('.desktop-table .responsive-order').forEach(function (orderList) {
+    var pro_id = orderList.dataset.varid;
+    var $reo_temQTY = orderList.dataset.qty;
+    var $reo_temVID = pro_id;
+    $reo_id_array.push({ id: $reo_temVID, quantity: $reo_temQTY });
   });
-});
+  $reo_id_array.reverse();
+  function bundle_addtocart() {
+    if ($reo_id_array.length > 0) {
+      var $reo_request = $reo_id_array.shift();
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify($reo_request)
+      })
+        .then(response => {
+          bundle_addtocart()
+        })
+        .catch((error) => {
+          $reo_button.querySelector('span.btn__text').innerHTML= 'Error';
+          console.error('Error:', error);
+        });
+    } else {
+      $reo_button.classList.remove("is-loading");
+      window.location.href = '/checkout';
+    }
+  }
+  fetch(window.Shopify.routes.root + 'cart/clear.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: ''
+  })
+    .then(response => {
+      $reo_button.classList.add("is-loading");
+      bundle_addtocart();
+    })
+    .catch((error) => {
+      $reo_button.classList.remove("is-loading");
+      $reo_button.querySelector('span.btn__text').innerHTML= 'Error';
+      console.error('Error:', error);
+    });
+}
