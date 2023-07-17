@@ -50,22 +50,21 @@
             "icon_text": "{{ product.metafields.custom.shipping_text.value }}",
             "icon_text_default": "Free Shipping over $100.00",
             "text_size": 90,
-            "width": "full",
-            "text_alignment": "left",
+            "width": "half",
+            "text_alignment": "center",
             "bg_color": "",
             "padding_bottom": 24
           }
         },
         "1e56ec34-f9bb-43ed-bf34-7a68bbec022d": {
           "type": "icon",
-          "disabled": true,
           "settings": {
             "icon_name": "check",
             "icon_color": "",
-            "icon_image": "{{ product.metafields.custom.warranty_icon.value }}",
+            "icon_image": "shopify:\/\/shop_images\/Icon_Set_1.png",
             "icon_width": 20,
             "icon_text": "{{ product.metafields.custom.warranty_text.value }}",
-            "icon_text_default": "Free shipping over $99",
+            "icon_text_default": "Lifetime Guarantee",
             "text_size": 90,
             "width": "half",
             "text_alignment": "center",
