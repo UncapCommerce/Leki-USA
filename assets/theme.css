@@ -7778,6 +7778,7 @@ a.navlink.navlink--child {
   box-sizing: border-box;
   color: inherit;
   background: none;
+  border-bottom: 1px solid #27304A;
 }
 @media only screen and (min-width: 1024px) {
   .nav-search__input {
@@ -25522,7 +25523,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
   .gloves-main-wrap table tr:last-child {margin: 0;}
   .gloves-main-wrap table tr td span {position: relative;text-decoration: underline;text-decoration-thickness: 2px;text-underline-offset: 3px;z-index: 2;text-decoration-color: #fff;}
   .gloves-main-wrap img {margin-left: 0;float: left !important;}
-  .gloves-main-wrap table + div {text-align: left !important;width: 100%;display: inline-block;margin-bottom: 60px;}
+  .gloves-main-wrap table + div,.gloves-main-wrap .table-wrapper + div {text-align: left !important;width: 100%;display: inline-block;margin-bottom: 60px;}
   .gloves-main-wrap p {margin-bottom: 40px;}
   .image-with-text__heading {margin-bottom: 8px;}
   .image-with-text__heading a, .image-with-text__buttons a{padding: 13px 20px 11px;font-size: 14px;line-height: 20px;}
@@ -25780,7 +25781,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .popup-quick-view__inner .comparable-btn {display: none !important;}
 .sponsorship-inner-wrap .sponsor-tab-content a {color: #3758b9;}
 .slide__buttons.main-buttons .main-buttons__item .btn svg{vertical-align: -7px;}
-#shopify-section-api-quickview div[data-bv-show="reviews"] {display: none;}
+#shopify-section-api-quickview div[data-bv-show=reviews], #shopify-section-api-quickview div[data-bv-show=review_highlights], #shopify-section-api-quickview div[data-bv-show=questions] {display: none;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
