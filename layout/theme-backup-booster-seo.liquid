@@ -1,24 +1,10 @@
-{%- comment -%}
-This file has been modified by the Yoast SEO for Shopify app.
-You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
-{%- endcomment -%}
-{%- liquid
-	assign disabled_by_yoast_seo = true
-	if content_for_header contains 'yoast-active-script'
-		assign disabled_by_yoast_seo = false
-	endif
--%}
 <!doctype html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
-  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<link rel="canonical" href="{{ canonical_url }}" />
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+  <link rel="canonical" href="{{ canonical_url }}" />
 
   <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
   <link rel="preload" as="script" href="{{ 'lazysizes.min.js' | asset_url }}">
@@ -143,24 +129,12 @@ You can learn more about this (and learn how to cleanly revert these changes) at
   {%- endif -%}
 
   {% comment %} Title and description {% endcomment %}
-  {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<title>{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+  <title>{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
 
   {%- if page_description -%}
-    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<meta name="description" content="{{ page_description | escape }}">
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+    <meta name="description" content="{{ page_description | escape }}">
   {%- else -%}
-    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<meta name="description" content="{{ shop.description | escape }}">
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+    <meta name="description" content="{{ shop.description | escape }}">
   {%- endif -%}
 
   {%- unless settings.type_base_font.system? -%}
