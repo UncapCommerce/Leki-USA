@@ -45,19 +45,20 @@
           "settings": {
             "icon_name": "check",
             "icon_color": "",
-            "icon_image": "{{ product.metafields.custom.shipping_icon.value }}",
+            "icon_image": "shopify:\/\/shop_images\/Icon_Set.png",
             "icon_width": 20,
             "icon_text": "{{ product.metafields.custom.shipping_text.value }}",
-            "icon_text_default": "Free shipping over $99",
+            "icon_text_default": "Free Shipping over $100.00",
             "text_size": 90,
-            "width": "half",
-            "text_alignment": "center",
+            "width": "full",
+            "text_alignment": "left",
             "bg_color": "",
             "padding_bottom": 24
           }
         },
         "1e56ec34-f9bb-43ed-bf34-7a68bbec022d": {
           "type": "icon",
+          "disabled": true,
           "settings": {
             "icon_name": "check",
             "icon_color": "",
@@ -85,57 +86,19 @@
             "accordion_heading_1": "HIGHLIGHTS",
             "accordion_text_1": "",
             "accordion_page_1": "",
-            "metafield_content_1": "highlights",
             "accordion_heading_2": "Specifications",
             "accordion_text_2": "",
             "accordion_page_2": "",
-            "metafield_content_2": "specifications",
             "accordion_heading_3": "More Info",
             "accordion_text_3": "",
             "accordion_page_3": "",
-            "metafield_content_3": "more-info",
             "accordion_heading_4": "",
             "accordion_text_4": "",
             "accordion_page_4": "",
-            "metafield_content_4": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies<\/p>",
             "accordion_heading_5": "",
             "accordion_text_5": "",
             "accordion_page_5": "",
-            "metafield_content_5": "<p>Use this accordion to add info such as Materials, Sizing, Features, Shipping and Returns policies<\/p>",
             "padding_bottom": 24
-          }
-        },
-        "icon_row": {
-          "type": "icon_row",
-          "disabled": true,
-          "settings": {
-            "icon_name_1": "truck",
-            "icon_color_1": "",
-            "icon_width_1": 20,
-            "icon_text_1": "Free shipping",
-            "icon_name_2": "check",
-            "icon_color_2": "",
-            "icon_width_2": 20,
-            "icon_text_2": "Free Returns",
-            "icon_name_3": "heart",
-            "icon_color_3": "",
-            "icon_width_3": 20,
-            "icon_text_3": "1% Donated Annually",
-            "icon_name_4": "clock",
-            "icon_color_4": "",
-            "icon_width_4": 20,
-            "icon_text_4": "Feature",
-            "alignment": "center",
-            "bg_color": "#ffffff",
-            "padding_bottom": 20
-          }
-        },
-        "share-button": {
-          "type": "share-button",
-          "disabled": true,
-          "settings": {
-            "text": "Share",
-            "padding_bottom": 20
           }
         },
         "23c44872-81a1-42ef-a8b7-819d66a0d46f": {
@@ -178,8 +141,6 @@
         "1e56ec34-f9bb-43ed-bf34-7a68bbec022d",
         "description",
         "product_accordions",
-        "icon_row",
-        "share-button",
         "23c44872-81a1-42ef-a8b7-819d66a0d46f",
         "760b06dc-130b-4162-838e-bf86cdee9a8b",
         "de2d470a-e4e4-4657-84f5-0710aa688ee7",
@@ -258,311 +219,12 @@
         "mob_padding_top": 40,
         "mob_padding_bottom": 40
       }
-    },
-    "overlapping-images-0": {
-      "type": "section-overlapping-images",
-      "disabled": true,
-      "settings": {
-        "text_position": "right",
-        "text_alignment": "center",
-        "images_width": 750,
-        "images_offset": 60,
-        "image_link_1": "",
-        "image_link_2": "",
-        "hide_image_2": false,
-        "heading": "Our Story, Our Promise",
-        "description": "<p>Use this text to describe a product, promotion, or your company.<\/p>",
-        "button_text": "",
-        "button_link": "",
-        "button_style": "btn--primary btn--small",
-        "video_text": "",
-        "video_link": "",
-        "bg_color_secondary": false,
-        "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "overlapping-images-1": {
-      "type": "section-overlapping-images",
-      "disabled": true,
-      "settings": {
-        "text_position": "left",
-        "text_alignment": "center",
-        "images_width": 750,
-        "images_offset": 60,
-        "image_link_1": "",
-        "image_link_2": "",
-        "hide_image_2": false,
-        "heading": "Our Story, Our Promise",
-        "description": "<p>Use this text to describe a product, promotion, or your company.<\/p>",
-        "button_text": "",
-        "button_link": "",
-        "button_style": "btn--primary btn--small",
-        "video_text": "",
-        "video_link": "",
-        "bg_color_secondary": false,
-        "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "testimonials": {
-      "type": "section-testimonials",
-      "disabled": true,
-      "blocks": {
-        "testimonial-block-text": {
-          "type": "text",
-          "settings": {
-            "heading": "We let our reviews speak for themselves.",
-            "text_size": 125,
-            "subheading": "<p>4.98 average<br>213 reviews<\/p>",
-            "block_color": "#000000",
-            "text_color": "text-light",
-            "text_alignment": "text-left"
-          }
-        },
-        "testimonial-block-0": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "text": "<p>Excellent customer service. I love their products!<\/p>",
-            "customer_name": "John Edmonson",
-            "subheading": "<p>Loyal Customer<\/p>"
-          }
-        },
-        "testimonial-block-1": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "text": "<p>Excellent customer service. I love their products!<\/p>",
-            "customer_name": "John Edmonson",
-            "subheading": "<p>Loyal Customer<\/p>"
-          }
-        },
-        "testimonial-block-2": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "text": "<p>Excellent customer service. I love their products!<\/p>",
-            "customer_name": "John Edmonson",
-            "subheading": "<p>Loyal Customer<\/p>"
-          }
-        },
-        "testimonial-block-3": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "text": "<p>Excellent customer service. I love their products!<\/p>",
-            "customer_name": "John Edmonson",
-            "subheading": "<p>Loyal Customer<\/p>"
-          }
-        },
-        "testimonial-block-4": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "text": "<p>Excellent customer service. I love their products!<\/p>",
-            "customer_name": "John Edmonson",
-            "subheading": "<p>Loyal Customer<\/p>"
-          }
-        },
-        "testimonial-block-5": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "text": "<p>Excellent customer service. I love their products!<\/p>",
-            "customer_name": "John Edmonson",
-            "subheading": "<p>Loyal Customer<\/p>"
-          }
-        },
-        "testimonial-block-6": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": 5,
-            "text": "<p>Excellent customer service. I love their products!<\/p>",
-            "customer_name": "John Edmonson",
-            "subheading": "<p>Loyal Customer<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial-block-text",
-        "testimonial-block-0",
-        "testimonial-block-1",
-        "testimonial-block-2",
-        "testimonial-block-3",
-        "testimonial-block-4",
-        "testimonial-block-5",
-        "testimonial-block-6"
-      ],
-      "settings": {
-        "title": "Testimonials",
-        "text_size": 100,
-        "text_alignment": "text-left",
-        "bg_color": "",
-        "testimonial_block_color": "",
-        "testimonial_text_color": "text-dark",
-        "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "grid": {
-      "type": "section-grid",
-      "disabled": true,
-      "blocks": {
-        "section-grid-0": {
-          "type": "image",
-          "settings": {
-            "width": "66.66",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop Trending",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "section-grid-1": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop Clearance",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "section-grid-2": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop Best Sellers",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "section-grid-3": {
-          "type": "image",
-          "settings": {
-            "width": "66.66",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop New",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        }
-      },
-      "block_order": [
-        "section-grid-0",
-        "section-grid-1",
-        "section-grid-2",
-        "section-grid-3"
-      ],
-      "settings": {
-        "height": "350",
-        "enable_mobile_height": false,
-        "mobile_height": "320",
-        "heading_size": 100,
-        "button_style": "btn--secondary btn--small",
-        "secondary_button_style": "btn--secondary btn--small",
-        "bg_color_secondary": false,
-        "enable_slider_mobile": true,
-        "width": "wrapper",
-        "add_gutter": true,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "tab_padding_top": 60,
-        "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
-        "mob_padding_bottom": 60
-      }
-    },
-    "icons": {
-      "type": "section-icons-row",
-      "disabled": true,
-      "blocks": {
-        "icon-0": {
-          "type": "text",
-          "settings": {
-            "icon_name": "truck",
-            "title": "Free Shipping",
-            "text": "<p>on all order over $99<\/p>"
-          }
-        },
-        "icon-1": {
-          "type": "text",
-          "settings": {
-            "icon_name": "check",
-            "title": "Free Returns",
-            "text": "<p>within 30 days of purchase<\/p>"
-          }
-        },
-        "icon-2": {
-          "type": "text",
-          "settings": {
-            "icon_name": "eco-friendly",
-            "title": "1% Donated Annually",
-            "text": "<p>to forest conservation<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "icon-0",
-        "icon-1",
-        "icon-2"
-      ],
-      "settings": {
-        "alignment": "center",
-        "columns": 3,
-        "icons_width": 30,
-        "heading": "",
-        "subheading": "",
-        "bg_color_secondary": false,
-        "box_color": "",
-        "text_color": "#333333",
-        "button_text": "",
-        "button_link": "",
-        "button_style": "btn--secondary btn--small",
-        "enable_slider_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "main",
     "e0306b1f-d063-43d0-b124-baa3ab703a0f",
     "related",
-    "tabs",
-    "overlapping-images-0",
-    "overlapping-images-1",
-    "testimonials",
-    "grid",
-    "icons"
+    "tabs"
   ]
 }
