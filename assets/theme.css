@@ -16933,7 +16933,7 @@ a.results-popular__link:hover {
 
 .list-collections__item--circle .list-collections__item__image,
 .list-collections__item--circle .list-collections__item__image-bg {
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 .no-touch .list-collections__item__image-bg {
