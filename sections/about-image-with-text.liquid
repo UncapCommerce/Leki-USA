@@ -102,7 +102,11 @@
         {% for imagewrap in section.blocks %}
           {% if imagewrap.settings.image != blank %}
             <figure>
-                <img src="{{ imagewrap.settings.image | img_url:'' }}" alt="" />            
+            {{ imagewrap.settings.image | image_url:width:1060| image_tag: alt:imagewrap.settings.image.alt, loading:'lazy', 
+                height: height,
+                sizes: "100vw",
+                widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' }}
+<!--                 <img src="{{ imagewrap.settings.image | img_url:'' }}" alt="" />             -->
             </figure>
             {% else %}
             <figure>
