@@ -216,6 +216,16 @@ You can learn more about this (and learn how to cleanly revert these changes) at
   </div>
   
   {%- for link in linklists[section.settings.main-menu].links -%}
+    {% assign link_handle = link.title | handle %}
+    {% assign link_url = link.url %}
+    {% if link_url contains '/collections' and link_handle == 'outlet' %}
+      {% assign collection_handle = link.url | split: "collections/" | last %}
+      {%- assign current_collection = collections[collection_handle] -%}
+      {% assign product_count = current_collection.all_products_count %}
+      {% unless product_count > 0 %}
+        {% continue %}
+      {% endunless %}  
+    {% endif %}
     {%- render 'nav-item', link: link, section: section, index: forloop.index, highlight_item: highlight_item -%}
   {%- endfor -%}
 
@@ -290,7 +300,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     <div class="nav-search" role="dialog" aria-label="{{ 'layout.navigation.search' | t }}" aria-expanded="false" data-nav-search>
   <button class="nav-search__close" data-nav-search-close>
     <span class="visually-hidden">{{ 'general.accessibility.close_search_bar' | t }}</span>
-    {%- render 'icon-close' -%}
+    {%- render 'icon-search-close' -%}
   </button>
 
   <div class="nav-search__scroller" data-nav-search-scroller>
@@ -301,7 +311,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
             <label for="search-field" class="visually-hidden">{{ 'general.accessibility.search-field' | t }}</label>
             <input class="nav-search__input" name="q" type="search" id="search-field" placeholder="{{ 'general.search.placeholder' | t }}" value="" data-nav-search-input>
             <input type="hidden" name="type" value="product" data-nav-search-type>
-            <button type="submit" class="nav-search__submit"><span class="visually-hidden">{{ 'general.accessibility.submit_search_request' | t }}</span>{% render 'icon-search' %}</button>
+            <button type="submit" class="nav-search__submit"><span class="visually-hidden">{{ 'general.accessibility.submit_search_request' | t }}</span>{% render 'icon-search-bar' %}</button>
           </div>
         </form>
 
@@ -309,7 +319,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
         {%- unless popular_links == blank -%}
           <div class="results-popular">
             <p class="results-popular__title">{{ 'general.search.popular' | t }}</p>
-            <ul class="results-popular__links" data-scroll-lock-scrollable>
+            <ul class="results-popular__links popular-item" data-scroll-lock-scrollable>
               {%- for link in linklists[popular_links].links -%}
                 <li><a href="{{ link.url }}" data-popular-search-link>{{ link.title | escape }}</a></li>
               {%- endfor -%}
@@ -320,11 +330,67 @@ You can learn more about this (and learn how to cleanly revert these changes) at
         {%- if section.settings.show_search_links -%}
           <div class="results-popular">
             <p class="results-popular__title">{{ 'general.search.browse_categories' | t }}</p>
+            {% comment %}
             <ul class="results-popular__links" data-scroll-lock-scrollable>
               {%- for collection in collections -%}
                 <li><a href="{{ collection.url }}" class="results-popular__link" data-popular-search-link>{{ collection.title }}</a></li>
               {%- endfor -%}
-            </ul>
+            </ul>{% endcomment %}
+            <div class="results-popular__links popular-collection-list" data-scroll-lock-scrollable>
+              {% for block in section.blocks %}
+              {% case block.type %}
+              {% when 'search-collection'%}
+                <a href="{{ block.settings.coll_1.url }}" class="results-popular__link" data-popular-search-link>
+                <div class="popular-coll-image">
+                  <figure>
+                   {% if block.settings.coll_1.image != blank %}
+                    <img class="loading" src="{{ block.settings.coll_1.image | img_url:'' }}" alt="{{ block.settings.coll_1.alt }}">
+                   {% else %}
+                    {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                   {% endif %}
+                  </figure>
+                </div>
+                  <div class="popular-coll-title">{{ block.settings.coll_1.title }}</div>
+                </a>
+                <a href="{{ block.settings.coll_2.url }}" class="results-popular__link" data-popular-search-link>
+                  <div class="popular-coll-image">
+                    <figure>
+                     {% if block.settings.coll_2.image != blank %}
+                      <img class="loading" src="{{ block.settings.coll_2.image | img_url:'' }}" alt="{{ block.settings.coll_2.alt }}">
+                     {% else %}
+                      {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                     {% endif %}
+                    </figure>
+                  </div>
+                  <div class="popular-coll-title">{{ block.settings.coll_2.title }}</div>
+                </a>
+                <a href="{{ block.settings.coll_3.url }}" class="results-popular__link" data-popular-search-link>
+                <div class="popular-coll-image">
+                    <figure>
+                     {% if block.settings.coll_3.image != blank %}
+                      <img class="loading" src="{{ block.settings.coll_3.image | img_url:'' }}" alt="{{ block.settings.coll_3.alt }}">
+                     {% else %}
+                      {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                     {% endif %}
+                    </figure>
+                  </div>
+                  <div class="popular-coll-title">{{ block.settings.coll_3.title }}</div>
+                </a>
+                <a href="{{ block.settings.coll_4.url }}" class="results-popular__link" data-popular-search-link>
+                  <div class="popular-coll-image">
+                    <figure>
+                     {% if block.settings.coll_4.image != blank %}
+                      <img class="loading" src="{{ block.settings.coll_4.image | img_url:'' }}" alt="{{ block.settings.coll_4.alt }}">
+                     {% else %}
+                      {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                     {% endif %}
+                    </figure>
+                  </div>
+                  <div class="popular-coll-title">{{ block.settings.coll_4.title }}</div>
+                </a>                      
+              {% endcase %}
+              {% endfor %}             
+            </div>
           </div>
         {%- endif -%}
 
@@ -666,6 +732,33 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           "type": "url",
           "id": "link",
           "label": "Link"
+        }
+      ]
+    },
+    {
+      "name": "Search Collection",
+      "type": "search-collection",
+      "limit":1,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "coll_1",
+          "label": "Collection 1"
+        },
+        {
+          "type": "collection",
+          "id": "coll_2",
+          "label": "Collection 2"
+        },
+        {
+          "type": "collection",
+          "id": "coll_3",
+          "label": "Collection 3"
+        },
+        {
+          "type": "collection",
+          "id": "coll_4",
+          "label": "Collection 4"
         }
       ]
     }
