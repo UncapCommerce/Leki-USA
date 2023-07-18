@@ -7886,7 +7886,8 @@ a.navlink.navlink--child {
   line-height: 20px;
   display: inline-block;
   vertical-align: middle;
-  font-family: var(--font-stcak-heading);
+/*   font-family: var(--font-stcak-heading); */
+  font-weight: 600;
 }
 .results-popular__links + .results .results__count,
 .results-popular__links + .results .no-results {
@@ -8026,6 +8027,10 @@ a.results-popular__link:hover {
 }
 @media(max-width: 475px){
   .results-popular__links .popular-coll-image figure{padding-bottom: 75.2%;}
+  .results-popular__links .popular-coll-image {
+    max-width: 133px;
+    width: 133px;
+  }
   .results-popular__links .popular-coll-title{word-break: break-word;white-space: normal;}
 }
 /*================ Drawers ================*/
@@ -21576,7 +21581,7 @@ body.notification-visible .popup.popup--visible {
 }
 @media(min-width: 768px) and (max-width: 1920px){
   .popup-quick-view__body div[data-form-wrapper]{
-    max-height: 280px;
+    max-height: 460px;
   }
 }
 @media(min-width: 1921px){
@@ -22014,6 +22019,9 @@ body.notification-visible .popup.popup--visible {
   line-height: 20px;
   background: transparent;
   color: var(--label-text);
+}
+.popup-quick-view__body .radio__button.unavailable label.radio__label {
+  color: #a5a5a5;
 }
 .popup-quick-view__body .selector-wrapper--boxes .radio__button.sold-out .radio__label {
   color: #A5A5A5;
