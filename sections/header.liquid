@@ -327,7 +327,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
           </div>
         {%- endunless -%}
 
-        {%- if section.settings.show_search_links -%}
+        {%- if section.settings.show_search_links and section.blocks.size > 0 -%}
           <div class="results-popular">
             <p class="results-popular__title">{{ 'general.search.browse_categories' | t }}</p>
             {% comment %}
@@ -340,54 +340,62 @@ You can learn more about this (and learn how to cleanly revert these changes) at
               {% for block in section.blocks %}
               {% case block.type %}
               {% when 'search-collection'%}
+              {% if block.settings.coll_1 != blank %}
                 <a href="{{ block.settings.coll_1.url }}" class="results-popular__link" data-popular-search-link>
-                <div class="popular-coll-image">
-                  <figure>
-                   {% if block.settings.coll_1.image != blank %}
-                    <img class="loading" src="{{ block.settings.coll_1.image | img_url:'' }}" alt="{{ block.settings.coll_1.alt }}">
-                   {% else %}
-                    {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
-                   {% endif %}
-                  </figure>
-                </div>
+                  <div class="popular-coll-image">
+                    <figure>
+                     {% if block.settings.coll_1.image != blank %}
+                      <img class="loading" src="{{ block.settings.coll_1.image | img_url:'' }}" alt="{{ block.settings.coll_1.alt }}">
+                     {% else %}
+                      {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                     {% endif %}
+                    </figure>
+                   </div>
                   <div class="popular-coll-title">{{ block.settings.coll_1.title }}</div>
-                </a>
-                <a href="{{ block.settings.coll_2.url }}" class="results-popular__link" data-popular-search-link>
-                  <div class="popular-coll-image">
-                    <figure>
-                     {% if block.settings.coll_2.image != blank %}
-                      <img class="loading" src="{{ block.settings.coll_2.image | img_url:'' }}" alt="{{ block.settings.coll_2.alt }}">
-                     {% else %}
-                      {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
-                     {% endif %}
-                    </figure>
-                  </div>
-                  <div class="popular-coll-title">{{ block.settings.coll_2.title }}</div>
-                </a>
-                <a href="{{ block.settings.coll_3.url }}" class="results-popular__link" data-popular-search-link>
-                <div class="popular-coll-image">
-                    <figure>
-                     {% if block.settings.coll_3.image != blank %}
-                      <img class="loading" src="{{ block.settings.coll_3.image | img_url:'' }}" alt="{{ block.settings.coll_3.alt }}">
-                     {% else %}
-                      {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
-                     {% endif %}
-                    </figure>
-                  </div>
-                  <div class="popular-coll-title">{{ block.settings.coll_3.title }}</div>
-                </a>
-                <a href="{{ block.settings.coll_4.url }}" class="results-popular__link" data-popular-search-link>
-                  <div class="popular-coll-image">
-                    <figure>
-                     {% if block.settings.coll_4.image != blank %}
-                      <img class="loading" src="{{ block.settings.coll_4.image | img_url:'' }}" alt="{{ block.settings.coll_4.alt }}">
-                     {% else %}
-                      {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
-                     {% endif %}
-                    </figure>
-                  </div>
-                  <div class="popular-coll-title">{{ block.settings.coll_4.title }}</div>
-                </a>                      
+                  </a>
+                {% endif %}
+                {% if block.settings.coll_2 != blank %}
+                  <a href="{{ block.settings.coll_2.url }}" class="results-popular__link" data-popular-search-link>
+                    <div class="popular-coll-image">
+                      <figure>
+                       {% if block.settings.coll_2.image != blank %}
+                        <img class="loading" src="{{ block.settings.coll_2.image | img_url:'' }}" alt="{{ block.settings.coll_2.alt }}">
+                       {% else %}
+                        {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                       {% endif %}
+                      </figure>
+                    </div>
+                    <div class="popular-coll-title">{{ block.settings.coll_2.title }}</div>
+                  </a>
+                {% endif %}
+                {% if block.settings.coll_3 != blank %}
+                  <a href="{{ block.settings.coll_3.url }}" class="results-popular__link" data-popular-search-link>
+                    <div class="popular-coll-image">
+                      <figure>
+                       {% if block.settings.coll_3.image != blank %}
+                        <img class="loading" src="{{ block.settings.coll_3.image | img_url:'' }}" alt="{{ block.settings.coll_3.alt }}">
+                       {% else %}
+                        {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                       {% endif %}
+                      </figure>
+                    </div>
+                    <div class="popular-coll-title">{{ block.settings.coll_3.title }}</div>
+                  </a>
+                {% endif %}
+                {% if block.settings.coll_4 != blank %}
+                  <a href="{{ block.settings.coll_4.url }}" class="results-popular__link" data-popular-search-link>
+                    <div class="popular-coll-image">
+                      <figure>
+                       {% if block.settings.coll_4.image != blank %}
+                        <img class="loading" src="{{ block.settings.coll_4.image | img_url:'' }}" alt="{{ block.settings.coll_4.alt }}">
+                       {% else %}
+                        {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                       {% endif %}
+                      </figure>
+                    </div>
+                    <div class="popular-coll-title">{{ block.settings.coll_4.title }}</div>
+                  </a>  
+                {% endif %}
               {% endcase %}
               {% endfor %}             
             </div>
