@@ -116,6 +116,20 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "0bca88ed-2e0d-4be4-93ae-506b6fedb528": {
+            "type": "search-collection",
+            "settings": {
+              "coll_1": "trail-running",
+              "coll_2": "cross-trail",
+              "coll_3": "trekking",
+              "coll_4": "mountaineering-four-season"
+            }
+          }
+        },
+        "block_order": [
+          "0bca88ed-2e0d-4be4-93ae-506b6fedb528"
+        ],
         "settings": {
           "sticky_header": true,
           "header_border": false,
@@ -129,7 +143,7 @@
           "highlight_item": "Sale",
           "highlight_item_color": "#d02e2e",
           "show_search": true,
-          "menu_searches_list": "",
+          "menu_searches_list": "popular_links",
           "show_search_links": true,
           "header_transparent": false,
           "header_text_color": "white"
