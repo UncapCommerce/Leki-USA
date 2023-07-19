@@ -1,0 +1,270 @@
+{% liquid
+  assign section_width = section.settings.section_width
+  assign animation_anchor = '#Media-portal--' | append: section.id
+  assign animations_enabled = settings.animations_enabled
+  assign animation_delay = 150
+%}
+
+{%- style -%}
+  #Media-portal--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  @media(max-width: 1023px){
+    #Media-portal--{{ section.id }} {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+    #Media-portal--{{ section.id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .Leki-media-portal h2.h1 {text-align: center;font-family: var(--font-stack-body);}
+  .Leki-media-portal .leki-portal-links ul {margin: 0 0 30px;display: flex;align-items: center;justify-content: center;gap: 40px;border-bottom: 1px solid var(--border);padding-bottom: 30px;flex-wrap: wrap;}
+  .Leki-media-portal .leki-portal-links ul li {list-style: none;}
+  .Leki-media-portal .leki-portal-links ul li a ,.media-portal-content .right-media-portal a.mailing-list {padding: 10px 40px;background: var(--COLOR-BUTTON-PRIMARY-TEXT-HOVER);color: var(--COLOR-BUTTON-PRIMARY-TEXT);border-radius: 4px;font-size: 14px;line-height: 20px;display: inline-block;vertical-align: middle;max-width: 264px;width: 264px;text-align: center;}
+  .media-portal-content {display: flex;justify-content: left;flex-wrap: nowrap;gap: 20px;}
+  .media-portal-content .left-media-portal, .media-portal-content .right-media-portal {max-width: 50%;flex: 0 0 50%;}
+  .media-portal-content .right-media-portal a.mailing-list {width: 100%;max-width: 100%;margin-top: 20px;}
+  @media(max-width: 1069px){
+    .Leki-media-portal .leki-portal-links ul li a {padding: 10px 30px;}
+  }
+  @media(max-width: 767px){
+    .media-portal-content {flex-wrap: wrap;}
+    .media-portal-content .left-media-portal, .media-portal-content .right-media-portal {max-width: 100%;flex: 0 0 100%;font-size: 14px;line-height: 20px;}
+    .Leki-media-portal .leki-portal-links ul{gap: 20px;gap: 20px;}
+  }
+</style>
+
+<section id="Media-portal--{{ section.id }}" class="section-padding" data-section-id="{{ section.id }}"
+  data-section-type="leki-media-portal">
+  <div class="{{ section_width }}">
+    {% if section.settings.page_title != blank %}
+    <h2 class="h1" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>{{ section.settings.page_title }}</h2>
+    {% endif %}
+    {% if section.settings.tab1_title != blank and section.settings.tab1_link != blank or section.settings.tab2_title != blank and section.settings.tab2_link != blank or
+    section.settings.tab3_title != blank and section.settings.tab3_link != blank or section.settings.tab4_title != blank and section.settings.tab4_link != blank %}
+    <div class="leki-portal-links" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>    
+      <ul>
+        {% if section.settings.tab1_title != blank and section.settings.tab1_link != blank %}
+          <li><a href="{% if section.settings.tab1_link != blank %}{{ section.settings.tab1_link }}{% else %}#{% endif %}">{{ section.settings.tab1_title }}</a></li>
+        {% endif %}
+        {% if section.settings.tab2_title != blank and section.settings.tab2_link != blank %}
+          <li><a href="{% if section.settings.tab2_link != blank %}{{ section.settings.tab2_link }}{% else %}#{% endif %}" target="_blank">{{ section.settings.tab2_title }}</a></li>
+        {% endif %}
+        {% if section.settings.tab3_title != blank and section.settings.tab3_link != blank %}
+          <li><a href="{% if section.settings.tab3_link != blank %}{{ section.settings.tab3_link }}{% else %}#{% endif %}" target="_blank">{{ section.settings.tab3_title }}</a></li>
+        {% endif %}
+        {% if section.settings.tab4_title != blank and section.settings.tab4_link != blank %}
+          <li><a href="{% if section.settings.tab4_link != blank %}{{ section.settings.tab4_link }}{% else %}#{% endif %}" target="_blank">{{ section.settings.tab4_title }}</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    {% endif %}
+    {% if section.blocks.size > 0 %}
+      <div class="media-portal-content" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'left-media-portal' %}
+              {% if block.settings.left_portal != blank %}
+                <div class="left-media-portal">
+                  {{ block.settings.left_portal }}
+                </div>
+              {% endif %}
+            {% when 'right-media-portal' %}
+              {% if block.settings.right_portal != blank %}
+              <div class="right-media-portal">
+                {{ block.settings.right_portal }}
+                {% if section.settings.tab1_title != blank and section.settings.tab1_link != blank %}
+                  <a class="mailing-list" href="{% if section.settings.tab1_link != blank %}{{ section.settings.tab1_link }}{% else %}#{% endif %}">{{ section.settings.tab1_title }}</a>
+                {% endif %}
+              </div>
+              {% endif %}
+            {% endcase %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>  
+</section>
+{% schema %}
+  {
+    "name": "Leki Media Portal",
+    "class":"Leki-media-portal",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "page_title",
+        "label": "Heading"
+      }, 
+      {
+        "type": "text",
+        "id": "tab1_title",
+        "label": "Tab 1 Title"
+      }, 
+      {
+        "type": "url",
+        "id": "tab1_link",
+        "label": "Tab 1 Link"
+      }, 
+      {
+        "type": "text",
+        "id": "tab2_title",
+        "label": "Tab 2 Title"
+      }, 
+      {
+        "type": "url",
+        "id": "tab2_link",
+        "label": "Tab 2 Link"
+      },
+      {
+        "type": "text",
+        "id": "tab3_title",
+        "label": "Tab 3 Title"
+      }, 
+      {
+        "type": "url",
+        "id": "tab3_link",
+        "label": "Tab 3 Link"
+      },
+      {
+        "type": "text",
+        "id": "tab4_title",
+        "label": "Tab 4 Title"
+      }, 
+      {
+        "type": "url",
+        "id": "tab4_link",
+        "label": "Tab 4 Link"
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "section_width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full", "label": "Full width" },
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ],
+    "blocks":[
+      {
+        "type":"left-media-portal",
+        "name":"Left Media Portal",
+        "settings":[
+          {
+            "type": "richtext",
+            "id": "left_portal",
+            "label": "Media Content "
+          }
+        ]
+      },
+      {
+        "type":"right-media-portal",
+        "name":"Right Media Portal",
+        "settings":[
+          {
+            "type": "richtext",
+            "id": "right_portal",
+            "label": "Media Content "
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name": "Leki Media Portal"
+      }
+    ]
+  }
+{% endschema %}
