@@ -132,7 +132,7 @@
     "subcollections": {
       "type": "subcollections",
       "settings": {
-        "layout": "grid",
+        "layout": "carousel",
         "image_source": "collection",
         "image_aspect_ratio": 0.6,
         "image_overlay_opacity": 10,
