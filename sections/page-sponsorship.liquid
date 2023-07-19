@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   let selectType = document.querySelector('.select-type');
   selectType.addEventListener('change', function handleChange(event) {
-    var select_val = this.value.replace(' ', '-');
+    var select_val = this.value.replaceAll(' ', '-');
     var handle_val = select_val.toLowerCase();
     event.target.nextElementSibling.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
      evt.classList.remove("active");
