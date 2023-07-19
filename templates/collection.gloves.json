@@ -27,7 +27,7 @@
         "layout": "carousel",
         "columns": 6,
         "image_size": 100,
-        "image_shape": "circle",
+        "image_shape": "square",
         "title": "",
         "text_size": 100,
         "overlay_text": true,
