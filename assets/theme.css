@@ -7992,6 +7992,7 @@ a.results-popular__link:hover {
   line-height: 28px;
   color: #fff;
   padding: 0 16px;
+  font-weight: 600;
 }
 
 @media(max-width: 1023px){
@@ -25901,12 +25902,17 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .sponsorship-inner-wrap .sponsor-tab-content a {color: #3758b9;}
 .slide__buttons.main-buttons .main-buttons__item .btn svg{vertical-align: -7px;}
 #shopify-section-api-quickview div[data-bv-show=reviews], #shopify-section-api-quickview div[data-bv-show=review_highlights], #shopify-section-api-quickview div[data-bv-show=questions] {display: none;}
+.page--warranty .sponsorship-tabs ul {max-width: 700px;}
+.sponsorship-inner-wrap .sponsor-tab-content ul {padding-left: 15px;}
+.tab-highlight {border: 1px solid #555;background-color: #f3f3f3;padding:0 16px;border-radius: 8px;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
 }
 @media(max-width: 767px){
   .slide__buttons.main-buttons .main-buttons__item .btn{max-width: max-content;}
+  .tab-highlight{margin-top: 20px;}
+  .sponsorship-inner-wrap .sponsor-tab-content .tab-inner-data p , .tab-highlight p {font-size: 14px;line-height: 20px;}
 }
 
 
@@ -25917,4 +25923,4 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading .btn__loader .svg-loader circle ~ circle {animation-play-state: running;opacity: 1;}
 .order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading .btn__loader .svg-loader circle {stroke-width: 1;stroke: var(--button-primary-text);opacity: 0.1;}
 .order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading:hover .btn__loader .svg-loader circle {stroke: var(--button-primary-bg-alpha-50);opacity: 1;}
-.order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading:hover .btn__loader .svg-loader circle ~ circle {color: var(--button-secondary-text);opacity: 1;}
+.order__item__title.order-detail-wrap tfoot .reorder-btn.is-loading:hover .btn__loader .svg-loader circle ~ circle {color: var(--button-secondary-text);opacity: 1;}  

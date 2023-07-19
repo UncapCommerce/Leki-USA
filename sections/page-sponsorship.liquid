@@ -126,6 +126,7 @@ data-section-id="{{ section.id }}">
               <div class="sponsor-tab-content {% if forloop.first %}active{% endif %}" id="{{ forloop.index }}" data-title="{{ block.settings.tab_title | handle }}">
                 {% if block.settings.block_title != blank %}<h2>{{ block.settings.block_title }}</h2>{% endif %}
                 {% if block.settings.block_content != blank %}<div class="tab-data"><div class="tab-inner-data" data-height="264">{{ block.settings.block_content }}</div></div><a href='javascript:void(0)' class="readmore hidden-lg" >Read More</a>{% endif %}                
+                {% if block.settings.block_highlight != blank %}<div class="tab-highlight">{{ block.settings.block_highlight }}</div>{% endif %}                
                 {% if block.settings.form_data != blank %}{{ block.settings.form_data }}{% endif %}
               </div>               
             {% endfor %} 
@@ -340,6 +341,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             "type": "richtext",
             "id": "block_content",
             "label": "Description"
+          },          
+          {
+            "type": "richtext",
+            "id": "block_highlight",
+            "label": "Highlight Description"
           },          
           {
             "type": "html",
