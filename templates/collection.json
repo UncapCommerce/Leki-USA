@@ -131,6 +131,7 @@
     },
     "subcollections": {
       "type": "subcollections",
+      "disabled": true,
       "settings": {
         "layout": "carousel",
         "image_source": "collection",
