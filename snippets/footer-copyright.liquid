@@ -52,8 +52,8 @@
 
 <div class="footer-copyright">
   <span>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}.</span>
-  {% comment %}<span>{{ powered_by_link }}</span>{% endcomment %}
-  <span>{{ 'footer.copyright' | t }}</span>
+  {% comment %}<span>{{ powered_by_link }}</span>
+  <span>{{ 'footer.copyright' | t }}</span>{% endcomment %}
   {%- for link in linklists[section.settings.bottom_menu].links -%}
     <a
       href="{{ link.url }}"
