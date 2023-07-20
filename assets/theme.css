@@ -25915,17 +25915,14 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .sponsorship-inner-wrap .sponsor-tab-content ul {padding-left: 15px;}
 .tab-highlight {border: 1px solid #555;background-color: #f3f3f3;padding:0 16px;border-radius: 8px;}
 .result__image-img.background-size-cover {background-size: contain;}
-.result__image{padding-top: 32px;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
-}
-@media(max-width: 767px){
   .slide__buttons.main-buttons .main-buttons__item .btn{max-width: max-content;}
   .tab-highlight{margin-top: 20px;}
   .sponsorship-inner-wrap .sponsor-tab-content .tab-inner-data p , .tab-highlight p {font-size: 14px;line-height: 20px;}
+  .result__image{padding-top: 32px;}
 }
-
 
 
 .order__item__title.order-detail-wrap tfoot .reorder-btn:not(.is-loading) .btn__loader,
