@@ -1,5 +1,5 @@
 {% assign pole_button_style = settings.pole_button_style %}
-<div id="pole-adviser-drawer" class="pole-adviser-drawer">
+<div id="pole-adviser-drawer" class="pole-adviser-drawer" data-scroll-lock-scrollable>
   <div class="pole-close">
     {%- render 'icon-close' -%}
   </div>
@@ -82,7 +82,7 @@
     </div>  
     <div id="poleSizeCalculationResult" class="pole-size-advisor-result hidden">
       <div class="pole-size-advisor-result-wrapper">  
-        <div class="result-left-wrap">
+        <div class="result-left-wrap" data-scroll-lock-scrollable>
           <span>Our Suggestion</span>
           <div id="roundedSize"></div>
           <div id="skateroundedSize"></div>

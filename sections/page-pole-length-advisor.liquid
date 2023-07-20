@@ -85,7 +85,7 @@ data-section-id="{{ section.id }}">
   {% endif %}
   <div class="poleLenght-bg">
   <div class="{{ section_width }}">
-    <div class="poleLenght-form-wrapper {% if section.settings.polelength_bgimg != blank %}has-bg{% endif %}">
+    <div class="poleLenght-form-wrapper {% if section.settings.polelength_bgimg != blank %}has-bg{% endif %} poleLength_calculation222">
       <div id="poleSizeAdvisorForm">
         {% if section.settings.title != blank %}
           <div class="form__item form__item--heading"
@@ -108,7 +108,7 @@ data-section-id="{{ section.id }}">
             {{ section.settings.content }}
         </div>
         {% endif %}
-        <div class="poleLength_calculation">
+        <div class="poleLength_calculation ">
           <h4 class="title" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
@@ -207,7 +207,7 @@ data-section-id="{{ section.id }}">
               <div class="result-btn">
               </div>
             </div>
-            <div class="result-right-wrap">
+            <div class="result-right-wrap" data-scroll-lock-scrollable>
               
             </div>
           </div>
