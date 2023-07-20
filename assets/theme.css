@@ -7707,7 +7707,7 @@ a.navlink.navlink--child {
 .nav-search .search-form {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   padding-bottom: 40px;
   margin: 70px auto 60px;
   transition: margin-top 0.25s ease-out;
@@ -25914,6 +25914,8 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .page--warranty .sponsorship-tabs ul {max-width: 700px;}
 .sponsorship-inner-wrap .sponsor-tab-content ul {padding-left: 15px;}
 .tab-highlight {border: 1px solid #555;background-color: #f3f3f3;padding:0 16px;border-radius: 8px;}
+.result__image-img.background-size-cover {background-size: contain;}
+.result__image{padding-top: 32px;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
