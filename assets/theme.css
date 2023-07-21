@@ -25917,6 +25917,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .sponsorship-inner-wrap .sponsor-tab-content ul {padding-left: 15px;}
 .tab-highlight {border: 1px solid #555;background-color: #f3f3f3;padding:0 16px;border-radius: 8px;}
 .result__image-img.background-size-cover {background-size: contain;}
+.active--li {border-color: 1px solid red !important;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
