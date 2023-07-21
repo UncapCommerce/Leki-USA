@@ -10,6 +10,14 @@
       <div class="accordion_metafield-content">
         {% capture specificationsContent %}
           <table>
+            {% if product.metafields.custom.model_number != blank %}
+            <tr>
+              <td class="heading">Model Number:</td>          
+              <td class="select-activities">
+                {{ product.metafields.custom.model_number | metafield_tag }}
+              </td>
+            </tr>
+            {% endif %}
             {% if product.metafields.custom.activities != blank %}
             <tr>
               <td class="heading">Activities:</td>          
