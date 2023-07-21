@@ -10,11 +10,11 @@
       <div class="accordion_metafield-content">
         {% capture specificationsContent %}
           <table>
-            {% if product.metafields.custom.model_number != blank %}
+            {% if product.metafields.custom.model_number_2 != blank %}
             <tr>
               <td class="heading">Model Number:</td>          
               <td class="select-activities">
-                {{ product.metafields.custom.model_number | metafield_tag }}
+                {{ product.metafields.custom.model_number_2 | metafield_tag }}
               </td>
             </tr>
             {% endif %}
