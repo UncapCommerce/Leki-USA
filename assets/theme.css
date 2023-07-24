@@ -25380,10 +25380,10 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
   .wallpaper-details .detail-inner .right-detail a.btn {padding: 6px 12px 4px;}
   .wallpaper-details .detail-inner .left-detail {font-size: 14px;line-height: 20px;}
 }
+@media(min-width: 768px) and (max-width: 1199px){.mosaic__item__heading{font-size: 32px;line-height: 42px;}}
 @media(max-width: 1199px){
   .navlink--icon{height: 20px;width: 20px;}  
   .footer-blocks{gap: 70px;}
-  .mosaic__item__heading{font-size: 40px;line-height: 48px;}
   .mosaic__item{padding: 0 10px;}
   .mosaic__grid{margin: 0 -10px;}
   .activity-landing-text .heading {font-size: 60px;line-height: 80px;margin-bottom: 30px;}
