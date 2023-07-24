@@ -17581,12 +17581,12 @@ function getfilterResult(url, selfInner) {
       }
     });
 }
-function filterClickButton(self)  { 
+function filterClickButton(self){
   var height;
-  if (self.closest('.poleLength_calculation222').querySelector('.height')) {
-    height = self.closest('.poleLength_calculation222').querySelector('.height').value;   
+  if(self.closest('.poleLength_calculation222').querySelector('.height')){
+    height = self.closest('.poleLength_calculation222').querySelector('.height').value;
   }
-  if (height >=75 && height <=230 ) {
+  if(height >=75 && height <=230){
     self.closest('.poleLength_calculation222').querySelectorAll('#skateroundedSize, #skateSize, #roundedSize, #calculatedSize').forEach(function(self){
       self.innerHTML = '';
     })
@@ -17599,58 +17599,54 @@ function filterClickButton(self)  {
     var skateValue = Number(e.options[e.selectedIndex].getAttribute('data-skate'));
     var lowestValue = 80;
     var highestValue = 180;
-    if (classicValue) {
+    if(classicValue){
       var classicNumber = Number(height * classicValue).toFixed(1);
-      if(value == 'cross-country'){        
-        self.closest('.poleLength_calculation222').querySelector('#calculatedSize').innerHTML = 'Classic ' + classicNumber + ' cm';
-      }else{
-        self.closest('.poleLength_calculation222').querySelector('#calculatedSize').innerHTML = classicNumber + ' cm';
+      if(value == 'cross-country'){
+        self.closest('.poleLength_calculation222').querySelector('#calculatedSize').innerHTML = 'Classic '+classicNumber+' cm';
+      } else{
+        self.closest('.poleLength_calculation222').querySelector('#calculatedSize').innerHTML = classicNumber+' cm';
       }
       var suggestionClassicNumber = 0;
-      if (classicNumber > highestValue) {
+      if(classicNumber > highestValue){
         suggestionClassicNumber = highestValue;
-      }
-      else if (classicNumber < lowestValue){
+      } else if(classicNumber < lowestValue){
         suggestionClassicNumber = lowestValue;
-      }
-      else {
+      } else{
         suggestionClassicNumber = Math.round(classicNumber / 5) * 5;
       }
-      if(value == 'cross-country'){        
-        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = 'Classic ' + suggestionClassicNumber + ' cm';
-      }else{
-        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = suggestionClassicNumber + ' cm';
-      }      
-      var getCurrent = "/collections/"+ self.closest('.poleLength_calculation222').querySelector("#category").value +"?filter.v.option.size="+ suggestionClassicNumber +"+cm";
+      if(value == 'cross-country'){
+        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = 'Classic '+suggestionClassicNumber+' cm';
+      } else{
+        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = suggestionClassicNumber+' cm';
+      }
+      var getCurrent = "/collections/"+ self.closest('.poleLength_calculation222').querySelector("#category").value +"?filter.v.option.size="+suggestionClassicNumber+"+cm";
       self.closest('.poleLength_calculation222').querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show Products</a>';
       self.closest('.poleLength_calculation222').querySelector('.result-btn a').setAttribute('href',getCurrent);
       getfilterResult(getCurrent, self.closest('.poleLength_calculation222'));
     }
-    if (skateValue) {
+    if(skateValue){
       var skateNumber = Number(height * skateValue).toFixed(1);
-      if(value == 'cross-country'){        
-        self.closest('.poleLength_calculation222').querySelector('#skateSize').innerHTML = 'Skate ' + skateNumber + ' cm';
-      }else{
-        self.closest('.poleLength_calculation222').querySelector('#skateSize').innerHTML = skateNumber + ' cm';
-      }         
+      if(value == 'cross-country'){
+        self.closest('.poleLength_calculation222').querySelector('#skateSize').innerHTML = 'Skate '+skateNumber+' cm';
+      } else{
+        self.closest('.poleLength_calculation222').querySelector('#skateSize').innerHTML = skateNumber+' cm';
+      }
       var suggestionSkateNumber = 0;
-      if (skateNumber > highestValue) {
+      if(skateNumber > highestValue){
         suggestionSkateNumber = highestValue;
-      }
-      else if (skateNumber < lowestValue){
+      } else if(skateNumber < lowestValue){
         suggestionSkateNumber = lowestValue;
-      }
-      else {
+      } else{
         suggestionSkateNumber = skateNumber;
       }
-      if(value == 'cross-country'){        
-        self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = 'Skate ' + suggestionSkateNumber + ' cm';
-      }else{
-        self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = suggestionSkateNumber + 'cm';
-      }         
+      if(value == 'cross-country'){
+        self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = 'Skate '+suggestionSkateNumber+' cm';
+      } else{
+        self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = suggestionSkateNumber+' cm';
+      }
     }
-  } else {
-    if (height <= 75 || height >= 230 ){
+  } else{
+    if(height <= 75 || height >= 230){
       self.closest('.poleLength_calculation222').querySelector('.height').style.borderColor = 'red';
       self.closest('.poleLength_calculation222').querySelector('.error-message').style.display = 'block';
       self.closest('.poleLength_calculation222').querySelector('#poleSizeCalculationResult').classList.add('hidden');
