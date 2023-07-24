@@ -1,0 +1,115 @@
+{% liquid
+  assign section_width = section.settings.section_width
+  assign animation_anchor = '#Newsletter-archive--' | append: section.id
+  assign animations_enabled = settings.animations_enabled
+  assign animation_delay = 150
+%}
+
+{%- style -%}
+  #Newsletter-archive--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  @media(max-width: 1023px){
+    #Newsletter-archive--{{ section.id }} {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+    #Newsletter-archive--{{ section.id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section id="Newsletter-archive--{{ section.id }}" class="section-padding" data-section-id="{{ section.id }}"
+  data-section-type="Newsletter-archive">
+  <div class="{{ section_width }}">
+    <h2 class="newslettwe-heading">Past Newsletters</h2>
+    <script language="javascript" src="//leki.us4.list-manage.com/generate-js/?u=5f496896935ecf26dc945d863&fid=26661&show=50" type="text/javascript"></script>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Newsletter Archive",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "select",
+        "id": "section_width",
+        "label": "Width",
+        "default": "wrapper",
+        "options": [
+          { "value": "wrapper--full", "label": "Full width" },
+          { "value": "wrapper--full-padded", "label": "Full width padded" },
+          { "value": "wrapper", "label": "Page width" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ]
+  }
+{% endschema %}
