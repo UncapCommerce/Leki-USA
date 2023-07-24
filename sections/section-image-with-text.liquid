@@ -289,6 +289,7 @@
   endif
 -%}
 
+{% if product.metafields.custom.featured_image != blank or section.settings.image != blank and content != blank  %}
 <section id="{{ id }}"
   class="section-padding image-with-text {{ section_height }} {{ image_width_class }} {{ text_color }}"
   data-section-id="{{ section.id }}"
@@ -301,6 +302,7 @@
       {%- endif -%}
 
       <div class="image-with-text__items {{ items_layout_class }}">
+        {% if product.metafields.custom.featured_image != blank or section.settings.image != blank %}
         <div class="image-with-text__image">
           {%- assign animation_delay = 150 -%}
 
@@ -310,12 +312,11 @@
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
             {% endif %}
-          {%- endcapture -%}
-
-          {%- render 'image-fill', is_background: true, img_object: image, image_attributes: image_attributes, classes: 'image-with-text__image-bg', placeholder_svg: 'lifestyle-1' -%}
-
+          {%- endcapture -%}          
+            {%- render 'image-fill', is_background: true, img_object: image, image_attributes: image_attributes, classes: 'image-with-text__image-bg', placeholder_svg: 'lifestyle-1' -%}      
           {{- video_link -}}
         </div>
+        {% endif %}
 
         {%- unless content == blank -%}
           <div class="image-with-text__content {{ text_alignment_class }}"
@@ -332,7 +333,8 @@
     </div>
   </div>
 </section>
-
+{% endif %}
+  
 {% schema %}
 {
     "name": "Image with text",
@@ -443,10 +445,10 @@
         "unit": "%"
       },
       {
-        "type": "textarea",
+        "type": "richtext",
         "id": "text_content",
         "label": "Text",
-        "default": "Share details about a promotion, welcome customers, describe a product, or talk about your brand."
+        "default": "<p>Share details about a promotion, welcome customers, describe a product, or talk about your brand.</p>"
       },
       {
         "type": "select",
