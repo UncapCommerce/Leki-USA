@@ -49,7 +49,7 @@
   assign columns = settings.products_per_row_on_desktop | plus: 0
   assign enable_sorting = section.settings.enable_sorting
   assign enable_infinity_scroll = settings.enable_infinity_scroll
-  assign pagination_limit = columns | times: 4
+  assign pagination_limit = columns | times: section.settings.paginate_limit
   assign show_breadcrumbs = section.settings.show_breadcrumbs
   assign bg_color = section.settings.bg_color
   assign products_count = 'products.general.products_with_count' | t: count: collection.products_count
@@ -1218,6 +1218,16 @@
       "id": "show_breadcrumbs",
       "label": "Show breadcrumbs",
       "default": true
+    },
+    {
+      "type": "range",
+      "id": "paginate_limit",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Pagination Limit",
+      "default": 12
     },
     {
       "type": "header",
