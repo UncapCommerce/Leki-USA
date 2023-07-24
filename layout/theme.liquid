@@ -415,18 +415,19 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
     {%- endif -%}
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', () => {
-
-        document.getElementById('addresses_list').querySelectorAll('ul li').forEach(function(self){
-          self.addEventListener('click', function(event){
-            event.preventDefault();
-            document.getElementById('addresses_list').querySelectorAll('ul li').forEach(function(self2){
-                if (self2.classList.contains('active--li')) {
-                  self2.classList.remove('active--li');
-                }
+        if(document.getElementById('addresses_list') != null){
+          document.getElementById('addresses_list').querySelectorAll('ul li').forEach(function(self){
+            self.addEventListener('click', function(event){
+              event.preventDefault();
+              document.getElementById('addresses_list').querySelectorAll('ul li').forEach(function(self2){
+                  if (self2.classList.contains('active--li')) {
+                    self2.classList.remove('active--li');
+                  }
+              });
+              self.classList.add('active--li');
             });
-            self.classList.add('active--li');
           });
-        });
+        }
       });
     </script>
   </body>
