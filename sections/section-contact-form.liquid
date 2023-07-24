@@ -259,7 +259,8 @@
     font-size: 14px;
     line-height: 20px;
     padding: 20px;
-    margin-top: -80px;
+    border: 1px solid #555;
+    border-radius: 8px;
   }
   {% if section.settings.contact_bgimg != blank %}
   .contact-form-bg {
@@ -315,7 +316,10 @@
   .contact-form-wrapper .form__item label {
     display: flex;
   }
-  
+  .contact-form-inner {
+    background: #fff;
+    padding: 60px;
+  }
 
   @media(max-width: 1440px){
     .contact-form-wrapper.has-bg {padding-top: 160px;}
@@ -328,6 +332,7 @@
   @media(max-width: 1199px){
     .contact-form-wrapper.has-bg {padding-top: 80px;}
     .locations__info {padding-right: 80px;}
+    .contact-form-inner {padding: 50px 40px;}
   }
   @media(max-width: 1023px){
     .contact-form-wrapper.has-bg {padding-top: 60px;}
@@ -350,6 +355,7 @@
     .form_address-fields {flex-wrap: wrap;gap: 0;}
     .form_address-fields .form__item {max-width: 100%;flex: 0 0 100%;}
     .contact-form .field-info{text-align: center;}
+    .contact-form-inner {padding: 40px 24px;}
   }
 {%- endstyle -%}
 
@@ -373,8 +379,12 @@ data-section-id="{{ section.id }}">
         {% endif %}>
   <div class="{{ section_width }}">
     <div class="contact-form-wrapper {% if section.settings.contact_bgimg != blank %}has-bg{% endif %}">
-
-      {{ section.settings.form_div }}
+      <div class="contact-form-inner">
+        {{- form_fields -}}
+        <div class="contact-additional-info">
+          {{ section.settings.additional_info }}
+        </div>
+        {{ section.settings.form_div }}
 
         {% comment %}
       
@@ -441,9 +451,7 @@ data-section-id="{{ section.id }}">
 
     {%- endform -%}
     {% endcomment %}
-    <div class="contact-additional-info">
-      {{ section.settings.additional_info }}
-    </div>
+      </div>
     </div>
   </div>
     </div>
