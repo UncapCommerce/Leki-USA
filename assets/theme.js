@@ -17419,7 +17419,8 @@ function poleLength(t) {
   if (document.querySelector(".pole-advisor") != null) {
     document.body.classList.add("pole-drawer-active");
     //console.log(t.closest(".popup-quick-view__item").querySelector('.pole-adviser-drawer'));
-    t.closest(".popup-quick-view__item").querySelector('.pole-adviser-drawer').classList.add("active-drawer");
+    t.closest(".popup-quick-view__item").querySelector('.pole-adviser-drawer').classList.add("active-drawer");    
+    
     let close_drawer = document.querySelectorAll(".pole-adviser-drawer .pole-close .icon.icon-close, .drawer_outer__overlay");
     // document.querySelector(".pole-adviser-drawer").addEventListener("click", (event) => {
     //     event.stopPropagation();
@@ -17440,6 +17441,7 @@ function poleLength(t) {
     //     document.body.classList.remove("pole-drawer-active");
     //   }
     // });
+
     close_drawer.forEach(function(self){
         self.addEventListener("click", () => {
           document.body.classList.remove("pole-drawer-active");
@@ -17615,9 +17617,9 @@ function filterClickButton(self)  {
         suggestionClassicNumber = Math.round(classicNumber / 5) * 5;
       }
       if(value == 'cross-country'){        
-        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = 'Classic ' + suggestionClassicNumber + 'cm';
+        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = 'Classic ' + suggestionClassicNumber + ' cm';
       }else{
-        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = suggestionClassicNumber + 'cm';
+        self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = suggestionClassicNumber + ' cm';
       }      
       var getCurrent = "/collections/"+ self.closest('.poleLength_calculation222').querySelector("#category").value +"?filter.v.option.size="+ suggestionClassicNumber +"+cm";
       self.closest('.poleLength_calculation222').querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
@@ -17642,7 +17644,7 @@ function filterClickButton(self)  {
         suggestionSkateNumber = skateNumber;
       }
       if(value == 'cross-country'){        
-        self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = 'Skate ' + suggestionSkateNumber + 'cm';
+        self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = 'Skate ' + suggestionSkateNumber + ' cm';
       }else{
         self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = suggestionSkateNumber + 'cm';
       }         
