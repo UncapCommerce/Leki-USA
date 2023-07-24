@@ -237,7 +237,7 @@
         data-slider-id="slider--{{ section.id }}"
       {% endif %}>
       {% assign product_list_item = section.settings.product_list %}
-      {% if product_list_item != blank and collection == blank %}
+      {% if product_list_item != blank or collection == blank %}
         {% if product_list_item %}
           {% for product in product_list_item %}
             {%- if carousel -%}
@@ -253,7 +253,7 @@
               animation_delay: animation_delay -%}
           {% endfor %}
         {% endif %}
-      {%- elsif collection != blank and product_list_item == blank -%}
+      {%- elsif collection != blank or product_list_item == blank -%}
         {% if collection %}
           {{ collection_items }}
         {% endif %}
