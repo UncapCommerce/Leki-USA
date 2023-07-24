@@ -17622,7 +17622,7 @@ function filterClickButton(self)  {
         self.closest('.poleLength_calculation222').querySelector('#roundedSize').innerHTML = suggestionClassicNumber + ' cm';
       }      
       var getCurrent = "/collections/"+ self.closest('.poleLength_calculation222').querySelector("#category").value +"?filter.v.option.size="+ suggestionClassicNumber +"+cm";
-      self.closest('.poleLength_calculation222').querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show all results</a>';
+      self.closest('.poleLength_calculation222').querySelector('.result-btn').innerHTML = '<a href="#" class="btn" target="_blank">Show Products</a>';
       self.closest('.poleLength_calculation222').querySelector('.result-btn a').setAttribute('href',getCurrent);
       getfilterResult(getCurrent, self.closest('.poleLength_calculation222'));
     }
