@@ -278,6 +278,8 @@
          for filter in collection.filters
          if filter.label == 'Price'
            render 'filter', filter: filter, animation_delay: animation_delay, filters_open: filters_open
+         elsif filter.label == 'Availability'
+           render 'filter', filter: filter, animation_delay: animation_delay, filters_open: filters_open
          else
          for value in collection.metafields.custom.filter_option.value 
          if value == filter.label 
