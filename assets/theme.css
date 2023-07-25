@@ -25918,6 +25918,9 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .tab-highlight {border: 1px solid #555;background-color: #f3f3f3;padding:0 16px;border-radius: 8px;}
 .result__image-img.background-size-cover {background-size: contain;}
 .addresses li.active--li {border: 1px solid #BF0038 !important;}
+.nav-button[disabled] {
+  display: none;
+}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}

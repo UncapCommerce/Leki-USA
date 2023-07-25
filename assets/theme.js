@@ -17362,22 +17362,33 @@
     }
     var sliderNext = document.querySelectorAll(".slider-button-next");
     var sliderPrev = document.querySelectorAll(".slider-button-prev");
+    function toCheckIfDisabled(){
+      document.querySelectorAll(".slider-button-next").forEach(function(self){
+        self.removeAttribute('disabled'); 
+        if (self.closest(".about-image-with_text").querySelector(".about-image-wrap .next").hasAttribute('disabled')) {
+         self.setAttribute('disabled', 'true'); 
+        }
+      });
+      document.querySelectorAll(".slider-button-prev").forEach(function(self){
+        self.removeAttribute('disabled'); 
+        if (self.closest(".about-image-with_text").querySelector(".about-image-wrap .previous").hasAttribute('disabled')) {
+         self.setAttribute('disabled', 'true'); 
+        }
+      });
+    }
+    setTimeout(toCheckIfDisabled, 100);
     sliderNext.forEach(function (self) {
       // console.log(self.closest('.about-image-with_text').querySelector('.about-image-wrap .next'));
       self.addEventListener("click", function () {
-        self
-          .closest(".about-image-with_text")
-          .querySelector(".about-image-wrap .next")
-          .click();
+        self.closest(".about-image-with_text").querySelector(".about-image-wrap .next").click();
+        setTimeout(toCheckIfDisabled, 100);
       });
     });
     sliderPrev.forEach(function (self) {
       // console.log(self.closest('.about-image-with_text').querySelector('.about-image-wrap .previous'));
       self.addEventListener("click", function () {
-        self
-          .closest(".about-image-with_text")
-          .querySelector(".about-image-wrap .previous")
-          .click();
+        self.closest(".about-image-with_text").querySelector(".about-image-wrap .previous").click();
+         setTimeout(toCheckIfDisabled, 100);
       });
     });
       var container = document.querySelector('[data-recently-viewed-section]');
