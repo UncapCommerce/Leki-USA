@@ -1,0 +1,208 @@
+{% liquid
+  assign section_width = section.settings.section_width
+  assign animation_anchor = '#world-wide-portal--' | append: section.id
+  assign animations_enabled = settings.animations_enabled
+  assign animation_delay = 150
+%}
+
+{%- style -%}
+  #world-wide-portal--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  @media(max-width: 1023px){
+    #world-wide-portal--{{ section.id }} {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+    #world-wide-portal--{{ section.id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .page--leki-worldwide .page-title {padding: 0;}
+  .Leki-World-Wide h2.h1{text-align:center;font-family:var(--font-stack-body)}
+  .wide-portal-content{display:flex;gap:20px}
+  .world-distribution {flex:0 0 33.33%;max-width:33.33%}
+  .Leki-World-Wide p{margin:0}
+  .Leki-World-Wide h3{margin-top:15px}
+  .Leki-World-Wide p strong{margin:10px 0;display:inline-block;vertical-align:middle;width:100%}
+  .Leki-World-Wide h3:first-child{margin-top:0}
+  @media(max-width: 1023px){
+    .world-distribution {flex:0 0 50%;max-width:50%}    
+  }
+  @media(max-width: 767px){
+    .world-distribution {flex:0 0 100%;max-width: 100%}   
+    .Leki-World-Wide p {font-size: 14px;line-height: 20px;}
+  }
+</style>
+
+<section id="world-wide-portal--{{ section.id }}" class="section-padding" data-section-id="{{ section.id }}">
+  <div class="{{ section_width }}">
+    {% if section.blocks.size > 0 %}
+      <div
+        class="wide-portal-content"
+        {% if animations_enabled %}
+          data-aos="fade-up"
+          data-aos-anchor="{{ animation_anchor }}"
+          data-aos-delay="{{ animation_delay }}"
+          {%- assign animation_delay = animation_delay | plus: 150 -%}
+        {% endif %}
+      >
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'left-world-wide' %}
+              {% if block.settings.left_world_wide != blank %}
+                <div class="world-distribution">
+                  {{ block.settings.left_world_wide }}
+                </div>
+              {% endif %}
+            {% when 'center-world-wide' %}
+              {% if block.settings.center_world_wide != blank %}
+                <div class="world-distribution">
+                  {{ block.settings.center_world_wide }}
+                </div>
+              {% endif %}
+            {% when 'right-world-wide' %}
+              {% if block.settings.right_world_wide != blank %}
+                <div class="world-distribution">
+                  {{ block.settings.right_world_wide }}
+                </div>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Leki World-Wide",
+  "class":"Leki-World-Wide",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Width",
+      "default": "wrapper",
+      "options": [
+        { "value": "wrapper--full", "label": "Full width" },
+        { "value": "wrapper--full-padded", "label": "Full width padded" },
+        { "value": "wrapper", "label": "Page width" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Tablet Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Tablet Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mob_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks":[
+    {
+      "type":"left-world-wide",
+      "name":"Left World Wide",
+      "limit":1,
+      "settings":[
+        {
+          "type": "richtext",
+          "id": "left_world_wide",
+          "label": "Left World Wide Content "
+        }
+      ]
+    },
+    {
+      "type":"center-world-wide",
+      "name":"Center World Wide",
+      "limit":1,
+      "settings":[
+        {
+          "type": "richtext",
+          "id": "center_world_wide",
+          "label": "Center World Wide Content "
+        }
+      ]
+    },
+    {
+      "type":"right-world-wide",
+      "name":"Right World Wide",
+      "limit":1,
+      "settings":[
+        {
+          "type": "richtext",
+          "id": "right_world_wide",
+          "label": "Right World Wide Content "
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name": "Leki World-Wide"
+    }
+  ]
+}
+{% endschema %}
