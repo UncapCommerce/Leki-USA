@@ -91,7 +91,7 @@
                 {% endif %}
               >
                 <h3>{{ block.settings.packing_lists_title }}</h3>
-                <a href="{{ block.settings.packing_lists_pdf }}" class="btn" download>
+                <a href="javascript:void(0)" class="btn download_btn" data-filename="{{ block.settings.packing_lists_pdf | split: '/' | last | split: '?' | first }}" download="{{ block.settings.packing_lists_pdf }}">
                   {%- render 'icon-download-1' %}download</a
                 >
               </div>
@@ -102,6 +102,37 @@
     </div>
   </section>
 {% endif %}
+<script type="text/javascript">
+function clickButton() {
+  document.querySelectorAll('.download_btn').forEach(function(self){
+    self.addEventListener('click', function(event){
+      event.preventDefault();
+       var checked_file = self.getAttribute('download');
+      var checked_fileName = self.getAttribute('data-filename');
+      console.log(checked_file);
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', checked_file);
+    xhr.responseType = 'blob';
+    
+    xhr.onload = function () {
+    if (xhr.status === 200) {
+      var blobData = xhr.response;
+      var a = document.createElement('a');
+      var url = window.URL.createObjectURL(blobData);
+      a.href = url;
+      a.download = checked_fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }
+    }; 
+    xhr.send();
+    })
+  });
+}
+clickButton();
+</script>
 {% schema %}
 {
   "name": "Packing Lists Section",
