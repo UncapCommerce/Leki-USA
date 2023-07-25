@@ -113,7 +113,7 @@
     }
   }
 {%- endstyle -%}
-
+{% comment %}
 {% assign pageUrl = collection.url | split: '/' | last %}
 {% assign thirdLevel = true %}
 {%- for link in linklists[settings.submenu_list].links -%}
@@ -126,8 +126,8 @@
     {% endfor %}
   {% endfor %}
 {% endfor %}
-{% unless thirdLevel %}
-  {% if collection.title != blank or collection.description != blank %}
+{% endcomment %}
+  {% if collection.title != blank and collection.description != blank %}
     <div
       id="collection-details--{{ section.id }}"
       class="section-padding"
@@ -144,7 +144,7 @@
       </div>
     </div>
   {% endif %}
-{% endunless %}
+
 <div
   id="{{ id }}"
   class="{{ section_class }}"

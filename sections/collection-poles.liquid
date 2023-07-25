@@ -126,7 +126,7 @@
   {% endfor %}
 {% endfor %}
 {% unless thirdLevel %}
-  {% if collection.title != blank or collection.description != blank %}
+  {% if collection.title != blank and collection.description != blank %}
     <div
       id="collection-details--{{ section.id }}"
       class="section-padding"
