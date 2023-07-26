@@ -19,7 +19,7 @@ body.page--history .collection__header .rte p{
   max-width: 1616px;
 }
 .history_img_section .image-with-text__heading {
-  color: var(--COLOR-RED);
+  color: var(--COLOR-TEXT);
   margin-bottom: 4px;
 }
 .history_img_section .image-with-text__buttons.main-buttons {
@@ -30,7 +30,7 @@ body.page--history .collection__header .rte p{
 }
 .history_img_section .image-with-text__buttons.main-buttons .main-buttons__item .hs_btn {
   border-radius: 0;
-  background-color: var(--heading);
+  background-color: var(--COLOR-TEXT);
   font-family: var(--font-stack-button);
   font-weight: var(--FONT-WEIGHT-BUTTON-BOLD);
   font-size: 18px;
