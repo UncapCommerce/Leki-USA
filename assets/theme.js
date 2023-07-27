@@ -17608,8 +17608,8 @@ function filterClickButton(self){
     var value = e.options[e.selectedIndex].value;
     var classicValue = Number(e.options[e.selectedIndex].getAttribute('data-classic'));
     var skateValue = Number(e.options[e.selectedIndex].getAttribute('data-skate'));
-    var lowestValue = 80;
-    var highestValue = 180;
+    var lowestValue = 50;
+    var highestValue = 210;
     if(classicValue){
       var classicNumber = Number(height * classicValue).toFixed(1);
       if(value == 'cross-country'){
@@ -17648,7 +17648,7 @@ function filterClickButton(self){
       } else if(skateNumber < lowestValue){
         suggestionSkateNumber = lowestValue;
       } else{
-        suggestionSkateNumber = skateNumber;
+        suggestionSkateNumber = Math.round(skateNumber / 5) * 5;;
       }
       if(value == 'cross-country'){
         self.closest('.poleLength_calculation222').querySelector('#skateroundedSize').innerHTML = 'Skate '+suggestionSkateNumber+' cm';
