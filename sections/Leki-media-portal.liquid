@@ -97,10 +97,7 @@
             {% when 'right-media-portal' %}
               {% if block.settings.right_portal != blank %}
               <div class="right-media-portal">
-                {{ block.settings.right_portal }}
-                {% if section.settings.tab1_title != blank and section.settings.tab1_link != blank %}
-                  <a class="mailing-list" href="{% if section.settings.tab1_link != blank %}{{ section.settings.tab1_link }}{% else %}#{% endif %}">{{ section.settings.tab1_title }}</a>
-                {% endif %}
+                {{ block.settings.right_portal }}                
               </div>
               {% endif %}
             {% endcase %}
