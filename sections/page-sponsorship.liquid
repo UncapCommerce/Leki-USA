@@ -50,7 +50,7 @@
     background: {{ section.settings.title_active_bgclr }};
     color: {{ section.settings.title_activeclr }}
   }
-  .page--warranty p:empty {
+  .page--warranty .sponsorship-inner-wrap .sponsor-tab-content p:empty {
     border-bottom: 1px solid #E6E6E6;
   }
   @media(max-width: 1440px){
@@ -76,6 +76,7 @@
       background-image: url('{{ section.settings.mob_image | img_url:'' }}');
     }
   {% endif %}
+  .page--warranty .Sponsorship-form-wrapper.has-bg .sponsorship-detail h2{font-size: 30px;line-height: 40px;}
   }
 </style>
 
