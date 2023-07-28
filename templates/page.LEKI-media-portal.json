@@ -2,15 +2,105 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "show_page_title": true,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
+      }
+    },
+    "3d08b3c6-74c1-48bc-9dcb-2af80ef46ff2": {
+      "type": "section-slideshow",
+      "blocks": {
+        "template--19958829777190__3d08b3c6-74c1-48bc-9dcb-2af80ef46ff2-1689750655d9034805-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Courtney_Dauwalter_Banner_1600x400_Digital_Portal.png",
+            "overlay_opacity": 10,
+            "text_width": "normal",
+            "text_position": "center",
+            "text_color": "text-light",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "slide_btn_text": "",
+            "slide_btn_link": "",
+            "slide_btn_style": "btn--primary btn--small",
+            "slide_btn_text_2": "",
+            "slide_btn_link_2": "",
+            "slide_btn_style_2": "btn--secondary btn--small",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19958829777190__3d08b3c6-74c1-48bc-9dcb-2af80ef46ff2-1689750655d9034805-0"
+      ],
+      "settings": {
+        "slide_height": "original-height",
+        "enable_mobile_height": true,
+        "mobile_slide_height": "four-fifty-height-mobile",
+        "mob_font_size": false,
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "heading_size": 120,
+        "show_arrow": false
+      }
+    },
+    "f188b3fe-882e-4264-8dbd-19ca2ea3f097": {
+      "type": "Leki-media-portal",
+      "blocks": {
+        "15828ca4-4540-40d2-b23a-01e962d2c8cb": {
+          "type": "left-media-portal",
+          "settings": {
+            "left_portal": "<p><strong>LEKI USA Social Media Kit - For Retailers:<\/strong><\/p><ul><li><a href=\"https:\/\/www.dropbox.com\/sh\/kxhscd3fuj1xno0\/AABoAeNJx7OMx2WTrqEoTbTFa?dl=0\" target=\"_blank\" title=\"https:\/\/www.dropbox.com\/sh\/kxhscd3fuj1xno0\/AABoAeNJx7OMx2WTrqEoTbTFa?dl=0\">Download the Social Media Kit<\/a><\/li><\/ul><p><strong>Product Images\/Videos for Select Products:<\/strong><\/p><ul><li><a href=\"https:\/\/www.dropbox.com\/sh\/h8yqx4laahpj84s\/AAC7nmEfHI6zx1f9tsZOBwrra?dl=0\" target=\"_blank\" title=\"https:\/\/www.dropbox.com\/sh\/h8yqx4laahpj84s\/AAC7nmEfHI6zx1f9tsZOBwrra?dl=0\">Winter 2022\/2023 Product Images<\/a><\/li><li>Winter 2023\/2024 - AvailableFall 2023<\/li><li><a href=\"https:\/\/www.dropbox.com\/sh\/t4wh21ckatgupoa\/AADrTzOo6RQ41kJSQzGdDIEca?dl=0\" target=\"_blank\" title=\"https:\/\/www.dropbox.com\/sh\/t4wh21ckatgupoa\/AADrTzOo6RQ41kJSQzGdDIEca?dl=0\">Summer 2023 Product Images<\/a><\/li><li>Summer 2024 - Available Spring 2024<\/li><li><a href=\"https:\/\/www.dropbox.com\/sh\/pl88f2nikb23kep\/AAAEz4tiqP6nsmBfJya-Jy9ha?dl=0\" target=\"_blank\" title=\"https:\/\/www.dropbox.com\/sh\/pl88f2nikb23kep\/AAAEz4tiqP6nsmBfJya-Jy9ha?dl=0\">Product Videos - Summer 2023<\/a><\/li><li>Lifestyle Imagery - Email <a href=\"mailto:derrick@leki.com\" target=\"_blank\"><span style=\"text-decoration:underline\">derrick@leki.com<\/span><\/a><\/li><li>Not finding what you need? <a href=\"mailto:derrick@leki.com\" target=\"_blank\"><span style=\"text-decoration:underline\">Email us<\/span><\/a><\/li><\/ul><p><strong>General Media:<\/strong><\/p><ul><li><a href=\"https:\/\/www.dropbox.com\/sh\/qi4afeug60q60fr\/AAAvgSJaeD3yvVFhic1dNpc2a?dl=0\" target=\"_blank\" title=\"https:\/\/www.dropbox.com\/sh\/qi4afeug60q60fr\/AAAvgSJaeD3yvVFhic1dNpc2a?dl=0\">Brand Logos<\/a><\/li><li><a href=\"https:\/\/www.dropbox.com\/sh\/qtehgt1u2j8m7js\/AABskq0sgzpkm1LMdMGJNZdza?dl=0\" target=\"_blank\" title=\"https:\/\/www.dropbox.com\/sh\/qtehgt1u2j8m7js\/AABskq0sgzpkm1LMdMGJNZdza?dl=0\">Pole Feature Videos<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/watch?v=PaspXocZ2wM\" target=\"_blank\" title=\"https:\/\/www.youtube.com\/watch?v=PaspXocZ2wM\">LEKI Brand Relaunch Video<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/playlist?list=PLf2GrLzAsnjPFdPYf98Wbh0sjHAPFzSCw\" target=\"_blank\" title=\"https:\/\/www.youtube.com\/playlist?list=PLf2GrLzAsnjPFdPYf98Wbh0sjHAPFzSCw\">Pole Instructional and Maintenance YouTube Playlist<\/a><\/li><\/ul><p><strong>Digital Catalogs:<\/strong><\/p><ul><li><a href=\"https:\/\/rep.leki.com\/files\/alpine_20202021\/2020-21%20LEKI-USA%20Winter%20Handbook_SinglePage_LowRes_compressed.pdf\" target=\"_blank\" title=\"https:\/\/rep.leki.com\/files\/alpine_20202021\/2020-21%20LEKI-USA%20Winter%20Handbook_SinglePage_LowRes_compressed.pdf\">Winter 2021\/2022 Digital Catalog<\/a><\/li><li><a href=\"https:\/\/online.flippingbook.com\/view\/582082304\/\" target=\"_blank\" title=\"https:\/\/online.flippingbook.com\/view\/582082304\/\">Winter 2022\/2023 Digital Catalog<\/a><\/li><li><a href=\"https:\/\/online.flippingbook.com\/view\/963611948\/\" target=\"_blank\" title=\"https:\/\/online.flippingbook.com\/view\/963611948\/\">Winter 2023\/2024 Digital Catalog<\/a><\/li><li><a href=\"https:\/\/online.flippingbook.com\/view\/387614348\/\" target=\"_blank\" title=\"https:\/\/online.flippingbook.com\/view\/387614348\/\">Summer 2022 Digital Catalog<\/a><\/li><li><a href=\"https:\/\/online.flippingbook.com\/view\/74436329\/\" target=\"_blank\" title=\"https:\/\/online.flippingbook.com\/view\/74436329\/\">Summer 2023 Digital Catalog<\/a><\/li><li><a href=\"https:\/\/online.flippingbook.com\/view\/582082304\/\" target=\"_blank\" title=\"https:\/\/online.flippingbook.com\/view\/582082304\/\">Summer 2024 Digital Catalog<\/a><\/li><li><a href=\"https:\/\/online.flippingbook.com\/view\/1025312204\/\" target=\"_blank\" title=\"https:\/\/online.flippingbook.com\/view\/1025312204\/\">General LEKI Training Manual<\/a><\/li><li><a href=\"https:\/\/online.flippingbook.com\/view\/1058891252\/\" target=\"_blank\" title=\"https:\/\/online.flippingbook.com\/view\/1058891252\/\">Trail Running Catalog<\/a><\/li><\/ul>"
+          }
+        },
+        "0bee4b7e-7b74-4e1e-a6d8-318a31e16ef6": {
+          "type": "right-media-portal",
+          "settings": {
+            "right_portal": "<p><strong>Official Social Media Links:<\/strong><\/p><p>Instagram<\/p><ul><li><a href=\"https:\/\/www.instagram.com\/lekiusa\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/lekiusa\/\">LEKI USA<\/a><\/li><li><a href=\"https:\/\/www.instagram.com\/leki.ski.outdoor\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/leki.ski.outdoor\/\">LEKI International<\/a> (leki.ski.outdoor)<\/li><li><a href=\"https:\/\/www.instagram.com\/leki.trailrunning\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/leki.trailrunning\/\">LEKI Trail Running<\/a><\/li><\/ul><p>Facebook<\/p><ul><li><a href=\"https:\/\/www.facebook.com\/LEKIUSA\" target=\"_blank\" title=\"https:\/\/www.facebook.com\/LEKIUSA\">LEKI USA<\/a><\/li><li><a href=\"https:\/\/www.facebook.com\/leki.ski.outdoor\" target=\"_blank\" title=\"https:\/\/www.facebook.com\/leki.ski.outdoor\">LEKI International<\/a><\/li><\/ul><p>YouTube<\/p><ul><li><a href=\"https:\/\/www.youtube.com\/c\/LEKIUSA\" target=\"_blank\" title=\"https:\/\/www.youtube.com\/c\/LEKIUSA\">LEKI USA<\/a><\/li><li><a href=\"https:\/\/www.youtube.com\/c\/Leki_ski_outdoor\" target=\"_blank\" title=\"https:\/\/www.youtube.com\/c\/Leki_ski_outdoor\">LEKI International<\/a><\/li><\/ul><p><\/p><p><strong>Email Newsletter Archive:<\/strong><\/p><ul><li>06\/29\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=16fda793ae\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=16fda793ae\">The Future Belongs to the Hippie<\/a><\/li><li>06\/12\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=71c5093494\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=71c5093494\">75 years of passion, innovation, and performance<\/a><\/li><li>05\/25\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=0a12176b74\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=0a12176b74\">Run for your Life<\/a><\/li><li>05\/09\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=af0e0c158a\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=af0e0c158a\">LEKI Tips from the Trail<\/a><\/li><li>04\/12\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=086a2502d2\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=086a2502d2\">Epic Adventures Made Simple<\/a><\/li><li>03\/22\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=fc718522ce\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=fc718522ce\">It’s not a UFO, it’s Super Frenchie<\/a><\/li><li>02\/09\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=074a4c3534\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=074a4c3534\">Gifts for your Valentine, or yourself!<\/a><\/li><li>01\/27\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=48f00bd813\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=48f00bd813\">Deep Thoughts from LEKI<\/a><\/li><li>01\/12\/2023 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=a35d348d33\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=a35d348d33\">Glen Plake – The Man Behind the Mohawk<\/a><\/li><li>12\/16\/2022 - <a href=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=ce84efa085\" target=\"_blank\" title=\"https:\/\/us4.campaign-archive.com\/?u=5f496896935ecf26dc945d863&id=ce84efa085\">Features from LEKI + what they mean for you<\/a><\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "15828ca4-4540-40d2-b23a-01e962d2c8cb",
+        "0bee4b7e-7b74-4e1e-a6d8-318a31e16ef6"
+      ],
+      "settings": {
+        "page_title": "LEKI USA DIGITAL PORTAL",
+        "tab1_title": "Follow Us On Instagram",
+        "tab1_link": "https:\/\/www.instagram.com\/LEKIUSA\/",
+        "tab2_title": "Contact Information",
+        "tab2_link": "shopify:\/\/pages\/contact",
+        "tab3_title": "",
+        "tab3_link": "",
+        "tab4_title": "",
+        "tab4_link": "",
+        "section_width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 50,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 40
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "3d08b3c6-74c1-48bc-9dcb-2af80ef46ff2",
+    "f188b3fe-882e-4264-8dbd-19ca2ea3f097"
   ]
 }
