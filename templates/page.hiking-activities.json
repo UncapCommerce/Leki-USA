@@ -7,7 +7,11 @@
         "show_page_title": true,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "4d866864-f58c-4c9b-b70f-949975d0fb8b": {
@@ -24,8 +28,8 @@
             "subheading": "",
             "title": "BE YOUR OWN GUIDE.",
             "text": "",
-            "slide_btn_text": "to the poles",
-            "slide_btn_link": "\/collections\/poles\/trekking",
+            "slide_btn_text": "Our trekking poles",
+            "slide_btn_link": "\/collections\/trekking",
             "slide_btn_style": "btn--secondary btn--small",
             "slide_btn_text_2": "",
             "slide_btn_link_2": "",
@@ -92,7 +96,7 @@
         "title": "Popular right now",
         "heading_size": 300,
         "heading_weight": "normal",
-        "text": "",
+        "text": "<p>Our ergonomically designed trekking poles provide stability and comfort, helping hikers tick away miles on the trail.  From adventurous day hikes to multi-month thru-hikes like the Appalachian Trail, LEKI has the perfect pole for any adventure. <\/p>",
         "text_size": 125,
         "button_text": "",
         "button_style": "btn--primary",
@@ -114,17 +118,17 @@
         "video_height": "six-fifty-height",
         "video_height_mob": 450,
         "text_position": "middle-center",
-        "video_link_bg": "",
-        "video_link": "https:\/\/www.youtube.com\/watch?v=s7js_-_XEUw&t=2s",
+        "video_link_bg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/96e6216669c0460c9f33e364d12d8303.mp4",
+        "video_link": "",
         "image": "shopify:\/\/shop_images\/Trekking_Banner.jpg",
         "overlay_opacity": 10,
         "text_color": "text-light",
-        "title": "",
+        "title": "<h2>Aergon Air<\/h2>",
         "heading_highlight_type": "italics",
         "text": "",
         "heading_size": 100,
-        "button_text": "",
-        "button_link": "",
+        "button_text": "Learn more",
+        "button_link": "https:\/\/www.youtube.com\/watch?v=s7js_-_XEUw&t=2s",
         "button_style": "btn--secondary btn--small",
         "padding_top": 40,
         "padding_bottom": 0,
@@ -132,6 +136,37 @@
         "tab_padding_bottom": 0,
         "mob_padding_top": 40,
         "mob_padding_bottom": 0
+      }
+    },
+    "7c2983a1-5381-4988-b6cd-f2e95bf15177": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "",
+        "products_layout": "carousel",
+        "number_of_products": 20,
+        "text_alignment": "text-left",
+        "subtitle": "Trekking Gloves",
+        "subtitle_color": "#27304a",
+        "title": "Popular Right Now",
+        "heading_size": 300,
+        "heading_weight": "normal",
+        "text": "",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 50,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 80
       }
     },
     "cecaedb2-3a68-40bb-83d7-f0d33c4c6f84": {
@@ -157,6 +192,7 @@
     "4d866864-f58c-4c9b-b70f-949975d0fb8b",
     "5697d11d-94fe-4cba-8632-e40b90272e1a",
     "634f8c22-8d3a-4daf-be3b-f3d0f4232254",
+    "7c2983a1-5381-4988-b6cd-f2e95bf15177",
     "cecaedb2-3a68-40bb-83d7-f0d33c4c6f84"
   ]
 }
