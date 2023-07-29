@@ -7,7 +7,11 @@
         "show_page_title": true,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "651684fb-1ceb-4f3c-8c55-3ea8a040dcce": {
@@ -17,10 +21,10 @@
           "type": "women-size",
           "settings": {
             "Circumference_title": "Circumference in cm",
-            "cm_1": "17.5",
-            "cm_2": "19",
-            "cm_3": "20.5",
-            "cm_4": "22",
+            "cm_1": "19.0",
+            "cm_2": "20.5",
+            "cm_3": "22.0",
+            "cm_4": "23.5",
             "cm_5": "",
             "cm_6": "",
             "size_title": "Size",
@@ -57,8 +61,8 @@
             "Circumference_title": "Age",
             "cm_1": "10-11",
             "cm_2": "12-13",
-            "cm_3": "13-14",
-            "cm_4": "14-15",
+            "cm_3": "14-15",
+            "cm_4": "16-17",
             "cm_5": "",
             "cm_6": "",
             "size_title": "Size",
@@ -87,6 +91,8 @@
         "versionA_mobimg": "shopify:\/\/shop_images\/size-mob.jpg",
         "varsionB_title": "Version B",
         "versionB_content": "<p>This is how you find your glove size: Download the PDF file. When printing, please select \"actual size\".<\/p>",
+        "download_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0724\/6430\/2374\/files\/LEKI_gloveSizer.pdf?v=1690602179",
+        "download_text": "Download PDF File",
         "width": "wrapper--narrow",
         "padding_top": 0,
         "padding_bottom": 80,
@@ -97,9 +103,12 @@
     "54786cb4-a52a-4593-92c8-c3933b24bbaa": {
       "type": "section-collection",
       "settings": {
-        "collection": "ski-gloves",
+        "product_list": [
+
+        ],
+        "collection": "gloves",
         "products_layout": "carousel",
-        "number_of_products": 4,
+        "number_of_products": 20,
         "text_alignment": "text-center",
         "subtitle": "",
         "subtitle_color": "#27304a",
