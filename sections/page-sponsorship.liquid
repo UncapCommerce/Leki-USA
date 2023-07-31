@@ -50,7 +50,7 @@
     background: {{ section.settings.title_active_bgclr }};
     color: {{ section.settings.title_activeclr }}
   }
-  .page--warranty .sponsorship-inner-wrap .sponsor-tab-content p:empty {
+  .page--warranty .sponsorship-inner-wrap p:empty {
     border-bottom: 1px solid #E6E6E6;
   }
   @media(max-width: 1440px){
@@ -133,9 +133,20 @@ data-section-id="{{ section.id }}">
                 {% if block.settings.block_highlight != blank %}<div class="tab-highlight">{{ block.settings.block_highlight }}</div>{% endif %}                
                 {% if block.settings.form_data != blank %}{{ block.settings.form_data }}{% endif %}
               </div>               
-            {% endfor %} 
+            {% endfor %}             
           </div>
         </div>
+        {% else %}
+          <div class="sponsorship-inner-wrap" {% if animations_enabled %}
+                data-aos="fade-up"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-delay="{{ animation_delay }}"
+                {%- assign animation_delay = animation_delay | plus: 150 -%}
+              {% endif %}>
+          {% if section.settings.form_content != blank %}{{ section.settings.form_content }}{% endif %}  
+          {% if section.settings.form_highlight != blank %}<div class="tab-highlight">{{ section.settings.form_highlight }}</div>{% endif %}  
+          {% if section.settings.form_div != blank %}{{ section.settings.form_div }}{% endif %}  
+          </div>
         {% endif %}
       </div>
     </div>
@@ -145,65 +156,71 @@ data-section-id="{{ section.id }}">
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
   let buttons = document.querySelectorAll('.tab-title');
-  buttons.forEach( tablist => {
-    tablist.onclick = function(){
-    let contents = document.querySelectorAll('.sponsor-tab-content');
-      var dataIndex = Number(this.dataset.tab);
-       this.parentElement.querySelectorAll(".tab-title").forEach(function(evtt){
-          evtt.classList.remove("active");
+  if(buttons){
+    buttons.forEach( tablist => {
+      tablist.onclick = function(){
+      let contents = document.querySelectorAll('.sponsor-tab-content');
+        var dataIndex = Number(this.dataset.tab);
+         this.parentElement.querySelectorAll(".tab-title").forEach(function(evtt){
+            evtt.classList.remove("active");
+          });
+         this.parentElement.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
+           evt.classList.remove("active");
+          });
+        this.classList.add("active");
+        this.parentElement.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
+         let get_id = (evt.getAttribute('id'));
+          if( dataIndex == get_id ){
+            evt.classList.add("active");
+          }
         });
-       this.parentElement.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
-         evt.classList.remove("active");
-        });
-      this.classList.add("active");
-      this.parentElement.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
-       let get_id = (evt.getAttribute('id'));
-        if( dataIndex == get_id ){
-          evt.classList.add("active");
-        }
-      });
-    }
-  });
+      }
+    });
+  }
 
   let selectType = document.querySelector('.select-type');
-  selectType.addEventListener('change', function handleChange(event) {
-    var select_val = this.value.replaceAll(' ', '-');
-    var handle_val = select_val.toLowerCase();
-    event.target.nextElementSibling.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
-     evt.classList.remove("active");
+  if(selectType){
+    selectType.addEventListener('change', function handleChange(event) {
+      var select_val = this.value.replaceAll(' ', '-');
+      var handle_val = select_val.toLowerCase();
+      event.target.nextElementSibling.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
+       evt.classList.remove("active");
+      });
+  
+      event.target.nextElementSibling.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
+        let get_title = (evt.getAttribute('data-title'));
+        if( handle_val == get_title ){
+          evt.classList.add("active");
+        }
+       }); 
     });
-
-    event.target.nextElementSibling.nextElementSibling.querySelectorAll(".sponsor-tab-content").forEach(function(evt){
-      let get_title = (evt.getAttribute('data-title'));
-      if( handle_val == get_title ){
-        evt.classList.add("active");
-      }
-     }); 
-  });
+  }
 
   var desc = document.querySelector('.tab-inner-data');  
-  var height = desc.clientHeight;   
-  var innerheight = Number(desc.getAttribute('data-height'));
-    if (height <= innerheight ){
-      document.querySelector(".readmore").style.display = "none";
+  if(desc){
+    var height = desc.clientHeight;   
+    var innerheight = Number(desc.getAttribute('data-height'));
+      if (height <= innerheight ){
+        document.querySelector(".readmore").style.display = "none";
+        }
+      else{ 
+        document.querySelector(".readmore").style.display = "block";
       }
-    else{ 
-      document.querySelector(".readmore").style.display = "block";
-    }
-  var readmore = document.querySelectorAll('.readmore');
-   readmore.forEach(function(self){
-  self.addEventListener('click', () => {
-   var readinnertext = self.innerText; 
-   var readdesc = self.closest('.sponsor-tab-content').querySelector('.tab-data');    
-   readdesc.classList.toggle('showmore');    
-    if(readinnertext == 'Read More'){
-      self.innerText = 'Read Less';          
-    }
-    else {
-      self.innerText = 'Read More';      
-    }
-  }); 
-   })
+    var readmore = document.querySelectorAll('.readmore');
+     readmore.forEach(function(self){
+    self.addEventListener('click', () => {
+     var readinnertext = self.innerText; 
+     var readdesc = self.closest('.sponsor-tab-content').querySelector('.tab-data');    
+     readdesc.classList.toggle('showmore');    
+      if(readinnertext == 'Read More'){
+        self.innerText = 'Read Less';          
+      }
+      else {
+        self.innerText = 'Read More';      
+      }
+    }); 
+    });
+  }
 });
 </script>
 {% schema %}
@@ -270,6 +287,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
         "id": "mob_heading",
         "label": "Select Heading"
       }, 
+      {
+        "type": "richtext",
+        "id": "form_content",
+        "label": "Add Form Above Content",
+        "info": "It display when block content is not available."
+      },
+      {
+        "type": "richtext",
+        "id": "form_highlight",
+        "label": "Add Form Highlight Content",
+        "info": "It display when block content is not available."
+      },
+      {
+        "type": "html",
+        "id": "form_div",
+        "label": "Add Form ID Div",
+        "info": "Info : It display when block content is not available. Copy from the app and add here, Ex: <div style='margin:0 auto;' class='pxFormGenerator' id='S8_WC9jXWK4PZbv8YYgaWA'></div>"
+      },
       {
         "type": "header",
         "content": "Section spacing"
