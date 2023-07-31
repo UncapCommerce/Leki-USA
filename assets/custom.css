@@ -134,4 +134,5 @@ body.page--history .collection__header .rte p{
 }
 @media(max-width: 359px){
   #MainContent .product-grid-review .bv_numReviews_component_container { display: none !important; }
+  .review-main-wrapper {max-width: 100%;overflow-x: auto;}
 }
