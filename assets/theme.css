@@ -7130,6 +7130,7 @@ section:hover .flickity-enabled > .flickity-prev-next-button:not(:disabled):hove
   pointer-events: all;
   z-index: 5;
   border-radius: 0 0 8px 8px;
+  background: #fff;
 }
 
 .header__dropdown__wrapper {
