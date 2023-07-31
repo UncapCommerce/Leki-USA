@@ -7,7 +7,11 @@
         "show_page_title": true,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "contact-form": {
@@ -22,11 +26,12 @@
         "d01a4cd2-1825-4ea6-a8d7-e5af1902fd95": {
           "type": "content",
           "settings": {
-            "content": "<p>Please use the <a href=\"#\" title=\"#\">Warranty Form<\/a> for all Warranty Requests.<\/p><p>Not located in the US?  <a href=\"#\" title=\"#\">Click here to see world wide distribution<\/a>.<\/p>"
+            "content": "<p>Please use the <a href=\"\/pages\/warranty\" title=\"Warranty\">Warranty Form<\/a> for all Warranty Requests.<\/p><p>Not located in the US?  <a href=\"\/pages\/leki-worldwide\" title=\"LEKI Worldwide\">Click here to see worldwide distribution<\/a>.<\/p>"
           }
         },
         "contact-form-1": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "title": "Full Name*",
             "required": true
@@ -34,6 +39,7 @@
         },
         "contact-form-2": {
           "type": "email",
+          "disabled": true,
           "settings": {
             "title": "Email*",
             "required": true
@@ -41,6 +47,7 @@
         },
         "7dad2c2e-2de1-407a-8ec7-5b11cf91dd6a": {
           "type": "telephone",
+          "disabled": true,
           "settings": {
             "title": "Phone",
             "required": false
@@ -48,6 +55,7 @@
         },
         "057f00e9-0002-487f-8b03-e6a39a185b33": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "title": "Address*",
             "required": true
@@ -55,6 +63,7 @@
         },
         "9ffea9a7-bc84-4765-a725-f3b436f36b7c": {
           "type": "select",
+          "disabled": true,
           "settings": {
             "default_name": "Country*",
             "required1": true,
@@ -66,6 +75,7 @@
         },
         "contact-form-3": {
           "type": "body",
+          "disabled": true,
           "settings": {
             "title": "Your Message*",
             "required": true
@@ -73,11 +83,13 @@
         },
         "d742ce00-8908-47d2-8d13-c85b0f72e1a3": {
           "type": "upload-file",
+          "disabled": true,
           "settings": {
           }
         },
         "d972dfce-e2db-44d4-a93e-06863419987a": {
           "type": "checkbox",
+          "disabled": true,
           "settings": {
             "title": "Subscribe to the LEKI newsletter",
             "required": false
@@ -85,6 +97,7 @@
         },
         "968d0a56-999d-44a1-894a-f17b0902ef85": {
           "type": "data-checkbox",
+          "disabled": true,
           "settings": {
             "title": "<p>By selecting continue you confirm that you have read our <a href=\"#\" title=\"#\">Data Protection Information<\/a><\/p>",
             "required": false
@@ -109,7 +122,7 @@
         "mob_image": "shopify:\/\/shop_images\/contact-bg-mob.jpg",
         "form_bg": "#ffffff",
         "additional_info": "<p>Due to the high volume of inquiries, response time is longer than usual. Thank you for your patience while we are doing everything we can to ensure that you get a reply as quickly as possible. We will respond to your message in the order received.<br\/><\/p><p><strong>Shipping:<\/strong> Items are currently shipping in 5-7 business days with orders arriving 4-7 days after leaving our distribution center.<\/p>",
-        "additional_info_bg": "#f9f9f9",
+        "additional_info_bg": "#f3f3f3",
         "form_div": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"1gOEty8S84m5OHq24LwNlw\"><\/div>",
         "width": "wrapper--narrow",
         "padding_top": 0,
@@ -123,7 +136,7 @@
           "type": "locations",
           "settings": {
             "title": "Mailing Address",
-            "working_time": "<p>LEKI USA, Inc.<\/p><p>458 Sonwil Drive<\/p><p>Buffalo, NY 14225<\/p><h4><strong>Phone Number<\/strong><\/h4><p>(800) 255-9982 ext. 1<\/p><h4><strong>Alternative Ways to contact LEKI<\/strong><\/h4><p>LEKI USA is responsible for the sales, marketing and distribution efforts for the United States of America. For service and inquiries outside of the United States, please visit our <a href=\"#\" title=\"#\">LEKI Worldwide contact information page<\/a>.<\/p><h4><strong>General Consumer Warning<\/strong><\/h4><p>Please be careful of malicious websites posing as LEKI.com, LEKI products can only be purchased direct from LEKI at <a href=\"#\" title=\"#\">LEKI.com<\/a> and <a href=\"#\" title=\"#\">LEKI.mwrc.net<\/a><\/p>",
+            "working_time": "<p>LEKI USA, Inc.<\/p><p>458 Sonwil Drive<\/p><p>Buffalo, NY 14225<\/p><h4><strong>Phone Number<\/strong><\/h4><p>(800) 255-9982 ext. 1<\/p><h4><strong>Alternative Ways to contact LEKI<\/strong><\/h4><p>LEKI USA is responsible for the sales, marketing and distribution efforts for the United States of America. For service and inquiries outside of the United States, please visit our <a href=\"\/pages\/leki-worldwide\" title=\"LEKI Worldwide\">LEKI Worldwide contact information page<\/a>.<\/p><h4><strong>General Consumer Warning<\/strong><\/h4><p>Please be careful of malicious websites posing as LEKI.com, LEKI products can only be purchased direct from LEKI at <a href=\"https:\/\/www.leki.com\/\" target=\"_blank\" title=\"https:\/\/www.leki.com\/\">LEKI.com<\/a> and <a href=\"https:\/\/leki.mwrc.net\/\" target=\"_blank\" title=\"https:\/\/leki.mwrc.net\/\">LEKI.mwrc.net<\/a><\/p>",
             "image": "shopify:\/\/shop_images\/contact.jpg"
           }
         },
