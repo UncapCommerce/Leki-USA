@@ -48,6 +48,11 @@
   .banner-inner.text--uppercase .collection__title{
     text-transform: uppercase;
   }
+  {% if collection.metafields.custom.banner_text_color != blank %}
+    .collection__header--has-image{
+      color: {{ collection.metafields.custom.banner_text_color }}
+    }
+  {% endif %}
   @media(max-width: 1023px){
     #ImageWithTitle--{{ section.id }} {
       --PT: {{ section.settings.tab_padding_top }}px;
@@ -217,7 +222,13 @@
         "type": "text",
         "id": "banner_title",
         "label": "Banner Title"
-      },      
+      },  
+      {
+        "type": "color",
+        "id": "banner_text_clr",
+        "label": "Banner Text Color",
+        "default":"#FFFFFF"
+      },
       {
         "type": "select",
         "id": "text_color",
