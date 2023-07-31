@@ -17,21 +17,31 @@
     background-size: 100%;
   }{% endif %}
   .poleLenght-form-wrapper.has-bg {
-    padding-top: 40%;
+    padding-top: 60%;
   }
   .poleLenght-form-wrapper #poleSizeAdvisorForm {
     background: #FFFFFF;
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);
     padding: 60px;
   }
+  @media(max-width: 1699px){
+    .poleLenght-form-wrapper.has-bg {
+      padding-top: 50%;
+    }
+  }
   @media(max-width: 1440px){
+    .poleLenght-form-wrapper.has-bg {
+      padding-top: 40%;
+    }
+  }
+  @media(max-width: 1199px){
     .poleLenght-form-wrapper.has-bg {
       padding-top: 30%;
     }
   }
   @media(max-width: 1023px){
     .poleLenght-form-wrapper #poleSizeAdvisorForm{padding: 40px;}
-    .poleLenght-form-wrapper.has-bg {padding-top: 20%;}
+    .poleLenght-form-wrapper.has-bg {padding-top: 25%;}
     .page--pole-length-advisor .featured-collection__top .section__heading{font-size: 36px;line-height: 48px;}
   }
   @media(max-width: 767px){
