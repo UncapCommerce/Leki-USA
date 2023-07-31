@@ -127,7 +127,11 @@ body.page--history .collection__header .rte p{
 .review-main-wrapper {max-width: 1440px;margin: 0 auto;padding: 60px 80px;}
 .product-single__wrapper{margin-bottom:60px;}
 
+
 @media(max-width: 767px){
   .product-single__wrapper {margin-bottom: 25px;}
   .review-main-wrapper{padding: 60px 0px;}
+}
+@media(max-width: 359px){
+  #MainContent .product-grid-review .bv_numReviews_component_container { display: none !important; }
 }
