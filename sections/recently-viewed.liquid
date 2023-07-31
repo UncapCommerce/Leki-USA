@@ -65,6 +65,7 @@
                   ${item.productTitle}
                 </a>  
                 ${item.productPrice}
+                ${item.ProductRatings}
       
                 <div class="swatch__button" data-swatch-button>         
                 ${item.productVariant}
@@ -95,7 +96,7 @@
     }
     if ( productData != null ){
     var count = 0;
-  console.log('-----',[...productData].sort().reverse());
+
     var productDataReverse = [...productData].sort().reverse();
 
     productData.forEach(function(item, key) { 
@@ -134,6 +135,7 @@
                   ${item.productTitle}
                 </a>  
                 ${item.productPrice}
+                ${item.ProductRatings}
       
                 <div class="swatch__button" data-swatch-button>         
                 ${item.productVariant}

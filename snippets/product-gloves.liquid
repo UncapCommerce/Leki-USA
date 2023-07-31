@@ -2336,6 +2336,10 @@
 
 {%- endcapture -%}
 
+{%- capture product_ratings -%}
+  <div data-bv-show='rating_summary' class='product-grid-review' data-bv-product-id='{{ product.id }}' ></div>
+{%- endcapture -%}
+
 {%- capture product_info_price -%}
  "<a class='product-grid-item__price price' href='{{ product.url | within: collection }}'{% if index > 1 %} tabindex='-1'{% endif %} data-grid-link>
     {%- liquid
@@ -2418,7 +2422,8 @@ function setRecentlyViewedProducts() {
     productImageAltText: '{{product.featured_media.alt | escape }}',
     productVariant:{{ ProdVariant }},
     ProductQuickbuy: {{ quickbuy_button }},
-    ProductBadges: "{{ product_badges }}"
+    ProductBadges: "{{ product_badges }}",
+    ProductRatings: "{{ product_ratings }}"
   };
 
   // console.log('productData--',productData);
