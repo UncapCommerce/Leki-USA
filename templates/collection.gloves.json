@@ -75,6 +75,7 @@
       ],
       "settings": {
         "show_breadcrumbs": true,
+        "paginate_limit": 12,
         "enable_sorting": true,
         "enable_filters": true,
         "filters_open": true,
