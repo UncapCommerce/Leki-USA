@@ -126,7 +126,7 @@ body.page--history .collection__header .rte p{
 .comparable-product-item .comparable-btn.align-card-element-left {min-height: 32px;}
 .review-main-wrapper {max-width: 1440px;margin: 0 auto;padding: 60px 80px;}
 .product-single__wrapper{margin-bottom:60px;}
-
+.pole-adviser-drawer .result-right-wrap .product-grid-review {display: none;}
 
 @media(max-width: 767px){
   .product-single__wrapper {margin-bottom: 25px;}
