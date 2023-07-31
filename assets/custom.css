@@ -120,3 +120,14 @@ body.page--history .collection__header .rte p{
     padding-top: 72%;
   }
 }
+
+/* ---------- review CSS ---------- */
+.product-grid-review {  min-height: 25px;}
+.comparable-product-item .comparable-btn.align-card-element-left {min-height: 32px;}
+.review-main-wrapper {max-width: 1440px;margin: 0 auto;padding: 60px 80px;}
+.product-single__wrapper{margin-bottom:60px;}
+
+@media(max-width: 767px){
+  .product-single__wrapper {margin-bottom: 25px;}
+  .review-main-wrapper{padding: 60px 0px;}
+}

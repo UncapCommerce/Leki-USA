@@ -539,7 +539,7 @@
           {%- render 'rating', reviews: product.metafields.reviews, show_rating_count: settings.show_rating_count, tabindex_hidden: tabindex_hidden -%}
         </a>
       {%- endif -%}
-
+      <div data-bv-show="rating_summary" class="product-grid-review" data-bv-product-id="{{ product.id }}" ></div>
       {%- if has_colors -%}
         <product-grid-item-swatch class="product-grid-item__swatch
           {%- if settings.product_grid_hover_swatches %} product-grid-item__swatch--hover{% endif -%}

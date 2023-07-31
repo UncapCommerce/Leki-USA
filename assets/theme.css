@@ -25234,7 +25234,7 @@ input#address_search:focus{color: var(--COLOR-BLACK);}
 .comparable-custom-action{z-index: 2 !important;}
 
 /* ------------ sponsorship page ----------- */
-.sponsorship-tabs ul {margin: 0;max-width: 671px;border-radius: 12px 12px 0 0;display: inline-block;vertical-align: middle;}
+.sponsorship-tabs ul {margin: 0;border-radius: 12px 12px 0 0;display: inline-block;vertical-align: middle;}
 .sponsorship-tabs ul li.tab-title {list-style: none;display: inline-block;vertical-align: middle;padding: 14px 32px;font-size: 18px;line-height: 26px;font-weight: 600;cursor: pointer;float: left;}
 .sponsorship-inner-wrap .sponsor-tab-content.active {display: block;}
 .sponsorship-inner-wrap .sponsor-tab-content {display: none;}
