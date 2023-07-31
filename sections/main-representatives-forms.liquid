@@ -25,6 +25,10 @@
   }
 {%- endstyle -%}
 
+
+
+{% assign customerDowncaseTags = customer.tags | downcase %}
+
 {%- if section.settings.show_page_title or page.content != blank -%}
   <section id="Page--{{ section.id }}" class="section-default section-padding{% if bg_color_secondary %} bg-secondary{% endif %}">
     <div class="wrapper">
@@ -47,83 +51,91 @@
           data-aos-delay="{{ animation_delay }}"
           {%- assign animation_delay = animation_delay | plus: 150 -%}
         {% endif %}>
-        <div class="representatives-login-form"> 
-          <div class="form__message" data-form-message>
+        {% if customer and customerDowncaseTags contains "representative" %}
+          {% comment %}
+            <div class="representatives-login-form"> 
+              <div class="form__message" data-form-message></div>
+              <div class="form__item"
+                {% if animations_enabled %}
+                  data-aos="fade-up"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-delay="{{ animation_delay }}"
+                  {%- assign animation_delay = animation_delay | plus: 150 -%}
+                {% endif %}
+                {{ block.shopify_attributes }}>
+                <label for="Form-{{ section.id }}-email" class="hidden-label">Username or Email</label>
+                <input type="text" id="Form-{{ section.id }}-email" class="input--full" name="email" placeholder="Username or Email" autocorrect="off" autocapitalize="off"/>
+              </div>
+              <div class="form__item"
+                {% if animations_enabled %}
+                  data-aos="fade-up"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-delay="{{ animation_delay }}"
+                  {%- assign animation_delay = animation_delay | plus: 150 -%}
+                {% endif %}
+                {{ block.shopify_attributes }}>
+                <label for="Form-{{ section.id }}-password" class="hidden-label">password</label>
+                <input type="password" id="Form-{{ section.id }}-password" class="input--full" name="password" placeholder="password" autocorrect="off" autocapitalize="off"/>
+              </div>
+              <div class="form__item form__item--submit"
+                {% if animations_enabled %}
+                  data-aos="fade-up"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-delay="{{ animation_delay }}"
+                  {%- assign animation_delay = animation_delay | plus: 150 -%}
+                {% endif %}>
+                <button type="submit" class="btn">Login</button>
+              </div>
+            </div>
+          {% endcomment %}
+          <div class="representatives-content"> 
+            {{- page.content -}}
           </div>
-          <div class="form__item"
-            {% if animations_enabled %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}
-            {{ block.shopify_attributes }}>
-            <label for="Form-{{ section.id }}-email" class="hidden-label">Username or Email</label>
-            <input type="text" id="Form-{{ section.id }}-email" class="input--full" name="email" placeholder="Username or Email" autocorrect="off" autocapitalize="off"/>
-          </div>
-          <div class="form__item"
-            {% if animations_enabled %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}
-            {{ block.shopify_attributes }}>
-            <label for="Form-{{ section.id }}-password" class="hidden-label">password</label>
-            <input type="password" id="Form-{{ section.id }}-password" class="input--full" name="password" placeholder="password" autocorrect="off" autocapitalize="off"/>
-          </div>
-          <div class="form__item form__item--submit"
-            {% if animations_enabled %}
-              data-aos="fade-up"
-              data-aos-anchor="{{ animation_anchor }}"
-              data-aos-delay="{{ animation_delay }}"
-              {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>
-            <button type="submit" class="btn">Login</button>
-          </div>
-        </div>
-        <div class="representatives-content" style="display: none;"> 
-          {{- page.content -}}
-        </div>
+        {% else %}
+            <h3 style="text-align: center;">This page is accessible only from LEKI Representatives</h3>
+        {% endif %}
       </div>
     </div>
   </section>
 {%- endif -%}
 
-<script>
-  document.querySelectorAll(".representatives-login-form button[type=submit]").forEach(function (submit) {
-      submit.addEventListener("click", function (e) {
-          var form = this.closest(".representatives-login-form"),
-              content = form.nextElementSibling,
-              emailInput = form.querySelector(".form__item input[name=email]"),
-              passwordInput = form.querySelector(".form__item input[name=password]"),
-              showError = form.querySelector(".form__message[data-form-message]");
-  
-          if (emailInput.value.trim() === "" && passwordInput.value.trim() === "") {
-              showError.innerHTML = "<p class='errors'>Please enter value<\/p>";
-              emailInput.focus();
-          } else {            
-              if (emailInput.value === "rep" || emailInput.value === "rep@leki.com") {
-                  if (passwordInput.value === "buffalo") {
-                      showError.innerHTML = "";
-                      content.style.display = "block";
-                      form.style.display = "none";
-                  } else {
-                      showError.innerHTML = "<p class='errors'>Please enter valid password<\/p>";
-                      passwordInput.focus();
-                  }
-              } else {
-                  showError.innerHTML = "<p class='errors'>Please enter valid Username or Email<\/p>";
-                  emailInput.focus();
-              }
-          }
-      });
-  });
-</script>
-<style>
-  .representatives-login-form {max-width: 620px;margin: 0 auto;}
-  .representatives-login-form .form__message p {margin-bottom: 16px;}
-</style>
+{% comment %}
+  <script>
+    document.querySelector('.representatives-content').style.display = "none";
+    document.querySelectorAll(".representatives-login-form button[type=submit]").forEach(function (submit) {
+        submit.addEventListener("click", function (e) {
+            var form = this.closest(".representatives-login-form"),
+                content = form.nextElementSibling,
+                emailInput = form.querySelector(".form__item input[name=email]"),
+                passwordInput = form.querySelector(".form__item input[name=password]"),
+                showError = form.querySelector(".form__message[data-form-message]");
+    
+            if (emailInput.value.trim() === "" && passwordInput.value.trim() === "") {
+                showError.innerHTML = "<p class='errors'>Please enter value<\/p>";
+                emailInput.focus();
+            } else {            
+                if (emailInput.value === "rep" || emailInput.value === "rep@leki.com") {
+                    if (passwordInput.value === "buffalo") {
+                        showError.innerHTML = "";
+                        content.style.display = "block";
+                        form.style.display = "none";
+                    } else {
+                        showError.innerHTML = "<p class='errors'>Please enter valid password<\/p>";
+                        passwordInput.focus();
+                    }
+                } else {
+                    showError.innerHTML = "<p class='errors'>Please enter valid Username or Email<\/p>";
+                    emailInput.focus();
+                }
+            }
+        });
+    });
+  </script>
+  <style>
+    .representatives-login-form {max-width: 620px;margin: 0 auto;}
+    .representatives-login-form .form__message p {margin-bottom: 16px;}
+  </style>
+{% endcomment %}
 {% schema %}
   {
     "name": "Page",
