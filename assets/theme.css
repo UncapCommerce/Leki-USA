@@ -1177,10 +1177,10 @@ input.btn::before, input.shopify-payment-button__button--unbranded::before {
 .cart__checkout {
   width: 100%;
   max-width: 300px;
-  background: #E4032E;  
+  background: var(--button-primary-bg);  
 }
 .cart__buttons__fieldset:not([disabled="true"]) .cart__checkout{
-  border-color: #E4032E;
+  border-color: var(--button-primary-bg);
 }
 .cart__buttons__fieldset:not([disabled="true"]) .cart__checkout:hover,.cart__buttons__fieldset:not([disabled="true"]) .cart__checkout:focus,.cart__buttons__fieldset:not([disabled="true"]) .cart__checkout:active{
   border-color: #000;
@@ -11619,18 +11619,18 @@ a.results-popular__link:hover {
   right: 0;
   bottom: 0;
   cursor: default;
-  background: var(--bg-alpha-35);
+  /* background: var(--bg-alpha-35); */
   z-index: 1;
   cursor: default;
   transition: opacity 0.3s ease, visibility 0s linear 0s;
 }
-
+.cart__buttons--disabled .btn:disabled{color: var(--button-primary-text);}
 .cart__acceptance__input ~ .cart__buttons {
   margin-top: 15px;
 }
 
 .cart__acceptance__input:checked ~ .cart__buttons--disabled::after {
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
