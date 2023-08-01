@@ -3945,8 +3945,8 @@
       let variant = formState.variant;
       let plan = formState.plan;
       let skuWrappers = this.container.querySelectorAll(selectors$e.skuWrapper);
+      if (variant !== null) {
       let currVar = variant.sku;
-      if (formState.variant !== null) {
         skuWrappers.forEach((skuwrap) => {
           skuwrap.innerHTML = "SKU " + currVar;
         });
