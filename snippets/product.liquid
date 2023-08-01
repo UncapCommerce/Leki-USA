@@ -279,6 +279,7 @@
                     <a href="{{ product_url }}" title="{{ product_title }}">{{ product_title }}</a>
                   {%- endif -%}
                 </h1>
+                <div data-bv-show='rating_summary' class='product-grid-review' data-bv-product-id='{{ product.id }}' ></div>
               </div>
 
               {%- assign currency_code_enable = settings.currency_code_enable -%}

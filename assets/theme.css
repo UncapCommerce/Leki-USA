@@ -25913,7 +25913,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .popup-quick-view__inner .comparable-btn {display: none !important;}
 .sponsorship-inner-wrap .sponsor-tab-content a {color: #3758b9;}
 .slide__buttons.main-buttons .main-buttons__item .btn svg{vertical-align: -7px;}
-#shopify-section-api-quickview div[data-bv-show=reviews], #shopify-section-api-quickview div[data-bv-show=review_highlights], #shopify-section-api-quickview div[data-bv-show=questions] {display: none;}
+#shopify-section-api-quickview div[data-bv-show=reviews], #shopify-section-api-quickview div[data-bv-show=review_highlights], #shopify-section-api-quickview div[data-bv-show=questions],#shopify-section-api-quickview .review-main-wrapper {display: none;}
 .page--warranty .sponsorship-tabs ul {max-width: 700px;}
 .sponsorship-inner-wrap .sponsor-tab-content ul {padding-left: 15px;}
 .tab-highlight {border: 1px solid #555;background-color: #f3f3f3;padding:0 16px;border-radius: 8px;}
