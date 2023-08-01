@@ -1,16 +1,201 @@
 {
-    "sections": {
-      "main": {
-        "type": "main-page",
-        "settings": {
-          "show_page_title": true,
-          "bg_color_secondary": false,
-          "padding_top": 60,
-          "padding_bottom": 60
-        }
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
-    "order": [
-      "main"
-    ]
-  }
+    "5618dede-7110-43d7-9ed1-629ae1bec91c": {
+      "type": "section-slideshow",
+      "blocks": {
+        "template--19860662288678__5618dede-7110-43d7-9ed1-629ae1bec91c-16892511544b1dd726-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Liam-Doran-2189.jpg",
+            "overlay_opacity": 10,
+            "text_width": "narrow",
+            "text_position": "center",
+            "text_color": "text-light",
+            "subheading": "",
+            "title": "Guide your way",
+            "text": "",
+            "slide_btn_text": "Our Backcountry Poles",
+            "slide_btn_link": "shopify:\/\/collections\/touring-backcountry",
+            "slide_btn_style": "btn--secondary btn--small",
+            "slide_btn_text_2": "",
+            "slide_btn_link_2": "",
+            "slide_btn_style_2": "btn--secondary btn--small",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19860662288678__5618dede-7110-43d7-9ed1-629ae1bec91c-16892511544b1dd726-0"
+      ],
+      "settings": {
+        "slide_height": "seven-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_slide_height": "five-fifty-height-mobile",
+        "mob_font_size": true,
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "heading_size": 120,
+        "show_arrow": true
+      }
+    },
+    "4a7d9659-9d3f-4ab0-bb1f-be61931e251c": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "touring-backcountry",
+        "products_layout": "carousel",
+        "number_of_products": 20,
+        "text_alignment": "text-left",
+        "subtitle": "Take on powder days with Backcountry Poles",
+        "subtitle_color": "#27304a",
+        "title": "Popular Right Now",
+        "heading_size": 300,
+        "heading_weight": "normal",
+        "text": "<p>Off on the next ski tour! To ensure that you are ready for anything, we offer a large selection of different touring poles. Whether you're looking for a folding or three-piece pole, fixed length or Vario, Aergon Air or Evecon, you will find your perfect LEKI pole here!<\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 80
+      }
+    },
+    "32bd2f27-8455-45ac-87a9-756262ade380": {
+      "type": "section-slideshow",
+      "blocks": {
+        "template--19860662288678__32bd2f27-8455-45ac-87a9-756262ade380-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Liam-Doran-753.jpg",
+            "overlay_opacity": 10,
+            "text_width": "normal",
+            "text_position": "center",
+            "text_color": "text-light",
+            "subheading": "",
+            "title": "",
+            "text": "",
+            "slide_btn_text": "Our Backcountry Gloves",
+            "slide_btn_link": "shopify:\/\/collections\/touring-backcountry-gloves",
+            "slide_btn_style": "btn--secondary btn--small",
+            "slide_btn_text_2": "",
+            "slide_btn_link_2": "",
+            "slide_btn_style_2": "btn--secondary btn--small",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19860662288678__32bd2f27-8455-45ac-87a9-756262ade380-image-1"
+      ],
+      "settings": {
+        "slide_height": "seven-fifty-height",
+        "enable_mobile_height": true,
+        "mobile_slide_height": "five-fifty-height-mobile",
+        "mob_font_size": true,
+        "show_nav_dots": true,
+        "show_nav_arrows": true,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "wipe",
+        "enable_zoom_animation": true,
+        "heading_size": 120,
+        "show_arrow": true
+      }
+    },
+    "b63fbd88-dcc8-4ed8-9a0c-580b69eb7462": {
+      "type": "section-collection",
+      "settings": {
+        "product_list": [
+
+        ],
+        "collection": "touring-backcountry-gloves",
+        "products_layout": "carousel",
+        "number_of_products": 20,
+        "text_alignment": "text-left",
+        "subtitle": "Take on powder days with Backcountry Gloves",
+        "subtitle_color": "#27304a",
+        "title": "Popular Right Now",
+        "heading_size": 300,
+        "heading_weight": "normal",
+        "text": "<p>Our backcountry glove collection has a wide variety of products ranging from thin breathable gloves designed for SkiMo racing to bomber gloves and mittens that will keep your hands warm and dry in even the burliest of weather conditions. <\/p>",
+        "text_size": 125,
+        "button_text": "",
+        "button_style": "btn--primary",
+        "bg_color_secondary": false,
+        "enable_slider_mobile": true,
+        "columns_mobile": "2",
+        "width": "wrapper--full-padded",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 50,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 80
+      }
+    },
+    "0c985f35-2040-4656-b97e-c31fee239ac3": {
+      "type": "section-video",
+      "settings": {
+        "video_height": "six-fifty-height",
+        "video_height_mob": 450,
+        "text_position": "middle-center",
+        "video_link_bg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e2c01105aab14268b6d59d3daa774794.mp4",
+        "video_link": "",
+        "overlay_opacity": 10,
+        "text_color": "text-light",
+        "title": "",
+        "heading_highlight_type": "italics",
+        "text": "",
+        "heading_size": 100,
+        "button_text": "",
+        "button_link": "",
+        "button_style": "btn--secondary btn--small",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "tab_padding_top": 40,
+        "tab_padding_bottom": 0,
+        "mob_padding_top": 40,
+        "mob_padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5618dede-7110-43d7-9ed1-629ae1bec91c",
+    "4a7d9659-9d3f-4ab0-bb1f-be61931e251c",
+    "32bd2f27-8455-45ac-87a9-756262ade380",
+    "b63fbd88-dcc8-4ed8-9a0c-580b69eb7462",
+    "0c985f35-2040-4656-b97e-c31fee239ac3"
+  ]
+}
