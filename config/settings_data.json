@@ -121,10 +121,10 @@
           "0bca88ed-2e0d-4be4-93ae-506b6fedb528": {
             "type": "search-collection",
             "settings": {
-              "coll_1": "alpine-skiing",
+              "coll_1": "mountaineering-four-season",
               "coll_2": "cross-trail",
               "coll_3": "trekking",
-              "coll_4": "alpine-skiing-gloves"
+              "coll_4": "trail-running"
             }
           }
         },
