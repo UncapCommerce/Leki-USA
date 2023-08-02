@@ -20270,7 +20270,6 @@ body.notification-visible .popup.popup--visible {
   line-height: 22px;
 }
 .product__form .btn--submit.is-loading {
-  opacity: 0.6;
   cursor: default;
   background: transparent;
   transition: none;
