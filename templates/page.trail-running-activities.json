@@ -118,13 +118,16 @@
       "type": "section-collection",
       "settings": {
         "product_list": [
-
+          "ultra-trail-breeze-shark_leki-usa_trail-running_gloves_all-season",
+          "ultra-trail-storm-shark_leki-usa_trail-running_gloves_all-season",
+          "trigger-shark-frame-strap-mesh_leki-usa_accessories-and-spare-parts_straps",
+          "trail-running-tip_leki-usa_accessories-and-spare-parts_tips"
         ],
-        "collection": "trail-running-gloves",
+        "collection": "",
         "products_layout": "carousel",
         "number_of_products": 20,
         "text_alignment": "text-left",
-        "subtitle": "TRAIL RUNNING GLOVES",
+        "subtitle": "TRAIL RUNNING GLOVES & ACCESSORIES",
         "subtitle_color": "#27304a",
         "title": "Popular right now",
         "heading_size": 300,
