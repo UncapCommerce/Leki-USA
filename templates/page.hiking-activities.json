@@ -142,13 +142,18 @@
       "type": "section-collection",
       "settings": {
         "product_list": [
-
+          "rubber-walking-tip_leki-usa_accessories-and-spare-parts_tips",
+          "universal-carbide-flextip_leki-usa_accessories-and-spare-parts_flextip",
+          "dss-tip_leki-usa_accessories-and-spare-parts_tips",
+          "trekking-basket-2-0-_leki-usa_accessories-and-spare-parts_baskets",
+          "performance-basket_leki-usa_accessories-and-spare-parts_baskets",
+          "snowflake-basket-_leki-usa_accessories-and-spare-parts_baskets"
         ],
         "collection": "",
         "products_layout": "carousel",
         "number_of_products": 20,
         "text_alignment": "text-left",
-        "subtitle": "Trekking Gloves",
+        "subtitle": "Trekking Accessories",
         "subtitle_color": "#27304a",
         "title": "Popular Right Now",
         "heading_size": 300,
