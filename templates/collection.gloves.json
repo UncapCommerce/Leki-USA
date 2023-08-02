@@ -9,6 +9,7 @@
         "show_image": true,
         "banner_image": "{{ collection.metafields.custom.collection_banner.value }}",
         "banner_title": "{{ collection.metafields.custom.banner_text.value }}",
+        "banner_text_clr": "{{ collection.metafields.custom.banner_text_color.value }}",
         "text_color": "text-light",
         "overlay_opacity": 0,
         "bg_color_secondary": false,

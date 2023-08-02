@@ -7,7 +7,11 @@
         "show_page_title": true,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "f1d1891e-1045-4741-a893-55c029a1a9d4": {
@@ -24,7 +28,7 @@
             "text_color": "text-light",
             "subheading": "",
             "title": "SUSTAINABILITY",
-            "text": "Taking responsibility for our actions, manufacturing high-quality products and also taking social responsibility are integral parts of LEKI. We were once asked, \"Why do you guys fix all those old sticks after years of use?\" Our answer was short and sweet: \"Because it's the right thing to do.\"",
+            "text": "Taking responsibility for our actions, producing high-quality products, and being socially responsible are essential for LEKI. We were once asked, \"Why do you repair all those old poles after so many years of use?\" Our answer was brief and to the point: \"Because it's the right thing to do.\"",
             "slide_btn_text": "",
             "slide_btn_link": "",
             "slide_btn_style": "btn--primary btn--small",
@@ -43,6 +47,7 @@
         "slide_height": "full-height",
         "enable_mobile_height": false,
         "mobile_slide_height": "five-fifty-height-mobile",
+        "mob_font_size": false,
         "show_nav_dots": true,
         "show_nav_arrows": true,
         "show_arrow_down": false,
@@ -68,7 +73,7 @@
         "template--19610616267046__df96dc61-0e70-4693-bbf7-776592fa186a-1687928369880328c5-2": {
           "type": "text",
           "settings": {
-            "text": "<p>We work passionately to create durable products with exceptional value.It is our premise to combine high-end performance with safety and comfort.We consult experts and professional athletes during the development process to ensure LEKI's unique level of quality.More than 250 patents are proof of LEKI's level of innovation and quality.<\/p>",
+            "text": "<p>We  passionately work to create durable products with exceptional value. It is our priority to combine high-end performance with safety and comfort. During the development process, we consult with experts and professional athletes in order to guarantee LEKI's unique level of quality. More than 250 patents are proof of LEKI's level of innovation and quality.<\/p>",
             "size": 100
           }
         }
@@ -101,7 +106,7 @@
             "subheading": "Quality",
             "subheading_clr": "#bf0038",
             "title": "",
-            "text_content": "Our products are jointly developed and manufactured in the Swabian town of Kirchheim unter Teck and in the Czech town of Tachov. This eliminates long supply chains and complex procurement channels. Our own production offers us control over all processes and transparency in the vertical integration. Thanks to the latest production processes and production facilities, we are state-of-the-art in order to be able to produce in a resource-saving manner.",
+            "text_content": "Our products are jointly developed and manufactured in Kirchheim unter Teck in Germany and Tachov in the Czech Republic. This eliminates long supply chains and expensive procurement channels. Making our own products allows us to control all processes and to have transparency in the vertical integration of manufacture. Because we use the most modern production processes and manufacturing facilities, our state-of-the-art technology enables us to manufacture products while conserving resources.",
             "text_alignment": "center",
             "text_color": "text-dark"
           }
@@ -111,10 +116,10 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Nachhaltigkeit_High-End_2.jpg",
             "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_High-End_2.jpg",
-            "subheading": "longevity",
+            "subheading": "Durability",
             "subheading_clr": "#bf0038",
             "title": "",
-            "text_content": "We work with passion on the goal of manufacturing products with real added value. Combining top performance with safety and comfort is a priority. The constant exchange with experts and professional athletes ensures our unique level of quality. The result is intelligently designed products that customers can enjoy for years to come. With over 250 patents, LEKI has fixed more innovations than almost any other manufacturer in the outdoor industry.",
+            "text_content": "We work with passion to achieve our goal of manufacturing products that have real added value. Our priority is to combine high performance with safety and comfort. Our constant communication with experts and professional athletes ensures our unique level of quality. The result is intelligently-designed products that customers can enjoy for many years to come. With over 250 patents, LEKI has registered more innovations than almost any other manufacturer in the outdoor industry.",
             "text_alignment": "center",
             "text_color": "text-dark"
           }
@@ -148,7 +153,7 @@
         "template--19610616267046__50de3871-64cc-4800-b490-f6bf14d10726-1687928369880328c5-2": {
           "type": "text",
           "settings": {
-            "text": "<p>The majority of our products are manufactured in our modern production facility in the Czech Republic. The greatest advantages of the European location are the local supply chains and the short transport routes.<\/p>",
+            "text": "<p>The majority of our products are manufactured in our state-of-the-art factory in the Czech Republic. The biggest advantages of our European sites are the local supply chains and the short transport routes.<\/p>",
             "size": 100
           }
         }
@@ -178,10 +183,10 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Made_in_Europe.jpg",
             "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Made_in_Europe.jpg",
-            "subheading": "Production facility Tachov",
+            "subheading": "Production Facility in Tachov",
             "subheading_clr": "#bf0038",
             "title": "",
-            "text_content": "In this way we can control the manufacturing stages and manage the entire supply chain down to the smallest detail. This results in the unique LEKI quality. Our bestsellers are manufactured in our own factory. Within the entire production process, LEKI consistently pursues the path to optimizing work processes and the entire value chain. We rely on the many years of experience and the passion of our employees. In all production processes, LEKI has made massive technical investments in the future in recent years and relies on state-of-the-art production systems. This means maximum standards in terms of occupational safety, energy efficiency and environmental compatibility.",
+            "text_content": "This way we are able to monitor the stages of production and control the entire supply chain down to the last detail. The result is LEKI's unique quality. Our best-selling products are manufactured here in our own factory. During the entire production process, LEKI consistently pursues the path of optimizing workflows and enhancing the entire value chain. We rely on our many years of experience and the passion and dedication of our employees. In recent years, LEKI has made massive technical investments in the future of all its production processes and relies on the most modern, state-of-the-art production facilities. This means achieving the highest standards in occupational safety, energy efficiency, and environmental compatibility.",
             "text_alignment": "center",
             "text_color": "text-dark"
           }
@@ -228,7 +233,7 @@
         "9bda1a11-d121-462b-a433-d72a3e5453d1": {
           "type": "text",
           "settings": {
-            "text": "<p>Our brand claim is to develop the best pole and glove in the world.In doing so, we consider it natural to pay attention to the quality of the products as well as to compliance with ecological values.Internally, our processes are regularly checked according to the energy audit according to DIN EN 16247-1.In this way, we ensure that the defined standards are maintained and optimized along the value chain.<\/p>",
+            "text": "<p>Our brand aspires to develop the best poles and gloves in the world. In doing so, we consider it a given that we must be equally mindful of both product quality and the adherence to environmental values . Internally, our processes are regularly subject to inspection in accordance with the energy audit carried out according to DIN EN 16247-1. Through this we ensure that the defined standards are adhered to and optimized along the value chain.<\/p>",
             "size": 100
           }
         }
@@ -258,10 +263,10 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Hauptquartier.jpg",
             "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Hauptquartier_f83e8f3c-9feb-470b-9d7f-93ded958d2cd.jpg",
-            "subheading": "Based in Kirchheim",
+            "subheading": "Main Office in Kirchheim",
             "subheading_clr": "#bf0038",
             "title": "",
-            "text_content": "We value renewable energies, which is why the first photovoltaic system was installed at our Kirchheim site in 2005. We usually cover our energy needs completely from April to September with our own photovoltaic systems and even produce a surplus. Only in winter do we depend on additional energy. Viewed over the year, LEKI generates 7 percent more electricity than the total consumption. This extreme power saving also noticeably reduces CO² emissions by over 33 tons of CO² per year. In 2014, an intelligent and particularly energy-saving lighting system was installed. Since then, the production and storage rooms have been equipped with energy-saving LED lighting. With this sustainable investment, electricity consumption is reduced from 27 previously.",
+            "text_content": "We place a high value on renewable energy sources, which is why we installed the first photovoltaic system in our Kirchheim location in 2005. As a rule, we supply our entire energy needs from April to September with our own photovoltaic systems and even produce a surplus. We're only dependent on additional energy during the winter. Over the course of the year, LEKI generates 7% more electricity than its total energy consumption. This extreme electricity savings also noticeably reduces CO² emissions by over 33 tons of CO² per year. In 2014, we also installed an intelligent and highly-efficient energy-saving lighting system. Since then, we have equipped our production and storage rooms with energy-saving LED lighting. With this sustainable investment, we have reduced electricity consumption from 27,040 kWh\/year to 1,508 kWh\/year.",
             "text_alignment": "center",
             "text_color": "text-dark"
           }
@@ -308,7 +313,7 @@
         "eb71c955-29b6-4bda-9347-8cdc27002208": {
           "type": "text",
           "settings": {
-            "text": "<p>With a worldwide network of specialized service centers, products can be repaired and restored after years of intensive use. Reliable and durable products are part of the LEKI DNA. LEKI keeps spare parts in stock for up to ten years.<\/p>",
+            "text": "<p>With a worldwide network of specialized service centers, our products can be repaired and reconditioned after intensive use.. Reliable and durable products are part of LEKI's DNA. We stockpile replacement parts for up to 10 years.<\/p>",
             "size": 100
           }
         }
@@ -338,10 +343,10 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Nachhaltigkeit_Service.jpg",
             "image_mobile": "shopify:\/\/shop_images\/Nachhaltigkeit_Service.jpg",
-            "subheading": "repair",
+            "subheading": "repairs",
             "subheading_clr": "#bf0038",
             "title": "",
-            "text_content": "LEKI products are characterized by the highest level of quality and durability. We therefore offer the option of purchasing replacement parts for a large number of our products. These are usually still available for up to ten years after purchase. With a worldwide network of specialized service centers, products can be repaired and restored after wear.",
+            "text_content": "LEKI products stand out for their highest level of quality and durability. This is why we provide the option of purchasing replacement parts at a later date for a large number of our products. These are generally available for a period of up to 10 years after purchase. With a worldwide network of specialized service centers, our products can be repaired and reconditioned after wear and tear.",
             "text_alignment": "center",
             "text_color": "text-dark"
           }
@@ -388,7 +393,7 @@
         "545dc8af-822d-44e5-8263-08ead717e36c": {
           "type": "text",
           "settings": {
-            "text": "<p>LEKI has been supporting both regional associations and international projects for many years. Close to our hearts is the High Five Foundation, an organization that helps mountaineers recover from life-changing injuries. As a global brand, however, it is also important for us to assume responsibility at a local level. By supporting charities and events, we contribute to the success of the region in which we operate.<\/p>",
+            "text": "<p>For many years, LEKI has been supporting both regional organizations and international projects. We are especially fond of the High Five Foundation, an organization that supports mountaineers after they have suffered life-changing injuries. As a global brand, however, it is also important to us that we take on responsibility at the local level. Through our support of charity organizations and events, we contribute to the success of the region in which we operate.<\/p>",
             "size": 100
           }
         }

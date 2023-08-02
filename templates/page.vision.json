@@ -7,7 +7,11 @@
         "show_page_title": false,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "60da1b22-4c66-4642-901b-aed0b5f1495f": {
@@ -24,7 +28,7 @@
             "text_color": "text-light",
             "subheading": "",
             "title": "VISION",
-            "text": "Everyone the best stick and glove in the world.",
+            "text": "With passion and highly-qualified, experienced employees, LEKI aims to produce top products of the very best quality. Our priority is to combine safety and comfort with an appealing design. The constant interaction with experts and professional athletes ensures that practical experience informs our decision-making. All of this is done to achieve our goal: to produce the best pole and glove in the world for everyone.",
             "slide_btn_text": "",
             "slide_btn_link": "",
             "slide_btn_style": "btn--primary btn--small",
@@ -43,6 +47,7 @@
         "slide_height": "full-height",
         "enable_mobile_height": false,
         "mobile_slide_height": "five-fifty-height-mobile",
+        "mob_font_size": false,
         "show_nav_dots": true,
         "show_nav_arrows": true,
         "show_arrow_down": false,
@@ -60,7 +65,7 @@
         "template--19610601029926__d780c93d-bad2-4cfd-bdd0-8e63f83db51e-1687928369880328c5-1": {
           "type": "heading",
           "settings": {
-            "text": "<p>determination<\/p>",
+            "text": "<h2>Purpose<\/h2>",
             "size": 50,
             "heading_highlight_type": "italics"
           }
@@ -68,23 +73,14 @@
         "template--19610601029926__d780c93d-bad2-4cfd-bdd0-8e63f83db51e-1687928369880328c5-2": {
           "type": "text",
           "settings": {
-            "text": "<p>We provide you with an extra dose of speed, safety, comfort and support.We are the tailwind on your way to top performance and unforgettable outdoor moments.You can ride without a tailwind, but once you've felt a tailwind, you never want to be without it again.<\/p>",
+            "text": "<p>We serve you an extra helping of speed, safety, comfort, and support. We are the tailwind on your way to top performances and unforgettable outdoor moments. You can make your way without a tailwind, but once you have felt a tailwind, you don't want to ever be without it again.<\/p>",
             "size": 100
-          }
-        },
-        "template--19610601029926__d780c93d-bad2-4cfd-bdd0-8e63f83db51e-1687928369880328c5-3": {
-          "type": "button",
-          "settings": {
-            "btn_text": "",
-            "btn_link": "",
-            "btn_style": "btn--primary btn--small"
           }
         }
       },
       "block_order": [
         "template--19610601029926__d780c93d-bad2-4cfd-bdd0-8e63f83db51e-1687928369880328c5-1",
-        "template--19610601029926__d780c93d-bad2-4cfd-bdd0-8e63f83db51e-1687928369880328c5-2",
-        "template--19610601029926__d780c93d-bad2-4cfd-bdd0-8e63f83db51e-1687928369880328c5-3"
+        "template--19610601029926__d780c93d-bad2-4cfd-bdd0-8e63f83db51e-1687928369880328c5-2"
       ],
       "settings": {
         "text_position": "center",
@@ -107,10 +103,10 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Vision_Startschuss.jpg",
             "image_mobile": "shopify:\/\/shop_images\/Vision_Startschuss_1.jpg",
-            "subheading": "kickoff",
+            "subheading": "Starting Shot",
             "subheading_clr": "#bf0038",
             "title": "",
-            "text_content": "Our vision is not new. To be more precise, it is as old as the first ski pole that Karl Lenhart developed in the early 1960s. Karl was a passionate skier and dreamed of the perfect ski pole. He set out to replace the fragile bamboo shafts that were used for ski poles at the time. With his experience in aircraft construction, he constructed the first floor out of aluminum. A material that is stable, light and flexible at the same time. Since then, new innovations and improvements have been created at LEKI almost every day. We always start with our top athletes. Only when the best in the world are 100% satisfied are we too. For us, however, it is not only important to get feedback from world-class athletes, but also to listen to the enthusiastic recreational athlete. We want to ensure that our products and innovations meet the needs of all users. The story of LEKI is the story of our customers and partners and their adventures and experiences, climbing the highest mountains, driving the race of your life or discovering unknown places.",
+            "text_content": "Our vision is not new. To be more precise, it is as old as the first ski pole that Karl Lenhart developed in the early 1960s. Karl was a passionate skier and dreamed of the perfect ski pole. He made it his business to replace the fragile bamboo shafts that were used as ski poles at that time. With his experience in the aircraft industry, he constructed the first pole out of aluminum. A material that is sturdy, light, and flexible at the same time. Since then, new innovations and improvements occur almost every day at LEKI. We always address the needs of our top athletes first –   we are only satisfied when the best in the world are 100% satisfied. For us, it's not only important to get feedback from world-class athletes, but also to listen to enthusiastic recreational athletes. We want to ensure that our products and innovations meet the needs of all users. The history of LEKI is the history of our customers and partners and their undertakings and experiences, to climb the tallest mountains, to participate in the race of their lives, or to discover unknown places.",
             "text_alignment": "center",
             "text_color": "text-dark"
           }
@@ -123,7 +119,7 @@
             "subheading": "logo",
             "subheading_clr": "#bf0038",
             "title": "",
-            "text_content": "For our top athletes, it's often about hundredths and every little bit of performance. The exchange with the fastest athletes in the world is the engine for innovation and further development. This applies to alpine skiing, the Nordic disciplines and ski mountaineering. With trail running, LEKI now has this racing experience and expertise in summer too. That is why racing is not only part of our history, but also inextricably linked to the future of LEKI. The Race ID shows who we are - racing is part of our DNA.",
+            "text_content": "For our top athletes, it's often a matter of a hundredth of a second and the last drop of performance. Our interactions with the fastest athletes in the world are our motor for innovation and development. Whether it's alpine skiing, the Nordic disciplines, or ski mountaineering. With trail running, LEKI now also has this racer experience and expertise in the summer. This is why racing is not only part of our history – it is also inseparably connected with the future of LEKI. The Race ID shows who we are: racing is part of our DNA.",
             "text_alignment": "center",
             "text_color": "text-dark"
           }

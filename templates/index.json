@@ -33,6 +33,7 @@
         "slide_height": "original-height",
         "enable_mobile_height": true,
         "mobile_slide_height": "five-fifty-height-mobile",
+        "mob_font_size": false,
         "show_nav_dots": true,
         "show_nav_arrows": true,
         "show_arrow_down": false,
@@ -73,6 +74,12 @@
     "section-collection-0": {
       "type": "section-collection",
       "settings": {
+        "product_list": [
+          "makalu-fx-carbon-as_leki-usa_trekking-poles_all-season",
+          "makalu-fx-carbon_leki-usa_trekking-poles_all-season",
+          "makalu-lite-as_leki-usa_trekking-poles_all-season",
+          "makalu-cork-lite_leki-usa_trekking-poles_all-season"
+        ],
         "collection": "ski-poles",
         "products_layout": "carousel",
         "number_of_products": 20,
@@ -162,11 +169,14 @@
     "section-collection-1": {
       "type": "section-collection",
       "settings": {
+        "product_list": [
+
+        ],
         "collection": "hiking-poles",
         "products_layout": "carousel",
         "number_of_products": 20,
         "text_alignment": "text-left",
-        "subtitle": "ALPINE SKII POLES",
+        "subtitle": "",
         "subtitle_color": "#27304a",
         "title": "Popular right now",
         "heading_size": 300,
@@ -193,7 +203,7 @@
         "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-0": {
           "type": "image",
           "settings": {
-            "width": "33.33",
+            "width": "25",
             "image": "shopify:\/\/shop_images\/trail-running.jpg",
             "overlay_opacity": 10,
             "text_position": "center",
@@ -201,7 +211,7 @@
             "title": "Trail Running",
             "text": "",
             "button_text": "",
-            "link": "",
+            "link": "shopify:\/\/collections\/trail-running",
             "secondary_button_text": "",
             "secondary_button_link": "",
             "text_color": "text-light"
@@ -210,7 +220,7 @@
         "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-1": {
           "type": "image",
           "settings": {
-            "width": "33.33",
+            "width": "25",
             "image": "shopify:\/\/shop_images\/cross-trail.jpg",
             "overlay_opacity": 10,
             "text_position": "center",
@@ -218,7 +228,7 @@
             "title": "Cross Trail",
             "text": "",
             "button_text": "",
-            "link": "",
+            "link": "shopify:\/\/collections\/cross-trail",
             "secondary_button_text": "",
             "secondary_button_link": "",
             "text_color": "text-light"
@@ -227,15 +237,32 @@
         "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-2": {
           "type": "image",
           "settings": {
-            "width": "33.33",
+            "width": "25",
             "image": "shopify:\/\/shop_images\/four-season.jpg",
             "overlay_opacity": 10,
             "text_position": "center",
             "subheading": "",
-            "title": "Four Season",
+            "title": "Mountaineering",
             "text": "",
             "button_text": "",
-            "link": "",
+            "link": "shopify:\/\/collections\/mountaineering-four-season",
+            "secondary_button_text": "",
+            "secondary_button_link": "",
+            "text_color": "text-light"
+          }
+        },
+        "b997b603-f019-4f91-81aa-834af7141209": {
+          "type": "image",
+          "settings": {
+            "width": "25",
+            "image": "shopify:\/\/shop_images\/Startseite_23_NW_Kachel.jpg",
+            "overlay_opacity": 10,
+            "text_position": "center",
+            "subheading": "",
+            "title": "Nordic Walking",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/collections\/nordic-walking",
             "secondary_button_text": "",
             "secondary_button_link": "",
             "text_color": "text-light"
@@ -245,7 +272,8 @@
       "block_order": [
         "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-0",
         "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-1",
-        "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-2"
+        "template--18722030289190__65119804-ec72-41f1-a297-a1e4279cf92d-168248257760d79dad-2",
+        "b997b603-f019-4f91-81aa-834af7141209"
       ],
       "settings": {
         "height": "530",
@@ -265,731 +293,6 @@
         "mob_padding_top": 40,
         "mob_padding_bottom": 40
       }
-    },
-    "section-marquee": {
-      "type": "section-marquee",
-      "disabled": true,
-      "blocks": {
-        "section-marquee-0": {
-          "type": "message",
-          "settings": {
-            "message": "Spend ||amount|| more for free shipping.",
-            "target_device_enabled": false,
-            "target_device": "mobile"
-          }
-        },
-        "section-marquee-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>New collections just released - <a href=\"\/collections\" title=\"All collections\">Shop now<\/a><\/p>",
-            "icon_name": "none",
-            "icon_color": "",
-            "icon_width": 20,
-            "target_device_enabled": false,
-            "target_device": "mobile"
-          }
-        },
-        "section-marquee-2": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Use code <strong>TENOFF<\/strong> for 10% off first purchase<\/p>",
-            "icon_name": "none",
-            "icon_color": "",
-            "icon_width": 20,
-            "target_device_enabled": false,
-            "target_device": "mobile"
-          }
-        }
-      },
-      "block_order": [
-        "section-marquee-0",
-        "section-marquee-1",
-        "section-marquee-2"
-      ],
-      "settings": {
-        "bg_color": "#000000",
-        "color": "#ffffff",
-        "layout": "marquee",
-        "padding": 20,
-        "slider_speed": 7,
-        "marquee_speed": 100,
-        "text_size": 110,
-        "message_spacing": 25,
-        "padding_top": 0,
-        "padding_bottom": 60
-      }
-    },
-    "section-list-collection": {
-      "type": "section-list-collection",
-      "disabled": true,
-      "blocks": {
-        "section-list-collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "bg_color": "",
-            "text_color": "text-light",
-            "overlay_opacity": 0
-          }
-        },
-        "section-list-collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "bg_color": "",
-            "text_color": "text-light",
-            "overlay_opacity": 0
-          }
-        },
-        "section-list-collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "bg_color": "",
-            "text_color": "text-light",
-            "overlay_opacity": 0
-          }
-        },
-        "section-list-collection-3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "bg_color": "",
-            "text_color": "text-light",
-            "overlay_opacity": 0
-          }
-        },
-        "section-list-collection-4": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "bg_color": "",
-            "text_color": "text-light",
-            "overlay_opacity": 0
-          }
-        },
-        "section-list-collection-5": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "bg_color": "",
-            "text_color": "text-light",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "section-list-collection-0",
-        "section-list-collection-1",
-        "section-list-collection-2",
-        "section-list-collection-3",
-        "section-list-collection-4",
-        "section-list-collection-5"
-      ],
-      "settings": {
-        "layout": "carousel",
-        "columns": 6,
-        "image_size": 90,
-        "image_shape": "circle",
-        "title": "Something for everyone",
-        "text_size": 100,
-        "overlay_text": false,
-        "layout_mobile": "carousel",
-        "columns_mobile": "2",
-        "bg_color_secondary": false,
-        "text_color": "text-dark",
-        "width": "wrapper",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "tab_padding_top": 60,
-        "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
-        "mob_padding_bottom": 60
-      }
-    },
-    "section-promotion-row-0": {
-      "type": "section-promotion-row",
-      "disabled": true,
-      "blocks": {
-        "section-promotion-row-0": {
-          "type": "column",
-          "settings": {
-            "subheading": "<p>In-store and online<\/p>",
-            "subheading_size": 90,
-            "heading": "<p>25% OFF<\/p>",
-            "heading_highlight_type": "italics",
-            "heading_size": 295,
-            "description": "Share details about the promotion",
-            "description_size": 100,
-            "disclaimer": "*Use this text for a disclaimer.",
-            "disclaimer_size": 75,
-            "button_text": "",
-            "button_link": "",
-            "button_style": "btn--primary btn--small",
-            "bg_color": "",
-            "text_color": "",
-            "gradient_background": "",
-            "overlay_opacity": 0
-          }
-        },
-        "section-promotion-row-1": {
-          "type": "column",
-          "settings": {
-            "subheading": "<p>Extra<\/p>",
-            "subheading_size": 80,
-            "heading": "<p><em>10% off<\/em><\/p>",
-            "heading_highlight_type": "circle",
-            "heading_size": 350,
-            "description": "Share details about the promotion",
-            "description_size": 85,
-            "disclaimer": "*Use this text for a disclaimer.",
-            "disclaimer_size": 75,
-            "button_text": "",
-            "button_link": "",
-            "button_style": "btn--primary btn--small",
-            "bg_color": "",
-            "text_color": "",
-            "gradient_background": "",
-            "overlay_opacity": 0
-          }
-        },
-        "section-promotion-row-2": {
-          "type": "column",
-          "settings": {
-            "subheading": "<p>Flash deal<\/p>",
-            "subheading_size": 100,
-            "heading": "<p><em>Free<\/em> gift<\/p>",
-            "heading_highlight_type": "squiggle",
-            "heading_size": 240,
-            "description": "With every purchase",
-            "description_size": 100,
-            "disclaimer": "",
-            "disclaimer_size": 75,
-            "button_text": "",
-            "button_link": "",
-            "button_style": "btn--primary btn--small",
-            "bg_color": "#000000",
-            "text_color": "#ffffff",
-            "gradient_background": "",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "section-promotion-row-0",
-        "section-promotion-row-1",
-        "section-promotion-row-2"
-      ],
-      "settings": {
-        "layout": "3",
-        "height": "250",
-        "bg_color": "",
-        "enable_slider_mobile": true,
-        "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section-look": {
-      "type": "section-look",
-      "disabled": true,
-      "blocks": {
-        "section-look-0": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "position_x": 31,
-            "position_y": 41
-          }
-        },
-        "section-look-1": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "position_x": 50,
-            "position_y": 63
-          }
-        },
-        "section-look-2": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "position_x": 73,
-            "position_y": 47
-          }
-        }
-      },
-      "block_order": [
-        "section-look-0",
-        "section-look-1",
-        "section-look-2"
-      ],
-      "settings": {
-        "enable_aspect_ratio": true,
-        "main_image_aspect_ratio": 1,
-        "title": "Shop the Look",
-        "text": "<p>Our most popular looks of the season<\/p>",
-        "text_alignment": "text-left",
-        "show_hotspots": true,
-        "content_color": "text-dark",
-        "hotspot_color": "",
-        "bg_color_secondary": false,
-        "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section-split-images": {
-      "type": "section-split-images",
-      "disabled": true,
-      "blocks": {
-        "section-split-images-0": {
-          "type": "image",
-          "settings": {
-          }
-        },
-        "section-split-images-1": {
-          "type": "image",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "section-split-images-0",
-        "section-split-images-1"
-      ],
-      "settings": {
-        "image_height": "full-height",
-        "enable_mobile_height": false,
-        "mobile_image_height": "five-fifty-height-mobile",
-        "mobile_layout": "split",
-        "text_position": "middle-center",
-        "overlay_opacity": 10,
-        "width": "wrapper--narrow",
-        "text_color": "text-light",
-        "title": "<p>Welcome to Palo Alto<\/p>",
-        "heading_highlight_type": "italics",
-        "heading_size": 120,
-        "text": "Describe in a few words your special products, collection, or brand.",
-        "button_text": "Learn More",
-        "button_link": "",
-        "button_style": "btn--primary btn--small"
-      }
-    },
-    "section-collection-2": {
-      "type": "section-collection",
-      "disabled": true,
-      "settings": {
-        "collection": "",
-        "products_layout": "split-right",
-        "number_of_products": 4,
-        "text_alignment": "text-left",
-        "subtitle": "Best Sellers",
-        "subtitle_color": "#27304a",
-        "title": "Best Sellers",
-        "heading_size": 300,
-        "heading_weight": "normal",
-        "text": "<p>Use this text to share information about your collection with your customers.<\/p>",
-        "text_size": 150,
-        "button_text": "Shop the collection",
-        "button_style": "btn--primary",
-        "bg_color_secondary": false,
-        "enable_slider_mobile": true,
-        "columns_mobile": "2",
-        "width": "wrapper",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "tab_padding_top": 60,
-        "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
-        "mob_padding_bottom": 60
-      }
-    },
-    "section-promotion-row-1": {
-      "type": "section-promotion-row",
-      "disabled": true,
-      "blocks": {
-        "promo-0": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "subheading": "<p>IN-STORE AND ONLINE<\/p>",
-            "subheading_size": 90,
-            "heading": "<p>20% OFF<\/p>",
-            "heading_highlight_type": "italics",
-            "heading_size": 295,
-            "description": "Share details about the promotion",
-            "description_size": 100,
-            "disclaimer": "*Use this text for a disclaimer.",
-            "disclaimer_size": 75,
-            "button_text": "Button text",
-            "button_link": "",
-            "button_style": "btn--primary btn--small",
-            "bg_color": "",
-            "text_color": "",
-            "gradient_background": "",
-            "overlay_opacity": 0
-          }
-        },
-        "promo-1": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "subheading": "<p>WEEKEND SALE<\/p>",
-            "subheading_size": 80,
-            "heading": "<p>BOGO<\/p>",
-            "heading_highlight_type": "italics",
-            "heading_size": 260,
-            "description": "Share details about the promotion",
-            "description_size": 85,
-            "disclaimer": "*Use this text for a disclaimer.",
-            "disclaimer_size": 75,
-            "button_text": "Button text",
-            "button_link": "",
-            "button_style": "btn--primary btn--small",
-            "bg_color": "",
-            "text_color": "",
-            "gradient_background": "",
-            "overlay_opacity": 0
-          }
-        },
-        "promo-2": {
-          "type": "column",
-          "settings": {
-            "subheading": "",
-            "subheading_size": 100,
-            "heading": "<p><em>FREE<\/em> GIFT<\/p>",
-            "heading_highlight_type": "circle",
-            "heading_size": 205,
-            "description": "WITH EVERY PURCHASE",
-            "description_size": 100,
-            "disclaimer": "",
-            "disclaimer_size": 75,
-            "button_text": "",
-            "button_link": "",
-            "button_style": "btn--primary btn--small",
-            "bg_color": "#000000",
-            "text_color": "#ffffff",
-            "gradient_background": "",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "promo-0",
-        "promo-1",
-        "promo-2"
-      ],
-      "settings": {
-        "layout": "none",
-        "height": "250",
-        "bg_color": "",
-        "enable_slider_mobile": true,
-        "width": "wrapper--full-padded",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section-products-list": {
-      "type": "section-products-list",
-      "disabled": true,
-      "blocks": {
-        "section-products-list-0": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "title": "",
-            "product_description": "",
-            "button_text": "View Product",
-            "show_second_image": true,
-            "show_circle": true,
-            "hide_on_mobile": false,
-            "circle_text_color": "#000000",
-            "circle_rotate_animation": "rotate",
-            "circle_text": "New Arrival ~ New Arrival ~",
-            "circle_word_spacing": 3,
-            "circle_size": 150
-          }
-        },
-        "section-products-list-1": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "title": "",
-            "product_description": "",
-            "button_text": "View Product",
-            "show_second_image": true,
-            "show_circle": true,
-            "hide_on_mobile": false,
-            "circle_text_color": "#000000",
-            "circle_rotate_animation": "rotate",
-            "circle_text": "New Arrival ~ New Arrival ~",
-            "circle_word_spacing": 3,
-            "circle_size": 150
-          }
-        },
-        "section-products-list-2": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "title": "",
-            "product_description": "",
-            "button_text": "View Product",
-            "show_second_image": true,
-            "show_circle": true,
-            "hide_on_mobile": false,
-            "circle_text_color": "#000000",
-            "circle_rotate_animation": "rotate",
-            "circle_text": "New Arrival ~ New Arrival ~",
-            "circle_word_spacing": 3,
-            "circle_size": 150
-          }
-        }
-      },
-      "block_order": [
-        "section-products-list-0",
-        "section-products-list-1",
-        "section-products-list-2"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": 120,
-        "button_style": "btn--primary btn--small",
-        "image_aspect_ratio": 1,
-        "bg_color_secondary": false,
-        "width": "wrapper",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section-grid": {
-      "type": "section-grid",
-      "disabled": true,
-      "blocks": {
-        "section-grid-0": {
-          "type": "image",
-          "settings": {
-            "width": "66.66",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop Trending",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "section-grid-1": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop Clearance",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "section-grid-2": {
-          "type": "image",
-          "settings": {
-            "width": "33.33",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop Best Sellers",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        },
-        "section-grid-3": {
-          "type": "image",
-          "settings": {
-            "width": "66.66",
-            "overlay_opacity": 10,
-            "text_position": "center",
-            "subheading": "",
-            "title": "Shop New",
-            "text": "Add more info or delete this text",
-            "button_text": "",
-            "link": "",
-            "secondary_button_text": "",
-            "secondary_button_link": "",
-            "text_color": "text-light"
-          }
-        }
-      },
-      "block_order": [
-        "section-grid-0",
-        "section-grid-1",
-        "section-grid-2",
-        "section-grid-3"
-      ],
-      "settings": {
-        "height": "350",
-        "enable_mobile_height": false,
-        "mobile_height": "330",
-        "heading_size": 100,
-        "button_style": "btn--secondary btn--small",
-        "secondary_button_style": "btn--secondary btn--small",
-        "bg_color_secondary": false,
-        "enable_slider_mobile": true,
-        "width": "wrapper",
-        "add_gutter": true,
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "tab_padding_top": 60,
-        "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
-        "mob_padding_bottom": 60
-      }
-    },
-    "section-image-with-text": {
-      "type": "section-image-with-text",
-      "disabled": true,
-      "settings": {
-        "section_height": "six-fifty-height",
-        "layout": "inline",
-        "image_location": "left",
-        "image_width": "standard",
-        "subheading": "Subheading",
-        "title": "<p>Everything's on sale<\/p>",
-        "heading_highlight_type": "circle",
-        "heading_size": 130,
-        "text_content": "Share details about a promotion, welcome customers, describe a product, or talk about your brand.",
-        "text_alignment": "left",
-        "button_text": "Button text",
-        "button_link": "",
-        "button_style": "btn--primary btn--small",
-        "video_link": "",
-        "text_color": "text-dark",
-        "bg_color": "",
-        "section_width": "wrapper",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section-press": {
-      "type": "section-press",
-      "disabled": true,
-      "blocks": {
-        "section-press-0": {
-          "type": "press",
-          "settings": {
-            "text": "<p>Provide some information about what the company below thinks about your brand.<\/p>",
-            "link": "",
-            "logo_width": 120
-          }
-        },
-        "section-press-1": {
-          "type": "press",
-          "settings": {
-            "text": "<p>Provide some information about what the company below thinks about your brand.<\/p>",
-            "link": "",
-            "logo_width": 120
-          }
-        },
-        "section-press-2": {
-          "type": "press",
-          "settings": {
-            "text": "<p>Provide some information about what the company below thinks about your brand.<\/p>",
-            "link": "",
-            "logo_width": 120
-          }
-        }
-      },
-      "block_order": [
-        "section-press-0",
-        "section-press-1",
-        "section-press-2"
-      ],
-      "settings": {
-        "title": "Press",
-        "show_quotations": true,
-        "bg_color_secondary": false,
-        "width": "wrapper--narrow",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "section-banner-text-columns": {
-      "type": "section-banner-text-columns",
-      "disabled": true,
-      "blocks": {
-        "section-banner-text-columns-0": {
-          "type": "column",
-          "settings": {
-            "overlay_opacity": 10,
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-            "button_text": "Learn More",
-            "button_link": ""
-          }
-        },
-        "section-banner-text-columns-1": {
-          "type": "column",
-          "settings": {
-            "overlay_opacity": 10,
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-            "button_text": "Learn More",
-            "button_link": ""
-          }
-        },
-        "section-banner-text-columns-2": {
-          "type": "column",
-          "settings": {
-            "overlay_opacity": 10,
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-            "button_text": "Learn More",
-            "button_link": ""
-          }
-        },
-        "section-banner-text-columns-3": {
-          "type": "column",
-          "settings": {
-            "overlay_opacity": 10,
-            "subheading": "Add a subheading",
-            "heading": "Add a heading",
-            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
-            "button_text": "Learn More",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "section-banner-text-columns-0",
-        "section-banner-text-columns-1",
-        "section-banner-text-columns-2",
-        "section-banner-text-columns-3"
-      ],
-      "settings": {
-        "section_height": "seven-fifty-height",
-        "enable_mobile_height": false,
-        "mobile_section_height": "five-fifty-height-mobile",
-        "text_color": "text-light",
-        "button_style": "btn--text",
-        "show_single_image": false,
-        "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
@@ -998,18 +301,6 @@
     "section-collection-0",
     "9c881319-66c4-4a51-a225-05b49735a0d8",
     "section-collection-1",
-    "65119804-ec72-41f1-a297-a1e4279cf92d",
-    "section-marquee",
-    "section-list-collection",
-    "section-promotion-row-0",
-    "section-look",
-    "section-split-images",
-    "section-collection-2",
-    "section-promotion-row-1",
-    "section-products-list",
-    "section-grid",
-    "section-image-with-text",
-    "section-press",
-    "section-banner-text-columns"
+    "65119804-ec72-41f1-a297-a1e4279cf92d"
   ]
 }

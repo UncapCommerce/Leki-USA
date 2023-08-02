@@ -43,6 +43,7 @@
         "slide_height": "six-fifty-height",
         "enable_mobile_height": false,
         "mobile_slide_height": "five-fifty-height-mobile",
+        "mob_font_size": false,
         "show_nav_dots": true,
         "show_nav_arrows": true,
         "show_arrow_down": false,
@@ -108,11 +109,11 @@
         "d402564f-87b9-46f9-b55d-450eada71e60": {
           "type": "image-with-text",
           "settings": {
-            "image": "shopify:\/\/shop_images\/landing-1.jpg",
-            "subheading": "PRODUCT MANAGEMENT",
+            "image": "shopify:\/\/shop_images\/Uber_LEKI_Mirna.jpg",
+            "subheading": "Mirna",
             "subheading_clr": "#bf0038",
             "title": "",
-            "text_content": "Share details about a promotion, welcome customers, describe a product, or talk about your brand.",
+            "text_content": "Over ten years ago, Mirna Valerio began reporting on her experiences in a world full of thin athletes on her Fat Girl Running blog. What started as a blog is now a movement that inspires people to be who they are and to do what makes them happy. Mirna's mission: to break old thought patterns and to eliminate prejudice. Her smile always puts a smile on our faces.",
             "text_alignment": "center",
             "text_color": "text-dark"
           }
@@ -182,10 +183,23 @@
             "text_alignment": "center",
             "text_color": "text-dark"
           }
+        },
+        "0538aac9-c886-4f8f-80e7-ee1991d72d24": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Uber_LEKI_Dawa.jpg",
+            "subheading": "Dawa",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Dawa Yangzum Sherpa became the first Nepalese woman to climb Makalu, the fifth highest peak on Earth, on May 29, 2019. When we heard about it, we immediately knew she was a perfect partner for us. The Makalu was the first trekking pole – a sensational innovation at the time. Fifty years later, an athlete used LEKI poles to make history on Makalu. This is where it comes full circle. In April 2021, Dawa conquered Annapurna 1 with LEKI poles. Measured by the mortality rate, Annapurna 1 was considered to be the most dangerous of all the eight-thousanders. These are the stories we work for every day.",
+            "text_alignment": "left",
+            "text_color": "text-dark"
+          }
         }
       },
       "block_order": [
-        "d6f16775-85b8-4dee-8b42-cad90b7d00bb"
+        "d6f16775-85b8-4dee-8b42-cad90b7d00bb",
+        "0538aac9-c886-4f8f-80e7-ee1991d72d24"
       ],
       "settings": {
         "section_width": "wrapper--full-padded",
@@ -247,10 +261,23 @@
             "text_alignment": "center",
             "text_color": "text-dark"
           }
+        },
+        "e7215b93-eda1-4d4b-a5dc-d84f46133c01": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Uber_LEKI_Michi.jpg",
+            "subheading": "Michi",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "The 30-year-old professional alpinist Michi Wohlleben practices one of the most dangerous sports in the world: mountaineering. At the age of 17, he had already experienced one of his most dangerous situations on a 7,000-meter peak in Pakistan. An avalanche buried a group of climbers. He and his colleague were the only ones who could help. They dug out the injured and waited four days without equipment for the rescue helicopter. After two days, their fuel, food and painkillers ran out. Fortunately, everything turned out well. Today, Michi always approaches his projects with 100 percent determination. Nevertheless, every adventure is always a mix of emotions and decisions. Should I do it or forget about it? This mental strength stands for quality. In every single ascent.",
+            "text_alignment": "left",
+            "text_color": "text-dark"
+          }
         }
       },
       "block_order": [
-        "b9a3377a-ef06-4fee-9975-2887b9691fac"
+        "b9a3377a-ef06-4fee-9975-2887b9691fac",
+        "e7215b93-eda1-4d4b-a5dc-d84f46133c01"
       ],
       "settings": {
         "section_width": "wrapper--full-padded",
@@ -312,10 +339,23 @@
             "text_alignment": "center",
             "text_color": "text-dark"
           }
+        },
+        "2dddaf72-159e-4867-8620-355e680ee801": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Uber_LEKI_Johannes.jpg",
+            "subheading": "Johannes",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "Ten years ago, we discovered a 14-year-old Norwegian whose incredible talent was not recognized by everyone at first glance. His name was Johannes Klaebo, who is now one of the most successful cross-country athletes in the world. After the 2013 Junior World Championships, we offered him his first contract. The value of partnership also plays a big role in Johannes' life. He is part of a large family that has supported him since he was very young. His trainer is his grandfather, Kåre Høsflot, his father Håkon is his manager, and his brother Ola, who is five years younger than he is, is his social media manager. His younger sister acts as interpreter and his mother takes care of the finances. Partnership is the foundation for any success.",
+            "text_alignment": "left",
+            "text_color": "text-dark"
+          }
         }
       },
       "block_order": [
-        "79704ca8-2a95-44cb-a946-7eb360d4591f"
+        "79704ca8-2a95-44cb-a946-7eb360d4591f",
+        "2dddaf72-159e-4867-8620-355e680ee801"
       ],
       "settings": {
         "section_width": "wrapper--full-padded",
@@ -377,10 +417,23 @@
             "text_alignment": "center",
             "text_color": "text-dark"
           }
+        },
+        "5287bfaa-5693-4692-a88d-eabb62d2333f": {
+          "type": "image-with-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Uber_LEKI_Mikaela.jpg",
+            "subheading": "Mikaela",
+            "subheading_clr": "#bf0038",
+            "title": "",
+            "text_content": "There is no need to list Mikaela Shiffrin's successes, because everyone knows what she has already achieved. But her true greatness was revealed in 2020, when her life was turned upside down and her career was even in danger of ending. But Mikaela fought her way through this difficult time and returned to take second place in the World Cup on November 21, 2020. During the World Championships, she repeated this success and collected a complete set of medals. True excellence also means fighting your way back out of the deepest valleys.",
+            "text_alignment": "left",
+            "text_color": "text-dark"
+          }
         }
       },
       "block_order": [
-        "bbf831f4-b8d0-45b3-b45a-d1eb1241ff21"
+        "bbf831f4-b8d0-45b3-b45a-d1eb1241ff21",
+        "5287bfaa-5693-4692-a88d-eabb62d2333f"
       ],
       "settings": {
         "section_width": "wrapper--full-padded",

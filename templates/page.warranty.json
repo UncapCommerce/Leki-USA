@@ -2,22 +2,97 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "show_page_title": true,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
-    "fd67cda4-c7a9-49ee-8b95-1bd72e34cbf0": {
-      "type": "section-warranty-request-form",
+    "9e3fa88b-d525-44ca-bb2f-4075ac34ea07": {
+      "type": "page-sponsorship",
+      "blocks": {
+        "acb0a29b-db60-4696-b756-1f1f992c84cf": {
+          "type": "tab-content",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Trekking Poles",
+            "block_title": "Warranty Coverage on TREKKING Poles",
+            "block_content": "<p><strong>Question:<\/strong> What does LEKI USA's Trekking Pole warranty cover?<\/p><p><strong>Answer:<\/strong> There is a one year warranty on our Carbon Shaft Trekking poles and a lifetime warranty on Aluminum Shaft Trekking poles. <strong>The warranty covers shaft breakage only.<\/strong><\/p><p><\/p><p><strong>Question:<\/strong> What is not covered under the LEKI USA Warranty for Trekking Poles?<\/p><p><strong>Answer:<\/strong><\/p><ul><li>It does not cover bent                 aluminum poles, as they can be       straightened in a vise without compromising the integrity of the pole<\/li><li>It does not cover normal wear and tear<\/li><li>It does not cover lost straps, lost sections, or any other lost parts<\/li><li>It does not cover chewed straps or grips by animals or other living beings<\/li><li>It does not cover broken straps, broken or worn tips, worn grips, expanders, sleeves or missing baskets<\/li><li><strong>LEKI USA Customer Service reserves the right to limit the amount of Return Authorizations assigned per customer over any given period of time. A customers claim(s) will be scrutinized based on rate of recurrence.<\/strong><\/li><\/ul><p><\/p><p>Please complete the Warranty\/Return Authorization Request (Below) if your poles fall under warranty.<\/p>",
+            "block_highlight": "<p>Due to the high volume of inquiries, response time is longer than usual. Thank you for your patience while we are doing everything we can to ensure that you get a reply as quickly as possible. We will respond to your message in the order received.<\/p><p>We highly encourage uploading images that will better identify the product and help to expedite the warranty process.<\/p>",
+            "form_data": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"NniMmkfgdxTS30Wf__m3dQ\"><\/div>"
+          }
+        },
+        "b381b74a-7717-4ff3-9eba-c48accea11ab": {
+          "type": "tab-content",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Ski Poles",
+            "block_title": "Warranty Coverage on SKI Poles",
+            "block_content": "<p><strong>Question:<\/strong> What does LEKI USA's Ski Pole warranty cover?<\/p><p><strong>Answer:<\/strong> There is a one year warranty on our Carbon Shaft Ski poles and a two year warranty on Aluminum Shaft Ski poles. The two year warranty only covers HTS Series pole shafts that are 5.5 and higher. <strong>The warranty covers shaft breakage only.<\/strong><\/p><p><\/p><p><strong>Question: <\/strong>What is not covered under the LEKI USA Warranty for Ski Poles?<\/p><p><strong>Answer:<\/strong><\/p><ul><li>It does not cover bent aluminum poles, as they can be straightened in a vise without compromising the integrity of the pole<\/li><li>The warranty does not cover normal wear and tear<\/li><li>It does not cover lost or stolen pole parts<\/li><li>Broken Tips, Grips or Baskets<\/li><li>Missing Baskets, Tips, Straps or Grips due to wear and tear<\/li><li><strong>LEKI USA Customer Service reserves the right to limit the amount of Return Authorizations assigned per customer over any given period of time. A customers claim(s) will be scrutinized based on rate of recurrence.<\/strong><\/li><\/ul><p><\/p><p> Please complete the Warranty\/Return Authorization Request (Below) if your poles fall under warranty.<\/p>",
+            "block_highlight": "<p>Due to the high volume of inquiries, response time is longer than usual. Thank you for your patience while we are doing everything we can to ensure that you get a reply as quickly as possible. We will respond to your message in the order received.<\/p><p>We highly encourage uploading images that will better identify the product and help to expedite the warranty process.<\/p>",
+            "form_data": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"WqNGSooB-GHBkNl0O91fQw\"><\/div>"
+          }
+        },
+        "e67a0c66-700a-4bba-88f1-468c5677e7cc": {
+          "type": "tab-content",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Ski Gloves",
+            "block_title": "Warranty Coverage on SKI Gloves",
+            "block_content": "<p><strong>Question:<\/strong> What does LEKI USA's Ski Glove warranty cover?<\/p><p><strong>Answer:<\/strong> There is a one year warranty on manufacturer's defects.<\/p><p><\/p><p><strong>LEKI USA Customer Service reserves the right to limit the amount of Return Authorizations assigned per customer over any given period of time. A customers claim(s) will be scrutinized based on rate of recurrence.<\/strong><\/p><p>Please complete the Warranty\/Return Authorization Request (Below) if your glove fall under warranty.<\/p>",
+            "block_highlight": "<p>Due to the high volume of inquiries, response time is longer than usual. Thank you for your patience while we are doing everything we can to ensure that you get a reply as quickly as possible. We will respond to your message in the order received.<\/p><p>We highly encourage uploading images that will better identify the product and help to expedite the warranty process.<\/p>",
+            "form_data": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"qsYhasz7omNd0jmZigLseg\"><\/div>"
+          }
+        },
+        "da274803-751f-4575-a81e-30cfd004b0e2": {
+          "type": "tab-content",
+          "disabled": true,
+          "settings": {
+            "tab_title": "Nordic Walking Poles",
+            "block_title": "Warranty Coverage on NORDIC WALKING Poles",
+            "block_content": "<p><strong>Question:<\/strong> What does LEKI USA's Nordic Walking Pole warranty cover?<\/p><p><strong>Answer:<\/strong> There is a one year warranty on our Carbon Shaft Nordic Walking poles and a lifetime warranty on Aluminum Shaft Nordic Walking poles. <strong>The warranty covers shaft breakage only.<\/strong><\/p><p><\/p><p><strong>Question: <\/strong>What is not covered under the LEKI USA Warranty for Nordic Walking Poles?<\/p><p><strong>Answer:<\/strong><\/p><ul><li>It does not cover bent aluminum poles, as they can be straightened in a vise without compromising the integrity of the pole<\/li><li>It does not cover normal wear and tear<\/li><li>It does not cover lost straps, lost sections, or any other lost parts<\/li><li>It does not cover chewed straps or grips by animals or other living beings<\/li><li>It does not cover broken straps, broken or worn tips, worn grips, expanders, sleeves or missing baskets<\/li><li><strong>LEKI USA Customer Service reserves the right to limit the amount of Return Authorizations assigned per customer over any given period of time. A customers claim(s) will be scrutinized based on rate of recurrence.<\/strong><\/li><\/ul><p><\/p><p>Please complete the Warranty\/Return Authorization Request (Below) if your poles fall under warranty.<\/p>",
+            "block_highlight": "<p>Due to the high volume of inquiries, response time is longer than usual. Thank you for your patience while we are doing everything we can to ensure that you get a reply as quickly as possible. We will respond to your message in the order received.<\/p><p>We highly encourage uploading images that will better identify the product and help to expedite the warranty process.<\/p>",
+            "form_data": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"d0wJIK8j0Zu2aPGW_0yY1Q\"><\/div>"
+          }
+        }
+      },
+      "block_order": [
+        "acb0a29b-db60-4696-b756-1f1f992c84cf",
+        "b381b74a-7717-4ff3-9eba-c48accea11ab",
+        "e67a0c66-700a-4bba-88f1-468c5677e7cc",
+        "da274803-751f-4575-a81e-30cfd004b0e2"
+      ],
       "settings": {
-        "form_div": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"NniMmkfgdxTS30Wf__m3dQ\"><\/div>"
+        "sponsorship_bgimg": "shopify:\/\/shop_images\/sponsorship.jpg",
+        "mob_image": "shopify:\/\/shop_images\/leki-mobile.jpg",
+        "title": "Warranty Request\/Return Authorization Form",
+        "description": "",
+        "tab_titleclr": "#000000",
+        "tab_title_bgclr": "#ffffff",
+        "title_hvrclr": "#e6e6e6",
+        "title_activeclr": "#ffffff",
+        "title_active_bgclr": "#bf0038",
+        "content_color": "#ffffff",
+        "mob_heading": "Select Warranty type:",
+        "form_content": "<h3>Warranty Coverage on TREKKING Poles<\/h3><p><strong>Question:<\/strong> What does LEKI USA's Trekking Pole warranty cover?<\/p><p><strong>Answer:<\/strong> There is a one year warranty on our Carbon Shaft Trekking poles and a lifetime warranty on Aluminum Shaft Trekking poles. <strong>The warranty covers shaft breakage only.<\/strong><\/p><p><\/p><p><strong>Question:<\/strong> What is not covered under the LEKI USA Warranty for Trekking Poles?<\/p><p><strong>Answer:<\/strong><\/p><ul><li>It does not cover bent                 aluminum poles, as they can be       straightened in a vise without compromising the integrity of the pole<\/li><li>It does not cover normal wear and tear<\/li><li>It does not cover lost straps, lost sections, or any other lost parts<\/li><li>It does not cover chewed straps or grips by animals or other living beings<\/li><li>It does not cover broken straps, broken or worn tips, worn grips, expanders, sleeves or missing baskets<\/li><li><strong>LEKI USA Customer Service reserves the right to limit the amount of Return Authorizations assigned per customer over any given period of time. A customers claim(s) will be scrutinized based on rate of recurrence.<\/strong><\/li><\/ul><p><\/p><p>Please complete the Warranty\/Return Authorization Request (Below) if your poles fall under warranty.<\/p><h3>Warranty Coverage on SKI Poles<\/h3><p><strong>Question:<\/strong> What does LEKI USA's Ski Pole warranty cover?<\/p><p><strong>Answer:<\/strong> There is a one year warranty on our Carbon Shaft Ski poles and a two year warranty on Aluminum Shaft Ski poles. The two year warranty only covers HTS Series pole shafts that are 5.5 and higher. <strong>The warranty covers shaft breakage only.<\/strong><\/p><p><\/p><p><strong>Question: <\/strong>What is not covered under the LEKI USA Warranty for Ski Poles?<\/p><p><strong>Answer:<\/strong><\/p><ul><li>It does not cover bent aluminum poles, as they can be straightened in a vise without compromising the integrity of the pole<\/li><li>The warranty does not cover normal wear and tear<\/li><li>It does not cover lost or stolen pole parts<\/li><li>Broken Tips, Grips or Baskets<\/li><li>Missing Baskets, Tips, Straps or Grips due to wear and tear<\/li><li><strong>LEKI USA Customer Service reserves the right to limit the amount of Return Authorizations assigned per customer over any given period of time. A customers claim(s) will be scrutinized based on rate of recurrence.<\/strong><\/li><\/ul><p><\/p><p> Please complete the Warranty\/Return Authorization Request (Below) if your poles fall under warranty.<\/p><h3>Warranty Coverage on SKI Gloves<\/h3><p><strong>Question:<\/strong> What does LEKI USA's Ski Glove warranty cover?<\/p><p><strong>Answer:<\/strong> There is a one year warranty on manufacturer's defects.<\/p><p><\/p><p><strong>LEKI USA Customer Service reserves the right to limit the amount of Return Authorizations assigned per customer over any given period of time. A customers claim(s) will be scrutinized based on rate of recurrence.<\/strong><\/p><p>Please complete the Warranty\/Return Authorization Request (Below) if your glove fall under warranty.<\/p><h3>Warranty Coverage on NORDIC WALKING Poles<\/h3><p><strong>Question:<\/strong> What does LEKI USA's Nordic Walking Pole warranty cover?<\/p><p><strong>Answer:<\/strong> There is a one year warranty on our Carbon Shaft Nordic Walking poles and a lifetime warranty on Aluminum Shaft Nordic Walking poles. <strong>The warranty covers shaft breakage only.<\/strong><\/p><p><\/p><p><strong>Question: <\/strong>What is not covered under the LEKI USA Warranty for Nordic Walking Poles?<\/p><p><strong>Answer:<\/strong><\/p><ul><li>It does not cover bent aluminum poles, as they can be straightened in a vise without compromising the integrity of the pole<\/li><li>It does not cover normal wear and tear<\/li><li>It does not cover lost straps, lost sections, or any other lost parts<\/li><li>It does not cover chewed straps or grips by animals or other living beings<\/li><li>It does not cover broken straps, broken or worn tips, worn grips, expanders, sleeves or missing baskets<\/li><li><strong>LEKI USA Customer Service reserves the right to limit the amount of Return Authorizations assigned per customer over any given period of time. A customers claim(s) will be scrutinized based on rate of recurrence.<\/strong><\/li><\/ul><p><\/p><p>Please complete the Warranty\/Return Authorization Request (Below) if your poles fall under warranty.<\/p>",
+        "form_highlight": "<p>Due to the high volume of inquiries, response time is longer than usual. Thank you for your patience while we are doing everything we can to ensure that you get a reply as quickly as possible. We will respond to your message in the order received.<\/p><p>We highly encourage uploading images that will better identify the product and help to expedite the warranty process.<\/p>",
+        "form_div": "<div style=\"margin:0 auto;\" class=\"pxFormGenerator\" id=\"NniMmkfgdxTS30Wf__m3dQ\"><\/div>",
+        "width": "wrapper--narrow",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "mob_padding_top": 0,
+        "mob_padding_bottom": 40
       }
     }
   },
   "order": [
     "main",
-    "fd67cda4-c7a9-49ee-8b95-1bd72e34cbf0"
+    "9e3fa88b-d525-44ca-bb2f-4075ac34ea07"
   ]
 }

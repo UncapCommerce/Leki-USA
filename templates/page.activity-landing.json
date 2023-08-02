@@ -26,7 +26,7 @@
             "title": "LESS MEANS FASTER",
             "text": "",
             "slide_btn_text": "Our Skiing Poles",
-            "slide_btn_link": "shopify:\/\/collections\/all",
+            "slide_btn_link": "shopify:\/\/collections\/ski-poles",
             "slide_btn_style": "btn--secondary btn--small",
             "slide_btn_text_2": "",
             "slide_btn_link_2": "",
@@ -65,6 +65,7 @@
         "slide_height": "original-height",
         "enable_mobile_height": false,
         "mobile_slide_height": "five-fifty-height-mobile",
+        "mob_font_size": true,
         "show_nav_dots": true,
         "show_nav_arrows": true,
         "show_arrow_down": false,
@@ -79,7 +80,10 @@
     "52102f1c-d990-4fd3-aa50-a7c3cc53c75c": {
       "type": "section-collection",
       "settings": {
-        "collection": "outlet",
+        "product_list": [
+
+        ],
+        "collection": "poles",
         "products_layout": "carousel",
         "number_of_products": 20,
         "text_alignment": "text-left",
@@ -120,7 +124,7 @@
             "title": "BE A CLICKSTARTER",
             "text": "Grab the latest on-demand gloves for this season.",
             "slide_btn_text": "Our Skii Gloves",
-            "slide_btn_link": "shopify:\/\/collections\/all",
+            "slide_btn_link": "shopify:\/\/collections\/gloves",
             "slide_btn_style": "btn--secondary btn--small",
             "slide_btn_text_2": "",
             "slide_btn_link_2": "",
@@ -159,6 +163,7 @@
         "slide_height": "original-height",
         "enable_mobile_height": false,
         "mobile_slide_height": "five-fifty-height-mobile",
+        "mob_font_size": true,
         "show_nav_dots": true,
         "show_nav_arrows": true,
         "show_arrow_down": false,
@@ -173,9 +178,12 @@
     "8386b1ac-ba13-41da-9a3c-436e90896d11": {
       "type": "section-collection",
       "settings": {
-        "collection": "outlet",
+        "product_list": [
+
+        ],
+        "collection": "gloves",
         "products_layout": "carousel",
-        "number_of_products": 4,
+        "number_of_products": 20,
         "text_alignment": "text-left",
         "subtitle": "ALPINE SKII GLOVES",
         "subtitle_color": "#27304a",

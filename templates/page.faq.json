@@ -26,7 +26,7 @@
           "settings": {
             "category": "General",
             "title": "How do I submit a non-product\/ non-warranty related inquiry?",
-            "text": "<p>If you are looking for a sponsorship or donation please fill out the sponsorship application: <a href=\"\/pages\/sponsorship\" target=\"_blank\" title=\"Sponsorship\">https:\/\/us.leki.com\/sponsorship\/<\/a>Please submit any other general inquiry via our contact page: <a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\">https:\/\/us.leki.com\/contact\/<\/a><\/p>"
+            "text": "<p>If you are looking for a sponsorship or donation please fill out the sponsorship application: <a href=\"\/pages\/sponsorship\" target=\"_blank\" title=\"Sponsorship\">https:\/\/lekiusa.myshopify.com\/pages\/sponsorship<\/a> Please submit any other general inquiry via our contact page: <a href=\"\/pages\/contact\" target=\"_blank\" title=\"Contact\">https:\/\/lekiusa.myshopify.com\/pages\/contact<\/a><\/p>"
           }
         },
         "b1026c51-e39e-42d3-9f25-b1d0fff04b2b": {
@@ -42,7 +42,7 @@
           "settings": {
             "category": "General",
             "title": "I am interested in a scholarship\/sponsorship\/ donation. Who can I contact?",
-            "text": "<p>Please apply for sponsorship via our sponsorship page. Fill out all relevant information to the best of your ability to be considered for sponsorship! More details on sponsorship can be found at this page: <a href=\"\/pages\/sponsorship\" target=\"_blank\" title=\"Sponsorship\">https:\/\/us.leki.com\/sponsorship\/<\/a><\/p>"
+            "text": "<p>Please apply for sponsorship via our sponsorship page. Fill out all relevant information to the best of your ability to be considered for sponsorship! More details on sponsorship can be found at this page: <a href=\"\/pages\/sponsorship\" target=\"_blank\" title=\"Sponsorship\">https:\/\/lekiusa.myshopify.com\/pages\/sponsorship<\/a><\/p>"
           }
         },
         "dbb49f64-4c00-48ea-8a84-0c6360d70f7a": {
@@ -50,7 +50,7 @@
           "settings": {
             "category": "Warranty",
             "title": "Can I send in photos of my broken LEKI product?",
-            "text": "<p>Yes, please submit your photos via the warranty form: <a href=\"\/pages\/warranty\" target=\"_blank\" title=\"Warranty\">https:\/\/us.leki.com\/contact\/warrantyRequest.php<\/a><\/p>"
+            "text": "<p>Yes, please submit your photos via the warranty form: <a href=\"\/pages\/warranty\" target=\"_blank\" title=\"Warranty\">https:\/\/lekiusa.myshopify.com\/pages\/warranty<\/a><\/p>"
           }
         },
         "b941dd6f-bcbe-4155-a92b-1de59544669f": {
@@ -58,7 +58,7 @@
           "settings": {
             "category": "Warranty",
             "title": "My LEKI product is broken, how do I find out if I'm covered by warranty?",
-            "text": "<p>Please submit a warranty request here: <a href=\"\/pages\/warranty\" target=\"_blank\" title=\"Warranty\">https:\/\/us.leki.com\/contact\/warrantyRequest.php<\/a><\/p>"
+            "text": "<p>Please submit a warranty request here: <a href=\"\/pages\/warranty\" target=\"_blank\" title=\"Warranty\">https:\/\/lekiusa.myshopify.com\/pages\/warranty<\/a><\/p>"
           }
         },
         "f8db78f5-7bdb-4b60-ba81-f1ef45c58618": {
@@ -66,7 +66,7 @@
           "settings": {
             "category": "Warranty",
             "title": "I broke\/lost a lever on my SpeedLock LEKI poles. How do I get a replacement SpeedLock lever?",
-            "text": "<p>Please submit a warranty request here: <a href=\"\/pages\/warranty\" target=\"_blank\" title=\"Warranty\">https:\/\/us.leki.com\/contact\/warrantyRequest.php<\/a><\/p>"
+            "text": "<p>Please submit a warranty request here: <a href=\"\/pages\/warranty\" target=\"_blank\" title=\"Warranty\">https:\/\/lekiusa.myshopify.com\/pages\/warranty<\/a><\/p>"
           }
         },
         "a57cddba-7008-48d7-80eb-48b4140802ba": {
@@ -98,7 +98,7 @@
           "settings": {
             "category": "Products",
             "title": "I have a product idea. Where do I submit it?",
-            "text": "<p>LEKI USA located in Buffalo, NY is the Sales, Marketing and Distribution office for the United States of America. We are not allowed to accept any ideas for product modification or new products as our design is done solely by our parent company located in Kirchheim, Germany. Please visit <a href=\"https:\/\/lekiusa.myshopify.com\/\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/\">www.leki.com <\/a>or contact LEKI Germany at <a href=\"mailto:service@leki.de\">service@leki.de<\/a>.<\/p>"
+            "text": "<p>LEKI USA located in Buffalo, NY is the Sales, Marketing and Distribution office for the United States of America. We are not allowed to accept any ideas for product modification or new products as our design is done solely by our parent company located in Kirchheim, Germany. Please visit <a href=\"https:\/\/lekiusa.myshopify.com\/\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/\">https:\/\/lekiusa.myshopify.com\/ <\/a>or contact LEKI Germany at <a href=\"mailto:service@leki.de\">service@leki.de<\/a>.<\/p>"
           }
         },
         "0173a33a-64dc-4594-b35b-79250082d48e": {
@@ -130,7 +130,7 @@
           "settings": {
             "category": "Products",
             "title": "How do I determine which style\/size expanders I need to purchase?",
-            "text": "<ul><li>If your pole sections extend to 140cm or 145cm, then you'll need the 18mm Standard Expanders for the middle section and 16mm Standard Expanders for the lower section. If your pole sections extend to 125cm, 130cm or 135cm, then you'll need 16mm Standard Expanders for the middle section and 14mm for the lower section. Additionally, our expanders are color coded based on size, so if you have a broken green expander then the green option on our website is correct and will fit your pole.<\/li><li>Reddish-Orange Expanders are our Standard Expander and can be purchased here: <a href=\"\/products\/standard-expander_leki-usa_accessories-and-spare-parts_expanders\" target=\"_blank\" title=\"Standard Expander\">https:\/\/leki-store.mwrc.net\/en\/product.php?product_id=59628<\/a><\/li><\/ul>"
+            "text": "<ul><li>If your pole sections extend to 140cm or 145cm, then you'll need the 18mm Standard Expanders for the middle section and 16mm Standard Expanders for the lower section. If your pole sections extend to 125cm, 130cm or 135cm, then you'll need 16mm Standard Expanders for the middle section and 14mm for the lower section. Additionally, our expanders are color coded based on size, so if you have a broken green expander then the green option on our website is correct and will fit your pole.<\/li><li>Reddish-Orange Expanders are our Standard Expander and can be purchased here: <a href=\"https:\/\/lekiusa.myshopify.com\/products\/standard-expander_leki-usa_accessories-and-spare-parts_expanders?variant=45323866177830\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/products\/standard-expander_leki-usa_accessories-and-spare-parts_expanders?variant=45323866177830\">https:\/\/lekiusa.myshopify.com\/products\/standard-expander_leki-usa_accessories-and-spare-parts_expanders?variant=45323866177830<\/a><\/li><\/ul>"
           }
         },
         "4d4c12d9-cf40-4d07-aa61-013bd09b8dc1": {
@@ -138,7 +138,7 @@
           "settings": {
             "category": "Products",
             "title": "How do I use my Trigger S\/3D poles, but with a traditional buckle strap instead of the harness style strap?",
-            "text": "<p>We make a traditional style buckle strap that works with the Trigger S\/3D system, this can be purchased here: <a href=\"\/products\/trigger-s-easy-strap_leki-usa_accessories-and-spare-parts_straps\" target=\"_blank\" title=\"Trigger S Easy Strap\">https:\/\/leki-store.mwrc.net\/en\/product.php?product_id=51246<\/a><\/p>"
+            "text": "<p>We make a traditional style buckle strap that works with the Trigger S\/3D system, this can be purchased here: <a href=\"https:\/\/lekiusa.myshopify.com\/products\/trigger-s-easy-strap_leki-usa_accessories-and-spare-parts_straps?variant=45323867259174\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/products\/trigger-s-easy-strap_leki-usa_accessories-and-spare-parts_straps?variant=45323867259174\">https:\/\/lekiusa.myshopify.com\/products\/trigger-s-easy-strap_leki-usa_accessories-and-spare-parts_straps?variant=45323867259174<\/a><\/p>"
           }
         },
         "959abf93-a1b0-48d7-be6c-162bdcc3772b": {
@@ -178,7 +178,7 @@
           "settings": {
             "category": "Product Care\/Repair",
             "title": "The tips of my LEKI trekking pole have worn down \/ broken. How can I replace the tips?",
-            "text": "<ul><li>If you have DSS tips you can purchase replacements here: <a href=\"\/products\/dss-tip_leki-usa_accessories-and-spare-parts_tips\" target=\"_blank\" title=\"DSS Tip\">https:\/\/leki-store.mwrc.net\/en\/product.php?product_id=69164<\/a><\/li><li>Please watch this YouTube video for instructions on how to replace DSS Tips: <a href=\"https:\/\/www.youtube.com\/watch?v=ZbltNI5ART0\" target=\"_blank\">https:\/\/www.youtube.com\/watch?v=ZbltNI5ART0<\/a><\/li><li>If your poles have the Universal Flextips you can purchase them here: <a href=\"\/products\/universal-carbide-flextip_leki-usa_accessories-and-spare-parts_flextip\" target=\"_blank\" title=\"Universal Carbide Flextip\">https:\/\/leki-store.mwrc.net\/en\/product.php?product_id=51233<\/a><\/li><li>If your poles have aluminum sections, the tips are press fitted on. Please see instructions below:<\/li><li>If the section with the tip attached is a carbon section, please watch this YouTube video for instructions on how to replace glued on tips on carbon shafts: <a href=\"https:\/\/www.youtube.com\/watch?v=vTlr0QV3O-I\" target=\"_blank\">https:\/\/www.youtube.com\/watch?v=vTlr0QV3O-I<\/a><\/li><\/ul>",
+            "text": "<ul><li>If you have DSS tips you can purchase replacements here: <a href=\"https:\/\/lekiusa.myshopify.com\/products\/dss-tip_leki-usa_accessories-and-spare-parts_tips?variant=45323863163174\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/products\/dss-tip_leki-usa_accessories-and-spare-parts_tips?variant=45323863163174\">https:\/\/lekiusa.myshopify.com\/products\/dss-tip_leki-usa_accessories-and-spare-parts_tips?variant=45323863163174<\/a><\/li><li>Please watch this YouTube video for instructions on how to replace DSS Tips: <a href=\"https:\/\/www.youtube.com\/watch?v=ZbltNI5ART0\" target=\"_blank\">https:\/\/www.youtube.com\/watch?v=ZbltNI5ART0<\/a><\/li><li>If your poles have the Universal Flextips you can purchase them here: <a href=\"https:\/\/lekiusa.myshopify.com\/products\/universal-carbide-flextip_leki-usa_accessories-and-spare-parts_flextip?variant=45323868471590\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/products\/universal-carbide-flextip_leki-usa_accessories-and-spare-parts_flextip?variant=45323868471590\">https:\/\/lekiusa.myshopify.com\/products\/universal-carbide-flextip_leki-usa_accessories-and-spare-parts_flextip?variant=45323868471590<\/a><\/li><li>If your poles have aluminum sections, the tips are press fitted on. Please see instructions below:<\/li><li>If the section with the tip attached is a carbon section, please watch this YouTube video for instructions on how to replace glued on tips on carbon shafts: <a href=\"https:\/\/www.youtube.com\/watch?v=vTlr0QV3O-I\" target=\"_blank\">https:\/\/www.youtube.com\/watch?v=vTlr0QV3O-I<\/a><\/li><\/ul>",
             "raw_image": "shopify:\/\/shop_images\/faq-image.jpg"
           }
         },
@@ -219,7 +219,7 @@
           "settings": {
             "category": "Product Care\/Repair",
             "title": "My LEKI Superlock poles (twist to lock \/ internal expanders) are no longer holding. How do I get them to lock again?",
-            "text": "<p>Please watch this video to check the SuperLock functionality: <a href=\"https:\/\/www.youtube.com\/watch?v=ZcE5s36i0A4\" target=\"_blank\">https:\/\/www.youtube.com\/watch?v=ZcE5s36i0A4<\/a>.<\/p><p>If still having issues, please purchase new expanders here: <a href=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\">https:\/\/leki.mwrc.net\/en\/results.php?keywords=expander. <\/a>Once received, please refer to this tutorial video when for instructions on replacing: <a href=\"https:\/\/www.youtube.com\/watch?v=PVQ6D7uU4kQ\" target=\"_blank\">https:\/\/www.youtube.com\/watch?v=PVQ6D7uU4kQ<\/a><br\/><\/p>"
+            "text": "<p>Please watch this video to check the SuperLock functionality: <a href=\"https:\/\/www.youtube.com\/watch?v=ZcE5s36i0A4\" target=\"_blank\">https:\/\/www.youtube.com\/watch?v=ZcE5s36i0A4<\/a>.<\/p><p>If still having issues, please purchase new expanders here: <a href=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\">https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product <\/a>Once received, please refer to this tutorial video when for instructions on replacing: <a href=\"https:\/\/www.youtube.com\/watch?v=PVQ6D7uU4kQ\" target=\"_blank\">https:\/\/www.youtube.com\/watch?v=PVQ6D7uU4kQ<\/a><br\/><\/p>"
           }
         },
         "705e7cdd-8529-458c-a4da-eec4b1f4ad60": {
@@ -227,7 +227,7 @@
           "settings": {
             "category": "Product Care\/Repair",
             "title": "My LEKI trekking pole expanders are worn down\/broken\/ missing, how do I purchase replacements?",
-            "text": "<p>Please purchase new expanders here: <a href=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\">https:\/\/leki.mwrc.net\/en\/results.php?keywords=expander<\/a><\/p>"
+            "text": "<p>Please purchase new expanders here: <a href=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\">https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product<\/a><\/p>"
           }
         }
       },

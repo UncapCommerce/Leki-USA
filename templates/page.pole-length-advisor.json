@@ -19,9 +19,12 @@
     "268ec661-852f-4a1a-8e81-42f9a305ff0a": {
       "type": "section-collection",
       "settings": {
-        "collection": "ski-gloves",
+        "product_list": [
+
+        ],
+        "collection": "poles",
         "products_layout": "carousel",
-        "number_of_products": 4,
+        "number_of_products": 20,
         "text_alignment": "text-center",
         "subtitle": "",
         "subtitle_color": "#27304a",
