@@ -4,8 +4,8 @@
       "type": "main-representatives-forms",
       "settings": {
         "show_page_title": true,
-        "customer_login": "<h3>Customer not logged in.<\/h3>",
-        "customer_representative": "<h3>This page is accessible only from LEKI Representatives<\/h3>",
+        "customer_login": "<h3>Are you a representative?  Please login to your account to view this page.<\/h3>",
+        "customer_representative": "<h3>This page is accessible only for LEKI Representatives.<\/h3>",
         "bg_color_secondary": false,
         "padding_top": 60,
         "padding_bottom": 60,
