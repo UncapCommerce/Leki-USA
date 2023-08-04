@@ -764,8 +764,8 @@
           "0b47b42e-5c22-458e-8e32-0b2fcd1e5c50": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
+              "heading": "red-black"
             }
           },
           "d3641f1e-1a83-4545-9664-92c0662898ef": {
