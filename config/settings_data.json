@@ -778,8 +778,8 @@
           "840a74c1-9d64-4fec-b80a-1a3b429187f6": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #FF3EB5, #ccff00 50%, #000000 100%)",
+              "heading": "carbon structure-bright red-white"
             }
           },
           "81776d10-0d7b-49be-99ae-4ed615326682": {
