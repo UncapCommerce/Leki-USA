@@ -771,7 +771,7 @@
           "d3641f1e-1a83-4545-9664-92c0662898ef": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(204, 255, 0, 1) 100%)",
               "heading": "bright red-black-neonyellow"
             }
           },
