@@ -666,8 +666,8 @@
           "05fc8e42-0b68-41df-9277-2d126c33648b": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #000000, #4C4E4D 50%, #f7a30a 100%)",
+              "heading": "orange-anthracite-black"
             }
           },
           "3b2d8ad3-a3e1-41d8-8f48-58ae15035335": {
