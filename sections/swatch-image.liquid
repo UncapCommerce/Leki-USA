@@ -2,17 +2,22 @@
   {% for block in section.blocks %}
     {% assign colorname = block.settings.color_name | handleize %}
       .swatch__label__{{ colorname }}{
-        background-image: url({{ block.settings.color_img | img_url:'' }}) !important;
-        background-repeat: no-repeat !important;
+     {%  if block.settings.color_img != blank %}
+          background-image: url({{ block.settings.color_img | img_url:'' }}) !important;
+          background-repeat: no-repeat !important;
+      {% else %}
+        {% if block.settings.variant_bg_1 contains "linear-gradient" %}
+          background:{{ block.settings.variant_bg_1 }} !important;
+        {% else %}
+          background-color:{{ block.settings.variant_bg_1 }} !important;
+        {% endif %}  
+      {% endif %}
       }
   {% endfor %}
 {% endstyle %}
 {% schema %}
   {
     "name": "Swatch Image",
-    "settings": [
-      
-    ],
     "blocks":[
       {
         "name":"colorcode",
@@ -22,6 +27,11 @@
             "type": "image_picker",
             "id": "color_img",
             "label": "Color Image"            
+          },
+          {
+            "type": "color_background",
+            "id": "variant_bg_1",
+            "label": "Background color"
           },
           {            
             "type": "text",
