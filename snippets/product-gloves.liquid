@@ -2231,7 +2231,7 @@
                 endif
               endfor
           -%}       
-          <a href='{{ product.url }}?variant={{ swatch_variant.id }}' data-swatch-variant='{{ swatch_variant.id }}' id='{{ product.id }}-{{ swatch_variant.id }}-{{ option }}' data-swatch='{{ option }}'  class='watch__link swatch__label swatch__label__{{ option }}' style='background-color: {{ option | split: ' ' | last | handle }};'></a>       
+          <a href='{{ product.url }}?variant={{ swatch_variant.id }}' data-swatch-variant='{{ swatch_variant.id }}' id='{{ product.id }}-{{ swatch_variant.id }}-{{ option }}' data-swatch='{{ option }}'  class='watch__link swatch__label swatch__label__{{ option | handle }}' style='background-color: {{ option | split: ' ' | last | handle }};'></a>       
       {%- endfor -%}"
     {%- endunless -%} 
   {%- else -%}
