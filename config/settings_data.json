@@ -383,10 +383,17 @@
               "heading": "blue-red-white"
             }
           },
+          "6430e585-586a-4cbd-ba17-37c0dee5ccaa": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #253746, #165C7D 50%, #F2A900 100%)",
+              "heading": "blue-light-blue-white.sw_label_8383021351206"
+            }
+          },
           "cede6ccf-ddc9-490f-9626-e759dad968cd": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, rgba(12, 35, 64, 1), rgba(124, 224, 211, 1) 50%, rgba(255, 255, 255, 1) 100%)",
+              "variant_bg_1": "linear-gradient(91deg, #000000, #ccff00 50%, #FFFFFF 100%)",
               "heading": "blue-light-blue-white"
             }
           },
@@ -501,13 +508,6 @@
               "variant_bg_1": "linear-gradient(91deg, #FF6600, #000000 50%, #253746 100%)",
               "heading": "orange-black-blue"
             }
-          },
-          "6430e585-586a-4cbd-ba17-37c0dee5ccaa": {
-            "type": "colorcode",
-            "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #253746, #165C7D 50%, #F2A900 100%)",
-              "heading": "blue-light-blue-white.sw_label_8383021351206"
-            }
           }
         },
         "block_order": [
@@ -528,6 +528,7 @@
           "a2da07a0-70f5-4017-82b3-a369d517ecda",
           "47681496-12af-41e3-8831-e57e3950b2ce",
           "221d8706-c18e-44e1-91cf-7846c11b4e83",
+          "6430e585-586a-4cbd-ba17-37c0dee5ccaa",
           "cede6ccf-ddc9-490f-9626-e759dad968cd",
           "ce201772-03c3-424a-85c5-2c03cd9fc831",
           "542a0c56-3d4b-4a0a-bd9d-65827d755337",
@@ -544,8 +545,7 @@
           "8925845d-5e70-49de-9187-6b3f90dc1b1f",
           "76d4553e-c9bf-4444-a624-b50509f0322e",
           "6028ed3b-94f1-4cf9-b49a-20064c6ff447",
-          "578f6f16-0dc3-4671-a6c4-63a2f4cefdc8",
-          "6430e585-586a-4cbd-ba17-37c0dee5ccaa"
+          "578f6f16-0dc3-4671-a6c4-63a2f4cefdc8"
         ],
         "settings": {
         }
