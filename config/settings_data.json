@@ -729,8 +729,8 @@
           "93a05a9e-5bfa-415a-a455-c74ed79d0fd5": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #5C5D5B, #8B634B 100%)",
+              "heading": "black-copper"
             }
           },
           "af518aeb-cc93-4743-913a-65fcb5150a72": {
