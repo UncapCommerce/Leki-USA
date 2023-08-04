@@ -708,8 +708,8 @@
           "b8a807e1-bfb7-4810-a0b4-0afbbddaa1e6": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #000000, #FE5000 50%, #656565 100%)",
+              "heading": "black-orange-carbon"
             }
           },
           "4a400804-99d4-436e-b6d2-1ec752f51bad": {
@@ -720,6 +720,34 @@
             }
           },
           "cef49727-29f5-4bc3-9434-a4974dde0343": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "93a05a9e-5bfa-415a-a455-c74ed79d0fd5": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "af518aeb-cc93-4743-913a-65fcb5150a72": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "573560a5-8c88-4964-b3cd-fb0016745cf2": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "c8992ed7-b550-4601-90aa-c9f42af61268": {
             "type": "colorcode",
             "settings": {
               "variant_bg_1": "",
@@ -793,7 +821,11 @@
           "88fe5ad6-edfb-426c-9f8f-665d66ca8835",
           "b8a807e1-bfb7-4810-a0b4-0afbbddaa1e6",
           "4a400804-99d4-436e-b6d2-1ec752f51bad",
-          "cef49727-29f5-4bc3-9434-a4974dde0343"
+          "cef49727-29f5-4bc3-9434-a4974dde0343",
+          "93a05a9e-5bfa-415a-a455-c74ed79d0fd5",
+          "af518aeb-cc93-4743-913a-65fcb5150a72",
+          "573560a5-8c88-4964-b3cd-fb0016745cf2",
+          "c8992ed7-b550-4601-90aa-c9f42af61268"
         ],
         "settings": {
         }
