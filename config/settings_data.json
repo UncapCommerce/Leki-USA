@@ -820,8 +820,8 @@
           "bf2c29a3-0295-4e50-92c4-833448cde4bb": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              "heading": "black"
             }
           },
           "3640a33a-9677-4a9a-abe6-345d4b283f9d": {
