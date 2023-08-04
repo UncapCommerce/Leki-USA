@@ -680,8 +680,8 @@
           "d63eb926-141a-4847-b3ef-6e14f58c2216": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #004976, #0C2340 50%, #00A6D6 100%)",
+              "heading": "blue-light blue-cyan"
             }
           },
           "adaa5ab8-b370-4d14-950e-29f24807e84d": {
