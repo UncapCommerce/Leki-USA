@@ -792,8 +792,8 @@
           "05e593bb-712a-4075-8593-0611f92fb0ef": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #FF3EB5, #000000 50%, #ccff00 100%)",
+              "heading": "neonpink-black-neonyellow"
             }
           },
           "708756f1-a374-4af7-92d8-b1ee0bd57964": {
