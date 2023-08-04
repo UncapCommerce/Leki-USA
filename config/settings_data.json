@@ -673,8 +673,8 @@
           "3b2d8ad3-a3e1-41d8-8f48-58ae15035335": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #000000, #007C96 50%, #4C4E4D 100%)",
+              "heading": "black-anthracite"
             }
           },
           "d63eb926-141a-4847-b3ef-6e14f58c2216": {
