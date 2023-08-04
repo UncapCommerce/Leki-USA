@@ -641,6 +641,76 @@
               "variant_bg_1": "linear-gradient(91deg, #FFFFFF, #A4BBA3 50%, #b2b9bc 100%)",
               "heading": "white-green-silver"
             }
+          },
+          "02b877f5-ee94-472e-8b77-393819e6ff97": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #716E6A, #4C4E4D 50%, #007C96 100%)",
+              "heading": "gray-anthracite-black"
+            }
+          },
+          "e602cd2a-a3b4-41ea-be87-090b3e545fc4": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "ece5ed0c-3f72-4109-b88a-44220b02615c": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "05fc8e42-0b68-41df-9277-2d126c33648b": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "3b2d8ad3-a3e1-41d8-8f48-58ae15035335": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "d63eb926-141a-4847-b3ef-6e14f58c2216": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "adaa5ab8-b370-4d14-950e-29f24807e84d": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "df993d3c-3cbc-4ca5-8b77-55690019527f": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "02cc3aec-0578-41b0-802d-6ff13bec4a20": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "88fe5ad6-edfb-426c-9f8f-665d66ca8835": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
           }
         },
         "block_order": [
@@ -697,7 +767,17 @@
           "868f2380-fc55-4c7c-b066-55602b76cbf3",
           "1f412a7c-c946-44ce-9214-a339eca714ea",
           "879a5063-045d-4cb7-a2d9-e08c2f0672ff",
-          "a5d47d16-71fb-477c-928d-5f43a8fcfb11"
+          "a5d47d16-71fb-477c-928d-5f43a8fcfb11",
+          "02b877f5-ee94-472e-8b77-393819e6ff97",
+          "e602cd2a-a3b4-41ea-be87-090b3e545fc4",
+          "ece5ed0c-3f72-4109-b88a-44220b02615c",
+          "05fc8e42-0b68-41df-9277-2d126c33648b",
+          "3b2d8ad3-a3e1-41d8-8f48-58ae15035335",
+          "d63eb926-141a-4847-b3ef-6e14f58c2216",
+          "adaa5ab8-b370-4d14-950e-29f24807e84d",
+          "df993d3c-3cbc-4ca5-8b77-55690019527f",
+          "02cc3aec-0578-41b0-802d-6ff13bec4a20",
+          "88fe5ad6-edfb-426c-9f8f-665d66ca8835"
         ],
         "settings": {
         }
