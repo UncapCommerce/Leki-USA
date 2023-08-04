@@ -687,8 +687,8 @@
           "df993d3c-3cbc-4ca5-8b77-55690019527f": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #f7a30a, #51543F 50%, #2E3224 100%)",
+              "heading": "orange-green"
             }
           },
           "02cc3aec-0578-41b0-802d-6ff13bec4a20": {
