@@ -677,18 +677,11 @@
               "heading": "black-anthracite"
             }
           },
-          "d63eb926-141a-4847-b3ef-6e14f58c2216": {
-            "type": "colorcode",
-            "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #004976, #0C2340 50%, #00A6D6 100%)",
-              "heading": "blue-light blue-cyan"
-            }
-          },
           "adaa5ab8-b370-4d14-950e-29f24807e84d": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #FE5000, #253746 50%, #656565 100%)",
+              "heading": "orange-blue-anthracite"
             }
           },
           "df993d3c-3cbc-4ca5-8b77-55690019527f": {
@@ -706,6 +699,27 @@
             }
           },
           "88fe5ad6-edfb-426c-9f8f-665d66ca8835": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "b8a807e1-bfb7-4810-a0b4-0afbbddaa1e6": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "4a400804-99d4-436e-b6d2-1ec752f51bad": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": ""
+            }
+          },
+          "cef49727-29f5-4bc3-9434-a4974dde0343": {
             "type": "colorcode",
             "settings": {
               "variant_bg_1": "",
@@ -773,11 +787,13 @@
           "ece5ed0c-3f72-4109-b88a-44220b02615c",
           "05fc8e42-0b68-41df-9277-2d126c33648b",
           "3b2d8ad3-a3e1-41d8-8f48-58ae15035335",
-          "d63eb926-141a-4847-b3ef-6e14f58c2216",
           "adaa5ab8-b370-4d14-950e-29f24807e84d",
           "df993d3c-3cbc-4ca5-8b77-55690019527f",
           "02cc3aec-0578-41b0-802d-6ff13bec4a20",
-          "88fe5ad6-edfb-426c-9f8f-665d66ca8835"
+          "88fe5ad6-edfb-426c-9f8f-665d66ca8835",
+          "b8a807e1-bfb7-4810-a0b4-0afbbddaa1e6",
+          "4a400804-99d4-436e-b6d2-1ec752f51bad",
+          "cef49727-29f5-4bc3-9434-a4974dde0343"
         ],
         "settings": {
         }
