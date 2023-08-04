@@ -1,7 +1,7 @@
 {% style %}  
   {% for block in section.blocks %}
     {% assign colorname = block.settings.heading | handleize %}
-      .swatch__label__{{ colorname }}{
+      .swatch__label__{{ colorname | replace: '-sw_label_', '.sw_label_'  }}{
      {%  if block.settings.color_img != blank %}
           background-image: url({{ block.settings.color_img | img_url:'' }}) !important;
           background-repeat: no-repeat !important;
