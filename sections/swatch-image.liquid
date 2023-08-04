@@ -1,6 +1,6 @@
 {% style %}  
   {% for block in section.blocks %}
-    {% assign colorname = block.settings.color_name | handleize %}
+    {% assign colorname = block.settings.heading | handleize %}
       .swatch__label__{{ colorname }}{
      {%  if block.settings.color_img != blank %}
           background-image: url({{ block.settings.color_img | img_url:'' }}) !important;
@@ -35,7 +35,7 @@
           },
           {            
             "type": "text",
-            "id": "color_name",
+            "id": "heading",
             "label": "Heading"            
           }
         ]

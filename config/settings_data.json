@@ -266,20 +266,214 @@
             "type": "colorcode",
             "settings": {
               "color_img": "shopify:\/\/shop_images\/green.jpg",
-              "color_name": "green"
+              "variant_bg_1": "",
+              "heading": "green"
             }
           },
           "39dc4463-fe08-412f-a3f8-37c07df4d24b": {
             "type": "colorcode",
             "settings": {
               "color_img": "shopify:\/\/shop_images\/turquoise-terrazzo.png",
-              "color_name": "black"
+              "variant_bg_1": "",
+              "heading": "black"
+            }
+          },
+          "e264dde0-a8df-46dd-9f71-e859002f8436": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(76, 78, 77, 1) 50%, rgba(255, 0, 0, 1) 100%)",
+              "heading": "black-red-anthracite"
+            }
+          },
+          "55d8032f-107d-43c7-9848-d37570acec24": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(76, 78, 77, 1) 50%, rgba(204, 255, 0, 1) 100%)",
+              "heading": "white-anthracite-neon yellow"
+            }
+          },
+          "d0c6244b-8c28-4668-93e9-e548510fa816": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(90deg, rgba(76, 78, 77, 1) 11%, rgba(124, 224, 211, 1) 49%, rgba(255, 255, 255, 1) 87%)",
+              "heading": "light-blue-anthracite-white"
+            }
+          },
+          "6efaa136-dc76-47df-9a3d-3d4c971b1209": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(90deg, rgba(92, 93, 91, 1), rgba(255, 255, 255, 1) 50%, rgba(155, 136, 123, 1) 100%)",
+              "heading": "steel-white-rose-gold"
+            }
+          },
+          "b8868d5c-60c5-4bfd-a81b-7cefa1e96546": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(92, 93, 91, 1), rgba(76, 78, 77, 1) 50%, rgba(255, 255, 255, 1) 100%)",
+              "heading": "steel-anthracite-white"
+            }
+          },
+          "5b8684ea-3e4b-4ab2-abe3-8794f7415d94": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(76, 78, 77, 1), rgba(0, 0, 0, 1) 50%, rgba(255, 0, 0, 1) 100%)",
+              "heading": "anthracite-black-red"
+            }
+          },
+          "0e0abd94-41f0-4a25-9a9e-6e7524500bb6": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(76, 78, 77, 1), rgba(0, 0, 0, 1) 50%, rgba(57, 255, 20, 1) 100%)",
+              "heading": "anthracite-black-neon-green"
+            }
+          },
+          "a3a0fa1c-47fb-41e0-a3c9-0562fb51cec7": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(101, 101, 101, 1) 50%, rgba(0, 166, 214, 1) 100%)",
+              "heading": "black-anthractite-cyan"
+            }
+          },
+          "6c904bb5-19fc-4808-b644-7b9f7fa7207c": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(101, 101, 101, 1) 50%, rgba(57, 255, 20, 1) 100%)",
+              "heading": "black-anthracite-neon green"
+            }
+          },
+          "44fd455c-c86f-4576-9d33-8411a8df17af": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #000000, #4C4E4D 50%, #FF0000 100%)",
+              "heading": "black-anthracite-red"
+            }
+          },
+          "30682483-510a-4a92-b207-c9e0cc8deb6f": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #000000, #4C4E4D 50%, #FE5000 100%)",
+              "heading": "black-anthracite-orange"
+            }
+          },
+          "28ab659a-4f7c-4789-be0d-d00260c1a8d1": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #000000, #FF6600 50%, #4C4E4D 100%)",
+              "heading": "black-orange-anthracite"
+            }
+          },
+          "a2da07a0-70f5-4017-82b3-a369d517ecda": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
+              "heading": "red-black-yellow"
+            }
+          },
+          "47681496-12af-41e3-8831-e57e3950b2ce": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #000000, #ccff00 50%, #FFFFFF 100%)",
+              "heading": "black-yellow-white"
+            }
+          },
+          "221d8706-c18e-44e1-91cf-7846c11b4e83": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #007C96, #FF0000 50%, #FFFFFF 100%)",
+              "heading": "blue-red-white"
+            }
+          },
+          "cede6ccf-ddc9-490f-9626-e759dad968cd": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(12, 35, 64, 1), rgba(124, 224, 211, 1) 50%, rgba(255, 255, 255, 1) 100%)",
+              "heading": "blue-light-blue-white"
+            }
+          },
+          "ce201772-03c3-424a-85c5-2c03cd9fc831": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #000000, #FFFFFF 100%)",
+              "heading": "black-white"
+            }
+          },
+          "542a0c56-3d4b-4a0a-bd9d-65827d755337": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #000000, #F2A900 50%, #FFFFFF 100%)",
+              "heading": "black-anthracite-rus"
+            }
+          },
+          "be305120-6424-4c4e-8589-2d5c565434f8": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #EA27C2, #ccff00 50%, #D0006F 100%)",
+              "heading": "magenta-yellow-berry"
+            }
+          },
+          "648b62f0-490a-4b24-9dd9-6ff1e8ca0420": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #FFFFFF, #b2b9bc 50%, #AD987C 100%)",
+              "heading": "white-silver-gold"
+            }
+          },
+          "9e433bad-02d1-470d-9f1a-16166f1b13d9": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #0C1C33, #FFFFFF 50%, #AD987C 100%)",
+              "heading": "blue-white-gold"
+            }
+          },
+          "532f3c4d-39d5-4ee5-9b6b-3cde63afef26": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #FF0000, #ccff00 50%, #000000 100%)",
+              "heading": "red-yellow-black"
+            }
+          },
+          "08ab3b63-6a2a-4154-b581-c780613a0571": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #FF0000, #ccff00 50%, #656565 100%)",
+              "heading": "red-yellow-carbon"
+            }
+          },
+          "c2db4b1e-0825-493a-b993-274462f19295": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #FF3EB5, #ccff00 50%, #656565 100%)",
+              "heading": "pink-yellow-carbon"
             }
           }
         },
         "block_order": [
           "cb9c5abc-268c-4f93-be4d-44c79cea0e7a",
-          "39dc4463-fe08-412f-a3f8-37c07df4d24b"
+          "39dc4463-fe08-412f-a3f8-37c07df4d24b",
+          "e264dde0-a8df-46dd-9f71-e859002f8436",
+          "55d8032f-107d-43c7-9848-d37570acec24",
+          "d0c6244b-8c28-4668-93e9-e548510fa816",
+          "6efaa136-dc76-47df-9a3d-3d4c971b1209",
+          "b8868d5c-60c5-4bfd-a81b-7cefa1e96546",
+          "5b8684ea-3e4b-4ab2-abe3-8794f7415d94",
+          "0e0abd94-41f0-4a25-9a9e-6e7524500bb6",
+          "a3a0fa1c-47fb-41e0-a3c9-0562fb51cec7",
+          "6c904bb5-19fc-4808-b644-7b9f7fa7207c",
+          "44fd455c-c86f-4576-9d33-8411a8df17af",
+          "30682483-510a-4a92-b207-c9e0cc8deb6f",
+          "28ab659a-4f7c-4789-be0d-d00260c1a8d1",
+          "a2da07a0-70f5-4017-82b3-a369d517ecda",
+          "47681496-12af-41e3-8831-e57e3950b2ce",
+          "221d8706-c18e-44e1-91cf-7846c11b4e83",
+          "cede6ccf-ddc9-490f-9626-e759dad968cd",
+          "ce201772-03c3-424a-85c5-2c03cd9fc831",
+          "542a0c56-3d4b-4a0a-bd9d-65827d755337",
+          "be305120-6424-4c4e-8589-2d5c565434f8",
+          "648b62f0-490a-4b24-9dd9-6ff1e8ca0420",
+          "9e433bad-02d1-470d-9f1a-16166f1b13d9",
+          "532f3c4d-39d5-4ee5-9b6b-3cde63afef26",
+          "08ab3b63-6a2a-4154-b581-c780613a0571",
+          "c2db4b1e-0825-493a-b993-274462f19295"
         ],
         "settings": {
         }
