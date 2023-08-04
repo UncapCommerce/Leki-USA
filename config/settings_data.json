@@ -715,14 +715,14 @@
           "4a400804-99d4-436e-b6d2-1ec752f51bad": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #5B6770, #DA8350 50%, #253746 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(91, 103, 112, 1), rgba(218, 131, 80, 1) 50%, rgba(37, 55, 70, 1) 100%)",
               "heading": "blue-orange-gray"
             }
           },
           "cef49727-29f5-4bc3-9434-a4974dde0343": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #253746, #DA8350 50%, #5B6770 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(37, 55, 70, 1), rgba(218, 131, 80, 1) 50%, rgba(91, 103, 112, 1) 100%)",
               "heading": "blue-orange-blue"
             }
           },
