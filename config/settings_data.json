@@ -815,6 +815,13 @@
               "heading": "blue"
             }
           },
+          "71cde959-898a-4ec3-b040-a91ab62332e6": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(180deg, rgba(136, 187, 209, 1), rgba(136, 187, 209, 1) 100%)",
+              "heading": "blue.sw_label_8384900628774"
+            }
+          },
           "454248fc-ea0a-45a2-9dd6-edcb2635682d": {
             "type": "colorcode",
             "settings": {
@@ -1071,6 +1078,7 @@
           "689e4bd5-ff18-473c-9f3d-c7168f12e07d",
           "bf2c29a3-0295-4e50-92c4-833448cde4bb",
           "3640a33a-9677-4a9a-abe6-345d4b283f9d",
+          "71cde959-898a-4ec3-b040-a91ab62332e6",
           "454248fc-ea0a-45a2-9dd6-edcb2635682d",
           "cb4df1e7-9b31-4a05-8c96-e06adda1fb6b",
           "49f1a299-85f1-4a8c-869e-0cfce0ada83b",
