@@ -384,7 +384,7 @@
           "ce201772-03c3-424a-85c5-2c03cd9fc831": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #000000, #FFFFFF 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1) 100%)",
               "heading": "black-white"
             }
           },
@@ -1157,6 +1157,13 @@
               "variant_bg_1": "linear-gradient(91deg, rgba(117, 120, 123, 1), rgba(76, 78, 77, 1) 100%)",
               "heading": "gray.sw_label_8385214513446"
             }
+          },
+          "3b2f0e4e-4185-495b-b933-2e1182ea4d7b": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #000000, #b2b9bc 100%)",
+              "heading": "black-white.sw_label_8385214578982"
+            }
           }
         },
         "block_order": [
@@ -1287,7 +1294,8 @@
           "794dfdeb-3be3-4206-9bc0-59889a50491c",
           "e926c258-b71c-45cf-b423-b9e0eaf28b5a",
           "63aa1cb6-4a2a-4087-9063-a391cd9caec4",
-          "77ae18dd-c80e-46c7-80c9-bab4dade30e5"
+          "77ae18dd-c80e-46c7-80c9-bab4dade30e5",
+          "3b2f0e4e-4185-495b-b933-2e1182ea4d7b"
         ],
         "settings": {
         }
