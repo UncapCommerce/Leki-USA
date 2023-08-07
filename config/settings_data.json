@@ -834,8 +834,8 @@
           "454248fc-ea0a-45a2-9dd6-edcb2635682d": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(255, 208, 137, 1) 100%)",
+              "heading": "black-tan"
             }
           },
           "cb4df1e7-9b31-4a05-8c96-e06adda1fb6b": {
