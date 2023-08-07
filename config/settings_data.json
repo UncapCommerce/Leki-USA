@@ -1010,6 +1010,13 @@
               "variant_bg_1": "linear-gradient(127deg, rgba(204, 255, 0, 1) 11%, rgba(204, 255, 0, 1) 79%)",
               "heading": "neon-yellow"
             }
+          },
+          "c499b5cb-181e-4f50-a37f-48d7fb0b7b30": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(204, 255, 0, 1) 100%)",
+              "heading": "black.sw_label_8493996146982"
+            }
           }
         },
         "block_order": [
@@ -1119,7 +1126,8 @@
           "090e59a9-c1d7-4f81-8c46-4ce3a726c9aa",
           "f48d4bc1-8361-4b0a-b1a1-5c707e2c4cd2",
           "4f67e006-88a4-47d0-8da8-e6553cad44ed",
-          "7a476247-52c0-4bf2-ae80-64a96b4763d5"
+          "7a476247-52c0-4bf2-ae80-64a96b4763d5",
+          "c499b5cb-181e-4f50-a37f-48d7fb0b7b30"
         ],
         "settings": {
         }
