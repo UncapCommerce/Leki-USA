@@ -853,7 +853,7 @@
           "b0c7ee3d-f602-48f7-8518-79b659c874cf": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(204, 255, 0, 1) 100%)",
               "heading": "red-black.sw_label_8383024726310"
             }
           },
@@ -888,8 +888,8 @@
           "6e7c4be8-7060-4c6e-bf61-945e870d49db": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(180deg, rgba(26, 117, 207, 1), rgba(26, 117, 207, 1) 100%)",
+              "heading": "blue.sw_label_8385209925926"
             }
           },
           "5fe0c5af-47c3-4138-8ec7-69705bd07a9c": {
