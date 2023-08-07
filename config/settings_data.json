@@ -888,7 +888,7 @@
           "6e7c4be8-7060-4c6e-bf61-945e870d49db": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #000000, #8b8f8e 100%)",
+              "variant_bg_1": "linear-gradient(91deg, #000000, #8b8f8e  100%)",
               "heading": "blue.sw_label_8385211367718"
             }
           },
@@ -986,7 +986,7 @@
           "090e59a9-c1d7-4f81-8c46-4ce3a726c9aa": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(139, 143, 142, 1) 100%)",
               "heading": "black"
             }
           }
