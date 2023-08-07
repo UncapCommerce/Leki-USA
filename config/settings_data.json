@@ -869,7 +869,7 @@
           "b0c7ee3d-f602-48f7-8518-79b659c874cf": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, rgba(232, 54, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
               "heading": "red-black.sw_label_8383024726310"
             }
           },
