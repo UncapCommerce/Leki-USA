@@ -881,7 +881,7 @@
           "aac2a7dc-2aff-4e4f-a849-d785db6ba514": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(180deg, rgba(120, 214, 75, 1), rgba(120, 214, 75, 1) 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(120, 214, 75, 1), rgba(120, 214, 75, 1) 100%)",
               "heading": "green"
             }
           },
