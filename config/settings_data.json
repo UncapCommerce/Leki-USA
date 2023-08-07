@@ -262,22 +262,6 @@
       "swatch-image": {
         "type": "swatch-image",
         "blocks": {
-          "cb9c5abc-268c-4f93-be4d-44c79cea0e7a": {
-            "type": "colorcode",
-            "settings": {
-              "color_img": "shopify:\/\/shop_images\/green.jpg",
-              "variant_bg_1": "",
-              "heading": "green"
-            }
-          },
-          "39dc4463-fe08-412f-a3f8-37c07df4d24b": {
-            "type": "colorcode",
-            "settings": {
-              "color_img": "shopify:\/\/shop_images\/turquoise-terrazzo.png",
-              "variant_bg_1": "",
-              "heading": "black"
-            }
-          },
           "e264dde0-a8df-46dd-9f71-e859002f8436": {
             "type": "colorcode",
             "settings": {
@@ -897,8 +881,8 @@
           "aac2a7dc-2aff-4e4f-a849-d785db6ba514": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(180deg, rgba(120, 214, 75, 1), rgba(120, 214, 75, 1) 100%)",
+              "heading": "green"
             }
           },
           "6e7c4be8-7060-4c6e-bf61-945e870d49db": {
@@ -917,8 +901,6 @@
           }
         },
         "block_order": [
-          "cb9c5abc-268c-4f93-be4d-44c79cea0e7a",
-          "39dc4463-fe08-412f-a3f8-37c07df4d24b",
           "e264dde0-a8df-46dd-9f71-e859002f8436",
           "55d8032f-107d-43c7-9848-d37570acec24",
           "d0c6244b-8c28-4668-93e9-e548510fa816",
