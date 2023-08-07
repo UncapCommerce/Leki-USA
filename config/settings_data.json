@@ -769,7 +769,7 @@
           "81776d10-0d7b-49be-99ae-4ed615326682": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #D6D6D6, #000000 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(214, 214, 214, 1), rgba(0, 0, 0, 1) 100%)",
               "heading": "silver-black"
             }
           },
@@ -1122,6 +1122,20 @@
               "variant_bg_1": "linear-gradient(91deg, #FF0000, #ccff00 100%)",
               "heading": "red-yellow"
             }
+          },
+          "142ea574-9547-42b9-aa4e-971c481fea60": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(178, 185, 188, 1) 100%)",
+              "heading": "silver-black.sw_label_8385214382374"
+            }
+          },
+          "794dfdeb-3be3-4206-9bc0-59889a50491c": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(178, 185, 188, 1) 100%)",
+              "heading": "silver-black.sw_label_8385214021926"
+            }
           }
         },
         "block_order": [
@@ -1247,7 +1261,9 @@
           "221e56e0-bd3b-43f4-93b9-c509b2aa38be",
           "9e3e6eff-603c-4b11-a0c7-c4d7eabd555b",
           "042d98a6-1483-4456-9507-7c129ee91bea",
-          "59200050-3c69-4cb7-9bb3-a9ff413be9cf"
+          "59200050-3c69-4cb7-9bb3-a9ff413be9cf",
+          "142ea574-9547-42b9-aa4e-971c481fea60",
+          "794dfdeb-3be3-4206-9bc0-59889a50491c"
         ],
         "settings": {
         }
