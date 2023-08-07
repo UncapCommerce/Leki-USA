@@ -947,6 +947,13 @@
               "variant_bg_1": "linear-gradient(91deg, #51543F, #626743 50%, #ccff00 100%)",
               "heading": "olive green-neon yellow"
             }
+          },
+          "2190e476-9117-4b13-acf3-5dd3bbf26503": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #51543F, #626743 50%, #AE9690 100%)",
+              "heading": "olive green-copper"
+            }
           }
         },
         "block_order": [
@@ -1047,7 +1054,8 @@
           "da4b09d9-1a4e-4995-a927-fe203b9dd66a",
           "cb707b02-9757-4559-834a-1e2957342487",
           "d992093c-df31-4abf-a4c7-f3472ecdde97",
-          "ddf1a5c9-e5fd-474f-b650-ac2c6015dbdb"
+          "ddf1a5c9-e5fd-474f-b650-ac2c6015dbdb",
+          "2190e476-9117-4b13-acf3-5dd3bbf26503"
         ],
         "settings": {
         }
