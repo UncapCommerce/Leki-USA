@@ -890,8 +890,8 @@
           "a691c3d5-5ba7-4de7-a79f-bff9aa3a6184": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #000000, #EF3340 50%, #ccff00 100%)",
+              "heading": "black-red-yellow"
             }
           },
           "aac2a7dc-2aff-4e4f-a849-d785db6ba514": {
