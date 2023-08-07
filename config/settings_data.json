@@ -811,7 +811,7 @@
           "3640a33a-9677-4a9a-abe6-345d4b283f9d": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(180deg, rgba(136, 187, 209, 1), rgba(136, 187, 209, 1) 100%)",
+              "variant_bg_1": "linear-gradient(180deg, rgba(26, 117, 207, 1), rgba(26, 117, 207, 1) 100%)",
               "heading": "blue"
             }
           },
@@ -888,8 +888,8 @@
           "6e7c4be8-7060-4c6e-bf61-945e870d49db": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(180deg, rgba(26, 117, 207, 1), rgba(26, 117, 207, 1) 100%)",
-              "heading": "blue.sw_label_8385209925926"
+              "variant_bg_1": "linear-gradient(180deg, rgba(136, 187, 209, 1), rgba(136, 187, 209, 1) 100%)",
+              "heading": "blue.sw_label_8384900628774"
             }
           },
           "5fe0c5af-47c3-4138-8ec7-69705bd07a9c": {
