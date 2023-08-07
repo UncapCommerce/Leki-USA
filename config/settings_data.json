@@ -1119,7 +1119,7 @@
           "59200050-3c69-4cb7-9bb3-a9ff413be9cf": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #FF0000, #ccff00 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(255, 0, 0, 1), rgba(204, 255, 0, 1) 100%)",
               "heading": "red-yellow"
             }
           },
