@@ -869,8 +869,8 @@
           "b0c7ee3d-f602-48f7-8518-79b659c874cf": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #E83600, #000000 100%)",
-              "heading": "red-black.sw_label_8384901906726"
+              "variant_bg_1": "linear-gradient(91deg, rgba(232, 54, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              "heading": "red-black.sw_label_8384901808422"
             }
           },
           "d64a49fe-9df7-40f9-b564-ac445411b873": {
