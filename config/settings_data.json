@@ -748,7 +748,7 @@
           "0b47b42e-5c22-458e-8e32-0b2fcd1e5c50": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #E83600, #000000 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(232, 54, 0, 1), rgba(0, 0, 0, 1) 100%)",
               "heading": "red-black"
             }
           },
@@ -895,8 +895,22 @@
           "5fe0c5af-47c3-4138-8ec7-69705bd07a9c": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(239, 51, 64, 1) 100%)",
+              "heading": "black-red"
+            }
+          },
+          "650cc70e-757c-47bd-b283-ad3a92f6e34c": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #929292, #000000 100%)",
+              "heading": "black-smoke"
+            }
+          },
+          "46f59686-31c1-47ab-9824-bd3837119067": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(46deg, rgba(204, 255, 0, 1) 13%, rgba(204, 255, 0, 1) 86%)",
+              "heading": "yellow-black"
             }
           }
         },
@@ -991,7 +1005,9 @@
           "a691c3d5-5ba7-4de7-a79f-bff9aa3a6184",
           "aac2a7dc-2aff-4e4f-a849-d785db6ba514",
           "6e7c4be8-7060-4c6e-bf61-945e870d49db",
-          "5fe0c5af-47c3-4138-8ec7-69705bd07a9c"
+          "5fe0c5af-47c3-4138-8ec7-69705bd07a9c",
+          "650cc70e-757c-47bd-b283-ad3a92f6e34c",
+          "46f59686-31c1-47ab-9824-bd3837119067"
         ],
         "settings": {
         }
