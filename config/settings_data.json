@@ -862,8 +862,8 @@
           "a157277a-fb17-4797-bbd7-1061e1fa5893": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(90deg, rgba(255, 208, 137, 1), rgba(233, 226, 206, 1) 100%)",
+              "heading": "tan-off white"
             }
           },
           "b0c7ee3d-f602-48f7-8518-79b659c874cf": {
