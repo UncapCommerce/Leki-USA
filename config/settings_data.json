@@ -841,8 +841,8 @@
           "cb4df1e7-9b31-4a05-8c96-e06adda1fb6b": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #000000, #3f3f3f 50%, #ebd2b2 100%)",
+              "heading": "black-graphite-sand"
             }
           },
           "49f1a299-85f1-4a8c-869e-0cfce0ada83b": {
