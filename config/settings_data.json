@@ -1022,7 +1022,7 @@
             "type": "colorcode",
             "settings": {
               "variant_bg_1": "linear-gradient(91deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(204, 255, 0, 1) 100%)",
-              "heading": "red.sw_label_8493996146982"
+              "heading": "red"
             }
           },
           "b306f9f4-bc0f-477d-9b89-0e62b6cc5618": {
@@ -1030,13 +1030,6 @@
             "settings": {
               "variant_bg_1": "linear-gradient(91deg, rgba(255, 62, 181, 1), rgba(0, 0, 0, 1) 50%, rgba(204, 255, 0, 1) 100%)",
               "heading": "pink.sw_label_8493996146982"
-            }
-          },
-          "acdbb1cd-dd7f-4214-a23d-919b48d31ac7": {
-            "type": "colorcode",
-            "settings": {
-              "variant_bg_1": "linear-gradient(91deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(204, 255, 0, 1) 100%)",
-              "heading": "red.sw_label_8385269924134"
             }
           }
         },
@@ -1150,8 +1143,7 @@
           "7a476247-52c0-4bf2-ae80-64a96b4763d5",
           "c499b5cb-181e-4f50-a37f-48d7fb0b7b30",
           "446443f4-aef6-4af5-a215-260d82ce8001",
-          "b306f9f4-bc0f-477d-9b89-0e62b6cc5618",
-          "acdbb1cd-dd7f-4214-a23d-919b48d31ac7"
+          "b306f9f4-bc0f-477d-9b89-0e62b6cc5618"
         ],
         "settings": {
         }
