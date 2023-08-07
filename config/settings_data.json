@@ -888,8 +888,8 @@
           "6e7c4be8-7060-4c6e-bf61-945e870d49db": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(180deg, rgba(136, 187, 209, 1), rgba(136, 187, 209, 1) 100%)",
-              "heading": "blue.sw_label_8384900628774"
+              "variant_bg_1": "linear-gradient(91deg, #000000, #8b8f8e 100%)",
+              "heading": "blue.sw_label_8385211367718"
             }
           },
           "5fe0c5af-47c3-4138-8ec7-69705bd07a9c": {
@@ -981,6 +981,13 @@
             "settings": {
               "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
               "heading": "red-neon yellow"
+            }
+          },
+          "090e59a9-c1d7-4f81-8c46-4ce3a726c9aa": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "",
+              "heading": "black"
             }
           }
         },
@@ -1087,7 +1094,8 @@
           "9a84a96d-b34d-448b-abe1-a690ca257ef5",
           "712db511-9989-44e2-8593-826ae0af0dc7",
           "d24758e5-56e2-4de5-a0ad-eec56d11adab",
-          "339305b2-192b-4483-9c74-e0263a4965e1"
+          "339305b2-192b-4483-9c74-e0263a4965e1",
+          "090e59a9-c1d7-4f81-8c46-4ce3a726c9aa"
         ],
         "settings": {
         }
