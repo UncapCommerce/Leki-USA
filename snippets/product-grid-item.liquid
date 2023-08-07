@@ -566,7 +566,7 @@
 
             <div class="swatch__button" data-swatch-button data-value="{{ option }}">
               <div id="{{ product.id}}-{{ swatch_variant.id }}-{{ option | handle }}"
-                class="swatch__label swatch__label__{{ option }}"
+                class="swatch__label swatch__label__{{ option | handle }} sw_label_{{ product.id }}"
                 data-swatch="{{ option }}"
                 data-swatch-variant="{{ swatch_variant.id }}"
                 data-swatch-image="{{ swatch_image_src }}"
