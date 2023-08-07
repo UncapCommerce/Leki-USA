@@ -930,8 +930,8 @@
           "cb707b02-9757-4559-834a-1e2957342487": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #656565, #FFFFFF 50%, #89764B 100%)",
+              "heading": "carbon-white-gold"
             }
           }
         },
