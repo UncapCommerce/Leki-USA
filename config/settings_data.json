@@ -916,7 +916,7 @@
           "5457240f-0456-4548-b0a9-a180ad4b7011": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+              "variant_bg_1": "linear-gradient(91deg, #75787B, #4C4E4D 100%)",
               "heading": "black-grey"
             }
           },
