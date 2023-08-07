@@ -827,8 +827,8 @@
           "3640a33a-9677-4a9a-abe6-345d4b283f9d": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(180deg, rgba(136, 187, 209, 1), rgba(136, 187, 209, 1) 100%)",
+              "heading": "blue"
             }
           },
           "454248fc-ea0a-45a2-9dd6-edcb2635682d": {
