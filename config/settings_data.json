@@ -855,8 +855,8 @@
           "627911e5-ce0a-4afd-8781-33ca2e7220c6": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #3f3f3f, #e9e2ce 50%, #d26e50 100%)",
+              "heading": "graphite-off white-maroon"
             }
           },
           "a157277a-fb17-4797-bbd7-1061e1fa5893": {
