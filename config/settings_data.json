@@ -1017,6 +1017,13 @@
               "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(204, 255, 0, 1) 100%)",
               "heading": "black.sw_label_8493996146982"
             }
+          },
+          "446443f4-aef6-4af5-a215-260d82ce8001": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
+              "heading": "red.sw_label_8493996146982"
+            }
           }
         },
         "block_order": [
@@ -1127,7 +1134,8 @@
           "f48d4bc1-8361-4b0a-b1a1-5c707e2c4cd2",
           "4f67e006-88a4-47d0-8da8-e6553cad44ed",
           "7a476247-52c0-4bf2-ae80-64a96b4763d5",
-          "c499b5cb-181e-4f50-a37f-48d7fb0b7b30"
+          "c499b5cb-181e-4f50-a37f-48d7fb0b7b30",
+          "446443f4-aef6-4af5-a215-260d82ce8001"
         ],
         "settings": {
         }
