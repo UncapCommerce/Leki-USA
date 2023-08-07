@@ -365,7 +365,7 @@
           "a2da07a0-70f5-4017-82b3-a369d517ecda": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(204, 255, 0, 1) 100%)",
               "heading": "red-black-yellow"
             }
           },
@@ -386,7 +386,7 @@
           "6430e585-586a-4cbd-ba17-37c0dee5ccaa": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #253746, #165C7D 50%, #F2A900 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(37, 55, 70, 1), rgba(22, 92, 125, 1) 50%, rgba(242, 169, 0, 1) 100%)",
               "heading": "blue-light-blue-white.sw_label_8383021351206"
             }
           },
@@ -547,7 +547,7 @@
           "ed0d57e3-8a28-499a-8ce9-ba51b9cc2bf5": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #253746, #002F6C 50%, #2CD5C4 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(37, 55, 70, 1), rgba(0, 47, 108, 1) 50%, rgba(44, 213, 196, 1) 100%)",
               "heading": "blue-light blue"
             }
           },
@@ -764,7 +764,7 @@
           "0b47b42e-5c22-458e-8e32-0b2fcd1e5c50": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #FF0000, #000000 50%, #ccff00 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(204, 255, 0, 1) 100%)",
               "heading": "red-black"
             }
           },
@@ -799,7 +799,7 @@
           "708756f1-a374-4af7-92d8-b1ee0bd57964": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #FFD089, #000000 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(255, 208, 137, 1) 3%, rgba(0, 0, 0, 1) 100%)",
               "heading": "tan-black"
             }
           },
@@ -869,8 +869,8 @@
           "b0c7ee3d-f602-48f7-8518-79b659c874cf": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
-              "heading": ""
+              "variant_bg_1": "linear-gradient(91deg, #E83600, #000000 100%)",
+              "heading": "red-black.sw_label_8384901906726"
             }
           },
           "d64a49fe-9df7-40f9-b564-ac445411b873": {
