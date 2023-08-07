@@ -986,7 +986,7 @@
           "f48d4bc1-8361-4b0a-b1a1-5c707e2c4cd2": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
+              "variant_bg_1": "linear-gradient(136deg, rgba(101, 101, 101, 1) 11%, rgba(101, 101, 101, 1) 84%)",
               "heading": "black.sw_label_8385211760934"
             }
           }
