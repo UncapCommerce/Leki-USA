@@ -1029,7 +1029,7 @@
             "type": "colorcode",
             "settings": {
               "variant_bg_1": "linear-gradient(91deg, rgba(255, 62, 181, 1), rgba(0, 0, 0, 1) 50%, rgba(204, 255, 0, 1) 100%)",
-              "heading": "pink.sw_label_8493996146982"
+              "heading": "pink"
             }
           }
         },
