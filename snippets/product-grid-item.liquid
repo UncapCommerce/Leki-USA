@@ -13,6 +13,18 @@
     {% render 'product-grid-item', product: product, carousel: carousel, animation: animation, animation_delay: animation_delay %}
 {%- endcomment -%}
 
+{% assign color_list = product.metafields.custom.color.value %}
+{% if color_list %}
+  <style>  
+    {% for color_item in color_list %}  
+      {% assign color_name = color_item | split: '||' | first | remove: '["' | handle %}
+      {% assign color_code = color_item | split: '||' | last | remove: '"]' %}  
+      .swatch__label__{{ color_name }}.sw_label_{{ product.id }}{
+        background: {{ color_code }} !important;
+      }
+    {% endfor %}
+  </style>
+{% endif %}
 {%- liquid
   assign columns = settings.products_per_row_on_desktop | plus: 0
   assign columns_mobile = columns_mobile | default: settings.products_per_row_on_mobile | plus: 0

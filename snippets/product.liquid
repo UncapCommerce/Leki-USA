@@ -12,6 +12,18 @@
     {%- render 'product' product: product, section: section, unique: unique -%}
 {%- endcomment -%}
 
+{% assign color_list = product.metafields.custom.color.value %}
+{% if color_list %}
+  <style>  
+    {% for color_item in color_list %}  
+      {% assign color_name = color_item | split: '||' | first | remove: '["' | handle %}
+      {% assign color_code = color_item | split: '||' | last | remove: '"]' %}  
+      .swatch__label__{{ color_name }}.sw_label_{{ product.id }}{
+        background: {{ color_code }} !important;
+      }
+    {% endfor %}
+  </style>
+{% endif %}
 {%- liquid
   assign image_layout = section.settings.image_layout
   assign image_width = section.settings.image_width

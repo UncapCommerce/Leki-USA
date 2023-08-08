@@ -24,6 +24,19 @@
   {%- render 'collection-grid-item', collection: collections[block.settings.collection], item_width: 'one-sixth', item_width_mobile: 'mobile--one-half', custom_collection_image: block.settings.custom_collection_image, unique: block.id -%}
 {%- endcomment -%}
 
+{% assign color_list = product.metafields.custom.color.value %}
+{% if color_list %}
+  <style>  
+    {% for color_item in color_list %}  
+      {% assign color_name = color_item | split: '||' | first | remove: '["' | handle %}
+      {% assign color_code = color_item | split: '||' | last | remove: '"]' %}  
+      .swatch__label__{{ color_name }}.sw_label_{{ product.id }}{
+        background: {{ color_code }} !important;
+      }
+    {% endfor %}
+  </style>
+{% endif %}
+
 {%- liquid
   if custom_collection_image
     assign image = custom_collection_image

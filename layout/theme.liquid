@@ -383,8 +383,7 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
       <main id="MainContent" class="main-content" data-main>
         {{ content_for_layout }}
       </main>
-
-      {%- section 'swatch-image' -%}
+      
       {%- section 'footer' -%}
       {% section 'cookie-model' %}
     </div>
