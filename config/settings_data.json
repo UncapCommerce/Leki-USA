@@ -909,7 +909,7 @@
           "46f59686-31c1-47ab-9824-bd3837119067": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #656565, #ccff00 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(101, 101, 101, 1), rgba(204, 255, 0, 1) 100%)",
               "heading": "yellow-black"
             }
           },
@@ -1161,7 +1161,7 @@
           "3b2f0e4e-4185-495b-b933-2e1182ea4d7b": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "linear-gradient(91deg, #000000, #b2b9bc 100%)",
+              "variant_bg_1": "linear-gradient(91deg, rgba(0, 0, 0, 1), rgba(178, 185, 188, 1) 100%)",
               "heading": "black-white.sw_label_8385214578982"
             }
           },
@@ -1205,6 +1205,13 @@
             "settings": {
               "variant_bg_1": "linear-gradient(91deg, #716E6A, #FFFFFF 100%)",
               "heading": "blue-white-black"
+            }
+          },
+          "4954a5c3-107e-46b1-8ca2-61678cc9af5a": {
+            "type": "colorcode",
+            "settings": {
+              "variant_bg_1": "linear-gradient(91deg, #000000, #ccff00 100%)",
+              "heading": "yellow-black.sw_label_8385214382374"
             }
           }
         },
@@ -1343,7 +1350,8 @@
           "0ca627fe-098e-4149-8dda-f6d469425e63",
           "8e893a91-1fd1-477b-bf87-1f93f8bbf856",
           "74747654-2dbc-4239-ab03-7daea9016d01",
-          "6eba6684-723d-4ced-84fb-e1f35502b2fc"
+          "6eba6684-723d-4ced-84fb-e1f35502b2fc",
+          "4954a5c3-107e-46b1-8ca2-61678cc9af5a"
         ],
         "settings": {
         }
