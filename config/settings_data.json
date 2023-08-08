@@ -1231,7 +1231,7 @@
           "f4a58be9-72b4-475c-b53e-c43293eb9ce6": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "radial-gradient(rgba(204, 255, 0, 1), rgba(204, 255, 0, 1) 97%)",
+              "variant_bg_1": "linear-gradient(0deg, rgba(204, 255, 0, 1), rgba(204, 255, 0, 1) 97%)",
               "heading": "yellow-black.sw_label_8385210777894"
             }
           }
