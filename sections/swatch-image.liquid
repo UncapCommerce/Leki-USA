@@ -1,6 +1,7 @@
 {% style %}  
   {% for block in section.blocks %}
     {% assign colorname = block.settings.heading | handleize %}
+    {% unless colorname contains '.sw_label_' %}
       .swatch__label__{{ colorname | replace: '-sw_label_', '.sw_label_'  }}{
      {%  if block.settings.color_img != blank %}
           background-image: url({{ block.settings.color_img | img_url:'' }}) !important;
@@ -13,6 +14,25 @@
         {% endif %}  
       {% endif %}
       }
+      {% endunless %}
+  {% endfor %}
+
+  {% for block in section.blocks %}
+    {% assign colorname = block.settings.heading | handleize %}
+    {% if colorname contains '.sw_label_' %}
+      .swatch__label__{{ colorname | replace: '-sw_label_', '.sw_label_'  }}{
+     {%  if block.settings.color_img != blank %}
+          background-image: url({{ block.settings.color_img | img_url:'' }}) !important;
+          background-repeat: no-repeat !important;
+      {% else %}
+        {% if block.settings.variant_bg_1 contains "linear-gradient" %}
+          background:{{ block.settings.variant_bg_1 }} !important;
+        {% else %}
+          background-color:{{ block.settings.variant_bg_1 }} !important;
+        {% endif %}  
+      {% endif %}
+      }
+    {% endif %}
   {% endfor %}
 {% endstyle %}
 {% schema %}
