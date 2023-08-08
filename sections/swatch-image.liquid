@@ -1,3 +1,15 @@
+{% assign color_list = product.metafields.custom.color.value %}
+{% if color_list %}
+  <style>  
+    {% for color_item in color_list %}  
+      {% assign color_name = color_item | split: '||' | first | remove: '["' %}
+      {% assign color_code = color_item | split: '||' | last | remove: '"]' %}  
+      .swatch__label__{{ color_name }}{
+        background: {{ color_code }} !important;
+      }
+    {% endfor %}
+  </style>
+{% else %}
 {% style %}  
   {% for block in section.blocks %}
     {% assign colorname = block.settings.heading | handleize %}
@@ -35,6 +47,7 @@
     {% endif %}
   {% endfor %}
 {% endstyle %}
+{% endif %}
 {% schema %}
   {
     "name": "Swatch Image",
