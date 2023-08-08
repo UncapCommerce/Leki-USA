@@ -25903,7 +25903,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 /* ------------ New CSS -------- */
 .popup-quick-view .product__form__wrapper:not(.variant--soldout) .product__submit__add:hover {background: #fff;}
 .product__form .btn--submit[disabled], .product__form .btn--submit[disabled]:hover {background: #E4032E !important;}
-.product-grid-item:hover .product__badge {opacity: 0;visibility: hidden;}
+.product-grid-item:hover .product__badge ,#search-results .results__list.grid li:hover .product__badge {opacity: 0;visibility: hidden;}
 .sponsorship-inner-wrap .sponsor-tab-content a.readmore{display: inline-block;vertical-align: middle;}
 .pole-adviser-drawer .pole-size-advisor-result-wrapper {gap: 20px;}
 .pole-adviser-drawer .result-right-wrap{max-width: calc(100% - 200px);flex: 0 0 calc(100% - 200px);}
