@@ -1294,20 +1294,26 @@
                                 </span>
                               {% endif %}
                               {% if value.content != blank or value.image != blank %}
-                                <div class="metafield-inner_content">
-                                  {% if value.image != blank %}
-                                    <div class="left-image_wrap">
-                                      <img class="lazyload" src="{{ value.image | img_url:'' }}" alt="{{ value.image.alt }}">
-                                    </div>
-                                  {% endif %}
-                            
-                                  {% if value.content != blank or value.highlight_title != blank %}
-                                    <div class="right-content {% if value.image == blank %}right-content-wrap{% endif %}">
-                                      {% if value.highlight_title != blank %}<span class="subtitle">{{ value.highlight_title }}</span>{% endif %}
-                                      {% if value.content != blank %}<p>{{ value.content }}</p>{% endif %}
-                                    </div>
-                                  {% endif %}
-                                </div>                    
+                                  <div class="metafield-inner_content">
+                                    {% if value.content_link != blank %}
+                                      <a href="{{ value.content_link }}">
+                                    {% endif %}
+                                        {% if value.image != blank %}
+                                          <div class="left-image_wrap">
+                                            <img class="lazyload" src="{{ value.image | img_url:'' }}" alt="{{ value.image.alt }}">
+                                          </div>
+                                        {% endif %}
+                                  
+                                        {% if value.content != blank or value.highlight_title != blank %}
+                                          <div class="right-content {% if value.image == blank %}right-content-wrap{% endif %}">
+                                            {% if value.highlight_title != blank %}<span class="subtitle">{{ value.highlight_title }}</span>{% endif %}                                      
+                                            {% if value.content != blank %}<p>{{ value.content }}</p>{% endif %}
+                                          </div>
+                                        {% endif %}
+                                    {% if value.content_link != blank %}
+                                      </a>
+                                    {% endif %}
+                                  </div>   
                               {% endif %}
                           </div>
                               

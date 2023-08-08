@@ -24736,8 +24736,8 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .product__accordion__title.product_single_accordion .icon-toggle-minus {display: none;}
 .product__accordion__title.product_single_accordion .icon-toggle-minus,.product__accordion__title.product_single_accordion.is-open .icon-toggle-plus {display: none;}
 .product__accordion__title.product_single_accordion.is-open .icon-toggle-minus,.product__accordion__title.product_single_accordion .icon-toggle-plus {display: block;}
-.accordion_metafield-content .accordion_inner-title + .metafield-inner_content {display: none;}
-.accordion_metafield-content .accordion_inner-title.open + .metafield-inner_content {display: flex;}
+.accordion_metafield-content .accordion_inner-title + .metafield-inner_content,.accordion_metafield-content .accordion_inner-title + .metafield-inner_content a {display: none;}
+.accordion_metafield-content .accordion_inner-title.open + .metafield-inner_content,.accordion_metafield-content .accordion_inner-title.open + .metafield-inner_content a {display: flex;}
 .accordion_metafield-content .accordion_inner-title.open .icon-arrow-up {transform: rotate(180deg);}
 
 /* ------------- related Product ----------------- */
