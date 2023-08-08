@@ -1224,7 +1224,7 @@
           "0dfe6ec4-627f-42f6-8dff-e8de2f276b3f": {
             "type": "colorcode",
             "settings": {
-              "variant_bg_1": "",
+              "variant_bg_1": "linear-gradient(91deg, #ccff00, #000000 100%)",
               "heading": "black-yellow.sw_label_8385214382374"
             }
           }
