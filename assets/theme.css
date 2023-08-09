@@ -16119,7 +16119,7 @@ a.results-popular__link:hover {
 .image-with-text__buttons a{
   padding: 18px 27.5px 16px;
 }
-.image-with-text__buttons a.btn--secondary:hover,.image-with-text__buttons a.btn--small{
+.image-with-text__buttons a.btn--secondary:hover{
   color: var(--button-secondary-text-hover);
 }
 .image-with-text__buttons a svg {
@@ -16127,8 +16127,11 @@ a.results-popular__link:hover {
   vertical-align: middle;
   padding-left: 9px;
 }
-.image-with-text__buttons a:hover svg path {
+.image-with-text__buttons a.btn--secondary:hover svg path,.image-with-text__buttons a.btn--small svg path {
   stroke: #fff;
+}
+.image-with-text__buttons a.btn--small:hover svg path{
+  stroke: #27304a;
 }
 .image-with-text__top-image {
   position: relative;
