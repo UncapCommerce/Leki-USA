@@ -16119,7 +16119,7 @@ a.results-popular__link:hover {
 .image-with-text__buttons a{
   padding: 18px 27.5px 16px;
 }
-.image-with-text__buttons a.btn--secondary:hover{
+.image-with-text__buttons a.btn--secondary:hover,.image-with-text__buttons a.btn--small{
   color: var(--button-secondary-text-hover);
 }
 .image-with-text__buttons a svg {
