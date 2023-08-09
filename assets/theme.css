@@ -16127,10 +16127,10 @@ a.results-popular__link:hover {
   vertical-align: middle;
   padding-left: 9px;
 }
-.image-with-text__buttons a.btn--secondary:hover svg path,.image-with-text__buttons a.btn--small svg path {
+.image-with-text__buttons a.btn--secondary:hover svg path,.image-with-text__buttons a.btn--primary svg path {
   stroke: #fff;
 }
-.image-with-text__buttons a.btn--small:hover svg path{
+.image-with-text__buttons a.btn--primary:hover svg path{
   stroke: #27304a;
 }
 .image-with-text__top-image {
