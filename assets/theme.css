@@ -25301,6 +25301,7 @@ input#address_search:focus{color: var(--COLOR-BLACK);}
 .comparison-table .product-details a img{object-fit: contain;}
 .page--compare-products .comparable-container table.comparison-table tr:not(.product-table__group-cell) {background-color: #ffffff;}
 body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{display: inline-block;vertical-align:middle;}
+.inner_accordion .comparable-btn.comparable-custom-action {display: none;}
 
 /* ------------ wallpaper page ----------- */
 .wallpaper-grid-wrap {display: grid;column-gap: 20px;}
