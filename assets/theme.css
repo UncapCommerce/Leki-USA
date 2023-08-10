@@ -6883,6 +6883,7 @@ section:hover .flickity-enabled > .flickity-prev-next-button:not(:disabled):hove
 .nav--weight-bold .navlink {
 /*   font-weight: var(--FONT-WEIGHT-NAV-BOLD); */
   font-weight: 600;
+  font-size: 18px;
 }
 
 .nav--weight-light,
@@ -7327,8 +7328,8 @@ section:hover .flickity-enabled > .flickity-prev-next-button:not(:disabled):hove
 }
 .navlink.navlink--grandchild {
   color: var(--text);
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 500;
   margin-bottom: 5px;
   font-family: var(--font-stack-nav);
@@ -7337,8 +7338,8 @@ section:hover .flickity-enabled > .flickity-prev-next-button:not(:disabled):hove
   margin: 0;
 }
 a.navlink.navlink--child {
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 24px;
   color: var(--text);
 }
 .parent a.navlink.navlink--child {
