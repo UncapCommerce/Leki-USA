@@ -7343,8 +7343,8 @@ a.navlink.navlink--child {
   color: var(--text);
 }
 .parent a.navlink.navlink--child {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
 }
 .grandparent .navlink--child > .navtext {
   display: inline-block;
