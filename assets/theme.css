@@ -25925,6 +25925,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .addresses li.active--li {border: 1px solid #BF0038 !important;}
 .nav-button[disabled] {display: none;}
 #MainContent .product-grid-review button.bv_button_buttonMinimalist {display: none !important; }
+.product_grid_ratings {line-height: 0;min-height: 20px;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
