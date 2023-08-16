@@ -289,7 +289,7 @@
   endif
 -%}
 
-{% if product.metafields.custom.featured_image != blank or section.settings.image != blank and content != blank  %}
+{% if content != blank and product.metafields.custom.featured_image != blank or section.settings.image != blank %}
 <section id="{{ id }}"
   class="section-padding image-with-text {{ section_height }} {{ image_width_class }} {{ text_color }}"
   data-section-id="{{ section.id }}"
