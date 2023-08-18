@@ -248,23 +248,6 @@
       },
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "da715043-44d2-42e3-a09b-89371f0e0324": {
-            "type": "message",
-            "settings": {
-              "message": "Enter code FREE at checkout to receive free ground shipping on orders $99 and up. Exclusions apply.",
-              "target_url_enabled": false,
-              "target_url": "shopify:\/\/pages\/faq",
-              "target_referrer_enabled": false,
-              "target_referrer": "",
-              "target_device_enabled": false,
-              "target_device": "mobile"
-            }
-          }
-        },
-        "block_order": [
-          "da715043-44d2-42e3-a09b-89371f0e0324"
-        ],
         "settings": {
           "bg_color": "#f7f7f7",
           "color": "#545454",
