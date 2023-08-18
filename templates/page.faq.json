@@ -7,7 +7,11 @@
         "show_page_title": true,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "0424e86b-39be-471f-9e40-760d9953fec4": {
@@ -229,6 +233,14 @@
             "title": "My LEKI trekking pole expanders are worn down\/broken\/ missing, how do I purchase replacements?",
             "text": "<p>Please purchase new expanders here: <a href=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\">https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product<\/a><\/p>"
           }
+        },
+        "857c6f22-b1cb-46dc-a394-2cce34893cdc": {
+          "type": "text",
+          "settings": {
+            "category": "Shipping",
+            "title": "How do I apply free shipping?",
+            "text": "<p>Enter the code FREE in the discount code box at checkout. Free shipping only applies for orders $99 or more that do not include any oversized items. <\/p>"
+          }
         }
       },
       "block_order": [
@@ -258,7 +270,8 @@
         "c50337fc-39bd-434b-ac6e-b202bc217e9a",
         "b572679b-c61c-43ac-81cf-ff3f8018d4a8",
         "645c6ffd-9a6e-468e-aa25-3fabd8a12928",
-        "705e7cdd-8529-458c-a4da-eec4b1f4ad60"
+        "705e7cdd-8529-458c-a4da-eec4b1f4ad60",
+        "857c6f22-b1cb-46dc-a394-2cce34893cdc"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
