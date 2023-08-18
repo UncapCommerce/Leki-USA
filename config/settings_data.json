@@ -251,7 +251,6 @@
         "blocks": {
           "da715043-44d2-42e3-a09b-89371f0e0324": {
             "type": "message",
-            "disabled": true,
             "settings": {
               "message": "Enter code FREE at checkout to receive free ground shipping on orders $99 and up. Exclusions apply.",
               "target_url_enabled": false,
