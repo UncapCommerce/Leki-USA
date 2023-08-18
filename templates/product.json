@@ -51,7 +51,7 @@
             "icon_text_default": "Free Shipping over $99.00",
             "text_size": 90,
             "width": "half",
-            "text_alignment": "center",
+            "text_alignment": "left",
             "bg_color": "",
             "padding_bottom": 24
           }
