@@ -17,6 +17,14 @@
     "0424e86b-39be-471f-9e40-760d9953fec4": {
       "type": "page-faq",
       "blocks": {
+        "857c6f22-b1cb-46dc-a394-2cce34893cdc": {
+          "type": "text",
+          "settings": {
+            "category": "Shipping",
+            "title": "How do I apply free shipping?",
+            "text": "<p>Enter the code FREE in the discount code box at checkout. Free shipping only applies for orders $99 or more that do not include any oversized items. <\/p>"
+          }
+        },
         "bda40454-5167-4584-ae24-3c67c7e05317": {
           "type": "text",
           "settings": {
@@ -233,17 +241,10 @@
             "title": "My LEKI trekking pole expanders are worn down\/broken\/ missing, how do I purchase replacements?",
             "text": "<p>Please purchase new expanders here: <a href=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\" target=\"_blank\" title=\"https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product\">https:\/\/lekiusa.myshopify.com\/search?q=expander&type=product<\/a><\/p>"
           }
-        },
-        "857c6f22-b1cb-46dc-a394-2cce34893cdc": {
-          "type": "text",
-          "settings": {
-            "category": "Shipping",
-            "title": "How do I apply free shipping?",
-            "text": "<p>Enter the code FREE in the discount code box at checkout. Free shipping only applies for orders $99 or more that do not include any oversized items. <\/p>"
-          }
         }
       },
       "block_order": [
+        "857c6f22-b1cb-46dc-a394-2cce34893cdc",
         "bda40454-5167-4584-ae24-3c67c7e05317",
         "acc8093e-a065-4dd7-bcdc-02a428b0b8c6",
         "b1026c51-e39e-42d3-9f25-b1d0fff04b2b",
@@ -270,8 +271,7 @@
         "c50337fc-39bd-434b-ac6e-b202bc217e9a",
         "b572679b-c61c-43ac-81cf-ff3f8018d4a8",
         "645c6ffd-9a6e-468e-aa25-3fabd8a12928",
-        "705e7cdd-8529-458c-a4da-eec4b1f4ad60",
-        "857c6f22-b1cb-46dc-a394-2cce34893cdc"
+        "705e7cdd-8529-458c-a4da-eec4b1f4ad60"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
