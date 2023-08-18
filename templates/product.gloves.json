@@ -48,7 +48,7 @@
             "icon_image": "shopify:\/\/shop_images\/Icon_Set.png",
             "icon_width": 24,
             "icon_text": "{{ product.metafields.custom.shipping_text.value }}",
-            "icon_text_default": "Free Shipping over $100.00",
+            "icon_text_default": "Free Shipping over $99.00",
             "text_size": 90,
             "width": "half",
             "text_alignment": "center",
@@ -59,12 +59,11 @@
         "1e56ec34-f9bb-43ed-bf34-7a68bbec022d": {
           "type": "icon",
           "settings": {
-            "icon_name": "check",
+            "icon_name": "none",
             "icon_color": "",
-            "icon_image": "shopify:\/\/shop_images\/Icon_Set_1.png",
             "icon_width": 24,
             "icon_text": "{{ product.metafields.custom.warranty_text.value }}",
-            "icon_text_default": "Lifetime Guarantee",
+            "icon_text_default": "",
             "text_size": 90,
             "width": "half",
             "text_alignment": "center",
@@ -126,7 +125,7 @@
         "upsell": {
           "type": "upsell",
           "settings": {
-            "product_list": "{{ product.metafields.custom.buy_it_with.value }}",
+            "product_list": "{{ product.metafields.theme.upsell_list.value }}",
             "padding_bottom": 24
           }
         }
@@ -189,7 +188,7 @@
     "related": {
       "type": "related-products",
       "settings": {
-        "limit": 4,
+        "limit": 10,
         "product_recommendations_heading": "You may also like",
         "bg_color": "",
         "width": "wrapper",
