@@ -252,12 +252,12 @@
           "69991445-02e9-4d06-a0f2-3748192a84c6": {
             "type": "text",
             "settings": {
-              "text": "<p>FREE SHIPPING on orders $99 and up. Enter code FREE99 at checkout. Exclusions apply.<\/p>",
+              "text": "<p>FREE GROUND SHIPPING on orders $99 and up. Enter code FREE99 at checkout. Exclusions apply.<\/p>",
               "icon_name": "none",
               "icon_color": "",
               "icon_width": 20,
               "target_url_enabled": false,
-              "target_url": "",
+              "target_url": "shopify:\/\/pages\/faq",
               "target_referrer_enabled": false,
               "target_referrer": "",
               "target_device_enabled": false,
