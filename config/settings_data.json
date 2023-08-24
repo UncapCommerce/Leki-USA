@@ -253,7 +253,7 @@
             "type": "text",
             "settings": {
               "text": "<p>FREE SHIPPING on orders over $99. Use code FREE99 at checkout. Exclusions apply. <\/p>",
-              "icon_name": "package",
+              "icon_name": "none",
               "icon_color": "",
               "icon_width": 20,
               "target_url_enabled": false,
