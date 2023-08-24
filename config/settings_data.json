@@ -254,7 +254,7 @@
             "settings": {
               "message": "Spend $99 more for FREE shipping. Exclusions apply.",
               "target_url_enabled": false,
-              "target_url": "",
+              "target_url": "shopify:\/\/pages\/faq",
               "target_referrer_enabled": false,
               "target_referrer": "",
               "target_device_enabled": false,
