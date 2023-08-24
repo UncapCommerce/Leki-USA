@@ -249,12 +249,15 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
-          "0e396b08-354c-4cb8-86db-7940fc92f71e": {
-            "type": "message",
+          "69991445-02e9-4d06-a0f2-3748192a84c6": {
+            "type": "text",
             "settings": {
-              "message": "FREE SHIPPING on orders over $99. Use code FREE99 at checkout. Exclusions apply.",
+              "text": "<p>FREE SHIPPING on orders $99 and up. Enter code FREE99 at checkout. Exclusions apply.<\/p>",
+              "icon_name": "none",
+              "icon_color": "",
+              "icon_width": 20,
               "target_url_enabled": false,
-              "target_url": "shopify:\/\/pages\/faq",
+              "target_url": "",
               "target_referrer_enabled": false,
               "target_referrer": "",
               "target_device_enabled": false,
@@ -263,7 +266,7 @@
           }
         },
         "block_order": [
-          "0e396b08-354c-4cb8-86db-7940fc92f71e"
+          "69991445-02e9-4d06-a0f2-3748192a84c6"
         ],
         "settings": {
           "bg_color": "#f7f7f7",
