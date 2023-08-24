@@ -249,10 +249,13 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
-          "432504e1-c574-40e6-96ff-99ba772f224d": {
-            "type": "message",
+          "0bb9aa41-3b04-4f57-886c-5a8275e64e39": {
+            "type": "text",
             "settings": {
-              "message": "Spend $99 more for FREE shipping. Exclusions apply.",
+              "text": "<p>FREE Shipping on orders over $99. Exclusions apply. <\/p>",
+              "icon_name": "package",
+              "icon_color": "",
+              "icon_width": 20,
               "target_url_enabled": false,
               "target_url": "shopify:\/\/pages\/faq",
               "target_referrer_enabled": false,
@@ -263,7 +266,7 @@
           }
         },
         "block_order": [
-          "432504e1-c574-40e6-96ff-99ba772f224d"
+          "0bb9aa41-3b04-4f57-886c-5a8275e64e39"
         ],
         "settings": {
           "bg_color": "#f7f7f7",
