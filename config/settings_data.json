@@ -248,6 +248,39 @@
       },
       "announcement-bar": {
         "type": "announcement-bar",
+        "blocks": {
+          "432504e1-c574-40e6-96ff-99ba772f224d": {
+            "type": "message",
+            "settings": {
+              "message": "Spend $99 more for FREE shipping.",
+              "target_url_enabled": false,
+              "target_url": "",
+              "target_referrer_enabled": false,
+              "target_referrer": "",
+              "target_device_enabled": false,
+              "target_device": "mobile"
+            }
+          },
+          "8d7ae963-2de1-46f3-8aae-36a9e5254868": {
+            "type": "text",
+            "settings": {
+              "text": "<p>New customers save 10% with code WELCOME10<\/p>",
+              "icon_name": "none",
+              "icon_color": "",
+              "icon_width": 20,
+              "target_url_enabled": false,
+              "target_url": "",
+              "target_referrer_enabled": false,
+              "target_referrer": "",
+              "target_device_enabled": false,
+              "target_device": "mobile"
+            }
+          }
+        },
+        "block_order": [
+          "432504e1-c574-40e6-96ff-99ba772f224d",
+          "8d7ae963-2de1-46f3-8aae-36a9e5254868"
+        ],
         "settings": {
           "bg_color": "#f7f7f7",
           "color": "#545454",
