@@ -6423,6 +6423,8 @@ section:hover .flickity-enabled > .flickity-prev-next-button:not(:disabled):hove
 .top-bar a {
   display: inline-block;
   color: inherit;
+  width: 100%;
+  cursor: pointer;
 }
 .top-bar p {
   font-size: inherit;

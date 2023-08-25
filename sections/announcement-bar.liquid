@@ -21,6 +21,7 @@
       assign classes = ''
       assign target_device_enable = false
       assign color = ''
+      assign page_url = block.settings.page_link
       assign target_url = block.settings.target_url
       assign target_url_enabled = block.settings.target_url_enabled
       assign target_referrer = block.settings.target_referrer
@@ -383,15 +384,17 @@
     {%- endstyle -%}
 
     <div class="top-bar" data-bar>
-      {%- if layout == 'slider' -%}
+      {%- if layout == 'slider' -%} 
+      <a href="{% if page_url != blank %}{{ page_url }}{% else %}#{% endif %}">
         <div class="top-bar__slider"
           data-slider
           data-slider-speed="{{ section.settings.slider_speed | times: 1000 }}">
             {{ bar_markup }}
-        </div>
+        </div></a>
       {%- endif -%}
 
       {%- if layout == 'marquee' -%}
+        <a href="{% if page_url != blank %}{{ page_url }}{% else %}#{% endif %}">
         <div class="top-bar__slider">
           <div class="top-bar__slide" data-top-bar-slide>
             <div data-ticker-frame data-marquee-speed="{{ section.settings.marquee_speed }}" class="top-bar__message">
@@ -403,6 +406,7 @@
             </div>
           </div>
         </div>
+        </a>
       {%- endif -%}
     </div>
   {%- endif -%}
@@ -612,6 +616,15 @@
           "step": 1,
           "unit": "px",
           "default": 20
+        },
+        {
+          "type": "header",
+          "content": "Link page"
+        },
+        {
+          "id": "page_link",
+          "type": "url",
+          "label": "Page Link"
         },
         {
           "type": "header",
