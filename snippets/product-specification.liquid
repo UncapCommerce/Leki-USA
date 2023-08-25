@@ -10,12 +10,178 @@
       <div class="accordion_metafield-content">
         {% capture specificationsContent %}
           <table>
+            {% if product.metafields.custom.gender != blank %}
+              <tr>
+                <td class="heading">Gender:</td>
+                <td>{{ product.metafields.custom.gender }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.construction != blank %}
+              <tr>
+                <td class="heading">Construction:</td>
+                <td>{{ product.metafields.custom.construction }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.sizerun != blank %}
+              <tr>
+                <td class="heading">Sizerun:</td>
+                <td>{{ product.metafields.custom.sizerun }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.pack_size != blank %}
+              <tr>
+                <td class="heading">Pack Size:</td>
+                <td>{{ product.metafields.custom.pack_size }}</td>
+              </tr>
+            {% endif %} 
+            {% for variant in product.variants %}
+              {% assign weight_val = variant.metafields.custom.weight %}
+               {% assign weight_list =  weight_list | append: weight_val | append : ', ' %}
+            {% endfor %}
+            {%- assign weight_array = weight_list | split: ', ' | uniq | join: ' , ' -%}
+            {% if weight_array != blank %}
+              <tr>
+                <td class="heading">Weight:</td>
+                <td>{{ weight_array }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.shaft_weight_per_meter != blank %}
+              <tr>
+                <td class="heading">Shaft Weight Per Meter:</td>
+                <td>{{ product.metafields.custom.shaft_weight_per_meter }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.grip_strap_glove_system != blank %}
+              <tr>
+                <td class="heading">Grip-Strap System:</td>
+                <td>{{ product.metafields.custom.grip_strap_glove_system }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.grip != blank %}
+              <tr>
+                <td class="heading">Grip:</td>
+                <td>{{ product.metafields.custom.grip | metafield_tag }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.grip_size != blank %}
+              <tr>
+                <td class="heading">Grip size:</td>
+                <td>{{ product.metafields.custom.grip_size }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.strap != blank %}
+              <tr>
+                <td class="heading">Strap:</td>
+                <td>{{ product.metafields.custom.strap }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.strap_size != blank %}
+              <tr>
+                <td class="heading">Strap size:</td>
+                <td>{{ product.metafields.custom.strap_size }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.number_of_segments != blank %}
+              <tr>
+                <td class="heading">Number of segments:</td>
+                <td>{{ product.metafields.custom.number_of_segments }}</td>
+              </tr>
+            {% endif %}
+             {% if product.metafields.custom.segments_diameter != blank %}
+              <tr>
+                <td class="heading">Shaft Diameter:</td>
+                <td>{{ product.metafields.custom.segments_diameter }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.shaft_material != blank %}
+              <tr>
+                <td class="heading">Shaft Material:</td>
+                <td>{{ product.metafields.custom.shaft_material }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.shaft_upper_part != blank %}
+              <tr>
+                <td class="heading">Shaft upper part:</td>
+                <td>{{ product.metafields.custom.shaft_upper_part }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.shaft_lower_part != blank %}
+              <tr>
+                <td class="heading">Shaft Lower Part:</td>
+                <td>{{ product.metafields.custom.shaft_lower_part }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.folding_system != blank %}
+              <tr>
+                <td class="heading">Folding System</td>
+                <td>{{ product.metafields.custom.folding_system }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.locking_system != blank %}
+              <tr>
+                <td class="heading">Locking System:</td>
+                <td>{{ product.metafields.custom.locking_system }}</td>
+              </tr>
+            {% endif %}
+            {% for variant in product.variants %}
+              {% assign basket_val = variant.metafields.custom.basket %}
+              {% assign basket_list =  basket_list | append: basket_val | append : ', '  %}
+            {% endfor %}
+            {%- assign basket_array = basket_list | split : ', ' | uniq | join: ' , ' -%}
+            {% if basket_array != blank %} 
+              <tr>
+                <td class="heading">Basket:</td>          
+                <td>{{ basket_array }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.exchange_basket != blank %}
+              <tr>
+                <td class="heading">Exchange Basket:</td>
+                <td>{{ product.metafields.custom.exchange_basket }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.tip != blank %}
+              <tr>
+                <td class="heading">Tip:</td>
+                <td>{{ product.metafields.custom.tip }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.tip_spike != blank %}
+              <tr>
+                <td class="heading">Tip Spike:</td>
+                <td>{{ product.metafields.custom.tip_spike }}</td>
+              </tr>
+            {% endif %} 
+            {% if product.metafields.custom.rubber_tip_pad != blank %}
+              <tr>
+                <td class="heading">Rubber Tip Pad:</td>
+                <td>{{ product.metafields.custom.rubber_tip_pad }}</td>
+              </tr>
+            {% endif %} 
+            {% if product.metafields.custom.antishock_system != blank %}
+              <tr>
+                <td class="heading">Antishock system:</td>
+                <td>{{ product.metafields.custom.antishock_system }}</td>
+              </tr>
+            {% endif %} 
+            {% if product.metafields.custom.storage_bag != blank %}
+              <tr>
+                <td class="heading">Storage Bag:</td>
+                <td>{{ product.metafields.custom.storage_bag }}</td>
+              </tr>
+            {% endif %}
+            {% if product.metafields.custom.unit != blank %}
+              <tr>
+                <td class="heading">Unit:</td>
+                <td>{{ product.metafields.custom.unit }}</td>
+              </tr>
+            {% endif %}
+
+          
             {% if product.metafields.custom.activities != blank %}
-            <tr>
+              <tr>
               <td class="heading">Activities:</td>          
-              <td class="select-activities">
-                {{ product.metafields.custom.activities | metafield_tag }}
-              </td>
+              <td class="select-activities">{{ product.metafields.custom.activities | metafield_tag }}</td>
             </tr>
             {% endif %}
             {% if product.metafields.custom.age_group != blank %}
@@ -23,48 +189,7 @@
               <td class="heading">Age Group:</td>
               <td>{{ product.metafields.custom.age_group | metafield_tag }}</td>
             </tr>
-            {% endif %}
-            {% if product.metafields.custom.gender != blank %}
-            <tr>
-              <td class="heading">Gender:</td>
-              <td>{{ product.metafields.custom.gender }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.sizerun != blank %}
-            <tr>
-              <td class="heading">Sizerun:</td>
-              <td>{{ product.metafields.custom.sizerun }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.construction != blank %}
-            <tr>
-              <td class="heading">Construction:</td>
-              <td>{{ product.metafields.custom.construction }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.pack_size != blank %}
-            <tr>
-              <td class="heading">Pack Size:</td>
-              <td>{{ product.metafields.custom.pack_size }}</td>
-            </tr>
-            {% endif %}        
-             {% for variant in product.variants %}
-              {% assign weight_val = variant.metafields.custom.weight %}
-               {% assign weight_list =  weight_list | append: weight_val | append : ', ' %}
-            {% endfor %}
-            {%- assign weight_array = weight_list | split: ', ' | uniq | join: ' , ' -%}
-            {% if weight_array != blank %}
-            <tr>
-              <td class="heading">Weight:</td>
-              <td>{{ weight_array }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.segments_diameter != blank %}
-            <tr>
-              <td class="heading">Segments Diameter:</td>
-              <td>{{ product.metafields.custom.segments_diameter }}</td>
-            </tr>
-            {% endif %}
+            {% endif %}                                                     
             {% if product.metafields.custom.shaft_geometry != blank %}
             <tr>
               <td class="heading">Shaft Geometry:</td>
@@ -76,37 +201,13 @@
               <td class="heading">Shaft Shape:</td>
               <td>{{ product.metafields.custom.shaft_shape | metafield_tag }}</td>
             </tr>
-            {% endif %}
-            {% if product.metafields.custom.grip != blank %}
-            <tr>
-              <td class="heading">Grip:</td>
-              <td>{{ product.metafields.custom.grip | metafield_tag }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.strap != blank %}
-            <tr>
-              <td class="heading">Strap:</td>
-              <td>{{ product.metafields.custom.strap }}</td>
-            </tr>
-            {% endif %}
+            {% endif %}                        
             {% if product.metafields.custom.grip_extension != blank %}
             <tr>
               <td class="heading">Grip Extension:</td>
               <td>{{ product.metafields.custom.grip_extension | metafield_tag }}</td>
             </tr>
-            {% endif %}
-            {% if product.metafields.custom.shaft_material != blank %}
-            <tr>
-              <td class="heading">Shaft Material:</td>
-              <td>{{ product.metafields.custom.shaft_material }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.shaft_upper_part != blank %}
-            <tr>
-              <td class="heading">Shaft upper part:</td>
-              <td>{{ product.metafields.custom.shaft_upper_part }}</td>
-            </tr>
-            {% endif %}
+            {% endif %}                        
             {% if product.metafields.custom.shaft_middle_part_1_ != blank %}
             <tr>
               <td class="heading">Shaft Middle Part (1):</td>
@@ -124,79 +225,19 @@
               <td class="heading">Shaft Middle Part (3):</td>
               <td>{{ product.metafields.custom.shaft_middle_part_3_ | metafield_tag }}</td>
             </tr>
-            {% endif %}
-            {% if product.metafields.custom.shaft_lower_part != blank %}
-            <tr>
-              <td class="heading">Shaft Lower Part:</td>
-              <td>{{ product.metafields.custom.shaft_lower_part }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.folding_system != blank %}
-            <tr>
-              <td class="heading">Folding System</td>
-              <td>{{ product.metafields.custom.folding_system }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.locking_system != blank %}
-            <tr>
-              <td class="heading">Locking System:</td>
-              <td>{{ product.metafields.custom.locking_system }}</td>
-            </tr>
-            {% endif %}
-            
-              {% for variant in product.variants %}
-                {% assign basket_val = variant.metafields.custom.basket %}
-                {% assign basket_list =  basket_list | append: basket_val | append : ', '  %}
-              {% endfor %}
-            {%- assign basket_array = basket_list | split : ', ' | uniq | join: ' , ' -%}
-            {% if basket_array != blank %} 
-            <tr>
-              <td class="heading">Basket:</td>          
-              <td>{{ basket_array }}</td>
-            </tr>
-            {% endif %}
+            {% endif %}                                              
             {% if product.metafields.custom.suspension_system != blank %}
             <tr>
               <td class="heading">Suspension System:</td>
               <td>{{ product.metafields.custom.suspension_system | metafield_tag }}</td>
             </tr>
-            {% endif %}
-            {% if product.metafields.custom.tip != blank %}
-            <tr>
-              <td class="heading">Tip:</td>
-              <td>{{ product.metafields.custom.tip }}</td>
-            </tr>
-            {% endif %}
+            {% endif %}            
             {% if product.metafields.custom.specification_sizes != blank %}
             <tr>
               <td class="heading">Size:</td>
               <td>{{ product.metafields.custom.specification_sizes | metafield_tag }}</td>
             </tr>
-            {% endif %}
-            {% if product.metafields.custom.storage_bag != blank %}
-            <tr>
-              <td class="heading">Storage Bag:</td>
-              <td>{{ product.metafields.custom.storage_bag }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.unit != blank %}
-            <tr>
-              <td class="heading">Unit:</td>
-              <td>{{ product.metafields.custom.unit }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.grip_strap_glove_system != blank %}
-            <tr>
-              <td class="heading">Grip Strap:</td>
-              <td>{{ product.metafields.custom.grip_strap_glove_system }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.number_of_segments != blank %}
-            <tr>
-              <td class="heading">Number of segments:</td>
-              <td>{{ product.metafields.custom.number_of_segments }}</td>
-            </tr>
-            {% endif %}
+            {% endif %}                      
             {% comment %}
             {% if product.metafields.custom.shaft_material_filter_sort != blank %}
             <tr>
@@ -204,49 +245,7 @@
               <td>{{ product.metafields.custom.shaft_material_filter_sort }}</td>
             </tr>
             {% endif %}
-            {% endcomment %}
-            {% if product.metafields.custom.grip_size != blank %}
-            <tr>
-              <td class="heading">Grip size:</td>
-              <td>{{ product.metafields.custom.grip_size }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.strap_size != blank %}
-            <tr>
-              <td class="heading">Strap size:</td>
-              <td>{{ product.metafields.custom.strap_size }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.antishock_system != blank %}
-            <tr>
-              <td class="heading">Antishock system:</td>
-              <td>{{ product.metafields.custom.antishock_system }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.tip_spike != blank %}
-            <tr>
-              <td class="heading">Tip Spike:</td>
-              <td>{{ product.metafields.custom.tip_spike }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.exchange_basket != blank %}
-            <tr>
-              <td class="heading">Exchange Basket:</td>
-              <td>{{ product.metafields.custom.exchange_basket }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.rubber_tip_pad != blank %}
-            <tr>
-              <td class="heading">Rubber Tip Pad:</td>
-              <td>{{ product.metafields.custom.rubber_tip_pad }}</td>
-            </tr>
-            {% endif %}
-            {% if product.metafields.custom.shaft_weight_per_meter != blank %}
-            <tr>
-              <td class="heading">Shaft Weight Per Meter:</td>
-              <td>{{ product.metafields.custom.shaft_weight_per_meter }}</td>
-            </tr>
-            {% endif %}
+            {% endcomment %}                                  
             {% if product.metafields.custom.glove_fit != blank %}
             <tr>
               <td class="heading">Glove Fit:</td>
@@ -299,12 +298,6 @@
             <tr>
               <td class="heading">Warmth level:</td>
               <td>{{ product.metafields.custom.warmth_level }}</td>
-            </tr>
-            {% endif %}
-            {% if variant.metafields.custom.basket != blank %}
-            <tr>
-              <td class="heading">Basket:</td>
-              <td>{{ variant.metafields.custom.basket }}</td>
             </tr>
             {% endif %}
           </table>
