@@ -256,6 +256,7 @@
               "icon_name": "none",
               "icon_color": "",
               "icon_width": 20,
+              "page_link": "shopify:\/\/pages\/faq",
               "target_url_enabled": false,
               "target_url": "shopify:\/\/pages\/faq",
               "target_referrer_enabled": false,
