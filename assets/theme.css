@@ -6422,6 +6422,7 @@ section:hover .flickity-enabled > .flickity-prev-next-button:not(:disabled):hove
 }
 .top-bar a {
   display: inline-block;
+  vertical-align: middle;
   color: inherit;
   width: 100%;
   cursor: pointer;

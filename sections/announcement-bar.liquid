@@ -385,16 +385,19 @@
 
     <div class="top-bar" data-bar>
       {%- if layout == 'slider' -%} 
-      <a href="{% if page_url != blank %}{{ page_url }}{% else %}#{% endif %}">
+      {% if page_url != blank %}
+        <a href="{{ page_url }}">
+      {% endif %}
         <div class="top-bar__slider"
           data-slider
           data-slider-speed="{{ section.settings.slider_speed | times: 1000 }}">
             {{ bar_markup }}
-        </div></a>
+        </div>
+        {% if page_url != blank %}</a>{% endif %}
       {%- endif -%}
 
       {%- if layout == 'marquee' -%}
-        <a href="{% if page_url != blank %}{{ page_url }}{% else %}#{% endif %}">
+      {% if page_url != blank %}<a href="{{ page_url }}">{% endif %}
         <div class="top-bar__slider">
           <div class="top-bar__slide" data-top-bar-slide>
             <div data-ticker-frame data-marquee-speed="{{ section.settings.marquee_speed }}" class="top-bar__message">
@@ -406,7 +409,7 @@
             </div>
           </div>
         </div>
-        </a>
+        {% if page_url != blank %}</a>{% endif %}
       {%- endif -%}
     </div>
   {%- endif -%}
