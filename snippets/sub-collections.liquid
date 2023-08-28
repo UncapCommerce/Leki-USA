@@ -251,6 +251,10 @@
           {% for child_link in link.links %}
           {% assign secondLevel = child_link.url | split: "/" %}
           {% assign secondLevelLink = child_link.url %}
+         {% if secondLevelLink contains "pages/" %}
+           {% assign secondLevel_pageHandle = secondLevel | last %} 
+            {% assign secondLevel_Page = pages[secondLevel_pageHandle] %}
+         {% endif %}
             {% if firstLevel[2] == pageUrl %}
             {% assign collection_title = child_link.title %}
                 <div class="{{ item_class }}">
@@ -263,7 +267,13 @@
                       data-aos-delay="{{ animation_delay | times: 150 }}"
                     {% endif %}>    
                   {% if child_link.object.image != blank %}
-                    <div class="background-size-cover {{ item_bg_class }}">{{- child_link.object.image | img_url: "" | img_tag -}}</div>                    
+                    <div class="background-size-cover {{ item_bg_class }}">{{- child_link.object.image | img_url: "" | img_tag -}}</div>   
+                  {% elsif secondLevelLink contains "pages/" %}
+                    {% if secondLevel_Page.metafields.custom.sub_coll_image != blank %}
+                      <div class="background-size-cover {{ item_bg_class }}">{{- secondLevel_Page.metafields.custom.sub_coll_image | img_tag -}}</div>
+                    {% else %}
+                      {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                    {% endif %}
                   {% else %}
                    {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
                   {% endif %}
@@ -285,7 +295,13 @@
               {% if child_link.links != blank %}
                 {% for grandchild_link in child_link.links %}
                   {% assign collection_title = grandchild_link.title %}
+                  {% assign thirdLevel = grandchild_link.url | split: "/" %}
                   {% assign thirdLevelLink = grandchild_link.url %}
+                   {% if thirdLevelLink contains "pages/" %}
+                     {% assign thirdLevel_pageHandle = thirdLevel | last %} 
+                     {% assign thirdLevel_Page = pages[thirdLevel_pageHandle] %}
+                   {% endif %}
+                  
                     <div class="{{ item_class }}">
                       <a href="{{ thirdLevelLink }}" class="list-collections__item__outer">      
                         <div class="list-collections__item__image"
@@ -296,7 +312,13 @@
                             data-aos-delay="{{ animation_delay | times: 150 }}"
                           {% endif %}>    
                         {% if grandchild_link.object.image != blank %}
-                          <div class="background-size-cover {{ item_bg_class }}">{{- grandchild_link.object.image | img_url: "" | img_tag -}}</div>                    
+                          <div class="background-size-cover {{ item_bg_class }}">{{- grandchild_link.object.image | img_url: "" | img_tag -}}</div> 
+                        {% elsif thirdLevelLink contains "pages/" %}
+                          {% if thirdLevel_Page.metafields.custom.sub_coll_image != blank %}
+                            <div class="background-size-cover {{ item_bg_class }}">{{- thirdLevel_Page.metafields.custom.sub_coll_image | img_tag -}}</div>
+                          {% else %}
+                            {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
+                          {% endif %}
                         {% else %}
                          {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
                         {% endif %}
