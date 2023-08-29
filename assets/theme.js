@@ -17592,18 +17592,31 @@ function getfilterResult(url, selfInner) {
       }
     });
 }
+
 function filterClickButton(self){
   var height;
-  if(self.closest('.poleLength_calculation222').querySelector('.height')){
+  var heightSelector;
+  if(self.closest('.poleLength_calculation222').querySelector('.height').value){
     height = self.closest('.poleLength_calculation222').querySelector('.height').value;
+    heightSelector = self.closest('.poleLength_calculation222').querySelector('.height');
+  } else if(self.closest('.poleLength_calculation222').querySelector('.height-inch').value){
+    height = parseInt(self.closest('.poleLength_calculation222').querySelector('.height-inch').value) * 2.54;
+    heightSelector = self.closest('.poleLength_calculation222').querySelector('.height-inch');
+  }
+  else {
+    self.closest('.poleLength_calculation222').querySelector('.height').style.borderColor = 'red';
+    self.closest('.poleLength_calculation222').querySelector('.height-inch').style.borderColor = 'red';
   }
   if(height >=75 && height <=230){
     self.closest('.poleLength_calculation222').querySelectorAll('#skateroundedSize, #skateSize, #roundedSize, #calculatedSize').forEach(function(self){
       self.innerHTML = '';
     })
     self.closest('.poleLength_calculation222').querySelector('.height').style.borderColor = '#E6E6E6';
+    self.closest('.poleLength_calculation222').querySelector('.height-inch').style.borderColor = '#E6E6E6';
     self.closest('.poleLength_calculation222').querySelector('#poleSizeCalculationResult').classList.remove('hidden');
-    self.closest('.poleLength_calculation222').querySelector('.error-message').style.display = 'none';
+    self.closest('.poleLength_calculation222').querySelectorAll('.error-message').forEach(function(self2){
+      self2.style.display = 'none';
+    })
     var e = self.closest('.poleLength_calculation222').querySelector("#category");
     var value = e.options[e.selectedIndex].value;
     var classicValue = Number(e.options[e.selectedIndex].getAttribute('data-classic'));
@@ -17658,11 +17671,16 @@ function filterClickButton(self){
     }
   } else{
     if(height <= 75 || height >= 230){
-      self.closest('.poleLength_calculation222').querySelector('.height').style.borderColor = 'red';
-      self.closest('.poleLength_calculation222').querySelector('.error-message').style.display = 'block';
+      self.closest('.poleLength_calculation222').querySelector('.height').style.borderColor = '#E6E6E6';
+      self.closest('.poleLength_calculation222').querySelector('.height-inch').style.borderColor = '#E6E6E6';
+      heightSelector.style.borderColor = 'red';
+      self.closest('.poleLength_calculation222').querySelectorAll('.error-message').forEach(function(self2){
+        self2.style.display = 'none';
+      })
+      heightSelector.parentNode.querySelector('.error-message').style.display = 'block';
       self.closest('.poleLength_calculation222').querySelector('#poleSizeCalculationResult').classList.add('hidden');
     }
-  }
+  }  
 };
 
 /* Pole Length Advisor Calculator End */
@@ -17676,6 +17694,13 @@ if (navigator.userAgent.indexOf('Mac OS X') != -1) {
 
 // pole length advisor page height input js
 document.querySelectorAll('.height').forEach(function(self){
+  self.addEventListener('keydown', function(event){
+     if(!( event.keyCode === 8 || event.keyCode === 17 || event.keyCode === 38 || event.keyCode === 40 || event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 91 || event.keyCode === 96 || event.keyCode === 97 || event.keyCode === 98 || event.keyCode === 99 || event.keyCode === 100 || event.keyCode === 101 || event.keyCode === 102 || event.keyCode === 103 || event.keyCode === 104 || event.keyCode === 105 )) {
+      event.preventDefault();
+     } 
+  })
+});
+document.querySelectorAll('.height-inch').forEach(function(self){
   self.addEventListener('keydown', function(event){
      if(!( event.keyCode === 8 || event.keyCode === 17 || event.keyCode === 38 || event.keyCode === 40 || event.keyCode === 48 || event.keyCode === 49 || event.keyCode === 50 || event.keyCode === 51 || event.keyCode === 52 || event.keyCode === 53 || event.keyCode === 54 || event.keyCode === 55 || event.keyCode === 56 || event.keyCode === 57 || event.keyCode === 58 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 91 || event.keyCode === 96 || event.keyCode === 97 || event.keyCode === 98 || event.keyCode === 99 || event.keyCode === 100 || event.keyCode === 101 || event.keyCode === 102 || event.keyCode === 103 || event.keyCode === 104 || event.keyCode === 105 )) {
       event.preventDefault();

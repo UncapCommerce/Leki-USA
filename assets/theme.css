@@ -24789,7 +24789,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .pole-adviser-drawer .pole-inner-wrap {padding: 60px 80px 82px;}
 .pole-adviser-drawer .pole-inner-wrap h3 {font-size: 20px;line-height: 28px;margin-bottom: 8px;color: var(--COLOR-BLACK);}
 .pole-adviser-drawer .pole-inner-wrap > span {width: 100%;display: inline-block;vertical-align: middle;font-size: 16px;line-height: 24px;color: var(--COLOR-BLACK);margin-bottom: 20px;}
-.pole-adviser-drawer .pole-inner-wrap .form-control {width: 100%;margin-bottom: 20px;line-height: 24px;border: 1px solid #E6E6E6;}
+.pole-adviser-drawer .pole-inner-wrap .form-control {width: 100%;line-height: 24px;border: 1px solid #E6E6E6;}
 .pole-information {display: flex;align-items: center;justify-content: center;gap: 10px;padding-top: 20px;}
 .pole-adviser-drawer input.btn {width: 100%;background: var(--text);padding: 13px 16px;font-size: 16px;line-height: 24px;cursor: pointer;height: 52px;}
 .pole-adviser-drawer input.btn:hover{background: var(--button-secondary-bg);}
@@ -25931,6 +25931,32 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .product_grid_ratings {line-height: 0;min-height: 20px;}
 .result-right-wrap .product_grid_ratings {display: none;}
 #shopify-section-announcement-bar {z-index: 9000;position: relative;}
+.divider-line {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.divider-line::before,.divider-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 33%;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(-90deg,#aaa,#fff);
+  margin: auto;
+}
+.divider-line::after {
+  left: auto;
+  right: 33%;
+  background: linear-gradient(90deg,#aaa,#fff);
+}
+#pole-adviser-drawer .divider-line::before{left: 25%;}
+#pole-adviser-drawer .divider-line::after{right: 25%;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}
@@ -25938,6 +25964,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
   .tab-highlight{margin-top: 20px;}
   .sponsorship-inner-wrap .sponsor-tab-content .tab-inner-data p , .tab-highlight p {font-size: 14px;line-height: 20px;}
   .result__image{padding-top: 32px;}
+  .divider-line::before,.divider-line::after{display: none;}
 }
 
 

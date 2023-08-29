@@ -72,8 +72,30 @@
         {% if settings.option-nine != blank %}<option value="{{ opt_9[3] | handle }}" data-title="{{ opt_9[0] | split: '|' }}" data-classic="{{ opt_9[1] }}" data-skate="{{ opt_9[2] }}" {% if prodCollHandle == opt_9[3] %}selected{% endif %}>{{ opt_9[0] }}</option>{% endif %}
         {% if settings.option-ten != blank %}<option value="{{ opt_10[3] | handle }}" data-title="{{ opt_10[0] | split: '|' }}" data-classic="{{ opt_10[1] }}" data-skate="{{ opt_10[2] }}" {% if prodCollHandle == opt_10[3] %}selected{% endif %}>{{ opt_10[0] }}</option>{% endif %}
       </select>
+      <div class="form__item" {% if animations_enabled %}
+        data-aos="fade-up"
+        data-aos-anchor="{{ animation_anchor }}"
+        data-aos-delay="{{ animation_delay }}"
+        {%- assign animation_delay = animation_delay | plus: 150 -%}
+      {% endif %}>
       <input type="number" class="form-control height" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
       <span style="display: none;" class="error-message">Value must be greater than or equal to 75 and less than or equal to 230.</span>
+      </div>
+      <div class="divider-line" {% if animations_enabled %}
+        data-aos="fade-up"
+        data-aos-anchor="{{ animation_anchor }}"
+        data-aos-delay="{{ animation_delay }}"
+        {%- assign animation_delay = animation_delay | plus: 150 -%}
+      {% endif %}><span>or</span></div>
+      <div class="form__item" {% if animations_enabled %}
+        data-aos="fade-up"
+        data-aos-anchor="{{ animation_anchor }}"
+        data-aos-delay="{{ animation_delay }}"
+        {%- assign animation_delay = animation_delay | plus: 150 -%}
+      {% endif %}>
+      <input type="number" class="form-control height-inch" id="height-inch" name="height-inch" step="1" min="30" max="90" placeholder="Height in inches" required>
+      <span style="display: none;" class="error-message inches">Value must be greater than or equal to 30 and less than or equal to 90</span>
+      </div>
       <button type="button" class="btn {{ pole_button_style }} pole_length_getter" onclick="filterClickButton(this)" value="{{ settings.pole_button_text }}">{{ settings.pole_button_text }}</button>
       <div class="pole-information">    
         {%- render 'icon-info' -%}

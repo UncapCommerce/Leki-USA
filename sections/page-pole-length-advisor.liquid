@@ -23,7 +23,7 @@
     background: #FFFFFF;
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);
     padding: 60px;
-  }
+  }  
   @media(max-width: 1699px){
     .poleLenght-form-wrapper.has-bg {
       padding-top: 50%;
@@ -124,13 +124,13 @@ data-section-id="{{ section.id }}">
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>Step 1: Activity </h4>
+            {% endif %}>{{ section.settings.step1_title }}</h4>
           <p {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>For which activity do you want to calculate the optimal pole size?</p>
+            {% endif %}>{{ section.settings.step1_text }}</p>
           {% if settings.option-one != blank or settings.option-two != blank or settings.option-three or settings.option-four or settings.option-five or 
           settings.option-six != blank or settings.option-seven != blank or settings.option-eight != blank or settings.option-nine != blank or settings.option-ten != blank %}
           <div class="custom-select form__item" {% if animations_enabled %}
@@ -170,13 +170,13 @@ data-section-id="{{ section.id }}">
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>Step 2: Your height</h4>
+            {% endif %}>{{ section.settings.step2_title }}</h4>
           <p {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
               data-aos-delay="{{ animation_delay }}"
               {%- assign animation_delay = animation_delay | plus: 150 -%}
-            {% endif %}>Please tell us your height inclusive the used shoes.</p>
+            {% endif %}>{{ section.settings.step2_text }}</p>
             <div class="form__item" {% if animations_enabled %}
               data-aos="fade-up"
               data-aos-anchor="{{ animation_anchor }}"
@@ -185,6 +185,21 @@ data-section-id="{{ section.id }}">
             {% endif %}>
             <input type="number" class="form-control height" id="height" name="height" step="1" min="75" max="230" placeholder="Height in cm" required>
             <span style="display: none;" class="error-message">Value must be greater than or equal to 75 and less than or equal to 230.</span>
+            </div>
+            <span class="divider-line" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>or</span>
+            <div class="form__item" {% if animations_enabled %}
+              data-aos="fade-up"
+              data-aos-anchor="{{ animation_anchor }}"
+              data-aos-delay="{{ animation_delay }}"
+              {%- assign animation_delay = animation_delay | plus: 150 -%}
+            {% endif %}>
+            <input type="number" class="form-control height-inch" id="height-inch" name="height-inch" step="1" min="30" max="90" placeholder="Height in inches" required>
+            <span style="display: none;" class="error-message inches">Value must be greater than or equal to 30 and less than or equal to 90</span>
             </div>
           {% if settings.pole_button_text %}
             <div class="form__item" {% if animations_enabled %}
@@ -316,8 +331,32 @@ data-section-id="{{ section.id }}">
       },      
       {
         "type": "text",
+        "id": "step1_title",
+        "label": "Step1 Title"
+      },      
+      {
+        "type": "text",
+        "id": "step1_text",
+        "label": "Step1 Text",
+        "default":"Step1 heading"
+      },      
+      {
+        "type": "text",
+        "id": "step2_title",
+        "label": "Step2 Title",
+        "default":"Step1 text"
+      },      
+      {
+        "type": "text",
+        "id": "step2_text",
+        "label": "Step2 Text",
+        "default":"Step2 heading"
+      },      
+      {
+        "type": "text",
         "id": "info_text",
-        "label": "Information Text"
+        "label": "Information Text",
+        "default":"Step2 text"
       },      
       {
         "type": "header",
