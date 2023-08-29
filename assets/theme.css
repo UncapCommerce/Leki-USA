@@ -25024,7 +25024,7 @@ li.mobile-menu__item.mobile-menu__item--level-1 {margin-bottom: 22px;}
 .result-right-wrap .grid .product-grid-item__info,.result-right-wrap .product-grid-item__title {margin: 0;}
 .pole-size-advisor-result-wrapper .specification-list-item {display: none;}
 span.error-message {margin-top: 10px;color: red;}
-#pole-adviser-drawer span.error-message {margin: 0 0 10px;color: red;}
+#pole-adviser-drawer span.error-message {margin: 15px 0 0;color: red;}
 .pole-size-advisor-result-wrapper .product-grid-item__inner{padding-top: 0;}
 
 /* ------------- glove size advisor page ------------ */
