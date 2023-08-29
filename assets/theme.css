@@ -25930,6 +25930,7 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 #MainContent .product-grid-review button.bv_button_buttonMinimalist {display: none !important; }
 .product_grid_ratings {line-height: 0;min-height: 20px;}
 .result-right-wrap .product_grid_ratings {display: none;}
+#shopify-section-announcement-bar {z-index: 9000;position: relative;}
 
 @media(max-width: 767px){
   .pole-adviser-drawer .result-right-wrap {max-width: 100%;flex: 0 0 100%;}

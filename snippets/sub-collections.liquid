@@ -270,7 +270,7 @@
                     <div class="background-size-cover {{ item_bg_class }}">{{- child_link.object.image | img_url: "" | img_tag -}}</div>   
                   {% elsif secondLevelLink contains "pages/" %}
                     {% if secondLevel_Page.metafields.custom.sub_coll_image != blank %}
-                      <div class="background-size-cover {{ item_bg_class }}">{{- secondLevel_Page.metafields.custom.sub_coll_image | img_tag -}}</div>
+                      <div class="background-size-cover {{ item_bg_class }}">{{- secondLevel_Page.metafields.custom.sub_coll_image | img_url: "" | img_tag -}}</div>
                     {% else %}
                       {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
                     {% endif %}
@@ -315,7 +315,7 @@
                           <div class="background-size-cover {{ item_bg_class }}">{{- grandchild_link.object.image | img_url: "" | img_tag -}}</div> 
                         {% elsif thirdLevelLink contains "pages/" %}
                           {% if thirdLevel_Page.metafields.custom.sub_coll_image != blank %}
-                            <div class="background-size-cover {{ item_bg_class }}">{{- thirdLevel_Page.metafields.custom.sub_coll_image | img_tag -}}</div>
+                            <div class="background-size-cover {{ item_bg_class }}">{{- thirdLevel_Page.metafields.custom.sub_coll_image | img_url: "" | img_tag -}}</div>
                           {% else %}
                             {{ 'image' | placeholder_svg_tag:'placeholder-svg-filled' }}
                           {% endif %}
