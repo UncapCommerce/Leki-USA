@@ -40,6 +40,7 @@
       "blocks": {
         "1f70d126-5c7c-402e-958c-61882397cc44": {
           "type": "promo",
+          "disabled": true,
           "settings": {
             "collection": "outlet",
             "position": 5,
