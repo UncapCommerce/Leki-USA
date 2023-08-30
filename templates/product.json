@@ -64,7 +64,7 @@
             "icon_width": 24,
             "icon_text": "{{ product.metafields.custom.warranty_text.value }}",
             "icon_text_default": "Use code FREE99 at checkout. Exclusions apply. For more info see our FAQ.",
-            "text_size": 100,
+            "text_size": 115,
             "width": "half",
             "text_alignment": "left",
             "bg_color": "",
