@@ -53,7 +53,7 @@
             "width": "half",
             "text_alignment": "left",
             "bg_color": "",
-            "padding_bottom": 24
+            "padding_bottom": 0
           }
         },
         "1e56ec34-f9bb-43ed-bf34-7a68bbec022d": {
@@ -68,7 +68,7 @@
             "width": "half",
             "text_alignment": "left",
             "bg_color": "",
-            "padding_bottom": 24
+            "padding_bottom": 0
           }
         },
         "843ac258-ae98-43ee-8955-8872fda6f29a": {
