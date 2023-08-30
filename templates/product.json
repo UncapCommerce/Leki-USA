@@ -63,23 +63,8 @@
             "icon_color": "",
             "icon_width": 24,
             "icon_text": "{{ product.metafields.custom.warranty_text.value }}",
-            "icon_text_default": "Use code FREE99 at checkout.",
+            "icon_text_default": "Use code FREE99 at checkout. Exclusions apply. For more info see our FAQ.",
             "text_size": 90,
-            "width": "half",
-            "text_alignment": "left",
-            "bg_color": "",
-            "padding_bottom": 0
-          }
-        },
-        "843ac258-ae98-43ee-8955-8872fda6f29a": {
-          "type": "icon",
-          "settings": {
-            "icon_name": "bell",
-            "icon_color": "",
-            "icon_width": 20,
-            "icon_text": "",
-            "icon_text_default": "Exclusions apply. For more info see our FAQ.",
-            "text_size": 50,
             "width": "full",
             "text_alignment": "left",
             "bg_color": "",
@@ -152,7 +137,6 @@
         "12e9c31f-e646-45c3-b9aa-5050b6c7d2b3",
         "387c0579-b3b7-4d6e-9930-d6dbee74aae3",
         "1e56ec34-f9bb-43ed-bf34-7a68bbec022d",
-        "843ac258-ae98-43ee-8955-8872fda6f29a",
         "description",
         "product_accordions",
         "51be199f-9aa7-471d-8534-63ed199c945d",
