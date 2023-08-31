@@ -7042,6 +7042,7 @@ section:hover .flickity-enabled > .flickity-prev-next-button:not(:disabled):hove
 .icon.icon-user,.icon.icon-globe {
   color: transparent;
   cursor: pointer;
+  z-index: 9;
 }
 .navtext {
   position: relative;
