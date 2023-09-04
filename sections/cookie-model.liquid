@@ -258,7 +258,7 @@ function privacyModal() {
     fetch(page_privacy_url)
         .then((response) => response.text())
         .then((responseText) => {
-            const get_text = '.page--privacy-policy .cms-element-text'
+            const get_text = '.page--privacy-policy .shopify-policy__body'
             const html = new DOMParser().parseFromString(responseText, "text/html");
             const destination = document.querySelector(".privacy_text");
             const source = html.querySelector(get_text);
