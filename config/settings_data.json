@@ -1260,7 +1260,8 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".password-page__powered-by-text {display: none;}"
+      ".password-page__powered-by-text {display: none;}",
+      ".heading-no-bottom-margin {margin-bottom: 0; }"
     ]
   }
 }
