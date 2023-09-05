@@ -1260,8 +1260,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".password-page__wrapper {background-color: #00000040; }",
-      ".password-page__powered-by-text {display: none; }"
+      ".password-page__powered-by-text {display: none;}"
     ]
   }
 }
