@@ -1261,7 +1261,7 @@
   "platform_customizations": {
     "custom_css": [
       ".password-page__powered-by-text {display: none;}",
-      ".heading-no-bottom-margin {margin-bottom: 0; }"
+      "h1.heading-no-bottom-margin {margin-bottom: 0;}"
     ]
   }
 }
