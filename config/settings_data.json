@@ -69,7 +69,7 @@
     "enable_cart_notes": false,
     "enable_gift_notes": false,
     "show_empty_cart_buttons": true,
-    "show_free_shipping_message": true,
+    "show_free_shipping_message": false,
     "free_shipping_limit": "100",
     "enable_accept_terms": true,
     "accept_terms_text": "<p>I agree with the <a href=\"\/policies\/terms-of-service\" target=\"_blank\" title=\"Terms of Service\">terms and conditions<\/a><\/p>",
