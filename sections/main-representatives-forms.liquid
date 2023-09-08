@@ -28,7 +28,10 @@
 
 
 {% assign customerDowncaseTags = customer.tags | downcase %}
-
+{% assign tag_shopify = '' %}
+{% for tag in customer.tags %}
+  {% assign tag_shopify = tag_shopify | append: ', ' | append: tag %}
+{% endfor %}
 {%- if section.settings.show_page_title or page.content != blank -%}
   <section id="Page--{{ section.id }}" class="section-default section-padding{% if bg_color_secondary %} bg-secondary{% endif %}">
     <div class="wrapper">
