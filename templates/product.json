@@ -35,7 +35,7 @@
         "12e9c31f-e646-45c3-b9aa-5050b6c7d2b3": {
           "type": "text",
           "settings": {
-            "title": "<p>LEKI does not sell to customers located within the following states due to the prohibitive local tax laws - AL and LA.<\/p>",
+            "title": "<p><strong>LEKI does not sell to customers located within the following states due to the prohibitive local tax laws - AL and LA.<\/strong><\/p>",
             "text_alignment": "center",
             "padding_bottom": 24
           }
