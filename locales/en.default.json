@@ -553,5 +553,14 @@
     "previous": "Previous",
     "next": "Next",
     "scroll_down": "Scroll down"
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "estimated_delivery_date": {
+          "one": "Order processing time 3 business days plus {{ count }} days in transit"
+        }
+      }
+    }
   }
 }
