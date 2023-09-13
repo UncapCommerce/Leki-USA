@@ -33,6 +33,14 @@
             "text": "<p>You need to enter a valid free shipping code at checkout to receive free shipping. <br\/>If your order includes oversized items like Cross Country Poles or you want to ship to AK or HI enter code FREE at checkout for free shipping on orders $199 and up. <br\/>If your order doesn't include oversized items enter code FREE99 in the discount code box at checkout to receive free shipping on orders $99 and up. <br\/>The Free shipping code will not apply if other discount codes are used.<\/p>"
           }
         },
+        "b0e3ae95-e691-4c52-a628-6b8e973fbcc0": {
+          "type": "text",
+          "settings": {
+            "category": "Shipping",
+            "title": "How long does shipping take? When will I get my order?",
+            "text": "<p>Please allow 3 business days for order processing. <br\/>The transit time for your order is based on your location and will be calculated at checkout. For example if UPS shows 3 business days for your location at checkout, you should receive your order within 6 business days. <br\/>Business days are Monday through Friday with the exception of federal holidays.<\/p>"
+          }
+        },
         "bda40454-5167-4584-ae24-3c67c7e05317": {
           "type": "text",
           "settings": {
@@ -254,6 +262,7 @@
       "block_order": [
         "857c6f22-b1cb-46dc-a394-2cce34893cdc",
         "fe508d59-fb71-4108-92d7-e0d83499943a",
+        "b0e3ae95-e691-4c52-a628-6b8e973fbcc0",
         "bda40454-5167-4584-ae24-3c67c7e05317",
         "acc8093e-a065-4dd7-bcdc-02a428b0b8c6",
         "b1026c51-e39e-42d3-9f25-b1d0fff04b2b",
