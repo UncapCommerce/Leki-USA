@@ -558,8 +558,8 @@
     "checkout": {
       "shipping": {
         "estimated_delivery_date": {
-          "one": "{{ count }} business days",
-          "other": "{{ count }} business days"
+          "one": "Order processing time 3 business days plus {{ count }} business days in transit",
+          "other": "Order processing time 3 business days plus {{ count }} business days in transit"
         }
       }
     }
