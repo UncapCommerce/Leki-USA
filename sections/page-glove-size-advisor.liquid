@@ -124,12 +124,13 @@ data-section-id="{{ section.id }}">
                     {% if block.settings.Circumference_title != blank %}<td class="title"><span>{{ block.settings.Circumference_title }}</span></td>{% endif %}
                     <td>
                     <ul>
-                    {% if block.settings.cm_1 != blank %}<li>{{ block.settings.cm_1 }}</li>{% endif %}              
-                    {% if block.settings.cm_2 != blank %}<li>{{ block.settings.cm_2 }}</li>{% endif %}
-                    {% if block.settings.cm_3 != blank %}<li>{{ block.settings.cm_3 }}</li>{% endif %}
-                    {% if block.settings.cm_4 != blank %}<li>{{ block.settings.cm_4 }}</li>{% endif %}
-                    {% if block.settings.cm_5 != blank %}<li>{{ block.settings.cm_5 }}</li>{% endif %}
-                    {% if block.settings.cm_6 != blank %}<li>{{ block.settings.cm_6 }}</li>{% endif %}
+                    {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>{% if block.settings.cm_1 == blank and block.settings.size_xs != blank %}-{% else %}{{ block.settings.cm_1 }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>{% if block.settings.cm_2 == blank and block.settings.size_s != blank %}-{% else %}{{ block.settings.cm_2 }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>{% if block.settings.cm_3 == blank and block.settings.size_m != blank %}-{% else %}{{ block.settings.cm_3 }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>{% if block.settings.cm_4 == blank and block.settings.size_l != blank %}-{% else %}{{ block.settings.cm_4 }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>{% if block.settings.cm_5 == blank and block.settings.size_xl != blank %}-{% else %}{{ block.settings.cm_5 }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>{% if block.settings.cm_6 == blank and block.settings.size_xxl != blank %}-{% else %}{{ block.settings.cm_6 }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>{% if block.settings.cm_7 == blank and block.settings.size_xxxl != blank %}-{% else %}{{ block.settings.cm_7 }}{% endif %}</li>{% endif %}
                     </ul>
                     </td>
                   </tr>
@@ -137,12 +138,13 @@ data-section-id="{{ section.id }}">
                     {% if block.settings.size_title != blank %}<td class="title"><span>{{ block.settings.size_title }}</td></span>{% endif %}
                     <td>
                     <ul>
-                    {% if block.settings.size_s != blank %}<li>{{ block.settings.size_s }}</li>{% endif %}            
-                    {% if block.settings.size_m != blank %}<li>{{ block.settings.size_m }}</li>{% endif %}
-                    {% if block.settings.size_l != blank %}<li>{{ block.settings.size_l }}</li>{% endif %}
-                    {% if block.settings.size_xl != blank %}<li>{{ block.settings.size_xl }}</li>{% endif %}
-                    {% if block.settings.size_xxl != blank %}<li>{{ block.settings.size_xxl }}</li>{% endif %}
-                    {% if block.settings.size_xxxl != blank %}<li>{{ block.settings.size_xxxl }}</li>{% endif %}
+                    {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>{% if block.settings.size_xs == blank and block.settings.cm_1 != blank %}-{% else %}{{ block.settings.size_xs }}{% endif %}</li>{% endif %}          
+                    {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>{% if block.settings.size_s == blank and block.settings.cm_2 != blank %}-{% else %}{{ block.settings.size_s }}{% endif %}</li>{% endif %}            
+                    {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>{% if block.settings.size_m == blank and block.settings.cm_3 != blank %}-{% else %}{{ block.settings.size_m }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>{% if block.settings.size_l == blank and block.settings.cm_4 != blank %}-{% else %}{{ block.settings.size_l }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>{% if block.settings.size_xl == blank and block.settings.cm_5 != blank %}-{% else %}{{ block.settings.size_xl }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>{% if block.settings.size_xxl == blank and block.settings.cm_6 != blank %}-{% else %}{{ block.settings.size_xxl }}{% endif %}</li>{% endif %}
+                    {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>{% if block.settings.size_xxxl == blank and block.settings.cm_7 != blank %}-{% else %}{{ block.settings.size_xxxl }}{% endif %}</li>{% endif %}
                     </ul>
                     </td>
                   </tr>
@@ -150,12 +152,13 @@ data-section-id="{{ section.id }}">
                     <td class="title"></td>
                     <td>
                     <ul>
-                    {% if block.settings.cm_1 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
-                    {% if block.settings.cm_2 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
-                    {% if block.settings.cm_3 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
-                    {% if block.settings.cm_4 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
-                    {% if block.settings.cm_5 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
-                    {% if block.settings.cm_6 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
+                    {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>XS</li>{% endif %}               
+                    {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
+                    {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
+                    {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
+                    {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
+                    {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
+                    {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
                     </ul>
                     </td>
                   </tr>                       
@@ -174,12 +177,13 @@ data-section-id="{{ section.id }}">
                         {% if block.settings.Circumference_title != blank %}<td class="title"><span>{{ block.settings.Circumference_title }}</td></span>{% endif %}
                         <td>
                         <ul>
-                        {% if block.settings.cm_1 != blank %}<li>{{ block.settings.cm_1 }}</li>{% endif %}              
-                        {% if block.settings.cm_2 != blank %}<li>{{ block.settings.cm_2 }}</li>{% endif %}
-                        {% if block.settings.cm_3 != blank %}<li>{{ block.settings.cm_3 }}</li>{% endif %}
-                        {% if block.settings.cm_4 != blank %}<li>{{ block.settings.cm_4 }}</li>{% endif %}
-                        {% if block.settings.cm_5 != blank %}<li>{{ block.settings.cm_5 }}</li>{% endif %}
-                        {% if block.settings.cm_6 != blank %}<li>{{ block.settings.cm_6 }}</li>{% endif %}
+                        {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>{% if block.settings.cm_1 == blank and block.settings.size_xs != blank %}-{% else %}{{ block.settings.cm_1 }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>{% if block.settings.cm_2 == blank and block.settings.size_s != blank %}-{% else %}{{ block.settings.cm_2 }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>{% if block.settings.cm_3 == blank and block.settings.size_m != blank %}-{% else %}{{ block.settings.cm_3 }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>{% if block.settings.cm_4 == blank and block.settings.size_l != blank %}-{% else %}{{ block.settings.cm_4 }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>{% if block.settings.cm_5 == blank and block.settings.size_xl != blank %}-{% else %}{{ block.settings.cm_5 }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>{% if block.settings.cm_6 == blank and block.settings.size_xxl != blank %}-{% else %}{{ block.settings.cm_6 }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>{% if block.settings.cm_7 == blank and block.settings.size_xxxl != blank %}-{% else %}{{ block.settings.cm_7 }}{% endif %}</li>{% endif %}
                       </ul>
                       </td>
                       </tr>
@@ -187,12 +191,13 @@ data-section-id="{{ section.id }}">
                         {% if block.settings.size_title != blank %}<td class="title"><span>{{ block.settings.size_title }}</td></span>{% endif %}
                         <td>
                         <ul>
-                        {% if block.settings.size_s != blank %}<li>{{ block.settings.size_s }}</li>{% endif %}            
-                        {% if block.settings.size_m != blank %}<li>{{ block.settings.size_m }}</li>{% endif %}
-                        {% if block.settings.size_l != blank %}<li>{{ block.settings.size_l }}</li>{% endif %}
-                        {% if block.settings.size_xl != blank %}<li>{{ block.settings.size_xl }}</li>{% endif %}
-                        {% if block.settings.size_xxl != blank %}<li>{{ block.settings.size_xxl }}</li>{% endif %}
-                        {% if block.settings.size_xxxl != blank %}<li>{{ block.settings.size_xxxl }}</li>{% endif %}
+                        {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>{% if block.settings.size_xs == blank and block.settings.cm_1 != blank %}-{% else %}{{ block.settings.size_xs }}{% endif %}</li>{% endif %}          
+                        {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>{% if block.settings.size_s == blank and block.settings.cm_2 != blank %}-{% else %}{{ block.settings.size_s }}{% endif %}</li>{% endif %}            
+                        {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>{% if block.settings.size_m == blank and block.settings.cm_3 != blank %}-{% else %}{{ block.settings.size_m }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>{% if block.settings.size_l == blank and block.settings.cm_4 != blank %}-{% else %}{{ block.settings.size_l }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>{% if block.settings.size_xl == blank and block.settings.cm_5 != blank %}-{% else %}{{ block.settings.size_xl }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>{% if block.settings.size_xxl == blank and block.settings.cm_6 != blank %}-{% else %}{{ block.settings.size_xxl }}{% endif %}</li>{% endif %}
+                        {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>{% if block.settings.size_xxxl == blank and block.settings.cm_7 != blank %}-{% else %}{{ block.settings.size_xxxl }}{% endif %}</li>{% endif %}
                         </ul>
                         </td>
                       </tr>
@@ -200,12 +205,13 @@ data-section-id="{{ section.id }}">
                         <td class="title"></td>
                         <td>
                         <ul>
-                        {% if block.settings.cm_1 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
-                        {% if block.settings.cm_2 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
-                        {% if block.settings.cm_3 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
-                        {% if block.settings.cm_4 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
-                        {% if block.settings.cm_5 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
-                        {% if block.settings.cm_6 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
+                        {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>XS</li>{% endif %}               
+                        {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
+                        {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
+                        {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
+                        {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
+                        {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
+                        {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
                         </ul>
                         </td>
                       </tr>  
@@ -224,12 +230,13 @@ data-section-id="{{ section.id }}">
                   {% if block.settings.Circumference_title != blank %}<td class="title"><span>{{ block.settings.Circumference_title }}</span></td>{% endif %}
                   <td>
                   <ul>
-                  {% if block.settings.cm_1 != blank %}<li>{{ block.settings.cm_1 }}</li>{% endif %}              
-                  {% if block.settings.cm_2 != blank %}<li>{{ block.settings.cm_2 }}</li>{% endif %}
-                  {% if block.settings.cm_3 != blank %}<li>{{ block.settings.cm_3 }}</li>{% endif %}
-                  {% if block.settings.cm_4 != blank %}<li>{{ block.settings.cm_4 }}</li>{% endif %}
-                  {% if block.settings.cm_5 != blank %}<li>{{ block.settings.cm_5 }}</li>{% endif %}
-                  {% if block.settings.cm_6 != blank %}<li>{{ block.settings.cm_6 }}</li>{% endif %}
+                  {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>{% if block.settings.cm_1 == blank and block.settings.size_xs != blank %}-{% else %}{{ block.settings.cm_1 }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>{% if block.settings.cm_2 == blank and block.settings.size_s != blank %}-{% else %}{{ block.settings.cm_2 }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>{% if block.settings.cm_3 == blank and block.settings.size_m != blank %}-{% else %}{{ block.settings.cm_3 }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>{% if block.settings.cm_4 == blank and block.settings.size_l != blank %}-{% else %}{{ block.settings.cm_4 }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>{% if block.settings.cm_5 == blank and block.settings.size_xl != blank %}-{% else %}{{ block.settings.cm_5 }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>{% if block.settings.cm_6 == blank and block.settings.size_xxl != blank %}-{% else %}{{ block.settings.cm_6 }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>{% if block.settings.cm_7 == blank and block.settings.size_xxxl != blank %}-{% else %}{{ block.settings.cm_7 }}{% endif %}</li>{% endif %}
                   </ul>
                   </td>
                 </tr>
@@ -237,12 +244,13 @@ data-section-id="{{ section.id }}">
                   {% if block.settings.size_title != blank %}<td class="title"><span>{{ block.settings.size_title }}</td></span>{% endif %}
                   <td>
                   <ul>
-                  {% if block.settings.size_s != blank %}<li>{{ block.settings.size_s }}</li>{% endif %}            
-                  {% if block.settings.size_m != blank %}<li>{{ block.settings.size_m }}</li>{% endif %}
-                  {% if block.settings.size_l != blank %}<li>{{ block.settings.size_l }}</li>{% endif %}
-                  {% if block.settings.size_xl != blank %}<li>{{ block.settings.size_xl }}</li>{% endif %}
-                  {% if block.settings.size_xxl != blank %}<li>{{ block.settings.size_xxl }}</li>{% endif %}
-                  {% if block.settings.size_xxxl != blank %}<li>{{ block.settings.size_xxxl }}</li>{% endif %}
+                  {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>{% if block.settings.size_xs == blank and block.settings.cm_1 != blank %}-{% else %}{{ block.settings.size_xs }}{% endif %}</li>{% endif %}          
+                  {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>{% if block.settings.size_s == blank and block.settings.cm_2 != blank %}-{% else %}{{ block.settings.size_s }}{% endif %}</li>{% endif %}            
+                  {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>{% if block.settings.size_m == blank and block.settings.cm_3 != blank %}-{% else %}{{ block.settings.size_m }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>{% if block.settings.size_l == blank and block.settings.cm_4 != blank %}-{% else %}{{ block.settings.size_l }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>{% if block.settings.size_xl == blank and block.settings.cm_5 != blank %}-{% else %}{{ block.settings.size_xl }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>{% if block.settings.size_xxl == blank and block.settings.cm_6 != blank %}-{% else %}{{ block.settings.size_xxl }}{% endif %}</li>{% endif %}
+                  {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>{% if block.settings.size_xxxl == blank and block.settings.cm_7 != blank %}-{% else %}{{ block.settings.size_xxxl }}{% endif %}</li>{% endif %}
                   </ul>
                   </td>
                 </tr>
@@ -250,12 +258,13 @@ data-section-id="{{ section.id }}">
                   <td class="title"></td>
                   <td>
                   <ul>
-                  {% if block.settings.cm_1 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
-                  {% if block.settings.cm_2 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
-                  {% if block.settings.cm_3 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
-                  {% if block.settings.cm_4 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
-                  {% if block.settings.cm_5 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
-                  {% if block.settings.cm_6 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
+                  {% if block.settings.cm_1 != blank or block.settings.size_xs != blank %}<li>XS</li>{% endif %}               
+                  {% if block.settings.cm_2 != blank or block.settings.size_s != blank %}<li>S</li>{% endif %}               
+                  {% if block.settings.cm_3 != blank or block.settings.size_m != blank %}<li>M</li>{% endif %}
+                  {% if block.settings.cm_4 != blank or block.settings.size_l != blank %}<li>L</li>{% endif %}
+                  {% if block.settings.cm_5 != blank or block.settings.size_xl != blank %}<li>XL</li>{% endif %}
+                  {% if block.settings.cm_6 != blank or block.settings.size_xxl != blank %}<li>XXL</li>{% endif %}
+                  {% if block.settings.cm_7 != blank or block.settings.size_xxxl != blank %}<li>XXXL</li>{% endif %}
                   </ul>
                   </td>
                 </tr>    
@@ -456,6 +465,11 @@ data-section-id="{{ section.id }}">
             "label": "Circumference in cm6"
           },
           {
+            "type": "text",
+            "id": "cm_7",
+            "label": "Circumference in cm7"
+          },
+          {
             "type": "header",
             "content": "Women Size"
           },
@@ -464,6 +478,11 @@ data-section-id="{{ section.id }}">
             "id": "size_title",
             "label": "Women Size Title"
           },
+          {
+            "type": "text",
+            "id": "size_xs",
+            "label": "Size XS"
+          }, 
           {
             "type": "text",
             "id": "size_s",
@@ -541,6 +560,11 @@ data-section-id="{{ section.id }}">
             "label": "Circumference in cm6"
           },
           {
+            "type": "text",
+            "id": "cm_7",
+            "label": "Circumference in cm7"
+          },
+          {
             "type": "header",
             "content": "Unisex Size"
           },
@@ -549,6 +573,11 @@ data-section-id="{{ section.id }}">
             "id": "size_title",
             "label": "Unisex Size Title"
           },
+          {
+            "type": "text",
+            "id": "size_xs",
+            "label": "Size XS"
+          }, 
           {
             "type": "text",
             "id": "size_s",
@@ -626,6 +655,11 @@ data-section-id="{{ section.id }}">
             "label": "Circumference in cm6"
           },
           {
+            "type": "text",
+            "id": "cm_7",
+            "label": "Circumference in cm7"
+          },
+          {
             "type": "header",
             "content": "Kids/Junior Size"
           },
@@ -634,6 +668,11 @@ data-section-id="{{ section.id }}">
             "id": "size_title",
             "label": "Kids/Junior Size Title"
           },
+          {
+            "type": "text",
+            "id": "size_xs",
+            "label": "Size XS"
+          }, 
           {
             "type": "text",
             "id": "size_s",
