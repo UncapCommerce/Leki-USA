@@ -18,10 +18,12 @@
   {% for value in option.values %} 
       {% for variant in product.variants %}        
         {% if variant.metafields.custom.color_name.value != blank and variant.title contains value %}
-          {% assign colorName = variant.metafields.custom.color_name.value %}
+          {% if variant.option1 == value or variant.option2 == value or variant.option3 == value %}
+            {% assign colorName = variant.metafields.custom.color_name.value %}
+          {% endif %}
         {% endif %}
       {% endfor %}
-
+      
       {% for colorList in colorName %}  
         {% if forloop.index == 1 %}
           {% assign color1 = colorList %}
@@ -48,21 +50,6 @@
     
   {% endfor %}
 {% endfor %}
-
-{% comment %}
-{% assign color_list = product.metafields.custom.color.value %}
-{% if color_list %}
-  <style>  
-    {% for color_item in color_list %}  
-      {% assign color_name = color_item | split: '||' | first | remove: '["' | handle %}
-      {% assign color_code = color_item | split: '||' | last | remove: '"]' %}  
-      .swatch__label__{{ color_name }}.sw_label_{{ product.id }}{
-        background: {{ color_code }} !important;
-      }
-    {% endfor %}
-  </style>
-{% endif %}
-{% endcomment %}
 
 {%- liquid
   assign image_layout = section.settings.image_layout
