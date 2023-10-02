@@ -7,7 +7,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/20220404-ACU_1364_backcountry_2048.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/topbanner-mobile.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/20220404-ACU_1364_mobile_banner_copy.jpg",
             "overlay_opacity": 0,
             "text_width": "normal",
             "text_position": "center",
@@ -211,7 +211,7 @@
           "type": "image",
           "settings": {
             "width": "25",
-            "image": "shopify:\/\/shop_images\/Alpine_skiing_Header.jpg",
+            "image": "shopify:\/\/shop_images\/Liam-Doran-7269_alpine_skiing_c.jpg",
             "overlay_opacity": 10,
             "text_position": "center",
             "subheading": "",
