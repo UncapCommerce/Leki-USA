@@ -561,7 +561,7 @@
           "one": "Order processing time 3 business days plus {{ count }} business days in transit ",
           "other": "Order processing time 3 business days plus {{ count }} business days in transit "
         },
-        "shipping_method_title": "Shipping Method Options"
+        "shipping_method_title": "Shipping Method | Please allow 3 days for order processing plus below shown transit time"
       }
     }
   }
