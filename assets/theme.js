@@ -17793,6 +17793,7 @@ if(representativeAccess != null) {
   fetch(window.Shopify.routes.root +'pages/representatives-forms-download-section?view=default-template')
     .then((response) => response.text())
     .then((responseText) => {
+      console.log("responseText", responseText);
       const contentId = 'wrapPageContent';
       const html = new DOMParser().parseFromString(responseText, 'text/html');
       const destination = document.querySelector('.wrap-rep-page-content');
