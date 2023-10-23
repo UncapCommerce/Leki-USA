@@ -23,12 +23,17 @@
       --PB: {{ section.settings.mob_padding_bottom }}px;
     }
   }
+
+  .representativeForm__fields { max-width: 500px; width: 100%; margin: 0 auto; text-align: center; }
+  .representativeForm__fields #representativePass { width: 100%; border-color: #000; margin-bottom: 20px; }
+  .representativeForm__fields #representativeSubmit { padding: 15px 22px; width: 50%; max-width: 100%; font-size: 16px; line-height: 24px; font-family: var(--font-stcak-heading); border: none; background: #bf0038; color: #ffffff; }
+  .representativePass_error { margin-top: 20px; }
 {%- endstyle -%}
 
 
 
 {% assign customerDowncaseTags = customer.tags | downcase %}
-{%- if section.settings.show_page_title or page.content != blank -%}
+{%- if section.settings.show_page_title or page.content != blank -%} {%- endif -%}
   <section id="Page--{{ section.id }}" class="section-default section-padding{% if bg_color_secondary %} bg-secondary{% endif %}">
     <div class="wrapper">
       {%- if section.settings.show_page_title -%}
@@ -50,21 +55,53 @@
           data-aos-delay="{{ animation_delay }}"
           {%- assign animation_delay = animation_delay | plus: 150 -%}
         {% endif %}>
-        {% if customer %}
-          {% if customerDowncaseTags contains "representative" %}
-            <div class="representatives-content"> 
-              {{- page.content -}}
-            </div>
+
+
+        {% comment %}
+          {% if customer %}
+            {% if customerDowncaseTags contains "representative" %}
+              <div class="representatives-content"> 
+                {{- page.content -}}
+              </div>
+            {% else %}
+              <div style="text-align: center;">{{ section.settings.customer_representative }}</div>
+            {% endif %}
           {% else %}
-            <div style="text-align: center;">{{ section.settings.customer_representative }}</div>
+              <div style="text-align: center;">{{ section.settings.customer_login }}</div>
           {% endif %}
-        {% else %}
-            <div style="text-align: center;">{{ section.settings.customer_login }}</div>
-        {% endif %}
+        {% endcomment %}
+        
+        <div class="wrap-rep-password-form">
+          {% comment %}{% endcomment %}
+          <div id="representativeForm" class="representative-form" data-form="{{ section.settings.form_password }}">
+            <div class="representativeForm-group">
+              <div class="representativeForm__fields">
+                <div class="representativeForm-input_item">
+                  <input type="password" id="representativePass" class="input-group__field--password" value="" placeholder="Representative Password" name="representativePass" autocorrect="off" required />
+                </div>
+  
+                <button name="representativeSubmit" id="representativeSubmit" class="representative__btn">
+                  <span class="">Submit</span>
+                </button>
+
+                <div class="errors representativePass_error" style="display: none;">{{ section.settings.form_error_message }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-rep-page-content"></div>
+        
       </div>
     </div>
   </section>
-{%- endif -%}
+
+  
+
+
+<script>
+
+</script>
 
 {% schema %}
   {
@@ -76,6 +113,16 @@
         "id": "show_page_title",
         "label": "Show page title",
         "default": true
+      },
+      {
+        "type": "header",
+        "content": "Form Settings"
+      },
+      {
+        "type": "text",
+        "id": "form_error_message",
+        "label": "Error message for Wrong password Entered",
+        "default": "Incorrect password."
       },
       {
         "type": "header",

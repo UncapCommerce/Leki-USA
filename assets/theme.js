@@ -17759,3 +17759,69 @@ function reorderBtn(t) {
       console.error('Error:', error);
     });
 }
+
+/* ==== representatives ==== */
+// set cookies
+function setCookie(name, value, daysToLive) {
+  var cookie = name + "=" + encodeURIComponent(value);
+  if(typeof daysToLive === "number") {
+    cookie += "; max-age=" + (daysToLive*24*60*60)+"; path=/";
+    document.cookie = cookie;
+  }
+}
+// get cookies
+function getCookie(name) {
+  var cookieArr = document.cookie.split(";");
+  for(var i = 0; i < cookieArr.length; i++) {
+    var cookiePair = cookieArr[i].split("=");
+    if(name == cookiePair[0].trim()) {
+      // Decode the cookie value and return
+      return decodeURIComponent(cookiePair[1]);
+    }
+  }
+  return null;
+}
+// check cookies
+var representativeAccess = getCookie("representativeAccess");
+var wrapPassForm = document.querySelector(".wrap-rep-password-form");
+var wrapPageContent = document.querySelector(".wrap-rep-page-content");
+
+if(representativeAccess != null) {
+  //alert("Welcome again, " + representativeAccess);
+  wrapPassForm.style.display = "none";
+  wrapPageContent.style.display = "block";
+  fetch(window.Shopify.routes.root +'pages/representatives-forms-download-section?view=default-template')
+    .then((response) => response.text())
+    .then((responseText) => {
+      const contentId = 'wrapPageContent';
+      const html = new DOMParser().parseFromString(responseText, 'text/html');
+      const destination = document.querySelector('.wrap-rep-page-content');
+      const source = html.getElementById(contentId);
+      if (source && destination) destination.innerHTML = source.innerHTML;
+    });
+} else {
+  
+  if(wrapPageContent != null){ wrapPageContent.style.display = "none"; }
+  if(wrapPassForm != null){ wrapPassForm.style.display = "block"; }
+}
+
+// Check the cookie on page load
+//window.onload = checkCookie();
+
+// delete the cookie
+// setCookie("representativeAccess", "", 0);
+
+const repSubmit = document.getElementById("representativeSubmit");
+repSubmit.addEventListener("click", function () {
+  //const repForm = document.querySelector('.representative-form').dataset.form;
+  const repForm = "Buffalo716";
+  const repPassVal = document.getElementById("representativePass").value;
+  if (repPassVal == "" || repPassVal != repForm ){
+    document.querySelector('.representativePass_error').style.display = "block";
+    setTimeout(() => { document.querySelector('.representativePass_error').style.display = "none"; }, 3000);
+  }else if(repPassVal != "" && repPassVal == repForm){
+    //console.log("Yes", repForm);
+    setCookie("representativeAccess", "Yes", 1);
+    window.location.reload();
+  }
+});
