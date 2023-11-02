@@ -85,10 +85,14 @@
             assign text_position = 'item--bottom-left'
           when 'bottom-right'
             assign text_position = 'item--bottom-right'
+          when 'bottom-center'
+            assign text_position = 'item--bottom-center'
           when 'top-left'
             assign text_position = 'item--top-left'
           when 'top-right'
             assign text_position = 'item--top-right'
+          when 'top-center'
+            assign text_position = 'item--top-center'
         endcase
 
         assign animation_delay = 150
@@ -529,8 +533,10 @@
             { "value": "right", "label": "Right" },
             { "value": "bottom-left", "label": "Bottom left" },
             { "value": "bottom-right", "label": "Bottom right" },
+            { "value": "bottom-center", "label": "Bottom center" },
             { "value": "top-left", "label": "Top left" },
-            { "value": "top-right", "label": "Top right" }
+            { "value": "top-right", "label": "Top right" },
+            { "value": "top-center", "label": "Top center" }
           ]
         },
         {
