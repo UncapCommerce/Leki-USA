@@ -238,10 +238,33 @@
               "bg_color": "#ffffff",
               "text_color": "text-dark"
             }
+          },
+          "7bd6bb54-779f-4bfb-8372-823fcd20467b": {
+            "type": "popup-with-image",
+            "disabled": true,
+            "settings": {
+              "position": "center-center",
+              "height": "original-height",
+              "title": "BLACK FRIDAY OUTLET SALE",
+              "text": "<p>Join us for our Black Friday <a href=\"https:\/\/lekiusa.com\/collections\/outlet\" title=\"https:\/\/lekiusa.com\/collections\/outlet\">Outlet<\/a> Sale and treat yourself to an extra 20% off. Shop now for great deals on last year’s models!<br\/>Discount will automatically be applied to your cart.<\/p>",
+              "show_newsletter_form": false,
+              "extra_fields": "",
+              "button_text": "",
+              "trigger": "always",
+              "target_url_enabled": false,
+              "target_url": "",
+              "target_referrer_enabled": false,
+              "target_referrer": "",
+              "target_device_enabled": false,
+              "target_device": "mobile",
+              "bg_color": "#000",
+              "text_color": "text-light"
+            }
           }
         },
         "block_order": [
-          "popup-0"
+          "popup-0",
+          "7bd6bb54-779f-4bfb-8372-823fcd20467b"
         ],
         "settings": {
         }
