@@ -241,7 +241,6 @@
           },
           "7bd6bb54-779f-4bfb-8372-823fcd20467b": {
             "type": "popup-with-image",
-            "disabled": true,
             "settings": {
               "position": "center-center",
               "height": "original-height",
@@ -290,7 +289,6 @@
           },
           "dd72a6eb-7afd-4118-afc3-94ba0ef04a5a": {
             "type": "text",
-            "disabled": true,
             "settings": {
               "text": "<p>BLACK FRIDAY OUTLET SALE. Take an extra 20% off last year's models.<\/p>",
               "icon_name": "none",
