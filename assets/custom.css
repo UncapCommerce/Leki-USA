@@ -134,6 +134,9 @@ body.page--history .collection__header .rte p{
 .product-grid-item__inner [data-bv-show=inline_rating] .bv_main_container .bv_averageRating_component_container {
   padding-left: 8px!important;
 }
+.product-grid-item__inner [data-bv-show=inline_rating] .bv_main_container .bv_text {
+  color: #E4032E !important;
+}
 @media(max-width: 767px){
   .product-single__wrapper {margin-bottom: 25px;}
   .review-main-wrapper{padding: 60px 0px;}
