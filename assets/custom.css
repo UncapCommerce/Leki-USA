@@ -131,6 +131,9 @@ body.page--history .collection__header .rte p{
   padding-right: 0 !important;
   margin-right: 4px !important;
 }
+.product-grid-item__inner [data-bv-show=inline_rating] .bv_main_container .bv_averageRating_component_container {
+  padding-left: 8px!important;
+}
 @media(max-width: 767px){
   .product-single__wrapper {margin-bottom: 25px;}
   .review-main-wrapper{padding: 60px 0px;}
