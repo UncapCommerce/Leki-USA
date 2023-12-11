@@ -304,11 +304,28 @@
               "target_device_enabled": false,
               "target_device": "mobile"
             }
+          },
+          "1bf50f51-4b3c-4074-b33f-0465d6466aa7": {
+            "type": "text",
+            "settings": {
+              "text": "<p>Order by Wednesday 12\/13\/23 to receive orders in time for Christmas*. More info in our FAQs.<\/p>",
+              "icon_name": "none",
+              "icon_color": "",
+              "icon_width": 20,
+              "page_link": "",
+              "target_url_enabled": false,
+              "target_url": "",
+              "target_referrer_enabled": false,
+              "target_referrer": "",
+              "target_device_enabled": false,
+              "target_device": "mobile"
+            }
           }
         },
         "block_order": [
           "69991445-02e9-4d06-a0f2-3748192a84c6",
-          "dd72a6eb-7afd-4118-afc3-94ba0ef04a5a"
+          "dd72a6eb-7afd-4118-afc3-94ba0ef04a5a",
+          "1bf50f51-4b3c-4074-b33f-0465d6466aa7"
         ],
         "settings": {
           "bg_color": "#f7f7f7",
