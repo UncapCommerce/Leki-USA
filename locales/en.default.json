@@ -562,7 +562,7 @@
           "other": "Order processing time 3 business days plus {{ count }} business days in transit "
         },
         "shipping_method_title": "Shipping Method",
-        "shipping_method_notice": "Please allow 3 business days for order processing in addition to the transit time. USPS Ground Advantage transit time is usually between 2-5 days based on location."
+        "shipping_method_notice": "Please allow 3 business days for order processing in addition to the transit time. USPS Ground Advantage transit time is usually between 2-5 business days based on location. "
       }
     }
   }
