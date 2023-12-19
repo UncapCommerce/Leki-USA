@@ -307,6 +307,7 @@
           },
           "1bf50f51-4b3c-4074-b33f-0465d6466aa7": {
             "type": "text",
+            "disabled": true,
             "settings": {
               "text": "<p>Order by Wednesday 12\/13\/23 to receive orders in time for Christmas*. More info in our FAQs.<\/p>",
               "icon_name": "none",
