@@ -28,11 +28,23 @@
   {%- endif -%}
 
   <!-- Title and description ================================================== -->
-  <title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value_stripped, shop: shop.name }}</title>
-  <meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value_stripped, shop: shop.name }}</title>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
 
   <!-- Helpers ================================================== -->
-  <link rel="canonical" href="{{ canonical_url }}">
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<link rel="canonical" href="{{ canonical_url }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no">
 
@@ -59,8 +71,8 @@
           Just uncomment out the line of code below (but leave this comment)
           {% endcomment %}
             <!--
-              <a href="{{ shop.url }}" itemprop="url">
-              <img src="ADD LINK HERE" alt="{{ shop.name }}" itemprop="logo">
+              <a href="{{ shop.url }}" {% if disabled_by_yoast_seo %}itemprop="url"{% endif %}>
+              <img src="ADD LINK HERE" alt="{{ shop.name }}" {% if disabled_by_yoast_seo %}itemprop="logo"{% endif %}>
             -->
             <h2 class="h2 giftcard__title text-center">{{shop.name}} {{ 'gift_cards.issued.gift_card' | t }}</h2>
             {%- unless gift_card.enabled -%}
