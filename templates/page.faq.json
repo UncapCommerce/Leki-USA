@@ -38,11 +38,12 @@
           "settings": {
             "category": "Shipping",
             "title": "How long does shipping take? When will I get my order?",
-            "text": "<p>Please allow 3 business days for order processing. <br\/>The transit time for your order is based on your location and will be calculated at checkout. For example if UPS shows 3 business days for your location at checkout, you should receive your order within 6 business days. <br\/>Business days are Monday through Friday with the exception of federal holidays.<\/p>"
+            "text": "<p>Please allow 3 to 4 business days for order processing. <br\/>The transit time for your order is based on your location and will be calculated at checkout. For example if UPS shows 3 business days for your location at checkout, you should receive your order within 6 business days. <br\/>Please expect longer processing times between Christmas and New Year. All orders placed after 12\/27\/2023 will ship in the first week of January.<br\/>Business days are Monday through Friday with the exception of federal holidays. LEKI USA will also be closed on December 26th 2023.<\/p>"
           }
         },
         "7b9a4d62-666b-4175-b6cc-ff88d4d73e21": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "category": "Shipping",
             "title": "Will I get my order in time for Christmas?",
@@ -54,7 +55,15 @@
           "settings": {
             "category": "General",
             "title": "How can I contact LEKI USA?",
-            "text": "<p>Please visit our contact page. Here you can send an email and get information on other ways to contact us.<\/p>"
+            "text": "<p>Please visit our <a href=\"https:\/\/lekiusa.com\/pages\/contact\" title=\"https:\/\/lekiusa.com\/pages\/contact\">contact page<\/a>. Here you can send an email and get information on other ways to contact us.<\/p>"
+          }
+        },
+        "c8d6781c-835e-4c7a-b4cb-b8a15c3a3826": {
+          "type": "text",
+          "settings": {
+            "category": "General",
+            "title": "Hours",
+            "text": "<p>LEKI USA is open Monday through Friday 8:30 am through 5:00 pm EST.<br\/>LEKI USA is closed for the Holidays on December 25th, December 26th, and January 1st. <\/p>"
           }
         },
         "acc8093e-a065-4dd7-bcdc-02a428b0b8c6": {
@@ -273,6 +282,7 @@
         "b0e3ae95-e691-4c52-a628-6b8e973fbcc0",
         "7b9a4d62-666b-4175-b6cc-ff88d4d73e21",
         "bda40454-5167-4584-ae24-3c67c7e05317",
+        "c8d6781c-835e-4c7a-b4cb-b8a15c3a3826",
         "acc8093e-a065-4dd7-bcdc-02a428b0b8c6",
         "b1026c51-e39e-42d3-9f25-b1d0fff04b2b",
         "4757ef6e-d043-47f3-82d9-9e5fa095ded8",
