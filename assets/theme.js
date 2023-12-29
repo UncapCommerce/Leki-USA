@@ -17811,7 +17811,6 @@ if (window.location.pathname.indexOf('pages/representatives-forms-download-secti
 
 if (window.location.pathname.indexOf('pages/leki-media-portal') !== -1) {
   if(mediaportalAccess != null) {
-    //alert("Welcome again, " + mediaportalAccess);
     wrapPassForm.style.display = "none";
     wrapPageTitle.style.display = "none";
     wrapPageContent.style.display = "block";
