@@ -1,12 +1,232 @@
+{%- comment -%} sections/main-page.liquid {%- endcomment -%}
+{%- liquid
+  assign animations_enabled = settings.animations_enabled
+  assign animation_anchor = '#Page--' | append: section.id
+  assign animation_delay = 150
+  assign bg_color_secondary = section.settings.bg_color_secondary
+-%}
+
+{%- style -%}
+  #Page--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+  @media(max-width: 1023px){
+    #Page--{{ section.id }} {
+      --PT: {{ section.settings.tab_padding_top }}px;
+      --PB: {{ section.settings.tab_padding_bottom }}px;
+    }
+  }
+  @media(max-width: 767px){
+    #Page--{{ section.id }} {
+      --PT: {{ section.settings.mob_padding_top }}px;
+      --PB: {{ section.settings.mob_padding_bottom }}px;
+    }
+  }
+h1.page-title {
+    margin-top: 80px;
+}
+.template-page #PageContainer {
+    padding-top: 40px !important;
+}
+  .representativeForm__fields { max-width: 500px; width: 100%; margin: 0 auto; text-align: center; }
+  .representativeForm__fields #representativePass { width: 100%; border-color: #000; margin-bottom: 20px; }
+  .representativeForm__fields #mediaportalSubmit { padding: 15px 22px; width: 50%; max-width: 100%; font-size: 16px; line-height: 24px; font-family: var(--font-stcak-heading); border: none; background: #bf0038; color: #ffffff; }
+  .representativePass_error { margin-top: 20px; }
+  .wrap-media-portal-banner { padding-bottom: 25%; content: ''; display: block; position: relative; margin-bottom: 50px;} 
+  .wrap-media-portal-banner img { display: block; max-width: 100%; position: absolute; top: 0; left: 0; height: 100%; width: 100%; object-fit: cover; object-position: center center; }
+  @media(max-width: 767px){
+    .wrap-media-portal-banner { padding-bottom: 100%; }
+  }
+{%- endstyle -%}
+
+
+
+{% assign customerDowncaseTags = customer.tags | downcase %}
+{%- if section.settings.show_page_title or page.content != blank -%} {%- endif -%}
+  <section id="Page--{{ section.id }}" class="section-default section-padding{% if bg_color_secondary %} bg-secondary{% endif %}">
+    <div class="wrapper">
+      {%- if section.settings.show_page_title -%}
+        <h1 class="page-title text-center"
+          {% if animations_enabled %}
+            data-aos="fade-up"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-delay="{{ animation_delay }}"
+            {%- assign animation_delay = animation_delay | plus: 150 -%}
+          {% endif %}>
+          {{- page.title -}}
+        </h1>
+      {%- endif -%}
+
+      <div class="rte" 
+        {% if animations_enabled %}
+          data-aos="fade-up"
+          data-aos-anchor="{{ animation_anchor }}"
+          data-aos-delay="{{ animation_delay }}"
+          {%- assign animation_delay = animation_delay | plus: 150 -%}
+        {% endif %}>
+
+
+        {% comment %}
+          {% if customer %}
+            {% if customerDowncaseTags contains "representative" %}
+              <div class="representatives-content"> 
+                {{- page.content -}}
+              </div>
+            {% else %}
+              <div style="text-align: center;">{{ section.settings.customer_representative }}</div>
+            {% endif %}
+          {% else %}
+              <div style="text-align: center;">{{ section.settings.customer_login }}</div>
+          {% endif %}
+        {% endcomment %}
+        
+        <div class="wrap-rep-password-form">
+          {% comment %}{% endcomment %}
+          <div id="representativeForm" class="representative-form" data-form="U2FsdGVkX1/hcYpco8tvuaIn2bRe9KTFJ0PjPnLxbkY=">
+            <div class="representativeForm-group">
+              <div class="representativeForm__fields">
+                <div class="representativeForm-input_item">
+                  <input type="password" id="representativePass" class="input-group__field--password" value="" placeholder="Media Portal Password" name="representativePass" autocorrect="off" required />
+                </div>
+  
+                <button name="representativeSubmit" id="mediaportalSubmit" class="representative__btn">
+                  <span class="">Submit</span>
+                </button>
+
+                <div class="errors representativePass_error" style="display: none;">{{ section.settings.form_error_message }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+      </div>
+    </div>
+    <div class="wrap-rep-page-content"></div>
+  </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+<script>
+  const mediaSubmit = document.getElementById("mediaportalSubmit");
+  mediaSubmit.addEventListener("click", function () {
+    const repForm = document.querySelector('.representative-form').dataset.form;
+    const repDecForm = CryptoJS.AES.decrypt(repForm, "representatives-forms");
+    const repDecToForm = repDecForm.toString(CryptoJS.enc.Utf8);
+  
+    const repPassVal = document.getElementById("representativePass").value;
+    var repEncPassVal = CryptoJS.AES.encrypt(repPassVal, "representatives-forms");
+    const repDecVal = CryptoJS.AES.decrypt(repPassVal, "representatives-forms");
+    const repDecToVal = repPassVal.toString(CryptoJS.enc.Utf8);
+    
+    if (repPassVal == "" || repDecToVal != repDecToForm ){
+      document.querySelector('.representativePass_error').style.display = "block";
+      setTimeout(() => { document.querySelector('.representativePass_error').style.display = "none"; }, 3000);
+    }else if(repPassVal != "" && repDecToVal == repDecToForm){
+      setCookie("mediaportalAccess", "Yes", 1);
+      window.location.reload();
+    }
+  });
+</script>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Media Portal Forms",
+    "class": "shopify-section--page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_page_title",
+        "label": "Show page title",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Form Settings"
+      },
+      {
+        "type": "text",
+        "id": "form_error_message",
+        "label": "Error message for Wrong password Entered",
+        "default": "Incorrect password."
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "checkbox",
+        "id": "bg_color_secondary",
+        "label": "Background",
+        "info": "Use secondary background color",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "tab_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Tablet Padding bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "mob_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "label": "Mobile Padding bottom",
+        "default": 60
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
