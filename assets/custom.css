@@ -59,6 +59,56 @@ body.page--history .collection__header .rte p{
 .history_img_section .image-with-text__content.text-left .image-with-text__text {
   margin-left: 0;
 }
+
+
+.leki-media-portal-title {
+  text-align: center;
+  font-family: var(--font-stack-body);
+  margin-bottom: 20px !important;
+}
+
+.leki-media-portal-content {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.leki-media-portal-content .left-media-portal, .leki-media-portal-content .right-media-portal {
+    width: 100%;
+    max-width: calc(50% - 20px * 1 / 2);
+}
+
+.leki-media-portal-links ul {
+  margin: 0 0 30px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 30px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.leki-media-portal-links ul li a {
+  padding: 10px 40px;
+  background: var(--COLOR-BUTTON-PRIMARY-TEXT-HOVER);
+  color: var(--COLOR-BUTTON-PRIMARY-TEXT);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 264px;
+  width: 264px;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+
+
+
 /* media query */
 @media screen and (min-width:1024px){
   .page--history .image-with-title-section .banner-content .wrapper--narrow {
@@ -118,6 +168,14 @@ body.page--history .collection__header .rte p{
   }
   .history_img_section .image-with-text__image {
     padding-top: 72%;
+  }
+
+  .leki-media-portal-content .left-media-portal, .leki-media-portal-content .right-media-portal {
+    width: 100%;
+    max-width: calc(100%);
+  }
+  .leki-media-portal-links ul {
+    gap: 10px;
   }
 }
 
