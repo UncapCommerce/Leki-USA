@@ -17822,7 +17822,6 @@ if (window.location.pathname.indexOf('pages/leki-media-portal') !== -1) {
         const html = new DOMParser().parseFromString(responseText, 'text/html');
         const destination = document.querySelector('.wrap-rep-page-content');
         const source = html.getElementById(contentId);
-        console.log("source.innerHTML", source.innerHTML);
         if (source && destination) destination.innerHTML = source.innerHTML;
       });
   } else {
