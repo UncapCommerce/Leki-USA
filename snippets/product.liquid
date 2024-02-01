@@ -789,7 +789,7 @@
                         value="{{ value | escape_once }}"
                         id="{{ input_id }}"
                         {% if value == current_value %}checked{% endif %}>
-                      <label for="{{ input_id }}" class="swatch__label swatch__label__{{ value | escape_once | handle }} sw_label_{{ product.id }}" data-swatch="{{ value | escape_once }}" data-tooltip="{{ value | escape_once }}">
+                      <label for="{{ input_id }}" class="11 swatch__label swatch__label__{{ value | escape_once | handle }} sw_label_{{ product.id }}" data-swatch="{{ value | escape_once }}" data-tooltip="{{ value | escape_once }}">
                         <span class="visually-hidden">{{ value | escape_once }}</span>
                         {%- if settings.color_swatches_product_style == 'circle' -%}
                           <span class="icon icon-check"></span>
@@ -2057,7 +2057,7 @@
                         value="{{ value | escape_once }}"
                         id="{{ input_id }}"
                         {% if value == current_value %}checked{% endif %}>
-                      <label for="{{ input_id }}" class="swatch__label swatch__label__{{ value | escape_once }}" data-swatch="{{ value | escape_once }}" data-tooltip="{{ value | escape_once }}">
+                      <label for="{{ input_id }}" class="22 swatch__label swatch__label__{{ value | escape_once }}" data-swatch="{{ value | escape_once }}" data-tooltip="{{ value | escape_once }}">
                         <span class="visually-hidden">{{ value | escape_once }}</span>
                         {%- if settings.color_swatches_product_style == 'circle' -%}
                           <span class="icon icon-check"></span>
@@ -2369,7 +2369,7 @@
                 endif
               endfor
           -%}       
-          <a href='{{ product.url }}?variant={{ swatch_variant.id }}' data-swatch-variant='{{ swatch_variant.id }}' id='{{ product.id }}-{{ swatch_variant.id }}-{{ option }}' data-swatch='{{ option }}'  class='watch__link swatch__label swatch__label__{{ option }}' style='background-color: {{ option | split: ' ' | last | handle }};'></a>       
+          <a href='{{ product.url }}?variant={{ swatch_variant.id }}' data-swatch-variant='{{ swatch_variant.id }}' id='{{ product.id }}-{{ swatch_variant.id }}-{{ option }}' data-swatch='{{ option }}'  class='watch__link 33 swatch__label swatch__label__{{ option }}' style='background-color: {{ option | split: ' ' | last | handle }};'></a>       
       {%- endfor -%}"
     {%- endunless -%} 
   {%- else -%}
