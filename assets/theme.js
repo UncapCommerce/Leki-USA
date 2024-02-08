@@ -17791,26 +17791,26 @@ var wrapPassForm = document.querySelector(".wrap-rep-password-form");
 var wrapPageContent = document.querySelector(".wrap-rep-page-content");
 var wrapPageTitle = document.querySelector(".page-title")
 
-if (window.location.pathname.indexOf('pages/representatives-forms-download-section') !== -1) {
-  if(representativeAccess != null) {
-    //alert("Welcome again, " + representativeAccess);
-    wrapPassForm.style.display = "none";
-    wrapPageContent.style.display = "block";
-    fetch(window.Shopify.routes.root +'pages/representatives-forms-download-section?view=default-template')
-      .then((response) => response.text())
-      .then((responseText) => {
-        const contentId = 'wrapPageContent';
-        const html = new DOMParser().parseFromString(responseText, 'text/html');
-        const destination = document.querySelector('.wrap-rep-page-content');
-        const source = html.getElementById(contentId);
-        if (source && destination) destination.innerHTML = source.innerHTML;
-      });
-  } else {
+// if (window.location.pathname.indexOf('pages/representatives-forms-download-section') !== -1) {
+//   if(representativeAccess != null) {
+//     //alert("Welcome again, " + representativeAccess);
+//     wrapPassForm.style.display = "none";
+//     wrapPageContent.style.display = "block";
+//     fetch(window.Shopify.routes.root +'pages/representatives-forms-download-section?view=default-template')
+//       .then((response) => response.text())
+//       .then((responseText) => {
+//         const contentId = 'wrapPageContent';
+//         const html = new DOMParser().parseFromString(responseText, 'text/html');
+//         const destination = document.querySelector('.wrap-rep-page-content');
+//         const source = html.getElementById(contentId);
+//         if (source && destination) destination.innerHTML = source.innerHTML;
+//       });
+//   } else {
     
-    if(wrapPageContent != null){ wrapPageContent.style.display = "none"; }
-    if(wrapPassForm != null){ wrapPassForm.style.display = "block"; }
-  }
-}
+//     if(wrapPageContent != null){ wrapPageContent.style.display = "none"; }
+//     if(wrapPassForm != null){ wrapPassForm.style.display = "block"; }
+//   }
+// }
 
 if (window.location.pathname.indexOf('pages/leki-media-portal') !== -1) {
   if(mediaportalAccess != null) {
