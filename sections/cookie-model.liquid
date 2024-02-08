@@ -342,7 +342,8 @@ for (i = 0; i < menu.length; i++) {
 }
   console.log('out side call');
 document.addEventListener("DOMContentLoaded", function(event) {
-  console.log('inn side call--',Shopify.designMode);
+  var IsInDesignMode = Shopify.designMode;
+  console.log('inn side call--',IsInDesignMode);
   if (Shopify.designMode) {
     console.log('out condition call');
     document.querySelector("body").classList.remove("modal-open");
