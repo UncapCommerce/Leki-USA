@@ -17773,7 +17773,7 @@ function setCookie(name, value, daysToLive) {
   }
 }
 // get cookies
-function getCookie(name) {
+function getCookiePassword(name) {
   var cookieArr = document.cookie.split(";");
   for(var i = 0; i < cookieArr.length; i++) {
     var cookiePair = cookieArr[i].split("=");
@@ -17785,8 +17785,8 @@ function getCookie(name) {
   return null;
 }
 // check cookies
-var representativeAccess = getCookie("representativeAccess");
-var mediaportalAccess = getCookie("mediaportalAccess");
+var representativeAccess = getCookiePassword("representativeAccess");
+var mediaportalAccess = getCookiePassword("mediaportalAccess");
 var wrapPassForm = document.querySelector(".wrap-rep-password-form");
 var wrapPageContent = document.querySelector(".wrap-rep-page-content");
 var wrapPageTitle = document.querySelector(".page-title")
