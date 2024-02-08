@@ -17164,6 +17164,7 @@
     "--scrollbar-width",
     `${getScrollbarWidth()}px`
   );
+  console.log('document--',document);
 
   document.addEventListener("DOMContentLoaded", function () {
     // Load all registered sections on the page.
