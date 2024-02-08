@@ -17773,17 +17773,17 @@ function setCookie(name, value, daysToLive) {
   }
 }
 // get cookies
-function getCookie(name) {
-  var cookieArr = document.cookie.split(";");
-  for(var i = 0; i < cookieArr.length; i++) {
-    var cookiePair = cookieArr[i].split("=");
-    if(name == cookiePair[0].trim()) {
-      // Decode the cookie value and return
-      return decodeURIComponent(cookiePair[1]);
-    }
-  }
-  return null;
-}
+// function getCookie(name) {
+//   var cookieArr = document.cookie.split(";");
+//   for(var i = 0; i < cookieArr.length; i++) {
+//     var cookiePair = cookieArr[i].split("=");
+//     if(name == cookiePair[0].trim()) {
+//       // Decode the cookie value and return
+//       return decodeURIComponent(cookiePair[1]);
+//     }
+//   }
+//   return null;
+// }
 // check cookies
 var representativeAccess = getCookie("representativeAccess");
 var mediaportalAccess = getCookie("mediaportalAccess");
