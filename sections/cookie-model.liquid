@@ -342,7 +342,7 @@ for (i = 0; i < menu.length; i++) {
 }
   console.log('out side call');
 document.addEventListener("DOMContentLoaded", function(event) {
-  console.log('inn side call');
+  console.log('inn side call--',Shopify.designMode);
   if (Shopify.designMode) {
     console.log('out condition call');
     document.querySelector("body").classList.remove("modal-open");
