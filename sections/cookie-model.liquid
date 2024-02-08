@@ -340,7 +340,9 @@ for (i = 0; i < menu.length; i++) {
         // this.nextElementSibling.classList.toggle("show");
     }
 }
+  console.log('out side call');
 document.addEventListener("DOMContentLoaded", function(event) {
+  console.log('inn side call');
   if (Shopify.designMode) {
     document.querySelector("body").classList.remove("modal-open");
     var modal = document.querySelector(".modal");
