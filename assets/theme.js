@@ -17779,10 +17779,10 @@ function getCookie(name) {
     var cookiePair = cookieArr[i].split("=");
     if(name == cookiePair[0].trim()) {
       // Decode the cookie value and return
-      return decodeURIComponent(cookiePair[1]);
+      // return decodeURIComponent(cookiePair[1]);
     }
   }
-  // return null;
+  return null;
 }
 // check cookies
 var representativeAccess = getCookie("representativeAccess");
