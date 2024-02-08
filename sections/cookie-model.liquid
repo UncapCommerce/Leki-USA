@@ -345,6 +345,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var IsInDesignMode = Shopify.designMode;
   console.log('inn side call--',IsInDesignMode);
   if (!Shopify.designMode) {
+    console.log('inn call--',IsInDesignMode);
     document.querySelector("body").classList.remove("modal-open");
     var modal = document.querySelector(".modal");
     modal.classList.remove("show-modal");
