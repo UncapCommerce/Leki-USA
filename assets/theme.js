@@ -17782,7 +17782,7 @@ function getCookie(name) {
       return decodeURIComponent(cookiePair[1]);
     }
   }
-  return null;
+  // return null;
 }
 // check cookies
 var representativeAccess = getCookie("representativeAccess");
