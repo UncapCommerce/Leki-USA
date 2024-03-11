@@ -60,6 +60,31 @@
         "padding_bottom": 60
       }
     },
+    "partner_with_logo_nycHKb": {
+      "type": "partner-with-logo",
+      "settings": {
+        "section_height": "three-fifty-height",
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/americanHikingSociety_small_25c914f5-9685-42c7-bae2-2967ce24b094.png",
+        "subheading": "",
+        "title": "<p>American Hiking Society<\/p>",
+        "heading_highlight_type": "circle",
+        "heading_size": 130,
+        "text_content": "",
+        "text_alignment": "left",
+        "button_text": "Visit Site",
+        "button_link": "https:\/\/americanhiking.org\/",
+        "button_style": "btn--primary btn--small",
+        "video_link": "",
+        "text_color": "text-dark",
+        "bg_color": "",
+        "section_width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "partner_with_logo_MTyXmd": {
       "type": "partner-with-logo",
       "settings": {
@@ -90,6 +115,7 @@
     "5c1b51e6-d596-414a-af3c-3154eb0cbac3",
     "main",
     "partner_with_logo_8X3fMJ",
+    "partner_with_logo_nycHKb",
     "partner_with_logo_MTyXmd"
   ]
 }
