@@ -7,7 +7,11 @@
         "show_page_title": true,
         "bg_color_secondary": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
       }
     },
     "5c1b51e6-d596-414a-af3c-3154eb0cbac3": {
@@ -18,8 +22,8 @@
         "text_transform": "capitalize",
         "banner_image": "shopify:\/\/shop_images\/history_banner.png",
         "banner_mob_image": "shopify:\/\/shop_images\/history_mob_banner.png",
-        "banner_title": "HISTORY",
-        "banner_content": "<p>With passion and commitment since 1948. LEKI's success story is also the story of the Lenhart family. Our enthusiasm and dedication to the sport and the continual search for improvement has made us what we are today. We look to the future, but we never forget our roots.<\/p>",
+        "banner_title": "PARTNERS",
+        "banner_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam scelerisque ligula at ornare interdum. Suspendisse tortor justo, sollicitudin ac velit eu, malesuada fermentum tortor.<\/p>",
         "text_color": "text-light",
         "overlay_opacity": 10,
         "bg_color_secondary": false,
@@ -32,6 +36,18 @@
         "mob_padding_bottom": 20
       }
     },
+    "about_image_with_text_wM3D4N": {
+      "type": "about-image-with-text",
+      "settings": {
+        "section_width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "tab_padding_top": 60,
+        "tab_padding_bottom": 60,
+        "mob_padding_top": 60,
+        "mob_padding_bottom": 60
+      }
+    },
     "3ee7470e-f544-4c6c-87a8-061bd405cd92": {
       "type": "history-image-with-text",
       "settings": {
@@ -41,7 +57,7 @@
         "image": "shopify:\/\/shop_images\/1948_img.png",
         "title": "1948",
         "heading_size": 100,
-        "button_text": "Karl and Gertrud Lenhart",
+        "button_text": "",
         "text_content": "Karl and Gertrud Lenhart founded the Karl Lenhart Plastik + Metall wood lathing company in 1948. In the wood processing business they founded in Dettingen\/Teck, Karl Lenhart produced lettering made of wood for bakeries and butcher shops. This company laid the foundations for LEKI Lenhart GmbH.",
         "text_alignment": "right",
         "section_width": "wrapper--full-padded",
@@ -235,28 +251,12 @@
         "padding_top": 0,
         "padding_bottom": 60
       }
-    },
-    "612e3f08-2d8f-45ba-b3c0-c920f0fd1397": {
-      "type": "history-image-with-text",
-      "settings": {
-        "layout": "inline",
-        "image_location": "right",
-        "image_width": "standard",
-        "image": "shopify:\/\/shop_images\/2022_img.png",
-        "title": "2022",
-        "heading_size": 100,
-        "button_text": "A new era begins",
-        "text_content": "Together, the new generation also stands behind LEKI's core values: innovation, quality, enthusiasm, excellence, partnership and responsibility. Now in its third generation, LEKI remains a true family business with Friederike and Markus Lenhart as sole owners.",
-        "text_alignment": "right",
-        "section_width": "wrapper--full-padded",
-        "padding_top": 0,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "main",
     "5c1b51e6-d596-414a-af3c-3154eb0cbac3",
+    "about_image_with_text_wM3D4N",
     "3ee7470e-f544-4c6c-87a8-061bd405cd92",
     "682fffbe-ecbc-4056-b39a-b82407a73fc2",
     "c31eb426-3885-48b1-add4-fce3e02d4fa9",
@@ -268,7 +268,6 @@
     "286a0b57-2ef8-4cdb-82f8-f230cd188670",
     "b871ad66-a52c-4a2d-a9ba-b62f880572cf",
     "d4403c5c-1ba9-49b5-8a0e-deaa29ffa285",
-    "51fd24f9-a0b3-44ab-a5ed-0c0c0335dc90",
-    "612e3f08-2d8f-45ba-b3c0-c920f0fd1397"
+    "51fd24f9-a0b3-44ab-a5ed-0c0c0335dc90"
   ]
 }
