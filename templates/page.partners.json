@@ -27,11 +27,11 @@
       "settings": {
         "show_page_title": false,
         "bg_color_secondary": false,
-        "padding_top": 60,
+        "padding_top": 0,
         "padding_bottom": 60,
-        "tab_padding_top": 60,
+        "tab_padding_top": 0,
         "tab_padding_bottom": 60,
-        "mob_padding_top": 60,
+        "mob_padding_top": 0,
         "mob_padding_bottom": 60
       }
     },
