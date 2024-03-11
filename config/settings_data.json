@@ -1338,8 +1338,7 @@
   "platform_customizations": {
     "custom_css": [
       ".password-page__powered-by-text {display: none;}",
-      "h1.heading-no-bottom-margin {margin-bottom: 0;}",
-      ".image-with-text__image .partner_logo {background-size: auto;}"
+      "h1.heading-no-bottom-margin {margin-bottom: 0;}"
     ]
   }
 }

@@ -60,22 +60,22 @@
         "padding_bottom": 60
       }
     },
-    "section_image_with_text_UNwP9U": {
-      "type": "section-image-with-text",
+    "partner_with_logo_MTyXmd": {
+      "type": "partner-with-logo",
       "settings": {
         "section_height": "three-fifty-height",
         "layout": "inline",
-        "image_location": "left",
+        "image_location": "right",
         "image_width": "standard",
-        "image": "shopify:\/\/shop_images\/adventurUSWomen_small_b5ba0f58-96e7-4fca-974b-7c9985d223b7.png",
+        "image": "shopify:\/\/shop_images\/lastingAdventures_small_8a296669-c7bf-419c-bf9e-cb37ee5dccd4.png",
         "subheading": "",
-        "title": "<p>AdventurUS Women<\/p>",
+        "title": "<p>Lasting Adventures<\/p>",
         "heading_highlight_type": "circle",
         "heading_size": 130,
         "text_content": "",
         "text_alignment": "left",
-        "button_text": "View Site",
-        "button_link": "https:\/\/www.adventuruswomen.com\/",
+        "button_text": "Visit Site",
+        "button_link": "https:\/\/lastingadventures.com\/",
         "button_style": "btn--primary btn--small",
         "video_link": "",
         "text_color": "text-dark",
@@ -84,30 +84,12 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "3ee7470e-f544-4c6c-87a8-061bd405cd92": {
-      "type": "history-image-with-text",
-      "settings": {
-        "layout": "inline",
-        "image_location": "right",
-        "image_width": "standard",
-        "image": "shopify:\/\/shop_images\/1948_img.png",
-        "title": "1948",
-        "heading_size": 100,
-        "button_text": "",
-        "text_content": "Karl and Gertrud Lenhart founded the Karl Lenhart Plastik + Metall wood lathing company in 1948. In the wood processing business they founded in Dettingen\/Teck, Karl Lenhart produced lettering made of wood for bakeries and butcher shops. This company laid the foundations for LEKI Lenhart GmbH.",
-        "text_alignment": "right",
-        "section_width": "wrapper--full-padded",
-        "padding_top": 0,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "5c1b51e6-d596-414a-af3c-3154eb0cbac3",
     "main",
     "partner_with_logo_8X3fMJ",
-    "section_image_with_text_UNwP9U",
-    "3ee7470e-f544-4c6c-87a8-061bd405cd92"
+    "partner_with_logo_MTyXmd"
   ]
 }
