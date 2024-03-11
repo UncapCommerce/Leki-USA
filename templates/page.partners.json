@@ -65,7 +65,7 @@
       "settings": {
         "section_height": "three-fifty-height",
         "layout": "inline",
-        "image_location": "left",
+        "image_location": "right",
         "image_width": "standard",
         "image": "shopify:\/\/shop_images\/americanHikingSociety_small_25c914f5-9685-42c7-bae2-2967ce24b094.png",
         "subheading": "",
@@ -90,7 +90,7 @@
       "settings": {
         "section_height": "three-fifty-height",
         "layout": "inline",
-        "image_location": "right",
+        "image_location": "left",
         "image_width": "standard",
         "image": "shopify:\/\/shop_images\/lastingAdventures_small_8a296669-c7bf-419c-bf9e-cb37ee5dccd4.png",
         "subheading": "",
