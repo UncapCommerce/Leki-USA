@@ -1,0 +1,274 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "bg_color_secondary": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "5c1b51e6-d596-414a-af3c-3154eb0cbac3": {
+      "type": "image-with-title",
+      "settings": {
+        "banner_height": "three-fifty-height",
+        "text_position": "middle-center",
+        "text_transform": "capitalize",
+        "banner_image": "shopify:\/\/shop_images\/history_banner.png",
+        "banner_mob_image": "shopify:\/\/shop_images\/history_mob_banner.png",
+        "banner_title": "HISTORY",
+        "banner_content": "<p>With passion and commitment since 1948. LEKI's success story is also the story of the Lenhart family. Our enthusiasm and dedication to the sport and the continual search for improvement has made us what we are today. We look to the future, but we never forget our roots.<\/p>",
+        "text_color": "text-light",
+        "overlay_opacity": 10,
+        "bg_color_secondary": false,
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "tab_padding_top": 0,
+        "tab_padding_bottom": 40,
+        "mob_padding_top": 0,
+        "mob_padding_bottom": 20
+      }
+    },
+    "3ee7470e-f544-4c6c-87a8-061bd405cd92": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/1948_img.png",
+        "title": "1948",
+        "heading_size": 100,
+        "button_text": "Karl and Gertrud Lenhart",
+        "text_content": "Karl and Gertrud Lenhart founded the Karl Lenhart Plastik + Metall wood lathing company in 1948. In the wood processing business they founded in Dettingen\/Teck, Karl Lenhart produced lettering made of wood for bakeries and butcher shops. This company laid the foundations for LEKI Lenhart GmbH.",
+        "text_alignment": "right",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "682fffbe-ecbc-4056-b39a-b82407a73fc2": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/1960_img.png",
+        "title": "1960",
+        "heading_size": 100,
+        "button_text": "Grip and basket production",
+        "text_content": "The founder's personal dissatisfaction was the beginning of LEKI's unique development. Karl Lenhart, an avid skier, was dissatisfied with the quality and functionality of the ski poles which were available at that time. So, he started using his machinery to manufacture his own grips and baskets for ski poles.",
+        "text_alignment": "left",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "c31eb426-3885-48b1-add4-fce3e02d4fa9": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/1970_img.png",
+        "title": "1970",
+        "heading_size": 100,
+        "button_text": "LEKI is born",
+        "text_content": "Because Karl Lenhart also had experience in aircraft construction, he knew how to process aluminum and composites. He used these raw materials to manufacture his first ski poles and launched them on the market in 1970 under the name LEKI, which stands for the owner and the company headquarters - Lenhart in Kirchheim.",
+        "text_alignment": "right",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "9b10528c-0e67-432e-9611-e297934eacdc": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/1973_img.png",
+        "title": "1973",
+        "heading_size": 100,
+        "button_text": "Cross-country poles go into production",
+        "text_content": "After the success of his LEKI alpine poles, Karl Lenhart expanded his product range. In 1973, LEKI introduced cross-country ski poles to the market for the first time.",
+        "text_alignment": "left",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "0a3c5f4f-1f12-4e74-9bff-4f3c21c80699": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/1974_img.png",
+        "title": "1974",
+        "heading_size": 100,
+        "button_text": "The Makalu era begins",
+        "text_content": "After Karl Lenhart had revolutionized winter sports, he began to focus more on hiking. The cornerstone of the Makalu era was laid with the development of the SLS adjustment system. The world's first adjustable trekking pole was born. Four years later, on May 8, 1978, Reinhold Messner and Peter Habeler became the first climbers to scale the summit of Mount Everest without oxygen, using poles from LEKI.",
+        "text_alignment": "right",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "02123788-a8fb-402b-a5f7-c83a1b38c39a": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/1984_img.png",
+        "title": "1984",
+        "heading_size": 100,
+        "button_text": "Klaus Lenhart becomes managing director",
+        "text_content": "Karl's youngest son, Klaus Lenhart, a skilled toolmaker, took over sole management of LEKI in 1984. The company had 11 employees at that time. Klaus Lenhart, who was 29 years old, was soon to lead the small German business to become a company with a global reputation.",
+        "text_alignment": "left",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "02584fd9-19c2-46d1-897a-637cc33a4948": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/1997_img.png",
+        "title": "1997",
+        "heading_size": 100,
+        "button_text": "LEKI Lenhart GmbH",
+        "text_content": "LEKI built its new headquarters in 1992 and the company was renamed LEKI Lenhart GmbH five years later.",
+        "text_alignment": "right",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "295cd7b5-adfc-43c4-b56d-72a58b88d247": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/1998_img.png",
+        "title": "1998",
+        "heading_size": 100,
+        "button_text": "The Trigger System conquers the market",
+        "text_content": "The pursuit of greater safety and the constant demand for improvement continued to drive the company forward. The Trigger System, patented in 1998, revolutionized the market. This innovative system combines the ski pole and glove in a unique way. With its introduction, the first LEKI gloves also appeared on the market.",
+        "text_alignment": "left",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "286a0b57-2ef8-4cdb-82f8-f230cd188670": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/2000_img.png",
+        "title": "2000",
+        "heading_size": 100,
+        "button_text": "Production facility in Tachov",
+        "text_content": "As early as 1993, LEKI began to build its own production facility in Tachov, Czech Republic. At the start of the new millennium, production was moved completely to the Czech Republic. The largest pole workshop in the world is located there, under the name Novasport. Since then, all LEKI products have been manufactured in the Czech Republic using the most modern and environmentally friendly processes.",
+        "text_alignment": "right",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "b871ad66-a52c-4a2d-a9ba-b62f880572cf": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/2012_img.png",
+        "title": "2012",
+        "heading_size": 100,
+        "button_text": "A stroke of fate",
+        "text_content": "Klaus Lenhart died in a tragic accident in 2012. He was a charismatic visionary whose integrity earned him the respect, admiration and highest esteem of the entire industry. Klaus Lenhart led the family business for 28 years. His inner drive and courage for far-reaching, and sometimes unconventional, decisions laid the foundation for countless innovations and patents and consistently led LEKI to become the global technology and market leader in the field of poles and glove systems. His wife Waltraud Lenhart took over the company and guided it through these difficult times.",
+        "text_alignment": "left",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "d4403c5c-1ba9-49b5-8a0e-deaa29ffa285": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/2013_img.png",
+        "title": "2013",
+        "heading_size": 100,
+        "button_text": "Folding poles and trail running",
+        "text_content": "In 2013, another LEKI innovation changed the market. With the smallest packing size, minimum weight and simple handling – the folding pole was invented. Because of its versatility, the LEKI folding pole soon became extremely popular. Since then, poles have become essential for hiking and trail running.",
+        "text_alignment": "right",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "51fd24f9-a0b3-44ab-a5ed-0c0c0335dc90": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "left",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/2021_img.png",
+        "title": "2021",
+        "heading_size": 100,
+        "button_text": "Waltraud Lenhart",
+        "text_content": "Nine years after the tragic accidental death of Klaus Lenhart, the LEKI family suffered another stroke of fate. Waltraud Lenhart, who had been leading the company with entrepreneurial vision since that time, died unexpectedly in April 2021. Her value-oriented thinking and actions always centered on the interests of customers, partners and employees. Matthias Hatt and Martin Rominger then took over the management of the company and continued the life's work of the Lenhart family.",
+        "text_alignment": "left",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "612e3f08-2d8f-45ba-b3c0-c920f0fd1397": {
+      "type": "history-image-with-text",
+      "settings": {
+        "layout": "inline",
+        "image_location": "right",
+        "image_width": "standard",
+        "image": "shopify:\/\/shop_images\/2022_img.png",
+        "title": "2022",
+        "heading_size": 100,
+        "button_text": "A new era begins",
+        "text_content": "Together, the new generation also stands behind LEKI's core values: innovation, quality, enthusiasm, excellence, partnership and responsibility. Now in its third generation, LEKI remains a true family business with Friederike and Markus Lenhart as sole owners.",
+        "text_alignment": "right",
+        "section_width": "wrapper--full-padded",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5c1b51e6-d596-414a-af3c-3154eb0cbac3",
+    "3ee7470e-f544-4c6c-87a8-061bd405cd92",
+    "682fffbe-ecbc-4056-b39a-b82407a73fc2",
+    "c31eb426-3885-48b1-add4-fce3e02d4fa9",
+    "9b10528c-0e67-432e-9611-e297934eacdc",
+    "0a3c5f4f-1f12-4e74-9bff-4f3c21c80699",
+    "02123788-a8fb-402b-a5f7-c83a1b38c39a",
+    "02584fd9-19c2-46d1-897a-637cc33a4948",
+    "295cd7b5-adfc-43c4-b56d-72a58b88d247",
+    "286a0b57-2ef8-4cdb-82f8-f230cd188670",
+    "b871ad66-a52c-4a2d-a9ba-b62f880572cf",
+    "d4403c5c-1ba9-49b5-8a0e-deaa29ffa285",
+    "51fd24f9-a0b3-44ab-a5ed-0c0c0335dc90",
+    "612e3f08-2d8f-45ba-b3c0-c920f0fd1397"
+  ]
+}
