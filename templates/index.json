@@ -170,14 +170,14 @@
       "type": "section-collection",
       "settings": {
         "product_list": [
-          "peak-vario-3d_leki-usa_alpine-skiing-poles_winter",
           "copper-s_leki-usa_alpine-skiing_gloves_winter",
           "carbon-14-3d_leki-usa_alpine-skiing-poles_winter",
           "xplore-s-mitt_leki-usa_alpine-skiing_gloves_winter",
           "neolite-carbon_leki-usa_alpine-skiing-poles_winter",
           "lightning-3d-spring-glove_leki-usa_alpine-skiing_gloves_winter",
           "stella-s_leki-usa_alpine-skiing-poles_winter",
-          "stella-s-_leki-usa_alpine-skiing_gloves_winter"
+          "stella-s-_leki-usa_alpine-skiing_gloves_winter",
+          "sherpa-fx-carbon_leki-usa_mountaineering-four-season_poles_all-season"
         ],
         "collection": "winter-for-poles",
         "products_layout": "carousel",
