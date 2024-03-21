@@ -108,11 +108,86 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "partner_columns_M43z64": {
+      "type": "partner-columns",
+      "blocks": {
+        "text_block_ndcAhh": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/americanHikingSociety_small_25c914f5-9685-42c7-bae2-2967ce24b094.png",
+            "title": "Add a title or tagline",
+            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_text": "Learn More",
+            "button_link": "",
+            "button_style": "btn--text",
+            "video_link_popup": "",
+            "video_link_color": "text-dark"
+          }
+        },
+        "text_block_KcrtGR": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lastingAdventures_small_8a296669-c7bf-419c-bf9e-cb37ee5dccd4.png",
+            "title": "Add a title or tagline",
+            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_text": "Learn More",
+            "button_link": "",
+            "button_style": "btn--text",
+            "video_link_popup": "",
+            "video_link_color": "text-dark"
+          }
+        },
+        "text_block_eTB6qY": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/adventurUSWomen_small_b5ba0f58-96e7-4fca-974b-7c9985d223b7.png",
+            "title": "Add a title or tagline",
+            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_text": "Learn More",
+            "button_link": "",
+            "button_style": "btn--text",
+            "video_link_popup": "",
+            "video_link_color": "text-dark"
+          }
+        },
+        "text_block_WtPcWT": {
+          "type": "text_block",
+          "settings": {
+            "title": "Add a title or tagline",
+            "text": "<p>Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_text": "Learn More",
+            "button_link": "",
+            "button_style": "btn--text",
+            "video_link_popup": "",
+            "video_link_color": "text-dark"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_ndcAhh",
+        "text_block_KcrtGR",
+        "text_block_eTB6qY",
+        "text_block_WtPcWT"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "text-left",
+        "columns": 3,
+        "equalize_height": false,
+        "image_aspect_ratio": 0.8,
+        "show_images": true,
+        "bg_color_secondary": false,
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
     "5c1b51e6-d596-414a-af3c-3154eb0cbac3",
     "main",
-    "section_columns_WQpgeQ"
+    "section_columns_WQpgeQ",
+    "partner_columns_M43z64"
   ]
 }
