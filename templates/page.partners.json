@@ -99,8 +99,8 @@
       "settings": {
         "title": "",
         "align_text": "text-left",
-        "columns": 3,
-        "equalize_height": true,
+        "columns": 4,
+        "equalize_height": false,
         "image_aspect_ratio": 0.8,
         "show_images": true,
         "bg_color_secondary": false,
