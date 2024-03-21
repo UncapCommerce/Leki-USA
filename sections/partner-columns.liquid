@@ -81,7 +81,7 @@
                       -%}
 
                       <div class="column__item__image lazy-image" style="padding-top: {{ aspect_ratio | times: 100 }}%; background-image: url('{{ image | img_url: '1x1' }}');">
-                        {%- render 'image-fill', is_background: true, img_object: image, classes: 'column__item__image__bg', alt: image_alt -%}
+                        {%- render 'image-fill', is_background: false, img_object: image, classes: 'column__item__image__bg', alt: image_alt -%}
                       </div>
                     {%- else -%}
                       {%- liquid
