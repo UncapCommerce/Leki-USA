@@ -64,7 +64,7 @@
         "partners_DNEVng"
       ],
       "settings": {
-        "width": "wrapper"
+        "width": "wrapper--full-padded"
       }
     }
   },
