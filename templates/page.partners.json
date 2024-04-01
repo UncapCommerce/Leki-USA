@@ -38,6 +38,12 @@
     "partner_columns_er9HHx": {
       "type": "partner-columns",
       "blocks": {
+        "title_WjXzKp": {
+          "type": "title",
+          "settings": {
+            "partner_category": "Our Partners"
+          }
+        },
         "partners_HGxwPh": {
           "type": "partners",
           "settings": {
@@ -60,6 +66,7 @@
         }
       },
       "block_order": [
+        "title_WjXzKp",
         "partners_HGxwPh",
         "partners_DNEVng"
       ],
