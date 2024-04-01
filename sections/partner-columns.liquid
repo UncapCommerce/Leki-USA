@@ -13,7 +13,7 @@
       {% for block in section.blocks %}
         {%- case block.type -%}
           {%- when 'title' -%}
-            <div class="wallpaper-grid-inner-title">
+            <div class="wallpaper-grid-inner-title left-align">
               <h2 {% if animations_enabled %}
                     data-aos="fade-up"
                     data-aos-delay="{{ animation_delay }}"
