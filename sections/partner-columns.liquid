@@ -32,7 +32,7 @@
                     {% if block.settings.partner_link != blank %}
                       <a href="{{ block.settings.partner_link }}" target="_blank">
                     {% endif %}  
-                    <img class="lazyload" src="{{ block.settings.wallpaper_img | img_url:'' }}" alt="{{ block.settings.wallpaper_img.alt }}">
+                    <img class="lazyload" src="{{ block.settings.partner_logo | img_url:'' }}" alt="{{ block.settings.partner_logo.alt }}">
                     {% if block.settings.partner_link != blank %}
                       </a>
                     {% endif %} 
