@@ -47,10 +47,21 @@
             "button_text": "Learn More",
             "partner_link": "https:\/\/americanhiking.org\/"
           }
+        },
+        "partners_DNEVng": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/lastingAdventures_small_8a296669-c7bf-419c-bf9e-cb37ee5dccd4.png",
+            "partner_name": "Lasting Adventures",
+            "partner_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non porttitor nulla. Mauris vulputate sed elit et rhoncus. Nullam cursus metus in orci pulvinar, vitae commodo neque pellentesque. Vestibulum mollis venenatis libero non commodo. Pellentesque et elementum leo. In hac habitasse platea dictumst.<\/p>",
+            "button_text": "Learn More",
+            "partner_link": "https:\/\/lastingadventures.com\/"
+          }
         }
       },
       "block_order": [
-        "partners_HGxwPh"
+        "partners_HGxwPh",
+        "partners_DNEVng"
       ],
       "settings": {
         "width": "wrapper"
