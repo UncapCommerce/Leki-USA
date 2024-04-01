@@ -35,10 +35,10 @@
         "mob_padding_bottom": 60
       }
     },
-    "partner_columns_KLDVGN": {
+    "partner_columns_er9HHx": {
       "type": "partner-columns",
       "blocks": {
-        "partners_E3w4rF": {
+        "partners_HGxwPh": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/americanHikingSociety_small_25c914f5-9685-42c7-bae2-2967ce24b094.png",
@@ -50,14 +50,8 @@
         }
       },
       "block_order": [
-        "partners_E3w4rF"
+        "partners_HGxwPh"
       ],
-      "settings": {
-        "width": "wrapper"
-      }
-    },
-    "partner_columns_M43z64": {
-      "type": "partner-columns",
       "settings": {
         "width": "wrapper"
       }
@@ -66,7 +60,6 @@
   "order": [
     "5c1b51e6-d596-414a-af3c-3154eb0cbac3",
     "main",
-    "partner_columns_KLDVGN",
-    "partner_columns_M43z64"
+    "partner_columns_er9HHx"
   ]
 }
