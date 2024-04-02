@@ -25343,6 +25343,8 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .wallpaper-details .detail-inner.paragraph_layout { display: block; }
 .wallpaper-grid-inner-title.left-align { text-align: left; }
 .partners-section .wallpaper-grid-inner-title { grid-column: span 4; }
+.partners-section .wallpaper-content figure img { position: relative; }
+.partners-section .wallpaper-content figure { padding-bottom: inherit; }
 
 
 /* ----- product page accordion ----- */
