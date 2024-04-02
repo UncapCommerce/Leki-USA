@@ -25339,8 +25339,11 @@ body.mac .compare-bar .compare-products-actions .bottom-actions a.clear-bar{disp
 .wallpaper-details .detail-inner .right-detail a.btn svg {display: inline-block;vertical-align: -2px;height: 14px;width: 14px;margin-right: 5px;}
 .wallpaper-details .detail-inner .right-detail a.btn:hover svg path {stroke:  var(--COLOR-TEXT);}
 .page--wallpapers .text__content p {line-height: 24px;color: var(--COLOR-TEXT);}
+
 .wallpaper-details .detail-inner.paragraph_layout { display: block; }
 .wallpaper-grid-inner-title.left-align { text-align: left; }
+.partners-section .wallpaper-grid-inner-title { grid-column: span 3; }
+
 
 /* ----- product page accordion ----- */
 .product__block.upsell__products {padding-top: 40px;}
