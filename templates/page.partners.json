@@ -48,89 +48,89 @@
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/adventurusWomen_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/www.adventuruswomen.com\/"
           }
         },
         "partners_XJYRxM": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/americanHikeSyndicate_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/americanhiking.org\/"
           }
         },
         "partners_pC6hAG": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/breastCancerPreventionPartners_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/www.bcpp.org\/"
           }
         },
         "partners_RcUEGi": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/brokenArrowSkyrace_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/www.brokenarrowskyrace.com\/"
           }
         },
         "partners_BqEn44": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/cocodona_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/cocodona.com\/"
           }
         },
         "partners_yw7WXH": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/continentalDivideTrailCoalition_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/continentaldividetrail.org\/"
           }
         },
         "partners_cRPzxJ": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/lastingAdventures_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/lastingadventures.com\/"
           }
         },
         "partners_t89Mkw": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/leaveNoTrace_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/lnt.org\/"
           }
         },
         "partners_gR9kVm": {
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/thruHikeSyndicate_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
+            "button_text": "",
             "partner_link": ""
           }
         },
@@ -138,10 +138,10 @@
           "type": "partners",
           "settings": {
             "partner_logo": "shopify:\/\/shop_images\/warriorExpeditions_logo.png",
-            "partner_name": "Company Name",
+            "partner_name": "",
             "partner_description": "",
-            "button_text": "Learn More",
-            "partner_link": ""
+            "button_text": "",
+            "partner_link": "https:\/\/warriorexpeditions.org\/"
           }
         }
       },
