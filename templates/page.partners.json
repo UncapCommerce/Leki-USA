@@ -44,31 +44,119 @@
             "partner_category": "Our Partners"
           }
         },
-        "partners_HGxwPh": {
+        "partners_cDrRw4": {
           "type": "partners",
           "settings": {
-            "partner_logo": "shopify:\/\/shop_images\/americanHikingSociety_small_25c914f5-9685-42c7-bae2-2967ce24b094.png",
-            "partner_name": "American Hiking Society",
-            "partner_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non porttitor nulla. Mauris vulputate sed elit et rhoncus. Nullam cursus metus in orci pulvinar, vitae commodo neque pellentesque. Vestibulum mollis venenatis libero non commodo. Pellentesque et elementum leo. In hac habitasse platea dictumst.<\/p>",
+            "partner_logo": "shopify:\/\/shop_images\/adventurusWomen_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
             "button_text": "Learn More",
-            "partner_link": "https:\/\/americanhiking.org\/"
+            "partner_link": ""
           }
         },
-        "partners_DNEVng": {
+        "partners_XJYRxM": {
           "type": "partners",
           "settings": {
-            "partner_logo": "shopify:\/\/shop_images\/lastingAdventures_small_8a296669-c7bf-419c-bf9e-cb37ee5dccd4.png",
-            "partner_name": "Lasting Adventures",
-            "partner_description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non porttitor nulla. Mauris vulputate sed elit et rhoncus. Nullam cursus metus in orci pulvinar, vitae commodo neque pellentesque. Vestibulum mollis venenatis libero non commodo. Pellentesque et elementum leo. In hac habitasse platea dictumst.<\/p>",
+            "partner_logo": "shopify:\/\/shop_images\/americanHikeSyndicate_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
             "button_text": "Learn More",
-            "partner_link": "https:\/\/lastingadventures.com\/"
+            "partner_link": ""
+          }
+        },
+        "partners_pC6hAG": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/breastCancerPreventionPartners_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
+            "button_text": "Learn More",
+            "partner_link": ""
+          }
+        },
+        "partners_RcUEGi": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/brokenArrowSkyrace_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
+            "button_text": "Learn More",
+            "partner_link": ""
+          }
+        },
+        "partners_BqEn44": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/cocodona_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
+            "button_text": "Learn More",
+            "partner_link": ""
+          }
+        },
+        "partners_yw7WXH": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/continentalDivideTrailCoalition_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
+            "button_text": "Learn More",
+            "partner_link": ""
+          }
+        },
+        "partners_cRPzxJ": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/lastingAdventures_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
+            "button_text": "Learn More",
+            "partner_link": ""
+          }
+        },
+        "partners_t89Mkw": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/leaveNoTrace_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
+            "button_text": "Learn More",
+            "partner_link": ""
+          }
+        },
+        "partners_gR9kVm": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/thruHikeSyndicate_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
+            "button_text": "Learn More",
+            "partner_link": ""
+          }
+        },
+        "partners_E8mgpB": {
+          "type": "partners",
+          "settings": {
+            "partner_logo": "shopify:\/\/shop_images\/warriorExpeditions_logo.png",
+            "partner_name": "Company Name",
+            "partner_description": "",
+            "button_text": "Learn More",
+            "partner_link": ""
           }
         }
       },
       "block_order": [
         "title_WjXzKp",
-        "partners_HGxwPh",
-        "partners_DNEVng"
+        "partners_cDrRw4",
+        "partners_XJYRxM",
+        "partners_pC6hAG",
+        "partners_RcUEGi",
+        "partners_BqEn44",
+        "partners_yw7WXH",
+        "partners_cRPzxJ",
+        "partners_t89Mkw",
+        "partners_gR9kVm",
+        "partners_E8mgpB"
       ],
       "settings": {
         "width": "wrapper--full-padded"
